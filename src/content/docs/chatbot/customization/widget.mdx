@@ -1,0 +1,88 @@
+---
+title: "Widget"
+description: "Customize the appearance of your chatbot using the SDK"
+---
+
+import Image from '../../../../components/Image.jsx';
+import Note from '../../../../components/note.jsx';
+
+
+# YourGPT Chatbot SDK Documentation
+
+## Overview
+
+This document provides a comprehensive guide on how to use the YourGPTChatbot SDK. The SDK offers a set of functions to interact with the chatbot, allowing you to customize its behavior and integrate it seamlessly into your application.
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ The YourGPTChatbot SDK is designed to be easy to use and highly customizable. Make sure to initialize the SDK before using any of its functions.
+</Note>
+
+## Functions
+
+### on(event, callback)
+
+This function allows you to listen to events from the chatbot.
+
+ ```
+{`$yourgptChatbot.on("init", onInit);
+$yourgptChatbot.on("chatbotPopup", popupState);`}
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ Common events include "init", "chatbotPopup", "messageReceived", and "chatClosed". Refer to the Events section for a complete list.
+</Note>
+
+### execute(command)
+
+This function allows you to execute commands on the chatbot.
+
+ ```
+{`$yourgptChatbot.execute("chatbotOpen");
+$yourgptChatbot.execute("chatbotClose");`}
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ Use execute() to programmatically control the chatbot's behavior, such as opening or closing the chat window.
+</Note>
+
+### set(key, value)
+
+This function allows you to set data for the visitor or the session.
+
+ ```
+{`$yourgptChatbot.set("visitor:data", { name: "John Doe", email: "john@example.com" });
+$yourgptChatbot.set("session:data", { productId: "12345", cartValue: 99.99 });`}
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ Use the "visitor:data" prefix for persistent user data and "session:data" for temporary session information.
+</Note>
+
+### off(event, callback)
+
+This function allows you to stop listening to events from the chatbot.
+
+ ```
+{`$yourgptChatbot.off("chatbotPopup", popupState);`}
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ Always remove event listeners when they are no longer needed to prevent memory leaks and unexpected behavior.
+</Note>
+
+## Best Practices
+
+1. Initialize the SDK as early as possible in your application lifecycle.
+2. Keep sensitive information out of visitor and session data.
+
+For more detailed information and advanced usage, please refer to our API Reference documentation.

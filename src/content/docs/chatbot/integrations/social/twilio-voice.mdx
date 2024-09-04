@@ -1,0 +1,58 @@
+---
+title: Twilio Voice Integration | Setup Guide
+description: Detailed steps to configure Twilio Voice integration, including obtaining credentials and configuring settings.
+keywords: Twilio Voice integration, Twilio setup, configure Twilio Voice, Twilio credentials
+---
+
+import Image from '../../../../../components/Image.jsx';
+import Note from '../../../../../components/note.jsx';
+
+
+<Note type="idea" color="emerald">
+ Setting Up Twilio Voice Integration
+</Note> 
+
+To set up Twilio Voice integration, follow these steps:
+
+1. **Obtain Twilio Credentials**
+   - Log into your Twilio account.
+   - Go to the "**Develop**" tab to find your Account SID and Auth Token.
+
+   <Image 
+     src="/assets/chatbot/Twilio-voice/Twilio-1.png"
+     alt="Twilio Credentials"
+   />
+
+2. **Get Phone Number SID**
+   - Go to "**View All Numbers**."
+   - Select your number, go to "**Properties**," and copy your Phone Number SID.
+
+3. **Configure Integration**
+   - Add the following fields:
+     - **Account SID**: Your Twilio account SID.
+     - **AuthToken**: Your Twilio Auth Token.
+     - **Voice Phone SID**: The SID of your Twilio voice number.
+     - **Welcome Message**: Initial greeting message (e.g., "Hello, how can we assist you today?").
+     - **Error Message**: Message played when no speech is detected.
+     - **Voice Language**: Language used during the call.
+     - **Voice Type**: Voice model used (e.g., Polly.Aditi).
+     - **Speech Timeout**: Duration to wait for a user's speech response.
+
+   <Image 
+     src="/assets/chatbot/Twilio-voice/Twilio-2.png"
+     alt="Integration Configuration"
+   />
+
+4. **Set Webhook Endpoint**
+   - Obtain your webhook endpoint.
+   - Add this webhook to your phone number in the Voice configuration:
+     - Go to "**Develop**" → "**View All Numbers**" → Select your number → "**Configure**."
+
+   <Image 
+     src="/assets/chatbot/Twilio-voice/Twilio-3.png"
+     alt="Webhook Configuration"
+   />
+
+----
+
+You have now successfully enabled Twilio Voice integration.

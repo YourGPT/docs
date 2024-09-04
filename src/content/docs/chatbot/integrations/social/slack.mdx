@@ -1,0 +1,180 @@
+---
+title: GPT Chabot for Slack | Installation Guide 
+description: Everything you need to know to integrate a no code Chatbot with slack, complete documenation for the installation
+keywords: slack integrated chatbot,slack AI chatbot, slack integration to AI chatbot, custom bot for slack 
+---
+
+import Image from '../../../../../components/Image.jsx';
+import Note from '../../../../../components/note.jsx';
+
+
+<Note type="idea" color="emerald">
+ Connecting Your Bot with Slack
+</Note> 
+
+<div style={{ height: '20px' }}></div>
+
+<div style={{
+  aspectRatio:16/9,
+  width:'100%'
+}}>
+
+<iframe width="100%" height="100%" 
+src="https://www.youtube.com/embed/mui1-dpBKR4?si=DfOT4y6c9BiIPxXk" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+</div>
+
+## <span className="nx-text-4xl">Register with Slack</span>
+To begin integrating Slack, you will need to register on the **`Slack API site`**.
+
+### <span className="nx-text-3xl">Create Your First App</span>
+Once registered, head to [**```Slack Apps```**](https://api.slack.com/apps) to create your first app.
+
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-1.png" 
+  alt="Create Slack App" 
+/>
+
+### <span className="nx-text-3xl">Obtain App ID and Access Token</span>
+
+To Obtain the App ID and Access Token, you need to create an app, select the option **`From Scratch`**. You will now be redirected to the next page. Here, enter your **`App Name`** and select the **`Workspace`** where you wish to develop your app. Once done, click on **`Create App`**.
+
+After creating the app, copy the following details from the **`Basic Information`** section:
+- **App ID**
+
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-2.png" 
+  alt="App ID and Access Token" 
+/>
+
+## <span className="nx-text-4xl"> Configuration</span> 
+
+### <span className="nx-text-3xl"> OAuth & Permissions</span>
+Configure redirect URLs and choose the necessary bot scopes required to access workspace data. Enable bot commands for interaction.
+
+- **Redirect URLs**: You need to add a valid URL from your domain as the redirect URL.
+
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-3.png" 
+  alt="Slack App Configuration" 
+/>
+
+- **Bot Scope**: Choose the **```commands```** Bot Token Scope.
+
+<Image 
+  src="/assets/chatbot/Slack/Scope-bot.png" 
+  alt="Bot Scope" 
+/>
+
+- Install the app to your workspace.
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-4.png" 
+  alt="Install in Workspace" 
+/>
+
+
+- Copy the **```Bot User OAuth Token```** and paste the token in YourGPT Slack **Access Token** field.
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-5.png" 
+  alt="Auth Token" 
+/>
+
+- In the **`App Home`** section, enable the option "Allow users to send messages with slash commands".
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-6.png" 
+  alt="Show Tab" 
+/>
+
+
+### <span className="nx-text-3xl">Enable Integration</span>
+To enable integration, follow these steps:
+
+1. Obtain the app ID from the Basic Information section of your Slack app.
+2. Paste the copied `App ID` into the **`Application ID`** field of YourGPT Slack Integration.
+3. Copy the Bot user Auth Token from the OAuth & Permissions section.
+4. Paste the copied credentials into the **`Access Token`** field of YourGPT Slack Integration.
+
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-7.png" 
+  alt="Enable Integration" 
+/>
+
+### <span className="nx-text-3xl">Copy the Webhook</span>
+Once integrated, copy the generated webhook for further use.
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-8.png" 
+  alt="Copy Webhook" 
+/>
+
+
+### <span className="nx-text-3xl">Create Slash Command</span>
+Go to the **`Slash Commands`** section and create a new slash command.
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-9.png" 
+  alt="Create Slash Command" 
+/>
+
+- Add the following details:
+  - **Command**: The command you want to use to interact with the bot.
+  - **Request URL**:  paste the webhook into the request URL.
+  - **Short Description**: A description of the command.
+  - **Usage Hint**: A brief description of the command.
+
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-10.png" 
+  alt="Command" 
+/>
+
+## Additional Configuration
+
+- To receive notifications for desired events, add the copied webhook URL.
+
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-more-config.png" 
+  alt="Additional Configuration" 
+/>
+
+- Subscribe to the [**`link_shared`**](https://api.slack.com/events/link_shared), [**```message.im```**](https://api.slack.com/events/message.im) and [**```message.channels```**](https://api.slack.com/events/message.channels) events.
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-more-config2.png" 
+  alt="Additional Configuration" 
+/>
+
+
+## Flow Messaging Setup
+
+- Ensure webhook URL is added for flow messages to function properly.
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-Flow1.png" 
+  alt="Flow Messaging Setup" 
+/>
+
+<Image 
+  src="/assets/chatbot/Slack/Slack-Flow2.png" 
+  alt="Flow Interactivity" 
+/>
+
+- After a successful response, it will be added; otherwise, an error will occur.
+
+
+<Note type="note" color="blue">
+  Without using a slash command or mentioning the bot (@BOT), responses will only occur in direct messaging, not in general group chats.
+</Note>
+
+
+By following these steps, you can easily integrate your chatbot with Slack. For any questions, contact our team via Live support or [**```Mail Us```**](mailto:support@yourgpt.ai).

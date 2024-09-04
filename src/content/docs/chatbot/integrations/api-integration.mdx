@@ -1,0 +1,140 @@
+---
+title: API Integration for YourGPT Chatbot | Installation Guide   
+description: Everything you need to know to setup and integrate a AI Bot with API, complete documenation for the installation.
+keywords: api integration chatbot,ai bot api, custom bot api, api gpt Chatbot 
+---
+
+ 
+<div className="nx-flex nx-items-center"> 
+  <h1 className="nx-text-4xl nx-font-bold">API Integration for YourGPT Chatbot</h1>
+</div>
+
+
+<Note type="idea" color="emerald">
+ Connect Your Chatbot Anywhere with Chatbot API
+</Note> 
+
+Welcome to the Documentation page for **YourGPT Chatbot APIs**
+
+## <span  className="nx-text-3xl">Generating Keys</span>
+
+- Go to your **`Integration`** and click on **`manage API integration`**
+- Now create one key.
+
+
+<Image 
+  src="/assets/chatbot/API/Integration-API.png"
+  alt=" API Integration"
+/>
+
+- Copy your **```Generated API key```**
+
+<Image 
+  src="/assets/chatbot/API/API-key.png"
+  alt=" Copy API Key"
+  height='36vh'
+/>
+
+<Note type="note" color="blue">
+  The widget_uid is your chatbot's Widget ID. `For example: a12bc345-d678-90ef-gh12-ijklmno345pq.`
+</Note>
+
+
+
+## <span  className="nx-text-3xl">API Usage</span>
+
+- **```success code : 200, type: RXSUCCESS```**
+- **```error code 400, type RXERROR```**
+
+### <span  className="nx-text-xl">**Create Session API**</span>
+
+<CodeBox language="curl">
+{`curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
+</CodeBox>
+
+###### Response
+<ResponseBox response={`{
+    "type": "RXSUCCESS",
+    "message": "Chatbot session created successfully",
+    "data": {
+        "id": 1910677,
+        "session_uid": 17226012685401506,
+        "chat_mode": "1",
+        "project_id": 197,
+        "integration_id": 17,
+        "state": "pending",
+        "segment": "chat",
+        "status": "open",
+        "device_type": null,
+        "platform": null,
+        "ip": null,
+        "country": "IN",
+        "visitor_id": null,
+        "is_emulator": false,
+        "data": {},
+        "contact_id": null,
+        "updatedAt": "2024-08-02T12:21:08.540Z",
+        "createdAt": "2024-08-02T12:21:08.540Z"
+    }
+}`} />
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+  To use the send message API, you must first establish a session. Obtain a session UID by executing the Create Session API.
+</Note>
+
+---- 
+
+### <span  className="nx-text-xl">Send Message API</span>
+
+<CodeBox language="curl">
+{`curl --location 'https://api.yourgpt.ai/chatbot/v1/sendMessage' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013' \
+--data-urlencode 'session_uid=39772b8d-d1c8-4d5a-a473-a6841bc4c880' \
+--data-urlencode 'message=hey there?'`}
+</CodeBox>
+
+
+###### Response
+
+<ResponseBox response={`{
+    "type": "RXSUCCESS",
+    "message": "AI reply",
+    "data": {
+        "send_by": "assistant",
+        "origin": "api",
+        "session_uid": "39772b8d-d1c8-4d5a-a473-a6841bc4c880",
+        "type": "text",
+        "message_id": 241043,
+        "message": "Hello! How can I assist you today?",
+        "content_type": "picker",
+        "id": 241043,
+        "choices": [
+            {
+                "icon": "👍",
+                "text": "I am satisfied",
+                "value": "like",
+                "enabled": true
+            },
+            {
+                "icon": "👎",
+                "text": "I am not satisfied",
+                "value": "dislike",
+                "enabled": true
+            },
+            {
+                "icon": "🦸",
+                "text": "Request a human operator",
+                "value": "requesthumanoperator",
+                "enabled": true
+            }
+        ]
+    }
+}
+`} / >

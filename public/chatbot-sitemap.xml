@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/introduction</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/chatbots/crisp</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/chatbots/intercom</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/whatsapp</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/instagram</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/line</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/discord</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/messenger</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/slack</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/social/telegram</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/bubble</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/carrd</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/shopify</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/wix</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/webflow</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/wordpress</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/BigCommerce</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/integrations/website/how-to-setup-chatbot-on-my-website</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/studio/elements/intent-and-events</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/studio/elements/message</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/studio/elements/listeners</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/studio/elements/ai-task</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/studio/elements/advanced</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/customization/widget</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/what-is-yourgpt-chatbot-how-it-works</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/link-shareable-chatbot</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/how-to-change-the-apperance-of-your-chatbot</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/dynamically-change-theme-on-your-chatbot</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/how-to-customize-chatbot-behavior</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://docs.yourgpt.ai/chatbot/how-to-add-custom-domain</loc>
+  <lastmod>2024-01-15T17:51:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

@@ -1,0 +1,109 @@
+---
+title: ChatGPT AI Integration for Intercom | Installation Guide 
+description: Integrate a Custom AI Chatbot with your Intercom Chatbot, 3 click installation
+keywords: Intercom chatbot integration,chatbot for Intercom, AI integration with Intercom bot, custom chatbot Intercom 
+---
+import Image from '../../../../../components/Image.jsx';
+import Note from '../../../../../components/note.jsx';
+
+
+
+<Note type="idea" color="emerald">
+ Connecting Your AI Chatbot with Intercom  
+</Note> 
+
+Intercom integration allows seamless communication between YourGPT AI Bot and Intercom, enabling efficient customer interactions.
+
+
+### <span  className="nx-text-xl">Prerequisites</span>
+1. Create an account on Intercom at [**``app.intercom``**](https://app.intercom.com/)
+2. Enable Intercom from YourGPT dashboard at [**```chatbot.yourgpt```**](https://chatbot.yourgpt.ai/)
+3. Create an Intercom developer account at [**```developers.intercom```**](https://developers.intercom.com/)
+
+## <span  className="nx-text-3xl">Integration Steps</span>
+
+### 1. <span  className="nx-text-xl">Create an Intercom App</span>
+- Log in to your Intercom developer account.
+- Create the app that you want to integrate with.
+
+![Create Intercom Apps](/assets/chatbot/Intercom/make-app.gif)
+
+
+### 2. <span  className="nx-text-xl">Obtain App ID and Access Token</span>
+- Copy the **```App ID```** and **```Access Token```** from your Intercom app settings.
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom4-5.png"
+  alt="Copy App ID and Access Token"
+/>
+
+### 3. <span  className="nx-text-xl">Paste Credentials in YourGPT Dashboard</span>
+- Paste the copied **```App ID```** and **``Access Token``** into the YourGPT dashboard.
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom1.png"
+  alt="YourGPT Dashboard"
+/>
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom5.png"
+  alt="Paste Credentials in YourGPT Dashboard"
+  height="30vh"
+/>
+
+### 4. <span  className="nx-text-xl">Configure Webhook</span>
+- Add a webhook URL and generate it in the Intercom app webhook settings.
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom6.png"
+  alt="Configure Webhook"
+/>
+
+### 5. <span  className="nx-text-xl">Verify Webhook</span>
+- Confirm the successful addition of the webhook. You will receive a confirmation message.
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom7.png"
+  alt="Chat Integration"
+/>
+
+### 6. <span  className="nx-text-xl">Chat Integration (Optional)</span> 
+- For more customization and control, implement Canvas kit.
+- Initialize flow webhook URL:
+ ```
+ https://api.yourgpt.ai/chatbot/v1/intercom/canvas/{your app_id}
+ ```
+
+- Submit flow webhook URL: 
+```
+https://api.yourgpt.ai/chatbot/v1/intercom/canvas/webhook/{your app_id}
+```
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom8.png"
+  alt="Chat Integration"
+/>
+
+## <span  className="nx-text-3xl">Troubleshooting</span>
+- Ensure you have added the interaction key in the custom data to avoid errors.
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom9.png"
+  alt="Interaction Key"
+  height="50vh"
+/>
+
+- Add interaction key to avoid this below error:
+
+<Image 
+  src="/assets/chatbot/Intercom/intercom10.png"
+  alt="Interaction Key"
+  height="50vh"
+/>
+
+By following these steps mentioned above help you integrate YourGPT AI Bot with Intercom.
+
+---
+<aside>
+📎 If you require any assistance or have any questions, please feel free to contact us at [**```YourGPT Support```**](mailto:support@yourgpt.ai)  
+</aside>

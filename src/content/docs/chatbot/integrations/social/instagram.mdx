@@ -1,0 +1,63 @@
+---
+title: GPT Chatbot for instagram | Installation Guide   
+description: Integrate your AI chatbot with instagram. Learn how to integrate your AI chatbot with instagram.
+keywords: instagram chatbot integration,chatbot for instagram, AI chatbot integration for instagram, custom chatbot instagram 
+---
+
+import Image from '../../../../../components/Image.jsx';
+import Note from '../../../../../components/note.jsx';
+
+
+<Note type="idea" color="emerald">
+ Connecting Your AI Chatbot with Instagram
+</Note> 
+
+## <span  className="nx-text-3xl">Prerequisites</span>
+
+Before integrating Instagram with YourGPT Chatbot, ensure you have the following prerequisites in place:
+
+- **[```Meta Developer App```](https://developers.facebook.com/apps)** to manage connections between Instagram and YourGPT Chatbot, including webhooks and access tokens.
+- Administrator or Developer roles for a **[```Facebook Page```](https://www.facebook.com/)** since Instagram accounts need to be linked to a Facebook page for using the Facebook Graph API.
+- An **[```Instagram Professional Account```](https://www.instagram.com/)** is required to access features specific to professional accounts.
+
+## <span  className="nx-text-3xl">Setting up Instagram Integration</span>
+
+1. Go to the **[```Integration Section```](https://chatbot.yourgpt.ai/)** in YourGPT Chatbot and Connect the Instagram integration if not already installed.
+2. Click **```Connect Instagram```**. Proceed to your chatbot settings.
+3. Add the following details in the Instagram section:
+
+- **App ID:** Your YourGPT app's identification, created at Meta Developer platform.
+- **App Secret:** The secret key of your YourGPT app.
+- **Page ID:** The ID of your Facebook page.
+- **Access Token:** The access token.
+
+## <span  className="nx-text-3xl">Setting up Instagram</span>
+
+### <span  className="nx-text-xl">Create a Facebook Page</span>
+
+- If you don't have a Facebook page, **[```create one```](https://www.facebook.com/pages/create)**. Ensure you have an administrator or developer role to link your chatbot.
+
+### <span  className="nx-text-xl">Create a YourGPT Chatbot App</span>
+
+1. Log in to **[```Facebook for Developers```](https://developers.facebook.com/)**.
+2. Select My Apps and **```create a new app```**.
+3. Choose Business as the App Type.
+4. Assign a name to your app.
+
+### <span  className="nx-text-xl">App ID and Secret</span>
+
+1. In Settings, under Basic, find the **```App ID```** and **```App Secret```**.
+2. Click Show in the App Secret text box. Copy both for channel configuration.
+
+### <span  className="nx-text-xl">Page ID and Access Token</span>
+
+1. In Messenger settings, under Instagram Settings, click **```Add or Remove Pages```**.
+2. Add your Facebook page and copy the number under your page name for **```Page ID```**.
+3. Click **```Generate Token```** and copy for **```Access Token```**.
+
+
+## <span  className="nx-text-xl">Submit your App for Meta Review</span>
+
+During Development Mode, your bot is accessible to admins, developers, and testers only. After approval and public release, it becomes available to the general public.
+
+Learn more about the **[```App Review process```](https://developers.facebook.com/docs/apps/review)**. For troubleshooting, follow **[```this documentation```](https://developers.facebook.com/docs/app-review/support/rejection-guides/instagram)** if your app got rejection.

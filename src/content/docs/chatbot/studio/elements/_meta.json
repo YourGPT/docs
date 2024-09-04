@@ -1,0 +1,17 @@
+{
+    "intents": "Intents",
+    "entities": "Entities",
+    "variables": "Variables",
+    "events": "Events",
+    "--": {
+        "type": "separator"
+      },
+    "messages": "Messages",
+    "listeners": "Listeners",
+    "ai-task": "AI Tasks",
+
+    "advanced": "Advanced Options",
+    "-": {
+        "type": "separator"
+    }
+}

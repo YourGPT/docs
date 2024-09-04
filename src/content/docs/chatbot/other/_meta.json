@@ -1,0 +1,13 @@
+{
+  "automated-responses": "📬 Automated responses",
+  "connected-chatbots": {
+    "title": "🔗 Connected Chatbot",
+    "description": "Connect your chatbot with other chatbots"
+  },
+  "security": "🔒 Security",
+  "other-information": "📋 Roles & AI Models",
+  "debugging": "🧪 Debugging",
+  "debug-lab": {
+    "display": "hidden"
+  }
+}

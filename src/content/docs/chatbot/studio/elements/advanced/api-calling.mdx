@@ -1,0 +1,66 @@
+---
+title: API Calling | YourGPT Chatbot Studio Guide
+description: Learn how to use API Calls in your chatbot to interact with external services, fetch real-time data, or trigger actions during conversations.
+keywords: API Calling, AI API, Chatbot, Studio, Chatbot Studio API
+---
+
+
+
+
+<div style={{
+  aspectRatio:16/9,
+  width:'100%'
+}}>
+
+<iframe width="100%" height="100%" 
+src="https://www.youtube.com/embed/62qoGyESI8c?si=DfOT4y6c9BiIPxXk" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+</div>
+
+API Calls enable your chatbot to interact with external services, fetch real-time data, or trigger actions during conversations. By using APIs, chatbot can access to a various information and functionalities beyond its core capabilities.
+
+###  API calling use-cases 
+- **Live Data Fetching:** Retrieve real-time data like weather forecasts, stock prices, news updates or many more.
+- **External Actions:** Trigger actions such as making reservations, sending notifications, or updating external system information.
+- **Data Enrichment:** Enhance the conversation by providing additional information or context from external sources.
+- **User Authentication:** Verify user credentials or access user-specific data from external services.
+- **Third-party Integrations:** Connect with third-party services to perform specific tasks.
+
+
+##  How to use API Calls in YourGPT Flow 
+
+
+###  Steps to Follow 
+
+1. **Set Up API Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the **API Call** component onto the canvas.
+
+2. **Configure API Endpoint:** Enter the API endpoint URL in the **`URL`** field. You can also add query parameters, headers, and other configurations as needed.
+
+3.  **Add Headers and Parameters:** Customize the API request by adding headers, query parameters, and other configurations. This step ensures that the API call is properly authenticated and formatted.
+
+4. **Test Request:** Click on the **`Test Request`** button to check if the API is working fine and see the output. This step helps in verifying the API response and ensuring that the data is fetched correctly.
+
+5. **Capture API Response:** Use the **`Capture to`** option to store the API response in a variable. This variable can be used in subsequent steps of the flow. 
+
+
+###  Video Part 
+
+🌤️ API Used in the Video - To Search Weather:
+
+API Endpoint is : **`https://api.weatherapi.com/v1/current.json`**
+
+- Add a header set the key to key and value to your API key.
+
+- To run this API, you need to pass the following parameters:
+    - **q** : The city name to search for. Here we are using **`{{FLOW.City}}`** to get the city name from the user. **``City``** is a Entity which is used to get the city name from the user.
+    - **key** : Your API key. Add this as a header.
+
+
+```
+https://api.weatherapi.com/v1/current.json?q={{FLOW.City}}
+```
+
+
+

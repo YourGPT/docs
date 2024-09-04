@@ -1,0 +1,54 @@
+{
+  "introduction": "✰ Introduction",
+  "setup": "🛠️ Setup",
+  "training": "📘 Training Guide",
+  "prompts": {
+    "title": "🧮 Prompts",
+    "description": "Create prompts for your chatbot"
+  },
+  "integrations": {
+    "title": "🔌 Integrations",
+    "description": "Integrate with your favorite tools"
+  },
+  "functions": {
+    "title": " 🛠️ Functions",
+    "description": "Learn more about Functions"
+  },
+  "studio": {
+    "title": " ✏️ Studio",
+    "description": "Integrate with your favorite tools"
+  },
+  "customization": {
+    "title": " ⚙️ Customization",
+    "description": "Integrate with your favorite tools"
+  },
+  "other": {
+    "title": "🗂️ Others",
+    "description": "Other features"
+  },
+
+  "others": {
+    "type": "hidden"
+  },
+  "what-is-yourgpt-chatbot-how-it-works": {
+    "type": "hidden"
+  },
+  "how-to-add-custom-domain": {
+    "type": "hidden"
+  },
+  "how-to-customize-chatbot-behavior": {
+    "type": "hidden"
+  },
+  "dynamically-change-theme-on-your-chatbot": {
+    "type": "hidden"
+  },
+  "how-to-change-the-apperance-of-your-chatbot": {
+    "type": "hidden"
+  },
+  "queue-replies":{
+    "type": "hidden"
+  },
+  "link-shareable-chatbot": {
+    "type": "hidden"
+  }
+}

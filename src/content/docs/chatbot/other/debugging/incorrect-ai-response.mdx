@@ -1,0 +1,110 @@
+---
+title: AI Providing Incorrect or Out-of-Context Answers
+---
+
+import Image from '../../../../../components/Image.jsx';
+import Note from '../../../../../components/note.jsx';
+
+
+
+When your AI provides incorrect answers or goes off-topic, it's usually due to one of two issues. Here’s how you can troubleshoot and fix these problems.
+
+## 1. Base Prompt Issue
+
+Your AI model's base prompt might not include clear instructions on when to refuse to answer. Without these guidelines, the AI might attempt to respond even when it lacks the relevant information or when the question is outside your business context.
+
+#### Solution:
+Add an instruction to the base prompt, such as:
+
+<Note type="re" color="blue">
+ Refuse to answer any question beyond the given info and Inform to tap on "Talk to a Human" button if you don't have enough information to answer.
+</Note>
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/refusal-in-base-prompt.png" 
+  alt="Base Prompt Configuration" 
+/>
+
+This ensures the AI stays within the boundaries of its training data and only provides accurate, relevant responses.
+
+## 2. Using a Restriction Prompt
+
+A restriction prompt helps limit what the AI can respond to, keeping it focused on the intended context.
+
+#### Solution:
+Use a restriction prompt to define limitations on the AI's responses. This will help maintain relevance and prevent the AI from going off-topic.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/refusal-in-restriction-prompt.png" 
+  alt="Base Prompt Restriction Configuration" 
+/>
+
+## Tracing AI Response Sources
+
+To ensure your AI is providing accurate information, it's crucial to trace the data sources it used to generate its answers.
+
+### Steps to Check Data Sources:
+1. Go to the **Conversation** page.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/conversations.png" 
+  alt="Conversations Dashboard" 
+/>
+
+2. Open the conversation you want to review.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/conversation-open.png" 
+  alt="Conversations Dashboard open" 
+/>
+
+3. Click on **View Source** to see the information sources used for each AI-generated response.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/ai-response-options.png" 
+  alt="AI Response Options" 
+/>
+
+This feature displays a list of data sources the AI referenced. You can even navigate directly to the source document.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/ai-response-sources.png" 
+  alt="AI Response Sources" 
+/>
+
+### Correcting training data or data sources:
+Knowing the source of the information allows you to update your training data if there are any errors.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/source-document.png" 
+  alt="Source Document" 
+/>
+
+If you want to make corrections to the data sources:
+1. Click the “source” button.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/document-view-source.png" 
+  alt="Document View Source" 
+/>
+
+2. This takes you to the debug lab, where all the sources from that document are listed.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/document-view-source.png" 
+  alt="Document View Source in Debug Lab" 
+/>
+
+3. Here, you can search, remove, or edit these sources.
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/document-data-sources.png" 
+  alt="Document Data Sources" 
+/>
+
+<Image 
+  src="/assets/chatbot/Debug/how-to-debug/data-source-edit.png" 
+  alt="Data Source Edit" 
+/>
+
+Keeping your data sources accurate ensures that your AI continues to provide correct and contextually appropriate answers.

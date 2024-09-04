@@ -1,0 +1,202 @@
+---
+title: "SDK Web"
+description: "Integrate the Chatbot Web SDK into your website"
+---
+
+import Image from '../../../../../components/Image.jsx';
+import Note from '../../../../../components/note.jsx';
+
+
+## Introduction
+
+This documentation provides details on how to use the Chatbot Web SDK. The Chatbot Web SDK allows you to integrate a chatbot into your website.
+
+
+
+To integrate the Chatbot Web SDK into your website, you need to inject the following script:
+
+ ```
+{`<script 
+    src="https://widget.yourgpt.ai/script.js" 
+    id="yourgpt-chatbot" 
+    data-widget="<YOUR_WIDGET_ID>">
+</script>`}
+ ```
+
+Replace `YOUR_WIDGET_ID` with your actual widget ID. You can find your widget ID in the [Chatbot Dashboard](https://chatbot.yourgpt.ai/dashboard).
+
+
+<Note type="note" color="blue">
+   Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.
+</Note>
+
+
+
+
+## `$yourgptChatbot`
+
+After the Chatbot Web SDK script is loaded, the `$yourgptChatbot` variable becomes available. This variable  provides methods to interact with the chatbot.
+
+## Execution Commands
+These are the commands that can be executed using the `$yourgptChatbot.execute()` function.
+
+| Command        | Description |
+| -------------- | ----------- |
+| `widget:open`    | Opens the chatbot. |
+| `widget:close`   | Closes the chatbot. |
+| `message:send`   | Sends a message to the chatbot. |
+
+##### `message:send` payload
+| Property        | Description | Type | Default |
+| -------------- | ----------- | --------- | --------- |
+| `text`    | The message text. | `string` |  |
+| `send`   | Indicates whether the message should be sent to the chatbot or not. | `boolean` | `false` |
+
+#### Opening the chatbot
+ ```
+{`$yourgptChatbot.execute("widget:open");`}
+ ```
+
+#### Sending a message to the chatbot
+ ```
+{`$yourgptChatbot.execute("message:send", { text: "Hello", send: true });`}
+ ```
+
+Here the `text` is the message that you want to send to the chatbot. The `send` parameter is a boolean value that indicates whether the message should be sent to the chatbot or not. If the send parameter is set to false, the message will be displayed in the chatbot but will not be sent to the chatbot.
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ This command will open the chatbot if it is not already open.
+</Note>
+
+#### Closing the chatbot
+ ```
+{`$yourgptChatbot.execute("widget:close");`}
+ ```
+
+## Event Listeners
+The Chatbot Web SDK provides event listeners that you can use to listen to events that occur in the chatbot. To add an event listener, you need to call the `$yourgptChatbot.on(event,callback)` function.
+
+| Event Name     | Description | Arguments |
+| -------------- | ----------- | --------- |
+| `init`           | Triggered when the chatbot is initialized. | |
+| `widget:popup`   | Triggered when the chatbot popup opens or closes. It provides a boolean in the callback indicating the state (true for open, false for closed). |  `state:boolean` |
+
+####  Example: Listen to the init event
+ ```
+{`$yourgptChatbot.on("init", function() {
+    console.log("Chatbot initialized");
+});`}
+ ```
+
+#### Removing an event listener
+To remove an event listener, you need to call the `$yourgptChatbot.off(event,callback)` function.
+
+## Set Command
+The Chatbot Web SDK provides a set command that you can use to set visitor, session and widget data. To set data, you need to call the `$yourgptChatbot.set(type,data)` function.
+
+| Type           | Description | Payload |
+| -------------- | ----------- |--------- |
+| `visitor:data`        | Sets the visitor data. | `object` |
+| `session:data`        | Sets the session data. | `object` |
+
+####  Example: Set visitor data
+ ```
+{`$yourgptChatbot.set("visitor:data", {
+    customKey: "value",
+});`}
+ ```
+
+####  Example: Set session data
+ ```
+{`$yourgptChatbot.set("session:data", {
+    customKey: "value",
+});`}
+ ```
+
+### Set Contact Data
+| Type           | Description | Payload |
+| -------------- | ----------- |--------- |
+| `contact:data`        | Sets the contact data. | <center> `object` <br/> _*Check supported fields 👇*_</center> |
+
+
+#### Supported Contact payload fields for update
+| Field           | Description | Type | Required |
+| -------------- | ----------- |--------- |--------- |
+| `email`        | A valid email address. | `string` | Either `email` or `phone` is required |
+| `phone`        | A valid phone number _*eg +1234567890.*_ | `string` | Either `phone` or `email` is required |
+| `name`        | Name of the contact. | `string` | No |
+| `ext_user_id`        | A unique identifier for the contact. | `string` | No |
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ For contact update, either `email` or `phone` must be provided.
+</Note>
+
+
+####  Example: Set contact data
+ ```
+{`$yourgptChatbot.set("contact:data", {
+    email: "andrew099@hi.com", 
+    phone: "+1234567890",
+    name: "Andrew",
+    ext_user_id: "123456",
+});`}
+ ```
+
+
+### Configuring Data for Iframe Embeds
+If you are using the Chatbot Web SDK with an iframe embed, you can set the visitor, session, and contact data by passing the data in the query parameters of the iframe URL.
+
+#### Visitor Data
+To set visitor data, append the `VISITOR_DATA.keyName=value` query parameter to your iframe URL.
+
+ ```
+{`<iframe src="<widgetUrl>?VISITOR_DATA.customKey=value"></iframe>`}
+ ```
+
+#### Session Data
+To set session data, append the `SESSION_DATA.keyName=value` query parameter to your iframe URL.
+
+ ```
+{`<iframe src="<widgetUrl>?SESSION_DATA.customKey=value"></iframe>`}
+ ```
+
+#### Contact Data
+To set contact data, append the `CONTACT.keyName=value` query parameter to your iframe URL.
+
+ ```
+{`<iframe src="<widgetUrl>?CONTACT.email=andrew998@hi.com"></iframe>`}
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="emerald">
+ Here {`<widgetUrl>`} is the URL of your chatbot widget.
+</Note>
+
+<div style={{ height: '20px' }}></div>
+
+<Note type="note" color="blue">
+ You can pass multiple query parameters by separating them with an `&`.
+</Note>
+
+<div style={{ height: '20px' }}></div>
+
+ ```
+{`<iframe src="<widgetUrl>?VISITOR_DATA.customKey=value&SESSION_DATA.customKey=value&CONTACT.email=johnydreq@hi.com"></iframe>`}
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+ ```
+{`curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
+ ```
+
+
+

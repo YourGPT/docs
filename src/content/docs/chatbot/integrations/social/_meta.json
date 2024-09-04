@@ -1,0 +1,11 @@
+{
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "line": "Line",
+    "discord": "Discord",
+    "messenger": "Messenger",
+    "slack": "Slack",
+    "telegram": "Telegram",
+    "twilio-voice": "Twilio Voice",
+    "twilio-sms": "Twilio SMS"
+}

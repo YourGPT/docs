@@ -1,0 +1,41 @@
+---
+title: YourGPT Documentation
+description: Get started with YourGPT Documentation.
+template: splash
+hero:
+  tagline: Welcome to our documentation page for our Generative AI solutions, including YourGPT chatbot and LLM Spark.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Visit Chatbot
+      link: https://yourgpt.ai/chatbot
+      icon: right-arrow
+    - text: Visit LLM Spark
+      link: https://yourgpt.ai/llm-spark
+      icon: right-arrow
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import ListCard from '../../components/Landing/ListCard.astro'
+import SplitCard from '../../components/Landing/SplitCard.astro'
+import Discord from '../../components/Landing/Discord.astro'
+
+import Note from '../../components/Note.jsx'
+
+
+<CardGrid >
+	<Card title="YourGPT Chatbot" icon="chat">
+		[Get started with YourGPT Chatbot](/chatbot/introduction), a No-Code AI Chatbot builder for 24/7 customer support.
+	</Card>
+	<Card title="LLM Spark" icon="rocket">
+		[Explore LLM Spark](/llm-spark/introduction), a development platform for effortlessly building LLM applications.
+	</Card>
+	<Card title="Service Status" icon="status">
+		[Check the current status](https://status.yourgpt.ai/) of our services.
+	</Card>
+	<Card title="GDPR Compliance" icon="shield">
+		[Learn about our GDPR compliance](gdpr) details.
+	</Card>
+</CardGrid>
+
+<Discord title="Have a question or want to get involved?" cta="Join our Discord"/>

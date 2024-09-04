@@ -1,0 +1,12 @@
+{
+
+    "chatbots" : "Chatbots",
+    "social" : "Social",
+    "website" : "Website",
+    "crisp2":{
+        "type":"hidden"
+    },
+    "api-integration": "API Integration"
+
+   
+}
