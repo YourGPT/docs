@@ -31,6 +31,7 @@ const highlightSyntax = (code) => {
   };
   
   const CodeBox = ({ children, language }) => {
+    console.log(children)
     const [copied, setCopied] = useState(false);
     const [lines, setLines] = useState([]);
   
@@ -59,7 +60,7 @@ const highlightSyntax = (code) => {
             className="copy-button"
             aria-label={copied ? "Copied" : "Copy to clipboard"}
           >
-            <CopyIcon copied={copied} />
+            <CopyIcon copied={copied} /> 
           </button>
         </div>
         <pre className="code-content">

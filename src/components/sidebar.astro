@@ -35,9 +35,7 @@ function markActiveItems(items: SidebarEntry[]): SidebarEntry[] {
 
 const processedSidebar = markActiveItems(filteredSidebar);
 
-console.log('Current path:', currentPath);
-console.log('Detected product:', currentProduct);
-console.log('Filtered sidebar:', JSON.stringify(filteredSidebar, null, 2));
+
 ---
 
 <Default {...Astro.props} sidebar={processedSidebar}>
