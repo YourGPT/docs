@@ -290,5 +290,6 @@ export default defineConfig({
     '/chatbot/studio/elements/message': '/chatbot/studio/elements/messages',
     '/chatbot/other-information': '/chatbot/other/other-information',
     '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
-  }
+    'llm-spark': '/llm-spark/introduction',
+  },
 });

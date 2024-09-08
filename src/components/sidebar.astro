@@ -5,88 +5,143 @@ import { flattenSidebar, type SidebarEntry } from '@astrojs/starlight/utils/navi
 
 const { sidebar } = Astro.props;
 
-function isActiveItem(item: SidebarEntry, currentPath: string) {
+const currentPath = Astro.url.pathname;
+
+function isActiveItem(item: SidebarEntry): boolean {
   return currentPath.startsWith(item.href);
 }
 
-function getProductFromPath(path: string) {
-  if (path.includes('/llm-spark/')) {
-    return 'LLM Spark';
-  } else if (path.includes('/chatbot/')) {
-    return 'Chatbot';
-  }
+function getProductFromPath(path: string): string {
+  if (path.includes('/llm-spark/')) return 'LLM Spark';
+  if (path.includes('/chatbot/')) return 'Chatbot';
   return '';
 }
 
-const currentPath = Astro.url.pathname;
 const currentProduct = getProductFromPath(currentPath);
 
-const filteredSidebar = sidebar.filter((group) => {
-  return group.label === currentProduct;
-});
-
-function markActiveItems(items: SidebarEntry[]): SidebarEntry[] {
-  return items.map((item) => ({
-    ...item,
-    isCurrent: isActiveItem(item, currentPath),
-    entries: item.type === 'group' ? markActiveItems(item.entries) : undefined,
-  }));
+function processSidebarEntries(entries: SidebarEntry[], level: number = 0): SidebarEntry[] {
+  return entries.map((entry) => {
+    const processedEntry = { ...entry, isCurrent: isActiveItem(entry) };
+    
+    if (entry.type === 'group') {
+      processedEntry.entries = processSidebarEntries(entry.entries, level + 1);
+      processedEntry.collapsed = true; // Collapse all folder items
+    }
+    
+    return processedEntry;
+  });
 }
 
-const processedSidebar = markActiveItems(filteredSidebar);
+const processedSidebar = sidebar.map((group) => ({
+  ...group,
+  entries: processSidebarEntries(group.entries),
+}));
 
+const filteredSidebar = processedSidebar.filter((group) => 
+  group.label === currentProduct || group.label === 'General'
+);
 
 ---
 
-<Default {...Astro.props} sidebar={processedSidebar}>
+<Default {...Astro.props} sidebar={filteredSidebar}>
   <slot />
 </Default>
 
 <style>
-  nav {
-    width: 100%;
-    margin-right: 1rem;
+  :root {
+    --sidebar-item-padding: 0.5rem 1rem;
+    --sidebar-item-margin: 0.2rem 0;
+    --sidebar-item-border-radius: 0.25rem;
+    --sidebar-item-transition: background-color 0.2s ease-in-out;
   }
-  .nav-groups {
-    height: 100%;
-    padding: 2rem 0;
-    overflow-x: visible;
-    overflow-y: auto;
-    max-height: 100vh;
+
+  .sidebar {
+    padding: 1rem;
   }
-  .nav-groups > li + li {
-    margin-top: 2rem;
-  }
-  .nav-groups > :first-child {
-    padding-top: var(--doc-padding);
-  }
-  .nav-groups > :last-child {
-    padding-bottom: 2rem;
-    margin-bottom: var(--theme-navbar-height);
-  }
+
   .nav-group-title {
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.1rem 1rem;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+    padding: var(--sidebar-item-padding);
+    margin: var(--sidebar-item-margin);
+    border-radius: var(--sidebar-item-border-radius);
+    transition: var(--sidebar-item-transition);
+    cursor: default;
   }
+
   .nav-link a {
     font-size: 1rem;
-    margin: 1px;
-    padding: 0.3rem 1rem;
-    font: inherit;
-    color: inherit;
+    padding: var(--sidebar-item-padding);
+    margin: var(--sidebar-item-margin);
+    color: var(--sl-color-gray-2);
     text-decoration: none;
     display: block;
+    border-radius: var(--sidebar-item-border-radius);
+    transition: var(--sidebar-item-transition);
   }
+
   .nav-link a:hover,
   .nav-link a:focus {
-    background-color: var(--theme-bg-hover);
+    background-color: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
   }
+
   .nav-link a[aria-current='page'] {
-    color: var(--theme-text-accent);
-    background-color: var(--theme-bg-accent);
-    font-weight: 600;
+    color: var(--sl-color-white);
+    background-color: var(--sl-color-accent);
+    font-weight: 500;
+  }
+
+  .nav-group[data-level="0"] > .nav-group-title {
+    color: var(--sl-color-accent);
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-group[data-level="0"] > .nav-group-title::after {
+    display: none;
+  }
+
+  .nav-group:not([data-level="0"]) > .nav-group-title {
+    font-size: 1rem;
+    color: var(--sl-color-gray-3);
+    cursor: pointer;
+  }
+
+  .nav-group:not([data-level="0"]) > .nav-group-title::after {
+    content: '▼';
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .nav-group:not([data-level="0"])[open] > .nav-group-title::after {
+    transform: rotate(180deg);
+  }
+
+  .nav-group:not([data-level="0"]) > .nav-group-title:hover {
+    color: var(--sl-color-white);
   }
 </style>
+
+<script>
+  function toggleNavGroup(element: HTMLElement) {
+    const isTopLevel = element.getAttribute('data-level') === '0';
+    if (!isTopLevel) {
+      element.toggleAttribute('open');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const navGroups = document.querySelectorAll('.nav-group');
+    navGroups.forEach((group) => {
+      const title = group.querySelector('.nav-group-title');
+      if (title) {
+        title.addEventListener('click', () => toggleNavGroup(group as HTMLElement));
+      }
+    });
+  });
+</script>

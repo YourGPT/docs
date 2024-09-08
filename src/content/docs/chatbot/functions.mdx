@@ -3,9 +3,14 @@ title: "Functions"
 description: "Functions act as tools or micro-agents that perform specific tasks. They are autonomous and can be guided using your base prompt."
 ---
 
-Functions act as tools or micro-agents that perform specific tasks. They are autonomous and can be guided using your base prompt.
-```mermaid
-graph LR
+
+import Mermaid from './src/components/Mermaid.astro';
+
+
+<Mermaid 
+
+definition={`
+  graph LR
     A([Start]) --> B[User Query]
     B --> C[AI Receives Query]
     C --> D{Check Prompt & Functions}
@@ -40,7 +45,11 @@ graph LR
     class B,C,E,K,L,M process;
     class D decision;
     class F,G,H,I,J function;
-```
+`} />
+
+
+
+Functions act as tools or micro-agents that perform specific tasks. They are autonomous and can be guided using your base prompt.
 
 
 #### Benefits
