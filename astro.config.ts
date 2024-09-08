@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
-
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
@@ -269,7 +268,7 @@ export default defineConfig({
         },
       ],
       components: {
-        Sidebar: "./src/components/Sidebar.astro",
+        Sidebar: "./src/components/sidebar.astro",
       },
     }),
     react(),
@@ -277,6 +276,13 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ['/src/components/sidebar.astro']
+      }
+    }
+  },
   redirects: {
     '/chatbot': '/chatbot/introduction',
     '/chatbot/studio/elements/intent-and-events': '/chatbot/studio/elements/intents',
