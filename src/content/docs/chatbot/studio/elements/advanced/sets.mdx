@@ -4,6 +4,9 @@ description: Sets allows you to store and manipulate data during a conversation.
 keywords: Sets, AI, Chatbot, Studio, Guide
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
 Sets allows you to store and manipulate data during a conversation. They can be used to store information about the visitor, session, contact, or flow. 
 
 When a Set is used in a flow, the selected variable is updated with the provided value. This value can then be used in later steps of the flow.
@@ -19,26 +22,42 @@ To use Sets, follow these steps:
 3. Select the variable you want to set from the dropdown. You can choose from a variety of options, including:
 
 
-| **Category** | **Variable**                           |
-|--------------|----------------------------------------|
-| **FLOW**     | `FLOW.last_response`                   |
-|              | `FLOW.last_utterance`                  |
-|              | `FLOW.{variable_of_your_choice}`       |
-| **SESSION**  | `SESSION.status`                       |
-|              | `SESSION.chat_mode`                    |
-|              | `SESSION.state`                        |
-| **VISITOR**  | `VISITOR.name`                         |
-|              | `VISITOR.region`                       |
-|              | `VISITOR.language`                     |
-|              | `VISITOR.browser`                      |
-|              | `VISITOR.os`                           |
-|              | `VISITOR.status`                       |
-| **CONTACT**  | `CONTACT.name`                         |
-|              | `CONTACT.email`                        |
-|              | `CONTACT.phone`                        |
-|              | `CONTACT.company`                      |
-|              | `CONTACT.country`                      |
-|              | `CONTACT.city`                         |
-|              | `CONTACT.region`                       |
-|              | `CONTACT.tags`                         |
+<Tabs>
+  <TabItem label="Flow">
+    - ```FLOW.last_response```
+    - ```FLOW.last_utterance```
+    - ```FLOW.{variable_of_your_choice}```
+  </TabItem>
+  <TabItem label="Session">
+    - ```SESSION.status```
+    - ```SESSION.chat_mode```
+    - ```SESSION.state```
+  </TabItem>
+  <TabItem label="Visitor">
+    - ```VISITOR.name```
+    - ```VISITOR.region```
+    - ```VISITOR.language```
+    - ```VISITOR.browser```
+    - ```VISITOR.os```
+    - ```VISITOR.status```
+  </TabItem>
+  <TabItem label="Contact">
+    - ```CONTACT.name```
+    - ```CONTACT.email```
+    - ```CONTACT.phone```
+    - ```CONTACT.company```
+    - ```CONTACT.country```
+    - ```CONTACT.city```
+    - ```CONTACT.region```
+    - ```CONTACT.tags```
+  </TabItem>
+</Tabs>
+
+
+
 4. Enter the value you want to set for the selected variable.
+
+
+
+
+

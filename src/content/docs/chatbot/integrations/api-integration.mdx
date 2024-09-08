@@ -3,14 +3,13 @@ title: API Integration for YourGPT Chatbot | Installation Guide
 description: Everything you need to know to setup and integrate a AI Bot with API, complete documenation for the installation.
 keywords: api integration chatbot,ai bot api, custom bot api, api gpt Chatbot 
 ---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
 import CodeBox from './../../../../components/CodeBox';
 import Image from './../../../../components/Image';
 import Note from './../../../../components/note';
 import ResponseBox from './../../../../components/ResponseBox';
- 
-<div className="nx-flex nx-items-center"> 
-  <h1 className="nx-text-4xl nx-font-bold">API Integration for YourGPT Chatbot</h1>
-</div>
+
 
 
 <Note type="idea" color="emerald">
@@ -41,6 +40,18 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 <Note type="note" color="blue">
   The widget_uid is your chatbot's Widget ID. `For example: a12bc345-d678-90ef-gh12-ijklmno345pq.`
 </Note>
+
+
+
+<CardGrid>
+   <Card title="How to Create Session" icon="Folder">
+    [Learn more](/chatbot/api/create-session)
+   </Card>
+   <Card title="How to Send a Message via API" icon="Message">
+    [Learn more](/chatbot/ai/send-message)
+   </Card>
+</CardGrid>
+
 
 
 

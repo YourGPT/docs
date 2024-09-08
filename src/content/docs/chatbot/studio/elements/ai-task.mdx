@@ -4,10 +4,12 @@ description: The AI task is a powerful feature that allows you to perform any AI
 keywords: ai in studio,flow based gpt chatbot, studio with ai, ai function calling in studio, ai task in studio, ai task
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 import Image from "../../../../../components/Image.jsx";
 import Note from "../../../../../components/note.jsx";
 
-![AI and Knowledgebase](public/assets/flow/AI-task.jpg)
+
+<Image src="/assets/flow/AI-task.jpg" alt="AI and Knowledgebase" />
 The AI task is a powerful feature that allows you to perform any AI task in the runtime.
 
 ## Data Source:
@@ -16,7 +18,7 @@ Data Source include two options one from **`AI`** and second from **`Knowledgeba
 
 ### 1. AI:
 
-![AI](public/assets/flow/flow-AI.png)
+<Image src="/assets/flow/flow-AI.png" alt="AI" />
 
 #### Prompt:
 
@@ -28,7 +30,7 @@ The prompt and memory act as instructions for the AI system, enabling it to proc
 
 ### 2. Knowledgebase:
 
-![AI Knowledgebase](public/assets/flow/flow-knowledgebase.png)
+![AI Knowledgebase](/assets/flow/flow-knowledgebase.png)
 
 - **Question:** Inputting a question or query to retrieve specific information from the Knowledgebase.
 
@@ -44,11 +46,41 @@ These settings are common for both AI and Knowledgebase data sources within Your
 
 - **Store Into:** The Basic information is stored across various visitor, session, Contact and Flow parameters, including visitor details, session information, and bot-related data.
 
-#### Configuration Settings
 
-The configuration settings for both AI and Knowledgebase data sources are standardised, offering flexibility and customisation:
+### Configuration Settings
 
-- **Provider:** OpenAI
-- **Model:** gpt-3.5-turbo/gpt-3.5-turbo-1106/gpt-4/gpt-4-1106-preview (as per selection)
-- **Temperature:** 0-1 (adjustable)
-- **Max Tokens:** 1-2048 (adjustable)
+The configuration settings for both AI and Knowledgebase data sources are standardized, offering flexibility and customization:
+
+<Tabs>
+  <TabItem label="Provider">
+   -  OpenAI
+   -  Anthropic
+   -  Mistral
+   -  Gemini
+
+  </TabItem>
+  <TabItem label="Model">
+    - GPT-3.5-turbo 
+    - GPT-3.5-turbo-1106, 
+    - GPT-4
+    - GPT-4o
+    - Claude-3.5-Sonnet
+    - Claude-3-Opus
+    - Gemini-1.5-Flash
+    - Mistral-2-Large
+  </TabItem>
+  <TabItem label="Temperature">
+  Temperature is a parameter that controls the randomness of the AI model's output.
+  <Note>
+  0-1 (adjustable)
+  </Note>
+
+  </TabItem>
+  <TabItem label="Max Tokens">
+
+    Max Tokens is the maximum number of tokens that the AI model can generate.
+    <Note>
+    1-2048 (adjustable)
+    </Note>
+  </TabItem>
+</Tabs>
