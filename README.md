@@ -1,6 +1,6 @@
-# YourGPT AI Starter Kit: Basics
+# YourGPT AI Docs
 
-[![Built with YourGPT](https://astro.badg.es/v2/built-with-yourgpt/tiny.svg)](https://yourgpt.astro.build)
+YourGPT AI Docs consists of a chatbot and LLM Spark. 
 
 ## 🚀 Project Structure
 
