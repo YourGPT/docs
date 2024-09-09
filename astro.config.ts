@@ -6,17 +6,16 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "YourGPT Docs",
+      title: "",
       description: "YourGPT Chatbot Documentation",
       logo: {
-        src: "./src/assets/houston.webp",
+        src: "./src/assets/yourgpt.svg",
       },
-      favicon: "/favicon.png",
+      favicon: "/favicon2.ico",
       social: {
         github: "https://github.com/yourgpt/",
         twitter: "https://twitter.com/yourgpt",
         slack: "https://yourgpt.ai",
-        codePen: "https://yourgpt.ai",
       },
       sidebar: [
         {
@@ -32,15 +31,25 @@ export default defineConfig({
               label: "Shareable Chatbot",
               link: "/chatbot/link-shareable-chatbot",
             },
+            // {
+            //   label: 'Training',
+            //   items: [
+            //     { label: 'Training Guide', link: '/chatbot/training' },
+            //     { label: 'Best Practices', link: '/chatbot/training/best-practices' },
+            //     { label: 'Structured Data', link: '/chatbot/training/structured-data' },
+            //     { label: 'FAQs', link: '/chatbot/training/faqs' },
+            //   ],
+            // },
             {
-              label: 'Training',
-              items: [
-                { label: 'Training Guide', link: '/chatbot/training' },
-                // { label: 'Best Practices', link: '/chatbot/training/best-practices' },
-                // { label: 'Structured Data', link: '/chatbot/training/structured-data' },
-                // { label: 'FAQs', link: '/chatbot/training/faqs' },
-              ],
+              label: "Training Guide",
+              link: "/chatbot/training",
             },
+            // {
+            //   label:"Prompt",
+            //   items:[
+            //     {label:"Example",link:"chatbot/prompts/example"},
+            //   ]
+            // },
             {
               label: "Integrations",
               items: [
@@ -93,10 +102,10 @@ export default defineConfig({
                       label: "HTML Website",
                       link: "chatbot/integrations/website/how-to-setup-chatbot-on-my-website",
                     },
-                    // {
-                    //   label: "Squarespace",
-                    //   link: "chatbot/integrations/website/squarespace",
-                    // },
+                    {
+                      label: "GPT Chatbot for Squarespace | Installation Guide",
+                      link: "chatbot/integrations/website/squarespace",
+                    },
                   ],
                 },
                 {
@@ -159,12 +168,14 @@ export default defineConfig({
                   link: "/chatbot/how-to-customize-chatbot-behavior",
                 },
                 {
-                  label: "Bot Persona (Examples)",
-                  link: "chatbot/prompts/example" ,
-                },
-                {
                   label: "Custom Domain",
                   link: "/chatbot/how-to-add-custom-domain",
+                },
+                {
+                  label: "Prompts",
+                  items: [
+                    { label: "Example", link: "chatbot/prompts/example" },
+                  ],
                 },
                 {
                   label: "Chatbot SDK",
@@ -268,28 +279,12 @@ export default defineConfig({
         },
       ],
       components: {
-        Sidebar: "./src/components/sidebar.astro",
+        Sidebar: "./src/components/Sidebar.astro",
       },
     }),
     react(),
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: true,
     }),
   ],
-  vite: {
-    build: {
-      rollupOptions: {
-        external: ['/src/components/sidebar.astro']
-      }
-    }
-  },
-  redirects: {
-    '/chatbot': '/chatbot/introduction',
-    '/chatbot/studio/elements/intent-and-events': '/chatbot/studio/elements/intents',
-    '/chatbot/studio/elements/intent-and-entities': '/chatbot/studio/elements/intents',
-    '/chatbot/studio/elements/message': '/chatbot/studio/elements/messages',
-    '/chatbot/other-information': '/chatbot/other/other-information',
-    '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
-    'llm-spark': '/llm-spark/introduction',
-  },
 });

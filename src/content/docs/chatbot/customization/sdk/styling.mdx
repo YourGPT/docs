@@ -2,9 +2,9 @@
 title: "Widget Styling"
 ---
 
-import CodeBox from "../../../../../components/CodeBox.jsx";
-import Image from "../../../../../components/Image.jsx";
-import Note from "../../../../../components/Note.jsx";
+import {CodeBox} from "~/components";
+import {Image} from '~/components';
+import {Note} from '~/components'
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
@@ -21,35 +21,32 @@ You can customize the appearance of your chatbot by modifying the following CSS 
 
 #### Usage
 
-<CodeBox language="curl">
+<CodeBox client:load language="curl">
 {`.ygpt-chatbot.ygpt-chatbot {
      
  /* FONT STYLE */
   --yourgptChatbotFontFamily: 'Roboto', sans-serif;
 
-/_ PRIMARY COLOR _/
+/*_ PRIMARY COLOR _*/
 --yourgptChatbotPrimaryColor: #000;
 
-/_ FOR SAHDES PLEASE ADD HSL VALUES IN FORMAT OF - H S% L% _/
+/*_ FOR SAHDES PLEASE ADD HSL VALUES IN FORMAT OF - H S% L% _*/
 --yourgptChatbotPrimaryColorHsl: 0 0% 0%;
 --yourgptChatbotSurfaceColorHsl: 0 0% 0%;
 --yourgptChatbotTextColorHsl:0 0% 0%;
 
-/_ USER MESSAGE STYLING _/
+/*_ USER MESSAGE STYLING _*/
 --yourgptChatbotUserMessageBgColor: #f5f5f5;
 --yourgptChatbotUserMessageTextColor: #000;
 
-/_ BOT MESSAGE STYLING _/
+/*_ BOT MESSAGE STYLING _*/
 --yourgptChatbotBotMessageBgColor: #f5f5f5;
 --yourgptChatbotBotMessageTextColor: #000;
 }`}
 
 </CodeBox>
 
-```css copy
-
 ```
-
 #### CSS Variables
 
 | Variable                               | Description                                |
@@ -63,6 +60,7 @@ You can customize the appearance of your chatbot by modifying the following CSS 
 | `--yourgptChatbotUserMessageTextColor` | Text color of the user message             |
 | `--yourgptChatbotBotMessageBgColor`    | Background color of the bot message        |
 | `--yourgptChatbotBotMessageTextColor`  | Text color of the bot message              |
+```
 
 ## Animations
 
@@ -74,7 +72,7 @@ You can inject custom animations to the widget button using the following CSS:
 ![Multi-Gradient](/assets/chatbot/chatbot-widget-btn-animation-1.gif)
 
 
-<CodeBox language="CSS">
+<CodeBox client:load language="CSS">
 {`/* Styling for the outer widget button */
 .ygpts-widgetBtnMiddle::before {
     content: "";
@@ -96,21 +94,21 @@ You can inject custom animations to the widget button using the following CSS:
     opacity: 1;
 }
 
-/_ Styling for the after pseudo-element of the outer widget button _/
+/*_ Styling for the after pseudo-element of the outer widget button _*/
 .ygpts-widgetBtnMiddle::after {
 z-index: -1;
 content: "";
 position: absolute;
 width: 100%;
 height: 100%;
-/_ Setting the background color _/
+/*_ Setting the background color _*/
 background: #622bff;
 left: 0;
 top: 0;
 border-radius: 40px;
 }
 
-/_ Defining the glowing animation _/
+/*_ Defining the glowing animation _*/
 @keyframes glowing {
 0% {
 background-position: 0 0;
@@ -131,7 +129,7 @@ background-position: 0 0;
 
 ![Glowing](/assets/chatbot/chatbot-widget-btn-animation-2.gif)
 
-<CodeBox language="CSS">
+<CodeBox client:load language="CSS">
 {`.ygpts-widgetBtnMiddle {
     position: relative;
     transition: all 0.3s ease-out;
@@ -172,7 +170,7 @@ opacity: 0;
     ![Ripple Effect](/assets/chatbot/chatbot-widget-btn-animation-3.gif)
 
 
-<CodeBox language="CSS">
+<CodeBox client:load language="CSS">
 {`.ygpts-widgetBtnMiddle::before {
     position: absolute;
     content: "";

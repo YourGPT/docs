@@ -11,7 +11,7 @@ const diagramId = `mermaid-diagram-${uuidv4()}`;
 
 <div class="mermaid-container">
   <div class="mermaid-wrapper">
-    <pre class="mermaid" id={diagramId}>
+    <pre class="mermaid w-full" id={diagramId}>
       {definition}
     </pre>
   </div>
@@ -120,6 +120,7 @@ const diagramId = `mermaid-diagram-${uuidv4()}`;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 10000;
+    max-width: 100%;
   }
 
   .fullscreen-toggle svg {
@@ -145,7 +146,11 @@ const diagramId = `mermaid-diagram-${uuidv4()}`;
 
   .mermaid-container:hover .fullscreen-toggle {
     opacity: 1;
+    background-color: white;
+    color: rgb(29, 28, 28);
+    
   }
+
 
   .mermaid-container.fullscreen {
     position: fixed;
@@ -153,20 +158,23 @@ const diagramId = `mermaid-diagram-${uuidv4()}`;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
+    z-index: 999;
     background: rgba(255, 255, 255, 0.9);
     cursor: default;
   }
 
   .mermaid-container.fullscreen .mermaid-wrapper {
-    padding: 40px;
+   
+    /* padding: 40px; */
     box-sizing: border-box;
+    
   }
 
   .mermaid-container.fullscreen .mermaid {
+    
     max-width: 100%;
     max-height: calc(100vh - 80px);
-    width: auto;
+    width: 100%;
     height: auto;
   }
 
