@@ -1,0 +1,47 @@
+---
+const cards = [
+  {
+    title: "Prompt Testing",
+    icon: "/icons/prompt.svg",
+    description: "Prompt Testing across multiple scenarios with Multi LLM",
+    link: "/llm-spark/prompt-testing",
+    linkText: "Explore more",
+  },
+  {
+    title: "API Documentation",
+    icon: "/icons/api.svg",
+    description: "Jumpstart your seamless integration with our detailed API documentation",
+    link: "/llm-spark/api-documentation",
+    linkText: "Get started",
+  },
+  {
+    title: "Templates",
+    icon: "/icons/template.svg",
+    description: "Begin with the integrated templates designed for different use cases",
+    link: "/llm-spark/templates",
+    linkText: "Explore more",
+  },
+  {
+    title: "Updates & Support",
+    icon: "/icons/update.svg",
+    description: "Stay ahead with YourGPT updates and support.",
+    link: "/support",
+    linkText: "Get In Touch",
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {cards.map((card) => (
+    <div  class="p-6 bg-white shadow-md rounded-lg">
+      <div class="flex items-center space-x-2 mb-4">
+        <img src={card.icon} alt={`${card.title} icon`} class="w-6 h-6" />
+        <h3 class="text-xl font-semibold">{card.title}</h3>
+      </div>
+      <p class="mb-4">{card.description}</p>
+      <a href={card.link} class="text-blue-500 hover:underline">
+        {card.linkText}
+      </a>
+    </div>
+  ))}
+</div>

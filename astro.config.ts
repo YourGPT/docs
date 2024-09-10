@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
+import starlightImageZoom from 'starlight-image-zoom'
 
 export default defineConfig({
   integrations: [
@@ -281,6 +282,11 @@ export default defineConfig({
       components: {
         Sidebar: "./src/components/Sidebar.astro",
       },
+      plugins:[starlightImageZoom()],
+      customCss: [
+        // Path to your Tailwind base styles:
+        './src/tailwind.css',
+      ],
     }),
     react(),
     tailwind({

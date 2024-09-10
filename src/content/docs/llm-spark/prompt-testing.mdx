@@ -4,7 +4,8 @@ description: Explore the Prompt Testing Playground lets you test and experiment 
 keywords: Prompt testing, LLM prompt testing, prompt testing,  LLM Spark Documentation, llmspark, llm-spark 
 ---
 
-import {Image} from '~/components';
+import { Image } from 'astro:assets'
+import playground from '../../../assets/llm-spark/prompt-testing-playground.png'
 import {Card, CardGrid} from '@astrojs/starlight/components';
 
 
@@ -12,7 +13,7 @@ Prompt Testing Playground lets you test and experiment with different prompts to
 
 The playground provides a controlled environment for you to refine your prompts before using them in a real-world application.
 
-<Image src="/assets/llm-spark/prompt-testing-playground.png" alt="Prompt testing playground"/>
+<Image src={playground} alt="Prompt testing playground"/>
 
 
 

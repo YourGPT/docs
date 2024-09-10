@@ -1,176 +1,247 @@
 ---
-title: ChatGPT AI Integration for crisp.chat | Installation Guide 
+title: ChatGPT AI Integration for crisp.chat | Installation Guide
 description: a no-code Custom AI Chatbot with your Crisp Bot, Everything your need to install
-keywords: Crisp chatbot integration,GPT chatbot for Crisp, AI integration with crisp bot, custom chatbot Crisp 
+keywords: Crisp chatbot integration,GPT chatbot for Crisp, AI integration with crisp bot, custom chatbot Crisp
 ---
 
-import {Image} from '~/components';
-import {Note} from '~/components'
-
-
+import { Image } from "astro:assets";
+import { Note } from "~/components";
+import "../../../../../styles/custom.css";
 
 <Note type="idea" color="emerald">
- Connecting Your AI Chatbot with Crisp
-</Note> 
-
+  Connecting Your AI Chatbot with Crisp
+</Note>{" "}
 
 Welcome to the Documentation page for integrating YourGPT AI Bot with Crisp! This section provides you with comprehensive guidance on seamlessly incorporating the power of YourGPT AI Bot into your Crisp chat platform.
 
-
 <Note type="re" color="amber">
-🚀 Empower crisp chat with YourGPT AI chatbot for offline supercharged support. Provide seamless customer assistance even when you're offline or away
+  🚀 Empower crisp chat with YourGPT AI chatbot for offline supercharged
+  support. Provide seamless customer assistance even when you're offline or away
 </Note>
 
 ---
-#  <span  className="nx-text-4xl nx-font-bold">Table of Content</span>
 
--  [**```Setup```**](#setup)
--  [**```Features```**](#features)
--  [**```Integration```**](#integration)
+# <span  className="nx-text-4xl nx-font-bold">Table of Content</span>
+
+- [**`Setup`**](#setup)
+- [**`Features`**](#features)
+- [**`Integration`**](#integration)
 
 ---
 
-##   <span  className="nx-text-3xl">Setup</span>
+## <span  className="nx-text-3xl">Setup</span>
 
-1. Install the **YourGPT AI Bot** from Crisp Integrations Directory [**``here``**](https://crisp.chat/en/integrations/urn:rohit.joshi:yourgpt-ai-bot:0/)
-
-<Image 
-  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F16f42eb6-9805-4e69-8983-771df2c713e2%2FUntitled.png?table=block&id=eff40d07-634d-4ec1-8e12-3a11c3958550&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
-  alt="Setup Image 1"
-  height="18vh"
-/>
-
-<Image 
-  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71397423-4d3b-49aa-b7a3-d19237507cdb%2FUntitled.png?table=block&id=8536b94c-a5af-4434-bc2e-b2166fa36d27&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
-  alt="Setup Image 2"
-/>
-
-2. After the installation, it will redirect you to our website where you can choose the project to enable it
-
-<Image 
-  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4eee911c-c849-40f3-96c4-504d1769a283%2FUntitled.png?table=block&id=9d47d2c7-6823-47eb-8738-a34521ac883d&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
-  alt="Setup Image 3"
-/>
-
-<div style={{
-  aspectRatio:16/9,
-  width:'100%'
-}}>
-<iframe
-  width="100%"
-  style={{height:'100%'}}
-  src="https://www.youtube.com/embed/lKMst0kNhYg"
-  title="YouTube video player"
-  frameborder="020"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+1. Install the **YourGPT AI Bot** from Crisp Integrations Directory [**`here`**](https://crisp.chat/en/integrations/urn:rohit.joshi:yourgpt-ai-bot:0/)
+   
+<div className="flex justify-center items-center bg-blue-500 rounded-md px-24 py-5">
+       <Image
+         src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F16f42eb6-9805-4e69-8983-771df2c713e2%2FUntitled.png?table=block&id=eff40d07-634d-4ec1-8e12-3a11c3958550&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
+         alt="Setup Image 1"
+         height="100%"
+         width="100%"
+         style={{ width: "100%" }}
+         className="rounded-md"
+       />
 </div>
 
-#####  <span  className="nx-text-xl">Training Bot on Your Data</span>
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
+  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71397423-4d3b-49aa-b7a3-d19237507cdb%2FUntitled.png?table=block&id=8536b94c-a5af-4434-bc2e-b2166fa36d27&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
+  alt="Setup Image 2"
+  width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
+/>
+</div>
+
+2. After the installation, it will redirect you to our website where you can choose the project to enable it
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
+  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4eee911c-c849-40f3-96c4-504d1769a283%2FUntitled.png?table=block&id=9d47d2c7-6823-47eb-8738-a34521ac883d&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
+  alt="Setup Image 3"
+  width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
+/>
+</div>
+
+<div
+  style={{
+    aspectRatio: 16 / 9,
+    width: "100%",
+  }}
+>
+  <iframe
+    width="100%"
+    style={{ height: "100%" }}
+    src="https://www.youtube.com/embed/lKMst0kNhYg"
+    title="YouTube video player"
+    frameborder="020"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+##### <span  className="nx-text-xl">Training Bot on Your Data</span>
 
 Training your ChatGPT AI bot on your data is a breeze with our easy-to-follow steps. Whether it's your website webpages, FAQ, or other relevant information. Following instructions will help you train your bot with personalized knowledge.
 
-#####  <span  className="nx-text-xl">Training with your Webpages</span>
+##### <span  className="nx-text-xl">Training with your Webpages</span>
 
 Easily train your AI bot by incorporating your website pages. The process is quick and simple, allowing you to utilize your existing web content. You also have the option to extract webpages directly from your sitemap.
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffcff3774-ec24-47d7-92ec-c6415061f579%2FUntitled.png?table=block&id=0278d125-e9a7-4354-815c-0d72777abd19&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Setup Image 4"
+  width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
-#####  <span  className="nx-text-xl">Training with Documents</span>
+##### <span  className="nx-text-xl">Training with Documents</span>
 
 Effortlessly enhance your AI bot capabilities by training it with your documents. Whether they are in PDF, DOC, DOCX, TXT, CSV, or other formats, you can easily incorporate them into the training process. Expand your AI bot's knowledge and adaptability by leveraging a variety of document types.
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F020685b8-cb31-4806-a06b-cba2b8b733f5%2FUntitled.png?table=block&id=5beffddf-7d97-48db-883c-a3929e46f410&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Setup Image 5"
+  width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
 **Note: More the relevant data you provide, the better your chatbot will respond.**
 
 ---
 
-##  <span  className="nx-text-3xl">Features</span>
- 
+## <span  className="nx-text-3xl">Features</span>
 
 1. **AI Bot that Answers your customer queries 24/7**
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md px-52 py-6">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fcb7202f3-6495-4c0f-b1e3-9e6c803419f5%2FUntitled.png?table=block&id=71abc46f-e4af-4790-8609-1ccb467318dc&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="24/7 customer support"
   height="40vh"
+  width="100%"
+  style={{ width: "100%",height:"40vh" }}
+  className="rounded-md shadow-md shadow-black"
 />
-
+</div>
 
 2. **Feedback & Request human operator buttons**
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md px-36 py-6">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2F980089d8-e5db-4544-9a28-ee5760e88566%2FUntitled.png?table=block&id=bbb6bb20-095d-4f15-8228-6376f541282a&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Review and Feedback"
-  height="30vh"
+  height="40vh"
+  width="100%"
+  style={{ width: "100%",height:"25vh" }}
+  className="rounded-md shadow-md shadow-black"
+
 />
+</div>
 
 3. **Webhook Notification on Human Request (Discord & Slack are directly supported)**
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md py-4 px-24">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2F5ad7da3d-4918-4d0a-84c9-065c030e6782%2FUntitled.png?table=block&id=e1ea02f3-73c5-4f93-ba71-edd2bec18250&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Webhook"
+  height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-gray-600"
 />
+</div>
 
 4. **Built-In Widget for Transferring Conversation To Human or Human To AI**
-   
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md px-44 py-6">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fad26beb2-f9a2-4144-a582-4a2b52d4d456%2FUntitled.png?table=block&id=6b65849a-73ae-4385-8724-0f33e239b6aa&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Widget"
   height="40vh"
+  width="100%"
+  style={{ width: "100%",height:"40vh" }}
+  className="rounded-md shadow-md shadow-black"
 />
+</div>
 
 5. **AI Knowledgebase for your team to quickly reply Visitor Questions**
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2F2b75737b-e0ce-476a-bc9e-e418d50efc8e%2FUntitled.png?table=block&id=6f1bfbbf-0f94-43ba-ad24-17e7a0738e7a&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=1430&userId=&cache=v2"
   alt="Quick Knowledgebase"
+   height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
+</div>
 
 6. **Compatible with Crisp Bot**
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Ffe7ee379-75fb-4463-8fc6-1012b923c8bf%2FUntitled.png?table=block&id=7cb83aee-e5bc-45f7-85dc-69be725fc217&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Crisp Bot"
+    height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
+</div>
 
 ---
 
 ## Integration
-This documentation outlines the process of integrating YourGPT AI Bot with Crisp Bot in two different use cases. The integration allows you to enhance your chatbot capabilities and capture leads efficiently.
 
+This documentation outlines the process of integrating YourGPT AI Bot with Crisp Bot in two different use cases. The integration allows you to enhance your chatbot capabilities and capture leads efficiently.
 
 #### **Use Cases:**
 
 1. **Integrating Crisp Bot Before YourGPT AI Bot:** This is typically used for capturing lead information, where Crisp Bot initiates the conversation and then hands it over to YourGPT AI Bot.
 2. **Integrating Crisp Bot on Human Request:** In this scenario, Crisp Bot operates only when a human request is made, and it collaborates with YourGPT AI Bot to assist users.
+
 ---
 
 #### Integrating Crisp Bot Before YourGPT AI Bot
+
 ##### Step 1: Open Crisp Integration Settings
-  <>
--  <p> Go to your Crisp dashboard.</p>
--  <p> Navigate to **```Chatbot```** -&gt; **```Integrations```** -&gt; **```Crisp Integration Setting Page```**.</p>
-  </>
-  <Image 
-    src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fa6841186-7c96-4de3-9697-43eb9b6f5165%2FUntitled.png?table=block&id=516a99a0-f850-4aed-940f-0276f53c08ff&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
-    alt="Step 1"
-  />
+
+{" "}
+<>
+  - <p> Go to your Crisp dashboard.</p>- <p> Navigate to **```Chatbot```** -&gt; **```Integrations```** -&gt; **```Crisp Integration Setting Page```**.</p>
+</>
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
+  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fa6841186-7c96-4de3-9697-43eb9b6f5165%2FUntitled.png?table=block&id=516a99a0-f850-4aed-940f-0276f53c08ff&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
+  alt="Step 1"
+    height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
+/>
+</div>
+
 ##### Step 2: Enable "Wait for Interaction" Option
 
-- In the Crisp Integration Setting Page, locate the **```Wait for Interaction```** option and enable it. This setting ensures that the chatbot waits for integrations to start a new conversation.
-   <Image 
-     src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fb9490d51-5889-4b11-99f0-f854a5ae4eae%2FUntitled.png?table=block&id=ea8ed385-1d84-4234-8f00-8bacfa4fa114&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
-     alt="Step 2"
-   />
+- In the Crisp Integration Setting Page, locate the **`Wait for Interaction`** option and enable it. This setting ensures that the chatbot waits for integrations to start a new conversation.
+  {" "}
+  <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image
+    src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fb9490d51-5889-4b11-99f0-f854a5ae4eae%2FUntitled.png?table=block&id=ea8ed385-1d84-4234-8f00-8bacfa4fa114&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
+    alt="Step 2"
+      height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
+
+  />
+  </div>
 
 ##### **Step 3: Configure Crisp Bot Scenarios**
 
@@ -178,81 +249,130 @@ This documentation outlines the process of integrating YourGPT AI Bot with Crisp
 
 ##### **Step 4: Enable YourGPT AI Bot**
 
-- Within your Crisp Bot scenario, add an action that sets the value to **```interaction: YourGPTAIBOT```**.
+- Within your Crisp Bot scenario, add an action that sets the value to **`interaction: YourGPTAIBOT`**.
 - Save the scenario.
-  <Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image
     src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2F5f0cba16-d965-4ce0-88e9-39aa021388db%2FUntitled.png?table=block&id=0d83d4a5-ac8f-4fe1-b128-b78e4196e981&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
     alt="Step 4"
+      height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
   />
-  <Image 
+  </div>
+  
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image
     src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fa67eda2b-3aac-4c11-b66a-bdb6b7b7b62b%2FUntitled.png?table=block&id=af1e1ad6-64e9-4ee2-a773-f6baee87ee7a&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
     alt="Step 4.1"
+      height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
   />
+</div>
+
 ##### **Step 5: Deploy the Scenario**
 
 - Save and deploy the configured scenario. Your Crisp Bot will initiate conversations, and when the scenario is completed, it will hand over control to YourGPT AI Bot.
 
- <Image 
-   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Ffe7ee379-75fb-4463-8fc6-1012b923c8bf%2FUntitled.png?table=block&id=cfe1ea11-4bc3-4780-a67e-8d77a5567aa4&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
-   alt="Step 5"
- />
+{" "}
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
+  src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Ffe7ee379-75fb-4463-8fc6-1012b923c8bf%2FUntitled.png?table=block&id=cfe1ea11-4bc3-4780-a67e-8d77a5567aa4&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
+  alt="Step 5"
+     height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
+/>
+</div>
 
- ---
+---
 
-####  Integrating Crisp Bot on Human Request
+#### Integrating Crisp Bot on Human Request
 
 ##### Step 1: Access Crisp Integration Settings
 
 - Go to your Crisp dashboard.
-- Navigate to **```Chatbot```** -> **```Integrations```** -> **```Crisp Integration Setting Page```**.
-
-<Image 
+- Navigate to **`Chatbot`** -> **`Integrations`** -> **`Crisp Integration Setting Page`**.
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fa6841186-7c96-4de3-9697-43eb9b6f5165%2FUntitled.png?table=block&id=413022dc-75e0-4ea7-88c0-069181cdfd20&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Step 1"
+     height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
+</div>
 
 ##### Step 2: Enable "Human Request" Button
 
-- In the Crisp Integration Setting Page, enable the **```Human request```** button.
+- In the Crisp Integration Setting Page, enable the **`Human request`** button.
 - Make sure to disable the follow-up message to ensure that Crisp Bot operates only upon human request.
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fb9490d51-5889-4b11-99f0-f854a5ae4eae%2FUntitled.png?table=block&id=ea8ed385-1d84-4234-8f00-8bacfa4fa114&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Step 2"
+    height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
+</div>
 
 ##### Step 3: Configure Crisp Bot Scenarios
 
-- In your Crisp Bot scenarios, add an event that listens for the interaction value **```awaiting```**. This event indicates that the chatbot is waiting for a human request.
-- When the interaction value is set to **```awaiting```**, YourGPT AI Bot can take the lead in the conversation.
+- In your Crisp Bot scenarios, add an event that listens for the interaction value **`awaiting`**. This event indicates that the chatbot is waiting for a human request.
+- When the interaction value is set to **`awaiting`**, YourGPT AI Bot can take the lead in the conversation.
 - Customize YourGPT AI Bot's responses and actions based on user interactions.
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Fba0fac65-5848-425b-b982-f7382fb8405d%2FUntitled.png?table=block&id=2c3e9a45-baf3-49ac-8171-5072fb172402&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Step 3"
+  height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
-<Image 
+</div>
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2F9966781a-6517-4a48-9cb8-743173ae6886%2FUntitled.png?table=block&id=a66a6222-4fbe-4ef2-9698-94aef83eab40&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Step 3.1"
+  height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
+</div>
 
 ##### Step 4: Deploy the Scenario
 
 - Save and deploy the configured scenario. Crisp Bot will now operate when a human request is made and collaborate with YourGPT AI Bot as needed.
-
-<Image 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+<Image
   src="https://trusted-iguanadon-8b2.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff59b3f59-20ec-4713-bb95-429cfc5a48ae%2Ffe7ee379-75fb-4463-8fc6-1012b923c8bf%2FUntitled.png?table=block&id=00263588-46b8-48d1-bf46-0172367c2afc&spaceId=f59b3f59-20ec-4713-bb95-429cfc5a48ae&width=2000&userId=&cache=v2"
   alt="Step 4"
+    height="40vh"
+  width="100%"
+  style={{ width: "100%" }}
+  className="rounded-md shadow-md shadow-black"
 />
-
+</div>
 
 <Note type="note" color="blue">
-  Test the scenario in the Crisp chat widget; it may not work in the Crisp bot testing area.
+  Test the scenario in the Crisp chat widget; it may not work in the Crisp bot
+  testing area.
 </Note>
 
 ---
+
 <aside>
 By following these steps, you can easily integrate YourGPT AI Bot with Crisp Bot to enhance user interactions and capture leads effectively.
 
-📎 If you require any assistance or have any questions, please feel free to contact us at [**```YourGPT Support```**](mailto:support@yourgpt.ai) We are here to help and provide support in any way we can.
+📎 If you require any assistance or have any questions, please feel free to contact us at [**`YourGPT Support`**](mailto:support@yourgpt.ai) We are here to help and provide support in any way we can.
+
 </aside>

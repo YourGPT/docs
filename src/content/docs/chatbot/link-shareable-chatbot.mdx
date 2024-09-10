@@ -4,7 +4,8 @@ description: share your GPT AI Chatbot with a link
 keywords: linkable chatbot, shareable chatbot, chabot with link
 ---
 
-import {Image} from '~/components';
+import { Image } from 'astro:assets'
+import linkshare from '../../../assets/chatbot/link-share.png'
 import {Note} from '~/components'
 
 
@@ -22,7 +23,7 @@ Start by navigating to the YourGPT Chatbot Integration. This is usually found in
 
 At the top of the screen, you will see several options: "**Script**", "**Iframe**", and "**Link**". Click on the "**Link**" option. This will reveal a URL that is the direct link to your custom chatbot. Copy this URL.
 
-<Image src="/assets/chatbot/link-share.png" alt="Link Shareable Chatbot"/>
+<Image src={linkshare} alt="Link Shareable Chatbot"/>
 
 ### Step 3: Share the Link
 
