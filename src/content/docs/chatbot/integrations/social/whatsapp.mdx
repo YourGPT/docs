@@ -1,46 +1,45 @@
 ---
-title: GPT Chatbot for whatsapp | Installation Guide 
+title: GPT Chatbot for whatsapp | Installation Guide
 description: Learn how to integrate a no-code ai GPT Chatbot with your whatsapp, step-by-step guide
-keywords: whatsapp chatbot integration,gpt chatbot for whatsapp, AI integration for whatsapp, custom chatbot whatsapp 
+keywords: whatsapp chatbot integration,gpt chatbot for whatsapp, AI integration for whatsapp, custom chatbot whatsapp
 ---
 
-import {Image} from '~/components';
-import {Note} from '~/components'
-
+import { Image } from "~/components";
+import { Note } from "~/components";
 
 <Note type="idea" color="emerald">
- Connecting Your AI Chatbot with WhatsApp
-</Note> 
+  Connecting Your AI Chatbot with WhatsApp
+</Note>{" "}
 
 ## Prerequisites
-- A [**```facebook developer app```**](https://developers.facebook.com/apps)
+
+- A [**`facebook developer app`**](https://developers.facebook.com/apps)
 - A WhatsApp Business Account
 
+## Setting up the WhatsApp Integration
 
-## Setting up the WhatsApp Integration 
 - Go to the YourGPT Chatbot Integrations Section.
-- Find the **WhatsApp integration** then click on the **```Connect```** button.
-
-
+- Find the **WhatsApp integration** then click on the **`Connect`** button.
 
 The WhatsApp integration will have the following settings:
 
 ### 1. **Verify Token**
 
-   To create your Verify Token, follow these steps:
+To create your Verify Token, follow these steps:
 
-   - Start by creating a unique string that can be a mix of alphabets and just numbers, e.g (12345 or abc12). This will act as your Verification Token.
-   - After creating the Verify Token, make sure to copy it.
-   - Go to YourGPT Chatbot, in the **`Verify Token`** field. Paste your Verify Token.
-   - You'll also need to add the same Verify Token in the **`Webhook Callback`** section of your Facebook App.
-   - Lastly, copy the webhook URL from YourGPT Chatbot. Go to your Facebook App and find the **```Webhook Callback```** section, paste the copied webhook URL.
+- Start by creating a unique string that can be a mix of alphabets and just numbers, e.g (12345 or abc12). This will act as your Verification Token.
+- After creating the Verify Token, make sure to copy it.
+- Go to YourGPT Chatbot, in the **`Verify Token`** field. Paste your Verify Token.
+- You'll also need to add the same Verify Token in the **`Webhook Callback`** section of your Facebook App.
+- Lastly, copy the webhook URL from YourGPT Chatbot. Go to your Facebook App and find the **`Webhook Callback`** section, paste the copied webhook URL.
 
 ### 2. **Phone Number ID**
 
 To set up your Phone Number ID:
+
 1. In your facebook App's left sidebar, expand the WhatsApp menu and select Getting Started.
-2. Beside the label Phone Number ID, **```click Copy```**.
-3. Paste the copied value in the **```Phone Number ID```** field in YourGPT Chatbot.
+2. Beside the label Phone Number ID, **`click Copy`**.
+3. Paste the copied value in the **`Phone Number ID`** field in YourGPT Chatbot.
 
 ### 3. Access Token
 
@@ -48,36 +47,36 @@ There are two types of Access Tokens:
 
 - #### Temporary Access Token
 
-  The Phone Number ID and Access Token are used to send and receive messages to/from the WhatsApp API. 
+  The Phone Number ID and Access Token are used to send and receive messages to/from the WhatsApp API.
 
   To set up a Temporary Access Token:
+
   1. In your facebook App's left sidebar, expand the WhatsApp menu and select Getting Started.
-  2. In the Temporary access token section, **```click Copy```**.
-  3. Paste the copied value in the **```Access Token```** field in YourGPT Chatbot.
-  
+  2. In the Temporary access token section, **`click Copy`**.
+  3. Paste the copied value in the **`Access Token`** field in YourGPT Chatbot.
+
 <Note type="note" color="blue">
-  The Temporary Access Token **expires after 24 hours**. You will need to generate a new token every day.
+  The Temporary Access Token **expires after 24 hours**. You will need to
+  generate a new token every day.
 </Note>
 
 - #### Permanent Access Token (Optional)
 
   To set up a Permanent Access Token:
-  1. Go to [**```Business Settings```**](https://business.facebook.com/settings/system-users).
+
+  1. Go to [**`Business Settings`**](https://business.facebook.com/settings/system-users).
   2. Select the business account your app is associated with.
-  3. Below **```Users```**, click on [**```System Users```**](https://business.facebook.com/settings/whatsapp-business-accounts/).
-  4. Click **```Add```**.
-  5. Name the system user, choose **```Admin```** as the user role, and click **```Create System User```**.
-  6. Select the **```whatsapp_business_messaging```** permission.
-  7. Click **```Generate New Token```**.
+  3. Below **`Users`**, click on [**`System Users`**](https://business.facebook.com/settings/whatsapp-business-accounts/).
+  4. Click **`Add`**.
+  5. Name the system user, choose **`Admin`** as the user role, and click **`Create System User`**.
+  6. Select the **`whatsapp_business_messaging`** permission.
+  7. Click **`Generate New Token`**.
   8. Copy and save your Permanent Access Token.
 
-<Image 
-  src="/assets/chatbot/whatsapp.png"
-  alt="WhatsApp Integration Settings"
-/>
+<Image src="/assets/chatbot/whatsapp.png" alt="WhatsApp Integration Settings" />
 
 Paste the Verify Token, Phone Number ID, and Access Token in the respective fields in YourGPT Chatbot.
 
-----
+---
 
 By following these steps, you can integrate your chatbot with WhatsApp. For more information, refer to [**this article**](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started#set-up-developer-assets). If you have any questions, contact our team via Live support or [**Mail**](mailto:support@yourgpt.ai).

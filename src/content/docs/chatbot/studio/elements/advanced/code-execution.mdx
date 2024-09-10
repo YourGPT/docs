@@ -4,10 +4,8 @@ description: Learn how to use JavaScript functionality to extend the capabilitie
 keywords: JavaScript, Code Execution, Custom Scripting, Integration, Testing, Validation, Dynamic Responses, AI Chatbot
 ---
 
-import {Image} from '~/components';
-import {Note} from '~/components'
-
-
+import { Image } from "~/components";
+import { Note } from "~/components";
 
 <div style={{
   aspectRatio:16/9,
@@ -23,10 +21,11 @@ allowfullscreen></iframe>
 
 Code Execution extends the capabilities of chatbot, allowing chatbot execute Javascript code in Runtime to perform complex task.
 
-##  Code Execution with JavaScript 
-Our chatbot enables the execution of JavaScript code to accomplish complex tasks. It supports external dependencies such as ***axios**, **node-fetch**, and **moment-timezone***!
+## Code Execution with JavaScript
 
-###  How To Execute Code 
+Our chatbot enables the execution of JavaScript code to accomplish complex tasks. It supports external dependencies such as **\*axios**, **node-fetch**, and **moment-timezone\***!
+
+### How To Execute Code
 
 1. **Set Up JavaScript Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the JavaScript component onto the canvas.
 
@@ -36,18 +35,15 @@ Our chatbot enables the execution of JavaScript code to accomplish complex tasks
 
 4. **Save and Test:** Save your flow and test the chatbot to see the code execution in action.
 
-
-###  Video Part 
-
+### Video Part
 
 <Note type="re" color="blue">
   🧑‍💻 Code Showcased in the Video - Weather Search Example:
 </Note>
 
-
 ```
 const WEATHER_API_ENDPOINT = 'https://api.weatherapi.com/v1/current.json';
-const WEATHER_API_KEY = 'ADD_YOUR_API_KEY_HERE'; 
+const WEATHER_API_KEY = 'ADD_YOUR_API_KEY_HERE';
 
 // You can also use the config variables to securely store the API key, and use it in the code like this below:
 // const WEATHER_API_KEY = CONFIG.WEATHER_API_KEY;
@@ -81,7 +77,7 @@ async function getWeatherAndUpdateFlow(city) {
   }
 }
 
-const city = FLOW.City; 
+const city = FLOW.City;
 if (!city) {
   throw new Error('City is required.');
 }
