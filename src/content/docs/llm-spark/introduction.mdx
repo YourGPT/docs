@@ -5,12 +5,21 @@ keywords: LLM Spark, LLM Spark Documentation, llmspark, llm-spark
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { IntroductionCard } from '~/components';
+import { TbPrompt } from "react-icons/tb";
+import { AiFillApi } from "react-icons/ai";
+import { GrTemplate } from "react-icons/gr";
+import { MdBrowserUpdated } from "react-icons/md";
 
+{/* Welcome to [LLM Spark](https://yourgpt.ai/llm-spark) documentation, the development platform for building Production Ready LLM Apps.
+LLM-Spark offers a range of powerful features, including **Multi LLM Prompt Testing, Connecting External Data to LLM, Team Collaboration, Version Control, Observability Tools and Template Directory** for leveraging prebuilt templates. With LLM Spark, you have the tools you need to streamline your development process and bring your AI ideas to life with ease. */}
+<div className="">
+    Welcome to 
+    <a href="https://yourgpt.ai/llm-spark" target='_blank' className="text-blue-600 font-semibold no-underline text-lg transition-all duration-300">LLM Spark</a> documentation, the development platform for building Production Ready LLM Apps. LLM-Spark offers a range of powerful features, including **Multi LLM Prompt Testing, Connecting External Data to LLM, Team Collaboration, Version Control, Observability Tools and Template Directory** for leveraging prebuilt templates. With LLM Spark, you have the tools you need to streamline your development process and bring your AI ideas to life with ease.
+</div>
 
-Welcome to [LLM Spark](https://yourgpt.ai/llm-spark) documentation, the development platform for building Production Ready LLM Apps.
-LLM-Spark offers a range of powerful features, including **Multi LLM Prompt Testing, Connecting External Data to LLM, Team Collaboration, Version Control, Observability Tools and Template Directory** for leveraging prebuilt templates. With LLM Spark, you have the tools you need to streamline your development process and bring your AI ideas to life with ease.
+## <div className='text-3xl tracking-tight font-bold pt-4'>Getting Started</div>
 
-## Getting Started
 
 - **Create Your Workspace:** The first step is to set up your workspace. This is where you'll work with LLM Spark.
 
@@ -22,8 +31,51 @@ LLM-Spark offers a range of powerful features, including **Multi LLM Prompt Test
 
 - **Monitor Usage with Analytics:** After deployment, you can monitor the usage and performance of your prompt with analytics. This allows you to track how well your deployed prompt is working and make adjustments as needed.
 
-## Quick Links
 
+## <div className='text-3xl tracking-tight font-bold pt-4'>Quick Links</div>
+<div className="space-y-6">
+
+  <div className="space-y-2">
+    <a href="/llm-spark/prompt-testing" className="text-xl font-semibold text-blue-600 no-underline">
+      Prompt Testing
+    </a>
+    <p className="text-gray-500">
+      Prompt Testing across multiple scenarios with Multi LLM
+    </p>
+  </div>
+
+
+  <div className="space-y-2">
+    <a href="/llm-spark/api-documentation" className="text-xl font-semibold text-blue-600 no-underline">
+      API Documentation
+    </a>
+    <p className="text-gray-500">
+      Jumpstart your seamless integration with our detailed API documentation
+    </p>
+  </div>
+
+
+  <div className="space-y-2">
+    <a href="/llm-spark/templates" className="text-xl font-semibold text-blue-600 no-underline">
+      Templates
+    </a>
+    <p className="text-gray-500">
+      Begin with the integrated templates designed for different usecases
+    </p>
+  </div>
+
+
+  <div className="space-y-2">
+    <a href="/support" className="text-xl font-semibold text-blue-600 no-underline ">
+      Updates & Support
+    </a>
+    <p className="text-gray-500">
+      Stay ahead with YourGPT updates and support.
+    </p>
+  </div>
+</div>
+
+{/* 
 - [Prompt Testing](/llm-spark/prompt-testing)
   - Prompt Testing across multiple scenarios with Multi LLM
 
@@ -34,10 +86,10 @@ LLM-Spark offers a range of powerful features, including **Multi LLM Prompt Test
   - Begin with the integrated templates designed for different usecases
 
 - [Updates & Support](/support)
-  - Stay ahead with YourGPT updates and support.
+  - Stay ahead with YourGPT updates and support. */}
 
 
-<CardGrid className>
+{/* <CardGrid className>
   <Card title="Prompt Testing" icon="prompt">
     Prompt Testing across multiple scenarios with Multi LLM
 
@@ -56,5 +108,38 @@ LLM-Spark offers a range of powerful features, including **Multi LLM Prompt Test
     Stay ahead with YourGPT updates and support.
     [Get In Touch](/support)
   </Card>
-</CardGrid>
+</CardGrid> */}
 
+{/* <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+  <IntroductionCard
+    icon={<TbPrompt className='text-xl' strokeWidth={2} />}
+    title="Prompt Testing"
+    description="Prompt Testing across multiple scenarios with Multi LLM"
+    buttonText="Explore more"
+    link="/llm-spark/prompt-testing"
+    bgColor="bg-yellow-600"
+  />
+
+</div> */}
+<div className='grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-3 place-items-center py-12'>
+ <div className='border border-gray-700 max-w-[351px] p-10 !mt-0 rounded-md hover:border hover:border-blue-400 transition-all duration-500 tracking-tighter'>
+  <div className='flex   gap-2 text-2xl font-semibold text-white'><div className='p-2 border rounded-md bg-yellow-600'><TbPrompt className='text-xl ' strokeWidth={2} /></div>Prompt Testing</div>
+  <p className='tracking-normal'>Prompt Testing across multiple scenarios with Multi LLM</p>
+  <a href="/llm-spark/prompt-testing" className='no-underline font-semibold transition-all duration-300 text-lg'>Explore more</a>
+ </div>
+ <div className='border border-gray-700 max-w-[351px] p-10 !mt-0 rounded-md hover:border hover:border-blue-400 transition-all duration-500 tracking-tighter'>
+  <div className='flex  gap-2 text-2xl font-semibold text-white'><div className='p-2 border rounded-md bg-[#bd53ee]'><AiFillApi className='text-xl ' strokeWidth={2} /></div>API Documentation</div>
+  <p className='tracking-normal'>Jumpstart your seamless integration with our detailed API documentation</p>
+  <a href="/llm-spark/api-documentation" className='no-underline font-semibold transition-all duration-300 text-lg'>Get started</a>
+ </div>
+ <div className='border border-gray-700 max-w-[351px] p-10 !mt-0 rounded-md hover:border hover:border-blue-400 transition-all duration-500 tracking-tighter'>
+  <div className='flex  gap-2 text-2xl font-semibold text-white'><div className='p-2 border rounded-md bg-[#84ee53]'><GrTemplate className='text-xl text-black ' strokeWidth={3} /></div>Templates</div>
+  <p className='tracking-normal'>Begin with the integrated templates designed for different usecases</p>
+  <a href="/llm-spark/templates" className='no-underline font-semibold transition-all duration-300 text-lg'>Get started</a>
+ </div>
+ <div className='border border-gray-700 max-w-[351px] p-10 !mt-0 rounded-md hover:border hover:border-blue-400 transition-all duration-500 tracking-tighter'>
+  <div className='flex  gap-2 text-2xl font-semibold text-white'><div className='p-2 border rounded-md bg-[#4e2232]'><MdBrowserUpdated className='text-xl  '  /></div>Updates & Support</div>
+  <p className='tracking-normal'> Stay ahead with YourGPT updates and support.</p>
+  <a href="/support" className='no-underline font-semibold transition-all duration-300 text-lg '><p>Get In Touch</p></a>
+ </div>
+</div>

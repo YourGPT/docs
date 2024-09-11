@@ -6,18 +6,26 @@ keywords: yourgpt chatbot Documentation, yourgpt chatbot guide, gpt chatbot, cus
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import {ListCard} from '~/components';
+import { FaLaptopCode } from "react-icons/fa";
+import { MdEventAvailable } from "react-icons/md";
+import { TbDatabaseSearch } from "react-icons/tb";
+import { FaMessage } from "react-icons/fa6";
+import { VscSymbolVariable } from "react-icons/vsc";
+import { FaAssistiveListeningSystems } from "react-icons/fa";
+import { IoMdOptions } from "react-icons/io";
+import { BsPencilSquare } from "react-icons/bs";
+import { IoExtensionPuzzle } from "react-icons/io5";
+import { FaCogs ,FaBars} from "react-icons/fa";
+import { VscSettingsGear } from "react-icons/vsc";
 
 Welcome to the YourGPT Chatbot Documentation page, your go-to resource guide for creating powerful AI chatbots. YourGPT Chatbot is a **No-Code AI Chatbot builder** platform that allows you to create powerful AI Chatbot, Just like ChatGPT. It is a multi-lingual chatbot solution that supports over 100+ languages. You can set up the chatbot under two minutes without any coding knowledge.
 
 ![Chatbot Image](/assets/chatbot/welcome.png)
 
-## Get Started
+## <div className='text-3xl tracking-tight font-bold '>Get Started</div>
 
 Learn how to get started with YourGPT Chatbot, a custom Chat GPT builder that answers from your website, documents, FAQs, YouTube videos and more. Unlock the potential of a personalized ChatGPT trained on your data.
 
-<CardGrid>
-  
-</CardGrid>
 
 <ListCard title="Getting Started with YourGPT Chatbot" icon="information">
 
@@ -26,11 +34,11 @@ Learn how to get started with YourGPT Chatbot, a custom Chat GPT builder that an
 - [Train YourGPT Chatbot](/chatbot/training)
 </ListCard>
 
-## Installation
+## <div className='text-3xl tracking-tight font-bold'>Installation</div>
 
 Learn how to install your custom GPT chatbot on different platforms:
 
-### Website Builders
+### <div className='tracking-tight text-2xl font-light'>Website Builders</div>
 
 <CardGrid>
   <Card title="Add Chat GPT to WordPress" icon="">
@@ -56,7 +64,7 @@ Learn how to install your custom GPT chatbot on different platforms:
 
 
 
-### Chatbot Integrations
+### <div className='tracking-tight text-2xl pb-4'>Chatbot Integrations</div>
 
 <ListCard title="Getting Started with YourGPT Chatbot" icon="information">
 
@@ -64,7 +72,7 @@ Learn how to install your custom GPT chatbot on different platforms:
 - [Add AI to Intercom](/chatbot/integrations/chatbots/intercom)
 </ListCard>
 
-### Social Integrations
+### <div className='text-3xl tracking-tight font-bold '>Social Integrations</div>
 
 <CardGrid>
   <Card title="WhatsApp" icon="whatsapp">
@@ -90,7 +98,7 @@ Learn how to install your custom GPT chatbot on different platforms:
   </Card>
 </CardGrid>
 
-### Other Integrations
+### <div className='text-3xl tracking-tight font-bold pb-4'>Other Integrations</div>
 
 
 <ListCard title="Additonal Features and Troubleshooting " icon="information">
@@ -101,19 +109,60 @@ Learn how to install your custom GPT chatbot on different platforms:
 - [How to debug chatbot](/chatbot/other/debugging/incomplete-ai-response)
 </ListCard>
 
-## Functions
+## <div className='text-3xl tracking-tight font-bold'>Functions</div>
 
 Learn how to enhance your chatbot's capabilities by integrating it with functions: System Functions, API Functions, Shopify, WooCommerce, and more.
 
-<Card title="Functions" icon="setting">
+{/* <Card title="Functions" icon="setting">
   [Learn more about Functions](/chatbot/functions)
-</Card>
+</Card> */}
+ <div className="p-8 border border-gray-700 rounded-lg shadow-md h-[180px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex text-2xl text-white font-semibold tracking-tight !mt-0"><div className='p-2 pl-0'><VscSettingsGear className='text-xl text-[#e45643]' /></div>
+   <p className='!mt-0'>Functions</p> 
+    </div>
+    <p>Functions execute tasks autonomously and flexibly</p>
+    <a href="/chatbot/functions" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
 
-## Customization
+## <div className='text-3xl tracking-tight font-bold'>Customization</div>
 
 Explore methods to customize your custom ChatGPT chatbot's appearance, behavior, and domain post-installation:
 
-<CardGrid>
+<div className="grid grid-cols-1  gap-4">
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md h-[180px] hover:border-blue-400 transition-all duration-500  !mt-0">
+    <div className="flex text-2xl text-white font-semibold tracking-tight !mt-0"><div className='p-2 pl-0'><BsPencilSquare className='text-xl text-[#eebd53]' /></div>
+   <p className='!mt-0'>Custom Chatbot Appearance</p> 
+    </div>
+    <p>Learn how to change the appearance of your chatbot.</p>
+    <a href="/chatbot/how-to-change-the-apperance-of-your-chatbot" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md h-[180px] hover:border-blue-400 transition-all duration-500  !mt-0">
+    <div className="flex text-2xl text-white font-semibold tracking-tight"><div className='p-2 pl-0'><FaBars className='text-xl text-[#bd53ee]' /></div>
+    <p className="!mt-0">Change Theme Dynamically</p> 
+    </div>
+    <p>Learn how to dynamically change your chatbot's theme.</p>
+    <a href="/chatbot/dynamically-change-theme-on-your-chatbot" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md h-[180px] hover:border-blue-400 transition-all duration-500 !mt-0">
+    <div className="flex text-2xl text-white font-semibold tracking-tight">
+      <div className='p-2 pl-0'><FaCogs className='text-2xl text-[#84ee53]' /></div>
+      <p className='!mt-0'>Custom Domain to Your Chatbot</p>
+    </div>
+    <p>Learn how to add a custom domain to your chatbot.</p>
+    <a href="/chatbot/how-to-add-custom-domain" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md h-[180px] hover:border-blue-400 transition-all duration-500 !mt-0">
+    <div className="flex text-2xl text-white font-semibold tracking-tight">
+      <div className='p-2 pl-0'><IoExtensionPuzzle className='text-2xl text-[#ee5389]' /></div>
+      <p className='!mt-0'>Customizing Chatbot Behavior</p>
+    </div>
+    <p>Learn how to customize your chatbot's behavior.</p>
+    <a href="/chatbot/how-to-customize-chatbot-behavior" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+</div>
+
+
+{/* <CardGrid>
   <Card title="Custom Chatbot Appearance" icon="pencil">
     [Learn more](/chatbot/how-to-change-the-apperance-of-your-chatbot)
   </Card>
@@ -126,11 +175,12 @@ Explore methods to customize your custom ChatGPT chatbot's appearance, behavior,
   <Card title="Customizing Chatbot Behavior" icon="puzzle">
     [Learn more](/chatbot/how-to-customize-chatbot-behavior)
   </Card>
-</CardGrid>
+</CardGrid> */}
 
-## Studio
+## <div className='text-3xl tracking-tight font-bold'>Studio</div>
+ Studio provides advanced tools like intents, events, entities, and variables to create dynamic chatbot experiences
 
-<CardGrid>
+{/* <CardGrid>
   <Card title="Intents" icon="laptop">
     [Learn more](/chatbot/studio/elements/intents)
   </Card>
@@ -152,4 +202,43 @@ Explore methods to customize your custom ChatGPT chatbot's appearance, behavior,
   <Card title="Advanced Options" icon="setting">
     [Learn more](/chatbot/studio/elements/advanced)
   </Card>
-</CardGrid>
+</CardGrid> */}
+
+<div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className=" flex text-2xl text-white font-semibold tracking-tight"><div className='p-2 pl-0'><FaLaptopCode className='text-2xl text-[#eebd53]' /></div>Intents</div>
+    <p>Intents guide chatbot actions</p>
+      <a href="/chatbot/studio/elements/intents"className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex text-2xl text-white font-semibold track-tight"><div className='p-2 pl-0'><MdEventAvailable className='text-2xl text-[#bd53ee]' /></div>Events</div>
+    <p className="">Events trigger chatbot flows</p>
+      <a href="/chatbot/studio/elements/events" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex items-center text-2xl text-white font-semibold track-tight"><div className='p-2 pl-0'><TbDatabaseSearch className='text-2xl text-[#84ee53]' /></div>Entities</div>
+    <p className=""> Entities define key details </p>
+      <a href="/chatbot/studio/elements/entities" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex text-2xl text-white font-semibold track-tight"><div className='p-2 pl-0'><FaMessage className='text-2xl text-[#ee5389]' /></div>Messages</div>
+    <p className="">Interactive messages enhance user engagement</p>
+      <a href="/chatbot/studio/elements/messages" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex items-center text-2xl text-white font-semibold track-tight"><div className='p-2 pl-0'><VscSymbolVariable className='text-3xl text-[#3347ff]' /></div>Variables</div>
+    <p className=""> Variables store and manage data</p>
+      <a href="/chatbot/studio/elements/variables" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex items-center text-2xl text-white font-semibold track-tight"><div className='p-2 pl-0'><FaAssistiveListeningSystems className='text-2xl text-[#4ee]' /></div>Listeners</div>
+    <p className=""> Listeners capture user responses </p>
+      <a href="/chatbot/studio/elements/listeners" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+  <div className="p-8 border border-gray-700 rounded-lg shadow-md !mt-0 h-[200px] hover:border-blue-400 transition-all duration-500">
+    <div className="flex items-center text-2xl text-white font-semibold track-tight"><div className='p-2 pl-0'><IoMdOptions className='text-2xl text-white' /></div>Advanced Options</div>
+    <p className=""> Studio powers dynamic flows </p>
+      <a href="/chatbot/studio/elements/advanced" className='no-underline font-semibold transition-all duration-300 text-lg'>Learn more</a>
+  </div>
+</div>

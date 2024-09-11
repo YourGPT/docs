@@ -260,6 +260,10 @@ export default defineConfig({
                       label: "Incomplete Answer",
                       link: "chatbot/other/debugging/incomplete-ai-response",
                     },
+                    {
+                      label:"Training View Source",
+                      link:"chatbot/other/debugging/training-view-source"
+                    }
                   ],
                 },
               ],

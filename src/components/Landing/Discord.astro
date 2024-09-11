@@ -1,16 +1,17 @@
 ---
 import { Image } from 'astro:assets';
-import Houston from '../../assets/houston.webp';
+// import yourgpt from '/assets/yourgpt-logo.svg';
 import Button from '../Button.astro';
 
 const { title, cta } = Astro.props;
 ---
 
 <div class="discord">
-	<h2>{title}</h2>
+	<h2 class="title">{title}</h2>
 	<div class="cta">
-		<Image src={Houston} alt="" class="hide" />
-		<Button variant="secondary" link="https://discord.gg/Q3wyYRBV">{cta}</Button>
+		<Image width={100} height={100} src="/assets/yourgpt-logo.svg" alt="" class="hide" />
+		<!-- <Button variant="secondary" link="https://discord.gg/Q3wyYRBV">{cta}</Button> -->
+		<a class="button">{cta}</a>
 	</div>
 </div>
 
@@ -31,10 +32,29 @@ const { title, cta } = Astro.props;
 		flex-direction: column;
 		align-items: center;
 	}
+	.title{
+		letter-spacing: -1px;
+	}
+	.cta .button{
+		padding: 0.6rem 1rem;
+		border: 2px solid #c7d2fe;
+		border-radius: 30px;
+		background-color: #c7d2fe;
+		font-weight: 700;
+		color: rgb(56, 56, 56);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		border:1px solid #a3cbf1;
+
+	}
+	.cta .button:hover{
+		color: rgb(56, 56, 56);
+		cursor: pointer;
+	}
 
 	.hide {
-		margin-bottom: -1rem;
-		width: 5rem;
-		height: 5rem;
+		margin-bottom: -10px;
+		width: 4rem;
+		height: 7rem;
 	}
 </style>

@@ -5,7 +5,7 @@ template: splash
 hero:
   tagline: Welcome to our documentation page for our Generative AI solutions, including YourGPT chatbot and LLM Spark.
   image:
-    file: ../../assets/yourgpt.svg
+    file: ./../../assets/yourgpt.svg
   actions:
     - text: Visit Chatbot
       link: https://yourgpt.ai/chatbot
@@ -19,12 +19,16 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import ListCard from '../../components/Landing/ListCard.astro'
 import SplitCard from '../../components/Landing/SplitCard.astro'
 import Discord from '../../components/Landing/Discord.astro'
+import { MdOutlineLaptopMac } from "react-icons/md";
+import { HiRocketLaunch } from "react-icons/hi2";
+import { FcServices } from "react-icons/fc";
+import { TbArrowsCross } from "react-icons/tb";
 
 
 import {Note} from '~/components'
 
 
-<CardGrid >
+{/* <CardGrid >
 	<Card title="YourGPT Chatbot" icon="laptop">
 		[Get started with YourGPT Chatbot](/chatbot/introduction), a No-Code AI Chatbot builder for 24/7 customer support.
 	</Card>
@@ -37,7 +41,50 @@ import {Note} from '~/components'
 	<Card title="GDPR Compliance" icon="random">
 		[Learn about our GDPR compliance](https://docs.yourgpt.ai/gdpr) details.
 	</Card>
-</CardGrid>
+</CardGrid> */}
+<div className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
+    <div className="p-8 border border-gray-700 rounded-lg shadow !mt-0  h-[228px] lg:h-[180px] hover:border-blue-400 transition-colors duration-500 ">
+        <div className="text-2xl text-white font-semibold flex items-center tracking-tight">
+            <span className="p-2 pl-0"><MdOutlineLaptopMac className='text-3xl text-[#eebd53] ' /></span>
+            YourGPT Chatbot
+        </div>
+   
+            <a href="/chatbot/introduction" target="_blank" className="text-blue-500 no-underline font-semibold transition-all duration-300 text-lg ">Get started with YourGPT Chatbot 
+			</a>, a No-Code AI Chatbot builder for 24/7 customer support.
+     
+    </div>
+    <div className="p-8 border border-gray-700 rounded-lg shadow !mt-0 h-[228px] lg:h-[180px] hover:border-blue-400 transition-colors duration-500">
+        <div className="text-2xl font-semibold flex items-center tracking-tight">
+            <span className="p-2 pl-0"><HiRocketLaunch className='text-3xl text-[#bd53ee]' /></span>
+            LLM Spark
+        </div>
+        
+            <a href="/llm-spark/introduction" target="_blank" className="text-blue-500 no-underline font-semibold transition-all duration-300 text-lg">Explore LLM Spark
+			</a>, a development platform for effortlessly building LLM applications.
+        
+    </div>
+    <div className="p-8 border border-gray-700 rounded-lg shadow !mt-0 h-[228px] lg:h-[180px] hover:border-blue-400 transition-colors duration-500">
+        <div className="text-2xl font-semibold flex items-center tracking-tight">
+            <span className="p-2 pl-0"><FcServices className='text-3xl text-[#84ee53]' /></span>
+            Service Status
+        </div>
+        
+            <a href="https://status.yourgpt.ai/" target="_blank" className="text-blue-500 no-underline font-semibold transition-all duration-300 text-lg">Check the current status
+            </a> of our services.
+        
+    </div>
+    <div className="p-8 border border-gray-700 rounded-lg shadow !mt-0 h-[228px] lg:h-[180px] hover:border-blue-400 transition-colors duration-500">
+        <div className="text-2xl font-semibold flex items-center tracking-tight">
+           <span className="p-2 pl-0"><TbArrowsCross className='text-3xl text-[#ee5389]' /></span>
+            GDPR Compliance
+        </div>
+        
+            <a href="https://docs.yourgpt.ai/gdpr" target="_blank" className="text-blue-500 no-underline font-semibold transition-all duration-300 text-lg"> Learn about our GDPR compliance
+            </a> details.
+        
+    </div>
+</div>
+
 
 <Discord title="Have a question or want to get involved?" cta="Join our Discord"/>
 

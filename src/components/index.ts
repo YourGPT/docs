@@ -11,4 +11,5 @@ export {default as Discord} from './Landing/Discord.astro'
 export {default as ListCard} from './Landing/ListCard.astro'
 export {default as SplitCard} from './Landing/SplitCard.astro'
 export {default as Card2} from './Landing/Card.astro'
+export {default as IntroductionCard} from './llm-spark/IntroductionCard.tsx'
 
