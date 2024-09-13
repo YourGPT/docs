@@ -5,45 +5,91 @@ keywords: GPT chatbot, AI integration
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import {Features} from '~/components';
+import { FaArrowRight} from "react-icons/fa";
+import { GrCircleInformation } from "react-icons/gr";
 
 
 YourGPT Chatbot is a **No-Code AI Chatbot builder** platform that allows you to create powerful AI Chatbot, Just like ChatGPT. It is a mutli-lingual chabot solution that support over 100+ languages. You can setup the chatbot under two minutes without any coding knowledge.
 
-## How It works?
+## <div className='text-3xl tracking-tight font-extrabold dark:text-inherit text-gray-700 '>How It works?</div> 
 Our chatbot harnesses the power of state-of-the-art GPT models and cutting-edge techniques to provide users with precise, contextually relevant responses to their inquiries. Our chatbot solution offers features so anyone can easily build powerful AI chatbot effortlessly.
-## Features:
-<CardGrid>
-  <Card title="No-Code Builder" icon="information">
-    Create your chatbot effortlessly, no coding required.
-  </Card>
-  <Card title="GPT-powered Intelligence" icon="star">
-    Harness advanced GPT models that understand and generate human-like responses.
-  </Card>
-  <Card title="Multi-Channel Integration" icon="laptop">
-    Connect  Chatbot to websites, mobile apps, social media, and messaging services.
-  </Card>
-  <Card title="Live Chat Support" icon="sun">
-    Combine AI-powered support with on-demand human assistance, ensuring customers always receive the help they need.
-  </Card>
-  <Card title="Conversation Flow Design" icon="magnifier">
-    Chatbot studio helps you to create sequential AI agents using intuitive drag-and-drop tools. This makes your chatbot to perform a wide range of actions, including making API calls, executing AI actions, and creating user journeys for seamless and dynamic interactions.
-  </Card>
-  <Card title="Lead Generation" icon="comment">
-    Capture and nurture leads by integrating lead generation forms seamlessly into the chatbot experience, enhancing your customer acquisition efforts.
-  </Card>
-  <Card title="Multilingual Communication" icon="rocket">
-    Break language barriers by offering support in over 100 languages, expanding your global reach and connecting with customers in their preferred language.
-  </Card>
-  <Card title="Dynamic Actions" icon="random">
-    Perform dynamic actions using Functions. Interact with real-time external services for addressing varied inquiries.
-  </Card>
-</CardGrid>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Features:</div>
 
 
 
-<Card title="No-Code AI Chatbot Builder" icon="information">
+
+<div className="grid grid-cols-1 gap-4">
+  {
+    (() => {
+      const cardData = [
+        {
+          title: "No-Code Builder",
+          icon: "information",
+          description: "Create your chatbot effortlessly, no coding required.",
+        },
+        {
+          title: "GPT-powered Intelligence",
+          icon: "star",
+          description: "Harness advanced GPT models that understand and generate human-like responses.",
+        },
+        {
+          title: "Multi-Channel Integration",
+          icon: "laptop",
+          description: "Connect Chatbot to websites, mobile apps, social media, and messaging services.",
+        },
+        {
+          title: "Live Chat Support",
+          icon: "sun",
+          description: "Combine AI-powered support with on-demand human assistance, ensuring customers always receive the help they need.",
+        },
+        {
+          title: "Conversation Flow Design",
+          icon: "magnifier",
+          description: "Chatbot studio helps you to create sequential AI agents using intuitive drag-and-drop tools.",
+        },
+        {
+          title: "Lead Generation",
+          icon: "comment",
+          description: "Capture and nurture leads by integrating lead generation forms seamlessly into the chatbot experience.",
+        },
+        {
+          title: "Multilingual Communication",
+          icon: "rocket",
+          description: "Break language barriers by offering support in over 100 languages.",
+        },
+        {
+          title: "Dynamic Actions",
+          icon: "random",
+          description: "Perform dynamic actions using Functions. Interact with real-time external services for addressing varied inquiries.",
+        }
+      ];
+
+      return <Features cards={cardData} />;
+    })()
+  }
+</div>
+
+
+{/* <Card title="No-Code AI Chatbot Builder" icon="information">
   [Create your chatbot effortlessly, no coding required](https://yourgpt.ai/chatbot)
-</Card>
+</Card> */}
+ <div className="p-8 border dark:border-gray-700 rounded-lg shadow-sm dark:shadow-md h-auto hover:border-gray-400 dark:hover:border-blue-400 transition-all duration-500 bg-gradient-to-l from-green-50 via-white to-white dark:bg-gradient-to-l dark:from-inherit dark:via-inherit dark:to-inherit">
+    <div className="flex text-2xl font-semibold !mt-0">
+      <div className="p-2 border rounded-md bg-gray-100 dark:border-0 dark:bg-inherit mr-4 dark:mr-0">
+        <GrCircleInformation className="text-2xl text-gray-700 dark:text-red-500" />
+      </div>
+      <p className="!mt-0 text-xl md:text-2xl text-gray-700 dark:text-inherit">No-Code AI Chatbot Builder</p>
+    </div>
+      <p className='pl-9 !mt-2 max-w-[450px]'>Effortlessly create AI chatbots without coding expertise needed.</p>
+    <ul className="list-none pl-9  mt-4">
+      <li className="flex justify-between items-center pb-2 ">
+        <a href="https://yourgpt.ai/chatbot" className="no-underline font-medium transition-all duration-300 text-sm md:text-base">
+          Create your chatbot effortlessly, no coding required
+        </a>
+      </li>
+    </ul>
+  </div>
 
 
 

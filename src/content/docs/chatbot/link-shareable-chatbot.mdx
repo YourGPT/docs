@@ -7,26 +7,32 @@ keywords: linkable chatbot, shareable chatbot, chabot with link
 import { Image } from 'astro:assets'
 import linkshare from '../../../assets/chatbot/link-share.png'
 import {Note} from '~/components'
+import { Steps } from '@astrojs/starlight/components';
 
 
 <Note type="re" color="emerald">
    🔗 Share your custom chatbot using a link
 </Note>
 
+## <div className='tracking-tight font-bold'> Sharing Your Chatbot Link</div>
 To share your custom chatbot using a link, follow the steps below:
 
-### Step 1: Go to YourGPT Chatbot Integration
+<Steps>
+1. <div className='font-bold dark:text-gray-300 text-xl'>Go to YourGPT Chatbot Integration</div>
 
-Start by navigating to the YourGPT Chatbot Integration. This is usually found in the main dashboard or settings panel of your chatbot platform.
+     Start by navigating to the YourGPT Chatbot Integration. This is usually found in the main dashboard or settings panel of your chatbot platform.
+   
 
-### Step 2: Copy the Link
+2. <div className='font-bold dark:text-gray-300 text-xl'>Copy the LinkStep </div>
 
-At the top of the screen, you will see several options: "**Script**", "**Iframe**", and "**Link**". Click on the "**Link**" option. This will reveal a URL that is the direct link to your custom chatbot. Copy this URL.
+    At the top of the screen, you will see several options: "**Script**", "**Iframe**", and "**Link**". Click on the "**Link**" option. This will reveal a URL that is the direct link to your custom chatbot. Copy this URL.
 
-<Image src={linkshare} alt="Link Shareable Chatbot"/>
+    <Image src={linkshare} alt="Link Shareable Chatbot"/>
 
-### Step 3: Share the Link
+3. <div className='font-bold dark:text-gray-300 text-xl'>Share the LinkStep</div>
 
-Share the copied URL with anyone you want to have access to your chatbot. They can use this link to interact with your chatbot directly.
+     Share the copied URL with anyone you want to have access to your chatbot. They can use this link to interact with your chatbot directly.
 
-Remember, anyone with the link can access your chatbot, so be careful who you share it with.
+     
+    <Note type="re" color="rose"> Remember, anyone with the link can access your chatbot, so be careful who you share it with. </Note>
+</Steps>

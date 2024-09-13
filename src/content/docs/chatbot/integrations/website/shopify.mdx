@@ -7,17 +7,18 @@ keywords: Chatbot for Shopify, AI for E-commerce, Shopify GPT Chatbot, custom gp
 
 import {Image} from '~/components';
 import {Note} from '~/components'
+import { Steps } from '@astrojs/starlight/components';
 
 
 <Note type="idea" color="emerald">
   	 Connecting AI chatbot with your Shopify
 </Note>
 
-## Installation
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Installation </div>
 
 Integrating GPT Chatbot with your Shopify store is a seamless process that enhances customer interaction. Follow these steps:
 
-### Install Chatbot App
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Install Chatbot App </div>
 
 1. Go to the **YourGPT Integration** section and copy the provided widget script.
 2. Log in to your Shopify admin panel.
@@ -26,31 +27,47 @@ Integrating GPT Chatbot with your Shopify store is a seamless process that enhan
 5. Save the changes to implement the chatbot.
 
 
-## Generating Token for Shopify (Chatbot Studio)
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Generating Token for Shopify (Chatbot Studio) </div>
 
 To generate a Shopify Auth Token, you need to follow these steps:
 
-1. Create a new app in your Shopify admin panel. You can do this by going to **Apps -> apps and sales channel -> Develop apps -> create an app**.
+<Steps>
+1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Create a new app in your Shopify admin panel.</div>
+     - You can do this by going to **Apps -> apps and sales channel -> Develop apps -> create an app**.
+2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Fill in the app details. </div>
+      - You can use any name and email you like.
+3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> After creating the app, go to Configure Admin API scopes. </div>
+   <Image src="/assets/chatbot/shopify/Shopify-flow-1.png" alt="Shopify Admin API Configuration" width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md" />
+4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Select the scopes mentioned above and click the save button. </div>
+    <Image src="/assets/chatbot/shopify/Shopify-flow-2.png" alt="Shopify API Scopes Selection" width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md" />
+5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> After that, install the app and click on **Reveal token once** you will get your token.  </div>
+     <Image src="/assets/chatbot/shopify/Shopify-flow-3.png" alt="Shopify Auth Token Reveal" width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md" />
 
-2. Fill in the app details. You can use any name and email you like.
+</Steps>
 
-3. After creating the app, go to Configure Admin API scopes.
-
-<Image src="/assets/chatbot/shopify/Shopify-flow-1.png" alt="Shopify Admin API Configuration" />
-
-4. Select the scopes mentioned above and click the save button.
-
-<Image src="/assets/chatbot/shopify/Shopify-flow-2.png" alt="Shopify API Scopes Selection" />
-
-5. After that, install the app and click on **Reveal token once** you will get your token.
-
-<Image src="/assets/chatbot/shopify/Shopify-flow-3.png" alt="Shopify Auth Token Reveal" />
 
 
 It is crucial to securely store your Auth Token as it provides access to your Shopify administration.
 
-## Troubleshooting
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Troubleshooting </div>
 
-For further inquiries or technical support regarding GPT Chatbot integration with Shopify, feel free to contact us at [**Mail YourGPT Support**](mailto:support@yourgpt.ai) or [**Chatbot Live Support**](https://yourgpt.ai/).
+<div className="text-base text-gray-700 dark:text-white/80">
+  <p>
+    For further inquiries or technical support regarding GPT Chatbot integration with Shopify, feel free to contact us at 
+    <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank">**Mail YourGPT Support**</a> 
+    or 
+    <a href="https://yourgpt.ai/" className="font-bold no-underline" target="_blank">**Chatbot Live Support**</a>.
+  </p>
+</div>
+
 
 We trust this integration will enhance customer engagement and satisfaction on your Shopify store!
