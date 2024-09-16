@@ -3,8 +3,9 @@ title: GPT Chatbot Integration for Line App | Installation Guide
 description: Integrate a no-code custom Chatbot with Line, complete documenation for the installation
 keywords: chatbot Line integration,chatbot for Line, Line integration to AI chatbot, custom bot for Line 
 ---
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
+import { Steps } from '@astrojs/starlight/components';
 
 
 <Note type="idea" color="emerald">
@@ -14,91 +15,150 @@ import {Note} from '~/components'
 
 To integrate with Line, follow these steps:
 
-## Sign Up on Line Console
 
-1. Go to [**```Line Developers```**](https://developers.line.biz/en/) and sign up if you have not done already.
+<Steps>
+ 1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Sign Up on Line Console </div>
+    - <div>
+        <p>
+          Go to <a href="https://developers.line.biz/en/" target="_blank" className="no-underline"><strong>Line Developers</strong></a> and sign up if you have not done already.
+        </p>
+      </div>
 
-## Create a Provider
 
-2. Create a provider
+2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Create a Provider </div>
+    - Create a provider
+     <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+     <Image 
+        src="/assets/chatbot/Line/Line-1.png"
+        alt="Create Provider"
+        width="100%"
+                                    height="100%"
+                                      style={{ width: "100%" }}
+                                      className="rounded-md"
+      />
+      </div>
 
-<Image 
-  src="/assets/chatbot/Line/Line-1.png"
-  alt="Create Provider"
-/>
+3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Create a Message API Channel </div>
+      - Create a Message API Channel
+       <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image 
+              src="/assets/chatbot/Line/Line-2.png"
+              alt="Create Message API Channel"
+              width="100%"
+                                          height="100%"
+                                            style={{ width: "100%" }}
+                                            className="rounded-md"
+            />
+        </div>
 
-## Create a Message API Channel
+4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Copy Channel ID </div>
+     - Copy Channel ID for later use.
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image 
+              src="/assets/chatbot/Line/Line-3.png"
+              alt="Copy Channel ID"
+              width="100%"
+                                          height="100%"
+                                            style={{ width: "100%" }}
+                                            className="rounded-md"
+            />
+      </div>
 
-3. Create a Message API Channel
 
-<Image 
-  src="/assets/chatbot/Line/Line-2.png"
-  alt="Create Message API Channel"
-/>
+5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Issue the Token </div>
 
-## Copy Channel ID
+     - Issue the Token required for integration.
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image 
+              src="/assets/chatbot/Line/Line-4.png"
+              alt="Issue Token"
+              width="100%"
+                                          height="100%"
+                                            style={{ width: "100%" }}
+                                            className="rounded-md"
+            />
+      </div>
 
-4. Copy Channel ID for later use.
+6. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Add Channel ID and Access Token </div>
 
-<Image 
-  src="/assets/chatbot/Line/Line-3.png"
-  alt="Copy Channel ID"
-/>
+     - Add the following information:
+       - **Channel ID**
+       - **Generated Access Token**
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+            <Image 
+                src="/assets/chatbot/Line/Line-5.png"
+                alt="Add Channel ID and Access Token"
+                width="100%"
+                                            height="100%"
+                                              style={{ width: "100%" }}
+                                              className="rounded-md"
+              />  
+      </div>
 
-## Issue the Token
+7. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Add the Copied Webhook </div>
 
-5. Issue the Token required for integration.
+    - Add the Copied Webhook for callback functionality.
+     <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image 
+              src="/assets/chatbot/Line/Line-6.png"
+              alt="Add Webhook"
+              width="100%"
+                                          height="100%"
+                                            style={{ width: "100%" }}
+                                            className="rounded-md"
+            />
+      </div>
 
-<Image 
-  src="/assets/chatbot/Line/Line-4.png"
-  alt="Issue Token"
-/>
 
-## Add Channel ID and Access Token
+8. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Activate the Integration </div>
 
-6. Add the following information:
-   - **Channel ID**
-   - **Generated Access Token**
 
-<Image 
-  src="/assets/chatbot/Line/Line-5.png"
-  alt="Add Channel ID and Access Token"
-/>
+     - Turn it ON to activate the integration.
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image 
+              src="/assets/chatbot/Line/Line-7.png"
+              alt="Turn ON Integration"
+              width="100%"
+                                          height="100%"
+                                            style={{ width: "100%" }}
+                                            className="rounded-md"
+            />
+      </div>
 
-## Add the Copied Webhook
+9. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Verify the Webhook </div>
 
-7. Add the Copied Webhook for callback functionality.
 
-<Image 
-  src="/assets/chatbot/Line/Line-6.png"
-  alt="Add Webhook"
-/>
+    - Verify the Webhook functionality.
+     <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+        <Image 
+            src="/assets/chatbot/Line/Line-8.png"
+            alt="Verify Webhook"
+            width="100%"
+                                        height="100%"
+                                          style={{ width: "100%" }}
+                                          className="rounded-md"
+          />
+      </div>
 
-## Activate the Integration
 
-8. Turn it ON to activate the integration.
+10. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Test the Integration </div> 
 
-<Image 
-  src="/assets/chatbot/Line/Line-7.png"
-  alt="Turn ON Integration"
-/>
+    - Test the integration: 
+        - Download and Install the Line App on your mobile device.
+        - Use it to scan the provided QR code.
+    <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+        <Image 
+            src="/assets/chatbot/Line/Line-9.png"
+            alt="Download and Install the Line App"
+            width="100%"
+                                        height="100%"
+                                          style={{ width: "100%" }}
+                                          className="rounded-md"
+          />
+      </div>
 
-## Verify the Webhook
 
-9. Verify the Webhook functionality.
 
-<Image 
-  src="/assets/chatbot/Line/Line-8.png"
-  alt="Verify Webhook"
-/>
 
-## Test the Integration
+</Steps>
 
-10. Test the integration: 
-    - Download and Install the Line App on your mobile device.
-    - Use it to scan the provided QR code.
-
-<Image 
-  src="/assets/chatbot/Line/Line-9.png"
-  alt="Download and Install the Line App"
-/>

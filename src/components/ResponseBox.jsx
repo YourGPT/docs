@@ -2,14 +2,14 @@ import React from 'react';
 
 const ResponseBox = ({ response }) => {
   return (
-    <div className="response-box">
-      <div className="response-header">
-        <span className="response-label">Response</span>
+    <div className="response-box border border-gray-800 rounded-md !mt-1">
+      <div className="response-header p-3">
+        <span className="response-label text-blue-500 ">Response</span>
       </div>
-      <pre className="response-content">
+      <pre className="response-content whitespace-pre-wrap break-all bg-gray-800 !mt-0">
         <code>{response}</code>
       </pre>
-      <style jsx>{`
+      {/* <style jsx>{`
         .response-box {
           border: 1px solid #30363d;
           border-radius: 0.5rem;
@@ -34,7 +34,7 @@ const ResponseBox = ({ response }) => {
           font-weight: 600;
         }
         .response-content {
-          margin: 0;
+          margin-top: 0 !important;
           padding: 1rem;
           overflow-x: auto;
           white-space: pre-wrap;
@@ -54,7 +54,7 @@ const ResponseBox = ({ response }) => {
             padding: 0.5rem;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };

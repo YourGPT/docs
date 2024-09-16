@@ -6,9 +6,10 @@ keywords: api integration chatbot,ai bot api, custom bot api, api gpt Chatbot
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import {CodeBox} from '~/components';
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components';
 import {ResponseBox} from '~/components';
+import { WebsiteBuilder } from '~/components';
 
 
 
@@ -17,59 +18,68 @@ import {ResponseBox} from '~/components';
 </Note> 
 
 Welcome to the Documentation page for **YourGPT Chatbot APIs**
-
-## <span  className="nx-text-3xl">Generating Keys</span>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Generating Keys</div>
 
 - Go to your **`Integration`** and click on **`manage API integration`**
 - Now create one key.
 
-
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/API/Integration-API.png"
   alt=" API Integration"
+  width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
 - Copy your **```Generated API key```**
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/API/API-key.png"
   alt=" Copy API Key"
-  height='36vh'
+  
+  width="100%"
+  height="100%"
+  style={{ width: "100%",height:'36vh' }}
+  className="rounded-md"
 />
+</div>
 
 <Note type="note" color="blue">
-  The widget_uid is your chatbot's Widget ID. `For example: a12bc345-d678-90ef-gh12-ijklmno345pq.`
+  The widget_uid is your chatbot's Widget ID.  **For example: a12bc345-d678-90ef-gh12-ijklmno345pq.**
 </Note>
+ 
+<div className='!mt-12'>
+
+<WebsiteBuilder
+  items={[
+    { title: 'How to Create Session', description: ' Guide to Creating Sessions', icon: 'session', link: '/chatbot/api/create-session' },
+    { title: ' Send a Message via API', description: 'API to send messages seamlessly', icon: 'api', link: '/chatbot/ai/send-message' }
+  ]}
+/>
+</div>
 
 
 
-<CardGrid>
-   <Card title="How to Create Session" icon="Folder">
-    [Learn more](/chatbot/api/create-session)
-   </Card>
-   <Card title="How to Send a Message via API" icon="Message">
-    [Learn more](/chatbot/ai/send-message)
-   </Card>
-</CardGrid>
 
-
-
-
-## <span  className="nx-text-3xl">API Usage</span>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>API Usage</div>
 
 - **```success code : 200, type: RXSUCCESS```**
 - **```error code 400, type RXERROR```**
 
-### <span  className="nx-text-xl">**Create Session API**</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Create Session API</div>
 
-<CodeBox language="curl">
+<CodeBox client:load language="curl">
 {`curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
 --header 'Content-Type: application/x-www-form-urlencoded' \\
 --header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
 --data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
 </CodeBox>
 
-###### Response
+<div className="text-md font-semibold "> Response </div>
 <ResponseBox response={`{
     "type": "RXSUCCESS",
     "message": "Chatbot session created successfully",
@@ -95,7 +105,7 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
     }
 }`} />
 
-<div style={{ height: '20px' }}></div>
+<div style={{ height: '20px' , paddingTop:"3rem" }}></div>
 
 <Note type="note" color="blue">
   To use the send message API, you must first establish a session. Obtain a session UID by executing the Create Session API.
@@ -103,9 +113,9 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 
 ---- 
 
-### <span  className="nx-text-xl">Send Message API</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Send Message API</div>
 
-<CodeBox language="curl">
+<CodeBox client:load language="curl">
 {`curl --location 'https://api.yourgpt.ai/chatbot/v1/sendMessage' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \
@@ -115,7 +125,7 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 </CodeBox>
 
 
-###### Response
+<div className="text-md font-semibold "> Response </div>
 
 <ResponseBox response={`{
     "type": "RXSUCCESS",

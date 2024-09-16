@@ -5,7 +5,6 @@ keywords: linkable chatbot, shareable chatbot, chabot with link
 ---
 
 import { Image } from 'astro:assets'
-import linkshare from '../../../assets/chatbot/link-share.png'
 import {Note} from '~/components'
 import { Steps } from '@astrojs/starlight/components';
 
@@ -14,7 +13,7 @@ import { Steps } from '@astrojs/starlight/components';
    🔗 Share your custom chatbot using a link
 </Note>
 
-## <div className='tracking-tight font-bold'> Sharing Your Chatbot Link</div>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Sharing Your Chatbot Link</div>
 To share your custom chatbot using a link, follow the steps below:
 
 <Steps>
@@ -27,7 +26,13 @@ To share your custom chatbot using a link, follow the steps below:
 
     At the top of the screen, you will see several options: "**Script**", "**Iframe**", and "**Link**". Click on the "**Link**" option. This will reveal a URL that is the direct link to your custom chatbot. Copy this URL.
 
-    <Image src={linkshare} alt="Link Shareable Chatbot"/>
+            <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+                <Image src="/assets/chatbot/link-share.png" alt="Link Shareable Chatbot"     
+                width="100%"
+                height="100%"
+                style={{ width: "100%" }}
+                className="rounded-md"/>
+            </div>
 
 3. <div className='font-bold dark:text-gray-300 text-xl'>Share the LinkStep</div>
 

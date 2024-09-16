@@ -4,59 +4,88 @@ description: Integrate no-code GPT Chatbot with BigCommerce.
 keywords: gpt chatbot for BigCommerce website, gpt AI chatbot for BigCommerce website, no-code gpt chatbot for BigCommerce, Custom AI chatbot for your BigCommerce
 ---
 
-import { Image } from "~/components";
+import { Image } from "astro:assets";
 import { Note } from "~/components";
+import { Steps } from '@astrojs/starlight/components';
 
 <Note type="idea" color="emerald">
   Connecting custom chatbot with your BigCommerce store
 </Note>{" "}
 
-## Installation
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>  Installation </div>
 
 Integrating YourGPT Chatbot with your BigCommerce store is a straightforward process that enhances customer interaction. Follow these steps:
 
-### Adding the Chat Widget to BigCommerce
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Adding the Chat Widget to BigCommerce </div>
 
-1. Log in to your BigCommerce admin panel.
+<Steps>
+1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Log in to your BigCommerce admin panel:</div>
+   - Log in to your BigCommerce admin panel.
+   <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image
+          src="/assets/chatbot/bigcommerce/Commerece1.png"
+          alt="Create a BigCommerce"
+           width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
+        />
+        </div>
+2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Go to Storefront > Script Manager:</div>
+    - Go to **Storefront** > **Script Manager**.
+    <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+    <Image
+          src="/assets/chatbot/bigcommerce/Commerce2.png"
+          alt="Create a BigCommerce"
+           width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
+        />
+        </div>
+3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Click on Create a script:</div>
+    - Click on **Create a script**.
+    <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+    <Image src="/assets/chatbot/bigcommerce/Commerce3.png" alt="Storefront"  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md" />
+        </div>
 
-<Image
-  src="/assets/chatbot/bigcommerce/Commerece1.png"
-  alt="Create a BigCommerce"
-/>
+4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Go to the Integrations section and copy the script for the Widget:</div>
+    - Go to the **Integrations** section and copy the script for the Widget.
+5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Fill out the script details:</div>
+    - **Name**: Enter a name for your script (e.g., "YourGPT Chatbot")
+    - **Description**: Add an optional description
+    - **Location**: Select "Footer"
+    - **Select pages where script will be added**: Choose "All pages" 
+6. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Configure the script:</div>
+    - **Script category**: Choose a category or leave as default
+    - **Script type**: Select "Script"
+    - **Script contents**: Paste the copied YourGPT code
+    - Remove the first line and last two lines of the pasted code
+    <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+    <Image src="/assets/chatbot/bigcommerce/Commerce4.png" alt="Add The Script" width="100%" height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md" />
+        </div>
 
-2. Go to **Storefront** > **Script Manager**.
+9. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Click Save to add the script to your store:</div>
+    - Click **Save** to add the script to your store.
+10. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Use the View Store button to verify that the chatbot appears on your website:</div>
+    - Use the **View Store** button to verify that the chatbot appears on your website.
 
-<Image
-  src="/assets/chatbot/bigcommerce/Commerce2.png"
-  alt="The Theme Manager"
-/>
-
-3. Click on **Create a script**.
-
-<Image src="/assets/chatbot/bigcommerce/Commerce3.png" alt="Storefront" />
-4. Go to the **Integrations** section and copy the script for the Widget.
-
-5. Fill out the script details:
-
-   - **Name**: Enter a name for your script (e.g., "YourGPT Chatbot")
-   - **Description**: Add an optional description
-   - **Location**: Select "Footer"
-   - **Select pages where script will be added**: Choose "All pages"
-
-6. Configure the script:
-   - **Script category**: Choose a category or leave as default
-   - **Script type**: Select "Script"
-   - **Script contents**: Paste the copied YourGPT code
-   - Remove the first line and last two lines of the pasted code
-
-<Image src="/assets/chatbot/bigcommerce/Commerce4.png" alt="Add The Script" />
-
-9. Click **Save** to add the script to your store.
-
-10. Use the **View Store** button to verify that the chatbot appears on your website.
+</Steps>
 
 Congratulations! YourGPT Chatbot is now integrated into your BigCommerce store.
 
 ## Troubleshooting
 
-For any further inquiries or technical support regarding GPT Chatbot integration with BigCommerce, feel free to contact us at [**`Mail YourGPT Support`**](mailto:support@yourgpt.ai) or [**`Chatbot Live Support`**](https://yourgpt.ai/).
+<div className="text-base text-gray-700 dark:text-white/80">
+  <p>
+    For further inquiries or technical support regarding GPT Chatbot integration with BigCommerce, feel free to contact us at 
+    <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank">**Mail YourGPT Support**</a> 
+    or 
+    <a href="https://yourgpt.ai/" className="font-bold no-underline" target="_blank">**Chatbot Live Support**</a>.
+  </p>
+</div>

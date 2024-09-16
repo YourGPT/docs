@@ -3,7 +3,7 @@ title: Debugging AI Refusal to Answer Questions
 ---
 
 
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
 
 
@@ -11,76 +11,132 @@ import {Note} from '~/components'
 
 When an AI refuses to answer a question, especially when instructed to "Refuse to answer beyond the given knowledge base," it’s often because there is no relevant information available or the question is out of context. However, this refusal should only occur under specific circumstances. Below is a guide to help you troubleshoot and resolve this issue.
 
-## 1. Verify Data Sources
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 1. Verify Data Sources </div>
 
-### Check the Response Source
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Check the Response Source </div>
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/ai-refusal/repeat-refusal.png" 
   alt="Base Prompt Configuration" 
+  width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
 Start by examining the sources of the AI-generated response. If you find data related to your query within your data sources and the information has a decent confidence score, but the AI still refuses to answer, the issue might lie in the prompts you've set.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/ai-refusal/refusal-source.png" 
   alt="Base Prompt Configuration" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/ai-refusal/refusal-wrong-base-prompt.png" 
   alt="Base Prompt Configuration" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
-### Adjusting Prompts
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Adjusting Prompts </div>
 If the data is present but not being used correctly, inspect your "Base Prompt" or "Restriction Prompt." These prompts might need tweaking to ensure the AI responds appropriately based on the available data.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/ai-refusal/refusal-base-prompt-improved.png" 
   alt="Base Prompt Configuration" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
+
 />
+</div>
 
-## 2. Missing Information in Data Sources
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 2. Missing Information in Data Sources </div>
 
-### No Relevant Data Found
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> No Relevant Data Found </div>
 If you don’t find any trace of the query’s information in the data sources, it indicates that the AI couldn’t locate the necessary data. This could be due to incomplete training.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/ai-refusal/refusal-no-info-sources.png" 
   alt="Base Prompt Configuration" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
-### Verify Training Data
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Verify Training Data </div>
 Check whether you’ve trained the bot on the relevant information. If the data was included in the training but is still not being accessed, the training data might not be properly formatted or well-structured. It’s important to ensure the training data is correctly structured to optimize the AI’s performance.
 
-## 3. Using the Debug Lab Feature
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 3. Using the Debug Lab Feature </div>
 
-### Search and Investigate
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Search and Investigate </div>
 For further investigation, utilize the Debug Lab feature. This tool allows you to search through all your training material and lists all related data sources for any given query.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/debug-lab.png" 
   alt="Debug Lab" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
-### Filtering Data Points
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Filtering Data Points </div>
 You can filter data points to specific documents using the Source button in your trained data listing. This functionality helps you retrieve all data sources linked to a particular document or link, enabling you to query and view data points specific to that document.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/doc-source.png" 
   alt="Document Source" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
-## 4. Editing and Adjusting Data Sources
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 4. Editing and Adjusting Data Sources </div>
 
-### Modifying Data Sources
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Modifying Data Sources </div>
 You have the option to edit these data sources, make adjustments, or remove certain data points as needed. However, keep in mind that any edits made directly to the data sources may be overridden when the related document is re-trained.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/edit-data-source.png" 
   alt="Edit data source" 
+   width="100%"
+  height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
-### Adjusting Training Material
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Adjusting Training Material </div>
 To avoid losing your changes, it's important to adjust the training material itself rather than just the data sources. This ensures that your AI bot consistently has access to the correct information during re-training.
 
-Check out our [Training Guide](/chatbot/training) for more tips and best practices.
+<div class="text-base text-gray-700 dark:text-white/80">
+  <p>
+    Check out our 
+    <a href="/chatbot/training" class="font-bold no-underline">Training Guide</a> 
+    for more tips and best practices.
+  </p>
+</div>

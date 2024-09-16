@@ -3,36 +3,47 @@ title:  Connected Chatbots | YourGPT Chatbot
 description: Connected Chatbots feature allows you to link multiple chatbots together, creating a parent-child relationship. This can be particularly useful in a variety of scenarios, including staging & production chatbots, custom setting & behavior, and any other parent-child usecase.
 keywords:  chatbot, connected chatbots, parent child, staging, production, custom setting, behavior
 ---
-import {Image} from '~/components';
+
+import { Image } from "astro:assets";
 
 Connected Chatbots feature allows you to link multiple chatbots together, creating a parent-child relationship. This can be particularly useful in a variety of scenarios, including:
 
-## Use Cases
-### Staging & Production Environments
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Use Cases </div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Staging & Production Environments </div>
 You can setup a staging chatbot that is connected to the production chatbot knowledgebase. This way, you can test features and updates on the staging chatbot without affecting the production chatbot. Once you are satisfied with the changes, you can push them to the production chatbot.
 
-### Custom Setting & Behavior
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Custom Setting & Behavior </div>
 You can create multiple chatbots with the same knowledgebase but with different settings and behavior. For example, you can create a chatbot for sales and another chatbot for support. Both chatbots will have the same knowledgebase but different settings and behavior. 
 Similarly, you can create chatbots for different integration with different base prompt and same knowledgebase.
 
-### Any other parent child usecase
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Any other parent child usecase</div>
 You can create a child chatbot that is connected to multiple parent chatbots. Your child chatbot will aquire the knowledge of the parent chatbots. This can be useful for any parent child based usecase.
 
 
-## How to Enable Connected Chatbots
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> How to Enable Connected Chatbots </div>
 To enable this feature, follow the steps below:
-
+ <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-52">
 <Image 
  src="/assets/chatbot/connected-settings.jpg"
   alt="General settings"
+   width="100%"
+  height="100%"
+  style={{ width: "100%",height:"30vh" }}
+   className="rounded-md"
 />
+</div>
 
 1. Go to the **General settings** of your chatbot.
-
+ <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
  src="/assets/chatbot/connected-chatbot.jpg"
   alt="Connect Chatbots"
+   width="100%"
+                                    height="100%"
+                                      style={{ width: "100%" }}
+                                      className="rounded-md"
 />
+</div>
 
 2. Click on the '**Connect Chatbots**' option.
 

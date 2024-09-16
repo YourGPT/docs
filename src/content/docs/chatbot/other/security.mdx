@@ -4,38 +4,49 @@ description: Manage your chatbot's security settings to ensure safe and controll
 keywords: chatbot security, security, chatbot, yourgpt chatbot, ai chatbot
 ---
 
-import { Image } from "~/components";
+import { Image } from "astro:assets";
 import { Note } from "~/components";
 
 Manage your chatbot's security settings to ensure safe and controlled interactions. It is important to protect your chatbot from spam, misuse, and unauthorized access. YourGPT Chatbot provides a range of security features to help you manage and control the interactions with your chatbot.
 
-## Throttling Settings
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Throttling Settings </div>
 
 Throttling settings help you control the rate of user interactions with your chatbot.
 
-### Messages per Conversation
-
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Messages per Conversation </div>
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image
   src="/assets/chatbot/message-limit.png"
   alt="Messages per Conversation"
+  width="100%"
+   height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
 - **Limit**: Set a limit on the number of messages that can be sent in a single conversation.
 - **Time (hrs)**: Define the time frame (in hours) for this limit.
 - **Add Message**: Add a custom message that will be displayed when the limit is exceeded.
 
-### Conversations Limit
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Conversations Limit </div>
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image
   src="/assets/chatbot/conversations-limit.png"
   alt="Conversations Limit"
+  width="100%"
+   height="100%"
+  style={{ width: "100%" }}
+  className="rounded-md"
 />
+</div>
 
 - **Limit**: Set a limit on the number of conversations a user can initiate.
 - **Time (hrs)**: Define the time frame (in hours) for this limit.
 - **Add Message**: Add a custom message that will be displayed when the limit is exceeded.
 
-## Access Control List
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Access Control List </div>
 
 The Access Control List (ACL) allows you to control who can interact with your chatbot.
 
