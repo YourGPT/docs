@@ -285,6 +285,7 @@ export default defineConfig({
       ],
       components: {
         Sidebar: "./src/components/Sidebar.astro",
+        SiteTitle: "./src/components/starlight/SiteTitle.astro",
       },
       plugins:[starlightImageZoom()],
       customCss: [

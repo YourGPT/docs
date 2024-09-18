@@ -2,6 +2,8 @@ import { FaWebflow } from "react-icons/fa6";
 import { FaShopify,FaWix ,FaWordpress } from "react-icons/fa";
 import { IoIosChatbubbles } from "react-icons/io";
 import { SiCarrd } from "react-icons/si";
+import { AiFillApi } from "react-icons/ai";
+import { IoChatboxEllipsesSharp } from "react-icons/io5";
 
 const icons = {
   wordpress: <FaWordpress className="text-xl text-gray-700 dark:text-[#25D366]" />,
@@ -10,6 +12,9 @@ const icons = {
   webflow: <FaWebflow className="text-xl text-gray-700 dark:text-[#E1306C]" />,
   wix: <FaWix className="text-xl text-gray-700 dark:text-[#c025c3]" />,
   carrd: <SiCarrd className="text-xl text-gray-700 dark:text-[#1877F2]" />,
+  // icon for /chatbot/integrations/api-integration
+  api: <AiFillApi className="text-xl text-gray-700 dark:text-[#25D366]" />,
+  session: <IoChatboxEllipsesSharp className="text-xl text-gray-700 dark:text-[#c025c3]" />,
 };
 const WebsiteBuilder = ({ items }) => {
   return (

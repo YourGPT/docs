@@ -4,8 +4,9 @@ description: Comprehensive instructions for configuring Twilio SMS integration, 
 keywords: Twilio SMS integration, Twilio setup, configure Twilio SMS, Twilio credentials
 ---
 
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
+import { Steps } from '@astrojs/starlight/components';
 
 
 <Note type="idea" color="emerald">
@@ -14,43 +15,57 @@ import {Note} from '~/components'
 
 To set up Twilio SMS integration, follow these steps:
 
-## Obtain Twilio Credentials
+<Steps>
+ 1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Obtain Twilio Credentials </div>
+      - Log into your Twilio account.
+      - Go to the "**Develop**" tab to find your Account SID and Auth Token.
+     <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+        <Image 
+          src="/assets/chatbot/Twilio-sms/twilio-sms-1.png"
+          alt="Twilio Credentials" 
+          width="100%"
+                                      height="100%"
+                                        style={{ width: "100%" }}
+                                        className="rounded-md" 
+        />
+      </div>
 
-1. **Obtain Twilio Credentials**
-   - Log into your Twilio account.
-   - Go to the "**Develop**" tab to find your Account SID and Auth Token.
+  2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Get Phone Number SID </div>
+      - Go to "**View All Numbers**."
+      - Select your number, go to "**Properties**," and copy your Phone Number SID.
+      - Add the following fields:
+        - **Account SID**: Your Twilio account SID.
+        - **Auth Token**: Your Twilio Auth Token.
+        - **Phone Number SID**: The SID of your Twilio phone number.
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+        <Image 
+          src="/assets/chatbot/Twilio-sms/twilio-sms-2.png"
+          alt="SMS Configuration" 
+          width="100%"
+                                      height="100%"
+                                        style={{ width: "100%" }}
+                                        className="rounded-md" 
+        />
+      </div>
 
-   <Image 
-     src="/assets/chatbot/Twilio-sms/twilio-sms-1.png"
-     alt="Twilio Credentials"
-   />
+  3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Set Webhook Endpoint </div>
 
-## Get Phone Number SID
+      - Obtain your webhook endpoint.
+      - Add this webhook to your phone number in the message configuration:
+        - Go to "**Develop**" → "**View All Numbers**" → Select your number → "**Configure**."
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+            <Image 
+              src="/assets/chatbot/Twilio-sms/twilio-sms-3.png"
+              alt="Webhook Configuration" 
+              width="100%"
+                                          height="100%"
+                                            style={{ width: "100%" }}
+                                            className="rounded-md"  
+            />
+      </div>
 
-2. **Get Phone Number SID**
-   - Go to "**View All Numbers**."
-   - Select your number, go to "**Properties**," and copy your Phone Number SID.
-   - Add the following fields:
-     - **Account SID**: Your Twilio account SID.
-     - **Auth Token**: Your Twilio Auth Token.
-     - **Phone Number SID**: The SID of your Twilio phone number.
 
-   <Image 
-     src="/assets/chatbot/Twilio-sms/twilio-sms-2.png"
-     alt="SMS Configuration"
-   />
-
-## Set Webhook Endpoint
-
-3. **Set Webhook Endpoint**
-   - Obtain your webhook endpoint.
-   - Add this webhook to your phone number in the message configuration:
-     - Go to "**Develop**" → "**View All Numbers**" → Select your number → "**Configure**."
-
-   <Image 
-     src="/assets/chatbot/Twilio-sms/twilio-sms-3.png"
-     alt="Webhook Configuration"
-   />
+</Steps>
 
 ----
 

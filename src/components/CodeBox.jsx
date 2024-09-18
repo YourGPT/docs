@@ -6,6 +6,7 @@ const CodeBox = ({ language, children, commentColor = "#4ade80" }) => {
   const codeRef = React.useRef(null); // Reference to the code block
   const [copy, setCopy] = React.useState(false); // State to track if the code has been copied
   const handleCopy = () => {
+    console.log("sdaf");
     if (codeRef.current) {
       const text = codeRef.current.innerText;
       navigator.clipboard.writeText(text).then(
@@ -43,11 +44,11 @@ const CodeBox = ({ language, children, commentColor = "#4ade80" }) => {
 
   return (
     <div className="flex flex-col  text-white  rounded-md border border-gray-800 my-4">
-      <div className="flex items-center justify-between px-4">
-        <p>{language}</p>
+      <div className="flex items-center justify-between p-3">
+        <p className="text-lg font-semibold">{language}</p>
         <button
           onClick={handleCopy}
-          className=" text-white p-2 rounded bg-gray-800 "
+          className=" text-white p-2 rounded bg-gray-800 !mt-0"
         >
          {copy ? <TbCopyCheck className="text-blue-500" /> : <MdOutlineFileCopy />} 
         </button>
@@ -55,7 +56,7 @@ const CodeBox = ({ language, children, commentColor = "#4ade80" }) => {
 
       <pre
         ref={codeRef}
-        className="whitespace-pre-wrap break-all bg-gray-800 rounded-b-md"
+        className="whitespace-pre-wrap break-all bg-gray-800 rounded-b-md !mt-0"
       >
         <code>{formatCodeWithComments(children.props.value)}</code>
       </pre>

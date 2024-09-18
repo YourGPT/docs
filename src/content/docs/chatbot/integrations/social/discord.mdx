@@ -5,7 +5,7 @@ keywords: Discord server integrated chatbot,discord AI bot,custom bot for Discor
 ---
 
  
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
 
 
@@ -28,81 +28,127 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 </div>
 
-## <span className="nx-text-3xl">Prerequisites</span>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Prerequisites </div>
 
-- Ensure you have a developer portal account for Discord. If not, sign up at [**```Discord Developer Portal```**](https://discord.com/developers).
-- Visit the URL [**```Discord Developer Applications```**](https://discord.com/developers/applications) and create a new application.
+<div>
+  <p>
+    - Ensure you have a developer portal account for Discord. If not, sign up at 
+    <a href="https://discord.com/developers" target="_blank" className='no-underline'><strong>Discord Developer Portal</strong></a>.
+  </p>
+  <p>
+    - Visit the URL <a href="https://discord.com/developers/applications" target="_blank" className='no-underline'><strong>Discord Developer Applications</strong></a> and create a new application.
+  </p>
+</div>
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-1.png"
   alt="Create Application"
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
 />
+</div>
 
-## Setting up the Discord Integration 
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Setting up the Discord Integration </div>
 To integrate Discord with your application, follow these steps:
-### <span className="nx-text-3xl">Obtain Application Credentials</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Obtain Application Credentials</div>
 
 - Copy the **```Application ID```**.
 - Copy the **```Public Key```**.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-2.png"
   alt="Application Credentials"
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
 />
+</div>
 
-### <span className="nx-text-3xl">Create a Bot and Generate Token</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Create a Bot and Generate Token</div>
 
 - Create a **```Bot```** within your application.
 - Generate a **```Token```** for the bot and copy it.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-3.png"
   alt="Create Bot and Token"
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
 />
+</div>
 
-### <span className="nx-text-3xl">Enable the Bot</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Enable the Bot</div>
 
 - Enable the bot using the copied credentials within the Discord Developer Portal.
-
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-4.png"
   alt="Enable Bot"
-  height  = "40vh"
+  width="100%"
+             height="100%"
+               style={{ width: "100%", height:"40vh" }}
+               className="rounded-md"
 />
+</div>
 
-### <span className="nx-text-3xl">Obtain Webhook</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Obtain Webhook</div>
 
 - Copy the **```Webhook```** URL for your bot.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-5.png"
   alt="Obtain Webhook"
-  height = "40vh"
+   width="100%"
+             height="100%"
+               style={{ width: "100%", height:"40vh" }}
+               className="rounded-md"
 />
+</div>
 
-### <span className="nx-text-3xl">Integration Process</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Integration Process</div>
 
 - Paste the copied **```Webhook```** URL into your application.
 - Successful integration means the webhook is added; otherwise, update the integration credentials with the correct data.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-6.png"
   alt="Integration Process"
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
 />
+</div>
 
-### <span className="nx-text-3xl">Add Permissions</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Add Permissions</div>
 
 - Go to OAuth 2 and go to Bot permissions.
 - Grant the Bot necessary text permissions.
 - Copy the generate URL and paste it to your browser and Add the bot to your server.
 
 
-### <span className="nx-text-3xl">Test the Integration</span>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Test the Integration</div>
 To initiate a conversation, you must use chat slash commands. For instance, you can type **```/ask```**.
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-7.png"
   alt="Test the Integration"
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
 />
+</div>
 
 <div style={{height: '20px '}}></div>
 
@@ -111,38 +157,58 @@ To initiate a conversation, you must use chat slash commands. For instance, you 
 </Note>
 
 
-## Custom/Auto Installation
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Custom/Auto Installation </div>
 
 
 - Add YourGPTBot.
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-8.png"
   alt="Add YourGPTBot"
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md"
 />
+</div>
 
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-9.png"
   alt="Add YourGPTBot Confirmation"
-  height="50vh"
+  
+  width="100%"
+             height="100%"
+               style={{ width: "100%",height:"50vh" }}
+               className="rounded-md"
   
 />
+</div>
 
 - Select **Auto** from option click on authentication and complete the authentication.
-
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-10.png"
   alt="Auto Authentication"
-  height ="50vh"
+   width="100%"
+             height="100%"
+               style={{ width: "100%",height:"50vh" }}
+               className="rounded-md"
 />
+</div>
 
 - Now you can see that **ygc Ai Chatbot** is added to your server
 
 
 - To get the response, you all need to add the channel ID by simply copying and pasting the channel ID by right-clicking on the channel settings icon.
-
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Discord/discord-11.png"
   alt="Add Channel ID"
-  height= "50vh"
+    width="100%"
+             height="100%"
+               style={{ width: "100%",height:"50vh" }}
+               className="rounded-md"
 />
+</div>

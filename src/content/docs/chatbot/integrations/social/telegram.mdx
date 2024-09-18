@@ -3,8 +3,9 @@ title: GPT Chatbot for Telegram | Installation Guide
 description: Everything you need to know to integrate a AI Bot with telegram, complete documenation for the installation
 keywords: telegram integrated chatbot,telegram AI chatbot,AI bot for telegram integration, custom bot for telegram 
 ---
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
+import { Steps } from '@astrojs/starlight/components';
 
 
 
@@ -29,23 +30,31 @@ To create a chatbot for Telegram, you can use the BotFather platform. BotFather 
 
 Here are the steps to create a chatbot using BotFather:
 
-1. Open Telegram and search for **```BotFather```** in the search bar.
-2. Start a chat with BotFather by clicking on the **```Start```** button.
-3. Follow the instructions provided by BotFather to **```create a new bot```**.
-4. Once the bot is created, BotFather will provide you with an API token. Make sure to save this token as you will need it to interact with your bot.
+ <Steps>
+ 1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Open Telegram </div>
+      - Open Telegram and search for **```BotFather```** in the search bar.
+  2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Start a Chat </div>
+      - Start a chat with BotFather by clicking on the **```Start```** button.
+  3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Create a Bot </div>
+      - Follow the instructions provided by BotFather to **```create a new bot```**.
+  4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Get API Token </div>
+      - Once the bot is created, BotFather will provide you with an API token. Make sure to save this token as you will need it to interact with your bot.
+      <div className="flex justify-center items-center bg-blue-500 rounded-md px-4 md:px-36 p-4">
+      <Image 
+          src="https://chatbot.yourgpt.ai/images/telegram-bot-token.png" 
+          alt="Slack Flow 1" 
+          width="100%"
+                                    height="100%"
+                                      style={{ width: "100%",height:"50vh" }}
+                                      className="rounded-md"
+        />
+        </div>
 
-<Image 
-  src="https://chatbot.yourgpt.ai/images/telegram-bot-token.png" 
-  alt="Slack Flow 1" 
-  height={400} 
-   width="95%" 
-/>
+  5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Integrate with YourGPT AI Chatbot </div> 
+      - Simply **```paste that token```** into the Bot Token field within YourGPT AI Chatbot's Telegram integration settings.
 
 
-
-
-
-5. Simply **```paste that token```** into the Bot Token field within YourGPT AI Chatbot's Telegram integration settings.
+ </Steps>
 
 ----
 

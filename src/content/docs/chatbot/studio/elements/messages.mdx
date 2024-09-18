@@ -3,52 +3,85 @@ title: Messages | YourGPT Chatbot Studio
 description: Messages are the building blocks of a chatbot conversation. They are used to convey information to users in various formats, such as text, images, cards, and carousels.
 keywords: messages, chatbot, chatbot studio, yourgpt, yourgpt studio, chatbot messages, chatbot conversation, chatbot flow, chatbot builder, chatbot platform, chatbot development
 ---
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
 
 
 
-
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/flow/Messages.jpg" 
-  alt="Create Slack App" 
+  alt="Create Slack App"
+  width="100%"
+   height="100%"
+     style={{ width: "100%" }}
+   className="rounded-md" 
 />
+</div>
 
 You can send all sorts of interactive messages, each with its own style and purpose.
 
 
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300">
+  <thead>
+    <tr className=" dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Message Type</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Text</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">
+        Simple text-based messages conveyed to users. They are ideal for providing textual information or responses.
+      </td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Image</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">
+        Messages containing images or visual content. These enhance user engagement by presenting visual information.
+      </td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Card</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">
+        Structured messages displaying a combination of text and multimedia elements, such as an image with accompanying text.
+      </td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Carousel</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">
+        A collection of multiple cards or images displayed in a scrollable format. Users can view multiple items in sequence.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-|Message Type|Description|
-|---|---|
-|Text|Simple text-based messages conveyed to users. They are ideal for providing textual information or responses.|
-|Image|Messages containing images or visual content. These enhance user engagement by presenting visual information.|
-|Card|Structured messages displaying a combination of text and multimedia elements, such as an image with accompanying text.|
-|Carousel|A collection of multiple cards or images displayed in a scrollable format. Users can view multiple items in sequence.|
 
 
-## Text
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Text </div>
 
 
 
 Text messages are the most common type of message used in chatbot conversations. They are simple text-based messages that convey information or responses to users. Text messages are ideal for providing textual information, answering user queries, or guiding users through the conversation.
 
 
-## Image
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>  Image </div>
 
 
 Image messages contain visual content that can be displayed to users during a conversation. Images enhance user engagement by presenting visual information in addition to text. You can use image messages to showcase products, provide visual instructions, or add visual appeal to the conversation.
 
-## Card
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Card </div>
 
 
 Card messages are structured messages that combine text and multimedia elements. They typically consist of an image, title, description, and action buttons. Card messages are useful for presenting information in a visually appealing format and providing users with interactive options.
 
-## Carousel
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Carousel </div>
 
 
 Carousels are collections of multiple cards or images displayed in a scrollable format. Users can view multiple items in sequence by swiping or clicking through the carousel. Carousels are ideal for showcasing multiple products, services, or options in a visually appealing and interactive way.
 
-### How to Use Messages in YourGPT Flow
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> How to Use Messages in YourGPT Flow </div>
 
 - Go to the **```Flow```** section in the Chatbot Studio.
 

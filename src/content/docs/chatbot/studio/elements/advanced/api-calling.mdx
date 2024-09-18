@@ -4,7 +4,7 @@ description: Learn how to use API Calls in your chatbot to interact with externa
 keywords: API Calling, AI API, Chatbot, Studio, Chatbot Studio API
 ---
 
-
+import { Steps } from '@astrojs/starlight/components';
 
 
 <div style={{
@@ -21,7 +21,7 @@ allowfullscreen></iframe>
 
 API Calls enable your chatbot to interact with external services, fetch real-time data, or trigger actions during conversations. By using APIs, chatbot can access to a various information and functionalities beyond its core capabilities.
 
-###  API calling use-cases 
+##  <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> API calling use-cases </div>
 - **Live Data Fetching:** Retrieve real-time data like weather forecasts, stock prices, news updates or many more.
 - **External Actions:** Trigger actions such as making reservations, sending notifications, or updating external system information.
 - **Data Enrichment:** Enhance the conversation by providing additional information or context from external sources.
@@ -29,23 +29,28 @@ API Calls enable your chatbot to interact with external services, fetch real-tim
 - **Third-party Integrations:** Connect with third-party services to perform specific tasks.
 
 
-##  How to use API Calls in YourGPT Flow 
+##  <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> How to use API Calls in YourGPT Flow </div>
 
 
-###  Steps to Follow 
+###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Steps to Follow </div>
 
-1. **Set Up API Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the **API Call** component onto the canvas.
+<Steps>
+ 1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Set Up API Component: </div>
+     - Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the **API Call** component onto the canvas.
+  2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Configure API Endpoint: </div>
+     - Enter the API endpoint URL in the **`URL`** field. You can also add query parameters, headers, and other configurations as needed.
+  3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Add Headers and Parameters: </div>
+      - Customize the API request by adding headers, query parameters, and other configurations. This step ensures that the API call is properly authenticated and formatted.
+  4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Test Request: </div>
+      - Click on the **`Test Request`** button to check if the API is working fine and see the output. This step helps in verifying the API response and ensuring that the data is fetched correctly.
+  5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Capture API Response: </div>
+      - Use the **`Capture to`** option to store the API response in a variable. This variable can be used in subsequent steps of the flow.
+     
 
-2. **Configure API Endpoint:** Enter the API endpoint URL in the **`URL`** field. You can also add query parameters, headers, and other configurations as needed.
-
-3.  **Add Headers and Parameters:** Customize the API request by adding headers, query parameters, and other configurations. This step ensures that the API call is properly authenticated and formatted.
-
-4. **Test Request:** Click on the **`Test Request`** button to check if the API is working fine and see the output. This step helps in verifying the API response and ensuring that the data is fetched correctly.
-
-5. **Capture API Response:** Use the **`Capture to`** option to store the API response in a variable. This variable can be used in subsequent steps of the flow. 
+</Steps>
 
 
-###  Video Part 
+###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Video Part </div>
 
 🌤️ API Used in the Video - To Search Weather:
 
@@ -60,6 +65,7 @@ API Endpoint is : **`https://api.weatherapi.com/v1/current.json`**
 
 ```
 https://api.weatherapi.com/v1/current.json?q={{FLOW.City}}
+
 ```
 
 
