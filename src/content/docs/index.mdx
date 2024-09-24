@@ -2,6 +2,18 @@
 title: ""
 description: Get started with YourGPT Documentation.
 template: splash
+# hero:
+#   title: YourGPT Documentation
+#   tagline: Welcome to our documentation page for our Generative AI solutions, including YourGPT chatbot and LLM Spark.
+#   actions:
+#     - text: Visit Chatbot
+#       icon: right-arrow
+#       variant: minimal
+#       link: https://yourgpt.ai/chatbot
+#     - text: Visit LLM Spark
+#       icon: right-arrow
+#       variant: minimal
+#       link: https://yourgpt.ai/llm-spark
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -19,13 +31,14 @@ import { GrServices } from "react-icons/gr";
 
 import {Note} from '~/components'
 
-  <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-12 lg:gap-36 pb-16 lg:px-12'>
+  <div className=" flex flex-col lg:flex-row lg:justify-between lg:items-center gap-12 lg:gap-36 pb-16 lg:px-12 dark:bg-[url('/assets/hero.svg')] bg-cover bg-center bg-no-repeat  !py-16 !mt-0  rounded-xl">
+  
   <div className='order-2 lg:order-1'>
    <div className=' tracking-tight text-5xl md:text-7xl font-extrabold break-words max-w-[600px] leading-[50px] lg:leading-[90px] text-muted dark:text-white/95 '>YourGPT Documentation</div>
-   <p className='text-base sm:text-xl max-w-[660px] text-muted dark:text-white'>Welcome to our documentation page for our Generative AI solutions, including YourGPT chatbot and LLM Spark.</p>
+   <p className='text-base sm:text-xl max-w-[660px] text-muted dark:text-white tracking-tight'>Welcome to our documentation page for our Generative AI solutions, including YourGPT chatbot and LLM Spark.</p>
    <div className='flex flex-col md:flex-row justify-between w-fit gap-4 lg:gap-8 !mt-12 '>
-    <a target='_blank' href="https://yourgpt.ai/chatbot" className='py-4 px-8 lg:px-12 rounded-full dark:bg-[#4e55f1] bg-gray-700  no-underline font-semibold transition-all duration-300'> <span className='flex  text-white/95  lg:justify-between items-center gap-4 text-lg'> Visit Chatbot <GoArrowRight strokeWidth={2} /> </span></a >
-    <a target="_blank" href="https://yourgpt.ai/llm-spark" className='py-4 px-8 lg:px-12 rounded-full dark:bg-[#4e55f1] bg-gray-700 no-underline font-semibold transition-all duration-300'> <span className='flex  text-white/95  lg:justify-between items-center gap-4 text-lg'> Visit LLM Spark <GoArrowRight strokeWidth={2} /> </span> </a >
+    <a target='_blank' href="https://yourgpt.ai/chatbot" className='py-4 px-8 lg:px-12 rounded-full dark:bg-[#0c0f6b] dark:hover:bg-[#080c85] bg-gray-700  no-underline font-semibold transition-all duration-300'> <span className='flex  text-white/95  lg:justify-between items-center gap-4 text-lg'> Visit Chatbot <GoArrowRight strokeWidth={2} /> </span></a >
+    <a target="_blank" href="https://yourgpt.ai/llm-spark" className='py-4 px-8 lg:px-12 rounded-full dark:bg-white/85 dark:hover:bg-white bg-gray-700 no-underline font-semibold transition-all duration-300 !text-white/95 dark:!text-black'> <span className='flex   lg:justify-between items-center gap-4 text-lg'> Visit LLM Spark <GoArrowRight strokeWidth={2} /> </span> </a >
     </div>
     </div>
     <div className='w-full order-1 lg:order-2 max-w-[280px]  !mt-0 '>

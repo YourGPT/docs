@@ -22,7 +22,7 @@ export default defineConfig({
         {
           label: "Chatbot",
           items: [
-            { label: "Introduction", link: "/chatbot/introduction" },
+            { label: "👋 Introduction", link: "/chatbot/introduction" },
             {
               label: "About YourGPT Chatbot",
               link: "/chatbot/what-is-yourgpt-chatbot-how-it-works",
@@ -246,6 +246,10 @@ export default defineConfig({
                 { label: "Queue Replies", link: "chatbot/queue-replies" },
                 { label: "Security", link: "chatbot/other/security" },
                 {
+                  label:"Smart Learning" , link:"chatbot/other/smart-learning"
+
+                },
+                {
                   label: "Debugging",
                   items: [
                     {
@@ -284,6 +288,7 @@ export default defineConfig({
         },
       ],
       components: {
+        // Hero:"./src/components/Landing/Hero.astro",
         Sidebar: "./src/components/Sidebar.astro",
         SiteTitle: "./src/components/starlight/SiteTitle.astro",
       },

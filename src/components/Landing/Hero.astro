@@ -1,0 +1,19 @@
+--- 
+const { hero } = Astro.props.entry.data;
+const { title, tagline, actions, facepile } = hero!;
+
+---
+
+
+    <div>
+      <h1 class="title">{title}</h1>
+      <p>{tagline}</p>
+
+      <div class="actions flex gap-6">
+        {actions.map((action:any) => <a href={action.link} class="action no-underline">{action.text}</a>)}
+      </div>
+    </div>
+  
+
+
+
