@@ -75,7 +75,7 @@ export default defineConfig({
                       link: "chatbot/integrations/website/wordpress",
                     },
                     {
-                      label: "carrd",
+                      label: "Carrd",
                       link: "chatbot/integrations/website/carrd",
                     },
                     {
@@ -83,10 +83,10 @@ export default defineConfig({
                       link: "chatbot/integrations/website/shopify",
                     },
                     { label: "Wix", link: "chatbot/integrations/website/wix" },
-                    {
-                      label: "Squarespace",
-                      link: "chatbot/integrations/website/squarespace",
-                    },
+                    // {
+                    //   label: "Squarespace",
+                    //   link: "chatbot/integrations/website/squarespace",
+                    // },
                     {
                       label: "Webflow",
                       link: "chatbot/integrations/website/webflow",
@@ -96,7 +96,7 @@ export default defineConfig({
                       link: "chatbot/integrations/website/bigcommerce",
                     },
                     {
-                      label: "bubble",
+                      label: "Bubble",
                       link: "chatbot/integrations/website/bubble",
                     },
                     {
