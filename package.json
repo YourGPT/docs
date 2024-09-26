@@ -15,6 +15,7 @@
     "@astrojs/starlight": "^0.26.2",
     "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@docsearch/js": "^3.6.1",
     "astro": "^4.10.2",
     "lucide-react": "^0.439.0",
     "mermaid": "^11.1.1",

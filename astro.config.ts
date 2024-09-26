@@ -22,14 +22,14 @@ export default defineConfig({
         {
           label: "Chatbot",
           items: [
-            { label: "👋 Introduction", link: "/chatbot/introduction" },
+            { label: "🙋‍♂️ Introduction", link: "/chatbot/introduction" },
             {
-              label: "About YourGPT Chatbot",
+              label: "🔎 About YourGPT Chatbot",
               link: "/chatbot/what-is-yourgpt-chatbot-how-it-works",
             },
-            { label: "Setup", link: "/chatbot/setup" },
+            { label: "🛠 Setup", link: "/chatbot/setup" },
             {
-              label: "Shareable Chatbot",
+              label: "🔁 Shareable Chatbot",
               link: "/chatbot/link-shareable-chatbot",
             },
             // {
@@ -42,7 +42,7 @@ export default defineConfig({
             //   ],
             // },
             {
-              label: "Training Guide",
+              label: "👨🏻‍💻 Training Guide",
               link: "/chatbot/training",
             },
             // {
@@ -52,7 +52,7 @@ export default defineConfig({
             //   ]
             // },
             {
-              label: "Integrations",
+              label: "🔗 Integrations",
               items: [
                 {
                   label: "Chatbot Integrations",
@@ -154,11 +154,11 @@ export default defineConfig({
               ],
             },
             {
-              label: "Functions",
+              label: "</> Functions",
               link: "chatbot/functions",
             },
             {
-              label: "Customization",
+              label: "⚙️ Customization",
               items: [
                 {
                   label: "Appearance",
@@ -191,7 +191,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Studio",
+              label: "🚀 Studio",
               items: [
                 { label: "Intents", link: "chatbot/studio/elements/intents" },
                 { label: "Events", link: "chatbot/studio/elements/events" },
@@ -229,7 +229,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Other",
+              label: "🗂️ Other",
               items: [
                 {
                   label: "Automated Responses",
@@ -277,20 +277,21 @@ export default defineConfig({
         {
           label: "LLM Spark",
           items: [
-            { label: "Introduction", link: "/llm-spark/introduction" },
-            { label: "Prompt Testing", link: "/llm-spark/prompt-testing" },
+            { label: "📚 Introduction", link: "/llm-spark/introduction" },
+            { label: "📝 Prompt Testing", link: "/llm-spark/prompt-testing" },
             {
-              label: "API Documentation",
+              label: "🔗 API Documentation",
               link: "/llm-spark/api-documentation",
             },
-            { label: "Templates", link: "/llm-spark/templates" },
+            { label: "📑 Templates", link: "/llm-spark/templates" },
           ],
         },
       ],
       components: {
-        // Hero:"./src/components/Landing/Hero.astro",
+        Hero:"./src/components/Landing/Hero.astro",
         Sidebar: "./src/components/Sidebar.astro",
         SiteTitle: "./src/components/starlight/SiteTitle.astro",
+        Search: './src/components/starlight/Search.astro',
       },
       plugins:[starlightImageZoom()],
       customCss: [
