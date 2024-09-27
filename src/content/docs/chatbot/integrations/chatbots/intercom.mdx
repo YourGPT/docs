@@ -10,13 +10,16 @@ hero:
 import { Image } from "astro:assets";
 import { Note } from "~/components";
 import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> ChatGPT AI Integration for Intercom | Installation Guide </div>
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
   Connecting Your AI Chatbot with Intercom
-</Note>{" "}
+</Note>{" "} */}
+
+<Aside type="tip" title="Idea"> 💡 Connecting Your AI Chatbot with Intercom </Aside>
 
 Intercom integration allows seamless communication between YourGPT AI Bot and Intercom, enabling efficient customer interactions.
 
@@ -187,5 +190,5 @@ By following these steps mentioned above help you integrate YourGPT AI Bot with 
 <aside>
   
    <div className="text-base text-gray-700 dark:text-white/80"><p>📌 If you require any assistance or have any questions, please feel free to
-  contact us at <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank"> **`YourGPT Support`** </a>.</p></div>
+  contact us at <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank"> YourGPT Support </a>.</p></div>
 </aside> 

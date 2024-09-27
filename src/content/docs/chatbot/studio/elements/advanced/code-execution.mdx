@@ -10,6 +10,7 @@ hero:
 
 import { Image } from "~/components";
 import { Note } from "~/components";
+import { Aside } from '@astrojs/starlight/components';
 
 <div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> Code Execution in YourGPT Chatbot Studio </div>
 
@@ -43,9 +44,20 @@ Our chatbot enables the execution of JavaScript code to accomplish complex tasks
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Video Part </div>
 
-<Note type="re" color="blue">
+{/* <Note type="re" color="blue">
   🧑‍💻 Code Showcased in the Video - Weather Search Example:
-</Note>
+</Note> */}
+
+<Aside type="tip" >
+
+  🧑‍💻 Code Showcased in the Video 
+
+  ```js
+  // For Example: Weather Search
+  ```
+    
+
+</Aside>
 
 ```
 const WEATHER_API_ENDPOINT = 'https://api.weatherapi.com/v1/current.json';

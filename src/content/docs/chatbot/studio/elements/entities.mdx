@@ -9,6 +9,7 @@ hero:
 
 import {Image} from '~/components';
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Entitites in YourGPT Chatbot Studio </div>
 
@@ -50,7 +51,9 @@ For example, in the sentence "**Book a flight to Paris on March 5th**," the enti
 
 - Add the entity to the intent by selecting it from the available options.
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
   When creating the custom entities, make sure that the description are clear & concise as it acts like a prompt. You can add examples in the entity description for better understanding. 
-</Note>
+</Note> */}
+
+<Aside>  📝 When creating the custom entities, make sure that the description are clear & concise as it acts like a prompt. You can add examples in the entity description for better understanding.</Aside>
 

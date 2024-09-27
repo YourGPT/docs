@@ -9,13 +9,15 @@ hero:
 
 import { Image } from "astro:assets";
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> GPT Chatbot for Slack | Installation Guide </div>
 
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
  Connecting Your Bot with Slack
-</Note> 
+</Note>  */}
+<Aside type="tip" title="Idea"> 💡  Connecting Your Bot with Slack </Aside>
 
 <div style={{ height: '20px' }}></div>
 
@@ -271,9 +273,11 @@ Go to the **`Slash Commands`** section and create a new slash command.
 - After a successful response, it will be added; otherwise, an error will occur.
 
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
   Without using a slash command or mentioning the bot (@BOT), responses will only occur in direct messaging, not in general group chats.
-</Note>
+</Note> */}
+
+<Aside > Without using a slash command or mentioning the bot (@BOT), responses will only occur in direct messaging, not in general group chats.</Aside>
 
 
 <div>

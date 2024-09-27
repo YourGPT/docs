@@ -14,9 +14,8 @@ export default defineConfig({
       },
       favicon: "/favicon2.ico",
       social: {
-        github: "https://github.com/yourgpt/",
-        twitter: "https://twitter.com/yourgpt",
-        slack: "https://yourgpt.ai",
+        youtube: "https://www.youtube.com/@YourGPTAI",
+        twitter: "https://x.com/YourGPTAI",
       },
       sidebar: [
         {
@@ -291,7 +290,7 @@ export default defineConfig({
         Hero:"./src/components/Landing/Hero.astro",
         Sidebar: "./src/components/Sidebar.astro",
         SiteTitle: "./src/components/starlight/SiteTitle.astro",
-        Search: './src/components/starlight/Search.astro',
+        // Search: './src/components/starlight/Search.astro',
       },
       plugins:[starlightImageZoom()],
       customCss: [

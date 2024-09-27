@@ -13,14 +13,16 @@ import { Image } from "astro:assets";
 import {Note} from '~/components';
 import {ResponseBox} from '~/components';
 import { WebsiteBuilder } from '~/components';
+import { Aside } from '@astrojs/starlight/components';
 
 <div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> API Integration for YourGPT Chatbot | Installation Guide </div>
 
 
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
  Connect Your Chatbot Anywhere with Chatbot API
-</Note> 
+</Note>  */}
+<Aside type="tip" title="Idea"> 💡 Connect Your Chatbot Anywhere with Chatbot API</Aside>
 
 Welcome to the Documentation page for **YourGPT Chatbot APIs**
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Generating Keys</div>
@@ -53,16 +55,26 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 />
 </div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
   The widget_uid is your chatbot's Widget ID.  **For example: a12bc345-d678-90ef-gh12-ijklmno345pq.**
-</Note>
+</Note> */}
+
+<Aside  >
+ 📝 The widget_uid is your chatbot's Widget ID.
+   ```js
+   //  For Example.
+   a12bc345-d678-90ef-gh12-ijklmno345pq
+
+  ```
+  
+  </Aside>
  
 <div className='!mt-12'>
 
 <WebsiteBuilder
   items={[
     { title: 'How to Create Session', description: ' Guide to Creating Sessions', icon: 'session', link: '/chatbot/api/create-session' },
-    { title: ' Send a Message via API', description: 'API to send messages seamlessly', icon: 'api', link: '/chatbot/ai/send-message' }
+    { title: ' Send a Message via API', description: 'API to send messages seamlessly', icon: 'api', link: '/chatbot/api/send-message' }
   ]}
 />
 </div>
@@ -77,12 +89,21 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Create Session API</div>
 
-<CodeBox client:load language="curl">
+{/* <CodeBox client:load language="curl">
 {`curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
 --header 'Content-Type: application/x-www-form-urlencoded' \\
 --header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
 --data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
-</CodeBox>
+</CodeBox> */}
+
+```
+{`curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
+
+```
+
 
 <div className="text-md font-semibold "> Response </div>
 <ResponseBox response={`{
@@ -112,22 +133,33 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 
 <div style={{ height: '20px' , paddingTop:"3rem" }}></div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
   To use the send message API, you must first establish a session. Obtain a session UID by executing the Create Session API.
-</Note>
+</Note> */}
+
+<Aside> 📝 To use the send message API, you must first establish a session. Obtain a session UID by executing the Create Session API. </Aside>
 
 ---- 
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Send Message API</div>
 
-<CodeBox client:load language="curl">
+{/* <CodeBox client:load language="curl">
 {`curl --location 'https://api.yourgpt.ai/chatbot/v1/sendMessage' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \
 --data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013' \
 --data-urlencode 'session_uid=39772b8d-d1c8-4d5a-a473-a6841bc4c880' \
 --data-urlencode 'message=hey there?'`}
-</CodeBox>
+</CodeBox> */}
+
+```
+{`curl --location 'https://api.yourgpt.ai/chatbot/v1/sendMessage' \\
+--header 'Content-Type: application/x-www-form-urlencoded
+--header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013' \\
+--data-urlencode 'session_uid=39772b8d-d1c8-4d5a-a473-a6841bc4c880' \\
+--data-urlencode 'message=hey there?'`}
+```
 
 
 <div className="text-md font-semibold "> Response </div>

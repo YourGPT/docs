@@ -10,13 +10,16 @@ hero:
 import { Image } from 'astro:assets'
 import {Note} from '~/components'
 import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'>  How to Share Custom Chatbot using a Link </div>
 
 
-<Note type="re" color="emerald">
+{/* <Note type="re" color="emerald">
    🔗 Share your custom chatbot using a link
-</Note>
+</Note> */}
+
+<Aside >🔗 Share your custom chatbot using a link</Aside>
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Sharing Your Chatbot Link</div>
 To share your custom chatbot using a link, follow the steps below:
@@ -44,5 +47,6 @@ To share your custom chatbot using a link, follow the steps below:
      Share the copied URL with anyone you want to have access to your chatbot. They can use this link to interact with your chatbot directly.
 
      
-    <Note type="re" color="rose"> Remember, anyone with the link can access your chatbot, so be careful who you share it with. </Note>
+    {/* <Note type="re" color="rose"> Remember, anyone with the link can access your chatbot, so be careful who you share it with. </Note> */}
+    <Aside type="danger">Remember, anyone with the link can access your chatbot, so be careful who you share it with.</Aside>
 </Steps>

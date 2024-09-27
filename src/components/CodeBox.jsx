@@ -48,7 +48,7 @@ const CodeBox = ({ language, children, commentColor = "#4ade80" }) => {
         <p className="text-lg font-semibold">{language}</p>
         <button
           onClick={handleCopy}
-          className=" text-white p-2 rounded bg-gray-800 !mt-0"
+          className=" copy-button text-white p-2 rounded bg-gray-800 !mt-0"
         >
          {copy ? <TbCopyCheck className="text-blue-500" /> : <MdOutlineFileCopy />} 
         </button>
@@ -65,3 +65,5 @@ const CodeBox = ({ language, children, commentColor = "#4ade80" }) => {
 };
 
 export default CodeBox;
+
+

@@ -4,45 +4,19 @@ import './../Search/variables.css';
 import type docsearch from '@docsearch/js';
 import type { AstroGlobal } from 'astro';
 
-type ModalTranslations = NonNullable<Parameters<typeof docsearch>[0]['translations']>['modal'];
 
- interface DocSearchTranslation {
-	// These two keys are Astro-specific and apply to the search box in the header.
-	button?: string;
-	shortcutLabel?: string;
-	// Astro-specific labels for the custom `resultsFooterComponent`.
-	resultsFooterLede?: string;
-	resultsFooterIntegrations?: string;
-	resultsFooterThemes?: string;
-	resultsFooterDiscord?: string;
-	// Search box placeholder text within the DocSearch modal.
-	placeholder?: string;
-	// This object follows DocSearch's translation.modal format.
-	// See: https://docsearch.algolia.com/docs/api/#translations
-	modal?: ModalTranslations;
+
+const docsearchstrings={
+	button: 'Search',
+  placeholder: 'Search docs',
+  shortcutLabel: 'Press / to search',
+  resultsFooterLede: 'Looking for an Astro integration or theme? Need more help?',
+  resultsFooterIntegrations: 'Astro integrations directory',
+  resultsFooterThemes: 'Astro themes showcase',
+  resultsFooterDiscord: 'Join us on Discord',
+  modal: {}
 }
 
-
-function mapDefaultExports<T>(modules: Record<string, { default: T }>) {
-	const exportMap: Record<string, T> = {};
-	for (const [path, module] of Object.entries(modules)) {
-		const [_dot, lang] = path.split('/');
-		exportMap[lang] = module.default;
-	}
-	return exportMap;
-}
-
-const docsearchTranslations = mapDefaultExports<DocSearchTranslation>(
-	import.meta.glob('./*/docsearch.ts', { eager: true })
-);
-
-
-
-function getDocSearchStrings(Astro: AstroGlobal): DocSearchTranslation {
-	return { ...docsearchTranslations['en'],  };
-}
-
-const docSearchStrings = getDocSearchStrings(Astro);
 
 
 
@@ -51,8 +25,8 @@ const docSearchStrings = getDocSearchStrings(Astro);
 
 
 
-<sl-doc-search data-translations={JSON.stringify(docSearchStrings)}>
-    <button type="button" class="DocSearch DocSearch-Button" aria-label={docSearchStrings.button}>
+<sl-doc-search data-translations={JSON.stringify(docsearchstrings)}>
+    <button type="button" class="DocSearch DocSearch-Button" aria-label={docsearchstrings.button}>
       <span class="DocSearch-Button-Container">
         <svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20">
           <path
@@ -64,7 +38,7 @@ const docSearchStrings = getDocSearchStrings(Astro);
             stroke-linejoin="round"
           ></path>
         </svg>
-        <span class="DocSearch-Button-Placeholder">{docSearchStrings.button}</span>
+        <span class="DocSearch-Button-Placeholder">{docsearchstrings.button}</span>
       </span>
       <span class="DocSearch-Button-Keys"></span>
     </button>
@@ -79,9 +53,10 @@ const translations = JSON.parse(document.querySelector('sl-doc-search').dataset.
 
 docsearch({
 		container: 'sl-doc-search',
+		// appId: '7AFBU8EPJU',
 		indexName: 'astro',
+		apiKey: '4440670147c44d744fd8da35ff652518',
 		searchParameters: {
-			// facetFilters: [[`lang:${location.pathname.split('/')[1]}`]],	
 			attributesToHighlight: ['hierarchy.lvl0'],
 		},
 		insights: true,

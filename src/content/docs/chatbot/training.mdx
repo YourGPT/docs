@@ -6,6 +6,7 @@ hero:
 ---
 import {Table} from '~/components'; 
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Training Guide for YourGPT Chatbot </div>
@@ -60,9 +61,15 @@ Here's a table that summarizes the different ways to structure your training dat
 
 <div style={{height: '20px'}}></div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
  structured data is a great choice for improving the accuracy of your chatbot's responses. 
-</Note>
+</Note> */}
+
+<Aside >
+Structured data is a great choice for improving the accuracy of your chatbot's responses.
+ </Aside>
+
+
 
 <div>using JSON Line format over CSV can be more effective in training your chatbot. You can convert your CSV files to JSON Line format using our <a href='https://yourgpt.ai/tools/csv-to-jsonline' target='_blank' className='no-underline font-semibold transition-all duration-300 text-lg  '>CSV to JSON Line Converter.</a></div>
 

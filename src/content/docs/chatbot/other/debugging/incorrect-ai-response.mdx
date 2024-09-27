@@ -9,6 +9,7 @@ hero:
 
 import { Image } from "astro:assets";
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> AI Providing Incorrect or Out-of-Context Answers </div>
 
@@ -23,9 +24,11 @@ Your AI model's base prompt might not include clear instructions on when to refu
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Solution: </div>
 Add an instruction to the base prompt, such as:
 
-<Note type="re" color="blue">
+{/* <Note type="re" color="blue">
  Refuse to answer any question beyond the given info and Inform to tap on "Talk to a Human" button if you don't have enough information to answer.
-</Note>
+</Note> */}
+
+<Aside type="caution" title="Caution">   Refuse to answer any question beyond the given info and Inform to tap on "Talk to a Human" button if you don't have enough information to answer.</Aside>
 <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
 <Image 
   src="/assets/chatbot/Debug/how-to-debug/refusal-in-base-prompt.png" 

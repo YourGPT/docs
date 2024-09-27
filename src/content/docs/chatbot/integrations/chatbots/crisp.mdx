@@ -11,21 +11,27 @@ import { Image } from "astro:assets";
 import { Note } from "~/components";
 import "../../../../../styles/custom.css";
 import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'>  ChatGPT AI Integration for crisp.chat | Installation Guide </div>
 
 
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
   Connecting Your AI Chatbot with Crisp
-</Note>{" "}
+</Note>{" "} */}
+
+<Aside type="tip" title="Idea"> 💡 Connecting Your AI Chatbot with Crisp</Aside>
 
 Welcome to the Documentation page for integrating YourGPT AI Bot with Crisp! This section provides you with comprehensive guidance on seamlessly incorporating the power of YourGPT AI Bot into your Crisp chat platform.
 
-<Note type="re" color="amber">
+{/* <Note type="re" color="amber">
   🚀 Empower crisp chat with YourGPT AI chatbot for offline supercharged
   support. Provide seamless customer assistance even when you're offline or away
-</Note>
+</Note> */}
+
+<Aside>🚀 Empower crisp chat with YourGPT AI chatbot for offline supercharged
+  support. Provide seamless customer assistance even when you're offline or away</Aside>
 
 ---
 
@@ -383,10 +389,13 @@ This documentation outlines the process of integrating YourGPT AI Bot with Crisp
 
 </Steps>
 
-        <Note type="note" color="blue">
+        {/* <Note type="note" color="blue">
           Test the scenario in the Crisp chat widget; it may not work in the Crisp bot
           testing area.
-        </Note>
+        </Note> */}
+
+        <Aside>📝 Test the scenario in the Crisp chat widget; it may not work in the Crisp bot
+          testing area.</Aside>
 
 
 
@@ -395,7 +404,7 @@ This documentation outlines the process of integrating YourGPT AI Bot with Crisp
 <aside>
 By following these steps, you can easily integrate YourGPT AI Bot with Crisp Bot to enhance user interactions and capture leads effectively.
 
- <div className="text-base text-gray-700 dark:text-white/80"><p>📌 If you require any assistance or have any questions, please feel free to contact us at <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank"> **`YourGPT Support`** </a>. We are here to help and provide support in any way we can.</p></div>
+ <div className="text-base text-gray-700 dark:text-white/80"><p>📌 If you require any assistance or have any questions, please feel free to contact us at <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank"> YourGPT Support </a>. We are here to help and provide support in any way we can.</p></div>
 
 
 </aside>

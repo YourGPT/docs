@@ -9,6 +9,7 @@ hero:
 
 import {Image} from '~/components';
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Automated Responses in YourGPT Chatbot </div>
 
@@ -36,8 +37,14 @@ This feature is designed to enhance user interaction by providing quick, predefi
 - **Handling escalations:**  
   Automated Responses can be used to detect specific keywords or phrases that indicate a user's need to speak with a human agent. By setting up triggers for human escalation, you can ensure that users are connected to a live representative when necessary.
 
-<Note type="" color="emerald">
+{/* <Note type="" color="emerald">
  One of the primary advantages of the Automated Responses feature is that it does not consume AI credits. 
  
  This allows users to send unlimited automated responses without worrying about additional costs, making it a cost-effective solution for managing routine inquiries.
-</Note>
+</Note> */}
+
+<Aside type="tip" title="Advantage"> 
+  One of the primary advantages of the Automated Responses feature is that it does not consume AI credits. 
+ 
+ This allows users to send unlimited automated responses without worrying about additional costs, making it a cost-effective solution for managing routine inquiries.
+ </Aside>

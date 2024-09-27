@@ -45,12 +45,13 @@ Learn how to get started with YourGPT Chatbot, a custom Chat GPT builder that an
       { href: "/chatbot/setup", text: "Setup YourGPT Chatbot" },
       { href: "/chatbot/training", text: "Train YourGPT Chatbot" },
     ].map(({ href, text }) => (
-      <li key={href} className="flex justify-between items-center border-b pb-2 border-gray-200 dark:border-gray-800">
-        <a href={href} className="no-underline font-medium transition-all duration-300 text-sm md:text-base">
+      
+        <a href={href} className="flex justify-between items-center border-b pb-2 border-gray-200 dark:border-gray-800 no-underline font-medium transition-all duration-300 text-sm md:text-base">
           {text}
+           <FaArrowRight className="text-xs dark:text-[#c7d2fe] text-[#4f46e5]" />
         </a>
-        <FaArrowRight className="text-xs dark:text-[#c7d2fe] text-[#4f46e5]" />
-      </li>
+       
+      
     ))}
   </ul>
 </div>
@@ -88,18 +89,18 @@ Learn how to install your custom GPT chatbot on different platforms:
     <p className="!mt-0 text-xl md:text-2xl text-gray-700 dark:text-inherit">Getting Started with YourGPT Chatbot</p>
   </div>
   <ul className="list-none space-y-2 mt-4">
-    <li className="flex justify-between items-center border-b pb-2 border-gray-200 dark:border-gray-800">
-      <a href="/chatbot/integrations/chatbots/crisp" className="no-underline font-medium transition-all duration-300 text-sm md:text-base">
+    
+      <a href="/chatbot/integrations/chatbots/crisp" className="flex justify-between items-center border-b pb-2 border-gray-200 dark:border-gray-800 no-underline font-medium transition-all duration-300 text-sm md:text-base">
         Add AI to Crisp
-      </a>
       <FaArrowRight className="text-xs dark:text-[#c7d2fe] text-[#4f46e5]" />
-    </li>
-    <li className="flex justify-between items-center">
-      <a href="/chatbot/integrations/chatbots/intercom" className="no-underline font-medium transition-all duration-300 text-sm md:text-base">
+      </a>
+  
+    
+      <a href="/chatbot/integrations/chatbots/intercom" className="flex justify-between items-center border-b pb-2 border-gray-200 dark:border-gray-800 no-underline font-medium transition-all duration-300 text-sm md:text-base">
         Add AI to Intercom
-      </a>
       <FaArrowRight className="text-xs dark:text-[#c7d2fe] text-[#4f46e5]" />
-    </li>
+      </a>
+   
   </ul>
 </div>
 
@@ -148,20 +149,17 @@ Learn how to install your custom GPT chatbot on different platforms:
         text: "How to debug chatbot",
       },
     ].map((item, index) => (
-      <li
-        key={index}
-        className={`flex justify-between items-center ${
-          index < 3 ? "border-b pb-2 border-gray-200 dark:border-gray-800" : ""
-        }`}
-      >
+      
         <a
           href={item.href}
-          className="no-underline font-medium transition-all duration-300 text-sm md:text-base"
+          className={`flex justify-between items-center ${
+          index < 3 ? "border-b pb-2 border-gray-200 dark:border-gray-800" : ""
+        } no-underline font-medium transition-all duration-300 text-sm md:text-base`}
         >
           {item.text}
-        </a>
         <FaArrowRight className="text-xs dark:text-[#c7d2fe] text-[#4f46e5]" />
-      </li>
+        </a>
+      
     ))}
   </ul>
 </div>

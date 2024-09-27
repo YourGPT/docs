@@ -9,6 +9,7 @@ hero:
 
 import { Image } from "~/components";
 import { Note } from "~/components";
+import { Aside } from '@astrojs/starlight/components';
 
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Intents in YourGPT Chatbot Studio </div>
@@ -78,22 +79,33 @@ For example, if a user asks, "What's the weather like today?", the chatbot shoul
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Do's and Don'ts </div>
 
 {" "}
-<Note type="re" color="emerald">
+{/* <Note type="re" color="emerald">
   - **```Do```** write clear and concise descriptions. - **```Do```** properly
   describe the scope of the intent.
-</Note>
+</Note> */}
 
-{" "}
+<Aside type="tip" title="Idea"> 💡- **```Do```** write clear and concise descriptions. - **```Do```** properly
+  describe the scope of the intent.</Aside>
+
+{/* {" "}
 <Note type="re" color="rose">
   - **```Don't```** Write long and complex descriptions. - **```Don't```**
   create intents that overlap or conflict with each other.
-</Note>
+</Note> */}
+
+<Aside type="caution" title="Caution">- **```Don't```** Write long and complex descriptions. - **```Don't```**
+  create intents that overlap or conflict with each other.</Aside>
 
 ---
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
   In the restrictions setting '**only answer from knowledge base**' will prevent
   function calls, which may result in the intent not being detected. Make sure
   to change the restrictions to "... **answer from knowledge base & function
   calling**"
-</Note>
+</Note> */}
+
+<Aside>  📝 In the restrictions setting '**only answer from knowledge base**' will prevent
+  function calls, which may result in the intent not being detected. Make sure
+  to change the restrictions to "... **answer from knowledge base & function
+  calling**".</Aside>

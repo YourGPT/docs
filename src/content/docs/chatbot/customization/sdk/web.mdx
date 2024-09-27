@@ -9,6 +9,7 @@ hero:
 
 import {Image} from '~/components';
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> SDK Web </div>
@@ -38,9 +39,11 @@ To integrate the Chatbot Web SDK into your website, you need to inject the follo
 
 
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
    Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.
-</Note>
+</Note> */}
+
+<Aside > 📝 Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.</Aside>
 
 
 
@@ -124,9 +127,11 @@ Here the `text` is the message that you want to send to the chatbot. The `send` 
 
 <div style={{ height: '20px' }}></div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
  This command will open the chatbot if it is not already open.
-</Note>
+</Note> */}
+
+<Aside > 📝 This command will open the chatbot if it is not already open.</Aside>
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Closing the chatbot </div>
  ```
@@ -278,9 +283,11 @@ The Chatbot Web SDK provides a set command that you can use to set visitor, sess
 
 <div style={{ height: '20px' }}></div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
  For contact update, either `email` or `phone` must be provided.
-</Note>
+</Note> */}
+
+<Aside > 📝 For contact update, either `email` or `phone` must be provided.</Aside>
 
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>   Example: Set contact data </div>
@@ -320,15 +327,19 @@ To set contact data, append the `CONTACT.keyName=value` query parameter to your 
 
 <div style={{ height: '20px' }}></div>
 
-<Note type="note" color="emerald">
+{/* <Note type="note" color="emerald">
  Here {`<widgetUrl>`} is the URL of your chatbot widget.
-</Note>
+</Note> */}
+
+<Aside > 📝  Here {`<widgetUrl>`} is the URL of your chatbot widget.</Aside>
 
 <div style={{ height: '20px' }}></div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
  You can pass multiple query parameters by separating them with an `&`.
-</Note>
+</Note> */}
+
+<Aside > 📝 You can pass multiple query parameters by separating them with an `&` .</Aside>
 
 <div style={{ height: '20px' }}></div>
 

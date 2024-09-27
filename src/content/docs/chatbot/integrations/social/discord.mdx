@@ -10,14 +10,16 @@ hero:
  
 import { Image } from "astro:assets";
 import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
 
 <div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> GPT Chatbot for Discord | Installation Guide </div>
 
 
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
  Connecting Your Custom Bot with Discord
-</Note> 
+</Note>  */}
+<Aside type="tip" title="Idea"> 💡  Connecting Your Custom Bot with Discord</Aside>
 
 
 <div style={{
@@ -157,9 +159,10 @@ To initiate a conversation, you must use chat slash commands. For instance, you 
 
 <div style={{height: '20px '}}></div>
 
-<Note type="note" color="blue">
+{/* <Note type="note" color="blue">
   You can only chat by using specific commands that start with a slash. Without these commands, you can't interact.
-</Note>
+</Note> */}
+<Aside > 📝  You can only chat by using specific commands that start with a slash. Without these commands, you can't interact.</Aside>
 
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Custom/Auto Installation </div>

@@ -8,12 +8,15 @@ hero:
 ---
 import {Note} from '~/components'
 import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> GPT Chatbot Integration for Carrd | Installation Guide </div>
 
-<Note type="idea" color="emerald">
- Connecting Your AI Chatbot with Carrd
-</Note> 
+  {/* <Note type="idea" color="emerald">
+  Connecting Your AI Chatbot with Carrd
+  </Note>  */}
+
+<Aside type="tip" title="Idea"> 💡 Connecting Your AI Chatbot with Carrd</Aside>
 
 
 ## <span  className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Installation</span>
@@ -51,9 +54,9 @@ Congratulations! YourGPT Chatbot is now successfully integrated into your Carrd 
 <div className="text-base text-gray-700 dark:text-white/80">
   <p>
     Encountering issues? For any inquiries or technical support regarding GPT Chatbot integration with Carrd, contact us at 
-    <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank">**`Mail YourGPT Support`**</a> 
+    <a href="mailto:support@yourgpt.ai" className="font-bold no-underline" target="_blank">Mail YourGPT Support</a> 
     or 
-    <a href="https://yourgpt.ai/" className="font-bold no-underline">**`Chatbot Live Support`**</a>.
+    <a href="https://yourgpt.ai/" target="_blank" className="font-bold no-underline">Chatbot Live Support</a>.
   </p>
 </div>
 

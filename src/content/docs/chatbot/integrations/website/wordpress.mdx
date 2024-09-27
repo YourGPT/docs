@@ -10,14 +10,17 @@ hero:
 import { Image } from "astro:assets";
 import {Note} from '~/components'
 import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 
 <div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> GPT Chatbot for WordPress | Integration Guide </div>
 
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
  Connecting Your Chatbot with Wordpress
-</Note> 
+</Note>  */}
+
+<Aside type="tip" title="Idea"> 💡  Connecting Your Chatbot with Wordpress </Aside>
 
 ## <span  className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Installation </span>
 
@@ -202,9 +205,11 @@ To generate a WooCommerce API token, you need to follow these steps:
 </Steps>
 
 
-<Note type="note" color="emerald" >
+{/* <Note type="note" color="emerald" >
  Remember to store this information securely, as it won't be shown again for security reasons.
-</Note>
+</Note> */}
+
+<Aside> 📝  Remember to store this information securely, as it won't be shown again for security reasons. </Aside>
 > 
 
 

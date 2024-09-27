@@ -10,13 +10,16 @@ hero:
 import { Image } from "astro:assets";
 import {Note} from '~/components'
 import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
 <div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> GPT Chatbot for messenger | Installation Guide </div>
 
 
-<Note type="idea" color="emerald">
+{/* <Note type="idea" color="emerald">
  Connecting Your Chatbot with Messenger
-</Note> 
+</Note>  */}
+
+<Aside type="tip" title="Idea"> 💡  Connecting Your Chatbot with Messenger</Aside>
 
 <div style={{ height: '20px' }}></div>
 
