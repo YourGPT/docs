@@ -21,7 +21,6 @@ Follow these guidelines to train your YourGPT chatbot effectively and ensure it 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Best Practices for Training</div> 
 
 
-
 |Practice|Description|
 |---|---|
 |Consistency|Use a consistent format for all training data.|
@@ -38,40 +37,13 @@ Follow these guidelines to train your YourGPT chatbot effectively and ensure it 
 - **Documents:** Implement the training process effectively using documentation.
 - **FAQs:** Train the chatbot using frequently asked questions.
 - **Text:** Provide concise and clear text for quick comprehension and implementation.
-- **Platforms:** Use platforms such as Notion, Google Docs, YouTube, and more for a variety of training options.
+- **Third party:** Use platforms such as Notion, Google Docs, YouTube, and more for a variety of training options.
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Training with Structured Data</div>
-
-Structured data helps the chatbot understand the context and provide accurate responses. Use CSV or DOCX files to format your data effectively.
-
-Here's a table that summarizes the different ways to structure your training data:
-
-
-
-|Data Type|Description|
-|---|---|
-|JSON Line|Organize data in JSON Line Format.|
-|DOCX Files|Use docx files to structure the data.|
-|JSON Files|JSON files can also be useful to structure data.|
-|Spreadsheets (XLS, XLSX)|Spreadsheets are a simple way to structure data.|
-|PDF Files|PDF files can be used to structure data.|
-
-
-
-
-<div style={{height: '20px'}}></div>
-
-{/* <Note type="note" color="blue">
- structured data is a great choice for improving the accuracy of your chatbot's responses. 
-</Note> */}
 
 <Aside >
-Structured data is a great choice for improving the accuracy of your chatbot's responses.
+Big document are futher divided into smaller chunks. The default chunk size is 1024 characters, with an overlap of 200 characters. When creating documents, add one of the following separators after every 1000 characters: "\n~~~\n", otherwise other common "\n\n\n", "\n\n","\n" etc will be used as separators.
  </Aside>
 
-
-
-<div>using JSON Line format over CSV can be more effective in training your chatbot. You can convert your CSV files to JSON Line format using our <a href='https://yourgpt.ai/tools/csv-to-jsonline' target='_blank' className='no-underline font-semibold transition-all duration-300 text-lg  '>CSV to JSON Line Converter.</a></div>
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Training with FAQs</div>
 FAQs are an excellent method for providing the chatbot with frequently asked questions and their corresponding answers. This helps the chatbot to promptly address user queries.
