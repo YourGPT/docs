@@ -4,42 +4,33 @@ description: This page provides information about advanced options in chatbot st
 keywords: advanced, options, flow, api, javascript, sets
 ---
 
-import {Image} from '~/components';
-import {Note} from '~/components'
-
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
+import {ListCard} from '~/components';
 
 Studio offers advanced features to create more dynamic and advanced conversational experiences. You can make API calls, use sets, execute javascript code, use various actions.
 
-
-  <Card
-    icon="🌐"
-    title=" 1. API Calls"
-    href="https://docs.yourgpt.ai/chatbot/studio/elements/advanced/api-calling"
- >
-  </Card>
-  
-  <Card
-    icon="🧩"
-    title=" 2. Sets"
-    href="https://docs.yourgpt.ai/chatbot/studio/elements/advanced/sets"
-  >
-  </Card>
-  
-  <Card
-    icon="💻"
-    title=" 3. Code Execution"
-    href="https://docs.yourgpt.ai/chatbot/studio/elements/advanced/code-execution"
-  >
-
-  </Card>
-  
-  <Card
-    icon="🎬"
-    title=" 4. Actions"
-    href="https://docs.yourgpt.ai/chatbot/studio/elements/advanced/actions"
-  >
-  </Card>
+<ListCard>
+<ul class="link-list">
+  <li>
+    <a href="advanced/api-calling">
+      🌐 1. API Calls
+    </a>
+  </li>
+  <li>
+    <a href="advanced/sets">
+      🧩 2. Sets
+    </a>
+  </li>
+  <li>
+    <a href="advanced/code-execution">
+      💻 3. Code Execution
+    </a>
+  </li>
+  <li>
+    <a href="advanced/actions">
+      🎬 4. Actions
+    </a>
+  </li>
+</ul>
+</ListCard>
 
 

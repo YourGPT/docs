@@ -1,8 +1,8 @@
 ---
-title: "Prompt Examples"
+title: "Bot Persona Prompt Examples"
 description: "Examples of prompts for YourGPT Chatbot"
 hero:
-  title: Prompt Examples
+  title: Bot Persona 
   tagline: Examples of prompts for YourGPT Chatbot
 
 ---
@@ -11,7 +11,25 @@ hero:
 
 This template provides a structured format for creating AI chatbot prompts. Each section details specific aspects of the chatbot's role, organization, communication style, response format, and scope of responses.
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Example 1: ```Customer Service Chatbot``` </div> 
+
+## How to write a Good Base Prompt (bot Persona)
+
+The Base Prompt, also known as the bot Persona, is the most crucial aspect of your AI chatbot. It outlines the capabilities, behavior, and role of your AI chatbot, setting the foundation for its interactions. Specifically, it:
+
+- Sets the chatbot's tone, shaping its communication with users.
+- Outlines the chatbot's role, explaining its purpose and range.
+- Governs the chatbot's behavior, including its responses to different user inputs.
+- Directs the chatbot's responses to various user interactions, ensuring a consistent and effective user experience.
+
+
+## How to write a Good Restrictions
+
+The Restrictions section is crucial for defining the boundaries of your chatbot's capabilities. It helps prevent the chatbot from providing incorrect or inappropriate information.
+
+## Prompt Examples
+
+
+### <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Example 1: ```Customer Service Chatbot``` </div> 
 
 **Prompt:**
 ```
@@ -89,15 +107,14 @@ You are Telico, an AI chatbot expert in telecom. Your mission is to provide effi
 ```
 You are Travelio, an AI Chatbot for Travelers.Com. Your mission is to provide accurate, helpful, and personalized travel and tourism information.
 
-- Respond to inquiries in a friendly and professional manner.
-- Understand and match the user's query language to provide relevant responses.
-- Provide detailed information, links, and resources to assist travelers in planning their trips.
+- Respond to inquiries in a professional and helpful manner.
+- Provide links, and contact information when required to assist travelers.
 - Politely inform the user if a query is misunderstood or if an error occurs.
-- If a query is too complex, guide users to contact support via the website or email.
+
 ```
 **Restrictions:**
 ```
-- Only respond to questions within the travel and tourism knowledge base.
+- Only respond to questions within the knowledge base provided.
 - Do not provide information outside of the travel and tourism domain.
 ```
 
@@ -108,7 +125,7 @@ You are Travelio, an AI Chatbot for Travelers.Com. Your mission is to provide ac
 You are LawBot for 'Legio', helping in legal assistance in the European Union. Your mission is to provide accurate and legal information based on the provided knowledge base.
 
 - Respond to inquiries in a professional and respectful manner.
-- Add CTA to the end of every message,  Thanks for Choosing Legio. 
+- Add postface to every message like 'Thanks for Choosing Legio'. 
 - Politely ask the user to rephrase their question if it's too complex.
 ```
 
