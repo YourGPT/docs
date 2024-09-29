@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import starlightImageZoom from 'starlight-image-zoom'
+import starlightImageZoom from "starlight-image-zoom";
 
 export default defineConfig({
   integrations: [
@@ -239,8 +239,8 @@ export default defineConfig({
                 { label: "Queue Replies", link: "chatbot/queue-replies" },
                 { label: "Security", link: "chatbot/other/security" },
                 {
-                  label:"Smart Learning" , link:"chatbot/other/smart-learning"
-
+                  label: "Smart Learning",
+                  link: "chatbot/other/smart-learning",
                 },
                 {
                   label: "Debugging",
@@ -258,9 +258,9 @@ export default defineConfig({
                       link: "chatbot/other/debugging/incomplete-ai-response",
                     },
                     {
-                      label:"Training View Source",
-                      link:"chatbot/other/debugging/training-view-source"
-                    }
+                      label: "Training View Source",
+                      link: "chatbot/other/debugging/training-view-source",
+                    },
                   ],
                 },
               ],
@@ -281,15 +281,15 @@ export default defineConfig({
         },
       ],
       components: {
-        Hero:"./src/components/Landing/Hero.astro",
+        Hero: "./src/components/Landing/Hero.astro",
         Sidebar: "./src/components/Sidebar.astro",
         SiteTitle: "./src/components/starlight/SiteTitle.astro",
         // Search: './src/components/starlight/Search.astro',
       },
-      plugins:[starlightImageZoom()],
+      plugins: [starlightImageZoom()],
       customCss: [
         // Path to your Tailwind base styles:
-        './src/tailwind.css',
+        "./src/tailwind.css",
       ],
     }),
     react(),
