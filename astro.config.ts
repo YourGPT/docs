@@ -44,12 +44,37 @@ export default defineConfig({
               label: "👨🏻‍💻 Training Guide",
               link: "/chatbot/training",
             },
-            // {
-            //   label:"Prompt",
-            //   items:[
-            //     {label:"Example",link:"chatbot/prompts/example"},
-            //   ]
-            // },
+            {
+              label: "⚙️ Customization",
+              items: [
+                {
+                  label: "Appearance",
+                  link: "chatbot/how-to-change-the-apperance-of-your-chatbot",
+                },
+                {
+                  label: "Behavior",
+                  link: "/chatbot/how-to-customize-chatbot-behavior",
+                },
+                { 
+                  label: "Bot Persona Example", 
+                  link: "chatbot/prompts/example" 
+                },
+                {
+                  label: "Custom Domain",
+                  link: "/chatbot/how-to-add-custom-domain",
+                },
+                {
+                  label: "Chatbot SDK",
+                  items: [
+                    {
+                      label: "Styling",
+                      link: "chatbot/customization/sdk/styling",
+                    },
+                    { label: "Web/SDK", link: "chatbot/customization/sdk/web" },
+                  ],
+                },
+              ],
+            },
             {
               label: "🔗 Integrations",
               items: [
@@ -81,11 +106,13 @@ export default defineConfig({
                       label: "Shopify",
                       link: "chatbot/integrations/website/shopify",
                     },
-                    { label: "Wix", link: "chatbot/integrations/website/wix" },
-                    // {
-                    //   label: "Squarespace",
-                    //   link: "chatbot/integrations/website/squarespace",
-                    // },
+                    { label: "Wix", 
+                      link: "chatbot/integrations/website/wix" 
+                    },
+                    {
+                      label: "Squarespace",
+                      link: "chatbot/integrations/website/squarespace",
+                    },
                     {
                       label: "Webflow",
                       link: "chatbot/integrations/website/webflow",
@@ -102,10 +129,10 @@ export default defineConfig({
                       label: "HTML Website",
                       link: "chatbot/integrations/website/how-to-setup-chatbot-on-my-website",
                     },
-                    {
-                      label: "GPT Chatbot for Squarespace | Installation Guide",
-                      link: "chatbot/integrations/website/squarespace",
-                    },
+                    // {
+                    //   label: "GPT Chatbot for Squarespace | Installation Guide",
+                    //   link: "chatbot/integrations/website/squarespace",
+                    // },
                   ],
                 },
                 {
@@ -155,37 +182,6 @@ export default defineConfig({
             {
               label: "</> Functions",
               link: "chatbot/functions",
-            },
-            {
-              label: "⚙️ Customization",
-              items: [
-                {
-                  label: "Appearance",
-                  link: "chatbot/how-to-change-the-apperance-of-your-chatbot",
-                },
-                {
-                  label: "Behavior",
-                  link: "/chatbot/how-to-customize-chatbot-behavior",
-                },
-                {
-                  label: "Custom Domain",
-                  link: "/chatbot/how-to-add-custom-domain",
-                },
-                {
-                  label: "Prompts",
-                  items: [{ label: "Example", link: "chatbot/prompts/example" }],
-                },
-                {
-                  label: "Chatbot SDK",
-                  items: [
-                    {
-                      label: "Styling",
-                      link: "chatbot/customization/sdk/styling",
-                    },
-                    { label: "Web/SDK", link: "chatbot/customization/sdk/web" },
-                  ],
-                },
-              ],
             },
             {
               label: "🚀 Studio",
@@ -302,12 +298,12 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    "/chatbot": "/chatbot/introduction",
-    "/chatbot/studio/elements/intent-and-events": "/chatbot/studio/elements/intents",
-    "/chatbot/studio/elements/intent-and-entities": "/chatbot/studio/elements/intents",
-    "/chatbot/studio/elements/message": "/chatbot/studio/elements/messages",
-    "/chatbot/other-information": "/chatbot/other/other-information",
-    "/chatbot/other/debug-lab": "/chatbot/other/debugging/ai-refuse-to-answer",
-    "llm-spark": "/llm-spark/introduction",
+    '/chatbot': '/chatbot/introduction',
+    '/chatbot/studio/elements/intent-and-events': '/chatbot/studio/elements/intents',
+    '/chatbot/studio/elements/intent-and-entities': '/chatbot/studio/elements/intents',
+    '/chatbot/studio/elements/message': '/chatbot/studio/elements/messages',
+    '/chatbot/other-information': '/chatbot/other/other-information',
+    '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
+    'llm-spark': '/llm-spark/introduction',
   },
 });
