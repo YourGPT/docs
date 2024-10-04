@@ -1,0 +1,17 @@
+[
+  {
+    "version": "1.1.1",
+    "date": "2023-06-01",
+    "data": "## What's New\n\n- Minor bug fixes\n- Updated dependencies to latest versions\n- Improved error handling in API requests\n\n### Details\n\nWe've addressed several minor issues reported by our users and updated our dependencies to ensure better security and performance. The improved error handling will provide more informative messages when API requests fail."
+  },
+  {
+    "version": "1.1.0",
+    "date": "2023-05-15",
+    "data": "## New Features\n\n- Added dark mode option\n- Improved performance for large data sets\n\n## Bug Fixes\n\n- Fixed bug in user profile update\n\n### Dark Mode\n\nOur new dark mode provides a comfortable viewing experience in low-light environments. To enable it, go to Settings > Appearance > Theme and select 'Dark'."
+  },
+  {
+    "version": "1.0.0",
+    "date": "2023-05-01",
+    "data": "## Initial Release\n\n- Launched the first version of our application\n- Implemented core features\n- Set up basic user authentication\n\n### Welcome!\n\nWe're excited to introduce our application to the world. This initial release includes all the essential features we've been working on. We look forward to your feedback as we continue to improve and expand our offering."
+  }
+]
