@@ -27,7 +27,7 @@ export default function ChangeLogs() {
     <div>
       <div id="changelogs">
         {currentChangelogs.map((changelog) => (
-          <ChangeLogItem key={changelog.id} {...changelog} />
+          <ChangeLogItem {...changelog} />
         ))}
       </div>
       {currentPage * itemsPerPage < changelogs.length && (

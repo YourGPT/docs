@@ -14,7 +14,7 @@ export default function ChangelogItem({ version, date, data }: ChangelogItemProp
       <h3>
         {version} - {date}
       </h3>
-      <div set:html={htmlContent}></div>
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
   );
 }
