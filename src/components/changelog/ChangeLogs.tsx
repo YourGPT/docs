@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ChangeLogItem from "./ChangeLogItem";
+import ChangeLogItem from "./ChangeLogItem.tsx";
 import changelogs from "~/data/changelogs.json";
 // console.log(changelogs);
 
@@ -25,7 +25,7 @@ export default function ChangeLogs() {
 
   return (
     <div>
-      <div id="changelogs">
+      <div id="changelogs" className="max-w-screen-lg mx-auto" >
         {currentChangelogs.map((changelog) => (
           <ChangeLogItem {...changelog} />
         ))}
