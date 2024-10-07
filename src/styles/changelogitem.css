@@ -1,11 +1,10 @@
-.changelog-item__content h2{
-   font-size: 2rem;
-   letter-spacing: -2px;
-   font-weight: 600;
+/* Default (normal mode) */
+.changelog-item__content h2,
+.changelog-item__content h3 {
+    font-size: 1.6rem; /* Adjust for h2 */
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    color: inherit;
 }
 
-.changelog-item__content h3{
-   font-size: 1.5rem;
-   letter-spacing: -1px;
-   font-weight: 600;
-}
+

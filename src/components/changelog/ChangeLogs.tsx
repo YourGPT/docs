@@ -25,7 +25,7 @@ export default function ChangeLogs() {
 
   return (
     <div>
-      <div id="changelogs" className="max-w-screen-lg mx-auto" >
+      <div id="changelogs" className="max-w-screen-lg mx-auto space-y-6" >
         {currentChangelogs.map((changelog) => (
           <ChangeLogItem {...changelog} />
         ))}
