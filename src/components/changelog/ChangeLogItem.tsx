@@ -14,7 +14,9 @@ export default function ChangelogItem({ version, date, data,img }: ChangelogItem
     <div className="changelog-item flex flex-col md:flex-row justify-between gap-4 md:gap-8 ">
       
 
-      <div className="flex lg:justify-center  gap-2 ">
+      <div className="flex lg:justify-center  gap-2">
+        <p className="whitespace-nowrap font-bold text-2xl dark:text-gray-300  !mt-0 !sticky top-[5rem] h-fit tracking-tight dark:py-1 dark:px-3  rounded-lg dark:bg-black">{date}</p>
+
         <div className=" hidden md:block mt-1">
           <div className="relative flex justify-center items-center">
           <div className="size-5 p-2 bg-gray-700 rounded-full dark:opacity-50 "></div>
@@ -26,10 +28,10 @@ export default function ChangelogItem({ version, date, data,img }: ChangelogItem
 
         </div>
        
-          <p className="whitespace-nowrap font-bold text-lg dark:text-gray-300  !mt-0 !sticky top-[4rem] h-fit tracking-tight dark:py-1 dark:px-3  rounded-lg dark:bg-gray-800">{date}</p>
+         
         </div>
         <div className="!mt-0 max-w-screen-lg mx-auto">
-        <img src={img} alt={`Changelog image for version ${version}`} className="mb-4 w-[720px] rounded-lg aspect-[380/139] " />
+        {/* <img src={img} alt={`Changelog image for version ${version}`} className="mb-4 w-[720px] rounded-lg aspect-[380/139] " /> */}
        <div className=" changelog-item__content dark:text-white text-gray-700  "  dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </div>
       

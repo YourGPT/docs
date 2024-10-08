@@ -5,7 +5,7 @@ import changelogs from "~/data/changelogs.json";
 
 export default function ChangeLogs() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 30;
 
   const getCurrentChangelogs = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;

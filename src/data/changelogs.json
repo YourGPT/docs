@@ -1,20 +1,92 @@
 [
   {
-    "version": "1.1.1",
-    "date": "June 2023",
-    "img":"/assets/changelog/what-new.jpg",
-    "data": "## What's New (version 1.1.1)\n\n- Minor bug fixes\n- Updated dependencies to latest versions\n- Improved error handling in API requests\n\n### Details\n\nWe've addressed several minor issues reported by our users and updated our dependencies to ensure better security and performance. The improved error handling will provide more informative messages when API requests fail."
+    "version": "1.9.0",
+    "date": "September 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for September 2024\n\n**✨ AI Helpdesk Feature Rollout:**\n- **Capabilities:**\n- Multilingual search for diverse user queries.\n- AI-powered responses for quick answers.\n- Rich content training support with unlimited content integration.\n\n**🔧 Studio Improvements:**\n- Quick addition of nodes/steps with the Quick Add button.\n- Enhanced import and configuration processes within the studio.\n- Variable highlighting and selection in text nodes for better usability.\n\n**🌐 Widget Custom Domain Setup**\n- Simplified setup process for chatbot widget custom domains.\n\n**📲 Twilio Integration**\n- AI-powered SMS and voice support now available with Twilio.\n\n**📄 Documentation Update**\n- We've improved The documentation to guide you through all the recent features and improvements."
+  },
+  {
+    "version": "1.8.0",
+    "date": "August 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for August 2024\n\n**🧪 Debug Lab**\n- Users can check and adjust chatbot training data directly for improved performance.\n\n**📝 Website to FAQs**\n- Automatically generate FAQs from website content to aid both AI and human understanding.\n\n**📊 LLM Leaderboard**\n- Compare performance benchmarks of LLM models with our leaderboard tool.\n\n**🔍 Search Widget**\n- Upgrade your documentation with AI search capabilities for user inquiries.\n\n**📊 AI-Powered Analytics**\n- A new dashboard providing insights into chatbot performance for informed decision-making.\n\n**🏋️‍♂️ Advanced Training Options**\n- Utilize advanced training to better educate chatbots with webpage data.\n\n**🧠 Learning from Feedback (RLHF)**\n- Improved detection of unresolved queries and capture of negative feedback for enhancements.\n\n**🛡️ Security Update**\n- Enhanced security measures for the whitelist domain feature.\n\n**📚 Learning from Previous Chats**\n- Expanded self-learning capabilities with integrations for Crisp, Intercom, Discord, and Slack."
+  },
+  {
+    "version": "1.7.0",
+    "date": "July 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for July 2024\n\n**🤖 GPT4o Mini Model**\n- **Overview:** 10x cheaper than the standard GPT4o model, ideal for regular tasks.\n\n**🔍 Web Search:**\n- Real-time search functionality.\n\n**🌟 Multi LLM:**\n- Options to choose from the latest LLMs, including Anthropic Claude and Mistral.\n\n**🏹 Triggers:**\n- Engage users with proactive messages.\n\n**📨 AI Reply:**\n- Instant generation of responses for user inquiries.\n\n**📦 New Library Templates:**\n- Access and import new templates for immediate use.\n\n**🌐 Create Contact & Leads:**\n- Enhanced methods for creating contacts using JS SDK and Studio.\n\n**💬 Queue Reply:**\n- Manage customer inquiries effectively with queued responses.\n\n**🎁 New Program:**\n- Participate in our rewards initiative for user contributions."
+  },
+  {
+    "version": "1.6.0",
+    "date": "June 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for June 2024\n\n**🚀 Enhanced AI Tools for Support Teams:**\n- **Rewrite:** Easily modify messages for clarity and accuracy.\n- **Change Response Tone:** Adjust the tone of responses based on context.\n- **Translate:** Implement real-time translation for multilingual communication.\n\n**🤖 Parent-Child Bot Integration**\n- Connect Bot A's data with other bots without retraining, streamlining operations.\n\n**🪄 Filters with Views**\n- Create customized views for conversations based on segments and integrations.\n\n**🔎 Improved Search Window**\n- Enhanced functionality for quickly finding contacts and past conversations."
+  },
+  {
+    "version": "1.5.0",
+    "date": "May 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for May 2024\n\n**🤖 GPT-4o Availability**\n- **Overview:** GPT-4o is now available on our platform.\n- **Benefits:**\n- ⚡ **Speed:** Two times faster than previous versions.\n- 💸 **Cost Efficiency:** 50% cheaper compared to GPT-4 Turbo.\n\n**⚙️ New Discord Settings**\n- Customize your Discord experience with new settings available in the integration menu.\n\n**🕒 No Response Timeout (Chatbot Studio)**\n- Users can now set a specific wait time for user input. If there's no response within the designated timeframe, a separate path sequence will be triggered, enhancing interactivity.\n\n**📱 New Mobile App is Available:** We're happy to announce the launch of our new mobile app, allowing you to access all features and functionalities on the go!"
+  },
+  {
+    "version": "1.4.0",
+    "date": "April 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for April 2024\n\n**🌐 Browser Extension for Chrome and Firefox:** \n- New browser extensions for Chrome and Firefox for quick access for knowledge ai.\n\n**📚 New Training Options and Improvements:** \n- New training options are available to help you better train your chatbots for enhanced performance.\n\n**🔒 Improved Security Features:** \n- We've added new security measures, including a throttling setting to manage user requests and prevent overload."
+  },
+  {
+    "version": "1.3.0",
+    "date": "March 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for March 2024\n\n**🎤 Voice Messages & Text to Speech:**\n- Introduced functionality for sending voice messages and converting text to speech, enhancing user interaction.\n\n**📡 Stream Option Feature:**\n- Added a streaming option for real-time engagement and improved communication capabilities.\n\n**🔒 Restrictions Feature:**\n- Implemented a new feature allowing users to set restrictions, enhancing control over conversations.\n\n**🔄 Customizable Previous Memory Limit Option:**\n- Users can now customize the memory limit for previous interactions, improving the personalization of responses.\n\n**🧠 Customizable AI Chat Memory Options:**\n- Enhanced flexibility in managing AI chat memory, allowing for tailored user experiences.\n\n**📚 Crisp Integration:**\n- Enabled training of the AI from previous Crisp chat conversations, improving response quality based on historical data.\n\n**📹 Video Overview:**\n- https://assets.yourgpt.ai/videos/yourgpt-chatbot-newupdate-1.mp4"
+  },
+  {
+    "version": "1.2.0",
+    "date": "February 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for February 2024\n\nLaunch Chatbot Studio aims to improve customer interactions through conversational AI. It provides features for better support, user experiences, and functionality.\n\n**🎯 Events Intent Detection:**\n- Control your AI agent's responses with Events Intent Detection. Set up flows based on specific events or message intents for more personalized interactions.\n\n**🔌 Third Party API Integration:**\n- Connect chatbots to external APIs for real-time data fetching, allowing your AI agents to provide accurate and timely information.\n\n**💬 Interactive Responses:**\n- Use dynamic elements like carousels, cards, and buttons to enhance user engagement during interactions.\n\n**📝 Capture Useful Information:**\n- Collect important information during conversations to offer tailored responses and improve user experience.\n\n**💻 Code Execution:**\n- Execute complex tasks easily with code execution, expanding the capabilities of your AI agents.\n\n**🔍 AI Task & Segmented Knowledgebase:**\n- Improve accuracy by connecting to segmented knowledge bases or performing AI tasks for relevant responses.\n\n**📹 Video Overview:**\n- www.youtube.com/embed/V0zIjgcG6yw\n\nExplore the limitless possibilities of conversational AI and start your transformative journey with YourGPT Chatbot Studio! 🌈"
   },
   {
     "version": "1.1.0",
-    "date": "May 2023",
-    "img":"/assets/changelog/what-new.jpg",
-    "data": "## New Features (version 1.1.0)\n\n- Added dark mode option\n- Improved performance for large data sets\n\n### Bug Fixes\n\n- Fixed bug in user profile update\n\n### Dark Mode\n\nOur new dark mode provides a comfortable viewing experience in low-light environments. To enable it, go to Settings > Appearance > Theme and select 'Dark'."
+    "date": "January 2024",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for January 2024\n\n- No specific updates for this month."
   },
   {
     "version": "1.0.0",
-    "date": "May 2023",
-    "img":"/assets/changelog/what-new.jpg",
-    "data": "## Initial Release (version 1.0.0)\n\n- Launched the first version of our application\n- Implemented core features\n- Set up basic user authentication\n\n### Welcome!\n\nWe're excited to introduce our application to the world. This initial release includes all the essential features we've been working on. We look forward to your feedback as we continue to improve and expand our offering."
+    "date": "December 2023",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for December 2023\n\n**🤲 Human Handover Functionality:**\n- Allows for smooth transitions between AI and human support, enhancing customer service.\n\n**👁️ Live View for Visitor Monitoring:**\n- Monitor visitor activity in real-time to better understand user behavior and needs.\n\n**💬 Proactive Chat Feature:**\n- Engage visitors proactively with timely messages, improving interaction rates.\n\n**🗂️ Enhanced Conversation Tab and Contacts Page:**\n- Improved layout for better lead capture and activity tracking, making it easier to manage interactions.\n\n**📤 Export Contacts Feature:**\n- Easily export contact information for further analysis or integration with other systems."
+  },
+  {
+    "version": "0.9.0",
+    "date": "November 2023",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for November 2023\n\n**🌪️ GPT-4 Turbo Support:**\n- GPT-4 Turbo is the latest advancement following GPT-4, designed to handle large-scale models with remarkable efficiency. It features an extended context size of up to 100K, making it ideal for managing more complex and lengthy interactions.\n\n**🤝 Integration with Messenger, Line, and Telegram:**\n- This integration enables seamless interaction with the AI system across popular messaging platforms, enhancing accessibility and user convenience for those needing an omnichannel platform.\n\n**📝 Conversation Detail Improvements:**\n- **Navigation Tracking:** Native tracking of conversation metrics for deeper insights into user interactions, including duration, engagement quality, and user satisfaction.\n- **New Actions for Conversation Management:**\n- **Mark as Resolved:** Quickly mark queries as resolved, streamlining the management process and ensuring timely follow-up.\n- **Transfer to Bot/Human:** Seamlessly transition between AI and human support, providing a flexible and efficient support experience.\n- **Export Conversation:** Functionality to export conversation transcripts for record-keeping, analysis, or compliance purposes.\n\n 🚀 **Launch LLM Spark:**\n- Multi-LLM prompt testing and evaluation for optimal performance."
+  },
+  {
+    "version": "0.8.0",
+    "date": "October 2023",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for October 2023\n\n**🤲 Human Handover Functionality:**\n- Allows for smooth transitions between AI and human support, enhancing customer service.\n\n**👁️ Live View for Visitor Monitoring:**\n- Monitor visitor activity in real-time to better understand user behavior and needs.\n\n**💬 Proactive Chat Feature:**\n- Engage visitors proactively with timely messages, improving interaction rates.\n\n**🗂️ Enhanced Conversation Tab and Contacts Page:**\n- Improved layout for better lead capture and activity tracking, making it easier to manage interactions.\n\n**📤 Export Contacts Feature:**\n- Easily export contact information for further analysis or integration with other systems."
+  },
+  {
+    "version": "0.7.0",
+    "date": "September 2023",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for September 2023\n\n**🧠 Self-Learning on Unresolved Queries:**\n- The system now learns from unresolved queries, improving its responses over time.\n\n**📹 Training with YouTube Videos:**\n- Enhanced training capabilities using YouTube videos to provide dynamic learning experiences.\n\n**🚀 Integration of GPT-4 Model:**\n- We've integrated the advanced GPT-4 model for improved performance and capabilities.\n\n**👥 Added Functionalities for Team Collaboration:**\n- New features for team collaboration include integrations with Members, Discord, and Slack, fostering better communication."
+  },
+  {
+    "version": "0.6.0",
+    "date": "August 2023",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for August 2023\n\n**🖼️ Multi-Layout Widget:**\n- Introduced tabs and chat layout options for better user experience.\n\n**🌐 Multi-Language Widget Customization:**\n- Customizable widgets that support multiple languages for a wider audience.\n\n**🎨 Widget Theme Customization:**\n- New options for theme customization, including social links, media, and external link functionality.\n\n**❓ Default Question Functionality:**\n- Features for setting default questions and parent/child options for categories.\n\n**🏷️ Branding Customization:**\n- Enhanced options for branding the widget according to user preferences."
+  },
+  {
+    "version": "0.5.0",
+    "date": "July 2023",
+    "img": "/assets/changelog/what-new.jpg",
+    "data": "## Updates for July 2023\n\n**🤝 YourGPT AI Bot Integration:**\n- Seamless integration with the YourGPT AI Bot for enhanced functionality.\n\n**📚 Crisp AI Knowledgebase Feature:**\n- Access to a comprehensive knowledge base for better information retrieval.\n\n**👍 Interactive Follow-Up Buttons:**\n- Added buttons for users to like, dislike, or request human assistance.\n\n**📬 Webhook Notification for Human Request:**\n- Instant notifications sent when a human request is made.\n\n**👥 Visitor Data Changes and Opt-Out Platform Settings:**\n- Enhanced control over visitor data and opt-out preferences.\n\n**🕒 Chatbot Availability Settings:**\n- Configuration options for chatbot availability to optimize user engagement."
   }
 ]
