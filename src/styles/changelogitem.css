@@ -7,4 +7,11 @@
     color: inherit;
 }
 
+.changelog-item__content a{
+    color: inherit;
+    text-decoration: none;
+    color: rgb(60, 135, 248);
+    font-weight: 600;
+}
+
 
