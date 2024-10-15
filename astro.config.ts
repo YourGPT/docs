@@ -174,9 +174,13 @@ export default defineConfig({
                   ],
                 },
                 {
-                  label: "API Integration",
+                  label: "🔌 API Integration",
                   link: "chatbot/integrations/api-integration",
                 },
+                {
+                  label: "📡 Webhooks",
+                  link: "chatbot/integrations/webhooks"
+                }
               ],
             },
             {
@@ -305,5 +309,6 @@ export default defineConfig({
     '/chatbot/other-information': '/chatbot/other/other-information',
     '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
     'llm-spark': '/llm-spark/introduction',
+    '/chatbot/changelog': '/chatbot/changelogs'
   },
 });
