@@ -188,6 +188,10 @@ export default defineConfig({
               link: "chatbot/functions",
             },
             {
+              label: "🔔 Triggers",
+              link: "chatbot/triggers"
+            },
+            {
               label: "🚀 Studio",
               items: [
                 { label: "Intents", link: "chatbot/studio/elements/intents" },
@@ -309,6 +313,7 @@ export default defineConfig({
     '/chatbot/other-information': '/chatbot/other/other-information',
     '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
     'llm-spark': '/llm-spark/introduction',
-    '/chatbot/changelog': '/chatbot/changelogs'
+    '/chatbot/changelog': '/chatbot/changelogs' 
+    // add redirect for the subprocessor to trust center
   },
 });
