@@ -22,12 +22,12 @@ This documentation provides details on how to use the Chatbot Web SDK. The Chatb
 
 To integrate the Chatbot Web SDK into your website, you need to inject the following script:
 
- ```
-{`<script 
+ ```js js title="example.js" file="CMS"
+ <script 
     src="https://widget.yourgpt.ai/script.js" 
     id="yourgpt-chatbot" 
     data-widget="<YOUR_WIDGET_ID>">
-</script>`}
+</script>
  ```
 
 <div class="text-base text-gray-700 dark:text-white/80">
@@ -114,14 +114,22 @@ These are the commands that can be executed using the `$yourgptChatbot.execute()
 
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Opening the chatbot </div>
- ```
-{`$yourgptChatbot.execute("widget:open");`}
+ ```js title="example.js" file="CMS"
+$yourgptChatbot.execute("widget:open");
  ```
 
+ {/* ```
+{`$yourgptChatbot.execute("widget:open");`}
+ ``` */}
+
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Sending a message to the chatbot </div>
- ```
+
+```js title="example.js" file="CMS"
+$yourgptChatbot.execute("message:send", { text: "Hello", send: true });
+```
+ {/* ```
 {`$yourgptChatbot.execute("message:send", { text: "Hello", send: true });`}
- ```
+ ``` */}
 
 Here the `text` is the message that you want to send to the chatbot. The `send` parameter is a boolean value that indicates whether the message should be sent to the chatbot or not. If the send parameter is set to false, the message will be displayed in the chatbot but will not be sent to the chatbot.
 
@@ -134,9 +142,12 @@ Here the `text` is the message that you want to send to the chatbot. The `send` 
 <Aside > 📝 This command will open the chatbot if it is not already open.</Aside>
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Closing the chatbot </div>
- ```
+```js title="example.js" file="CMS"
+$yourgptChatbot.execute("widget:close");
+```
+ {/* ```
 {`$yourgptChatbot.execute("widget:close");`}
- ```
+ ``` */}
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Event Listeners </div>
 The Chatbot Web SDK provides event listeners that you can use to listen to events that occur in the chatbot. To add an event listener, you need to call the `$yourgptChatbot.on(event,callback)` function.
@@ -166,11 +177,19 @@ The Chatbot Web SDK provides event listeners that you can use to listen to event
 </table>
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Example: Listen to the init event </div>
- ```
+
+```js title="example.js" file="CMS"
+$yourgptChatbot.on("init", function() {
+    console.log("Chatbot initialized");
+});
+```
+
+
+ {/* ```
 {`$yourgptChatbot.on("init", function() {
     console.log("Chatbot initialized");
 });`}
- ```
+ ``` */}
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Removing an event listener </div>
 To remove an event listener, you need to call the `$yourgptChatbot.off(event,callback)` function.
@@ -202,18 +221,32 @@ The Chatbot Web SDK provides a set command that you can use to set visitor, sess
 
 
 ###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Example: Set visitor data </div>
- ```
-{`$yourgptChatbot.set("visitor:data", {
+
+
+```js title="example.js" file="CMS"
+$yourgptChatbot.set("visitor:data", {
     customKey: "value",
-});`}
- ```
+});
+```
+
+
+ {/* ```
+$yourgptChatbot.set("visitor:data", {
+    customKey: "value",
+});
+ ``` */}
 
 ###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Example: Set session data </div>
+```js title="example.js" file="CMS"
+$yourgptChatbot.set("session:data", {
+    customKey: "value",
+});
  ```
+ {/* ```
 {`$yourgptChatbot.set("session:data", {
     customKey: "value",
 });`}
- ```
+ ``` */}
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Set Contact Data </div>
 <table className=" min-w-full table-auto border-collapse  border-gray-300">
@@ -291,13 +324,13 @@ The Chatbot Web SDK provides a set command that you can use to set visitor, sess
 
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>   Example: Set contact data </div>
- ```
-{`$yourgptChatbot.set("contact:data", {
+ ```js file="CMS" title="example.js"
+ $yourgptChatbot.set("contact:data", {
     email: "andrew099@hi.com", 
     phone: "+1234567890",
     name: "Andrew",
     ext_user_id: "123456",
-});`}
+});
  ```
 
 
@@ -307,22 +340,22 @@ If you are using the Chatbot Web SDK with an iframe embed, you can set the visit
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Visitor Data </div>
 To set visitor data, append the `VISITOR_DATA.keyName=value` query parameter to your iframe URL.
 
- ```
-{`<iframe src="<widgetUrl>?VISITOR_DATA.customKey=value"></iframe>`}
+ ``` js file="CMS" title="example.html" 
+ <iframe src="<widgetUrl>?VISITOR_DATA.customKey=value"></iframe>
  ```
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Session Data </div>
 To set session data, append the `SESSION_DATA.keyName=value` query parameter to your iframe URL.
 
- ```
-{`<iframe src="<widgetUrl>?SESSION_DATA.customKey=value"></iframe>`}
+ ``` js file="CMS" title="example.html"
+ <iframe src="<widgetUrl>?SESSION_DATA.customKey=value"></iframe>
  ```
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Contact Data </div>
 To set contact data, append the `CONTACT.keyName=value` query parameter to your iframe URL.
 
- ```
-{`<iframe src="<widgetUrl>?CONTACT.email=andrew998@hi.com"></iframe>`}
+ ```js file="CMS" title="example.html"
+ <iframe src="<widgetUrl>?CONTACT.email=andrew998@hi.com"></iframe>
  ```
 
 <div style={{ height: '20px' }}></div>
@@ -343,17 +376,17 @@ To set contact data, append the `CONTACT.keyName=value` query parameter to your 
 
 <div style={{ height: '20px' }}></div>
 
- ```
-{`<iframe src="<widgetUrl>?VISITOR_DATA.customKey=value&SESSION_DATA.customKey=value&CONTACT.email=johnydreq@hi.com"></iframe>`}
+ ```js file="CMS" title="example.html"
+ <iframe src="<widgetUrl>?VISITOR_DATA.customKey=value&SESSION_DATA.customKey=value&CONTACT.email=johnydreq@hi.com"></iframe>
  ```
 
 <div style={{ height: '20px' }}></div>
 
- ```
-{`curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
+ ```js file="CMS" title="example.curl"
+ curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
 --header 'Content-Type: application/x-www-form-urlencoded' \\
 --header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
---data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'
  ```
 
 
