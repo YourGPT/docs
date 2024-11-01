@@ -174,14 +174,22 @@ export default defineConfig({
                   ],
                 },
                 {
-                  label: "API Integration",
+                  label: "🔌 API Integration",
                   link: "chatbot/integrations/api-integration",
                 },
+                {
+                  label: "📡 Webhooks",
+                  link: "chatbot/integrations/webhooks"
+                }
               ],
             },
             {
               label: "</> Functions",
               link: "chatbot/functions",
+            },
+            {
+              label: "🔔 Triggers",
+              link: "chatbot/triggers"
             },
             {
               label: "🚀 Studio",
@@ -305,5 +313,7 @@ export default defineConfig({
     '/chatbot/other-information': '/chatbot/other/other-information',
     '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
     'llm-spark': '/llm-spark/introduction',
+    '/chatbot/changelog': '/chatbot/changelogs' 
+    // add redirect for the subprocessor to trust center
   },
 });

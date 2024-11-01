@@ -10,6 +10,7 @@ hero:
 import {Mermaid} from '~/components';
 import { Image } from "astro:assets";
 import flowchart from './../../../assets/chatbot/function/flowchart.svg'
+import { Tabs, TabItem } from "@astrojs/starlight/components";
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Functions </div>
 
@@ -85,7 +86,7 @@ Functions act as tools or micro-agents that perform specific tasks. They are aut
 4. **Get Current Datetime**: This function provides the current date and time, useful for answering questions based on time.
 
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>  API Functions </div>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>  Adding an API Function </div>
 
 In addition to the pre-configured system functions, you can also create custom API functions to extend the functionality of your AI. API functions allow you to call external APIs and integrate their data or services into your AI responses.
 <video src="https://chatbot.yourgpt.ai/videos/Final.mp4" width="100%" height="auto"  controls autoplay loop muted>
@@ -106,6 +107,8 @@ Step-by-step guide on how to add an API function:
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>  Example </div>
 
+<Tabs   >
+<TabItem label="weather" >
 If you want to add a function that retrieves weather information based on geographic coordinates, you might set it up as follows:
 
 - **Name**: Get Weather
@@ -128,3 +131,50 @@ If you want to add a function that retrieves weather information based on geogra
     "required": ["longitude", "latitude"]
   }
   ```
+
+**3. Function Usage:**
+   * Once the function is added, your chatbot can access the weather API and retrieve relevant weather information based on the user's query.
+
+   * Users can trigger the function by using a specific keyword or phrase like "what's the weather like in [location]". The chatbot will then use the location to determine the latitude and longitude, which are passed as parameters to the function.
+
+</TabItem>
+
+<TabItem label="Find Flight">
+Let's say you want to create a function to find the cheapest flight for a given destination from a specific origin.
+
+**1. Function Setup:**
+
+   * **Name:** `cheapest_flight_api`
+   * **Description:** `API to find the cheapest flight from origin to destination`
+   * **API Endpoint:** `https://your_flight_api.com/cheapest`
+
+**2. Parameters Definition:**
+
+   * The function accepts two parameters, `origin` and `destination`, both of which are `strings` representing the departure and arrival airports respectively.
+
+   * **Parameters (JSON):**
+     ```json
+     {
+     "type": "object",
+     "properties": {
+     "origin": {
+     "type": "string",
+     "description": "The departure airport."
+     },
+     "destination": {
+     "type": "string",
+     "description": "The arrival airport."
+     }
+     },
+     "required": ["origin", "destination"]
+     }
+     ```
+
+**3. Function Usage:**
+
+   * Once the function is added, your chatbot can access the flight search API and retrieve relevant results based on the user's query.
+
+   * The chatbot can execute the function when a user inputs a phrase like "find cheapest flights from [origin] to [destination]", The chatbot can then display the cheapest flight options to the user, including details such as flight numbers, departure and arrival times, and prices.
+</TabItem>
+</Tabs>
+
