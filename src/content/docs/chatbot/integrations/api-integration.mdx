@@ -28,8 +28,6 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Generating Keys</div>
 
 - Go to your **`Integration`** and click on **`manage API integration`**
-- Now create one key.
-
 <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 ">
 <Image 
   src="/assets/chatbot/API/Integration-API.png"
@@ -40,6 +38,8 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
   className="rounded-md object-contain"
 />
 </div>
+- Now create one key.
+
 
 - Copy your **```Generated API key```**
 
@@ -61,11 +61,8 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 
 <Aside  >
  📝 The widget_uid is your chatbot's Widget ID.
-   ```js
-   //  For Example.
-   a12bc345-d678-90ef-gh12-ijklmno345pq
-
-  ```
+ 
+**For Example**: *84292q0qw1eqw124-4173-af6e-569477ac9013*
   
   </Aside>
  
@@ -96,17 +93,16 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 --data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'`}
 </CodeBox> */}
 
-``` js file="CMS" title="example.curl"
-curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
---header 'Content-Type: application/x-www-form-urlencoded' \\
---header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
---data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'
-
+```
+curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'api-key: pks-3e0a221e3dqweqwef0ecd123qe33a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \
+--data-urlencode 'widget_uid=84292q0qw1eqw124-4173-af6e-569477ac9013'
 ```
 
 
 <div className="text-md font-semibold "> Response </div>
-``` js file="CMS" title="example.json"
+``` js file="CMS" title="response.json"
 {
     "type": "RXSUCCESS",
     "message": "Chatbot session created successfully",
@@ -154,21 +150,14 @@ curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
 --data-urlencode 'message=hey there?'`}
 </CodeBox> */}
 
-``` js file="CMS" title="example.curl"
-
- curl --location 'https://api.yourgpt.ai/chatbot/v1/sendMessage' \\
- --header 'Content-Type: application/x-www-form-urlencoded
---header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
---data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013' \\
---data-urlencode 'session_uid=39772b8d-d1c8-4d5a-a473-a6841bc4c880' \\
---data-urlencode 'message=hey there?'
-
+```
+curl --location 'https://api.yourgpt.ai/chatbot/v1/sendMessage' --header 'Content-Type: application/x-www-form-urlencoded' --header 'api-key: pks-3e0a221e3dqweqwef0ecd123qe33a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' --data-urlencode 'widget_uid=84292q0qw1eqw124-4173-af6e-569477ac9013' --data-urlencode 'session_uid=3977b1x2d-d1e1-0d5a-a473-a6841bc4c880' --data-urlencode 'message=hey there?'
 ```
 
 
 <div className="text-md font-semibold "> Response </div>
 
-``` js file="CMS" title="example.json"
+``` js file="CMS" title="response.json"
 {
     "type": "RXSUCCESS",
     "message": "AI reply",

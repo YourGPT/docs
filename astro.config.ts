@@ -174,6 +174,23 @@ export default defineConfig({
                   ],
                 },
                 {
+                  label: "Connectors",
+                  items: [
+                    {
+                      label: "⚡ Zapier",
+                      link:"chatbot/integrations/connectors/zapier"
+                    },
+                    {
+                      label: "🚀 Pabbly",
+                      link:"chatbot/integrations/connectors/pabbly"
+                    },
+                    {
+                      label: "🔧 Make.com",
+                      link:"chatbot/integrations/connectors/make"
+                    },
+                  ],
+                },
+                {
                   label: "🔌 API Integration",
                   link: "chatbot/integrations/api-integration",
                 },
