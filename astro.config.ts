@@ -12,7 +12,7 @@ export default defineConfig({
       logo: {
         src: "./src/assets/yourgpt.svg",
       },
-      favicon: "/favicon2.ico",
+      favicon: "/docs-yourgpt.ico",
       social: {
         youtube: "https://www.youtube.com/@YourGPTAI",
         twitter: "https://x.com/YourGPTAI",
@@ -123,6 +123,10 @@ export default defineConfig({
                     },
                     {
                       label: "Bubble",
+                      link: "chatbot/integrations/website/bubble",
+                    },
+                    {
+                      label: "Framer",
                       link: "chatbot/integrations/website/bubble",
                     },
                     {
