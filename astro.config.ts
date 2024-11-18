@@ -127,7 +127,7 @@ export default defineConfig({
                     },
                     {
                       label: "Framer",
-                      link: "chatbot/integrations/website/bubble",
+                      link: "chatbot/integrations/website/framer",
                     },
                     {
                       label: "HTML Website",
