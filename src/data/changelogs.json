@@ -1,4 +1,11 @@
 [
+
+  {
+    "version": "2.0.0",
+    "date": "October 2024",
+    "img": "/assets/changelog/team-chat-helpdesk.jpg",
+    "data": "## Updates for October 2024\n\n**👥 Team Chat Features**\n- Assign or reassign chats to distribute workload efficiently among team members.\n- Multi-operator support for handling simultaneous conversations.\n- Internal notes feature to facilitate private team communication within chats.\n- Chat translation capabilities for messages in preferred languages.\n\n**📚 Helpdesk Improvements**\n- AI-powered article generation for automatic creation of helpdesk content.\n\n**🧪 Debug Lab Enhancements**\n- Introduction of a new chat logger to track and analyze AI Bot interactions."
+  },
   {
     "version": "1.9.0",
     "date": "September 2024",

@@ -15,7 +15,7 @@ export default function ChangelogItem({ version, date, data, img }: ChangelogIte
   const { scrollYProgress } = useScroll({ target: LineRef, offset: ["0 0.32", "1 0.8"] });
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const bg = useTransform(scrollYProgress, [0, 0.08], ["#ffffff25", "#eef3ef23"]);
-  const htmlContent = marked.parse(data);
+  const htmlContent = React.useMemo(() => marked.parse(data), [data]);
   return (
     <div ref={LineRef} className="changelog-item flex flex-col lg:flex-row justify-between gap-4 md:gap-8 !mt-0 max-w-6xl mx-auto ">
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 !mt-0 !w-[28%]">
