@@ -1,13 +1,11 @@
 ---
-title: "Widget"
+title: "YourGPT Chatbot SDK Documentation"
 description: "Customize the appearance of your chatbot using the SDK"
 ---
 
 import {Image} from '~/components';
 import {Note} from '~/components'
 
-
-# YourGPT Chatbot SDK Documentation
 
 ## Overview
 
@@ -26,8 +24,8 @@ This document provides a comprehensive guide on how to use the YourGPTChatbot SD
 This function allows you to listen to events from the chatbot.
 
  ```
-{`$yourgptChatbot.on("init", onInit);
-$yourgptChatbot.on("chatbotPopup", popupState);`}
+$yourgptChatbot.on("init", onInit);
+$yourgptChatbot.on("chatbotPopup", popupState);
  ```
 
 <div style={{ height: '20px' }}></div>
@@ -41,8 +39,8 @@ $yourgptChatbot.on("chatbotPopup", popupState);`}
 This function allows you to execute commands on the chatbot.
 
  ```
-{`$yourgptChatbot.execute("chatbotOpen");
-$yourgptChatbot.execute("chatbotClose");`}
+$yourgptChatbot.execute("chatbotOpen");
+$yourgptChatbot.execute("chatbotClose");
  ```
 
 <div style={{ height: '20px' }}></div>
@@ -56,8 +54,8 @@ $yourgptChatbot.execute("chatbotClose");`}
 This function allows you to set data for the visitor or the session.
 
  ```
-{`$yourgptChatbot.set("visitor:data", { name: "John Doe", email: "john@example.com" });
-$yourgptChatbot.set("session:data", { productId: "12345", cartValue: 99.99 });`}
+$yourgptChatbot.set("visitor:data", { name: "John Doe", email: "john@example.com" });
+$yourgptChatbot.set("session:data", { productId: "12345", cartValue: 99.99 });
  ```
 
 <div style={{ height: '20px' }}></div>
@@ -71,7 +69,7 @@ $yourgptChatbot.set("session:data", { productId: "12345", cartValue: 99.99 });`}
 This function allows you to stop listening to events from the chatbot.
 
  ```
-{`$yourgptChatbot.off("chatbotPopup", popupState);`}
+$yourgptChatbot.off("chatbotPopup", popupState);
  ```
 
 <div style={{ height: '20px' }}></div>
