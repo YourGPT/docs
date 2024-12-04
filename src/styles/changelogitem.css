@@ -14,4 +14,24 @@
     font-weight: 600;
 }
 
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #755fff,
+                0 0 10px #755fff,
+                0 0 15px #755fff;
+  }
+  50% {
+    box-shadow: 0 0 10px #755fff,
+                0 0 20px #755fff,
+                0 0 30px #755fff;
+  }
+  100% {
+    box-shadow: 0 0 5px #755fff,
+                0 0 10px #755fff,
+                0 0 15px #755fff;
+  }
+}
 
+.checkpoint-glow {
+  animation: glow 2s ease-in-out infinite;
+}

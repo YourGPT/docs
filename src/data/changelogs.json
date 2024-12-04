@@ -1,6 +1,12 @@
 [
 
   {
+    "version": "2.0.1",
+    "date": "November 2024",
+    "img": "/assets/changelog/team-chat-helpdesk.jpg",
+    "data": "## Updates for November 2024\n\n**🏋️‍♂️ Trainer Role**\n- You can now assign a Trainer Role to manage and improve chatbot responses.\n\n**🔗 New Integrations**\n- Zapier: Automate workflows and connect your apps effortlessly.\n- Pabbly: Make your processes more efficient with automation.\n- Make (formerly Integromat): Build custom integrations for advanced workflows.\n\n**📚 Training Improvements**\n- Enhancement in Advanced Training options for better bot training capabilities.\n- Use past conversations from YourGPT Chatbot to create a training job for your AI chatbot to improve over time."
+  },
+  {
     "version": "2.0.0",
     "date": "October 2024",
     "img": "/assets/changelog/team-chat-helpdesk.jpg",
