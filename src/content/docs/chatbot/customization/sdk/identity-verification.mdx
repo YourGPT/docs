@@ -1,0 +1,98 @@
+---
+title: "Visitor Identity Verification"
+description: "Enable identity verification for your visitors"
+keywords: yourgpt chatbot Documentation, yourgpt chatbot guide, gpt chatbot, customgpt chatbot
+hero:
+  title: "Identity Verification"
+  tagline: "Enable identity verification for your visitors"
+---
+
+# Visitor Identity Verification
+
+Identity verification helps you to setup a secure chatbot.
+
+## Overview
+
+The identity verification system uses HMAC (Hash-based Message Authentication Code) to securely verify user identities. When enabled, users must provide valid authentication credentials to interact with the chatbot.
+
+
+### Step 1: Get your secret key
+
+First, get your widget secret key from your widget settings:
+1. Open your chatbot from the dashboard
+2. Go to Widget -> `Settings`
+
+    <img src="/assets/chatbot/sdk/widget-settings.png" alt="Widget settings" className="rounded-md" />
+3. Copy your `Secret Key` - you'll need it for generating HMAC signatures
+
+    <img src="/assets/chatbot/sdk/widget-secret.png" alt="Widget secret key" className="rounded-md" />
+
+### Step 2: Generate HMAC Signature
+
+The HMAC verification follows a specific priority order:
+1. external_user_id (highest priority)
+2. email
+3. phone (lowest priority)
+
+Generate the HMAC signature using your secret key and the highest-priority parameter available. Here are examples for each field:
+
+```javascript
+const crypto = require('crypto');
+
+function generateHMAC(data, secret) {
+    // Create a new HMAC object using SHA-256 and the secret key
+    let generatedHash = crypto.createHmac('sha256', secret);
+    // Write the data to be hashed
+    generatedHash.write(data);
+    // Finalize the HMAC calculation
+    generatedHash.end();
+    // Return the HMAC as a hexadecimal string
+    return generatedHash.read().toString('hex');
+}
+
+const secretKey = 'your_secret_key';
+
+// Example: Generate HMAC using external_user_id
+const externalUserId = '123456';
+const hmacForExternalUserId = generateHMAC(externalUserId, secretKey);
+
+// Example: Generate HMAC using email
+const email = 'john@example.com';
+const hmacForEmail = generateHMAC(email, secretKey);
+
+// Example: Generate HMAC using phone
+const phone = '+1234567890';
+const hmacForPhone = generateHMAC(phone, secretKey);
+```
+
+### Step 3: Perform identity verification
+
+You can perform identity verification by setting the user's contact information using the `set` method and including the HMAC hash in the `user_hash` parameter.
+
+```javascript
+$yourgptChatbot.set("contact:data", {
+    email: "andrew099@hi.com",
+    phone: "+1234567890",
+    name: "Andrew",
+    ext_user_id: "123456",
+    user_hash: hmac
+});
+```
+
+:::note
+When setting user data, make sure to include a valid HMAC hash that matches the highest-priority identifier available in your data. The system will verify the hash against identifiers in the following order: external_user_id → email → phone. If the hash doesn't match the provided identifier, you'll receive an "invalid hmac hash" error.
+:::
+
+### Security Considerations
+
+- Keep your secret key secure and never expose it in client-side code
+- Implement proper error handling for failed verifications
+
+### Troubleshooting
+
+If you encounter verification issues:
+- Ensure your secret key matches the one in your dashboard
+- Check that all parameters match between HMAC generation and visitor identification
+- Confirm your HMAC generation algorithm matches our specifications
+
+For additional support or questions, please contact our support team.

@@ -55,9 +55,9 @@ export default defineConfig({
                   label: "Behavior",
                   link: "/chatbot/how-to-customize-chatbot-behavior",
                 },
-                { 
-                  label: "Bot Persona Example", 
-                  link: "chatbot/prompts/example" 
+                {
+                  label: "Bot Persona Example",
+                  link: "chatbot/prompts/example",
                 },
                 {
                   label: "Custom Domain",
@@ -71,6 +71,7 @@ export default defineConfig({
                       link: "chatbot/customization/sdk/styling",
                     },
                     { label: "Web/SDK", link: "chatbot/customization/sdk/web" },
+                    // { label: "Identity Verification", link: "chatbot/customization/sdk/identity-verification" },
                   ],
                 },
               ],
@@ -106,9 +107,7 @@ export default defineConfig({
                       label: "Shopify",
                       link: "chatbot/integrations/website/shopify",
                     },
-                    { label: "Wix", 
-                      link: "chatbot/integrations/website/wix" 
-                    },
+                    { label: "Wix", link: "chatbot/integrations/website/wix" },
                     {
                       label: "Squarespace",
                       link: "chatbot/integrations/website/squarespace",
@@ -182,15 +181,15 @@ export default defineConfig({
                   items: [
                     {
                       label: "⚡ Zapier",
-                      link:"chatbot/integrations/connectors/zapier"
+                      link: "chatbot/integrations/connectors/zapier",
                     },
                     {
                       label: "🚀 Pabbly",
-                      link:"chatbot/integrations/connectors/pabbly"
+                      link: "chatbot/integrations/connectors/pabbly",
                     },
                     {
                       label: "🔧 Make.com",
-                      link:"chatbot/integrations/connectors/make"
+                      link: "chatbot/integrations/connectors/make",
                     },
                   ],
                 },
@@ -200,8 +199,8 @@ export default defineConfig({
                 },
                 {
                   label: "📡 Webhooks",
-                  link: "chatbot/integrations/webhooks"
-                }
+                  link: "chatbot/integrations/webhooks",
+                },
               ],
             },
             {
@@ -210,7 +209,7 @@ export default defineConfig({
             },
             {
               label: "🔔 Triggers",
-              link: "chatbot/triggers"
+              link: "chatbot/triggers",
             },
             {
               label: "🚀 Studio",
@@ -327,14 +326,14 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    '/chatbot': '/chatbot/introduction',
-    '/chatbot/studio/elements/intent-and-events': '/chatbot/studio/elements/intents',
-    '/chatbot/studio/elements/intent-and-entities': '/chatbot/studio/elements/intents',
-    '/chatbot/studio/elements/message': '/chatbot/studio/elements/messages',
-    '/chatbot/other-information': '/chatbot/other/other-information',
-    '/chatbot/other/debug-lab': '/chatbot/other/debugging/ai-refuse-to-answer',
-    'llm-spark': '/llm-spark/introduction',
-    '/chatbot/changelog': '/chatbot/changelogs' 
+    "/chatbot": "/chatbot/introduction",
+    "/chatbot/studio/elements/intent-and-events": "/chatbot/studio/elements/intents",
+    "/chatbot/studio/elements/intent-and-entities": "/chatbot/studio/elements/intents",
+    "/chatbot/studio/elements/message": "/chatbot/studio/elements/messages",
+    "/chatbot/other-information": "/chatbot/other/other-information",
+    "/chatbot/other/debug-lab": "/chatbot/other/debugging/ai-refuse-to-answer",
+    "llm-spark": "/llm-spark/introduction",
+    "/chatbot/changelog": "/chatbot/changelogs",
     // add redirect for the subprocessor to trust center
   },
 });
