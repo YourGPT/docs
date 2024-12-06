@@ -71,7 +71,7 @@ export default defineConfig({
                       link: "chatbot/customization/sdk/styling",
                     },
                     { label: "Web/SDK", link: "chatbot/customization/sdk/web" },
-                    // { label: "Identity Verification", link: "chatbot/customization/sdk/identity-verification" },
+                    { label: "Identity Verification", link: "chatbot/customization/sdk/identity-verification" },
                   ],
                 },
               ],

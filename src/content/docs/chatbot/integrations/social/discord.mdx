@@ -14,15 +14,13 @@ import { Aside } from '@astrojs/starlight/components';
 
 <div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> GPT Chatbot for Discord | Installation Guide </div>
 
-
-
 {/* <Note type="idea" color="emerald">
  Connecting Your Custom Bot with Discord
 </Note>  */}
 
 <Aside type="tip" title="Idea"> 💡  Connecting Your Custom Bot with Discord</Aside>
 
-## Auto Installation 
+# Auto Installation 
 
 To install Your Bot using the automatic method:
 
@@ -67,9 +65,53 @@ To install Your Bot using the automatic method:
 
 Now you can see that ygc AI Chatbot is added to your server.
 
+- Go to the integration page and add the channel ID by simply copying and pasting the channel ID by right-clicking on the channel settings icon.
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-28">
+<Image 
+  src="/assets/chatbot/Discord/discord-11.png"
+  alt="Add Channel ID"
+    width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md object-contain"
+/>
+</div>
+
+
+- To get the response, you all need to add the channel ID by simply copying and pasting the channel ID by right-clicking on the channel settings icon.
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-44">
+<Image 
+  src="/assets/chatbot/Discord/discord-9.png"
+  alt="Discord Channel ID"
+  
+  width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md object-contain"
+  
+/>
+</div>
+
+> To Get the Channel ID, First enable the developer mode and then go to the channel settings.
+
+- From Discord Settings -> Click on Advanced -> Enable the Developer mode.
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-28">
+<Image 
+  src="/assets/chatbot/Discord/discord-10.png"
+  alt="Auto Authentication"
+   width="100%"
+             height="100%"
+               style={{ width: "100%" }}
+               className="rounded-md object-contain"
+/>
+</div>
+
+Now you Chat with the YGC AI Chatbot  in your server.
+
 ---
 
-## Custom Installation 
+# Custom Installation 
 
 To install YGC Bot using the custom method:
 
@@ -213,60 +255,8 @@ To initiate a conversation, you must use chat slash commands. For instance, you 
 {/* <Note type="note" color="blue">
   You can only chat by using specific commands that start with a slash. Without these commands, you can't interact.
 </Note> */}
-<Aside > 📝  You can only chat by using specific commands that start with a slash. Without these commands, you can't interact.</Aside>
-
-
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Custom/Auto Installation </div>
-
-
-- Add YourGPTBot.
-
-<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-16">
-<Image 
-  src="/assets/chatbot/Discord/discord-8.png"
-  alt="Add YourGPTBot"
-  width="100%"
-             height="100%"
-               style={{ width: "100%" }}
-               className="rounded-md object-contain "
-/>
-</div>
-
-<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-44">
-<Image 
-  src="/assets/chatbot/Discord/discord-9.png"
-  alt="Add YourGPTBot Confirmation"
+<Aside > 
+  📝 You can chat by using specific commands that start with a @ or by using Direct Message if Direct Message is enabled in the integration settings. 
   
-  width="100%"
-             height="100%"
-               style={{ width: "100%" }}
-               className="rounded-md object-contain"
-  
-/>
-</div>
-
-- Select **Auto** from option click on authentication and complete the authentication.
-<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-28">
-<Image 
-  src="/assets/chatbot/Discord/discord-10.png"
-  alt="Auto Authentication"
-   width="100%"
-             height="100%"
-               style={{ width: "100%" }}
-               className="rounded-md object-contain"
-/>
-</div>
-
-- Now you can see that **ygc AI Chatbot** is added to your server.
-
-- To get the response, you all need to add the channel ID by simply copying and pasting the channel ID by right-clicking on the channel settings icon.
-<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-28">
-<Image 
-  src="/assets/chatbot/Discord/discord-11.png"
-  alt="Add Channel ID"
-    width="100%"
-             height="100%"
-               style={{ width: "100%" }}
-               className="rounded-md object-contain"
-/>
-</div>
+  If Direct Message is not enabled, you can only interact by using commands that start with a @ symbol.
+</Aside>
