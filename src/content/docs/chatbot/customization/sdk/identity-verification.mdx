@@ -51,15 +51,15 @@ function generateHMAC(data, secret) {
 const secretKey = 'your_secret_key';
 
 // Example: Generate HMAC using external_user_id
-const externalUserId = '123456';
+const externalUserId = '<unique user id>';
 const hmacForExternalUserId = generateHMAC(externalUserId, secretKey);
 
 // Example: Generate HMAC using email
-const email = 'john@example.com';
+const email = '<valid email>';
 const hmacForEmail = generateHMAC(email, secretKey);
 
 // Example: Generate HMAC using phone
-const phone = '+1234567890';
+const phone = '<valid phone number>';
 const hmacForPhone = generateHMAC(phone, secretKey);
 ```
 
@@ -69,10 +69,10 @@ You can perform identity verification by setting the user's contact information 
 
 ```javascript
 $yourgptChatbot.set("contact:data", {
-    email: "andrew099@hi.com",
-    phone: "+1234567890",
-    name: "Andrew",
-    ext_user_id: "123456",
+    email: "<valid email>",
+    phone: "<valid phone number>",
+    name: "<user name>",
+    ext_user_id: "<unique user id>",
     user_hash: hmac
 });
 ```
