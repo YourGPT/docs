@@ -208,6 +208,10 @@ export default defineConfig({
               link: "chatbot/functions",
             },
             {
+              label: "🔑 Custom SSO",
+              link: "chatbot/custom-sso",
+            },
+            {
               label: "🔔 Triggers",
               link: "chatbot/triggers",
             },
@@ -335,5 +339,7 @@ export default defineConfig({
     "llm-spark": "/llm-spark/introduction",
     "/chatbot/changelog": "/chatbot/changelogs",
     // add redirect for the subprocessor to trust center
+    "/chatbot/integrations/whatsapp": "/chatbot/integrations/social/whatsapp",
+ 
   },
 });

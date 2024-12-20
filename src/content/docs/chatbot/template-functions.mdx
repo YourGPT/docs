@@ -1,0 +1,284 @@
+---
+title: YourGPT Templates Functions
+description: splash
+hero:
+  title: "YourGPT Templates Functions"
+  tagline: "Stay updated with the latest changes in the YourGPT Chatbot"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import {Table} from '~/components'; 
+import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
+
+
+# YourGPT Templates Functions Guide
+
+**YourGPT template functions** help you add dynamic content using default variables and helpers.
+
+
+
+What Are Template Functions?
+Template functions are special commands that help you make your chat responses dynamic and smart. Think of them as small tools that can:
+
+Make decisions based on user information
+Format text (like making text UPPERCASE or lowercase)
+Handle dates and times
+Combine information in useful ways
+
+
+
+---
+
+## Available Variables
+
+YourGPT provides several default variables you can use in your templates to personalize responses:
+
+<Tabs>
+  <TabItem label="Session">
+    - ```SESSION.status```
+    - ```SESSION.chat_mode```
+    - ```SESSION.state```
+  </TabItem>
+  <TabItem label="Visitor">
+    - ```VISITOR.name```
+    - ```VISITOR.region```
+    - ```VISITOR.language```
+    - ```VISITOR.browser```
+    - ```VISITOR.os```
+    - ```VISITOR.status```
+  </TabItem>
+  <TabItem label="Contact">
+    - ```CONTACT.name```
+    - ```CONTACT.email```
+    - ```CONTACT.phone```
+    - ```CONTACT.company```
+    - ```CONTACT.country```
+    - ```CONTACT.city```
+    - ```CONTACT.region```
+    - ```CONTACT.tags```
+  </TabItem>
+    <TabItem label="Flow">
+    - ```FLOW.last_response```
+    - ```FLOW.last_utterance```
+    - ```FLOW.{variable_of_your_choice}```
+  </TabItem>
+</Tabs>
+
+---
+
+## Practical Use Cases
+
+### 1. Technical Support Response
+```handlebars
+I see you're using {{VISITOR.browser}} on {{VISITOR.os}}. 
+{{#if (eq VISITOR.browser "Safari")}}
+For the best experience on Safari, please ensure you're using version 14 or higher.
+{{else if (eq VISITOR.browser "Chrome")}}
+Chrome provides optimal performance with our platform.
+{{else}}
+For the best experience, we recommend using Chrome or Safari.
+{{/if}}
+```
+**Use Case:** This template is useful for technical support teams to provide browser-specific guidance to users, ensuring they have the best possible experience with the platform.
+
+---
+
+### 2. Location-Based Support Hours (I AM NOT SURE ABOUT CONTACT REGION)
+```handlebars
+{{#if (eq CONTACT.region "North America")}}
+Our support team is available from 9 AM to 9 PM EST.
+{{else if (eq CONTACT.region "Europe")}}
+Our support team is available from 9 AM to 6 PM CET.
+{{else}}
+Our global support team will respond within 24 hours.
+{{/if}}
+```
+**Use Case:** This template is ideal for companies with region-specific support teams, allowing them to provide accurate support hours to customers based on their location.
+
+---
+
+### 3. Contact Information Verification (studio pr aacha usecase hoga yeh)
+```handlebars
+I have your contact details as:
+Company: {{CONTACT.company}}
+Location: {{CONTACT.city}}, {{CONTACT.country}}
+{{#if (isset CONTACT.phone)}}
+Phone: {{CONTACT.phone}}
+{{else}}
+Would you like to add a phone number to your profile?
+{{/if}}
+```
+**Use Case:** This template is useful for verifying and updating customer contact information, ensuring that the support team has the most up-to-date details for effective communication.
+
+---
+
+### 4. Session Continuation (CURENTLY SESSION CHATMODE 1 not dep but we can create)
+```handlebars
+{{#if (eq SESSION.status "open")}}
+Regarding your previous message about {{FLOW.last_utterance}},
+{{#if (eq SESSION.chat_mode "support")}}
+our support team is reviewing your case.
+{{else if (eq SESSION.chat_mode "sales")}}
+our sales team will provide detailed information.
+{{else}}
+how can I provide further assistance?
+{{/if}}
+{{else}}
+How can I assist you today?
+{{/if}}
+```
+**Use Case:** This template is designed for ongoing session management, allowing the chatbot to acknowledge and respond to previous conversations, ensuring a seamless user experience.
+
+---
+
+### 5. Regional Business Hours Response (SESSION STATE IS PENDING, we can also create variable for business hours)
+```handlebars
+{{#if (and (eq CONTACT.region "Bay") (eq SESSION.state "after_hours"))}}
+Our New York office is currently closed. We'll respond to your message when we open at 9 AM EST.
+Your reference number is: {{uppercase (concat CONTACT.id "-NY")}}
+{{else if (eq CONTACT.region "London")}}
+{{#if (eq SESSION.state "business_hours")}}
+Our London team is here to help you immediately.
+{{else}}
+Our London office reopens at 9 AM GMT. 
+{{/if}}
+{{else}}
+We'll respond to your inquiry within 24 hours.
+{{/if}}
+```
+**Use Case:** This template is suitable for companies with region-specific offices, enabling them to provide accurate business hours and response times to customers based on their location.
+
+---
+
+### 6. Customised Response Based on Previous Interaction
+```handlebars
+{{#if (includes FLOW.last_utterance "delivery")}}
+Our team is working hard to ensure your order arrives as soon as possible.
+{{/if}}
+```
+**Use Case:** This template is designed for personalized responses based on previous interactions, allowing the chatbot to address specific customer inquiries and provide tailored solutions.
+
+---
+
+### 7. Account Status Response (How to create tags in Contact?)
+```handlebars
+Dear {{CONTACT.name}},
+{{#if (and (isset CONTACT.tags) (includes CONTACT.tags "VIP"))}}
+As a VIP member from {{CONTACT.company}}, you have access to priority support.
+{{#if (eq SESSION.status "active")}}
+Your dedicated account manager will be notified immediately.
+{{else}}
+Please allow up to 2 hours for your dedicated account manager to respond.
+{{/if}}
+{{else}}
+Our support team typically responds within 24 hours.
+{{/if}}
+```
+**Use Case:** This template is ideal for companies with tiered customer support, enabling them to provide personalized responses and priority support to VIP customers.
+
+---
+
+### 8. Device-Specific Instructions
+```handlebars
+{{#if (or (eq VISITOR.os "iOS") (eq VISITOR.os "Android"))}}
+You can also download our mobile app for a better experience on your {{VISITOR.os}} device.
+{{else}}
+For the best experience, try our desktop application or web interface.
+{{/if}}
+```
+---
+
+## Text Formatting Helpers
+
+### Make Text UPPERCASE (NICE USECASE FOR TICKETS CONTACT ID)
+```handlebars
+Your ticket ID: {{uppercase (concat CONTACT.id "-" SESSION.id)}}
+```
+
+### Make Text lowercase
+```handlebars
+Email: {{lowercase CONTACT.email}}
+```
+
+### Combine Text (concat)
+```handlebars
+{{concat "Welcome back to " CONTACT.company ", " CONTACT.name "!"}}
+```
+
+## Working with Dates
+
+### Show Current Date
+```handlebars
+Ticket created on: {{date format="MMMM Do, YYYY"}}
+```
+
+### Common Date Formats
+- Short date: `{{date format="MM/DD/YYYY"}}` → 12/19/2024
+- Long date: `{{date format="MMMM Do, YYYY"}}` → December 19th, 2024
+- Day only: `{{date format="dddd"}}` → Thursday
+
+---
+
+
+## **Troubleshooting Guide**
+
+### **1. Message Not Showing**  
+✅ Check for closing tags like `{{/if}}`.  
+✅ Verify that variable names are spelled correctly.  
+✅ Use straight quotes (`"`) instead of curly quotes (`“`).  
+
+❌ Don’t leave tags incomplete; it can break your template.  
+❌ Don’t use curly quotes as they are incompatible.  
+
+---
+
+### **2. Variable Shows as Blank**  
+✅ Ensure the variable exists in your data source.  
+✅ Double-check for typos in variable names.  
+✅ Verify that the case (uppercase/lowercase) matches your data definition.  
+
+❌ Don’t assume all variables are available without confirming.  
+❌ Don’t ignore typos—they are a common cause of errors.  
+
+---
+
+### **3. Conditions Not Working**  
+✅ Use `eq` for comparisons, e.g., `{{#if (eq X Y)}}`.  
+✅ Check that parentheses and syntax are correct.  
+✅ Remove any extra spaces in condition statements.  
+
+❌ Don’t overlook syntax errors; even small ones matter.  
+❌ Don’t use spaces where they shouldn’t be in conditions.  
+
+---
+
+## **Best Practices**
+
+### **Do's**  
+✅ Start with simple templates and test changes step by step.  
+✅ Use comments to clarify logic in your templates:  
+   ```handlebars
+   {{!-- Example: This section handles premium users --}}
+   {{#if (eq SESSION.type "premium")}}
+     Premium content here
+   {{/if}}
+   ```  
+✅ Organize templates by grouping related content together.  
+✅ Use clear, descriptive names for templates and variables.  
+✅ Test thoroughly with different data sets to ensure accuracy.  
+
+---
+
+### **Don’ts**  
+❌ Don’t add complexity to templates before testing the basics.  
+❌ Don’t leave templates uncommented, especially for complex logic.  
+❌ Don’t mix unrelated content into the same template—it makes debugging harder.  
+❌ Don’t skip testing; it’s essential to catch potential issues early.  
+
+---
+
+This version removes nested points, uses lists for clarity, and keeps everything concise. It’s straightforward while still providing all necessary information in an easy-to-read format.
+
+
+

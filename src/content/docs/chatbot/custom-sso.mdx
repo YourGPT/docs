@@ -1,0 +1,36 @@
+---
+title: YourGPT Custom SSO (Single Sign-On) Integration Guide
+description: Everything you need to know to implement custom SSO for YourGPT
+keywords: custom SSO integration, YourGPT authentication, JWT token generation, secure API access 
+--- 
+
+
+This integration provides a way for site owners to authenticate their users and interact with YourGPT through a secure API using a custom SSO flow. The process involves generating and managing JWT tokens, validating them via YourGPT, and establishing a secure connection for user authentication.
+
+## How to Set Up
+
+1. Log in or sign up for  [YourGPT](https://app.yourgpt.ai/login).
+2. Generate an **`SSO Client ID`** and **`SSO Secret Key`** for your organization.
+3. Generate a JWT token using your `SSO Secret Key` as shown in the code below :
+
+```jsx
+let jwt = require("jsonwebtoken");
+
+let token = jwt.sign({ 
+	email: "john.doe@example.com", // required
+	first_name: "John",            // required
+	last_name: "Doe",              // required,
+	username: "John2234",          // optional
+	profile_pic: "https://www.example.com/profile-images/user.jpg", // optional
+	phone_no: "7087675884",        // optional
+	phone_code: "91",              // optional
+},"your_sso_secret_key",{ expiresIn: "1h" });
+```
+
+1. After generating the JWT token, call this API :
+
+```jsx
+curl --location 'https://api.yourgpt.ai/api/v1/verify/custom-sso?token=your_generated_jwt_token&sso_client_id=your_sso_client_id'
+```
+
+1. If all credentials and fields are correct, the user will be redirected to YourGPT and logged in successfully.
