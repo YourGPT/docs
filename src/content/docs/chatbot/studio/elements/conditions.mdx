@@ -1,0 +1,87 @@
+---
+title: Conditions in YourGPT Chatbot Studio
+description: Learn about conditions  in YourGPT Chatbot Studio.
+keywords: conditions chatbot, conditional flow chatbot, flow conditions, chatbot logic
+hero:
+  title: Conditions in YourGPT Chatbot Studio
+  tagline: Learn about conditions in YourGPT Chatbot Studio.
+---
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Conditions in YourGPT Chatbot Studio </div>
+
+import { Image } from "astro:assets";
+
+
+##  What Are Conditions?
+A condition is a check that uses variables or predefined inputs to determine if the flow should continue in a certain direction.
+
+Direct the conversation to the right path when users provide specific inputs or when some conditions are met. If a condition matches the AI chatbot proceeds with the intended route. Otherwise, it follows the No Match path.
+
+---
+
+## Step-by-Step Setup: Creating a Condition
+
+Follow these **6 clear steps** to create or update a condition in your chatbot flow.
+
+---
+
+### 1. Add a Condition Step
+Click **Add Step** → **Condition** to insert a new condition block.
+
+---
+
+### 2. Name the Condition
+Provide a **descriptive name** to identify the condition later like "**Check User Input**"
+
+---
+
+### 3. Select the Expression Type
+Click add Expression button to create your check. Choose the type of check you want to perform:
+
+ <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+      <Image src="/assets/flow/condition-check.png" alt="Conditions-check" 
+            width="100%"
+            height="100%"
+            style={{ width: "100%" }} 
+            className="rounded-md object-contain " 
+        />
+ </div>
+
+1. **Variable Type**: Uses Variables in the condition to check.  
+
+2. **Value Type**: Uses a specific text, numeric value or variables.  
+
+3. **Logic Group**: Combine multiple checks using AND/OR logic.  
+---
+
+### 4. Choose an Operator
+  - Equals to
+  - Contains
+  - Greater than / Less than  
+
+- Enter the **Value** or **Variable** to compare.  
+- Add multiple expressions if needed using Add Expression button.
+- You can also create multiple condition by clicking on add conition.
+---
+
+### 5. No Match
+- Use Re Prompt Message or path to handle cases where the input doesn’t match.
+---
+
+### 6. Remove Condition (Optional)
+- If a condition is no longer necessary, simply click **Remove Condition** to delete it.
+
+---
+
+
+
+
+## Common Pitfalls
+
+- **Vague Naming**: A condition named “Check 1” might be confusing later. Use descriptive names.
+- **Wrong Operator Choice**: “Equals to” only works for exact matches. Use “Contains” if partial matches matter.
+- **No Match Not Configured**:Always set a fallback so users don’t get stuck.
+- **Ignoring Case Sensitivity**: “Yes” vs. “yes” can be different if you use “Equals to.”
+- **Overusing Logic Groups**: Too many AND/OR combinations can make your logic difficult to manage.
+
+

@@ -221,6 +221,7 @@ export default defineConfig({
                 { label: "Intents", link: "chatbot/studio/elements/intents" },
                 { label: "Events", link: "chatbot/studio/elements/events" },
                 { label: "Entities", link: "chatbot/studio/elements/entities" },
+                {label: "AI Task", link: "chatbot/studio/elements/ai-task"},
                 { label: "Messages", link: "chatbot/studio/elements/messages" },
                 {
                   label: "Variables",
@@ -229,6 +230,10 @@ export default defineConfig({
                 {
                   label: "Listeners",
                   link: "chatbot/studio/elements/listeners",
+                },
+                {
+                  label: "conditions",
+                  link: "chatbot/studio/elements/conditions"
                 },
                 {
                   label: "Advanced Options",

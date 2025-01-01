@@ -1,53 +1,87 @@
 ---
-title: AI Task | YourGPT Chatbot Studio
+title: AI Task in YourGPT Chatbot Studio
 description: The AI task is a powerful feature that allows you to perform any AI task in the runtime. Learn more about AI task in YourGPT Chatbot Studio.
 keywords: ai in studio,flow based gpt chatbot, studio with ai, ai function calling in studio, ai task in studio, ai task
+hero:
+  title: AI Task in YourGPT Chatbot Studio
+  tagline: Learn about AI task in YourGPT Chatbot Studio.
+
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
-import {Image} from "~/components";
 import {Note} from '~/components'
+import { Image } from "astro:assets";
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> AI Task in YourGPT Chatbot Studio </div>
 
 
-<Image src="/assets/flow/AI-task.jpg" alt="AI and Knowledgebase" />
+ <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+      <Image src="/assets/flow/AI-task.jpg" alt="AI and Knowledgebase" 
+            width="100%"
+            height="100%"
+            style={{ width: "100%" }} 
+            className="rounded-md object-contain " 
+        />
+ </div>
+
 The AI task is a powerful feature that allows you to perform any AI task in the runtime.
 
-## Data Source:
+## Types of Response Sources:
 
-Data Source include two options one from **`AI`** and second from **`Knowledgebase`**.
+In Studio, Response Source include two options one from **`AI`** and second from **`Knowledgebase`**.
 
 ### 1. AI:
+AI uses the pretrained (their built-in) knowledge or any additional context you provide to generate responses.
 
-<Image src="/assets/flow/flow-AI.png" alt="AI" />
 
-#### Prompt:
+ <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-60">
+      <Image src="/assets/flow/ai-task/flow-AI.png" alt="AI" 
+            width="50%"
+            height="50%"
+            style={{ width: "75%" }} 
+            className="rounded-md object-contain " 
+        />
+ </div>
 
-The prompt functions as an instruction for the AI system, guiding it to generate a response based on the given instructions.
+- Previous Chat Context: Specify how many previous messages the AI should consider for context.
+- Prompt: Add instructions for the AI to define how it should respond.
 
-#### Prompt and Memory:
-
-The prompt and memory act as instructions for the AI system, enabling it to process and retain user conversation (Chat Context).
+---
 
 ### 2. Knowledgebase:
+The Knowledgebase AI uses your training data to answer to the users question.
 
-![AI Knowledgebase](/assets/flow/flow-knowledgebase.png)
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-60">
+<Image 
+  src="/assets/flow/ai-task/flow-knowledgebase.png"
+  alt="KnowledgeBase AI"
+  
+  width="30%"
+  height="30%"
+  style={{ width: "75%" }}
+  className="rounded-md object-contain"
+  
+/>
+</div>
 
-- **Question:** Inputting a question or query to retrieve specific information from the Knowledgebase.
+- Previous Chat Context: Specify how many previous messages the AI should consider for context.
+- Question: Enter the user’s query to retrieve specific information.
+- Prompt: Add extra context or instructions for how the AI should handle the query.
+- Restrictions: Define rules or limits on how the AI generates responses.
 
-- **Instructions:** are the guildelines for AI Model how to answer to specific
-
+> Note: For most tasks, up to 5 messages is sufficient. Adding too many messages may reduce response quality.
 ---
 
 ## Common Settings for AI and Knowledgebase
 
 These settings are common for both AI and Knowledgebase data sources within YourGPT Chatbot Studio:
 
-- **Send to Chat:** The generated response is delivered to the chat interface for user interaction and engagement.
+1. **Send to Chat:** The generated response is delivered to the chat interface for user interaction and engagement.
 
-- **Store Into:** The Basic information is stored across various visitor, session, Contact and Flow parameters, including visitor details, session information, and bot-related data.
+2. **Store Into:** The Basic information is stored across various visitor, session, Contact and Flow parameters, including visitor details, session information, and bot-related data.
 
 
-### Configuration Settings
+### Model Configuration Settings
 
 The configuration settings for both AI and Knowledgebase data sources are standardized, offering flexibility and customization:
 
@@ -60,6 +94,7 @@ The configuration settings for both AI and Knowledgebase data sources are standa
 
   </TabItem>
   <TabItem label="Model">
+  Choose the AI model for response generation:
     - GPT-3.5-turbo 
     - GPT-3.5-turbo-1106, 
     - GPT-4
@@ -70,7 +105,7 @@ The configuration settings for both AI and Knowledgebase data sources are standa
     - Mistral-2-Large
   </TabItem>
   <TabItem label="Temperature">
-  Temperature is a parameter that controls the randomness of the AI model's output.
+  Temperature is a parameter that controls the creativity & randomness of the AI model's output.
   <Note>
   0-1 (adjustable)
   </Note>
@@ -78,9 +113,11 @@ The configuration settings for both AI and Knowledgebase data sources are standa
   </TabItem>
   <TabItem label="Max Tokens">
 
-    Max Tokens is the maximum number of tokens that the AI model can generate.
+    Max Tokens is the maximum number of tokens that the AI model can generate. Sets the maximum response length (default: 1024).
     <Note>
     1-2048 (adjustable)
     </Note>
   </TabItem>
 </Tabs>
+
+Learn more about [Tokens, Max Tokens, Context Limits, Knowledge Nodes, and Temperature](https://help.yourgpt.ai/article/what-are-tokens-max-tokens-context-limits-knowledge-nodes-and-temperature-in-ai-543).
