@@ -256,7 +256,7 @@ export default defineConfig({
                     },
                     {
                       label: "Component",
-                      link: "Chatbot/studio/elements/advanced/component"
+                      link: "Chatbot/studio/elements/advanced/compnent"
                     }
                     {
                       label: "Actions",
