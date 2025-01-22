@@ -243,13 +243,21 @@ export default defineConfig({
                       link: "chatbot/studio/elements/advanced/api-calling",
                     },
                     {
+                      label: "Wait",
+                      link: "chatbot/studio/elements/advanced/wait"
+                    },
+                    {
                       label: "Sets",
                       link: "chatbot/studio/elements/advanced/sets",
                     },
                     {
-                      label: "JavaScript Code Execution",
+                      label: "Code Execution",
                       link: "chatbot/studio/elements/advanced/code-execution",
                     },
+                    {
+                      label: "Component",
+                      link: "Chatbot/studio/elements/advanced/component"
+                    }
                     {
                       label: "Actions",
                       link: "chatbot/studio/elements/advanced/actions",
@@ -298,6 +306,10 @@ export default defineConfig({
                       label: "Training View Source",
                       link: "chatbot/other/debugging/training-view-source",
                     },
+                    {
+                      label: "View Chat Session Logs",
+                      link:  "chatbot/other/debugging/session-logger"
+                    }
                   ],
                 },
               ],
