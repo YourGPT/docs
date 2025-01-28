@@ -9,6 +9,8 @@ hero:
 
 import {Image} from '~/components';
 import {Note} from '~/components'
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Variables in YourGPT Chatbot Studio </div>
 
@@ -52,3 +54,37 @@ For example, you can create a variable to store the user's name when they introd
 5. Use the variable in the flow by referencing it with double curly braces (e.g., **`{{FLOW.variable_name}}`**).
 
 6. Variables can be used to capture user inputs, store information, or pass data between different components of the flow.
+
+
+
+<Tabs>
+  <TabItem label="Flow">
+    - ```FLOW.last_response``` - The last response in the flow
+    - ```FLOW.last_utterance``` - The last message sent by the user
+    - ```FLOW.{variable_of_your_choice}``` - Custom variable that you created for the flow
+  </TabItem>
+  <TabItem label="Session">
+    - ```SESSION.status``` - Current session status (open/closed)
+    - ```SESSION.chat_mode``` - Chat mode: 1 for bot mode, 2 for awaiting, 3 for operator mode
+    - ```SESSION.state``` - Session state: resolved, pending, or unresolved
+  </TabItem>
+  <TabItem label="Visitor">
+    - ```VISITOR.name``` - Name of the visitor
+    - ```VISITOR.region``` - Region/location of the visitor
+    - ```VISITOR.language``` - Visitor's preferred language
+    - ```VISITOR.browser``` - Visitor's web browser
+    - ```VISITOR.os``` - Visitor's operating system
+    - ```VISITOR.status``` - Visitor's status (away/online/offline)
+  </TabItem>
+  <TabItem label="Contact">
+    - ```CONTACT.name``` - Name of the contact
+    - ```CONTACT.email``` - Email address of the contact
+    - ```CONTACT.phone``` - Phone number of the contact
+    - ```CONTACT.company``` - Company name of the contact
+    - ```CONTACT.country``` - Country of the contact
+    - ```CONTACT.city``` - City of the contact
+    - ```CONTACT.region``` - Region inside a city
+    - ```CONTACT.tags``` - Can be Custom String tags
+  </TabItem>
+</Tabs>
+
