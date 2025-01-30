@@ -7,8 +7,9 @@ hero:
   tagline: Learn how to set up Twilio Voice integration with our detailed, step-by-step guide.
 ---
 
-import { Image } from "~/components";
-import { Note } from "~/components";
+
+import { Image } from "astro:assets";
+import {Note} from '~/components'
 import { Steps } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 
@@ -26,14 +27,16 @@ To set up Twilio Voice integration, follow these steps:
           - Log into your Twilio account.
           - Go to the "**Develop**" tab to find your Account SID and Auth Token.
    
+    <div className="flex justify-center items-center bg-blue-500 rounded-md p-3">
         <Image 
-          src="/assets/chatbot/Twilio-voice/Twilio-1.png"
-          alt="Twilio Credentials" 
-          width="100%"
-                                      height="100%"
-                                        style={{ width: "100%" }}
-                                        className="rounded-md" 
+         src="/assets/chatbot/Twilio-voice/Twilio-1.png"
+         alt="Twilio Credentials" 
+         width="100%"
+         height="100%"
+         style={{ width: "100%" }}
+         className="rounded-md" 
         />
+    </div>
      
 
   2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Get Phone Number SID </div>
@@ -52,15 +55,16 @@ To set up Twilio Voice integration, follow these steps:
                 - **Voice Type**: Voice model used (e.g., Polly.Aditi).
                 - **Speech Timeout**: Duration to wait for a user's speech response.
         
+         <div className="flex justify-center items-center bg-blue-500 rounded-md p-3">
             <Image 
               src="/assets/chatbot/Twilio-voice/Twilio-2.png"
               alt="Integration Configuration" 
               width="100%"
-                                          height="100%"
-                                            style={{ width: "100%" }}
-                                            className="rounded-md object-contain" 
-            />
-                            
+              height="100%"
+              style={{ width: "100%" }}
+              className="rounded-md object-contain" 
+            />        
+          </div>
 
   4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Set Webhook Endpoint </div>
   
@@ -68,14 +72,16 @@ To set up Twilio Voice integration, follow these steps:
               - Add this webhook to your phone number in the Voice configuration:
                 - Go to "**Develop**" → "**View All Numbers**" → Select your number → "**Configure**."
         
+         <div className="flex justify-center items-center bg-blue-500 rounded-md p-3">
             <Image 
               src="/assets/chatbot/Twilio-voice/Twilio-3.png"
               alt="Webhook Configuration" 
               width="100%"
-                                            height="100%"
-                                              style={{ width: "100%" }}
-                                              className="rounded-md" 
+              height="100%"
+              style={{ width: "100%" }}
+              className="rounded-md" 
             />
+        </div>
         
 
 

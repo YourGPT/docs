@@ -4,6 +4,9 @@ description: Everything you need to know to implement custom SSO for YourGPT
 keywords: custom SSO integration, YourGPT authentication, JWT token generation, secure API access 
 --- 
 
+import { Image } from "astro:assets";
+import {Note} from '~/components'
+
 
 This integration provides a way for site owners to authenticate their users and interact with YourGPT through a secure API using a custom SSO flow. The process involves generating and managing JWT tokens, validating them via YourGPT, and establishing a secure connection for user authentication.
 
@@ -12,19 +15,62 @@ This integration provides a way for site owners to authenticate their users and 
 1. Log in or sign up for  [YourGPT](https://app.yourgpt.ai/login).
 
 - On the right side of the screen click on Account, then click on Settings.
-![Organisation Settings](/assets/chatbot/custom-sso/org-settings.png)
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/chatbot/custom-sso/org-settings.png"
+    alt="Organisation Settings"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
 
 - from the left side, click on the SSO button
-![SSO](/assets/chatbot/custom-sso/sso1.png)
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/chatbot/custom-sso/sso1.png"
+    alt="SSO"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
 
 
 ### 2. Generate SSO Data
 
 Generate an **`SSO Client ID`** and **`SSO Secret Key`** for your organization.
-![SSO](/assets/chatbot/custom-sso/sso2.png)
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/chatbot/custom-sso/sso2.png"
+    alt="SSO"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
 
 - Copy the `Client ID` & `Secert key`
-![SSO Create](/assets/chatbot/custom-sso/sso3.png)
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/chatbot/custom-sso/sso3.png"
+    alt="SSO Create"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
 
 
 ### 3. Generate JWT Token
@@ -112,7 +158,16 @@ curl --location 'http://api.yourgpt.ai/api/v1/sendConfirmLoginAccessEmail' \
 https://chatbot.yourgpt.ai/process-login?should-verify-email=true
 ```
 
-![email verification](/assets/chatbot/custom-sso/sso-email-verification.png)
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/chatbot/custom-sso/sso-email-verification.png"
+    alt="Email Verification"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
 
 - Other possible responses :
 
@@ -127,7 +182,17 @@ https://chatbot.yourgpt.ai/process-login?should-verify-email=true
 
 6. Once the user confirms their login access via email, they will be automatically logged into YourGPT. The SSO integration is now complete and ready for use.
 
-![confirm Login Access](/assets/chatbot/custom-sso/confirm-login-access.png)
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/chatbot/custom-sso/confirm-login-access.png"
+    alt="confirm Login Access"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
 
 
 ## Security Considerations

@@ -7,27 +7,26 @@ hero:
   tagline: Learn about Listeners in YourGPT Chatbot Studio.
 ---
 
-import {Image} from '~/components';
+import { Image } from "astro:assets";
 import {Note} from '~/components'
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Listeners in YourGPT Chatbot Studio </div>
 
-
-
-
 Listeners play a crucial role in capturing user responses and enabling interactive elements like buttons within flow. These components facilitate user engagement and data capture for seamless interactions.
 
-##  <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Button Listener </div>
-The Button Listener allows the chatbot to provide interactive features in the form of buttons, allowing users to choose from predefined options or actions during the conversation.
-
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Usage of Button Listener </div>
-
-- **Interactive Buttons:** Enables the inclusion of buttons within the chatbot interface, providing users with selectable options.
-- **Actionable Choices:** Allows users to trigger specific actions or responses by clicking on the provided buttons.
-- **Customization:** Offers flexibility in designing button layouts and defining corresponding actions or responses.
-
-
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Capture Listener </div>
+
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/flow/listener/form.png" 
+    alt="Capture Listeners in YourGPT Studio"
+    width="100%"
+    height="100%"
+      style={{ width: "100%" }}
+    className="rounded-md" 
+  />
+</div>
 
 The Capture Listener is an essential component of the flow, capturing user replies and storing them in specified locations. It acts as an interface between user input and the chatbot's response mechanism.
 
@@ -49,3 +48,65 @@ The Capture Listener allows you to:
 - **Time-sensitive interactions:** Schedule appointments, set reminders, or provide time-specific information.
 - **Store Responses:** Save captured responses in designated path for future reference or processing.
 
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Button Listener </div>
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/flow/listener/button.png" 
+    alt="Button Listeners in YourGPT Studio"
+    width="100%"
+    height="100%"
+      style={{ width: "100%" }}
+    className="rounded-md" 
+  />
+</div>
+
+
+The Button Listener allows the chatbot to provide interactive features in the form of buttons, allowing users to choose from predefined options or actions during the conversation.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Usage of Button Listener </div>
+
+- **Interactive Buttons:** Enables the inclusion of buttons within the chatbot interface, providing users with selectable options.
+- **Actionable Choices:** Allows users to trigger specific actions or responses by clicking on the provided buttons.
+- **Customization:** Offers flexibility in designing button layouts and defining corresponding actions or responses.
+
+
+Learn more about on our [Help center article on Button](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Form Listener</div>
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
+  <Image 
+    src="/assets/flow/listener/form.png" 
+    alt="Form Listeners in YourGPT Studio"
+    width="100%"
+    height="100%"
+      style={{ width: "100%" }}
+    className="rounded-md" 
+  />
+</div>
+
+
+The Form Listener is a versatile component that captures user inputs through form fields, enabling structured data collection and processing within the agents flow.
+
+###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Field Types of Form Listener </div>
+- **Text (single)** : Standard input field for collecting single-line text responses
+- **Number** : Numeric input field with optional validation for numerical values
+- **Email** : Specialized input for collecting and validating email addresses
+- **Phone** : Input field optimized for phone number collection with format validation
+- **Text Area** : Multi-line text input for longer responses or descriptions
+- **Checkbox** : Toggle selection for yes/no or multiple choice options
+- **Radio** : Single selection from multiple predefined options
+- **Range** : Slider input for selecting values within a specified range
+- **Select** : Dropdown menu for choosing from predefined options
+- **Date** : Calendar input for date selection
+- **File** : File upload capability for documents, images, or other media
+
+
+###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Usage of Form Listener </div>
+
+- **Data Collection:** Capture user inputs in a structured format for processing and analysis.
+- **Customized Forms:** Design custom forms with specific field types to collect relevant information.
