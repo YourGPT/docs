@@ -1,6 +1,12 @@
 [
 
   {
+    "version": "2.0.3",
+    "date": "January 2025",
+    "img": "/assets/changelog/january-updates.jpg",
+    "data": "## Updates for January 2025\n\n**🦾 JSON Mode in AI Response**\n- Generate structured AI responses using the AI Task within Studio, streamlining bot development.\n\n**❓ AI-Powered FAQ Generation**\n- Automatically generate FAQs using AI for faster, more accurate responses to common queries.\n\n**🎨 Enhanced UI & UX for Smoother Workflows**\n- Improved user interface for a more intuitive and seamless building experience.\n\n**⏳ Wait Node for Better Flow Control**\n- Add delays and improve conversation flow with the new Wait Node in Studio.\n\n**🎛️ Dynamic Choices on Interactive Elements**\n- Supports card buttons, carousels, and regular buttons for a more dynamic and engaging experience.\n\n**💡 AI-Enhanced Helpdesk Writing**\n- Enhanced AI writing features with multiple writing styles for clearer, more professional articles.\n\n**📚 Advanced Helpdesk Training Controls**\n- Exclude specific data from AI training and train the View Source for greater control over AI learning.\n\n**📱 Mobile App Enhancements**\n- Improved general performance for a faster, smoother app experience.\n\n**📝 New Forms Elements (Studio)**\n- Collect user input easily with the new Forms Node in Studio, enhancing chatbot interactivity.\n\n**🔐 SOC 2 Type 2 Compliance**\n- YourGPT is now fully compliant with SOC 2 Type 2, ensuring top-tier security and data protection."
+  },
+  {
     "version": "2.0.2",
     "date": "December 2024",
     "img": "/assets/changelog/helpdesk-updates.jpg",
