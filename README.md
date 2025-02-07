@@ -1,6 +1,6 @@
 # YourGPT AI Docs
 
-YourGPT AI Docs consists of a chatbot and LLM Spark. 
+YourGPT AI Docs consists of a Chatbot. 
 
 ## 🚀 Project Structure
 
@@ -14,7 +14,7 @@ The following folders and files:
 │   ├── content/
 │   │   ├── docs/
 |   |   |    ├── Chatbot
-|   |   |    ├── LLM Spark
+|   |   |  
 │   │   └── config.ts
 │   └── env.d.ts
 ├── astro.config.mjs

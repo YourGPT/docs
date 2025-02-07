@@ -11,7 +11,6 @@ export { default as Discord } from "./Landing/Discord.astro";
 export { default as ListCard } from "./Landing/ListCard.astro";
 export { default as SplitCard } from "./Landing/SplitCard.astro";
 export { default as Card2 } from "./Landing/Card.astro";
-export { default as IntroductionCard } from "./llm-spark/IntroductionCard.tsx";
 export { default as SocialIntegration } from "./chatbot/introduction/SocialIntegration.jsx";
 export { default as Studio } from "./chatbot/introduction/Studio.jsx";
 export { default as Customization } from "./chatbot/introduction/Customization.jsx";

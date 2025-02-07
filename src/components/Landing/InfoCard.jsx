@@ -2,45 +2,55 @@ import { MdOutlineLaptopMac } from 'react-icons/md';
 import { HiRocketLaunch } from 'react-icons/hi2';
 import { GrServices } from 'react-icons/gr';
 import { TbArrowsCross } from 'react-icons/tb';
+import { MdOutlineHelpCenter } from 'react-icons/md';
 import { GoArrowRight } from "react-icons/go";
 export const CARDDATA = [
     {
-        title: "YourGPT Chatbot",
+        title: "Docs",
         icon: MdOutlineLaptopMac,
-        description: "YourGPT Chatbot a No-Code AI Chatbot builder for 24/7 customer support.",
+        description: "Find all the technical documentation and product specifications you need.",
         link: "/chatbot/introduction",
         linkText: "Get started ",
         iconColor: "dark:text-[#eebd53] text-gray-800/90",
         target:"_self"
       },
       {
-        title: "LLM Spark",
+        title: "Help Center",
+        icon: MdOutlineHelpCenter,
+        description: "Get answers to your questions and learn how to use YourGPT effectively.",
+        link: "https://help.yourgpt.ai/",
+        linkText: "Visit Help Center",
+        iconColor: "dark:text-[#eebd53] text-gray-800/90",
+        target:"_self"
+      },
+      {
+        title: "Changelogs",
         icon: HiRocketLaunch,
-        description: "LLM Spark a development platform for effortlessly building LLM applications.",
-        link: "/llm-spark/introduction",
+        description: "Learn about the latest features, updates, and improvements in our products.",
+        link: "/chatbot/changelogs",
         linkText: "Explore ",
         iconColor: "dark:text-[#bd53ee] text-gray-800/90",
         target: "_self"
       },
-      {
-        title: "Service Status",
-        icon: GrServices,
-        description: "Stay updated on the latest status of our services to make informed decisions.",
-        link: "https://status.yourgpt.ai/",
-        linkText: "Check status",
-        iconColor: "dark:text-[#84ee53] text-gray-800/90",
-        target:"_blank"
-      },
     //   {
-    //     title: "GDPR Compliance",
-    //     icon: TbArrowsCross,
-    //     description: "Learn about our GDPR compliance details.",
-    //     link: "https://docs.yourgpt.ai/gdpr",
-    //     linkText: "Learn about",
-    //     iconColor: "dark:text-[#ee5389] text-white",
-    //     bgPattern: "",
-    //     className: "p-8 border dark:border-gray-700 border-gray-200 rounded-lg shadow !mt-0 h-[228px] lg:h-[180px] dark:hover:border-blue-400 hover:border-gray-400 transition-colors duration-500"
-    //   }
+    //     title: "Service Status",
+    //     icon: GrServices,
+    //     description: "Stay updated on the latest status of our services to make informed decisions.",
+    //     link: "https://status.yourgpt.ai/",
+    //     linkText: "Check status",
+    //     iconColor: "dark:text-[#84ee53] text-gray-800/90",
+    //     target:"_blank"
+    //   },
+      // {
+      //   title: "GDPR Compliance",
+      //   icon: TbArrowsCross,
+      //   description: "Learn about our GDPR compliance details.",
+      //   link: "https://docs.yourgpt.ai/gdpr",
+      //   linkText: "Learn about",
+      //   iconColor: "dark:text-[#ee5389] text-white",
+      //   bgPattern: "",
+      //   className: "p-8 border dark:border-gray-700 border-gray-200 rounded-lg shadow !mt-0 h-[228px] lg:h-[180px] dark:hover:border-blue-400 hover:border-gray-400 transition-colors duration-500"
+      // }
   ];
 
 // Reusable Card Component

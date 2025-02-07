@@ -7,6 +7,8 @@ hero:
 import {Table} from '~/components'; 
 import {Note} from '~/components'
 import { Aside } from '@astrojs/starlight/components';
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+import { Target, Layers, Sparkles, RefreshCcw } from 'lucide-react';
 
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Training Guide for YourGPT Chatbot </div>
@@ -15,39 +17,73 @@ Welcome to YourGPT's training guide. This document will help you effectively tra
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Start Training Your Chatbot</div>
 
-Follow these guidelines to train your YourGPT chatbot effectively and ensure it provides the best possible user experience.
+We allow you to train your chatbot with your own bussiness data.
+<LinkCard 
+    title="Training Options" 
+    description="Choose from a variety of training options to train your AI chatbot effectively."
+    href="/chatbot/knowledge-source-integration"
+  >
+</LinkCard>
 
+Follow these guidelines to train your YourGPT chatbot effectively and ensure it provides the best possible experience.
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Best Practices for Training</div> 
 
+| Practice         | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| Consistency      | Use a consistent format for all training data.                               |
+| Clarity          | Ensure questions and answers are clear and to the point.                    |
+| Comprehensiveness| Cover as many potential user queries as possible in your training data. The more the chatbot is trained on, the better it will be at handling a wide range of user queries. |
+| Accuracy         | Ensure that the training data is accurate and up to date.                    |
+| Periodic Updates | Periodically update the training data to reflect new information.           |
+| Regular Testing  | Routinely test the chatbot to verify it's providing accurate responses.     |
 
-|Practice|Description|
-|---|---|
-|Consistency|Use a consistent format for all training data.|
-|Clarity|Ensure questions and answers are clear and to the point.|
-|Comprehensiveness|Cover as many potential user queries as possible in your training data. The more the chatbot is trained on, the better it will be at handling a wide range of user queries.|
-|Accuracy|Ensure that the training data is accurate and up to date.|
-|Periodic Updates|Periodically update the training data to reflect new information.|
-|Test Frequently|Regularly test the chatbot to ensure it's providing accurate responses.|
+<Aside>
+Big documents are further divided into smaller chunks. The default chunk size is 1024 characters, with an overlap of 200 characters. When creating documents, add one of the following separators after every 1000 characters: "\n~~~\n", otherwise other common "\n\n\n", "\n\n", "\n" etc will be used as separators.
+</Aside>
 
+---
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>YourGPT Training Options:</div>
+## Additional Training Tips
+<CardGrid>
+  <LinkCard 
+    title="Be Specific" 
+    description="Make your training pairs specific to common scenarios you want to handle"
+  >
+    <Target class="w-6 h-6 text-green-400" />
+  </LinkCard>
 
-- **Links:** Train your chatbot by using relevant links.
-- **Documents:** Implement the training process effectively using documentation.
-- **FAQs:** Train the chatbot using frequently asked questions.
-- **Text:** Provide concise and clear text for quick comprehension and implementation.
-- **Third party:** Use platforms such as Notion, Google Docs, YouTube, and more for a variety of training options.
+  <LinkCard 
+    title="Include Variations" 
+    description="Add different ways users might ask the same question"
+  >
+    <Layers class="w-6 h-6 text-green-400" />
+  </LinkCard>
 
+  <LinkCard 
+    title="Keep It Clear" 
+    description="Write responses exactly as you want the AI to communicate"
+  >
+    <Sparkles class="w-6 h-6 text-green-400" />
+  </LinkCard>
 
-<Aside >
-Big document are futher divided into smaller chunks. The default chunk size is 1024 characters, with an overlap of 200 characters. When creating documents, add one of the following separators after every 1000 characters: "\n~~~\n", otherwise other common "\n\n\n", "\n\n","\n" etc will be used as separators.
- </Aside>
+  <LinkCard 
+    title="Stay Consistent" 
+    description="Maintain the same tone and policy across all responses"
+  >
+    <RefreshCcw class="w-6 h-6 text-green-400" />
+  </LinkCard>
+</CardGrid>
 
+---
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Training with FAQs</div>
-FAQs are an excellent method for providing the chatbot with frequently asked questions and their corresponding answers. This helps the chatbot to promptly address user queries.
+  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Training with FAQs</div>
 
-- Identify the most common questions from your users.
-- Provide clear and concise answers to each question.
-
+<Card>
+    FAQs are an excellent method for providing the chatbot with frequently asked questions and their corresponding answers. This helps the chatbot to promptly address user queries.
+  <ul className='list-disc list-inside'>
+    <li>Identify the most common questions from your users.</li>
+    <li>Provide clear and concise answers to each question.</li>
+    <li>Use Website to FAQ feature to quickly generate FAQ form website content</li>
+  </ul>
+</Card>

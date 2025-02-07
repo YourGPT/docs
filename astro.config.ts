@@ -31,19 +31,23 @@ export default defineConfig({
               label: "🔁 Shareable Chatbot",
               link: "/chatbot/link-shareable-chatbot",
             },
-            // {
-            //   label: 'Training',
-            //   items: [
-            //     { label: 'Training Guide', link: '/chatbot/training' },
-            //     { label: 'Best Practices', link: '/chatbot/training/best-practices' },
-            //     { label: 'Structured Data', link: '/chatbot/training/structured-data' },
-            //     { label: 'FAQs', link: '/chatbot/training/faqs' },
-            //   ],
-            // },
             {
-              label: "👨🏻‍💻 Training Guide",
-              link: "/chatbot/training",
+              label: '📚 Training',
+              items: [
+                { 
+                  label: '👨🏻‍💻 Training Guide',
+                  link: '/chatbot/training'
+                },
+                { 
+                  label: '👩‍🏫 Training Integration ', 
+                  link: '/chatbot/knowledge-source-integration' 
+                }
+              ],
             },
+            // {
+            //   label: "👨🏻‍💻 Training Guide",
+            //   link: "/chatbot/training",
+            // },
             {
               label: "⚙️ Customization",
               items: [
@@ -278,8 +282,12 @@ export default defineConfig({
                   link: "chatbot/other/connected-chatbots",
                 },
                 {
-                  label: "Role & AI Models",
-                  link: "chatbot/other/other-information",
+                  label: "Role Management",
+                  link: "chatbot/other/role-management",
+                },
+                {
+                  label: "AI Models",
+                  link: "chatbot/other/ai-models",
                 },
                 { label: "Queue Replies", link: "chatbot/queue-replies" },
                 { label: "Security", link: "chatbot/other/security" },
@@ -316,18 +324,6 @@ export default defineConfig({
             },
           ],
         },
-        {
-          label: "LLM Spark",
-          items: [
-            { label: "📚 Introduction", link: "/llm-spark/introduction" },
-            { label: "📝 Prompt Testing", link: "/llm-spark/prompt-testing" },
-            {
-              label: "🔗 API Documentation",
-              link: "/llm-spark/api-documentation",
-            },
-            { label: "📑 Templates", link: "/llm-spark/templates" },
-          ],
-        },
       ],
       components: {
         Hero: "./src/components/Landing/Hero.astro",
@@ -353,10 +349,21 @@ export default defineConfig({
     "/chatbot/studio/elements/message": "/chatbot/studio/elements/messages",
     "/chatbot/other-information": "/chatbot/other/other-information",
     "/chatbot/other/debug-lab": "/chatbot/other/debugging/ai-refuse-to-answer",
-    "llm-spark": "/llm-spark/introduction",
     "/chatbot/changelog": "/chatbot/changelogs",
+    "chatbot/other/other-information": "/chatbot/other/role-management",
     // add redirect for the subprocessor to trust center
     "/chatbot/integrations/whatsapp": "/chatbot/integrations/social/whatsapp",
- 
+
+
+    // LLM Spark redirects
+    "llm-spark": "/",
+    "llm-spark/introduction": "/",
+    "llm-spark/prompt-testing": "/",
+    "llm-spark/api-documentation": "/",
+    "llm-spark/templates": "/",
   },
+  // customCss: [
+  //   // Relative path to your custom CSS file
+  //   './src/styles/custom.css',
+  // ],
 });
