@@ -8,7 +8,8 @@ hero:
   tagline: Learn how to use JavaScript or Python functionality to extend the capabilities of your chatbot.
 ---
 
-import { Image } from "~/components";
+
+import { Image } from "astro:assets";
 import { Note } from "~/components";
 import { Aside } from '@astrojs/starlight/components';
 
@@ -26,15 +27,18 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 </div>
 
-Code Execution extends the capabilities of chatbot, allowing chatbot execute Javascript code in Runtime to perform complex task.
+Code Execution extends the capabilities of chatbot, allowing chatbot execute Javascript code in Runtime to perform complex task. You have two option with code execution:
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Code Execution with JavaScript </div>
+1. JavaScript Code Execution
+2. Python Code Execution
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>1. Code Execution with JavaScript </div>
 
 Our chatbot enables the execution of JavaScript code to accomplish complex tasks. It supports external dependencies such as **\*axios**, **node-fetch**, and **moment-timezone\***!
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> How To Execute Code </div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>How To Execute JavaScript Code </div>
 
-1. **Set Up JavaScript Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the JavaScript component onto the canvas.
+1. **Set Up JavaScript Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the Code Execution component onto the canvas.
 
 2. **Write and Execute Code:** Input your JavaScript code into the editor and click on the **`execute`** button to run it. The output will be displayed in the **`output Console`** section.
 
@@ -42,7 +46,7 @@ Our chatbot enables the execution of JavaScript code to accomplish complex tasks
 
 4. **Save and Test:** Save your flow and test the chatbot to see the code execution in action.
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Video Part </div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>JavaScript Video Part </div>
 
 {/* <Note type="re" color="blue">
   🧑‍💻 Code Showcased in the Video - Weather Search Example:
@@ -101,3 +105,36 @@ try {
   console.error('Error fetching and updating weather data:', error);
 }
 ```
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>2. Code Execution with Python </div>
+
+Our chatbot enables the execution of Python code to accomplish complex tasks. It supports external dependencies such as **requests**!
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> How To Execute Python Code </div>
+
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image 
+    src="/assets/flow/python-code-execution.png"
+    alt="Python Code Execution"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
+1. **Set Up Python Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the Code component onto the canvas.
+
+2. Choose the Python as the language for the component.
+
+3. **Write and Execute Code:** Input your Python code into the editor and click on the **`execute`** button to run it. The output will be displayed in the **`output Console`** section.
+
+4. **Debugging and Data Manipulation:** Use the **`print()`** function for debugging purposes. The Python code can also be used for various tasks like fetching data from external APIs, performing calculations, and manipulating data.
+
+5. **Save and Test:** Save your flow and test the chatbot to see the code execution in action.
+
+---
+

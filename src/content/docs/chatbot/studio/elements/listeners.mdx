@@ -14,7 +14,7 @@ import {Note} from '~/components'
 
 Listeners play a crucial role in capturing user responses and enabling interactive elements like buttons within flow. These components facilitate user engagement and data capture for seamless interactions.
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Capture Listener </div>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 1. Capture Listener </div>
 
 
 <div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
@@ -32,14 +32,31 @@ The Capture Listener is an essential component of the flow, capturing user repli
 
 ###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Types of Capture Listener </div>
 
-- **Entire Response** : Capture the entire user response.
-- **Name** : Capture the user's name.
-- **Email** : Capture the user's email address.
-- **Phone** : Capture the user's phone number.
-- **Date** : Capture the date input.
-- **Time** : Capture the time input.
+Capture have three types:
 
-###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Usage of Capture Listener </div>
+#### **1. Query Capture Listener**  
+Captures user responses and stores them in a variable.  
+- **Entire Response**: Captures the full user input.  
+- **Name**: Captures the user's name.  
+- **Email**: Captures the user's email address.  
+- **Phone**: Captures the user's phone number.  
+- **Date**: Captures the date input.  
+- **Time**: Captures the time input.  
+
+#### **2. Entity Capture Listener**  
+Extracts structured information from previous user messages.  
+- **Entity - Extract from history messages**: Captures data from past interactions.  
+
+#### **3. Attachment Capture Listener**  
+Handles media or file uploads from users.  
+- **Image**: Captures image attachments.  
+- **Video**: Captures video files.  
+- **Audio**: Captures audio files.  
+- **File**: Captures document or other file types.
+
+---
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Usage of Capture Listener </div>
 
 The Capture Listener allows you to:
 
@@ -49,11 +66,11 @@ The Capture Listener allows you to:
 - **Store Responses:** Save captured responses in designated path for future reference or processing.
 
 
-Learn more in detailed about [Capture on our Help center article](https://help.yourgpt.ai/article/how-to-capture-and-store-a-users-response-32).
+> Learn more in detailed about [Capture on our Help center article](https://help.yourgpt.ai/article/how-to-capture-and-store-a-users-response-32).
 
 ---
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Button Listener </div>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 2. Button Listener </div>
 
 <div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
   <Image 
@@ -76,11 +93,11 @@ The Button Listener allows the chatbot to provide interactive features in the fo
 - **Customization:** Offers flexibility in designing button layouts and defining corresponding actions or responses.
 
 
-Learn more in detailed about [Buttons on Help center article  ](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
+> Learn more in detailed about [Buttons on Help center article  ](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
 
 ---
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Form Listener</div>
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> 3. Form Listener</div>
 
 <div className="flex justify-center items-center bg-blue-500 rounded-md p-2">
   <Image 
@@ -114,3 +131,5 @@ The Form Listener is a versatile component that captures user inputs through for
 
 - **Data Collection:** Capture user inputs in a structured format for processing and analysis.
 - **Customized Forms:** Design custom forms with specific field types to collect relevant information.
+
+> To learn more about Form Listeners, refer to the [Form Listeners Documentation](#).

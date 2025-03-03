@@ -225,7 +225,10 @@ export default defineConfig({
                 { label: "Intents", link: "chatbot/studio/elements/intents" },
                 { label: "Events", link: "chatbot/studio/elements/events" },
                 { label: "Entities", link: "chatbot/studio/elements/entities" },
-                {label: "AI Task", link: "chatbot/studio/elements/ai-task"},
+                // {label: "AI Task", link: "chatbot/studio/elements/ai-task"},
+                { label: "Webhook", link: "chatbot/studio/elements/webhook" },
+                { label: "AI Response", link: "chatbot/studio/elements/ai-response" },
+                { label: "AI Retreival", link: "chatbot/studio/elements/ai-retreival" },
                 { label: "Messages", link: "chatbot/studio/elements/messages" },
                 {
                   label: "Variables",

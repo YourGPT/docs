@@ -11,6 +11,7 @@ hero:
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import {Note} from '~/components'
 import { Image } from "astro:assets";
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> AI Task in YourGPT Chatbot Studio </div>
 
@@ -24,106 +25,19 @@ import { Image } from "astro:assets";
         />
  </div>
 
-The AI task is a powerful feature that allows you to perform any AI task in the runtime.
 
-## Types of Response Sources:
+## Types of AI Tasks:
 
-In Studio, Response Source include two options one from **`AI`** and second from **`Knowledgebase`**.
+AI Response is a powerful feature that allow you to create custom responses based on AI model knowledge or your knowledgebase you trained.
+<LinkCard 
+    title="AI Response " 
+    href="/chatbot/studio/elements/ai-response"
+  > 
+</LinkCard>
 
-### 1. AI:
-AI uses the pretrained (their built-in) knowledge or any additional context you provide to generate responses.
-
-
- <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-60">
-      <Image src="/assets/flow/ai-task/flow-AI.png" alt="AI" 
-            width="50%"
-            height="50%"
-            style={{ width: "75%" }} 
-            className="rounded-md object-contain " 
-        />
- </div>
-
-- Previous Chat Context: Specify how many previous messages the AI should consider for context.
-- Prompt: Add instructions for the AI to define how it should respond.
-
-You can now generate responses in different formats. Available response types in AI include:
-
-- Text: Standard response format for displaying information in plain text.
-- JSON: Structured response format for easy integration with applications or APIs.
-
-
----
-
-### 2. Knowledgebase:
-The Knowledgebase AI uses your training data to answer to the users question.
-
-<div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-60">
-<Image 
-  src="/assets/flow/ai-task/flow-knowledgebase.png"
-  alt="KnowledgeBase AI"
-  
-  width="30%"
-  height="30%"
-  style={{ width: "75%" }}
-  className="rounded-md object-contain"
-  
-/>
-</div>
-
-- Previous Chat Context: Specify how many previous messages the AI should consider for context.
-- Question: Enter the user’s query to retrieve specific information.
-- Prompt: Add extra context or instructions for how the AI should handle the query.
-- Restrictions: Define rules or limits on how the AI generates responses.
-
-> Note: For most tasks, up to 5 messages is sufficient. Adding too many messages may reduce response quality.
----
-
-## Common Settings for AI and Knowledgebase
-
-These settings are common for both AI and Knowledgebase data sources within YourGPT Chatbot Studio:
-
-1. **Send to Chat:** The generated response is delivered to the chat interface for user interaction and engagement.
-
-2. **Store Into:** The Basic information is stored across various visitor, session, Contact and Flow parameters, including visitor details, session information, and bot-related data.
-
-
-### Model Configuration Settings
-
-The configuration settings for both AI and Knowledgebase data sources are standardized, offering flexibility and customization:
-
-<Tabs>
-  <TabItem label="Provider">
-   -  OpenAI
-   -  Anthropic
-   -  Mistral
-   -  Gemini
-
-  </TabItem>
-  <TabItem label="Model">
-  Choose the AI model for response generation:
-    - GPT-3.5-turbo 
-    - GPT-3.5-turbo-1106, 
-    - GPT-4
-    - GPT-4o
-    - Claude-3.5-Sonnet
-    - Claude-3-Opus
-    - Gemini-1.5-Flash
-    - Mistral-2-Large
-  </TabItem>
-  <TabItem label="Temperature">
-  Temperature is a parameter that controls the creativity & randomness of the AI model's output.
-  <Note>
-  0-1 (adjustable)
-  </Note>
-
-  </TabItem>
-  <TabItem label="Max Tokens">
-
-    Max Tokens is the maximum number of tokens that the AI model can generate. Sets the maximum response length (default: 1024).
-    <Note>
-    1-2048 (adjustable)
-    </Note>
-  </TabItem>
-</Tabs>
-
-Learn more about [Tokens, Max Tokens, Context Limits, Knowledge Nodes, and Temperature](https://help.yourgpt.ai/article/what-are-tokens-max-tokens-context-limits-knowledge-nodes-and-temperature-in-ai-543).
+AI Retreival is a powerful feature that allow you to retrieve information from your knowledge base.
+<LinkCard 
+    title="AI Retreival" 
+    href="/chatbot/studio/elements/ai-retreival" 
+  > 
+</LinkCard>

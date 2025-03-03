@@ -1,0 +1,44 @@
+---
+title: Webhook | YourGPT Chatbot Studio
+description: Webhook are the building blocks of a chatbot conversation.
+hero:
+  title: Webhook in YourGPT Chatbot Studio
+  tagline: Webhook are used to store and manage data within the flow. They can be used to capture user inputs, store information, or pass data between different components of the flow.
+---
+
+import { Image } from "astro:assets";
+import {Note} from '~/components'
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Webhook in YourGPT Chatbot Studio </div>
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image 
+    src="/assets/flow/webhook-create.png"
+    alt="Create Webhook"
+    width="100%"
+    height="100%"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>What are Webhooks? </div>
+
+Webhooks are user-defined HTTP callbacks that allow applications to send real-time data to other systems whenever a specific event occurs. Instead of continuously polling an API for updates, webhooks push data to a designated URL as soon as an event is triggered.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>How to use Webhooks in YourGPT AI Studio?</div>
+
+1.  **Go to Studio** – Open Studio and navigate to your scenario.
+
+2.  **Add a Webhook** – In the `Start` section, add a webhook to the flow.
+
+3. **Define a Webhook Name** – Enter a name to identify its purpose.
+
+4. **Set Webhook URL** – Provide the external endpoint that will receive the data.
+
+5. **Test Webhook** – Validate the webhook connection.
+
+6. **Map Response Data** – Configure how the chatbot handles the webhook response.
+
+> To Learn more about Webhooks, refer to the [Webhooks Documentation](https://help.yourgpt.ai/article/how-to-create-and-test-webhooks-in-studio-1176).
