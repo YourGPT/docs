@@ -352,18 +352,18 @@ export default defineConfig({
     "/chatbot/studio/elements/message": "/chatbot/studio/elements/messages",
     "/chatbot/other-information": "/chatbot/other/other-information",
     "/chatbot/other/debug-lab": "/chatbot/other/debugging/ai-refuse-to-answer",
-    "/chatbot/changelog": "/chatbot/changelogs",
+    "/chatbot/changelog": "/changelogs",
+    "/chatbot/changelogs": "/changelogs",
     "chatbot/other/other-information": "/chatbot/other/role-management",
     // add redirect for the subprocessor to trust center
     "/chatbot/integrations/whatsapp": "/chatbot/integrations/social/whatsapp",
 
-
     // LLM Spark redirects
-    "llm-spark": "/",
-    "llm-spark/introduction": "/",
-    "llm-spark/prompt-testing": "/",
-    "llm-spark/api-documentation": "/",
-    "llm-spark/templates": "/",
+    // "llm-spark": "/",
+    // "llm-spark/introduction": "/",
+    // "llm-spark/prompt-testing": "/",
+    // "llm-spark/api-documentation": "/",
+    // "llm-spark/templates": "/",
   },
   // customCss: [
   //   // Relative path to your custom CSS file
