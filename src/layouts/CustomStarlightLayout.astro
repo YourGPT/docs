@@ -1,0 +1,45 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import NewSidebar from '../components/NewSidebar.astro';
+---
+
+<div class="custom-layout">
+  <div class="sidebar-container">
+    <!-- <NewSidebar /> -->
+  </div>
+  <!-- <div class="content-container">
+    <StarlightPage {...Astro.props}>
+      <slot /> -->
+    <!-- </StarlightPage> -->
+  </div>
+</div>
+
+<!-- <style>
+  .custom-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+  }
+  
+  .content-container {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* Hide the original Starlight sidebar */
+  :global(.sl-sidebar) {
+    display: none !important;
+  }
+  
+  /* Adjust the content spacing */
+  :global(.sl-container) {
+    padding-left: 0 !important;
+  }
+</style> -->

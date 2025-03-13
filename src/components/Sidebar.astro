@@ -1,156 +1,353 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/Sidebar.astro';
-import { flattenSidebar, type SidebarEntry } from '@astrojs/starlight/utils/navigation';
-
-const { sidebar } = Astro.props;
-
-const currentPath = Astro.url.pathname;
-
-function isActiveItem(item: SidebarEntry): boolean {
-  return currentPath.startsWith(item.href);
-}
-
-function getProductFromPath(path: string): string {
-  if (path.includes('/chatbot/')) return 'Chatbot';
-  return 'General';
-}
-
-const currentProduct = getProductFromPath(currentPath);
-
-function processSidebarEntries(entries: SidebarEntry[], level: number = 0): SidebarEntry[] {
-  return entries.map((entry) => {
-    const processedEntry = { ...entry, isCurrent: isActiveItem(entry) };
-    
-    if (entry.type === 'group') {
-      processedEntry.entries = processSidebarEntries(entry.entries, level + 1);
-      processedEntry.collapsed = true; // Collapse all folder items
-    }
-    
-    return processedEntry;
-  });
-}
-
-const processedSidebar = sidebar.map((group) => ({
-  ...group,
-  entries: processSidebarEntries(group.entries),
-}));
-
-const filteredSidebar = processedSidebar.filter((group) => 
-  group.label === currentProduct || group.label === 'General'
-);
+import SidebarItems from './SidebarItems.astro';
+import { Menu, X, Disc, Youtube } from 'lucide-react';
+import { FaDiscord, FaYoutube } from "react-icons/fa";
 
 ---
 
-<Default {...Astro.props} sidebar={filteredSidebar}>
-  <slot />
-</Default>
+<button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+  <span class="menu-icon">
+    <Menu size={24} />
+  </span>
+</button>
+
+<div id="mobile-sidebar" class="mobile-sidebar">
+  <div class="mobile-sidebar-header">
+    <div class="sidebar-title">CHATBOT</div>
+  </div>
+  <div class="mobile-sidebar-content">
+    <SidebarItems />
+  </div>
+  <div class="sidebar-footer">
+    <a href="https://discord.com/invite/yourgpt" class="sidebar-footer-item">
+      <FaDiscord />
+      <span>Community</span>
+    </a>
+    <a href="https://www.youtube.com/@YourGPTAI" class="sidebar-footer-item">
+      <FaYoutube />
+      <span>Youtube</span>
+    </a>
+  </div>
+</div>
+
+<div id="custom-sidebar" class="custom-sidebar desktop-only">
+  <div class="custom-sidebar-inner">
+    <div class="sidebar-section">
+      <div class="section-title">CHATBOT</div>
+      <SidebarItems />
+    </div>
+  </div>
+  
+  <div class="sidebar-footer">
+    <a href="https://discord.com/invite/yourgpt" class="sidebar-footer-item">
+      <FaDiscord />
+      <span>Community</span>
+    </a>
+    <a href="https://www.youtube.com/@YourGPTAI" class="sidebar-footer-item">
+      <FaYoutube />
+      <span>Youtube</span>
+    </a>
+  </div>
+
+    <style>
+      .sidebar-footer {
+        padding: 1rem;
+        border-top: 1px solid var(--sl-color-hairline);
+        position: fixed;
+        bottom: 0;
+        width: 16rem;
+        background-color: var(--sl-color-bg-sidebar);
+        z-index: 16;
+      }
+      .sidebar-footer-item {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        color: var(--sl-color-text);
+        text-decoration: none;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      .sidebar-footer-item:hover {
+        background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
+      }
+      .sidebar-footer-item span {
+        margin-left: 0.5rem;
+      }
+    </style>
+</div>
+
 
 <style>
-  :root {
-    --sidebar-item-padding: 0.85rem 1.2rem;
-    --sidebar-item-margin: 0.3rem 0;
-    --sidebar-item-border-radius: 0.5rem;
-    --sidebar-item-transition: all 0.3s ease;
-    --sidebar-accent-color: #4f46e5;
-    --sidebar-hover-bg: rgba(79, 70, 229, 0.1);
-  }
-
-  .sidebar {
-    padding: 1.5rem;
-    background: linear-gradient(180deg, rgba(79, 70, 229, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
-    border-right: 1px solid rgba(79, 70, 229, 0.15);
-  }
-
-  .nav-group-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--sl-color-white);
-    padding: var(--sidebar-item-padding);
-    margin: var(--sidebar-item-margin);
-    border-radius: var(--sidebar-item-border-radius);
-    transition: var(--sidebar-item-transition);
-    cursor: default;
-    letter-spacing: 0.03em;
-  }
-
-  .nav-link a {
-    font-size: 1rem;
-    padding: var(--sidebar-item-padding);
-    margin: var(--sidebar-item-margin);
-    color: var(--sl-color-gray-2);
+  /* Global selectors for imported content */
+  :global(.sidebar-item) {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    color: var(--sl-color-text);
+    font-size: 0.875rem;
     text-decoration: none;
-    display: block;
-    border-radius: var(--sidebar-item-border-radius);
-    transition: var(--sidebar-item-transition);
+    border-radius: 0.375rem;
+    margin: 0.125rem 0;
     position: relative;
-    overflow: hidden;
+    transition: all 0.15s ease-in-out;
+  }
+  :global(.sidebar-item:hover) {
+    background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
+    color: var(--sl-color-text-accent);
+  }
+  :global(.sidebar-item.active) {
+    background-color: var(--sl-color-accent-low);
+    color: var(--sl-color-text-accent);
+    font-weight: 510;
+  }
+  :global(.sidebar-item.with-arrow) {
+    cursor: pointer;
+  }
+  :global(.sidebar-item.with-arrow.expanded .arrow-icon svg) {
+    transform: rotate(90deg);
+  }
+  :global(.sidebar-icon) {
+    margin-right: 0.75rem;
+    display: inline-flex;
+    flex-shrink: 0;
+    opacity: 0.75;
+  }
+  :global(.arrow-icon) {
+    margin-left: auto;
+    color: var(--sl-color-text-accent, var(--sl-color-gray-3));
+  }
+  :global(.arrow-icon svg) {
+    transition: transform 0.2s ease;
   }
 
-  .nav-link a:hover,
-  .nav-link a:focus {
-    background-color: var(--sidebar-hover-bg);
-    color: var(--sidebar-accent-color);
-    transform: translateX(4px);
+  /* Desktop sidebar styling */
+  .custom-sidebar {
+    position: fixed;
+    top: var(--sl-nav-height, 4rem);
+    left: 0;
+    bottom: 0;
+    width: 16rem;
+    background-color: var(--sl-color-bg-sidebar);
+    z-index: 15;
+    overflow-y: auto;
+    border-right: 1px solid var(--sl-color-hairline);
+    display: flex;
+    flex-direction: column;
   }
-
-  .nav-link a[aria-current='page'] {
-    color: var(--sl-color-white);
-    background-color: var(--sidebar-accent-color);
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  .custom-sidebar-inner {
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 8rem; /* Increased padding to ensure last items are fully visible */
   }
-
-  .nav-group[data-level="0"] > .nav-group-title {
-    color: var(--sidebar-accent-color);
-    font-size: 1.4rem;
-    border-bottom: 2px solid rgba(79, 70, 229, 0.2);
-    margin-bottom: 1.2rem;
-    padding-bottom: 1rem;
-    font-weight: 700;
+  .sidebar-section {
+    margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.5rem;
+    padding: 0 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .nav-group[data-level="0"] {
-    margin-bottom: 2rem;
+  /* Mobile sidebar styling */
+  .mobile-sidebar {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 20rem;
+    z-index: 100;
+    background-color: var(--sl-color-bg-sidebar);
+    box-shadow: var(--sl-shadow-md);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+    background-color: var(--sl-color-bg-sidebar);
+  }
+  .mobile-close-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-text);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-close-button:hover {
+    background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
   }
 
-  /* Remove dropdown behavior for all groups */
-  .nav-group:not([data-level="0"]) > .nav-group-title::after {
-    display: none;
+  /* Mobile menu toggle styling */
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 110;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-text);
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    display: none; /* Hidden by default for desktop */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+  .mobile-menu-toggle:hover {
+    background-color: var(--sl-color-backdrop-overlay);
   }
 
-  .nav-group:not([data-level="0"]) > .nav-group-title {
-    font-size: 1.1rem;
-    color: var(--sl-color-gray-2);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
+  .mobile-sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 8rem; /* Increased padding to ensure last items are fully visible */
   }
 
-  /* Always show nav items */
-  .nav-group:not([data-level="0"]) > .nav-items {
-    display: block !important;
-    height: auto !important;
+  @media (max-width: 50em) {
+    .desktop-only {
+      display: none;
+    }
+    .mobile-sidebar {
+      display: flex;
+    }
+    .mobile-menu-toggle {
+      display: flex;
+    }
+    :global(body:not([data-mobile-sidebar='open'])) .mobile-sidebar {
+      transform: translateX(100%);
+    }
+    :global(body[data-mobile-sidebar='open']) .mobile-sidebar {
+      transform: translateX(0);
+    }
+    .sidebar-footer {
+      width: 100%;
+      max-width: 20rem;
+    }
   }
 </style>
 
 <script>
-  function toggleNavGroup(element: HTMLElement) {
-    const isTopLevel = element.getAttribute('data-level') === '0';
-    if (!isTopLevel) {
-      element.toggleAttribute('open');
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
-    const navGroups = document.querySelectorAll('.nav-group');
-    navGroups.forEach((group) => {
-      const title = group.querySelector('.nav-group-title');
-      if (title) {
-        title.addEventListener('click', () => toggleNavGroup(group as HTMLElement));
+    // Helper: get unique identifier from item text
+    const getItemId = (item) => item.textContent.trim().replace(/\s+/g, '_');
+
+    // Save and load expanded state in localStorage
+    const saveExpandedState = () => {
+      const expanded = {};
+      document.querySelectorAll('.sidebar-item.with-arrow.expanded').forEach(item => {
+        expanded[getItemId(item)] = true;
+      });
+      localStorage.setItem('sidebarExpandedState', JSON.stringify(expanded));
+    };
+    
+    // Clear specific item from expanded state
+    const removeFromExpandedState = (itemId) => {
+      try {
+        const expanded = JSON.parse(localStorage.getItem('sidebarExpandedState') || '{}');
+        if (expanded[itemId]) {
+          delete expanded[itemId];
+          localStorage.setItem('sidebarExpandedState', JSON.stringify(expanded));
+        }
+      } catch (e) {
+        console.error('Error updating sidebar state:', e);
+      }
+    };
+    const loadExpandedState = () => {
+      try {
+        return JSON.parse(localStorage.getItem('sidebarExpandedState') || '{}');
+      } catch (e) {
+        console.error('Error loading sidebar state:', e);
+        return {};
+      }
+    };
+
+    // Mobile menu toggle logic
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const closeButton = document.getElementById('mobile-close-button');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const toggleMobileMenu = () => {
+      const isOpen = document.body.getAttribute('data-mobile-sidebar') === 'open';
+      document.body.setAttribute('data-mobile-sidebar', isOpen ? 'closed' : 'open');
+    };
+    const closeMobileMenu = () => document.body.setAttribute('data-mobile-sidebar', 'closed');
+    if (toggleButton) toggleButton.addEventListener('click', toggleMobileMenu);
+    if (closeButton) closeButton.addEventListener('click', closeMobileMenu);
+    if (mobileSidebar) {
+      mobileSidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+    // Restore expanded state and mark active links
+    const expandedState = loadExpandedState();
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      const href = item.getAttribute('href');
+      if (href && currentPath.startsWith(href) && href !== '/') {
+        item.classList.add('active');
+        let parent = item.closest('.sub-items, .sub-items-l2');
+        while (parent) {
+          const parentToggle = parent.previousElementSibling;
+          if (parentToggle && parentToggle.classList.contains('with-arrow')) {
+            parentToggle.classList.add('expanded');
+            parent.style.display = 'block';
+            expandedState[getItemId(parentToggle)] = true;
+          }
+          parent = parent.parentElement.closest('.sub-items, .sub-items-l2');
+        }
       }
     });
+    document.querySelectorAll('.sidebar-item.with-arrow').forEach(item => {
+      const itemId = getItemId(item);
+      const subItems = item.nextElementSibling;
+      if (subItems && (subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) {
+        if (expandedState[itemId]) {
+          item.classList.add('expanded');
+          subItems.style.display = 'block';
+        } else {
+          subItems.style.display = 'none';
+        }
+      }
+      item.addEventListener('click', (event) => {
+        event.preventDefault();
+        const subItems = item.nextElementSibling;
+        if (subItems && (subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) {
+          const isExpanded = item.classList.contains('expanded');
+          const itemId = getItemId(item);
+          
+          if (isExpanded) {
+            // Closing the folder
+            item.classList.remove('expanded');
+            subItems.style.display = 'none';
+            removeFromExpandedState(itemId);
+          } else {
+            // Opening the folder
+            item.classList.add('expanded');
+            subItems.style.display = 'block';
+            saveExpandedState();
+          }
+        }
+      });
+    });
+    saveExpandedState();
   });
 </script>

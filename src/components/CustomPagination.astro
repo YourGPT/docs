@@ -1,0 +1,238 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import { sidebarItems } from './sidebaritems.astro';
+
+type PaginationLink = {
+  href: string;
+  label: string;
+};
+
+interface PaginationProps {
+  dir?: 'ltr' | 'rtl';
+  pagination: {
+    prev: PaginationLink | undefined;
+    next: PaginationLink | undefined;
+  };
+}
+
+const { dir = 'ltr', pagination: defaultPagination } = Astro.props as PaginationProps;
+const isRtl = dir === 'rtl';
+
+const currentUrl = Astro.url.pathname;
+const isChatbotPage = currentUrl.startsWith('/chatbot');
+
+let pagination = defaultPagination;
+
+if (isChatbotPage) {
+  const currentIndex = sidebarItems.findIndex(item => item.href === currentUrl);
+  if (currentIndex !== -1) {
+    const prev = currentIndex > 0 ? sidebarItems[currentIndex - 1] : undefined;
+    const next = currentIndex < sidebarItems.length - 1 ? sidebarItems[currentIndex + 1] : undefined;
+    pagination = { prev, next };
+  }
+}
+
+const { prev, next } = pagination;
+const shouldShowPagination = isChatbotPage;
+---
+
+{shouldShowPagination && (
+  <div class="pagination-container sl-flex print:hidden" dir={dir}>
+    <div class="pagination-links-wrapper">
+      <div class="pagination-links">
+        {prev && (
+          <a href={prev.href} rel="prev" class="pagination-link prev-link">
+            <div class="pagination-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+                {isRtl ? (
+                  <>
+                    <path d="M5 12h14"></path>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </>
+                ) : (
+                  <>
+                    <path d="M19 12H5"></path>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </>
+                )}
+              </svg>
+            </div>
+            <div class="pagination-content">
+              <span class="pagination-label">Previous</span>
+              <span class="pagination-title">{prev.label}</span>
+            </div>
+          </a>
+        )}
+        {next && (
+          <a href={next.href} rel="next" class="pagination-link next-link">
+            <div class="pagination-content">
+              <span class="pagination-label">Next</span>
+              <span class="pagination-title">{next.label}</span>
+            </div>
+            <div class="pagination-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                {isRtl ? (
+                  <>
+                    <path d="M19 12H5"></path>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </>
+                ) : (
+                  <>
+                    <path d="M5 12h14"></path>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </>
+                )}
+              </svg>
+            </div>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  .pagination-container {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pagination-links-wrapper {
+    width: 100%;
+    max-width: var(--sl-content-width, 50rem);
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .pagination-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .pagination-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-hairline);
+    box-shadow: var(--sl-shadow-sm);
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+
+  .pagination-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--sl-color-accent-low), var(--sl-color-accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .pagination-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sl-shadow-md);
+    border-color: var(--sl-color-accent);
+    background-color: var(--sl-color-accent-low-alpha);
+  }
+
+  .pagination-link:hover::before {
+    opacity: 0.1;
+  }
+
+  .pagination-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: var(--sl-color-accent-low);
+    color: var(--sl-color-white);
+    margin: 0 0.5rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .pagination-link:hover .pagination-icon-container {
+    background-color: var(--sl-color-accent);
+    transform: scale(1.1) rotate(var(--rotation, 0deg));
+    box-shadow: var(--sl-shadow-md);
+  }
+  
+  .prev-link .pagination-icon-container {
+    --rotation: -10deg;
+  }
+  
+  .next-link .pagination-icon-container {
+    --rotation: 10deg;
+  }
+
+  .pagination-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pagination-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--sl-color-text-accent);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .pagination-title {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--sl-color-text);
+    line-height: 1.4;
+  }
+
+  .prev-link {
+    padding-left: 0.75rem;
+  }
+
+  .next-link {
+    padding-right: 0.75rem;
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  @media (max-width: 640px) {
+    .pagination-links {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+    
+    .pagination-title {
+      font-size: 1rem;
+    }
+    
+    .pagination-links-wrapper {
+      padding: 0 15px;
+    }
+  }
+</style>
