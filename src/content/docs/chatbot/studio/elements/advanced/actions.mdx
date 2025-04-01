@@ -10,6 +10,8 @@ hero:
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Actions in YourGPT Chatbot Studio </div>
 
 
+import { LinkCard } from '@astrojs/starlight/components';
+
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Actions in Studio</div>
 
 
@@ -36,9 +38,13 @@ To use Actions, follow these steps:
  - Mark as Resolved
  - Create Contact
  
+<LinkCard 
+    title="How To Use Actions" 
+    description="Learn how to use actions in chatbot studio."
+    href="https://help.yourgpt.ai/article/how-to-use-actions-in-chatbot-studio-29"
+/>
 
-
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Escalate to Human </div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>1. Escalate to Human </div>
 
 Transfer to Agent action allows you to transfer the chat to an Human agent (human handoff) using the chatbot studio. 
 
@@ -47,14 +53,14 @@ Transfer to Agent action allows you to transfer the chat to an Human agent (huma
 - You can add custom conditions to transfer the chat to a human agent based on the user's request.
 - You can transfer the chat to a human agent based on the user's sentiment or intent.
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Transfer to Bot</div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>2. Transfer to Bot</div>
 
 Transfer to Bot action allows you to transfer the chat to a bot in the chatbot studio.
 
 ##### use case:
 - The 'Transfer to Bot' action allows you to shift the conversation to a bot if the user has been waiting for an operator for more than specific period. This action also enables you to revert the chat back to the bot.
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Update Segment</div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>3. Update Segment</div>
 
 Update Segment action allows you to update the segment of the chat in the chatbot studio. You can update the segment of the chat based on the user's interaction.
 
@@ -63,18 +69,23 @@ Update Segment action allows you to update the segment of the chat in the chatbo
 - Route the chat to a specific department or agent based on the user's interaction.
 
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Mark as Resolved </div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>4. Mark as Resolved </div>
 
 Mark as Resolved action allows you to mark the chat as resolved in the chatbot studio. You can mark the chat as resolved when the user's query has been resolved.
 
 ##### use case:
 - You can use the Mark as Resolved action to mark the chat as resolved when the user's query has been resolved.
 
-### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Create Contact</div>
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>5. Create Contact</div>
 
 Create Contact action allows you to create a new contact in the chatbot studio. You can create a new contact by providing the contact details like name, email, phone, company, country, city, region, and tags.
 
 ##### use case:
 - You can use the Create Contact action to create a new contact in the chatbot studio when a user provides their contact details.
 
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>6. Send Email</div>
 
+Send Email action allows you to send an email using AI studio. You can send an email to the user by providing the email details like subject, body, and recipient.
+
+##### use case:
+- You can use the Send Email action to send an email to the user using AI studio.
