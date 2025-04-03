@@ -1,5 +1,5 @@
 ---
-import { Home, Book, Code, Webhook, MessageSquare, Settings, Cpu, KeyRound, SquareFunction, BookOpenText, Folder, Bug, FileText, Database, Server, Package, Globe, Puzzle, Link, Share2, Zap, Tool, GitPullRequest, Menu, X } from 'lucide-react';
+import { Home, Book, Code, Webhook, MessageSquare, Settings, Cpu, KeyRound, SquareFunction, BookOpenText, Folder, Bug, FileText, Database, Server, Package, Globe, Puzzle, Link, Share2, Zap, GitPullRequest, Menu, X } from 'lucide-react';
 
 // A flat list of clickable sidebar links (in the same order as in the HTML)
 export const sidebarItems = [
@@ -502,4 +502,68 @@ export const sidebarItems = [
     </div>
   </div>
 </div>
+
+<style>
+  .sub-items {
+    padding-left: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .sub-items-l2 {
+    padding-left: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  /* Base state: hidden by default */
+  .sub-items,
+  .sub-items-l2 {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Expanded state: shown when expanded class is applied */
+  .sub-items.expanded,
+  .sub-items-l2.expanded {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Add visual indicators for sub-items */
+  .sub-items .sidebar-item,
+  .sub-items-l2 .sidebar-item {
+    font-size: 0.8125rem !important;
+    padding: 0.35rem 0.5rem !important;
+    margin: 0.05rem 0 !important;
+    opacity: 0.9 !important;
+    color: var(--sl-color-text-light, var(--sl-color-gray-2)) !important;
+  }
+  
+  /* Disable hover effects to prevent flickering */
+  .sub-items .sidebar-item:hover,
+  .sub-items-l2 .sidebar-item:hover {
+    background-color: transparent !important;
+    color: var(--sl-color-text-light, var(--sl-color-gray-2)) !important;
+  }
+  
+  /* Simplified active state for sub-items to prevent flickering */
+  .sub-items .sidebar-item.active,
+  .sub-items-l2 .sidebar-item.active {
+    background-color: transparent !important;
+    color: var(--sl-color-text-accent) !important;
+    font-weight: 500 !important;
+  }
+  
+  /* Improve scrollbar for sub-items */
+  .sub-items::-webkit-scrollbar,
+  .sub-items-l2::-webkit-scrollbar {
+    width: 4px !important;
+  }
+  .sub-items::-webkit-scrollbar-thumb,
+  .sub-items-l2::-webkit-scrollbar-thumb {
+    background-color: var(--sl-color-gray-5) !important;
+    border-radius: 2px !important;
+  }
+</style>
 </div>
