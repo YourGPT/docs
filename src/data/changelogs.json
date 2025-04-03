@@ -4,7 +4,7 @@
     "version": "2.0.6",
     "date": "March 2025",
     "img": "/assets/changelog/march-updates.jpg",
-    "data": "## Updates for March 2025\n\n**📨 Email Automation:**\n- Send emails automatically based on specific triggers.\n\n**🔁 Auto-Resolve Chats:**\n- Automatically close resolved conversations.\n\n**😊 CSAT Upgrades:**\n- Improved customer satisfaction tracking in Widget and Dashboard.\n- New CSAT statistics and Studio node.\n\n**🧠 AI Helpdesk Article Generation:**\n- Create articles using voice or image inputs.\n- Voice-to-text and image analysis for content generation.\n\n**💬 Canned Replies:**\n- Create and share canned replies with your team for quick responses.\n\n**🔍 Helpdesk Article Search:**\n- Search Helpdesk Articles directly from the conversation dashboard."
+    "data": "## Updates for March 2025\n\n**📨 Email Automation:**\n- Send emails automatically based on specific triggers.\n\n**🔁 Auto-Resolve Chats:**\n- Automatically close resolved conversations.\n\n**😊 CSAT Upgrades:**\n- Improved customer satisfaction tracking in Widget and Dashboard.\n- New CSAT statistics and Studio node.\n\n**🧠 AI Helpdesk Article Generation:**\n- Create articles using voice or image inputs.\n- Voice-to-text and image analysis for content generation.\n\n**💬 Canned Replies:**\n- Create and share canned replies with your team for quick responses.\n\n**🔍 Helpdesk Article Search:**\n- Search Helpdesk Articles directly from the conversation dashboard.\n\n** Monthly Reindex**\n- Monthly reindexing of notion, dropbox, google drive files for update to latest data."
   },
   {
   "version": "2.0.5",
