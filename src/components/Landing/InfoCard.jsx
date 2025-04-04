@@ -27,7 +27,7 @@ export const CARDDATA = [
         title: "Changelogs",
         icon: HiRocketLaunch,
         description: "Learn about the latest features, updates, and improvements in our products.",
-        link: "/chatbot/changelogs",
+        link: "/changelogs",
         linkText: "Explore ",
         iconColor: "dark:text-[#bd53ee] text-gray-800/90",
         target: "_self"
