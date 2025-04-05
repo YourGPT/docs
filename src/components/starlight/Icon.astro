@@ -1,0 +1,24 @@
+---
+import { Icons } from './Icons';
+import type { IconName } from './Icons';
+
+interface Props {
+  name: IconName;
+  class?: string;
+  size?: string;
+  focusable?: boolean;
+}
+
+const { name, size = '1em', focusable = false, ...attrs } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  focusable={focusable ? 'true' : 'false'}
+  aria-hidden="true"
+  viewBox="0 0 24 24"
+  {...attrs}
+  set:html={Icons[name]}
+/>
