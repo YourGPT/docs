@@ -15,38 +15,35 @@ import { Aside } from '@astrojs/starlight/components';
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'>  How to Share Custom Chatbot using a Link </div>
 
 
-{/* <Note type="re" color="emerald">
-   🔗 Share your custom chatbot using a link
-</Note> */}
+<div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Sharing Your Chatbot Link</div>
+
+To share or test your custom chatbot using a link, follow the steps below:
 
 <Aside >🔗 Share your custom chatbot using a link</Aside>
-
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Sharing Your Chatbot Link</div>
-To share your custom chatbot using a link, follow the steps below:
 
 <Steps>
 1. <div className='font-bold dark:text-gray-300 text-xl'>Go to YourGPT Chatbot Integration</div>
 
-     Start by navigating to the YourGPT Chatbot Integration. This is usually found in the main dashboard or settings panel of your chatbot platform.
-   
+     Start by logging into your YourGPT dashboard and navigate to the "Integration" section. You can find this in the left sidebar menu after selecting your chatbot.
 
 2. <div className='font-bold dark:text-gray-300 text-xl'>Copy the Link</div>
 
-    At the top of the screen, you will see several options: "**Script**", "**Iframe**", and "**Link**". Click on the "**Link**" option. This will reveal a URL that is the direct link to your custom chatbot. Copy this URL.
+    At the top of the integration page, locate the sharing options toolbar containing: "**Link**", "**Script**", "**Iframe**", "**WidgetUID**", and "**QR**". 
+    
+    Select the "**Link**" option to reveal your chatbot's shareable URL. Click the copy button or manually select and copy this URL to share your custom chatbot with others.
 
-            <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
-                <Image src="/assets/chatbot/link-share.png" alt="Link Shareable Chatbot"     
-                width="100%"
-                height="100%"
-                style={{ width: "100%" }}
-                className="rounded-md"/>
-            </div>
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+          <Image src="/assets/chatbot/link-share.png" alt="Options to Shareable Chatbot"     
+          width="100%"
+          height="100%"
+          style={{ width: "100%" }}
+          className="rounded-md"/>
+      </div>
 
 3. <div className='font-bold dark:text-gray-300 text-xl'>Share the Link</div>
 
      Share the copied URL with anyone you want to have access to your chatbot. They can use this link to interact with your chatbot directly.
 
-     
-    {/* <Note type="re" color="rose"> Remember, anyone with the link can access your chatbot, so be careful who you share it with. </Note> */}
-    <Aside type="danger">Remember, anyone with the link can access your chatbot, so be careful who you share it with.</Aside>
 </Steps>
+
+ <Aside type="danger">Remember, anyone with the link can access your chatbot, so be careful who you share it with.</Aside>

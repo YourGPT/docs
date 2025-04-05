@@ -8,13 +8,16 @@ hero:
 import {ListCard} from '~/components';
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Badge } from '@astrojs/starlight/components';
+import CardWithIcon from '../../../components/CardWithIcon.astro';
 
 
 
 ## Training Integration Guide for YourGPT
 
 
-Your AI becomes more smarter and efficient when you train it with the right data. YourGPT provides you with the flexibility to train your AI with your own data. You can train your AI with the data you have collected from your customers, or you can use the data from the internet.
+Your AI becomes more smarter and efficient when you train it with the right data. YourGPT provides you with the flexibility to train your AI with your own data. 
+
+You can train your AI with the data you have collected from your sources like website, documents, FAQs, YouTube videos, and more.
 
 ## <span  className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>How To Train Using Your Sources</span>
 
@@ -27,53 +30,53 @@ Your AI becomes more smarter and efficient when you train it with the right data
 ### <span  className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Knowledge Source Training Option</span>
 
 <CardGrid>
-  <Card title="Website" icon="website">
+  <CardWithIcon title="Website" icon="FaGlobe">
     Train your chatbot by feeding it content from your website. You can easily add website URLs, sitemaps, or any other web resources to help your AI understand your online presence better.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Documents" icon="document">
+  <CardWithIcon title="Documents" icon="FaFileAlt">
     Upload and train your chatbot with various document formats including **PDF, Word documents, PowerPoint, Excel sheets, text files, CSV, JSON**, and many more to make your AI smarter.
-  </Card>
+  </CardWithIcon>
     
-  <Card title="FAQs" icon="help-circle">
+  <CardWithIcon title="FAQs" icon="FaQuestionCircle">
     Add your FAQ's to train the chatbot with common questions and answers your customers ask.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Text" icon= "file-text">
+  <CardWithIcon title="Text" icon="FaFileText">
     Train your AI with text data to make it more efficient in understanding and responding to user queries.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Vision" icon= "vision">
+  <CardWithIcon title="Vision" icon="FaEye">
     Train your AI to understand and analyze images, enabling it to process visual information and provide more comprehensive responses.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Notion" icon="notion">
+  <CardWithIcon title="Notion" icon="FaFileAlt">
     You can train your chatbot with Notion documents to make it more efficient in understanding and responding to user queries.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Dropbox" icon="dropbox">
+  <CardWithIcon title="Dropbox" icon="FaDropbox">
     Train your chatbot with Dropbox documents to make it more efficient in understanding and responding to user queries.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Google Docs" icon="gdocs">
+  <CardWithIcon title="Google Docs" icon="FaGoogle">
     You can also train your chatbot with Google Docs to make it more efficient in understanding and responding to user queries.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="YouTube" icon="youtube">
+  <CardWithIcon title="YouTube" icon="FaYoutube">
     Train your chatbot with YouTube videos to make it more efficient in understanding and responding to user queries.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Confluence" icon= "confluence">
+  <CardWithIcon title="Confluence" icon="FaCloudUploadAlt">
     Train your AI with Confluence documents to make it more efficient in understanding and responding to user queries.
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Airtable" icon= "airtable">
+  <CardWithIcon title="Airtable" icon="FaDatabase">
     <Badge text="coming soon" variant="note" />
-  </Card>
+  </CardWithIcon>
 
-  <Card title="Custom Training Option" icon= "setting">
+  <CardWithIcon title="Custom Training Option" icon="FaCogs">
     <Badge text="coming soon" variant="note" />
-  </Card>
+  </CardWithIcon>
 </CardGrid>
 
 ---
@@ -82,24 +85,24 @@ Your AI becomes more smarter and efficient when you train it with the right data
 ### Learning From Pervious Conversations
 
 <CardGrid>
-    <Card title="YourGPT Chatbot" icon="chatbot">
+    <CardWithIcon title="YourGPT Chatbot" icon="FaRobot">
     Train your chatbot with the data from the previous conversations to make it more efficient in understanding and responding to user queries.
-    </Card>
+    </CardWithIcon>
 
-    <Card title="Crisp" icon="crisp">
+    <CardWithIcon title="Crisp" icon="FaCommentAlt">
     You can create training jobs to train your AI with the data from the previous conversations to make it more efficient in understanding and responding to user queries.
-    </Card>
+    </CardWithIcon>
 
-    <Card title="Intercom" icon="intercom">
+    <CardWithIcon title="Intercom" icon="FaIntercom">
     Train your AI with the data from the conversations to make it more efficient in understanding and responding to user queries.
-    </Card>
+    </CardWithIcon>
 
-    <Card title="Slack" icon="slack">
+    <CardWithIcon title="Slack" icon="FaSlack">
     Train your AI with the data from the conversations to make it more efficient in understanding and responding to user queries.
-    </Card>
+    </CardWithIcon>
 
-     <Card title="Discord" icon="discord">
+     <CardWithIcon title="Discord" icon="FaDiscord">
     Train your AI with the data from the conversations to make it more efficient in understanding and responding to user queries.
-    </Card>
+    </CardWithIcon>
 
 </CardGrid>
