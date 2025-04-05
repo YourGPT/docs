@@ -12,7 +12,7 @@ import { Image } from "astro:assets";
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> AI Retrieval in YourGPT AI Studio </div>
 
-AI Retrieval allows your ai agent to fetch relevant information from your knowledge base based on your query. It allows precise filtering and response formatting for optimal retrieval.
+AI Retrieval is a feature that enhances your AI agent's capabilities by dynamically retrieving the most relevant information from your Knowledge Base in real-time. It allows precise filtering and response formatting for optimal retrieval. This intelligent retrieval system significantly improves response quality by ensuring your AI has access to exactly the right information when needed.
 
 <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 md:px-60">
       <Image src="/assets/flow/ai-task/ai-retrevial.png" alt="AI Retrieval" 
@@ -25,20 +25,22 @@ AI Retrieval allows your ai agent to fetch relevant information from your knowle
 
 ### 1. Search Query:
 
-Enter a query to extract relevant content from the knowledge base.
+Enter a query to retrieve the relevant content from the knowledge base.
 
 ### 2. Tags:
 
 Tags are created in the training section, allowing you to assign specific tags to specific training data. Tags help filter the retrieval process by segmenting the knowledge base.
 
-It will retrieve all your training data that matches the  query. These can be used to refine search results:
+It will retrieve all your training data that matches the query. You can use one of the following options to refine search results:
 
 - **Include:** Retrieves content that contains at least one of the selected tags.
 - **Exclude:** Filters out documents containing the specified tags.
 
+> Note: You can only select either Include or Exclude, not both simultaneously.
+
 ### 3. Nodes Limit:
 
-Sets the number of knowledge nodes retrieved per query. A higher limit returns more results, whereas a lower limit narrows the response.
+Sets the number of knowledge nodes retrieved per query. A higher limit returns more results, whereas a lower limit narrows the response. (default: 10)
 
 ### 4. Response Type:
 

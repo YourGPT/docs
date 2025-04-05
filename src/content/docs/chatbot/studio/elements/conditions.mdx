@@ -23,15 +23,15 @@ You can branch the AI agents flow based on user input, stored variables, or AI u
 
 YourGPT AI Studio supports two types of conditions:
 
-1. **AI Condition**: for open-ended, language-based inputs  
-2. **Manual Condition**: for exact matches using variables or expressions  
+1. **AI Condition**: for flexible matching using natural language   
+2. **Manual Condition**: for logical rules using variables or expressions  
 
 Let’s understand them in detail.
 
 ---
 
 ## 1. AI Condition: Intent Matching
-AI Condition leverages natural language understanding to create flexible conversation pathways. Rather than relying on exact keyword matches or complex rule systems, it intelligently understands user messages and routes them to the most appropriate intent. This is particularly valuable when handling unpredictable or varied user inputs where the same question might be asked in multiple different ways.
+AI Condition uses natural language understanding to define the possible paths (A, B, C, etc.) and the AI determines which path best matches the condition & provided context type. This is much more flexible than writing complex logical rules.
 
 ### How to Use AI Condition
 
@@ -53,9 +53,9 @@ To use AI Condition, follow these 5 steps:
 </div>
 
 
-2. **Context**: Define the AI condition context - what the AI should analyze:
-   - **Input**: Use a variable (e.g. `{{FLOW.message}}`) for the condition.
-   - **Previous Messages**: Add the number of messages to consider (e.g. 3-5 messages)
+2. **Context**: You can choose between the AI condition context type - what the AI should analyze:
+   - **Input**: Use this when you want to use custom logic & want to use variables. (You can add your input in the field e.g. `{{FLOW.message}}`)
+   - **Previous Messages**: Use this when you want to consider the last few messages in the conversation (You can pick number to e.g. 5 messages)
 
 3. **Conditions**: Add natural language statements that represent possible user intents. The AI will match the input to the most relevant Context condition.
 
