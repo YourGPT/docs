@@ -1,4 +1,10 @@
 [
+  {
+    "version": "2.0.7",
+    "date": "April 2025",
+    "img": "/assets/changelog/april-updates.jpg",
+    "data": "## Updates for April 2025\n\n**👥 Contact Module:**\n- Manage customer contacts and track interactions effortlessly.\n\n**🔗 MCP Integration:**\n- Connect AI agents with external tools via Model Context Protocol.\n\n**📞 Phone Voice Agents:**\n- Enable intelligent voice interactions through phone agents.\n\n**🔒 Helpdesk Password Protection:**\n- Protect helpdesk access with secure password protection."
+  },
 
   {
     "version": "2.0.6",
