@@ -1,6 +1,5 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
-import { sidebarItems } from './SidebarItems.astro';
 
 type PaginationLink = {
   href: string;
@@ -15,29 +14,20 @@ interface PaginationProps {
   };
 }
 
-const { dir = 'ltr', pagination: defaultPagination } = Astro.props as PaginationProps;
+const { dir = 'ltr', pagination } = Astro.props as PaginationProps;
 const isRtl = dir === 'rtl';
 
 const currentUrl = Astro.url.pathname;
 const isChatbotPage = currentUrl.startsWith('/chatbot');
 
-let pagination = defaultPagination;
-
-if (isChatbotPage) {
-  const currentIndex = sidebarItems.findIndex(item => item.href === currentUrl);
-  if (currentIndex !== -1) {
-    const prev = currentIndex > 0 ? sidebarItems[currentIndex - 1] : undefined;
-    const next = currentIndex < sidebarItems.length - 1 ? sidebarItems[currentIndex + 1] : undefined;
-    pagination = { prev, next };
-  }
-}
-
+// For chatbot pages, we'll handle pagination client-side
+// For other pages, use the default pagination from Astro
 const { prev, next } = pagination;
-const shouldShowPagination = isChatbotPage;
+const shouldShowPagination = isChatbotPage || (prev || next);
 ---
 
 {shouldShowPagination && (
-  <div class="pagination-container sl-flex print:hidden" dir={dir}>
+  <div class="pagination-container sl-flex print:hidden" dir={dir} id="custom-pagination">
     <div class="pagination-links-wrapper">
       <div class="pagination-links">
         {prev && (
@@ -59,7 +49,7 @@ const shouldShowPagination = isChatbotPage;
             </div>
             <div class="pagination-content">
               <span class="pagination-label">Previous</span>
-              <span class="pagination-title">{prev.label}</span>
+              <span class="pagination-title prev-title">{prev.label}</span>
             </div>
           </a>
         )}
@@ -67,7 +57,7 @@ const shouldShowPagination = isChatbotPage;
           <a href={next.href} rel="next" class="pagination-link next-link">
             <div class="pagination-content">
               <span class="pagination-label">Next</span>
-              <span class="pagination-title">{next.label}</span>
+              <span class="pagination-title next-title">{next.label}</span>
             </div>
             <div class="pagination-icon-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
@@ -91,6 +81,80 @@ const shouldShowPagination = isChatbotPage;
   </div>
 )}
 
+<script>
+  // Function to extract sidebar items from the HTML structure
+  function extractSidebarItems() {
+    const sidebarItems = [];
+
+    // Get all sidebar links (excluding folder headers with the 'with-arrow' class)
+    const sidebarLinks = document.querySelectorAll('.sidebar-item:not(.with-arrow)');
+
+    sidebarLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Get the text content of the last span element (which contains the label)
+      const spans = link.querySelectorAll('span');
+      const label = spans.length > 0 ? spans[spans.length - 1].textContent.trim() : link.textContent.trim();
+
+      if (href && label) {
+        sidebarItems.push({ href, label });
+      }
+    });
+
+    return sidebarItems;
+  }
+
+  // Function to update pagination based on the current URL
+  function updatePagination() {
+    const currentUrl = window.location.pathname;
+    const isChatbotPage = currentUrl.startsWith('/chatbot');
+
+    if (!isChatbotPage) return;
+
+    const paginationContainer = document.getElementById('custom-pagination');
+    if (!paginationContainer) return;
+
+    const sidebarItems = extractSidebarItems();
+    const currentIndex = sidebarItems.findIndex(item => item.href === currentUrl);
+
+    if (currentIndex === -1) return;
+
+    const prevLink = paginationContainer.querySelector('.prev-link') as HTMLElement;
+    const nextLink = paginationContainer.querySelector('.next-link') as HTMLElement;
+    const prevTitle = paginationContainer.querySelector('.prev-title');
+    const nextTitle = paginationContainer.querySelector('.next-title');
+
+    // Update previous link
+    if (prevLink && prevTitle && currentIndex > 0) {
+      const prev = sidebarItems[currentIndex - 1];
+      prevLink.setAttribute('href', prev.href);
+      if (prevTitle.textContent !== null) {
+        prevTitle.textContent = prev.label;
+      }
+      prevLink.style.display = '';
+    } else if (prevLink) {
+      prevLink.style.display = 'none';
+    }
+
+    // Update next link
+    if (nextLink && nextTitle && currentIndex < sidebarItems.length - 1) {
+      const next = sidebarItems[currentIndex + 1];
+      nextLink.setAttribute('href', next.href);
+      if (nextTitle.textContent !== null) {
+        nextTitle.textContent = next.label;
+      }
+      nextLink.style.display = '';
+    } else if (nextLink) {
+      nextLink.style.display = 'none';
+    }
+  }
+
+  // Run on initial load
+  document.addEventListener('DOMContentLoaded', updatePagination);
+
+  // Run on Astro page transitions
+  document.addEventListener('astro:page-load', updatePagination);
+</script>
+
 <style>
   .pagination-container {
     margin-top: 3rem;
@@ -100,7 +164,7 @@ const shouldShowPagination = isChatbotPage;
     justify-content: center;
     align-items: center;
   }
-  
+
   .pagination-links-wrapper {
     width: 100%;
     max-width: var(--sl-content-width, 50rem);
@@ -178,11 +242,11 @@ const shouldShowPagination = isChatbotPage;
     transform: scale(1.1) rotate(var(--rotation, 0deg));
     box-shadow: var(--sl-shadow-md);
   }
-  
+
   .prev-link .pagination-icon-container {
     --rotation: -10deg;
   }
-  
+
   .next-link .pagination-icon-container {
     --rotation: 10deg;
   }
@@ -226,11 +290,11 @@ const shouldShowPagination = isChatbotPage;
       grid-template-columns: 1fr;
       width: 100%;
     }
-    
+
     .pagination-title {
       font-size: 1rem;
     }
-    
+
     .pagination-links-wrapper {
       padding: 0 15px;
     }
