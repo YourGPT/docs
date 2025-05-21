@@ -2,22 +2,14 @@
 import type { Props } from '@astrojs/starlight/props';
 import SidebarItems from './SidebarItems.astro';
 import { FaDiscord, FaYoutube } from "react-icons/fa";
+import '../styles/sidebar-fix.css';
 
 // Client-side detection will be used to show the appropriate sidebar
 ---
 
-<!-- Mobile Menu Toggle Button (always visible on mobile) -->
-<button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-  <span class="menu-icon">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </span>
-</button>
+<!-- Mobile Menu Toggle Button is now in the Header component -->
 
-<!-- Mobile Sidebar -->
+<!-- Mobile Sidebar with inline script for closing -->
 <div id="mobile-sidebar" class="mobile-sidebar sidebar" data-initial-load="true">
   <div class="sidebar-subtle-header">
     <span class="sidebar-subtle-title">CHATBOT</span>
@@ -26,24 +18,47 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     <SidebarItems />
   </div>
   <div class="sidebar-footer">
-    <a href="https://discord.gg/z8PBs5ckcd" class="sidebar-footer-item">
+    <a href="https://discord.gg/z8PBs5ckcd" class="sidebar-footer-item" onclick="document.body.setAttribute('data-mobile-sidebar', 'closed'); document.body.classList.remove('sidebar-open');">
       <FaDiscord />
       <span>Community</span>
     </a>
-    <a href="https://www.youtube.com/@YourGPTAI" class="sidebar-footer-item">
+    <a href="https://www.youtube.com/@YourGPTAI" class="sidebar-footer-item" onclick="document.body.setAttribute('data-mobile-sidebar', 'closed'); document.body.classList.remove('sidebar-open');">
       <FaYoutube />
       <span>Youtube</span>
     </a>
   </div>
 </div>
 
-<!-- Mobile Close Button (in header) -->
-<button id="mobile-close-button" class="mobile-close-button" aria-label="Close mobile menu">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
+<!-- Inline script to ensure mobile sidebar works and hide default sidebar -->
+<script is:inline>
+  // This ensures the mobile sidebar toggle works immediately
+  document.addEventListener('DOMContentLoaded', function() {
+    // Make sure sidebar is initially closed
+    document.body.setAttribute('data-mobile-sidebar', 'closed');
+
+    // Add click listeners to all links in the mobile sidebar
+    var mobileSidebar = document.getElementById('mobile-sidebar');
+    if (mobileSidebar) {
+      var links = mobileSidebar.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function() {
+          document.body.setAttribute('data-mobile-sidebar', 'closed');
+          document.body.classList.remove('sidebar-open');
+        });
+      }
+    }
+
+    // Hide the default Starlight sidebar to prevent duplication
+    var starlightSidebars = document.querySelectorAll('.sl-sidebar');
+    starlightSidebars.forEach(function(sidebar) {
+      if (sidebar && sidebar.style) {
+        sidebar.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+<!-- Mobile Close Button is now in the Header component -->
 
 <!-- Desktop Sidebar -->
 <div id="custom-sidebar" class="custom-sidebar desktop-only sidebar" data-initial-load="true">
@@ -236,7 +251,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     left: 0 !important;
     bottom: 0 !important;
     width: 16rem !important;
-    background-color: var(--sl-color-bg-sidebar) !important;
+    background-color: var(--sl-color-bg) !important; /* Changed from bg-sidebar to bg to match content page */
     z-index: 15 !important;
     overflow-y: auto !important;
     border-right: 1px solid var(--sl-color-hairline) !important;
@@ -280,24 +295,27 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     letter-spacing: 0.05em;
   }
 
-  /* Mobile sidebar styling with enhanced animations */
+  /* Mobile sidebar styling - simplified for reliability */
   .mobile-sidebar {
     position: fixed;
-    top: var(--sl-nav-height, 4rem); /* Position below the header */
+    top: 60px; /* Match header height exactly (60px from Header.astro) */
     left: 0;
     bottom: 0;
     width: 100%;
     max-width: 16rem; /* Match Starlight sidebar width */
     z-index: 100;
     background-color: var(--sl-color-bg);
-    will-change: transform;
     box-shadow: var(--sl-shadow-md);
     transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Simple transition for reliability */
+    transition: transform 0.15s ease;
     display: none; /* Hidden by default, will be shown on mobile */
     flex-direction: column;
     overflow: hidden; /* Prevent content from overflowing */
     border-right: 1px solid var(--sl-color-hairline);
+    /* Ensure visibility in production */
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .mobile-sidebar-header {
@@ -306,7 +324,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     align-items: center;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--sl-color-hairline);
-    background-color: var(--sl-color-bg-sidebar);
+    background-color: var(--sl-color-bg); /* Changed from bg-sidebar to bg to match content page */
     position: sticky;
     top: 0;
     z-index: 20;
@@ -321,6 +339,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     padding: 1.25rem 1.5rem 0.75rem;
     border-bottom: 1px solid var(--sl-color-hairline);
     margin-bottom: 0.5rem;
+    background-color: var(--sl-color-bg); /* Added to ensure consistent background color */
   }
 
   .sidebar-subtle-title {
@@ -331,46 +350,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     letter-spacing: 0.08em;
   }
 
-  .mobile-close-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--sl-color-text);
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    display: none; /* Hidden by default */
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease;
-    position: fixed;
-    top: 0.75rem;
-    right: 1rem; /* Position on the right side */
-    z-index: 110;
-  }
-  .mobile-close-button:hover {
-    background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
-  }
-
-  /* Mobile menu toggle styling */
-  .mobile-menu-toggle {
-    position: fixed;
-    top: 0.75rem;
-    right: 1rem;
-    z-index: 110;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--sl-color-text);
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    display: none; /* Hidden by default for desktop */
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease;
-  }
-  .mobile-menu-toggle:hover {
-    background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
-  }
+  /* Mobile buttons are now in the header component */
 
   .mobile-sidebar-content {
     flex: 1;
@@ -418,14 +398,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
       transform: translateX(0);
     }
 
-    /* Hide hamburger menu and show close button when sidebar is open */
-    :global(body[data-mobile-sidebar='open']) .mobile-menu-toggle {
-      display: none !important;
-    }
-
-    :global(body[data-mobile-sidebar='open']) .mobile-close-button {
-      display: flex !important;
-    }
+    /* Mobile menu toggle buttons are now handled in the Header component */
 
     /* Adjust footer width for mobile */
     .sidebar-footer {
@@ -510,41 +483,58 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     };
 
     // --- Mobile Menu Setup ---
-    const toggleButton = document.getElementById('mobile-menu-toggle');
-    const closeButton = document.getElementById('mobile-close-button');
+    // Mobile menu toggle buttons are now handled in the Header component
     const mobileSidebar = document.getElementById('mobile-sidebar');
 
-    // Only set up mobile menu listeners if they haven't been added yet
-    if (toggleButton && !toggleButton.dataset.listenerAdded) {
-        const toggleMobileMenu = () => {
-          const isOpen = document.body.getAttribute('data-mobile-sidebar') === 'open';
-          document.body.setAttribute('data-mobile-sidebar', isOpen ? 'closed' : 'open');
-
-          // Add a class to the body to prevent scrolling when sidebar is open
-          if (!isOpen) {
-            document.body.classList.add('sidebar-open');
-          } else {
-            document.body.classList.remove('sidebar-open');
-          }
-        };
-        toggleButton.addEventListener('click', toggleMobileMenu);
-        toggleButton.dataset.listenerAdded = 'true'; // Mark as added
-    }
-
-    if (closeButton && !closeButton.dataset.listenerAdded) {
+    if (mobileSidebar && !mobileSidebar.dataset.listenerAdded) {
+        // Function to close the mobile menu - defined once to avoid recreating functions
         const closeMobileMenu = () => {
           document.body.setAttribute('data-mobile-sidebar', 'closed');
           document.body.classList.remove('sidebar-open');
         };
-        closeButton.addEventListener('click', closeMobileMenu);
-        closeButton.dataset.listenerAdded = 'true';
-    }
 
-    if (mobileSidebar && !mobileSidebar.dataset.listenerAdded) {
-        const closeMobileMenu = () => document.body.setAttribute('data-mobile-sidebar', 'closed');
+        // Add touch and click listeners to all links in the mobile sidebar for faster response
         mobileSidebar.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', closeMobileMenu);
+          if (!link.dataset.listenerAdded) {
+            // Use touchstart for faster mobile response
+            link.addEventListener('touchstart', () => {
+              // Don't prevent default here to allow navigation
+              closeMobileMenu();
+            }, { passive: true });
+
+            // Keep click for non-touch devices
+            link.addEventListener('click', () => {
+              closeMobileMenu();
+            });
+
+            link.dataset.listenerAdded = 'true';
+          }
         });
+
+        // Also add touch/click listener to the overlay (when clicking outside the sidebar)
+        // Use touchstart for faster response on mobile
+        document.addEventListener('touchstart', (event) => {
+          handleOutsideClick(event);
+        }, { passive: true });
+
+        // Keep click for non-touch devices
+        document.addEventListener('click', (event) => {
+          handleOutsideClick(event);
+        });
+
+        // Helper function to handle clicks outside the sidebar
+        function handleOutsideClick(event: MouseEvent | TouchEvent) {
+          const target = event.target as HTMLElement;
+          // If sidebar is open and click is outside the sidebar
+          if (
+            document.body.getAttribute('data-mobile-sidebar') === 'open' &&
+            !mobileSidebar.contains(target) &&
+            target.id !== 'mobile-menu-toggle'
+          ) {
+            closeMobileMenu();
+          }
+        }
+
         mobileSidebar.dataset.listenerAdded = 'true';
     }
 
@@ -876,12 +866,37 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     }
   };
 
+  // Function to ensure the sidebar is properly initialized
+  function ensureSidebarInitialized() {
+    // Check if sidebar elements exist
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const desktopSidebar = document.getElementById('custom-sidebar');
+
+    if (mobileSidebar || desktopSidebar) {
+      initializeSidebarState();
+    } else {
+      // If elements don't exist yet, try again after a short delay
+      setTimeout(ensureSidebarInitialized, 50);
+    }
+  }
+
   // Enhanced navigation handlers
   // Run on initial load
-  initializeSidebarState();
+  ensureSidebarInitialized();
+
+  // Function to hide default Starlight sidebar
+  const hideDefaultSidebar = () => {
+    const starlightSidebars = document.querySelectorAll('.sl-sidebar');
+    starlightSidebars.forEach(sidebar => {
+      (sidebar as HTMLElement).style.display = 'none';
+    });
+  };
 
   // After page load (for Astro client navigation)
-  document.addEventListener('astro:page-load', initializeSidebarState);
+  document.addEventListener('astro:page-load', () => {
+    ensureSidebarInitialized();
+    hideDefaultSidebar();
+  });
 
   // Before navigation starts (optional)
   document.addEventListener('astro:before-swap', () => {
@@ -892,11 +907,18 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
   // After navigation completes
   document.addEventListener('astro:after-swap', () => {
     document.documentElement.classList.remove('navigating');
+    hideDefaultSidebar();
   });
 
   // Fallback for browsers without MutationObserver
   window.addEventListener('popstate', () => {
-    setTimeout(initializeSidebarState, 10);
+    setTimeout(() => {
+      ensureSidebarInitialized();
+      hideDefaultSidebar();
+    }, 50);
   });
+
+  // Additional fallback for production environments
+  window.addEventListener('load', ensureSidebarInitialized);
 
 </script>

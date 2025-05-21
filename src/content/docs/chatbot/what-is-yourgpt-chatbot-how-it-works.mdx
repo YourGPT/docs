@@ -11,6 +11,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import {Features} from '~/components';
 import { FaArrowRight} from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
+import { LinkButton } from '@astrojs/starlight/components';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'>   About YourGPT  </div>
 
@@ -82,13 +83,13 @@ For advanced workflows, YourGPT provides AI Studio—a powerful tool to design g
   }
 </div>
 
+
+
 <div className="flex justify-center my-10">
-  <a href="https://yourgpt.ai/chatbot/all-features" className="inline-flex items-center justify-center px-8 py-3 text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300 hover:shadow-md">
-    <span>See All Features</span>
-    <span className="ml-2">
-      <FaArrowRight />
-    </span>
-  </a>
+    <LinkButton href="https://yourgpt.ai/chatbot/all-features"> 
+       See All Features
+    </LinkButton>
+
 </div>
 
 

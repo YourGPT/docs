@@ -1,17 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as FiIcons from 'react-icons/fi';
 import * as IoIcons from 'react-icons/io';
 import * as BsIcons from 'react-icons/bs';
 import * as MdIcons from 'react-icons/md';
 
-export default function CustomCardIcon({ name, size = "1.2em" }) {
+export default function CustomCardIcon({ name, size = "1.5em" }) {
+  // State to track dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Effect to set up theme detection
+  useEffect(() => {
+    // Initial theme check
+    const checkTheme = () => {
+      const theme = document.documentElement.dataset.theme;
+      setIsDarkMode(theme === 'dark');
+    };
+
+    // Check theme on mount
+    checkTheme();
+
+    // Listen for theme changes
+    const handleThemeChange = () => {
+      checkTheme();
+    };
+
+    // Add event listener for theme changes
+    document.addEventListener('themechange', handleThemeChange);
+
+    // Also check periodically
+    const interval = setInterval(checkTheme, 1000);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('themechange', handleThemeChange);
+      clearInterval(interval);
+    };
+  }, []);
+
   // Map to store the icon libraries
   const iconSets = {
     "FaGlobe": FaIcons.FaGlobe,
     "FaFileAlt": FaIcons.FaFileAlt,
     "FaQuestionCircle": FaIcons.FaQuestionCircle,
-    "FaFileText": FaIcons.FaFile, // Changed to FaFile as FaFileText might not exist
+    "FaFileText": FaIcons.FaFile,
     "FaYoutube": FaIcons.FaYoutube,
     "FaDatabase": FaIcons.FaDatabase,
     "FaPuzzlePiece": FaIcons.FaPuzzlePiece,
@@ -23,8 +55,6 @@ export default function CustomCardIcon({ name, size = "1.2em" }) {
     "FaGoogle": FaIcons.FaGoogle,
     "FaEye": FaIcons.FaEye,
     "FaLightbulb": FaIcons.FaLightbulb,
-    // Adding icons for conversation section
-    "FaRobot": FaIcons.FaRobot,
     "FaComments": FaIcons.FaComments,
     "FaSlack": FaIcons.FaSlack,
     "FaIntercom": FaIcons.FaCommentDots,
@@ -32,64 +62,75 @@ export default function CustomCardIcon({ name, size = "1.2em" }) {
     "FaDiscord": FaIcons.FaDiscord
   };
 
-  // Map icons to colors
+  // Map icons to colors based on the screenshots
   const iconColors = {
-    "FaGlobe": "#3b82f6", // blue
-    "FaFileAlt": "#10b981", // green
-    "FaQuestionCircle": "#f59e0b", // amber
-    "FaFileText": "#8b5cf6", // purple
-    "FaYoutube": "#ef4444", // red
-    "FaDatabase": "#6366f1", // indigo
-    "FaPuzzlePiece": "#ec4899", // pink
-    "FaRobot": "#6b7280", // slate
-    "FaCloudUploadAlt": "#0ea5e9", // sky
-    "FaRocket": "#f97316", // orange
-    "FaCogs": "#64748b", // gray
-    "FaDropbox": "#0061ff", // dropbox blue
-    "FaGoogle": "#4285F4", // google blue
-    "FaEye": "#9333ea", // purple
-    "FaLightbulb": "#eab308", // yellow
-    "FaComments": "#0891b2", // cyan
-    "FaSlack": "#4A154B", // slack purple
-    "FaIntercom": "#1F8DED", // intercom blue
-    "FaCommentAlt": "#f43f5e", // rose
-    "FaDiscord": "#5865F2" // discord blue
-  };
-
-  // Get lighter shade of the color for the background
-  const getLighterShade = (hex) => {
-    // Convert hex to RGB and make it lighter
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    
-    // For light mode: mix with white (255, 255, 255) at 85%
-    const lighter = {
-      r: Math.round(r * 0.15 + 255 * 0.85),
-      g: Math.round(g * 0.15 + 255 * 0.85),
-      b: Math.round(b * 0.15 + 255 * 0.85)
-    };
-    
-    return `rgb(${lighter.r}, ${lighter.g}, ${lighter.b})`;
+    "FaGlobe": "#3b82f6", // Blue for website icon
+    "FaFileAlt": "#10b981", // Green for documents icon
+    "FaQuestionCircle": "#f59e0b", // Amber for FAQs icon
+    "FaFileText": "#8b5cf6", // Purple for text icon
+    "FaYoutube": "#ef4444", // Red
+    "FaDatabase": "#6366f1", // Indigo
+    "FaPuzzlePiece": "#ec4899", // Pink
+    "FaRobot": "#6b7280", // Slate
+    "FaCloudUploadAlt": "#0ea5e9", // Sky
+    "FaRocket": "#f97316", // Orange
+    "FaCogs": "#64748b", // Gray
+    "FaDropbox": "#0061ff", // Dropbox blue
+    "FaGoogle": "#4285F4", // Google blue
+    "FaEye": "#9333ea", // Purple
+    "FaLightbulb": "#eab308", // Yellow
+    "FaComments": "#0891b2", // Cyan
+    "FaSlack": "#4A154B", // Slack purple
+    "FaIntercom": "#1F8DED", // Intercom blue
+    "FaCommentAlt": "#f43f5e", // Rose
+    "FaDiscord": "#5865F2" // Discord blue
   };
 
   // Get the icon component
   const IconComponent = iconSets[name];
-  const iconColor = iconColors[name] || "#6b7280"; // Default to gray if no color specified
-  const bgColor = getLighterShade(iconColor);
+  const iconColor = iconColors[name] || "#6B7280"; // Default to gray if no color specified
+
+  // Light mode background colors (from screenshots)
+  const lightModeBackgrounds = {
+    "FaGlobe": "#dbeafe", // Light blue
+    "FaFileAlt": "#d1fae5", // Light green
+    "FaQuestionCircle": "#fef3c7", // Light amber
+    "FaFileText": "#ede9fe", // Light purple
+  };
+
+  // Dark mode background colors (from screenshots)
+  const darkModeBackgrounds = {
+    "FaGlobe": "#1e3a8a", // Dark blue
+    "FaFileAlt": "#065f46", // Dark green
+    "FaQuestionCircle": "#92400e", // Dark amber
+    "FaFileText": "#5b21b6", // Dark purple
+  };
+
+  // Get background color based on theme and icon
+  const getBgColor = () => {
+    if (isDarkMode) {
+      return darkModeBackgrounds[name] || "#1e293b"; // Default dark background
+    } else {
+      return lightModeBackgrounds[name] || "#f3f4f6"; // Default light background
+    }
+  };
 
   // If icon exists, render it in a colored box
   if (IconComponent) {
     return (
       <div style={{
         display: "inline-flex",
-        backgroundColor: bgColor,
+        backgroundColor: getBgColor(),
         color: iconColor,
-        borderRadius: "6px",
-        padding: "6px",
+        borderRadius: "8px",
+        padding: "8px",
         justifyContent: "center",
         alignItems: "center",
-        marginRight: "20px"
+        width: "36px",
+        height: "36px",
+        minWidth: "36px",
+        minHeight: "36px",
+        boxSizing: "border-box"
       }}>
         <IconComponent style={{ fontSize: size }} />
       </div>

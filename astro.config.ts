@@ -23,12 +23,15 @@ export default defineConfig({
         SiteTitle: "./src/components/starlight/SiteTitle.astro",
         // Search: './src/components/starlight/Search.astro',
         Pagination: './src/components/CustomPagination.astro',
-        // Header: './src/components/starlight/Header.astro',
+        Header: './src/components/starlight/Header.astro',
+        ThemeSelect: './src/components/starlight/ThemeSelect.astro',
       },
       plugins: [starlightImageZoom()],
       customCss: [
         // Path to your Tailwind base styles:
         "./src/tailwind.css",
+        // Path to your custom CSS file:
+        "./src/styles/custom.css",
       ],
     }),
     react(),
@@ -56,8 +59,5 @@ export default defineConfig({
     // "llm-spark/api-documentation": "/",
     // "llm-spark/templates": "/",
   },
-  // customCss: [
-  //   // Relative path to your custom CSS file
-  //   './src/styles/custom.css',
-  // ],
+
 });

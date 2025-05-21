@@ -15,31 +15,38 @@ import NewSidebar from '../components/NewSidebar.astro';
   </div>
 </div>
 
-<!-- <style>
+<style>
   .custom-layout {
     display: flex;
     min-height: 100vh;
   }
-  
+
   .sidebar-container {
     position: sticky;
     top: 0;
     height: 100vh;
     z-index: 10;
   }
-  
+
   .content-container {
     flex: 1;
     min-width: 0;
   }
-  
+
   /* Hide the original Starlight sidebar */
   :global(.sl-sidebar) {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
   }
-  
+
   /* Adjust the content spacing */
   :global(.sl-container) {
     padding-left: 0 !important;
   }
-</style> -->
+</style>

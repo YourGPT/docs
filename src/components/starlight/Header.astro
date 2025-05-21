@@ -16,25 +16,58 @@ const shouldRenderSearch =
 
 <div class="header-container">
   <div class="header">
+    <!-- Left section with logo -->
     <div class="left-section">
       <div class="title-wrapper">
         <SiteTitle />
       </div>
     </div>
+
+    <!-- Center section with search -->
     <div class="center-section print:hidden">
       {shouldRenderSearch && <Search />}
     </div>
+
+    <!-- Right section with mobile menu toggle and desktop elements -->
     <div class="right-section print:hidden">
-      <div class="nav-links">
-        <!-- <a href="https://discord.gg/z8PBs5ckcd" class="nav-link" target="_blank" rel="noopener">Community</a> -->
-        <a href="https://help.yourgpt.ai" class="nav-link" target="_blank" rel="noopener">Help Center</a>
+      <!-- Mobile menu toggle button with inline onclick for reliability -->
+      <button
+        id="mobile-menu-toggle"
+        class="mobile-menu-toggle"
+        aria-label="Toggle mobile menu"
+        onclick="document.body.setAttribute('data-mobile-sidebar', 'open'); document.body.classList.add('sidebar-open');"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Mobile close button with inline onclick for reliability -->
+      <button
+        id="mobile-close-button"
+        class="mobile-close-button"
+        aria-label="Close mobile menu"
+        onclick="document.body.setAttribute('data-mobile-sidebar', 'closed'); document.body.classList.remove('sidebar-open');"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Desktop-only elements -->
+      <div class="desktop-only-elements">
+        <div class="nav-links">
+          <a href="https://help.yourgpt.ai" class="nav-link" target="_blank" rel="noopener">Help Center</a>
+        </div>
+        <a href="https://app.yourgpt.ai/" class="sign-in-button" target="_blank" rel="noopener">
+          <span>Login</span>
+        </a>
+        <ThemeSelect />
+        <!-- <LanguageSelect /> -->
       </div>
-      <a href="https://app.yourgpt.ai/" class="sign-in-button" target="_blank" rel="noopener">
-        <span>Sign up</span>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg> -->
-      </a>
-      <ThemeSelect />
-      <LanguageSelect />
     </div>
   </div>
 </div>
@@ -43,102 +76,224 @@ const shouldRenderSearch =
   .header-container {
     width: 100%;
     background-color: var(--sl-color-bg, rgba(255, 255, 255, 0.95));
-    border-bottom: 1px solid var(--sl-color-hairline, #eaeaea);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 9990; /* Lower than the logo z-index */
     backdrop-filter: blur(8px);
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease;
+    /* Aggressively remove any border or shadow */
+    border: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
   :global([data-theme="dark"]) .header-container {
     background-color: var(--sl-color-bg-nav, rgba(31, 41, 55, 0.95));
-    border-bottom: 1px solid var(--sl-color-hairline, #303035);
+    /* Aggressively remove any border or shadow */
+    border: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Aggressively override any Starlight default styles that might add borders */
+  :global(header), :global(nav), :global(.sl-nav), :global(.sl-header),
+  :global(.sl-header-wrapper), :global(.sl-header-content), :global(.sl-header-main),
+  :global(.sl-nav-container), :global(.sl-nav-content), :global(.sl-header-logo),
+  :global(.sl-header-actions), :global(.sl-header-right) {
+    border: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Ensure absolutely no grey lines from Starlight */
+  :global(*[class*="header"]), :global(*[class*="nav"]), :global(*[class*="sl-"]) {
+    border: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Add a CSS reset for any potential border elements */
+  :global(.header-container *),
+  :global(.header *),
+  :global(header *),
+  :global(nav *) {
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .header {
-    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 1fr minmax(250px, 500px) 1fr;
+    padding: 0 1.5rem;
+    display: flex; /* Changed to flex for better control */
     justify-content: space-between;
     align-items: center;
-    height: 55px;
+    height: 60px; /* Slightly taller header for bigger logo */
     position: relative;
   }
-  
+
   :global(body) {
-    padding-top: 50px;
+    padding-top: 0; /* Remove padding-top to fix content spacing */
   }
 
+  /* Left section with logo */
   .left-section {
+    width: 120px;
+    min-width: 120px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
 
   .title-wrapper {
-    overflow: clip;
-    padding: 0;
-    min-width: 0;
-    flex-shrink: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
   }
 
-  /* Remove any padding from SiteTitle */
+  /* Logo styling - fixed position, slightly smaller and moved right */
   :global(.site-title) {
     padding: 0 !important;
-    margin-right: 1rem;
-    justify-content: flex-start !important;
+    margin: 0 !important;
+    position: absolute !important;
+    left: 2.5rem !important; /* Moved more to the right */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: auto !important;
+    /* Fixed position regardless of screen size */
+    position: fixed !important;
+    z-index: 9991 !important; /* Higher than header container */
   }
-  
-  /* Make logo smaller */
-  :global(.site-title img) {
-    width: 55px !important;
+
+  :global(.logo-image) {
+    width: 85px !important; /* Slightly smaller logo */
     height: auto !important;
-  }
-  
-  /* Fix alignment for SiteTitle */
-  :global(.site-title a) {
-    justify-content: flex-start !important;
   }
 
   /* Center the search component */
   .center-section {
     display: flex;
     justify-content: center;
-    width: 100%;
+    flex: 1; /* Take up available space */
+    padding: 0 1rem;
+    margin-left: 0; /* No need for extra margin */
+    margin-right: 300px; /* Make room for the absolutely positioned right section */
   }
 
-  /* Make the search component wider */
+  /* Make the search component wider and more visible */
   :global(.search) {
     width: 100%;
+    max-width: 500px; /* Limit maximum width */
   }
 
   :global(.search-input-container) {
     width: 100% !important;
+    position: relative !important;
+  }
+
+  /* Add a subtle shadow to the search container for better visibility in light mode */
+  :global(.search-input-container::before) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100px;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    z-index: -1;
+  }
+
+  :global([data-theme="dark"]) :global(.search-input-container::before) {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   :global(.search-input) {
     width: 100% !important;
-    border-radius: 100px !important;
+    border-radius: 4px !important; /* Rectangular outline with slight rounding */
     font-size: 0.875rem !important;
     padding: 0.4rem 0.875rem !important;
-    background-color: var(--sl-color-bg-inline-code, rgba(0, 0, 0, 0.05)) !important;
+    background-color: #f0f0f0 !important; /* Lighter background for light mode */
     color: var(--sl-color-text) !important;
-    border: 1px solid transparent !important;
+    border: 1px solid #c0c0c0 !important; /* More visible border for light mode */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important; /* Subtle outline effect */
     transition: all 0.2s ease !important;
   }
 
   :global([data-theme="dark"]) :global(.search-input) {
-    background-color: var(--sl-color-black-alpha-10, rgba(255, 255, 255, 0.05)) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Slightly lighter for dark mode */
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 100px !important; /* Keep rounded in dark mode */
+    box-shadow: none !important; /* No outline in dark mode */
   }
 
   :global(.search-input:focus) {
     border-color: var(--sl-color-text-accent) !important;
     box-shadow: 0 0 0 2px rgba(var(--sl-color-accent-rgb), 0.25) !important;
+    outline: none !important;
+  }
+
+  /* Keep focus state rounded in dark mode */
+  :global([data-theme="dark"]) :global(.search-input:focus) {
+    border-radius: 100px !important;
+  }
+
+  /* Improve search icon visibility */
+  :global(.search-icon) {
+    color: #555 !important; /* Darker for better contrast in light mode */
+    margin-left: 0.25rem !important; /* Add a bit more space in rectangular search box */
+  }
+
+  :global([data-theme="dark"]) :global(.search-icon) {
+    color: #ccc !important;
+    margin-left: 0 !important; /* Reset margin for rounded dark mode */
+  }
+
+  /* Improve keyboard shortcut visibility */
+  :global(.search-kbd) {
+    background-color: #e8e8e8 !important;
+    color: #555 !important;
+    border: 1px solid #c0c0c0 !important;
+    border-radius: 2px !important; /* More rectangular in light mode */
+    padding: 0.1rem 0.3rem !important;
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+    margin-right: 0.25rem !important; /* Add a bit more space in rectangular search box */
+  }
+
+  :global([data-theme="dark"]) :global(.search-kbd) {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ccc !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 3px !important; /* Slightly more rounded in dark mode */
+    margin-right: 0 !important; /* Reset margin for rounded dark mode */
   }
 
   .right-section {
@@ -146,12 +301,30 @@ const shouldRenderSearch =
     align-items: center;
     gap: 1.25rem;
     justify-content: flex-end;
+    min-width: 300px; /* Increased minimum width for better spacing */
+    flex-shrink: 0; /* Prevent shrinking */
+    height: 100%; /* Ensure full height */
+    position: absolute; /* Position absolutely */
+    right: 1.5rem; /* Align to the right edge with padding */
+    top: 0; /* Align to the top */
+  }
+
+  /* Desktop-only elements container */
+  .desktop-only-elements {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    height: 100%; /* Ensure full height */
+    margin-left: auto; /* Push to the right side */
+    justify-content: flex-end; /* Align items to the right */
+    width: 100%; /* Take full width of parent */
   }
 
   .nav-links {
     display: flex;
     gap: 1.5rem;
     margin-right: 0.5rem;
+    order: 1; /* This puts the nav links on the left */
   }
 
   .nav-link {
@@ -192,7 +365,9 @@ const shouldRenderSearch =
     font-size: 0.8125rem;
     transition: all 0.2s ease;
     white-space: nowrap;
-    order: -1; /* This puts the button first */
+    order: 2; /* This puts the button in the middle */
+    height: 32px; /* Fixed height to match the theme toggle */
+    text-decoration: none; /* Remove underline */
   }
 
   :global([data-theme="dark"]) .sign-in-button {
@@ -211,27 +386,85 @@ const shouldRenderSearch =
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
   }
 
-  .arrow-icon {
-    width: 1rem;
-    height: 1rem;
-  }
-
   /* Style theme toggle and language selector */
   :global(.theme-select) {
     margin: 0 !important;
+    order: 3; /* Rightmost position */
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
   }
 
   :global(.language-select) {
     margin: 0 !important;
   }
 
-  @media (max-width: 1100px) {
-    .header {
-      grid-template-columns: auto 1fr auto;
-    }
+  /* Mobile menu toggle styling - simplified for better clickability */
+  .mobile-menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-text);
+    padding: 0.75rem;
+    margin: 0;
+    border-radius: 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 9995;
+    width: 44px;
+    height: 44px;
+    min-width: 44px; /* Ensure minimum touch target size */
+    min-height: 44px; /* Ensure minimum touch target size */
+  }
 
+  /* Add a subtle background on hover for better feedback */
+  .mobile-menu-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  :global([data-theme="dark"]) .mobile-menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Mobile close button styling - simplified for better clickability */
+  .mobile-close-button {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-text);
+    padding: 0.75rem;
+    margin: 0;
+    border-radius: 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 9995;
+    width: 44px;
+    height: 44px;
+    min-width: 44px; /* Ensure minimum touch target size */
+    min-height: 44px; /* Ensure minimum touch target size */
+  }
+
+  /* Add a subtle background on hover for better feedback */
+  .mobile-close-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  :global([data-theme="dark"]) .mobile-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 1100px) {
     .center-section {
       padding: 0 1rem;
+      margin-right: 280px; /* Adjust margin for smaller screens */
+    }
+
+    .right-section {
+      min-width: 280px; /* Slightly reduce minimum width */
     }
   }
 
@@ -239,22 +472,236 @@ const shouldRenderSearch =
     .nav-links {
       display: none;
     }
+
+    .center-section {
+      margin-right: 200px; /* Adjust margin for even smaller screens */
+    }
+
+    .right-section {
+      min-width: 200px; /* Further reduce minimum width */
+    }
   }
 
   @media (max-width: 768px) {
     .header {
       padding: 0 1rem;
-      grid-template-columns: auto auto;
+    }
+
+    /* Adjust left section for mobile without changing logo position */
+    .left-section {
+      width: 90px;
+      min-width: 90px;
+    }
+
+    /* Adjust center section for mobile - move it to the right */
+    .center-section {
+      padding: 0;
+      position: absolute;
+      right: 60px; /* Position next to the menu toggle */
+      width: auto;
+      max-width: 200px;
+      margin-right: 0;
+      justify-content: flex-end;
+    }
+
+    /* Make search smaller on mobile */
+    :global(.search) {
+      width: auto;
+      max-width: 200px;
+    }
+
+    :global(.search-input) {
+      width: 100% !important;
+      max-width: 200px !important;
+      padding: 0.35rem 0.5rem !important;
+    }
+
+    /* Hide keyboard shortcut on mobile to save space */
+    :global(.search-kbd) {
+      display: none !important;
+    }
+
+    /* Make search icon smaller on mobile */
+    :global(.search-icon) {
+      transform: scale(0.9);
+    }
+
+    /* Adjust right section for mobile */
+    .right-section {
+      min-width: 50px; /* Minimum width for mobile */
+      right: 1rem; /* Adjust right position for mobile */
+    }
+
+    /* Show mobile menu toggle and hide desktop elements */
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .desktop-only-elements {
+      display: none;
+    }
+
+    /* Control mobile sidebar visibility based on body attribute */
+    :global(body:not([data-mobile-sidebar='open'])) .mobile-menu-toggle {
+      display: flex;
+    }
+
+    :global(body[data-mobile-sidebar='open']) .mobile-menu-toggle {
+      display: none;
+    }
+
+    :global(body[data-mobile-sidebar='open']) .mobile-close-button {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .left-section {
+      width: 80px;
+      min-width: 80px;
+    }
+
+    :global(.site-title) {
+      left: 2rem !important; /* Keep logo more to the right */
+    }
+
+    :global(.logo-image) {
+      width: 80px !important; /* Slightly smaller on medium screens */
     }
 
     .center-section {
-      display: none;
+      right: 55px; /* Position next to the menu toggle */
+      max-width: 160px;
+    }
+
+    :global(.search-input) {
+      max-width: 160px !important;
+      font-size: 0.8rem !important;
+    }
+
+    .right-section {
+      right: 0.75rem; /* Adjust right position for smaller screens */
     }
   }
 
-  @media (max-width: 500px) {
-    :global(.language-select) {
-      display: none !important;
+  @media (max-width: 480px) {
+    .left-section {
+      width: 70px;
+      min-width: 70px;
+    }
+
+    :global(.site-title) {
+      left: 1.5rem !important; /* Keep logo more to the right even on small screens */
+    }
+
+    :global(.logo-image) {
+      width: 65px !important; /* Slightly larger than default mobile size */
+    }
+
+    .center-section {
+      right: 50px; /* Position next to the menu toggle */
+      max-width: 140px;
+    }
+
+    :global(.search-input) {
+      max-width: 140px !important;
+      font-size: 0.75rem !important;
+      padding: 0.3rem 0.4rem !important;
+    }
+
+    .right-section {
+      right: 0.5rem; /* Adjust right position for even smaller screens */
     }
   }
 </style>
+
+<script>
+  // Simple direct approach to ensure mobile menu toggle works
+  function setupMobileMenu() {
+    // Get the toggle and close buttons
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const closeButton = document.getElementById('mobile-close-button');
+
+    // Remove any existing listeners to avoid duplicates
+    if (toggleButton) {
+      const newToggleButton = toggleButton.cloneNode(true);
+      toggleButton.parentNode.replaceChild(newToggleButton, toggleButton);
+
+      // Add click listener - simple and direct
+      newToggleButton.addEventListener('click', function() {
+        console.log('Mobile menu toggle clicked');
+        document.body.setAttribute('data-mobile-sidebar', 'open');
+        document.body.classList.add('sidebar-open');
+      });
+    }
+
+    // Do the same for close button
+    if (closeButton) {
+      const newCloseButton = closeButton.cloneNode(true);
+      closeButton.parentNode.replaceChild(newCloseButton, closeButton);
+
+      // Add click listener - simple and direct
+      newCloseButton.addEventListener('click', function() {
+        console.log('Mobile menu close clicked');
+        document.body.setAttribute('data-mobile-sidebar', 'closed');
+        document.body.classList.remove('sidebar-open');
+      });
+    }
+  }
+
+  // Run immediately
+  setupMobileMenu();
+
+  // Also run after page load and transitions
+  document.addEventListener('DOMContentLoaded', setupMobileMenu);
+  document.addEventListener('astro:page-load', setupMobileMenu);
+  window.addEventListener('load', setupMobileMenu);
+</script>
+
+<!-- Load the ThemeDetector script -->
+<script>
+// ThemeDetector.js
+// This script ensures that theme changes are properly detected by React components
+
+// Function to detect theme changes and dispatch a custom event
+function setupThemeDetection() {
+  // Initial theme
+  let currentTheme = document.documentElement.dataset.theme || 'light';
+
+  // Create a custom event for theme changes
+  const themeChangeEvent = new CustomEvent('themechange', {
+    detail: { theme: currentTheme }
+  });
+
+  // Function to check for theme changes
+  const checkTheme = () => {
+    const newTheme = document.documentElement.dataset.theme || 'light';
+    if (newTheme !== currentTheme) {
+      currentTheme = newTheme;
+      // Update the event detail
+      themeChangeEvent.detail.theme = currentTheme;
+      // Dispatch the event
+      document.dispatchEvent(themeChangeEvent);
+    }
+  };
+
+  // Set up a MutationObserver to watch for theme attribute changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        checkTheme();
+      }
+    });
+  });
+
+  // Start observing the document element for data-theme attribute changes
+  observer.observe(document.documentElement, { attributes: true });
+
+  // Also check periodically (as a fallback)
+  setInterval(checkTheme, 1000);
+}
+
+// Run the setup when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setupThemeDetection);
+setupThemeDetection();
+</script>

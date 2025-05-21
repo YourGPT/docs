@@ -3,48 +3,58 @@ import { Image } from "astro:assets";
 const main = "#";
 ---
 
-<a class="site-title flex p-5" href="/" aria-label="Go to homepage">
-  <Image class="block dark:hidden" width={70} height={70} src="/assets/yourgpt-logo-dark-text.svg" alt="YourGPT logo (light mode)" />
-  <Image class="hidden dark:block" width={70} height={70} src="/assets/yourgpt-logo-light-text.svg" alt="YourGPT logo (dark mode)" />
+<a class="site-title" href="/" aria-label="Go to homepage">
+  <Image class="block dark:hidden logo-image" width={100} height={100} src="/assets/yourgpt-logo-dark-text.svg" alt="YourGPT logo (light mode)" />
+  <Image class="hidden dark:block logo-image" width={100} height={100} src="/assets/yourgpt-logo-light-text.svg" alt="YourGPT logo (dark mode)" />
 </a>
 
 <style>
   .site-title {
-    gap: 1rem;
-  }
-  .site-title a {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-  }
-  .astro-logo {
-    color: var(--sl-color-white);
-  }
-  .docs-logo {
-    color: var(--sl-color-text-accent);
+    justify-content: flex-start;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    left: 0;
+    width: auto;
   }
 
-  /* On focus, outline <img> and <svg> rather than <a> */
-  .site-title a:focus-visible {
+  /* Logo image styling */
+  .logo-image {
+    width: 90px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+
+  /* On focus styling */
+  .site-title:focus-visible {
     outline: 0;
   }
-  .site-title a:focus-visible > :global(*) {
+
+  .site-title:focus-visible > :global(*) {
     outline: auto;
     outline-offset: 0.33rem;
     border-radius: 1px;
   }
-  /* Adjust svg sizes to full nav height */
-  .site-title :global(svg) {
-    --display-height: 1.75rem;
-    /* `auto` ensures the `<svg>` scales down on really narrow viewports */
-    width: auto;
-    height: auto;
-    margin-block: calc((var(--sl-nav-height) - var(--display-height)) / 2);
-    transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Subtle hover effect */
+  .site-title:hover .logo-image {
+    opacity: 0.9;
   }
-  .site-title a:hover :global(svg) {
-    --hover-offset: 0.15rem;
-    transform: translateY(calc(var(--hover-offset) * -1));
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .logo-image {
+      width: 80px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-image {
+      width: 70px !important;
+    }
   }
 </style>
