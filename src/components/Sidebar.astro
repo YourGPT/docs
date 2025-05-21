@@ -1,71 +1,26 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
 import SidebarItems from './SidebarItems.astro';
+import { Menu, X, Disc, Youtube } from 'lucide-react';
 import { FaDiscord, FaYoutube } from "react-icons/fa";
-import '../styles/sidebar-fix.css';
 
-// Client-side detection will be used to show the appropriate sidebar
 ---
 
-<!-- Mobile Menu Toggle Button is now in the Header component -->
+<!-- Sidebar functionality is handled by the inline script at the bottom of this file -->
 
-<!-- Mobile Sidebar with inline script for closing -->
+<button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+  <span class="menu-icon">
+    <Menu size={24} />
+  </span>
+</button>
+
 <div id="mobile-sidebar" class="mobile-sidebar sidebar" data-initial-load="true">
-  <div class="sidebar-subtle-header">
-    <span class="sidebar-subtle-title">CHATBOT</span>
+  <div class="mobile-sidebar-header">
+    <div class="sidebar-title">CHATBOT</div>
   </div>
   <div class="mobile-sidebar-content">
     <SidebarItems />
   </div>
-  <div class="sidebar-footer">
-    <a href="https://discord.gg/z8PBs5ckcd" class="sidebar-footer-item" onclick="document.body.setAttribute('data-mobile-sidebar', 'closed'); document.body.classList.remove('sidebar-open');">
-      <FaDiscord />
-      <span>Community</span>
-    </a>
-    <a href="https://www.youtube.com/@YourGPTAI" class="sidebar-footer-item" onclick="document.body.setAttribute('data-mobile-sidebar', 'closed'); document.body.classList.remove('sidebar-open');">
-      <FaYoutube />
-      <span>Youtube</span>
-    </a>
-  </div>
-</div>
-
-<!-- Inline script to ensure mobile sidebar works and hide default sidebar -->
-<script is:inline>
-  // This ensures the mobile sidebar toggle works immediately
-  document.addEventListener('DOMContentLoaded', function() {
-    // Make sure sidebar is initially closed
-    document.body.setAttribute('data-mobile-sidebar', 'closed');
-
-    // Add click listeners to all links in the mobile sidebar
-    var mobileSidebar = document.getElementById('mobile-sidebar');
-    if (mobileSidebar) {
-      var links = mobileSidebar.getElementsByTagName('a');
-      for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener('click', function() {
-          document.body.setAttribute('data-mobile-sidebar', 'closed');
-          document.body.classList.remove('sidebar-open');
-        });
-      }
-    }
-
-    // Hide the default Starlight sidebar to prevent duplication
-    var starlightSidebars = document.querySelectorAll('.sl-sidebar');
-    starlightSidebars.forEach(function(sidebar) {
-      if (sidebar && sidebar.style) {
-        sidebar.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-<!-- Mobile Close Button is now in the Header component -->
-
-<!-- Desktop Sidebar -->
-<div id="custom-sidebar" class="custom-sidebar desktop-only sidebar" data-initial-load="true">
-  <div class="custom-sidebar-inner">
-    <SidebarItems />
-  </div>
-
   <div class="sidebar-footer">
     <a href="https://discord.gg/z8PBs5ckcd" class="sidebar-footer-item">
       <FaDiscord />
@@ -78,37 +33,55 @@ import '../styles/sidebar-fix.css';
   </div>
 </div>
 
-<style>
-  .sidebar-footer {
-    padding: 1rem !important;
-    border-top: 1px solid var(--sl-color-hairline) !important;
-    position: sticky !important;
-    bottom: 0 !important;
-    width: 16rem !important;
-    background-color: var(--sl-color-bg) !important;
-    z-index: 16 !important;
-    margin-top: auto !important;
-  }
-  .sidebar-footer-item {
-    display: flex;
-    align-items: center;
-    padding: 0.6rem 0.5rem;
-    margin: 0.2rem 0;
-    color: var(--sl-color-text);
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 0.9rem;
-    border-radius: 0.25rem;
-  }
-  .sidebar-footer-item:hover {
-    background-color: var(--sl-color-gray-6, rgba(0,0,0,0.03));
-    color: var(--sl-color-text-accent);
-    transform: translateX(2px);
-  }
-  .sidebar-footer-item span {
-    margin-left: 0.75rem;
-  }
-</style>
+<div id="custom-sidebar" class="custom-sidebar desktop-only sidebar" data-initial-load="true">
+  <div class="custom-sidebar-inner">
+    <div class="sidebar-section">
+      <div class="section-title">CHATBOT</div>
+      <SidebarItems />
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <a href="https://discord.gg/z8PBs5ckcd" class="sidebar-footer-item">
+      <FaDiscord />
+      <span>Community</span>
+    </a>
+    <a href="https://www.youtube.com/@YourGPTAI" class="sidebar-footer-item">
+      <FaYoutube />
+      <span>Youtube</span>
+    </a>
+  </div>
+
+    <style>
+      .sidebar-footer {
+        padding: 1rem !important;
+        border-top: 1px solid var(--sl-color-hairline) !important;
+        position: sticky !important;
+        bottom: 0 !important;
+        width: 16rem !important;
+        background-color: var(--sl-color-bg-sidebar) !important;
+        z-index: 16 !important;
+        margin-top: auto !important;
+        /* Add a subtle shadow to indicate scrollable content underneath */
+        box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.03) !important;
+      }
+      .sidebar-footer-item {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        color: var(--sl-color-text);
+        text-decoration: none;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      .sidebar-footer-item:hover {
+        background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
+      }
+      .sidebar-footer-item span {
+        margin-left: 0.5rem;
+      }
+    </style>
+</div>
 
 
 <style>
@@ -116,19 +89,17 @@ import '../styles/sidebar-fix.css';
   :global(.sidebar-item) {
     display: flex !important;
     align-items: center !important;
-    padding: 0.6rem 1rem !important;
+    padding: 0.5rem 0.75rem !important;
     color: var(--sl-color-text) !important;
     font-size: 0.875rem !important;
     text-decoration: none !important;
-    margin: 0.1rem 0.5rem !important;
+    border-radius: 0.375rem !important;
+    margin: 0.125rem 0 !important;
     position: relative !important;
-    border-radius: 0.25rem !important;
-    transition: all 0.15s ease-in-out !important;
   }
   :global(.sidebar-item:hover) {
     background-color: var(--sl-color-gray-6, rgba(0,0,0,0.03)) !important;
     color: var(--sl-color-text) !important;
-    transform: translateX(2px) !important;
   }
   :global(.sidebar-item.active) {
     color: var(--sl-color-text-accent) !important;
@@ -136,16 +107,15 @@ import '../styles/sidebar-fix.css';
     background-color: var(--sl-color-gray-5, rgba(0,0,0,0.04)) !important;
     position: relative !important;
     /* Add a subtle visual indicator for the active item */
-    border-left: 3px solid var(--sl-color-text-accent, #3f51b5) !important;
-    padding-left: calc(1rem - 3px) !important; /* Adjust padding to compensate for border */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    border-left: 2px solid var(--sl-color-text-accent, #3f51b5) !important;
+    padding-left: calc(0.75rem - 2px) !important; /* Adjust padding to compensate for border */
   }
   :global(.sidebar-item.with-arrow) {
     cursor: pointer;
-    background-color: transparent !important;
-    border-left: none !important;
+    background-color: var(--sl-color-gray-7, rgba(0,0,0,0.02)) !important;
+    border-left: 1px solid var(--sl-color-gray-4, rgba(0,0,0,0.05)) !important;
     font-weight: 500 !important;
-    margin-top: 0 !important;
+    margin-top: 0.25rem !important;
     color: var(--sl-color-gray-1) !important;
   }
   :global(.sidebar-item.with-arrow.expanded .arrow-icon svg) {
@@ -155,9 +125,9 @@ import '../styles/sidebar-fix.css';
   /* Add visual separation between different sections */
   /* Sidebar animations with view transitions support */
   :global(.sub-items) {
-    margin-bottom: 0 !important;
-    border-left: none !important;
-    margin-left: 0 !important;
+    margin-bottom: 0.25rem !important;
+    border-left: 1px solid var(--sl-color-gray-5, rgba(0,0,0,0.03)) !important;
+    margin-left: 0.5rem !important;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -182,7 +152,7 @@ import '../styles/sidebar-fix.css';
       opacity 0.25s cubic-bezier(0.33, 1, 0.68, 1),
       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Better visibility when expanded */
-    margin-bottom: 0 !important;
+    margin-bottom: 0.5rem !important;
   }
   :global(.sidebar[data-initial-load="true"] .sub-items.expanded) {
     /* Instant display on initial load */
@@ -195,9 +165,9 @@ import '../styles/sidebar-fix.css';
 
   /* Improve visual hierarchy for nested items with matching animations */
   :global(.sub-items-l2) {
-    border-left: none !important;
-    margin-left: 0 !important;
-    padding-left: 1rem !important;
+    border-left: 1px solid var(--sl-color-gray-4, rgba(0,0,0,0.05)) !important;
+    margin-left: 0.5rem !important;
+    padding-left: 0.5rem !important;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -221,7 +191,7 @@ import '../styles/sidebar-fix.css';
       opacity 0.25s cubic-bezier(0.33, 1, 0.68, 1),
       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Better visibility when expanded */
-    margin-bottom: 0 !important;
+    margin-bottom: 0.5rem !important;
   }
   :global(.sidebar[data-initial-load="true"] .sub-items-l2.expanded) {
     max-height: 2000px;
@@ -234,7 +204,7 @@ import '../styles/sidebar-fix.css';
     margin-right: 0.75rem;
     display: inline-flex;
     flex-shrink: 0;
-    opacity: 0.8;
+    opacity: 0.75;
   }
   :global(.arrow-icon) {
     margin-left: auto;
@@ -251,7 +221,7 @@ import '../styles/sidebar-fix.css';
     left: 0 !important;
     bottom: 0 !important;
     width: 16rem !important;
-    background-color: var(--sl-color-bg) !important; /* Changed from bg-sidebar to bg to match content page */
+    background-color: var(--sl-color-bg-sidebar) !important;
     z-index: 15 !important;
     overflow-y: auto !important;
     border-right: 1px solid var(--sl-color-hairline) !important;
@@ -295,138 +265,93 @@ import '../styles/sidebar-fix.css';
     letter-spacing: 0.05em;
   }
 
-  /* Mobile sidebar styling - simplified for reliability */
+  /* Mobile sidebar styling with enhanced animations */
   .mobile-sidebar {
+    display: none; /* Hidden by default */
     position: fixed;
-    top: 60px; /* Match header height exactly (60px from Header.astro) */
-    left: 0;
+    top: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
-    max-width: 16rem; /* Match Starlight sidebar width */
+    max-width: 20rem;
     z-index: 100;
-    background-color: var(--sl-color-bg);
+    background-color: var(--sl-color-bg-sidebar);
+    will-change: transform, opacity;
     box-shadow: var(--sl-shadow-md);
-    transform: translateX(-100%);
-    /* Simple transition for reliability */
-    transition: transform 0.15s ease;
-    display: none; /* Hidden by default, will be shown on mobile */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevent content from overflowing */
-    border-right: 1px solid var(--sl-color-hairline);
-    /* Ensure visibility in production */
-    visibility: visible !important;
-    opacity: 1 !important;
   }
-
   .mobile-sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 1rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--sl-color-hairline);
-    background-color: var(--sl-color-bg); /* Changed from bg-sidebar to bg to match content page */
-    position: sticky;
-    top: 0;
-    z-index: 20;
+    background-color: var(--sl-color-bg-sidebar);
+  }
+  .mobile-close-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-text);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-close-button:hover {
+    background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
   }
 
-  .sidebar-title {
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: var(--sl-color-gray-3);
+  /* Mobile menu toggle styling */
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 110;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--sl-color-text);
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    display: none; /* Hidden by default for desktop */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
   }
-  .sidebar-subtle-header {
-    padding: 1.25rem 1.5rem 0.75rem;
-    border-bottom: 1px solid var(--sl-color-hairline);
-    margin-bottom: 0.5rem;
-    background-color: var(--sl-color-bg); /* Added to ensure consistent background color */
+  .mobile-menu-toggle:hover {
+    background-color: var(--sl-color-backdrop-overlay);
   }
-
-  .sidebar-subtle-title {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--sl-color-gray-3);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  /* Mobile buttons are now in the header component */
 
   .mobile-sidebar-content {
     flex: 1;
     overflow-y: auto;
-    padding: 0.5rem 0;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: var(--sl-color-gray-5) transparent; /* Firefox */
+    padding-bottom: 8rem; /* Increased padding to ensure last items are fully visible */
   }
 
-  /* Webkit scrollbar styling */
-  .mobile-sidebar-content::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  .mobile-sidebar-content::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .mobile-sidebar-content::-webkit-scrollbar-thumb {
-    background-color: var(--sl-color-gray-5);
-    border-radius: 10px;
-  }
-
-  /* Media query for mobile devices */
   @media (max-width: 50em) {
-    /* Hide desktop sidebar */
     .desktop-only {
-      display: none !important;
+      display: none;
     }
-
-    /* Show mobile sidebar and toggle button */
     .mobile-sidebar {
-      display: flex !important;
+      display: flex;
     }
     .mobile-menu-toggle {
-      display: flex !important;
+      display: flex;
     }
-
-    /* Control mobile sidebar visibility based on body attribute */
     :global(body:not([data-mobile-sidebar='open'])) .mobile-sidebar {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
     :global(body[data-mobile-sidebar='open']) .mobile-sidebar {
       transform: translateX(0);
     }
-
-    /* Mobile menu toggle buttons are now handled in the Header component */
-
-    /* Adjust footer width for mobile */
     .sidebar-footer {
-      width: 100% !important;
-      max-width: 20rem !important;
-    }
-
-    /* Prevent body scrolling when sidebar is open */
-    :global(body.sidebar-open) {
-      overflow: hidden;
-    }
-
-    /* Add overlay when sidebar is open */
-    :global(body[data-mobile-sidebar='open'])::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.2);
-      z-index: 99;
-      animation: fadeIn 0.2s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      width: 100%;
+      max-width: 20rem;
     }
   }
 </style>
@@ -441,17 +366,9 @@ import '../styles/sidebar-fix.css';
   const supportsViewTransitions = !!document.startViewTransition;
 
   const initializeSidebarState = () => {
-    // Determine if we're on mobile or desktop
-    const isMobile = window.matchMedia('(max-width: 50em)').matches;
-
-    // Find sidebar containers
+    // Find sidebar containers (both mobile and desktop)
     const sidebarElements = document.querySelectorAll('.sidebar');
-
-    // Get the appropriate sidebar container based on device type
-    const sidebarContainer = isMobile
-      ? document.querySelector('.mobile-sidebar-content')
-      : document.querySelector('.custom-sidebar-inner');
-
+    const sidebarContainer = document.querySelector('.custom-sidebar-inner');
     if (!sidebarContainer || sidebarElements.length === 0) return;
 
     // Track if this is a navigation or just a first load
@@ -482,50 +399,61 @@ import '../styles/sidebar-fix.css';
       }
     };
 
-    // --- Mobile Menu Setup ---
-    // Mobile menu toggle buttons are now handled in the Header component
+    // --- Mobile Menu --- (Keep existing logic, ensure it runs only once if needed)
+    // Consider moving this outside initializeSidebarState if it doesn't need re-running
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const closeButton = document.getElementById('mobile-close-button');
     const mobileSidebar = document.getElementById('mobile-sidebar');
 
-    if (mobileSidebar && !mobileSidebar.dataset.listenerAdded) {
-        // Function to close the mobile menu - defined once to avoid recreating functions
-        const closeMobileMenu = () => {
+    if (toggleButton && !(toggleButton as HTMLElement).dataset.listenerAdded) {
+        const openMobileMenu = (e: Event) => {
+          if (e) e.preventDefault();
+          console.log('Opening mobile sidebar');
+          document.body.setAttribute('data-mobile-sidebar', 'open');
+          document.body.classList.add('sidebar-open');
+        };
+
+        toggleButton.addEventListener('click', openMobileMenu);
+        toggleButton.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          openMobileMenu(e);
+        });
+
+        (toggleButton as HTMLElement).dataset.listenerAdded = 'true'; // Mark as added
+    }
+
+    if (closeButton && !(closeButton as HTMLElement).dataset.listenerAdded) {
+        const closeMobileMenu = (e?: Event) => {
+          if (e) e.preventDefault();
+          console.log('Closing mobile sidebar');
           document.body.setAttribute('data-mobile-sidebar', 'closed');
           document.body.classList.remove('sidebar-open');
         };
 
-        // Add touch and click listeners to all links in the mobile sidebar for faster response
+        closeButton.addEventListener('click', closeMobileMenu);
+        closeButton.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          closeMobileMenu(e);
+        });
+
+        (closeButton as HTMLElement).dataset.listenerAdded = 'true';
+    }
+
+    if (mobileSidebar && !(mobileSidebar as HTMLElement).dataset.listenerAdded) {
+        const closeMobileMenu = (e?: Event) => {
+          if (e) e.preventDefault();
+          console.log('Closing mobile sidebar from link click');
+          document.body.setAttribute('data-mobile-sidebar', 'closed');
+          document.body.classList.remove('sidebar-open');
+        };
+
         mobileSidebar.querySelectorAll('a').forEach(link => {
-          if (!link.dataset.listenerAdded) {
-            // Use touchstart for faster mobile response
-            link.addEventListener('touchstart', () => {
-              // Don't prevent default here to allow navigation
-              closeMobileMenu();
-            }, { passive: true });
-
-            // Keep click for non-touch devices
-            link.addEventListener('click', () => {
-              closeMobileMenu();
-            });
-
-            link.dataset.listenerAdded = 'true';
-          }
+          link.addEventListener('click', closeMobileMenu);
         });
 
-        // Also add touch/click listener to the overlay (when clicking outside the sidebar)
-        // Use touchstart for faster response on mobile
-        document.addEventListener('touchstart', (event) => {
-          handleOutsideClick(event);
-        }, { passive: true });
-
-        // Keep click for non-touch devices
-        document.addEventListener('click', (event) => {
-          handleOutsideClick(event);
-        });
-
-        // Helper function to handle clicks outside the sidebar
-        function handleOutsideClick(event: MouseEvent | TouchEvent) {
+        // Also add click listener to the overlay (when clicking outside the sidebar)
+        document.addEventListener('click', function(event) {
           const target = event.target as HTMLElement;
-          // If sidebar is open and click is outside the sidebar
           if (
             document.body.getAttribute('data-mobile-sidebar') === 'open' &&
             !mobileSidebar.contains(target) &&
@@ -533,22 +461,20 @@ import '../styles/sidebar-fix.css';
           ) {
             closeMobileMenu();
           }
-        }
+        });
 
-        mobileSidebar.dataset.listenerAdded = 'true';
+        (mobileSidebar as HTMLElement).dataset.listenerAdded = 'true';
     }
+
+    // Make sure sidebar is initially closed
+    document.body.setAttribute('data-mobile-sidebar', 'closed');
+    document.body.classList.remove('sidebar-open');
 
     // --- Active Item & Scrolling ---
     const scrollToActiveItem = () => {
       // Find the active link or the first expanded folder
       const activeLink = sidebarContainer.querySelector('.sidebar-item.active:not(.with-arrow)');
-
-      // Find the appropriate sidebar footer based on mobile/desktop
-      const isMobile = window.matchMedia('(max-width: 50em)').matches;
-      const sidebarFooter = isMobile
-        ? document.querySelector('#mobile-sidebar .sidebar-footer') as HTMLElement
-        : document.querySelector('#custom-sidebar .sidebar-footer') as HTMLElement;
-
+      const sidebarFooter = document.querySelector('.sidebar-footer') as HTMLElement;
       const footerHeight = sidebarFooter ? sidebarFooter.offsetHeight : 0;
 
       if (activeLink) {
@@ -608,7 +534,7 @@ import '../styles/sidebar-fix.css';
     let currentExpandedState = loadExpandedState();
     const currentPath = window.location.pathname;
 
-    // 1. Mark the active link in the current sidebar
+    // 1. Mark the active link
     sidebarContainer.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
     const activeLink = Array.from(sidebarContainer.querySelectorAll('.sidebar-item:not(.with-arrow)'))
                           .find(item => item.getAttribute('href') === currentPath);
@@ -641,6 +567,12 @@ import '../styles/sidebar-fix.css';
         folder.classList.toggle('expanded', shouldBeExpanded);
         if (subItems && (subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) {
           subItems.classList.toggle('expanded', shouldBeExpanded);
+          // Explicitly set display property
+          if (shouldBeExpanded) {
+            (subItems as HTMLElement).style.display = 'block';
+          } else {
+            (subItems as HTMLElement).style.display = 'none';
+          }
         }
         stateChanged = true;
       }
@@ -655,31 +587,6 @@ import '../styles/sidebar-fix.css';
     if (stateChanged) {
         saveExpandedState(newState);
         currentExpandedState = newState;
-    }
-
-    // 5. Also update the other sidebar (mobile or desktop) to keep them in sync
-    const otherSidebarContainer = isMobile
-      ? document.querySelector('.custom-sidebar-inner')
-      : document.querySelector('.mobile-sidebar-content');
-
-    if (otherSidebarContainer) {
-      // Mark active link in the other sidebar
-      otherSidebarContainer.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
-      const otherActiveLink = Array.from(otherSidebarContainer.querySelectorAll('.sidebar-item:not(.with-arrow)'))
-                            .find(item => item.getAttribute('href') === currentPath);
-      if (otherActiveLink) otherActiveLink.classList.add('active');
-
-      // Update expansion state in the other sidebar
-      otherSidebarContainer.querySelectorAll('.sidebar-item.with-arrow').forEach(folder => {
-        const itemId = getItemId(folder);
-        const subItems = folder.nextElementSibling;
-        const shouldBeExpanded = requiredAncestors.has(itemId);
-
-        folder.classList.toggle('expanded', shouldBeExpanded);
-        if (subItems && (subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) {
-          subItems.classList.toggle('expanded', shouldBeExpanded);
-        }
-      });
     }
 
     // 5. Smooth transitions with proper timing
@@ -706,52 +613,40 @@ import '../styles/sidebar-fix.css';
 
     // --- Event Listeners for Folders (Add only once) ---
     if (!listenersAdded) {
-      // Add click listeners to both mobile and desktop sidebars
-      document.querySelectorAll('.sidebar .sidebar-item.with-arrow').forEach(item => {
-        const itemId = getItemId(item);
-        const htmlItem = item as HTMLElement;
+      // Get all folder items from both mobile and desktop sidebars
+      const allFolderItems = document.querySelectorAll('.sidebar-item.with-arrow');
 
+      allFolderItems.forEach(item => {
         // Skip if this item already has a listener
-        if (htmlItem.dataset.listenerAdded) return;
+        if ((item as HTMLElement).dataset.listenerAdded === 'true') return;
 
-        htmlItem.addEventListener('click', (event) => {
+        const itemId = getItemId(item);
+
+        item.addEventListener('click', (event) => {
           event.preventDefault();
+          console.log('Folder clicked:', itemId);
+
           const subItems = item.nextElementSibling;
-          if (!subItems || !(subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) return;
+          if (!subItems || !(subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) {
+            console.log('No valid sub-items found');
+            return;
+          }
 
           const isCurrentlyExpanded = item.classList.contains('expanded');
           let clickStateChanged = false;
 
-          // Get the current sidebar container
-          const currentContainer = item.closest('.mobile-sidebar-content, .custom-sidebar-inner');
-          if (!currentContainer) return;
-
           if (isCurrentlyExpanded) {
-            // Close this folder
+            // CLOSE FOLDER
+            console.log('Closing folder:', itemId);
             item.classList.remove('expanded');
             subItems.classList.remove('expanded');
+            (subItems as HTMLElement).style.display = 'none';
             delete currentExpandedState[itemId];
             clickStateChanged = true;
-
-            // Also close the corresponding folder in the other sidebar
-            const isMobile = item.closest('.mobile-sidebar') !== null;
-            const otherSidebarSelector = isMobile ? '.custom-sidebar' : '.mobile-sidebar';
-            const otherSidebar = document.querySelector(otherSidebarSelector);
-
-            if (otherSidebar) {
-              // Find the corresponding folder in the other sidebar by its text content
-              const otherFolders = otherSidebar.querySelectorAll('.sidebar-item.with-arrow');
-              const matchingFolder = Array.from(otherFolders).find(f => getItemId(f) === itemId);
-
-              if (matchingFolder) {
-                matchingFolder.classList.remove('expanded');
-                const matchingSubItems = matchingFolder.nextElementSibling;
-                if (matchingSubItems) {
-                  matchingSubItems.classList.remove('expanded');
-                }
-              }
-            }
           } else {
+            // OPEN FOLDER
+            console.log('Opening folder:', itemId);
+
             // Close siblings first
             const parentElement = item.parentElement;
             if (parentElement) {
@@ -760,7 +655,10 @@ import '../styles/sidebar-fix.css';
                       const siblingId = getItemId(sibling);
                       sibling.classList.remove('expanded');
                       const siblingSubItems = sibling.nextElementSibling;
-                      if (siblingSubItems) siblingSubItems.classList.remove('expanded');
+                      if (siblingSubItems) {
+                        siblingSubItems.classList.remove('expanded');
+                        (siblingSubItems as HTMLElement).style.display = 'none';
+                      }
                       delete currentExpandedState[siblingId];
                       clickStateChanged = true;
                   }
@@ -770,51 +668,15 @@ import '../styles/sidebar-fix.css';
             // Open clicked folder
             item.classList.add('expanded');
             subItems.classList.add('expanded');
+            (subItems as HTMLElement).style.display = 'block';
             currentExpandedState[itemId] = true;
             clickStateChanged = true;
 
-            // Also open the corresponding folder in the other sidebar
-            const isMobile = item.closest('.mobile-sidebar') !== null;
-            const otherSidebarSelector = isMobile ? '.custom-sidebar' : '.mobile-sidebar';
-            const otherSidebar = document.querySelector(otherSidebarSelector);
-
-            if (otherSidebar) {
-              // Find the corresponding folder in the other sidebar by its text content
-              const otherFolders = otherSidebar.querySelectorAll('.sidebar-item.with-arrow');
-              const matchingFolder = Array.from(otherFolders).find(f => getItemId(f) === itemId);
-
-              if (matchingFolder) {
-                // Close siblings in the other sidebar
-                const otherParent = matchingFolder.parentElement;
-                if (otherParent) {
-                  otherParent.querySelectorAll(':scope > .sidebar-item.with-arrow.expanded').forEach(sibling => {
-                    if (sibling !== matchingFolder) {
-                      sibling.classList.remove('expanded');
-                      const siblingSubItems = sibling.nextElementSibling;
-                      if (siblingSubItems) siblingSubItems.classList.remove('expanded');
-                    }
-                  });
-                }
-
-                // Open the matching folder
-                matchingFolder.classList.add('expanded');
-                const matchingSubItems = matchingFolder.nextElementSibling;
-                if (matchingSubItems) {
-                  matchingSubItems.classList.add('expanded');
-                }
-              }
-            }
-
             // Get measurements needed for smart scrolling
-            const containerRect = currentContainer.getBoundingClientRect();
+            const containerRect = sidebarContainer.getBoundingClientRect();
             const itemRect = item.getBoundingClientRect();
-
-            // Find the appropriate sidebar footer
-            const sidebarFooter = item.closest('.mobile-sidebar')
-              ? document.querySelector('#mobile-sidebar .sidebar-footer') as HTMLElement
-              : document.querySelector('#custom-sidebar .sidebar-footer') as HTMLElement;
-
-            const footerHeight = sidebarFooter ? sidebarFooter.offsetHeight : 0;
+            const sidebarFooter = document.querySelector('.sidebar-footer');
+            const footerHeight = sidebarFooter ? (sidebarFooter as HTMLElement).offsetHeight : 0;
             const effectiveBottom = containerRect.bottom - footerHeight;
             const scrollPadding = 20; // Padding to ensure good visibility
 
@@ -825,7 +687,7 @@ import '../styles/sidebar-fix.css';
               item.scrollIntoView({ behavior: 'smooth', block: 'start' });
               // Add a small offset from the top for better visibility
               setTimeout(() => {
-                currentContainer.scrollTop = Math.max(0, currentContainer.scrollTop - scrollPadding);
+                sidebarContainer.scrollTop = Math.max(0, sidebarContainer.scrollTop - scrollPadding);
               }, 50);
             }
 
@@ -833,7 +695,7 @@ import '../styles/sidebar-fix.css';
             setTimeout(() => {
               // By now the content should be expanded, so measure its height
               if (subItems) {
-                const subItemsRect = (subItems as HTMLElement).getBoundingClientRect();
+                const subItemsRect = subItems.getBoundingClientRect();
                 const totalContentHeight = subItemsRect.height;
                 const availableHeight = effectiveBottom - itemRect.bottom;
 
@@ -841,10 +703,10 @@ import '../styles/sidebar-fix.css';
                 if (totalContentHeight > availableHeight) {
                   // Scroll to a position that shows as much content as possible
                   // We want to see the folder header AND as much content as possible
-                  const optimalScrollPosition = currentContainer.scrollTop +
+                  const optimalScrollPosition = sidebarContainer.scrollTop +
                     (itemRect.top - containerRect.top) - scrollPadding;
 
-                  currentContainer.scrollTo({
+                  sidebarContainer.scrollTo({
                     top: optimalScrollPosition,
                     behavior: 'smooth'
                   });
@@ -859,44 +721,19 @@ import '../styles/sidebar-fix.css';
         });
 
         // Mark this item as having a listener
-        htmlItem.dataset.listenerAdded = 'true';
+        (item as HTMLElement).dataset.listenerAdded = 'true';
       });
 
       listenersAdded = true;
     }
   };
 
-  // Function to ensure the sidebar is properly initialized
-  function ensureSidebarInitialized() {
-    // Check if sidebar elements exist
-    const mobileSidebar = document.getElementById('mobile-sidebar');
-    const desktopSidebar = document.getElementById('custom-sidebar');
-
-    if (mobileSidebar || desktopSidebar) {
-      initializeSidebarState();
-    } else {
-      // If elements don't exist yet, try again after a short delay
-      setTimeout(ensureSidebarInitialized, 50);
-    }
-  }
-
   // Enhanced navigation handlers
   // Run on initial load
-  ensureSidebarInitialized();
-
-  // Function to hide default Starlight sidebar
-  const hideDefaultSidebar = () => {
-    const starlightSidebars = document.querySelectorAll('.sl-sidebar');
-    starlightSidebars.forEach(sidebar => {
-      (sidebar as HTMLElement).style.display = 'none';
-    });
-  };
+  initializeSidebarState();
 
   // After page load (for Astro client navigation)
-  document.addEventListener('astro:page-load', () => {
-    ensureSidebarInitialized();
-    hideDefaultSidebar();
-  });
+  document.addEventListener('astro:page-load', initializeSidebarState);
 
   // Before navigation starts (optional)
   document.addEventListener('astro:before-swap', () => {
@@ -907,18 +744,11 @@ import '../styles/sidebar-fix.css';
   // After navigation completes
   document.addEventListener('astro:after-swap', () => {
     document.documentElement.classList.remove('navigating');
-    hideDefaultSidebar();
   });
 
   // Fallback for browsers without MutationObserver
   window.addEventListener('popstate', () => {
-    setTimeout(() => {
-      ensureSidebarInitialized();
-      hideDefaultSidebar();
-    }, 50);
+    setTimeout(initializeSidebarState, 10);
   });
-
-  // Additional fallback for production environments
-  window.addEventListener('load', ensureSidebarInitialized);
 
 </script>

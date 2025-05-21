@@ -14,6 +14,8 @@ const shouldRenderSearch =
 	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
 ---
 
+<!-- Sidebar functionality is handled by the script in Sidebar.astro -->
+
 <div class="header-container">
   <div class="header">
     <!-- Left section with logo -->
@@ -35,7 +37,6 @@ const shouldRenderSearch =
         id="mobile-menu-toggle"
         class="mobile-menu-toggle"
         aria-label="Toggle mobile menu"
-        onclick="document.body.setAttribute('data-mobile-sidebar', 'open'); document.body.classList.add('sidebar-open');"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -49,7 +50,6 @@ const shouldRenderSearch =
         id="mobile-close-button"
         class="mobile-close-button"
         aria-label="Close mobile menu"
-        onclick="document.body.setAttribute('data-mobile-sidebar', 'closed'); document.body.classList.remove('sidebar-open');"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -408,15 +408,19 @@ const shouldRenderSearch =
     color: var(--sl-color-text);
     padding: 0.75rem;
     margin: 0;
-    border-radius: 0;
+    border-radius: 0.25rem;
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 9995;
+    z-index: 2001; /* Higher than sidebar */
     width: 44px;
     height: 44px;
     min-width: 44px; /* Ensure minimum touch target size */
     min-height: 44px; /* Ensure minimum touch target size */
+    pointer-events: auto !important; /* Ensure clicks are registered */
+    touch-action: manipulation; /* Improve touch handling */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    outline: none !important; /* Remove outline */
   }
 
   /* Add a subtle background on hover for better feedback */
@@ -437,15 +441,19 @@ const shouldRenderSearch =
     color: var(--sl-color-text);
     padding: 0.75rem;
     margin: 0;
-    border-radius: 0;
+    border-radius: 0.25rem;
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 9995;
+    z-index: 2001; /* Higher than sidebar */
     width: 44px;
     height: 44px;
     min-width: 44px; /* Ensure minimum touch target size */
     min-height: 44px; /* Ensure minimum touch target size */
+    pointer-events: auto !important; /* Ensure clicks are registered */
+    touch-action: manipulation; /* Improve touch handling */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    outline: none !important; /* Remove outline */
   }
 
   /* Add a subtle background on hover for better feedback */
@@ -615,47 +623,49 @@ const shouldRenderSearch =
   }
 </style>
 
-<script>
-  // Simple direct approach to ensure mobile menu toggle works
-  function setupMobileMenu() {
+<script is:inline>
+  // Mobile menu functionality is now handled by the consolidated script in sidebar-fix.js
+  // This script is a fallback to ensure the mobile menu is initialized
+  document.addEventListener('DOMContentLoaded', function() {
+    // If the main script loaded successfully, use it
+    if (window.sidebarFunctions && typeof window.sidebarFunctions.initialize === 'function') {
+      window.sidebarFunctions.initialize();
+      return;
+    }
+
+    // Otherwise, provide minimal functionality to ensure the mobile menu works
+    console.log('Fallback mobile menu initialization');
+
     // Get the toggle and close buttons
-    const toggleButton = document.getElementById('mobile-menu-toggle');
-    const closeButton = document.getElementById('mobile-close-button');
+    var toggleButton = document.getElementById('mobile-menu-toggle');
+    var closeButton = document.getElementById('mobile-close-button');
 
-    // Remove any existing listeners to avoid duplicates
-    if (toggleButton) {
-      const newToggleButton = toggleButton.cloneNode(true);
-      toggleButton.parentNode.replaceChild(newToggleButton, toggleButton);
-
-      // Add click listener - simple and direct
-      newToggleButton.addEventListener('click', function() {
-        console.log('Mobile menu toggle clicked');
-        document.body.setAttribute('data-mobile-sidebar', 'open');
-        document.body.classList.add('sidebar-open');
-      });
+    if (!toggleButton || !closeButton) {
+      console.error('Mobile menu buttons not found');
+      return;
     }
 
-    // Do the same for close button
-    if (closeButton) {
-      const newCloseButton = closeButton.cloneNode(true);
-      closeButton.parentNode.replaceChild(newCloseButton, closeButton);
-
-      // Add click listener - simple and direct
-      newCloseButton.addEventListener('click', function() {
-        console.log('Mobile menu close clicked');
-        document.body.setAttribute('data-mobile-sidebar', 'closed');
-        document.body.classList.remove('sidebar-open');
-      });
+    // Simple direct functions
+    function openMobileSidebar() {
+      console.log('Opening mobile sidebar');
+      document.body.setAttribute('data-mobile-sidebar', 'open');
+      document.body.classList.add('sidebar-open');
     }
-  }
 
-  // Run immediately
-  setupMobileMenu();
+    function closeMobileSidebar() {
+      console.log('Closing mobile sidebar');
+      document.body.setAttribute('data-mobile-sidebar', 'closed');
+      document.body.classList.remove('sidebar-open');
+    }
 
-  // Also run after page load and transitions
-  document.addEventListener('DOMContentLoaded', setupMobileMenu);
-  document.addEventListener('astro:page-load', setupMobileMenu);
-  window.addEventListener('load', setupMobileMenu);
+    // Add event listeners
+    toggleButton.addEventListener('click', openMobileSidebar);
+    closeButton.addEventListener('click', closeMobileSidebar);
+
+    // Make sure sidebar is initially closed
+    document.body.setAttribute('data-mobile-sidebar', 'closed');
+    document.body.classList.remove('sidebar-open');
+  });
 </script>
 
 <!-- Load the ThemeDetector script -->
