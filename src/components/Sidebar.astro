@@ -1,20 +1,26 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
 import SidebarItems from './SidebarItems.astro';
-import { Menu, X, Disc, Youtube } from 'lucide-react';
 import { FaDiscord, FaYoutube } from "react-icons/fa";
 
+// Client-side detection will be used to show the appropriate sidebar
 ---
 
+<!-- Mobile Menu Toggle Button (always visible on mobile) -->
 <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
   <span class="menu-icon">
-    <Menu size={24} />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
   </span>
 </button>
 
+<!-- Mobile Sidebar -->
 <div id="mobile-sidebar" class="mobile-sidebar sidebar" data-initial-load="true">
-  <div class="mobile-sidebar-header">
-    <div class="sidebar-title">CHATBOT</div>
+  <div class="sidebar-subtle-header">
+    <span class="sidebar-subtle-title">CHATBOT</span>
   </div>
   <div class="mobile-sidebar-content">
     <SidebarItems />
@@ -31,14 +37,20 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
   </div>
 </div>
 
+<!-- Mobile Close Button (in header) -->
+<button id="mobile-close-button" class="mobile-close-button" aria-label="Close mobile menu">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<!-- Desktop Sidebar -->
 <div id="custom-sidebar" class="custom-sidebar desktop-only sidebar" data-initial-load="true">
   <div class="custom-sidebar-inner">
-    <div class="sidebar-section">
-      <div class="section-title">CHATBOT</div>
-      <SidebarItems />
-    </div>
+    <SidebarItems />
   </div>
-  
+
   <div class="sidebar-footer">
     <a href="https://discord.gg/z8PBs5ckcd" class="sidebar-footer-item">
       <FaDiscord />
@@ -49,37 +61,39 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
       <span>Youtube</span>
     </a>
   </div>
-
-    <style>
-      .sidebar-footer {
-        padding: 1rem !important;
-        border-top: 1px solid var(--sl-color-hairline) !important;
-        position: sticky !important;
-        bottom: 0 !important;
-        width: 16rem !important;
-        background-color: var(--sl-color-bg-sidebar) !important;
-        z-index: 16 !important;
-        margin-top: auto !important;
-        /* Add a subtle shadow to indicate scrollable content underneath */
-        box-shadow: 0 -4px 6px -2px rgba(0, 0, 0, 0.03) !important;
-      }
-      .sidebar-footer-item {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        color: var(--sl-color-text);
-        text-decoration: none;
-        border-radius: 0.375rem;
-        transition: background-color 0.2s;
-      }
-      .sidebar-footer-item:hover {
-        background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
-      }
-      .sidebar-footer-item span {
-        margin-left: 0.5rem;
-      }
-    </style>
 </div>
+
+<style>
+  .sidebar-footer {
+    padding: 1rem !important;
+    border-top: 1px solid var(--sl-color-hairline) !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    width: 16rem !important;
+    background-color: var(--sl-color-bg) !important;
+    z-index: 16 !important;
+    margin-top: auto !important;
+  }
+  .sidebar-footer-item {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.5rem;
+    margin: 0.2rem 0;
+    color: var(--sl-color-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+  }
+  .sidebar-footer-item:hover {
+    background-color: var(--sl-color-gray-6, rgba(0,0,0,0.03));
+    color: var(--sl-color-text-accent);
+    transform: translateX(2px);
+  }
+  .sidebar-footer-item span {
+    margin-left: 0.75rem;
+  }
+</style>
 
 
 <style>
@@ -87,17 +101,19 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
   :global(.sidebar-item) {
     display: flex !important;
     align-items: center !important;
-    padding: 0.5rem 0.75rem !important;
+    padding: 0.6rem 1rem !important;
     color: var(--sl-color-text) !important;
     font-size: 0.875rem !important;
     text-decoration: none !important;
-    border-radius: 0.375rem !important;
-    margin: 0.125rem 0 !important;
+    margin: 0.1rem 0.5rem !important;
     position: relative !important;
+    border-radius: 0.25rem !important;
+    transition: all 0.15s ease-in-out !important;
   }
   :global(.sidebar-item:hover) {
     background-color: var(--sl-color-gray-6, rgba(0,0,0,0.03)) !important;
     color: var(--sl-color-text) !important;
+    transform: translateX(2px) !important;
   }
   :global(.sidebar-item.active) {
     color: var(--sl-color-text-accent) !important;
@@ -105,27 +121,28 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     background-color: var(--sl-color-gray-5, rgba(0,0,0,0.04)) !important;
     position: relative !important;
     /* Add a subtle visual indicator for the active item */
-    border-left: 2px solid var(--sl-color-text-accent, #3f51b5) !important;
-    padding-left: calc(0.75rem - 2px) !important; /* Adjust padding to compensate for border */
+    border-left: 3px solid var(--sl-color-text-accent, #3f51b5) !important;
+    padding-left: calc(1rem - 3px) !important; /* Adjust padding to compensate for border */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
   }
   :global(.sidebar-item.with-arrow) {
     cursor: pointer;
-    background-color: var(--sl-color-gray-7, rgba(0,0,0,0.02)) !important;
-    border-left: 1px solid var(--sl-color-gray-4, rgba(0,0,0,0.05)) !important;
+    background-color: transparent !important;
+    border-left: none !important;
     font-weight: 500 !important;
-    margin-top: 0.25rem !important;
+    margin-top: 0 !important;
     color: var(--sl-color-gray-1) !important;
   }
   :global(.sidebar-item.with-arrow.expanded .arrow-icon svg) {
     transform: rotate(90deg);
   }
-  
+
   /* Add visual separation between different sections */
   /* Sidebar animations with view transitions support */
   :global(.sub-items) {
-    margin-bottom: 0.25rem !important;
-    border-left: 1px solid var(--sl-color-gray-5, rgba(0,0,0,0.03)) !important;
-    margin-left: 0.5rem !important;
+    margin-bottom: 0 !important;
+    border-left: none !important;
+    margin-left: 0 !important;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -134,8 +151,8 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     transform: translateY(-4px) scale(0.99);
     pointer-events: none;
     view-transition-name: sidebar-subitems;
-    transition: 
-      max-height 0.25s cubic-bezier(0.33, 1, 0.68, 1), 
+    transition:
+      max-height 0.25s cubic-bezier(0.33, 1, 0.68, 1),
       opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1),
       transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
@@ -145,12 +162,12 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: all;
-    transition: 
-      max-height 0.35s cubic-bezier(0.33, 1, 0.68, 1), 
+    transition:
+      max-height 0.35s cubic-bezier(0.33, 1, 0.68, 1),
       opacity 0.25s cubic-bezier(0.33, 1, 0.68, 1),
       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Better visibility when expanded */
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
   }
   :global(.sidebar[data-initial-load="true"] .sub-items.expanded) {
     /* Instant display on initial load */
@@ -160,12 +177,12 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     pointer-events: all;
     transition: none;
   }
-  
+
   /* Improve visual hierarchy for nested items with matching animations */
   :global(.sub-items-l2) {
-    border-left: 1px solid var(--sl-color-gray-4, rgba(0,0,0,0.05)) !important;
-    margin-left: 0.5rem !important;
-    padding-left: 0.5rem !important;
+    border-left: none !important;
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -174,8 +191,8 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     transform: translateY(-4px) scale(0.99);
     pointer-events: none;
     view-transition-name: sidebar-subitems-l2;
-    transition: 
-      max-height 0.25s cubic-bezier(0.33, 1, 0.68, 1), 
+    transition:
+      max-height 0.25s cubic-bezier(0.33, 1, 0.68, 1),
       opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1),
       transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
@@ -184,12 +201,12 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: all;
-    transition: 
-      max-height 0.35s cubic-bezier(0.33, 1, 0.68, 1), 
+    transition:
+      max-height 0.35s cubic-bezier(0.33, 1, 0.68, 1),
       opacity 0.25s cubic-bezier(0.33, 1, 0.68, 1),
       transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Better visibility when expanded */
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
   }
   :global(.sidebar[data-initial-load="true"] .sub-items-l2.expanded) {
     max-height: 2000px;
@@ -202,7 +219,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     margin-right: 0.75rem;
     display: inline-flex;
     flex-shrink: 0;
-    opacity: 0.75;
+    opacity: 0.8;
   }
   :global(.arrow-icon) {
     margin-left: auto;
@@ -238,7 +255,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     /* Add bottom padding to ensure items aren't hidden under footer */
     padding-bottom: 4rem !important;
   }
-  
+
   /* Improve scrollbar appearance */
   .custom-sidebar-inner::-webkit-scrollbar {
     width: 6px !important;
@@ -265,40 +282,70 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
 
   /* Mobile sidebar styling with enhanced animations */
   .mobile-sidebar {
-    display: none; /* Hidden by default */
     position: fixed;
-    top: 0;
-    right: 0;
+    top: var(--sl-nav-height, 4rem); /* Position below the header */
+    left: 0;
     bottom: 0;
     width: 100%;
-    max-width: 20rem;
+    max-width: 16rem; /* Match Starlight sidebar width */
     z-index: 100;
-    background-color: var(--sl-color-bg-sidebar);
-    will-change: transform, opacity;
+    background-color: var(--sl-color-bg);
+    will-change: transform;
     box-shadow: var(--sl-shadow-md);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    display: flex;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: none; /* Hidden by default, will be shown on mobile */
     flex-direction: column;
+    overflow: hidden; /* Prevent content from overflowing */
+    border-right: 1px solid var(--sl-color-hairline);
   }
+
   .mobile-sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--sl-color-hairline);
     background-color: var(--sl-color-bg-sidebar);
+    position: sticky;
+    top: 0;
+    z-index: 20;
   }
+
+  .sidebar-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--sl-color-gray-3);
+  }
+  .sidebar-subtle-header {
+    padding: 1.25rem 1.5rem 0.75rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-subtle-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--sl-color-gray-3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
   .mobile-close-button {
     background: transparent;
     border: none;
     cursor: pointer;
     color: var(--sl-color-text);
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-radius: 0.25rem;
-    display: flex;
+    display: none; /* Hidden by default */
     align-items: center;
     justify-content: center;
+    transition: background-color 0.2s ease;
+    position: fixed;
+    top: 0.75rem;
+    right: 1rem; /* Position on the right side */
+    z-index: 110;
   }
   .mobile-close-button:hover {
     background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
@@ -307,7 +354,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
   /* Mobile menu toggle styling */
   .mobile-menu-toggle {
     position: fixed;
-    top: 0.5rem;
+    top: 0.75rem;
     right: 1rem;
     z-index: 110;
     background: transparent;
@@ -315,41 +362,98 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
     cursor: pointer;
     color: var(--sl-color-text);
     padding: 0.5rem;
-    border-radius: 0.375rem;
+    border-radius: 0.25rem;
     display: none; /* Hidden by default for desktop */
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s ease;
   }
   .mobile-menu-toggle:hover {
-    background-color: var(--sl-color-backdrop-overlay);
+    background-color: var(--sl-color-gray-5, var(--sl-color-gray-6));
   }
 
   .mobile-sidebar-content {
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 8rem; /* Increased padding to ensure last items are fully visible */
+    padding: 0.5rem 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--sl-color-gray-5) transparent; /* Firefox */
   }
 
+  /* Webkit scrollbar styling */
+  .mobile-sidebar-content::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .mobile-sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .mobile-sidebar-content::-webkit-scrollbar-thumb {
+    background-color: var(--sl-color-gray-5);
+    border-radius: 10px;
+  }
+
+  /* Media query for mobile devices */
   @media (max-width: 50em) {
+    /* Hide desktop sidebar */
     .desktop-only {
-      display: none;
+      display: none !important;
     }
+
+    /* Show mobile sidebar and toggle button */
     .mobile-sidebar {
-      display: flex;
+      display: flex !important;
     }
     .mobile-menu-toggle {
-      display: flex;
+      display: flex !important;
     }
+
+    /* Control mobile sidebar visibility based on body attribute */
     :global(body:not([data-mobile-sidebar='open'])) .mobile-sidebar {
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
     :global(body[data-mobile-sidebar='open']) .mobile-sidebar {
       transform: translateX(0);
     }
+
+    /* Hide hamburger menu and show close button when sidebar is open */
+    :global(body[data-mobile-sidebar='open']) .mobile-menu-toggle {
+      display: none !important;
+    }
+
+    :global(body[data-mobile-sidebar='open']) .mobile-close-button {
+      display: flex !important;
+    }
+
+    /* Adjust footer width for mobile */
     .sidebar-footer {
-      width: 100%;
-      max-width: 20rem;
+      width: 100% !important;
+      max-width: 20rem !important;
+    }
+
+    /* Prevent body scrolling when sidebar is open */
+    :global(body.sidebar-open) {
+      overflow: hidden;
+    }
+
+    /* Add overlay when sidebar is open */
+    :global(body[data-mobile-sidebar='open'])::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      animation: fadeIn 0.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   }
 </style>
@@ -359,27 +463,35 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
   let listenersAdded = false;
   let initialLoadComplete = false;
   let currentNavigationPath = window.location.pathname;
-  
+
   // Support for View Transitions API if available
   const supportsViewTransitions = !!document.startViewTransition;
 
   const initializeSidebarState = () => {
-    // Find sidebar containers (both mobile and desktop)
+    // Determine if we're on mobile or desktop
+    const isMobile = window.matchMedia('(max-width: 50em)').matches;
+
+    // Find sidebar containers
     const sidebarElements = document.querySelectorAll('.sidebar');
-    const sidebarContainer = document.querySelector('.custom-sidebar-inner');
+
+    // Get the appropriate sidebar container based on device type
+    const sidebarContainer = isMobile
+      ? document.querySelector('.mobile-sidebar-content')
+      : document.querySelector('.custom-sidebar-inner');
+
     if (!sidebarContainer || sidebarElements.length === 0) return;
-    
+
     // Track if this is a navigation or just a first load
     const isNavigation = currentNavigationPath !== window.location.pathname;
     currentNavigationPath = window.location.pathname;
 
     // Helper: get unique identifier from item text
-    const getItemId = (item) => item.textContent?.trim().replace(/\s+/g, '_') || Math.random().toString();
+    const getItemId = (item: Element) => item.textContent?.trim().replace(/\s+/g, '_') || Math.random().toString();
 
     // --- State Management ---
     const storageKey = 'sidebarExpandedState';
 
-    const saveExpandedState = (state) => {
+    const saveExpandedState = (state: Record<string, boolean>) => {
       try {
         localStorage.setItem(storageKey, JSON.stringify(state));
       } catch (e) {
@@ -397,24 +509,37 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
       }
     };
 
-    // --- Mobile Menu --- (Keep existing logic, ensure it runs only once if needed)
-    // Consider moving this outside initializeSidebarState if it doesn't need re-running
+    // --- Mobile Menu Setup ---
     const toggleButton = document.getElementById('mobile-menu-toggle');
     const closeButton = document.getElementById('mobile-close-button');
     const mobileSidebar = document.getElementById('mobile-sidebar');
+
+    // Only set up mobile menu listeners if they haven't been added yet
     if (toggleButton && !toggleButton.dataset.listenerAdded) {
         const toggleMobileMenu = () => {
           const isOpen = document.body.getAttribute('data-mobile-sidebar') === 'open';
           document.body.setAttribute('data-mobile-sidebar', isOpen ? 'closed' : 'open');
+
+          // Add a class to the body to prevent scrolling when sidebar is open
+          if (!isOpen) {
+            document.body.classList.add('sidebar-open');
+          } else {
+            document.body.classList.remove('sidebar-open');
+          }
         };
         toggleButton.addEventListener('click', toggleMobileMenu);
         toggleButton.dataset.listenerAdded = 'true'; // Mark as added
     }
+
     if (closeButton && !closeButton.dataset.listenerAdded) {
-        const closeMobileMenu = () => document.body.setAttribute('data-mobile-sidebar', 'closed');
+        const closeMobileMenu = () => {
+          document.body.setAttribute('data-mobile-sidebar', 'closed');
+          document.body.classList.remove('sidebar-open');
+        };
         closeButton.addEventListener('click', closeMobileMenu);
         closeButton.dataset.listenerAdded = 'true';
     }
+
     if (mobileSidebar && !mobileSidebar.dataset.listenerAdded) {
         const closeMobileMenu = () => document.body.setAttribute('data-mobile-sidebar', 'closed');
         mobileSidebar.querySelectorAll('a').forEach(link => {
@@ -423,31 +548,37 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
         mobileSidebar.dataset.listenerAdded = 'true';
     }
 
-    // --- Active Item & Scrolling --- 
+    // --- Active Item & Scrolling ---
     const scrollToActiveItem = () => {
       // Find the active link or the first expanded folder
       const activeLink = sidebarContainer.querySelector('.sidebar-item.active:not(.with-arrow)');
-      const sidebarFooter = document.querySelector('.sidebar-footer') as HTMLElement;
+
+      // Find the appropriate sidebar footer based on mobile/desktop
+      const isMobile = window.matchMedia('(max-width: 50em)').matches;
+      const sidebarFooter = isMobile
+        ? document.querySelector('#mobile-sidebar .sidebar-footer') as HTMLElement
+        : document.querySelector('#custom-sidebar .sidebar-footer') as HTMLElement;
+
       const footerHeight = sidebarFooter ? sidebarFooter.offsetHeight : 0;
-      
+
       if (activeLink) {
         const containerRect = sidebarContainer.getBoundingClientRect();
         const itemRect = activeLink.getBoundingClientRect();
-        
+
         // Check if it's visible, accounting for the footer at the bottom
         const effectiveBottom = containerRect.bottom - footerHeight;
-        const isFullyVisible = 
-          itemRect.top >= containerRect.top && 
+        const isFullyVisible =
+          itemRect.top >= containerRect.top &&
           itemRect.bottom <= effectiveBottom;
-        
+
         if (!isFullyVisible) {
           // Calculate optimal scroll position to show the active item with padding
           const scrollPadding = 16; // Extra padding so it's not too close to edges
-          
+
           // If item is below the visible area or obscured by footer
           if (itemRect.bottom > effectiveBottom) {
             // Custom scroll calculation to ensure the item is fully visible above the footer
-            const scrollAmount = sidebarContainer.scrollTop + 
+            const scrollAmount = sidebarContainer.scrollTop +
               (itemRect.bottom - effectiveBottom) + scrollPadding;
             sidebarContainer.scrollTo({
               top: scrollAmount,
@@ -455,8 +586,8 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
             });
           } else {
             // For items above the visible area or partially visible
-            activeLink.scrollIntoView({ 
-              behavior: 'smooth', 
+            activeLink.scrollIntoView({
+              behavior: 'smooth',
               block: 'center' // Center it for better visibility
             });
           }
@@ -468,14 +599,14 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
           const containerRect = sidebarContainer.getBoundingClientRect();
           const itemRect = firstExpanded.getBoundingClientRect();
           const effectiveBottom = containerRect.bottom - footerHeight;
-          const isFullyVisible = 
-            itemRect.top >= containerRect.top && 
+          const isFullyVisible =
+            itemRect.top >= containerRect.top &&
             itemRect.bottom <= effectiveBottom;
-            
+
           if (!isFullyVisible) {
             // Center the expanded folder if it's not fully visible
-            firstExpanded.scrollIntoView({ 
-              behavior: 'smooth', 
+            firstExpanded.scrollIntoView({
+              behavior: 'smooth',
               block: 'center'
             });
           }
@@ -483,11 +614,11 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
       }
     };
 
-    // --- Initialization Logic --- 
+    // --- Initialization Logic ---
     let currentExpandedState = loadExpandedState();
     const currentPath = window.location.pathname;
 
-    // 1. Mark the active link
+    // 1. Mark the active link in the current sidebar
     sidebarContainer.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
     const activeLink = Array.from(sidebarContainer.querySelectorAll('.sidebar-item:not(.with-arrow)'))
                           .find(item => item.getAttribute('href') === currentPath);
@@ -506,7 +637,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
         parent = parent.parentElement?.closest('.sub-items, .sub-items-l2');
       }
     }
-    
+
     // 3. Update visual state efficiently
     let stateChanged = false;
     const newState = {};
@@ -536,6 +667,31 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
         currentExpandedState = newState;
     }
 
+    // 5. Also update the other sidebar (mobile or desktop) to keep them in sync
+    const otherSidebarContainer = isMobile
+      ? document.querySelector('.custom-sidebar-inner')
+      : document.querySelector('.mobile-sidebar-content');
+
+    if (otherSidebarContainer) {
+      // Mark active link in the other sidebar
+      otherSidebarContainer.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+      const otherActiveLink = Array.from(otherSidebarContainer.querySelectorAll('.sidebar-item:not(.with-arrow)'))
+                            .find(item => item.getAttribute('href') === currentPath);
+      if (otherActiveLink) otherActiveLink.classList.add('active');
+
+      // Update expansion state in the other sidebar
+      otherSidebarContainer.querySelectorAll('.sidebar-item.with-arrow').forEach(folder => {
+        const itemId = getItemId(folder);
+        const subItems = folder.nextElementSibling;
+        const shouldBeExpanded = requiredAncestors.has(itemId);
+
+        folder.classList.toggle('expanded', shouldBeExpanded);
+        if (subItems && (subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) {
+          subItems.classList.toggle('expanded', shouldBeExpanded);
+        }
+      });
+    }
+
     // 5. Smooth transitions with proper timing
     // First, tell the browser we're planning a visual change if View Transitions API is supported
     const applyChanges = () => {
@@ -545,7 +701,7 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
       }
       scrollToActiveItem();
     };
-    
+
     // Use View Transitions API if available for smoother transitions
     if (supportsViewTransitions && isNavigation) {
       // This wraps our DOM changes in a view transition
@@ -560,9 +716,15 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
 
     // --- Event Listeners for Folders (Add only once) ---
     if (!listenersAdded) {
-      sidebarContainer.querySelectorAll('.sidebar-item.with-arrow').forEach(item => {
+      // Add click listeners to both mobile and desktop sidebars
+      document.querySelectorAll('.sidebar .sidebar-item.with-arrow').forEach(item => {
         const itemId = getItemId(item);
-        item.addEventListener('click', (event) => {
+        const htmlItem = item as HTMLElement;
+
+        // Skip if this item already has a listener
+        if (htmlItem.dataset.listenerAdded) return;
+
+        htmlItem.addEventListener('click', (event) => {
           event.preventDefault();
           const subItems = item.nextElementSibling;
           if (!subItems || !(subItems.classList.contains('sub-items') || subItems.classList.contains('sub-items-l2'))) return;
@@ -570,11 +732,35 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
           const isCurrentlyExpanded = item.classList.contains('expanded');
           let clickStateChanged = false;
 
+          // Get the current sidebar container
+          const currentContainer = item.closest('.mobile-sidebar-content, .custom-sidebar-inner');
+          if (!currentContainer) return;
+
           if (isCurrentlyExpanded) {
+            // Close this folder
             item.classList.remove('expanded');
             subItems.classList.remove('expanded');
             delete currentExpandedState[itemId];
             clickStateChanged = true;
+
+            // Also close the corresponding folder in the other sidebar
+            const isMobile = item.closest('.mobile-sidebar') !== null;
+            const otherSidebarSelector = isMobile ? '.custom-sidebar' : '.mobile-sidebar';
+            const otherSidebar = document.querySelector(otherSidebarSelector);
+
+            if (otherSidebar) {
+              // Find the corresponding folder in the other sidebar by its text content
+              const otherFolders = otherSidebar.querySelectorAll('.sidebar-item.with-arrow');
+              const matchingFolder = Array.from(otherFolders).find(f => getItemId(f) === itemId);
+
+              if (matchingFolder) {
+                matchingFolder.classList.remove('expanded');
+                const matchingSubItems = matchingFolder.nextElementSibling;
+                if (matchingSubItems) {
+                  matchingSubItems.classList.remove('expanded');
+                }
+              }
+            }
           } else {
             // Close siblings first
             const parentElement = item.parentElement;
@@ -597,14 +783,51 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
             currentExpandedState[itemId] = true;
             clickStateChanged = true;
 
+            // Also open the corresponding folder in the other sidebar
+            const isMobile = item.closest('.mobile-sidebar') !== null;
+            const otherSidebarSelector = isMobile ? '.custom-sidebar' : '.mobile-sidebar';
+            const otherSidebar = document.querySelector(otherSidebarSelector);
+
+            if (otherSidebar) {
+              // Find the corresponding folder in the other sidebar by its text content
+              const otherFolders = otherSidebar.querySelectorAll('.sidebar-item.with-arrow');
+              const matchingFolder = Array.from(otherFolders).find(f => getItemId(f) === itemId);
+
+              if (matchingFolder) {
+                // Close siblings in the other sidebar
+                const otherParent = matchingFolder.parentElement;
+                if (otherParent) {
+                  otherParent.querySelectorAll(':scope > .sidebar-item.with-arrow.expanded').forEach(sibling => {
+                    if (sibling !== matchingFolder) {
+                      sibling.classList.remove('expanded');
+                      const siblingSubItems = sibling.nextElementSibling;
+                      if (siblingSubItems) siblingSubItems.classList.remove('expanded');
+                    }
+                  });
+                }
+
+                // Open the matching folder
+                matchingFolder.classList.add('expanded');
+                const matchingSubItems = matchingFolder.nextElementSibling;
+                if (matchingSubItems) {
+                  matchingSubItems.classList.add('expanded');
+                }
+              }
+            }
+
             // Get measurements needed for smart scrolling
-            const containerRect = sidebarContainer.getBoundingClientRect();
+            const containerRect = currentContainer.getBoundingClientRect();
             const itemRect = item.getBoundingClientRect();
-            const sidebarFooter = document.querySelector('.sidebar-footer') as HTMLElement;
+
+            // Find the appropriate sidebar footer
+            const sidebarFooter = item.closest('.mobile-sidebar')
+              ? document.querySelector('#mobile-sidebar .sidebar-footer') as HTMLElement
+              : document.querySelector('#custom-sidebar .sidebar-footer') as HTMLElement;
+
             const footerHeight = sidebarFooter ? sidebarFooter.offsetHeight : 0;
             const effectiveBottom = containerRect.bottom - footerHeight;
             const scrollPadding = 20; // Padding to ensure good visibility
-            
+
             // First ensure the folder header is visible
             if (itemRect.top < containerRect.top || itemRect.bottom > effectiveBottom) {
               // Position the folder in the upper portion of the visible area
@@ -612,10 +835,10 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
               item.scrollIntoView({ behavior: 'smooth', block: 'start' });
               // Add a small offset from the top for better visibility
               setTimeout(() => {
-                sidebarContainer.scrollTop = Math.max(0, sidebarContainer.scrollTop - scrollPadding);
+                currentContainer.scrollTop = Math.max(0, currentContainer.scrollTop - scrollPadding);
               }, 50);
             }
-            
+
             // Then check if the content will be visible
             setTimeout(() => {
               // By now the content should be expanded, so measure its height
@@ -623,15 +846,15 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
                 const subItemsRect = (subItems as HTMLElement).getBoundingClientRect();
                 const totalContentHeight = subItemsRect.height;
                 const availableHeight = effectiveBottom - itemRect.bottom;
-                
+
                 // If content won't fully fit in the visible area, adjust scroll
                 if (totalContentHeight > availableHeight) {
                   // Scroll to a position that shows as much content as possible
                   // We want to see the folder header AND as much content as possible
-                  const optimalScrollPosition = sidebarContainer.scrollTop +
+                  const optimalScrollPosition = currentContainer.scrollTop +
                     (itemRect.top - containerRect.top) - scrollPadding;
-                    
-                  sidebarContainer.scrollTo({
+
+                  currentContainer.scrollTo({
                     top: optimalScrollPosition,
                     behavior: 'smooth'
                   });
@@ -644,7 +867,11 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
               saveExpandedState(currentExpandedState);
           }
         });
+
+        // Mark this item as having a listener
+        htmlItem.dataset.listenerAdded = 'true';
       });
+
       listenersAdded = true;
     }
   };
@@ -652,16 +879,16 @@ import { FaDiscord, FaYoutube } from "react-icons/fa";
   // Enhanced navigation handlers
   // Run on initial load
   initializeSidebarState();
-  
+
   // After page load (for Astro client navigation)
   document.addEventListener('astro:page-load', initializeSidebarState);
-  
+
   // Before navigation starts (optional)
   document.addEventListener('astro:before-swap', () => {
     // Prepare UI for transition if needed
     document.documentElement.classList.add('navigating');
   });
-  
+
   // After navigation completes
   document.addEventListener('astro:after-swap', () => {
     document.documentElement.classList.remove('navigating');
