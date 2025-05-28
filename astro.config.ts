@@ -7,7 +7,7 @@ import starlightImageZoom from "starlight-image-zoom";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "",
+      title: "YourGPT", // Set a proper title to avoid empty title causing duplicate pipes
       description: "YourGPT Chatbot Documentation",
       logo: {
         src: "./src/assets/yourgpt.svg",
@@ -25,6 +25,8 @@ export default defineConfig({
         Pagination: './src/components/CustomPagination.astro',
         Header: './src/components/starlight/Header.astro',
         ThemeSelect: './src/components/starlight/ThemeSelect.astro',
+        Head: './src/components/starlight/Head.astro',
+        Footer: './src/components/starlight/Footer.astro',
       },
       plugins: [starlightImageZoom()],
       customCss: [
@@ -32,6 +34,24 @@ export default defineConfig({
         "./src/tailwind.css",
         // Path to your custom CSS file:
         "./src/styles/custom.css",
+      ],
+      head: [
+        // Twitter card
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
+        // Base canonical URL - individual pages can override this
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'canonical',
+            href: 'https://docs.yourgpt.ai',
+          },
+        },
       ],
     }),
     react(),

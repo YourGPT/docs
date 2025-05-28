@@ -1,0 +1,35 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import SEOHead from '../SEOHead.astro';
+
+const { entry } = Astro.props;
+const frontmatter = entry?.data || {};
+
+const { title, description } = frontmatter;
+const customFrontmatter = frontmatter as Record<string, any>;
+
+// Access custom properties by casting to any to bypass TypeScript restrictions
+const rawData = entry?.data as any;
+const ogImage = rawData?.ogImage;
+const canonical = rawData?.canonical;
+
+
+
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+
+<link rel="icon" href="/docs-yourgpt.ico" type="image/x-icon" />
+
+<SEOHead
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  canonical={canonical}
+/>
+
+<slot />
