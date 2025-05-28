@@ -17,8 +17,51 @@ const fadeInVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const isImageUrl = (url: string) => /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(url);
+const isVideoUrl = (url: string) => /\.(mp4|webm|ogg)$/i.test(url);
+const isYouTubeUrl = (url: string) => /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]+)/.test(url);
+const isVimeoUrl = (url: string) => /vimeo\.com\/(\d+)/.test(url);
+
+const getYouTubeId = (url: string) => {
+  const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]+)/);
+  return match ? match[1] : null;
+};
+const getVimeoId = (url: string) => {
+  const match = url.match(/vimeo\.com\/(\d+)/);
+  return match ? match[1] : null;
+};
+
+const renderer = new marked.Renderer();
+
+renderer.link = function ({ href = "", title = "", text = "", ...rest }) {
+  if (!href) return text;
+  if (isImageUrl(href)) {
+    return `<img src="${href}" class="w-full h-72 rounded-lg" alt="${text}" style="max-width:100%;height:auto;" />`;
   }
+  if (isVideoUrl(href)) {
+    return `<video src="${href}" controls class="w-full h-72 rounded-lg" style="max-width:100%;height:auto;"></video>`;
+  }
+  if (isYouTubeUrl(href)) {
+    const id = getYouTubeId(href);
+    if (id) {
+      return `<div class="w-full h-72"><iframe width="560" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen style="max-width:100%;height:100%;border-radius:10px;overflow:hidden;"></iframe></div>`;
+    }
+  }
+  if (isVimeoUrl(href)) {
+    const id = getVimeoId(href);
+    if (id) {
+      return `<div class="w-full h-72"><iframe src="https://player.vimeo.com/video/${id}" width="640" height="360" frameborder="0" allowfullscreen style="max-width:100%;height:100%;border-radius:10px;overflow:hidden;"></iframe></div>`;
+    }
+  }
+  return `<a href="${href}"${title ? ` title="${title}"` : ""} target="_blank" rel="noopener noreferrer">${text}</a>`;
+};
+
+renderer.image = function ({ href = "", title = "", text = "", ...rest }) {
+  return `<img src="${href}" alt="${text}" style="max-width:100%;height:auto;" />`;
 };
 
 export default function ChangeLogItem({ version, date, data, img, isFirst = false, isLast = false }: ChangelogItemProps): React.ReactElement {
@@ -30,7 +73,7 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
   const { scrollYProgress } = useScroll({
     target: containerRef,
     // For the last item, extend the scroll range so it can complete its animation
-    offset: isLast ? ["start 20%", "end -20%"] : ["start 20%", "end 40%"]
+    offset: isLast ? ["start 20%", "end -20%"] : ["start 20%", "end 40%"],
   });
 
   // Create custom motion values for the last item
@@ -40,10 +83,7 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
   const height = isLast ? springHeight : useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.6, 1]);
-  const dateSpacing = useTransform(scrollYProgress,
-    [0, 0.2, 0.9, 1],
-    ["0px", "24px", "24px", "0px"]
-  );
+  const dateSpacing = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], ["0px", "24px", "24px", "0px"]);
 
   const [isGlowing, setIsGlowing] = React.useState(false);
   const [isLineVisible, setIsLineVisible] = React.useState(false);
@@ -99,7 +139,7 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
     // For other items, track the height transform to trigger glow when line reaches the dot
     const unsubscribeHeight = height.on("change", (currentHeight: any) => {
       // Parse the percentage value (e.g., "25%" -> 25)
-      const heightPercent = parseFloat(String(currentHeight).replace('%', ''));
+      const heightPercent = parseFloat(String(currentHeight).replace("%", ""));
       // For middle items, glow when line reaches around 10% height (when it touches the dot)
       // and keep glowing while the line is progressing
       setIsGlowing(heightPercent >= 8 && heightPercent <= 95);
@@ -113,21 +153,17 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
 
   const htmlContent = useMemo(() => {
     try {
-      return marked.parse(data);
+      return marked.parse(data, { renderer });
     } catch (error) {
       console.error("Error parsing markdown:", error);
       return data; // Fallback to raw data if parsing fails
     }
   }, [data]);
 
+  console.log(data);
+
   return (
-    <motion.div
-      ref={containerRef}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={fadeInVariants}
-      className="changelog-item flex flex-col lg:flex-row justify-between gap-4 md:gap-8 !mt-0 max-w-6xl mx-auto"
-    >
+    <motion.div ref={containerRef} initial="hidden" animate={isInView ? "visible" : "hidden"} variants={fadeInVariants} className="changelog-item flex flex-col lg:flex-row justify-between gap-4 md:gap-8 !mt-0 max-w-6xl mx-auto">
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 !mt-0 !w-[28%]">
         <div className="flex gap-2">
           <motion.p
@@ -143,14 +179,9 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
                 initial={{ scale: 0 }}
                 animate={{ scale: isInView ? 1 : 0 }}
                 transition={{ delay: 0.2 }}
-                className={`h-5 aspect-square relative z-[1] flex justify-center items-center rounded-full border border-brand-accent/30 bg-white dark:bg-gray-800 shadow-xl changelog-timeline-dot ${isGlowing ? 'checkpoint-glow' : ''}`}
+                className={`h-5 aspect-square relative z-[1] flex justify-center items-center rounded-full border border-brand-accent/30 bg-white dark:bg-gray-800 shadow-xl changelog-timeline-dot ${isGlowing ? "checkpoint-glow" : ""}`}
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: isInView ? 1 : 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="size-2 bg-brand-accent rounded-full"
-                />
+                <motion.div initial={{ scale: 0 }} animate={{ scale: isInView ? 1 : 0 }} transition={{ delay: 0.3 }} className="size-2 bg-brand-accent rounded-full" />
               </motion.div>
 
               <div ref={lineRef} className="w-[2px] flex-1 relative h-full !mt-0">
@@ -159,9 +190,9 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
                   style={{
                     height: isLast ? customHeight : height,
                     // For the last item, extend beyond the container
-                    ...(isLast && { bottom: "-8rem" })
+                    ...(isLast && { bottom: "-8rem" }),
                   }}
-                  className={`w-full h-0 absolute top-0 left-0 bg-gradient-to-b from-brand-accent to-brand-accent/60 !mt-0 transition-opacity duration-300 ${isLineVisible ? 'opacity-100' : 'opacity-0'} ${
+                  className={`w-full h-0 absolute top-0 left-0 bg-gradient-to-b from-brand-accent to-brand-accent/60 !mt-0 transition-opacity duration-300 ${isLineVisible ? "opacity-100" : "opacity-0"} ${
                     isGlowing ? "shadow-[0_0_10px_rgba(59,130,246,0.5)]" : ""
                   }`}
                 />
