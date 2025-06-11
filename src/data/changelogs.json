@@ -1,16 +1,22 @@
 [
   {
+    "version": "2.0.8",
+    "date": "May 2025",
+    "img": "/assets/changelog/may-updates.jpg",
+    "data": "**📇 New Actions in Contact Module**\n- Easily manage contacts—import in bulk, tag them, and create custom fields—all in one view.\n\n**📞 Phone Voice Agents**\n- Your AI agent can now handle incoming and make outbound phone calls, also can escalate to a human if needed.\n\n**🤖 Clone Bot**\n- Create a Staging bot from production bot. You can now duplicate any bot instantly with a single click.\n\n**💳 Payment Integrations**\n- We've added AI studio integration for Stripe, Paddle, and Razorpay.\n\n**🛒 Shopify & WooCommerce Sync**\n- Sync your products and customer data from Shopify and WooCommerce in real-time inside YourGPT.\n\n**🧱 WCAG Support in Widget**\n- Our widget meets accessibility standards so all your users get a smooth, inclusive experience.\n\n**🌐 Multilingual Dashboard**\n- Switch between languages in your dashboard with one click—now supports 12+ languages.\n\n**💻 AI Copilot for Studio**\n- AI Copilot is now available in the Studio to help you with tips and suggestions while building your AI Bot.\n\n**🎨 Studio Improvements**\n- Improvements to the Studio make it easier to work."
+  },
+  {
     "version": "2.0.7",
     "date": "April 2025",
     "img": "/assets/changelog/april-updates.jpg",
-    "data": "**👥 Contact Module:**\n- Manage customer contacts and track interactions effortlessly.\n\n**🔗 MCP Integration:**\n- Connect AI agents with external tools via Model Context Protocol.\n\n**📞 Phone Voice Agents:**\n- Enable intelligent voice interactions through phone agents.\n\n**🔒 Helpdesk Password Protection:**\n- Protect helpdesk access with secure password protection."
+    "data": "**👥 Contact Module**\n- Manage customer contacts and track interactions effortlessly.\n\n**🔗 MCP Integration**\n- Connect AI agents with external tools via Model Context Protocol.\n\n**📞 Phone Voice Agents**\n- Enable intelligent voice interactions through phone agents.\n\n**🔒 Helpdesk Password Protection**\n- Protect helpdesk access with secure password protection."
   },
 
   {
     "version": "2.0.6",
     "date": "March 2025",
     "img": "/assets/changelog/march-updates.jpg",
-    "data": "**📨 Email Automation:**\n- Send emails automatically based on specific triggers.\n\n**🔁 Auto-Resolve Chats:**\n- Automatically close resolved conversations.\n\n**😊 CSAT Upgrades:**\n- Improved customer satisfaction tracking in Widget and Dashboard.\n- New CSAT statistics and Studio node.\n\n**🧠 AI Helpdesk Article Generation:**\n- Create articles using voice or image inputs.\n- Voice-to-text and image analysis for content generation.\n\n**💬 Canned Replies:**\n- Create and share canned replies with your team for quick responses.\n\n**🔍 Helpdesk Article Search:**\n- Search Helpdesk Articles directly from the conversation dashboard.\n\n** Monthly Reindex**\n- Monthly reindexing of notion, dropbox, google drive files for update to latest data."
+    "data": "**📨 Email Automation:**\n- Send emails automatically based on specific triggers.\n\n**🔁 Auto-Resolve Chats:**\n- Automatically close resolved conversations.\n\n**😊 CSAT Upgrades:**\n- Improved customer satisfaction tracking in Widget and Dashboard.\n- New CSAT statistics and Studio node.\n\n**🧠 AI Helpdesk Article Generation:**\n- Create articles using voice or image inputs.\n- Voice-to-text and image analysis for content generation.\n\n**💬 Canned Replies:**\n- Create and share canned replies with your team for quick responses.\n\n**🔍 Helpdesk Article Search:**\n- Search Helpdesk Articles directly from the conversation dashboard.\n\n**🔁 Monthly Reindex**\n- Monthly reindexing of notion, dropbox, google drive files for update to latest data."
   },
   {
   "version": "2.0.5",

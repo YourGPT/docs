@@ -45,16 +45,13 @@ To set up Twilio Voice integration, follow these steps:
       
   3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl"> Configure Integration </div>
                               
-              - Add the following fields:
-                - **Account SID**: Your Twilio account SID.
-                - **AuthToken**: Your Twilio Auth Token.
-                - **Voice Phone SID**: The SID of your Twilio voice number.
-                - **Welcome Message**: Initial greeting message (e.g., "Hello, how can we assist you today?").
-                - **Error Message**: Message played when no speech is detected.
-                - **Voice Language**: Language used during the call.
-                - **Voice Type**: Voice model used (e.g., Polly.Aditi).
-                - **Speech Timeout**: Duration to wait for a user's speech response.
-        
+     Add the following fields to configure the integration:
+        - **Account SID**: Your Twilio account SID.
+        - **AuthToken**: Your Twilio Auth Token.
+        - **Phone Number**: Your Twilio phone number.
+        - **Phone SID**: The SID of your Twilio voice number.
+        - **Assign Phone Agent**: Assign a phone agent to handle the calls.
+
          <div className="flex justify-center items-center bg-blue-500 rounded-md p-3">
             <Image 
               src="/assets/chatbot/Twilio-voice/Twilio-2.png"
@@ -82,9 +79,6 @@ To set up Twilio Voice integration, follow these steps:
               className="rounded-md" 
             />
         </div>
-        
-
-
 
 </Steps>
 
