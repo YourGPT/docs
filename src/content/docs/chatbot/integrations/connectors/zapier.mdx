@@ -1,38 +1,78 @@
 ---
 title: YourGPT Chatbot Integration with Zapier
 description: Discover how to integrate YourGPT Chatbot with Zapier, including step-by-step instructions for setup and management.
+keywords: YourGPT Zapier integration, Zapier chatbot integration, chatbot automation, AI workflow automation
+hero:
+  title: YourGPT Chatbot Integration with Zapier
+  tagline: Complete guide to connecting YourGPT with your favorite apps through Zapier
 ---
 
+import { Image } from "astro:assets";
+import { Note } from '~/components';
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 
-### 1. Zapier Integration Setup
-- Log in to your Zapier account.
-- Search for "**YourGPT Chatbot**" in the Zapier app directory.
-- Connect your “YourGPT Chatbot” to Zapier.
+<div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]">Integrate YourGPT with Zapier</div>
 
-## API Key Authentication
-- Head over to [Log in or Sign up](https://app.yourgpt.ai/login) for a YourGPT account.
-- In your YourGPT Chatbot account, Go to **Integrations ⇒ API Integration ⇒ Generate API key**.
-- In Zapier, when setting up a YourGPT Chatbot action, you'll be prompted to enter your API key.
-- Paste your API key to authenticate the connection.
+<Aside type="tip">
+  Zapier connects YourGPT with 5,000+ apps, allowing you to automate workflows without writing code.
+</Aside>
 
-    **Note:** You can also follow this URL: [Generating API Keys](/chatbot/integrations/api-integration#generating-keys)
+## Before You Begin
 
-## Actions
+Before starting the integration process, make sure you have:
 
-### 3.1 Create Session Action
-- In your Zap, add a new action and select “YourGPT Chatbot”.
-- Choose **`"Create Session"`** as the action.
-- Provide the **`widget_uid`** in the action setup.
-- The `widget_uid` can be found in your **YourGPT Chatbot Integrations**.
+- A YourGPT account: [Sign up here](https://app.yourgpt.ai/login)
+- A Zapier account (free or paid)
 
-![widget UID YourGPT Chatbot.jpg](/assets/chatbot/zapier/widgetid-zapier-integration.png)
+## Integration Process
 
-### 3.2 Send Message Action
-- Add another** “YourGPT Chatbot” **action to your Zap.
-- Select "Send Message" as the action.
-- Provide the following parameters:
-  - `widget_uid`: The same ID used in the Create Session action.
-  - `message`: The text content you want to send.
-  - `session_uid`: This should be mapped from the output of the Create Session action.
+<Steps>
+  1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Connect to Zapier</div>
+  
+      - Log in to your [Zapier account](https://zapier.com/)
+      - Search for "**YourGPT Chatbot**" in the Zapier app directory
+      - Select and connect your "YourGPT Chatbot" to Zapier
+      
+  2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Set Up API Authentication</div>
+  
+      - Head over to [YourGPT Dashboard](https://app.yourgpt.ai/login)
+      - Navigate to **Integrations ⇒ API Integration ⇒ Generate API key**
+      - Copy your API key for use in Zapier
+      
+      <Aside type="note">
+        For detailed instructions on generating API keys, visit the [API Integration Guide](/chatbot/integrations/api-integration#generating-keys)
+      </Aside>
 
-**Remember to test your Zap thoroughly to ensure all actions are working correctly with the provided parameters.**
+  3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Create a Session</div>
+  
+      - In your Zap, add a new action and select "YourGPT Chatbot"
+      - Choose **`"Create Session"`** as the action
+      - Provide the **`widget_uid`** in the action setup
+      - The `widget_uid` can be found in your **YourGPT Chatbot Integrations**
+      
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 mt-4">
+        <Image src="/assets/chatbot/zapier/widgetid-zapier-integration.png" alt="Widget UID location in YourGPT" 
+               width="100%" height="100%" style={{ width: "100%" }} 
+               className="rounded-md object-contain shadow-lg" />
+      </div>
+      
+      <Note>
+        The Create Session action initializes a conversation with your YourGPT chatbot and returns a `session_uid` that you'll need for sending messages.
+      </Note>
+      
+  4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Send a Message</div>
+  
+      - Add another **"YourGPT Chatbot"** action to your Zap
+      - Select **"Send Message"** as the action
+      - Configure the following parameters:
+        - `widget_uid`: The same ID used in the Create Session action
+        - `message`: The text content you want to send
+        - `session_uid`: Map this from the output of the Create Session action
+      
+  5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Test and Deploy</div>
+  
+      - Test your Zap thoroughly to ensure all actions work correctly
+      - Once tested, you can turn on your Zap for production use
+      - Consider adding error handling for robustness
+</Steps>

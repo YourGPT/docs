@@ -1,7 +1,7 @@
 ---
 title: "Gamification | SDK"
 description: "Enhance user experience with interactive games during human escalation"
-keywords: yourgpt chatbot gamification, interactive experience, human escalation, emoji riddle, flappy bird, chatbot games
+keywords: yourgpt chatbot gamification, interactive experience, human escalation, emoji riddle, bouncy bird, chatbot games
 hero:
   title: "Gamification"
   tagline: "Enhance user experience with interactive games during human escalation"
@@ -22,17 +22,17 @@ The Chatbot Web SDK now supports game integration to enhance user experience dur
 An engaging puzzle game where users solve riddles using emoji clues. Perfect for quick mental exercises while waiting.
 
 <div className="flex flex-col md:flex-row gap-4 my-6">
-  <div className="flex-1">
+  <div className="flex-1 w-3/4 mx-auto">
     <Image src="/assets/chatbot/sdk/gamification/riddle-game.png" alt="Emoji Riddle Game Solution" />
   </div>
 </div>
 
-### 2. Flappy Bird
+### 2. BouncyBird
 
 A classic arcade-style game that provides entertainment and helps pass time during operator assignment delays.
 
 <div className="my-6 w-full">
-  <Image src="/assets/chatbot/sdk/gamification/flappy-game.png" alt="Flappy Bird Game" />
+  <Image src="/assets/chatbot/sdk/gamification/bouncybird.png" alt="BouncyBird Game" />
 </div>
 
 
@@ -69,12 +69,12 @@ $yourgptChatbot.on("escalatedToHuman", function() {
 });
 ```
 
-### Flappy Bird Integration
+### BouncyBird Integration
 
-To add Flappy Bird integration to your chatbot, use the following code:
-```js title="Flappy Bird Integration"
+To add BouncyBird integration to your chatbot, use the following code:
+```js title="BouncyBird Integration"
 $yourgptChatbot.on("escalatedToHuman", function() {
-    $yourgptChatbot.execute("game:start", {id:"flappyBird"});
+    $yourgptChatbot.execute("game:start", {id:"bouncyBird"});
 });
 ```
 
@@ -82,10 +82,9 @@ $yourgptChatbot.on("escalatedToHuman", function() {
 
 ```js title="iFrame Integration"
 $yourgptChatbot.on("escalatedToHuman", function() {
-    // Open an iframe when escalated to human
-    $yourgptChatbot.execute("bottomSheet:open", { 
-        url: "https://simple-iframe-demo.glitch.me/" 
-    });
+  $yourgptChatbot.execute("bottomSheet:open", { 
+    url: "https://cloud.onlinegames.io/games/2024/construct/219/stickman-parkour/index-og.html" 
+  });
 });
 ```
 
