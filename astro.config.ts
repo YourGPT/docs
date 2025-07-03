@@ -4,61 +4,60 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import starlightImageZoom from "starlight-image-zoom";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
-  integrations: [
-    starlight({
-      title: "YourGPT", // Set a proper title to avoid empty title causing duplicate pipes
-      description: "YourGPT Chatbot Documentation",
-      logo: {
-        src: "./src/assets/yourgpt.svg",
-      },
-      favicon: "/docs-yourgpt.ico",
-      social: {
-        youtube: "https://www.youtube.com/@YourGPTAI",
-        twitter: "https://x.com/YourGPTAI",
-      },
-      components: {
-        Hero: "./src/components/Landing/Hero.astro",
-        Sidebar: "./src/components/Sidebar.astro",
-        SiteTitle: "./src/components/starlight/SiteTitle.astro",
-        // Search: './src/components/starlight/Search.astro',
-        Pagination: './src/components/CustomPagination.astro',
-        Header: './src/components/starlight/Header.astro',
-        ThemeSelect: './src/components/starlight/ThemeSelect.astro',
-        Head: './src/components/starlight/Head.astro',
-        Footer: './src/components/starlight/Footer.astro',
-      },
-      plugins: [starlightImageZoom()],
-      customCss: [
-        // Path to your Tailwind base styles:
-        "./src/tailwind.css",
-        // Path to your custom CSS file:
-        "./src/styles/custom.css",
-      ],
-      head: [
-        // Twitter card
-        {
-          tag: 'meta',
-          attrs: {
-            name: 'twitter:card',
-            content: 'summary_large_image',
-          },
+  site: 'https://docs.yourgpt.ai',
+  integrations: [starlight({
+    title: "YourGPT", // Set a proper title to avoid empty title causing duplicate pipes
+    description: "YourGPT Chatbot Documentation",
+    logo: {
+      src: "./src/assets/yourgpt.svg",
+    },
+    favicon: "/docs-yourgpt.ico",
+    social: {
+      youtube: "https://www.youtube.com/@YourGPTAI",
+      twitter: "https://x.com/YourGPTAI",
+    },
+    components: {
+      Hero: "./src/components/Landing/Hero.astro",
+      Sidebar: "./src/components/Sidebar.astro",
+      SiteTitle: "./src/components/starlight/SiteTitle.astro",
+      // Search: './src/components/starlight/Search.astro',
+      Pagination: './src/components/CustomPagination.astro',
+      Header: './src/components/starlight/Header.astro',
+      ThemeSelect: './src/components/starlight/ThemeSelect.astro',
+      Head: './src/components/starlight/Head.astro',
+      Footer: './src/components/starlight/Footer.astro',
+    },
+    plugins: [starlightImageZoom()],
+    customCss: [
+      // Path to your Tailwind base styles:
+      "./src/tailwind.css",
+      // Path to your custom CSS file:
+      "./src/styles/custom.css",
+    ],
+    head: [
+      // Twitter card
+      {
+        tag: 'meta',
+        attrs: {
+          name: 'twitter:card',
+          content: 'summary_large_image',
         },
-        // Base canonical URL - individual pages can override this
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'canonical',
-            href: 'https://docs.yourgpt.ai',
-          },
+      },
+      // Base canonical URL - individual pages can override this
+      {
+        tag: 'link',
+        attrs: {
+          rel: 'canonical',
+          href: 'https://docs.yourgpt.ai',
         },
-      ],
-    }),
-    react(),
-    tailwind({
-      applyBaseStyles: true,
-    }),
-  ],
+      },
+    ],
+  }), react(), tailwind({
+    applyBaseStyles: true,
+  }), sitemap()],
   redirects: {
     "/chatbot": "/chatbot/introduction",
     "/chatbot/studio/elements/intent-and-events": "/chatbot/studio/elements/intents",
