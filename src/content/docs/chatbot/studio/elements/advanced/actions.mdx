@@ -1,17 +1,18 @@
 ---
-title: Actions | YourGPT Chatbot Studio Guide
-description: Learn how to use actions options in Chatbot Studio
+title: Actions | YourGPT AI Studio Guide
+description: Learn how to use actions options in AI Studio
 keywords: actions, options, flow, api, javascript, sets
 hero:
-  title: Actions in YourGPT Chatbot Studio
-  tagline: Learn how to use Actions in YourGPT Chatbot Studio to perform various operations.
+  title: Actions in YourGPT AI Studio
+  tagline: Learn how to use Actions in YourGPT AI Studio to perform various operations.
 ---
 
-<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Actions in YourGPT Chatbot Studio </div>
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Actions in YourGPT AI Studio </div>
 
 
 import { LinkCard } from '@astrojs/starlight/components';
 import CustomLinkCard from '~/components/starlight/CustomLinkCard.astro';
+import { Image } from "astro:assets";
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Actions in Studio</div>
 
@@ -28,6 +29,13 @@ Actions are the operations that you can perform in chatbot studio. You can use a
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>How to use Actions</div>
 
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image src="/assets/flow/actions-image.png" alt="Action" 
+  width="100%" height="100%" style={{ width: "100%" }} 
+  className="rounded-md object-contain" />
+</div>
+
 To use Actions, follow these steps:
 
 1. Go to the `Flow` Section in the Chatbot Studio. Hover over the Advanced Section and drag the `Actions` Component on to the canvas.
@@ -40,10 +48,25 @@ To use Actions, follow these steps:
  - Create Contact
  - Send Email
 
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Success and Error Paths</div>
+
+Now we have Success and Error paths in Create Contact and Send Email nodes.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Usage</div>
+
+- Add Create Contact or Send Email node wherever you need it in your flow
+- After adding you will see Success and error paths in the node you added, connect them to the respective nodes to handle the fail and success of the action.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Example Use Cases</div>
+
+Gives the flow builder an option in case the action fails or succeeds for:
+- Create Contact
+- Send Email
+
 
 <CustomLinkCard
     title="How To Use Actions"
-    description="Learn how to use actions in chatbot studio."
+    description="Learn how to use actions in AI chatbot studio."
     href="https://help.yourgpt.ai/article/how-to-use-actions-in-chatbot-studio-29"
 />
 
@@ -58,7 +81,7 @@ Transfer to Agent action allows you to transfer the chat to an Human agent (huma
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>2. Transfer to Bot</div>
 
-Transfer to Bot action allows you to transfer the chat to a bot in the chatbot studio.
+Transfer to Bot action allows you to transfer the chat to a bot in the AI chatbot studio.
 
 ##### use case:
 - The 'Transfer to Bot' action allows you to shift the conversation to a bot if the user has been waiting for an operator for more than specific period. This action also enables you to revert the chat back to the bot.
@@ -74,21 +97,27 @@ Update Segment action allows you to update the segment of the chat in the chatbo
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>4. Mark as Resolved </div>
 
-Mark as Resolved action allows you to mark the chat as resolved in the chatbot studio. You can mark the chat as resolved when the user's query has been resolved.
+Mark as Resolved action allows you to mark the chat as resolved in the AI studio. You can mark the chat as resolved when the user's query has been resolved.
 
 ##### use case:
 - You can use the Mark as Resolved action to mark the chat as resolved when the user's query has been resolved.
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>5. Create Contact</div>
 
-Create Contact action allows you to create a new contact in the chatbot studio. You can create a new contact by providing the contact details like name, email, phone, company, country, city, region, and tags.
+Create Contact action allows you to create a new contact in the AI studio. You can create a new contact by providing the contact details like name, email, phone, company, country, city, region, and tags.
+
+Now we have Success and Error paths in the Create Contact node, allowing you to handle different outcomes of the action.
 
 ##### use case:
-- You can use the Create Contact action to create a new contact in the chatbot studio when a user provides their contact details.
+- You can use the Create Contact action to create a new contact in the AI studio when a user provides their contact details.
+- With Success and Error paths, you can direct the flow to different nodes based on whether the contact creation was successful or failed.
 
 ### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>6. Send Email</div>
 
 Send Email action allows you to send an email using AI studio. You can send an email to the user by providing the email details like subject, body, and recipient.
 
+Now we have Success and Error paths in the Send Email node, allowing you to handle different outcomes of the action.
+
 ##### use case:
 - You can use the Send Email action to send an email to the user using AI studio.
+- With Success and Error paths, you can direct the flow to different nodes based on whether the email was sent successfully or failed.

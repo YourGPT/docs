@@ -1,0 +1,145 @@
+---
+title: Validate Node in YourGPT Chatbot Studio
+description: Learn how to use the Validate Node to check user input for validity using Email, Phone, or custom Regex patterns in YourGPT Studio.
+keywords: validate node, input validation, email validation, phone validation, regex validation, chatbot validation
+hero:
+  title: Validate Node in YourGPT Chatbot Studio
+  tagline: Check user input for validity using Email, Phone, or custom Regex patterns before continuing the chatbot flow.
+---
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Validate Node in YourGPT Chatbot Studio </div>
+
+import { Image } from "astro:assets";
+
+
+The **Validate Node** allows you to check user input for validity using Email, Phone, or custom Regex patterns before continuing the chatbot flow. This ensures data integrity and provides immediate feedback to users when their input doesn't meet the required format.
+
+---
+
+## How to Use the Validate Node
+
+To use the Validate Node effectively in your Sequential Agent, follow these simple steps:
+
+1. **Add the Node**: From the tool bar, drag the "Validate Node" to your Flow canvas where input validation is required.
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image src="/assets/flow/studio-validate.png" alt="Validate Node" 
+  width="100%" height="100%" style={{ width: "100%" }} 
+  className="rounded-md object-contain" />
+</div>
+
+
+2. **Select Validation Type**: Choose from three validation options:
+   - **Email**: Checks if the input is a valid email address
+   - **Phone**: Checks if the input is a valid phone number  
+   - **Regex**: Validates the input against a custom regular expression
+
+3. **Configure Success and Error Paths**:
+   - **Success Branch**: On successful validation, the flow continues via this path
+   - **Error Branch**: On failure, this branch is triggered, allowing you to prompt the user again or handle invalid input gracefully
+
+---
+
+## Validation Types
+
+Now that you understand how to add the Validate Node to your flow, let's explore the different validation types available and when to use each one:
+
+### Email Validation
+Ensures users provide a correctly formatted email address before proceeding.
+
+**Use Cases:**
+- Adding new contacts to your system
+- Newsletter subscriptions
+- Account registration processes
+
+**Example:** Validates formats like `user@example.com`, `name.surname@domain.co.uk`
+
+### Phone Validation  
+Checks if the input matches standard phone number formats.
+
+**Use Cases:**
+- Contact information collection
+- SMS notification setup
+- Customer support callbacks
+
+**Example:** Validates formats like `+1-555-123-4567`, `(555) 123-4567`, `555.123.4567`
+
+### Regex Validation
+Apply custom validation rules using regular expressions for specific patterns.
+
+**Use Cases:**
+- Username patterns (e.g., alphanumeric only)
+- Product codes or serial numbers
+- Custom ID formats
+- Postal codes or zip codes
+
+**Example Patterns:**
+- Username: `^[a-zA-Z0-9_]{3,20}` (3-20 characters, letters, numbers, underscore)
+- Product Code: `^[A-Z]{2}-\d{4}` (Two letters, dash, four digits: AB-1234)
+
+---
+
+## Configuration Steps
+
+After selecting the appropriate validation type for your needs, follow these detailed configuration steps to set up your Validate Node:
+
+1. **Drag and Drop**: Add the Validate Node to your flow where validation is needed
+
+2. **Choose Validation Type**: Select Email, Phone, or Regex from the dropdown
+
+3. **Set Custom Regex** (if applicable): Enter your regular expression pattern
+
+4. **Configure Success Path**: Define what happens when validation passes
+
+5. **Configure Error Path**: Set up error handling:
+   - Display helpful error messages
+   - Prompt user to try again
+   - Provide format examples
+
+---
+
+## Key Benefits
+
+Implementing validation in your chatbot flow offers several important advantages:
+
+### Data Integrity
+Guarantees only valid data is processed in your chatbot, preventing downstream errors and maintaining clean databases.
+
+### User Experience  
+Instantly notifies users of incorrect input, reducing friction and providing clear guidance on expected formats.
+
+### Flexibility
+Supports standard validation needs (email, phone) and custom validation requirements through regex patterns.
+
+### Error Prevention
+Catches invalid input early in the conversation flow, preventing issues in later processing steps.
+
+---
+
+## Best Practices
+
+To get the most out of the Validate Node, consider these best practices when implementing validation in your chatbot:
+
+### Clear Error Messages
+- Provide specific feedback about what went wrong
+- Include examples of correct formats
+- Use friendly, helpful language
+
+### Appropriate Validation
+- Don't over-validate - only check what's necessary
+- Consider international formats for phone/postal codes
+- Test regex patterns thoroughly before deployment
+
+### User Guidance
+- Provide format hints before users input data
+- Show examples of valid formats
+- Consider progressive disclosure for complex patterns
+
+### Fallback Handling
+- Always provide a clear path for users who struggle with validation
+- Consider offering alternative input methods
+- Include human handoff options for persistent issues
+
+---
+
+The Validate Node is essential for maintaining data quality and providing a smooth user experience in your chatbot flows. Use it strategically to catch input errors early and guide users toward successful interactions.
