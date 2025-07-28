@@ -1,77 +1,68 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
-
-type PaginationLink = {
-  href: string;
-  label: string;
-};
-
-interface PaginationProps {
-  dir?: 'ltr' | 'rtl';
-  pagination: {
-    prev: PaginationLink | undefined;
-    next: PaginationLink | undefined;
-  };
-}
-
-const { dir = 'ltr', pagination } = Astro.props as PaginationProps;
-const isRtl = dir === 'rtl';
+// Simple pagination component for chatbot pages
+import { getPaginationPages } from '../lib/navigation';
 
 const currentUrl = Astro.url.pathname;
-const isChatbotPage = currentUrl.startsWith('/chatbot');
+const isChatbotPage = currentUrl.startsWith("/chatbot");
 
-// For chatbot pages, we'll handle pagination client-side
-// For other pages, use the default pagination from Astro
-const { prev, next } = pagination;
-const shouldShowPagination = isChatbotPage || (prev || next);
+// Get pagination pages from navigation utility
+const { prev: prevPage, next: nextPage, currentIndex } = getPaginationPages(currentUrl);
+
+// Only show pagination for chatbot pages that exist in navigation
+const shouldShowPagination = isChatbotPage && currentIndex !== -1;
 ---
 
 {shouldShowPagination && (
-  <div class="pagination-container sl-flex print:hidden" dir={dir} id="custom-pagination">
+  <div class="pagination-container sl-flex print:hidden">
     <div class="pagination-links-wrapper">
       <div class="pagination-links">
-        {prev && (
-          <a href={prev.href} rel="prev" class="pagination-link prev-link">
+        {prevPage && (
+          <a href={prevPage.href} rel="prev" class="pagination-link prev-link">
             <div class="pagination-icon-container">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
-                {isRtl ? (
-                  <>
-                    <path d="M5 12h14"></path>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </>
-                ) : (
-                  <>
-                    <path d="M19 12H5"></path>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                  </>
-                )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-left"
+              >
+                <path d="M19 12H5" />
+                <polyline points="12 19 5 12 12 5" />
               </svg>
             </div>
             <div class="pagination-content">
               <span class="pagination-label">Previous</span>
-              <span class="pagination-title prev-title">{prev.label}</span>
+              <span class="pagination-title">{prevPage.label}</span>
             </div>
           </a>
         )}
-        {next && (
-          <a href={next.href} rel="next" class="pagination-link next-link">
+
+        {nextPage && (
+          <a href={nextPage.href} rel="next" class="pagination-link next-link">
             <div class="pagination-content">
               <span class="pagination-label">Next</span>
-              <span class="pagination-title next-title">{next.label}</span>
+              <span class="pagination-title">{nextPage.label}</span>
             </div>
             <div class="pagination-icon-container">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
-                {isRtl ? (
-                  <>
-                    <path d="M19 12H5"></path>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                  </>
-                ) : (
-                  <>
-                    <path d="M5 12h14"></path>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </>
-                )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-right"
+              >
+                <path d="M5 12h14" />
+                <polyline points="12 5 19 12 12 19" />
               </svg>
             </div>
           </a>
@@ -81,88 +72,18 @@ const shouldShowPagination = isChatbotPage || (prev || next);
   </div>
 )}
 
-<script>
-  // Function to extract sidebar items from the HTML structure
-  function extractSidebarItems() {
-    const sidebarItems = [];
-
-    // Get all sidebar links (excluding folder headers with the 'with-arrow' class)
-    const sidebarLinks = document.querySelectorAll('.sidebar-item:not(.with-arrow)');
-
-    sidebarLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      // Get the text content of the last span element (which contains the label)
-      const spans = link.querySelectorAll('span');
-      const label = spans.length > 0 ? spans[spans.length - 1].textContent.trim() : link.textContent.trim();
-
-      if (href && label) {
-        sidebarItems.push({ href, label });
-      }
-    });
-
-    return sidebarItems;
-  }
-
-  // Function to update pagination based on the current URL
-  function updatePagination() {
-    const currentUrl = window.location.pathname;
-    const isChatbotPage = currentUrl.startsWith('/chatbot');
-
-    if (!isChatbotPage) return;
-
-    const paginationContainer = document.getElementById('custom-pagination');
-    if (!paginationContainer) return;
-
-    const sidebarItems = extractSidebarItems();
-    const currentIndex = sidebarItems.findIndex(item => item.href === currentUrl);
-
-    if (currentIndex === -1) return;
-
-    const prevLink = paginationContainer.querySelector('.prev-link') as HTMLElement;
-    const nextLink = paginationContainer.querySelector('.next-link') as HTMLElement;
-    const prevTitle = paginationContainer.querySelector('.prev-title');
-    const nextTitle = paginationContainer.querySelector('.next-title');
-
-    // Update previous link
-    if (prevLink && prevTitle && currentIndex > 0) {
-      const prev = sidebarItems[currentIndex - 1];
-      prevLink.setAttribute('href', prev.href);
-      if (prevTitle.textContent !== null) {
-        prevTitle.textContent = prev.label;
-      }
-      prevLink.style.display = '';
-    } else if (prevLink) {
-      prevLink.style.display = 'none';
-    }
-
-    // Update next link
-    if (nextLink && nextTitle && currentIndex < sidebarItems.length - 1) {
-      const next = sidebarItems[currentIndex + 1];
-      nextLink.setAttribute('href', next.href);
-      if (nextTitle.textContent !== null) {
-        nextTitle.textContent = next.label;
-      }
-      nextLink.style.display = '';
-    } else if (nextLink) {
-      nextLink.style.display = 'none';
-    }
-  }
-
-  // Run on initial load
-  document.addEventListener('DOMContentLoaded', updatePagination);
-
-  // Run on Astro page transitions
-  document.addEventListener('astro:page-load', updatePagination);
-</script>
-
 <style>
   .pagination-container {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     width: 100%;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .pagination-links-wrapper {
@@ -178,10 +99,11 @@ const shouldShowPagination = isChatbotPage || (prev || next);
     gap: 1.25rem;
     width: 100%;
     margin: 0 auto;
+    min-height: 60px;
   }
 
   .pagination-link {
-    display: flex;
+    display: flex !important;
     align-items: center;
     width: 100%;
     padding: 15px;
@@ -194,16 +116,22 @@ const shouldShowPagination = isChatbotPage || (prev || next);
     overflow: hidden;
     position: relative;
     backdrop-filter: blur(10px);
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .pagination-link::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--sl-color-accent-low), var(--sl-color-accent));
+    background: linear-gradient(
+      135deg,
+      var(--sl-color-accent-low),
+      var(--sl-color-accent)
+    );
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;

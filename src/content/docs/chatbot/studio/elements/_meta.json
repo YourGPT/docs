@@ -9,6 +9,8 @@
     "messages": "Messages",
     "listeners": "Listeners",
     "ai-task": "AI Tasks",
+    "conditions": "Conditions",
+    "validate": "Validate Node",
 
     "advanced": "Advanced Options",
     "-": {

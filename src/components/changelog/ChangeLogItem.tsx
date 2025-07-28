@@ -168,7 +168,7 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
         <div className="flex gap-2">
           <motion.p
             style={{ scale, opacity, marginBottom: dateSpacing }}
-            className="whitespace-nowrap font-bold text-3xl text-gray-700 dark:text-gray-200 !mt-[-7px] !sticky top-[5rem] h-fit tracking-tight rounded-lg min-w-[240px] text-right pt-3 changelog-date-accent changelog-date-text"
+            className="whitespace-nowrap font-bold text-3xl text-gray-700 dark:text-gray-100 !mt-[-7px] !sticky top-[5rem] h-fit tracking-tight rounded-lg min-w-[240px] text-right pt-3 changelog-date-accent changelog-date-text"
           >
             {date}
           </motion.p>
@@ -179,13 +179,13 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
                 initial={{ scale: 0 }}
                 animate={{ scale: isInView ? 1 : 0 }}
                 transition={{ delay: 0.2 }}
-                className={`h-5 aspect-square relative z-[1] flex justify-center items-center rounded-full border border-brand-accent/30 bg-white dark:bg-gray-800 shadow-xl changelog-timeline-dot ${isGlowing ? "checkpoint-glow" : ""}`}
+                className={`h-5 aspect-square relative z-[1] flex justify-center items-center rounded-full border border-brand-accent/30 bg-white dark:bg-gray-900 shadow-xl changelog-timeline-dot ${isGlowing ? "checkpoint-glow" : ""}`}
               >
                 <motion.div initial={{ scale: 0 }} animate={{ scale: isInView ? 1 : 0 }} transition={{ delay: 0.3 }} className="size-2 bg-brand-accent rounded-full" />
               </motion.div>
 
               <div ref={lineRef} className="w-[2px] flex-1 relative h-full !mt-0">
-                <div className="w-full h-full bg-gray-200 dark:bg-gray-700 changelog-timeline-line !mt-0" />
+                <div className="w-full h-full bg-gray-200 dark:bg-gray-600 changelog-timeline-line !mt-0" />
                 <motion.div
                   style={{
                     height: isLast ? customHeight : height,
@@ -206,7 +206,7 @@ export default function ChangeLogItem({ version, date, data, img, isFirst = fals
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 20 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="changelog-item__content text-gray-700 dark:text-gray-200 flex-1 !mt-0 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 mb-8 !w-full backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 shadow-changelog-card changelog-content-card"
+        className="changelog-item__content text-gray-700 dark:text-gray-200 flex-1 !mt-0 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 mb-8 !w-full backdrop-blur-sm bg-white dark:bg-gray-900 shadow-changelog-card changelog-content-card"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
     </motion.div>

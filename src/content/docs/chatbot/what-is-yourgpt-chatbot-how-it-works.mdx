@@ -13,8 +13,10 @@ import { FaArrowRight} from "react-icons/fa";
 import { GrCircleInformation } from "react-icons/gr";
 import { LinkButton } from '@astrojs/starlight/components';
 
-<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'>   About YourGPT  </div>
+<div className='text-4xl font-extrabold border-b border-gray-200 dark:border-gray-700 pb-6 text-gray-900 dark:text-white mb-12 !leading-[50px]'>   About YourGPT  </div>
 
+
+<div className="text-gray-700 dark:text-gray-300 space-y-4">
 
 YourGPT is an **AI-First Platform** that lets you build intelligent **AI Agents**—without writing any code.  
 
@@ -22,15 +24,22 @@ It helps businesses automate conversations across customer support, sales, onboa
 
 Fully customisable, multilingual (100+ languages), and built to handle any use case or industry.
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>How it works?</div>
+</div>
+
+## <div className='text-3xl tracking-tight font-bold text-gray-800 dark:text-white'>How it works?</div>
+
+<div className="text-gray-700 dark:text-gray-300 space-y-4">
+
 Our AI solution harnesses the power of most advanced State-of-the-Art (SOTA) AI models and cutting-edge techniques to provide users with precise, contextually relevant responses to their inquiries.
 
 YourGPT lets you train AI using your own content—text, PDF files, Notion, Google Drive, Dropbox, Confluence, YouTube, and more. It includes a self-learning AI that gets better over time through real interactions.
 
 For advanced workflows, YourGPT provides AI Studio—a powerful tool to design guided, sequential agents with full control over AI agent logic and performance. Whether you're scaling support or building task-specific agents, YourGPT gives you everything you need—fast, flexible, and reliable.
 
+</div>
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Features:</div>
+
+## <div className='text-3xl tracking-tight font-bold text-gray-800 dark:text-white'>Features:</div>
 
 <div className="grid grid-cols-1 gap-4">
   {
@@ -86,31 +95,38 @@ For advanced workflows, YourGPT provides AI Studio—a powerful tool to design g
 
 
 <div className="flex justify-center my-10">
-    <LinkButton href="https://yourgpt.ai/chatbot/all-features"> 
+    <a 
+      href="https://yourgpt.ai/chatbot/all-features" 
+      target="_blank"
+      className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 no-underline"
+    >
        See All Features
-    </LinkButton>
-
+    </a>
 </div>
 
 
-{/* <Card title="No-Code AI Chatbot Builder" icon="information">
-  [Create your chatbot effortlessly, no coding required](https://yourgpt.ai/chatbot)
-</Card> */}
- <div className="p-8 border dark:border-gray-700 rounded-lg shadow-sm dark:shadow-md h-auto hover:border-gray-400 dark:hover:border-blue-400 transition-all duration-500 bg-gradient-to-l from-green-50 via-white to-white dark:bg-gradient-to-l dark:from-inherit dark:via-inherit dark:to-inherit">
-    <div className="flex text-2xl font-semibold !mt-0">
-      <div className="p-2 border rounded-md bg-gray-100 dark:border-0 dark:bg-inherit mr-4 dark:mr-0">
-        <GrCircleInformation className="text-2xl text-gray-700 dark:text-red-500" />
+
+ <div className="p-8 border border-gray-200 dark:border-gray-600 rounded-xl shadow-lg dark:shadow-2xl h-auto hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 bg-white dark:bg-black hover:shadow-xl dark:hover:shadow-blue-500/20">
+    <div className="flex items-start gap-4 mb-4">
+      <div className="p-3 border border-gray-200 dark:border-gray-700 rounded-lg bg-blue-50 dark:bg-gray-800 flex-shrink-0">
+        <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
       </div>
-      <p className="!mt-0 text-xl md:text-2xl text-gray-700 dark:text-inherit">No-Code AI Chatbot Builder</p>
+      <div className="flex-1">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">No-Code AI Chatbot Builder</h3>
+        <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">Effortlessly create AI chatbots without coding expertise needed. Build intelligent conversational agents in minutes.</p>
+      </div>
     </div>
-      <p className='pl-9 !mt-2 max-w-[450px]'>Effortlessly create AI chatbots without coding expertise needed.</p>
-    <ul className="list-none pl-9  mt-4">
-      <li className="flex justify-between items-center pb-2 ">
-        <a href="https://yourgpt.ai/chatbot" target="_blank" className="no-underline font-medium transition-all duration-300 text-sm md:text-base">
-          Create your AI Agent 
-        </a>
-      </li>
-    </ul>
+    <div className="flex justify-start">
+      <a 
+        href="https://yourgpt.ai/chatbot" 
+        target="_blank" 
+        className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 no-underline"
+      >
+        Create your AI Agent
+      </a>
+    </div>
   </div>
 
 

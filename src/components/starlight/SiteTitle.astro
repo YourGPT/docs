@@ -1,12 +1,52 @@
 ---
-import { Image } from "astro:assets";
-const main = "#";
+import darkLogo from '~/assets/yourgpt-dark.svg';
+import whiteLogo from '~/assets/yourgpt-white.svg';
 ---
 
 <a class="site-title" href="/" aria-label="Go to homepage">
-  <Image class="block dark:hidden logo-image" width={100} height={100} src="/assets/yourgpt-logo-dark-text.svg" alt="YourGPT logo (light mode)" />
-  <Image class="hidden dark:block logo-image" width={100} height={100} src="/assets/yourgpt-logo-light-text.svg" alt="YourGPT logo (dark mode)" />
+  <img id="site-logo" class="logo-image" width="100" height="100" src={darkLogo.src} alt="YourGPT logo" />
 </a>
+
+<script define:vars={{ darkLogoSrc: whiteLogo.src, lightLogoSrc: darkLogo.src }} is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.getElementById('site-logo');
+    if (!logo) return;
+
+    const applyLogo = () => {
+      // Check multiple ways Starlight might indicate dark mode
+      const isDarkMode = 
+        document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.documentElement.dataset.theme === 'dark';
+      
+      console.log('Theme change detected. Dark mode:', isDarkMode);
+      console.log('Document classes:', document.documentElement.className);
+      console.log('Data theme:', document.documentElement.getAttribute('data-theme'));
+      console.log('Setting logo to:', isDarkMode ? darkLogoSrc : lightLogoSrc);
+      
+      // In dark mode, show white logo; in light mode, show dark logo
+      logo.src = isDarkMode ? darkLogoSrc : lightLogoSrc;
+    };
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && 
+            (mutation.attributeName === 'class' || 
+             mutation.attributeName === 'data-theme')) {
+          applyLogo();
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class', 'data-theme'],
+    });
+
+    // Apply initial logo
+    applyLogo();
+  });
+</script>
 
 <style>
   .site-title {
@@ -20,41 +60,10 @@ const main = "#";
     width: auto;
   }
 
-  /* Logo image styling */
   .logo-image {
     width: 90px !important;
     height: auto !important;
     object-fit: contain !important;
     transform: none !important;
-    transition: opacity 0.2s ease !important;
-  }
-
-  /* On focus styling */
-  .site-title:focus-visible {
-    outline: 0;
-  }
-
-  .site-title:focus-visible > :global(*) {
-    outline: auto;
-    outline-offset: 0.33rem;
-    border-radius: 1px;
-  }
-
-  /* Subtle hover effect */
-  .site-title:hover .logo-image {
-    opacity: 0.9;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .logo-image {
-      width: 80px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .logo-image {
-      width: 70px !important;
-    }
   }
 </style>

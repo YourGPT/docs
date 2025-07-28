@@ -75,12 +75,38 @@ const ThemeToggle = () => {
         .theme-toggle {
           background: none;
           border: none;
-          padding: 0;
+          padding: 3px 4px; /* Small padding around the capsule */
           cursor: pointer;
-          outline: none;
+          outline: none !important;
           display: flex;
           align-items: center;
-          height: 100%;
+          height: auto;
+          position: relative;
+          z-index: 15; /* Ensure button is above other elements */
+          border-radius: 18px; /* Tight capsule shape */
+          box-shadow: none !important;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+
+        /* Remove any focus outline and replace with tight capsule-shaped focus */
+        .theme-toggle:focus {
+          outline: none !important;
+          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5) !important;
+          border-radius: 18px !important;
+        }
+
+        .theme-toggle:focus-visible {
+          outline: none !important;
+          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5) !important;
+          border-radius: 18px !important;
+        }
+
+        /* Dark mode focus */
+        :global([data-theme="dark"]) .theme-toggle:focus,
+        :global([data-theme="dark"]) .theme-toggle:focus-visible {
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
         }
 
         .toggle-track {
@@ -93,37 +119,38 @@ const ThemeToggle = () => {
           transition: all 0.2s ease;
           border: 2px solid; /* Thicker border with dynamic color */
           overflow: visible; /* Allow icons to overflow if needed */
+          z-index: 20; /* Ensure track is above other elements */
         }
 
         .toggle-track.light {
-          background-color: #e0e0e0; /* Light gray background for better contrast */
-          border-color: #9b59b6; /* Purple border */
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 1px #9b59b6; /* Double shadow for visibility */
+          background-color: #f8fafc; /* Very light gray background */
+          border-color: #cbd5e1; /* Subtle gray border */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(203, 213, 225, 0.8); /* Subtle shadow */
         }
 
         .toggle-track.dark {
-          background-color: #1a1a2e;
-          border-color: rgba(255, 255, 255, 0.3); /* More visible border */
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2); /* Double shadow */
+          background-color: #1e293b;
+          border-color: rgba(59, 130, 246, 0.6); /* Blue border for dark mode */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.4); /* Blue shadow */
         }
 
         .toggle-track:hover {
-          box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.5); /* Stronger purple glow for light mode hover */
-          border-color: #8e44ad; /* Darker purple border on hover */
+          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Subtle blue glow for light mode hover */
+          border-color: #94a3b8; /* Slightly darker gray border on hover */
         }
 
         .toggle-track.dark:hover {
-          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); /* Stronger white glow for dark mode hover */
-          border-color: rgba(255, 255, 255, 0.4); /* More visible border on hover */
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Blue glow for dark mode hover */
+          border-color: rgba(59, 130, 246, 0.8); /* More visible blue border on hover */
         }
 
         /* Add hover effect to the thumb as well */
         .theme-toggle:hover .toggle-thumb.light {
-          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(155, 89, 182, 0.5);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.3);
         }
 
         .theme-toggle:hover .toggle-thumb.dark {
-          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.3);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(59, 130, 246, 0.6);
         }
 
         .toggle-icons {
@@ -141,22 +168,22 @@ const ThemeToggle = () => {
         }
 
         .sun-icon {
-          color: ${isDark ? '#ff9500' : '#ff9500'}; /* Orange in both modes for better visibility */
-          font-size: 18px; /* Larger icon */
+          color: ${isDark ? '#ffffff' : '#f2f3f3'}; /* Neutral gray in both modes */
+          font-size: 16px; /* Larger icon */
           margin: 0;
           padding: 0;
           position: absolute;
-          left: 8px;
+          left: 9px;
           top: 50%;
           transform: translateY(-50%);
-          opacity: ${isDark ? 0.6 : 1}; /* More visible in light mode */
+          opacity: ${isDark ? 0.4 : 1}; /* More visible in light mode */
           transition: all 0.2s ease;
-          filter: drop-shadow(0 0 3px ${isDark ? 'rgba(255, 149, 0, 0.7)' : 'rgba(255, 149, 0, 0.9)'});
+          filter: drop-shadow(0 0 ${isDark ? '0px' : '6px'} ${isDark ? 'transparent' : 'rgba(71, 85, 105, 0.9)'});
           stroke-width: 3px; /* Thicker lines for better visibility */
         }
 
         .moon-icon {
-          color: ${isDark ? '#ffffff' : '#6c5ce7'}; /* White in dark mode, purple in light mode */
+          color: ${isDark ? '#ffffff' : '#64748b'}; /* White when active (dark mode), gray when inactive (light mode) */
           font-size: 18px; /* Larger icon */
           margin: 0;
           padding: 0;
@@ -164,9 +191,9 @@ const ThemeToggle = () => {
           right: 8px;
           top: 50%;
           transform: translateY(-50%);
-          opacity: ${isDark ? 1 : 0.7}; /* More visible in both modes */
+          opacity: ${isDark ? 1 : 0.4}; /* Bright when active, dim when inactive */
           transition: all 0.2s ease;
-          filter: drop-shadow(0 0 3px ${isDark ? 'rgba(255, 255, 255, 0.7)' : 'rgba(108, 92, 231, 0.9)'});
+          filter: drop-shadow(0 0 ${isDark ? '6px' : '0px'} ${isDark ? 'rgba(255, 255, 255, 0.8)' : 'transparent'}); /* Glow when active */
           stroke-width: 3px; /* Thicker lines for better visibility */
         }
 
@@ -183,16 +210,16 @@ const ThemeToggle = () => {
         }
 
         .toggle-thumb.light {
-          background-color: #9b59b6; /* Purple thumb in light mode */
-          border-color: #8e44ad; /* Darker purple border */
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+          background-color: #64748b; /* Elegant gray thumb in light mode */
+          border-color: #475569; /* Darker gray border */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05); /* Subtle shadow */
           transform: translateX(4px); /* Slightly offset from left edge */
         }
 
         .toggle-thumb.dark {
-          background-color: #9b59b6; /* Purple thumb in dark mode */
-          border-color: #8e44ad; /* Darker purple border */
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2); /* Enhanced shadow */
+          background-color: #3b82f6; /* Blue thumb in dark mode */
+          border-color: #2563eb; /* Darker blue border */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.3); /* Enhanced shadow */
           transform: translateX(32px); /* Adjusted for wider track */
         }
       `}</style>

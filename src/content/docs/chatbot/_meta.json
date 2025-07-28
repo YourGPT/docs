@@ -26,7 +26,6 @@
     "title": "🗂️ Others",
     "description": "Other features"
   },
-
   "others": {
     "type": "hidden"
   },
@@ -45,7 +44,7 @@
   "how-to-change-the-apperance-of-your-chatbot": {
     "type": "hidden"
   },
-  "queue-replies":{
+  "queue-replies": {
     "type": "hidden"
   },
   "link-shareable-chatbot": {

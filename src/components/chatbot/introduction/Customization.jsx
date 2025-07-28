@@ -20,7 +20,7 @@ const  Customization = ({ title, description, link, icon, iconColor }) => {
         </div>
         <p className="!mt-0 text-xl dark:text-inherit text-gray-700">{title}</p>
       </div>
-      <p className='pl-[35px] !mt-1'>{description}</p>
+      <p className='pl-[35px] !mt-1 text-gray-600 dark:text-gray-300'>{description}</p>
       <a href={link} className="no-underline font-semibold transition-all duration-300 text-lg mt-4 inline-block pl-[35px] ">
         Learn more
       </a>

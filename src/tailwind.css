@@ -1,3 +1,589 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem
+  }
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 217 91% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Dark mode Starlight integration for sidebar */
+:root[data-theme="dark"],
+.dark {
+  --sl-color-bg-sidebar: #0f0f0f;
+  --sl-color-hairline: #1f1f1f;
+  --sl-color-text: #d4d4d8;
+  --sl-color-gray-1: #f8fafc;
+  --sl-color-gray-2: #a1a1aa;
+  --sl-color-gray-3: #71717a;
+  --sl-color-gray-4: #52525b;
+  --sl-color-gray-5: #3f3f46;
+  --sl-color-gray-6: #1a1a1a;
+  --sl-color-accent-low: #2563eb;
+  --sl-color-accent-high: #ffffff;
+  /* Ensure foreground color is properly set for Tailwind classes */
+  --foreground: 212 13% 83%; /* #d4d4d8 in HSL */
+}
+
+/* Ensure dark mode sidebar background is consistent */
+.dark [data-theme="dark"] .sidebar-wrapper,
+.dark .sidebar-wrapper,
+[data-theme="dark"] .sidebar-wrapper {
+  background-color: #0f0f0f !important;
+}
+
+/* Dark mode scrollbar improvements */
+.dark .sidebar-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #3f3f46 !important;
+}
+
+.dark .sidebar-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b !important;
+}
+
+/* Dark mode header improvements to match sidebar */
+.dark .header-container,
+[data-theme="dark"] .header-container {
+  background-color: #0f0f0f !important;
+  border-bottom: 1px solid #1f1f1f !important;
+}
+
+/* Ensure header text elements are properly colored in dark mode */
+.dark .header-container *,
+[data-theme="dark"] .header-container * {
+  color: inherit;
+}
+
+/* Dark mode search improvements to match sidebar theme */
+.dark .search-input,
+[data-theme="dark"] .search-input {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #d4d4d8 !important;
+}
+
+/* Dark mode nav links to match sidebar */
+.dark .nav-link,
+[data-theme="dark"] .nav-link {
+  color: #a1a1aa !important;
+}
+
+.dark .nav-link:hover,
+[data-theme="dark"] .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure the header has a subtle border to separate from content */
+.dark .header-container,
+[data-theme="dark"] .header-container {
+  border-bottom: 1px solid #1f1f1f !important;
+}
+
+/* Dark mode theme toggle and other header elements */
+.dark .theme-select,
+[data-theme="dark"] .theme-select {
+  color: #d4d4d8 !important;
+}
+
+/* Dark mode sign-in button improvements */
+.dark .sign-in-button,
+[data-theme="dark"] .sign-in-button {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border: 1px solid #3b82f6 !important;
+}
+
+.dark .sign-in-button:hover,
+[data-theme="dark"] .sign-in-button:hover {
+  background-color: #1d4ed8 !important;
+  border-color: #2563eb !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* ===== MAIN CONTENT DARK MODE FIXES ===== */
+/* Target Starlight's main content area */
+.dark main,
+[data-theme="dark"] main,
+.dark .main,
+[data-theme="dark"] .main,
+.dark .sl-container,
+[data-theme="dark"] .sl-container {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target the main content wrapper */
+.dark .content,
+[data-theme="dark"] .content,
+.dark .sl-main,
+[data-theme="dark"] .sl-main {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target the page content area */
+.dark .page,
+[data-theme="dark"] .page,
+.dark .sl-content,
+[data-theme="dark"] .sl-content {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target the article/content wrapper */
+.dark article,
+[data-theme="dark"] article,
+.dark .content-panel,
+[data-theme="dark"] .content-panel {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Ensure the entire page background is dark */
+.dark body,
+[data-theme="dark"] body,
+.dark html,
+[data-theme="dark"] html {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any remaining white backgrounds in dark mode */
+.dark .bg-white,
+[data-theme="dark"] .bg-white {
+  background-color: #0f0f0f !important;
+}
+
+/* Target Starlight's specific layout containers */
+.dark .sl-flex,
+[data-theme="dark"] .sl-flex {
+  background-color: #0f0f0f !important;
+}
+
+/* Target the main layout wrapper */
+.dark .layout,
+[data-theme="dark"] .layout,
+.dark .sl-layout,
+[data-theme="dark"] .sl-layout {
+  background-color: #0f0f0f !important;
+}
+
+/* Target any content containers */
+.dark .container,
+[data-theme="dark"] .container,
+.dark .content-container,
+[data-theme="dark"] .content-container {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Ensure proper text colors for headings and content */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #ffffff !important;
+}
+
+.dark p,
+.dark span,
+.dark div,
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div {
+  color: #d4d4d8 !important;
+}
+
+/* Target any remaining light backgrounds */
+.dark .bg-background,
+[data-theme="dark"] .bg-background {
+  background-color: #0f0f0f !important;
+}
+
+/* Ensure cards and panels are dark */
+.dark .card,
+.dark .panel,
+[data-theme="dark"] .card,
+[data-theme="dark"] .panel {
+  background-color: #1a1a1a !important;
+  border-color: #2a2a2a !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target the right sidebar (table of contents) */
+.dark .right-sidebar,
+.dark .toc,
+.dark .sl-toc,
+[data-theme="dark"] .right-sidebar,
+[data-theme="dark"] .toc,
+[data-theme="dark"] .sl-toc {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target pagination and navigation elements */
+.dark .pagination,
+.dark .nav,
+.dark .navigation,
+[data-theme="dark"] .pagination,
+[data-theme="dark"] .nav,
+[data-theme="dark"] .navigation {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Ensure footer is dark */
+.dark footer,
+[data-theme="dark"] footer,
+.dark .footer,
+[data-theme="dark"] .footer {
+  background-color: #0a0a0a !important;
+  border-top: 1px solid #1a1a1a !important;
+  color: #d4d4d8 !important;
+}
+
+/* ===== UNIVERSAL DARK MODE OVERRIDES ===== */
+/* Force dark background on all major layout elements */
+.dark *:not(.sidebar-wrapper):not(.sidebar-scroll-container):not(.sidebar-footer),
+[data-theme="dark"] *:not(.sidebar-wrapper):not(.sidebar-scroll-container):not(.sidebar-footer) {
+  /* Only apply to elements that don't already have a dark background */
+}
+
+/* Target the main page wrapper more aggressively */
+.dark #__next,
+.dark #root,
+.dark .app,
+[data-theme="dark"] #__next,
+[data-theme="dark"] #root,
+[data-theme="dark"] .app {
+  background-color: #0f0f0f !important;
+}
+
+/* Target any grid or flex containers that might be white */
+.dark .grid,
+.dark .flex,
+[data-theme="dark"] .grid,
+[data-theme="dark"] .flex {
+  background-color: inherit !important;
+}
+
+/* Ensure all sections have dark background */
+.dark section,
+[data-theme="dark"] section {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any wrapper divs */
+.dark .wrapper,
+.dark .container-fluid,
+.dark .page-wrapper,
+[data-theme="dark"] .wrapper,
+[data-theme="dark"] .container-fluid,
+[data-theme="dark"] .page-wrapper {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Override any inline styles that might set white backgrounds */
+.dark [style*="background-color: white"],
+.dark [style*="background-color: #fff"],
+.dark [style*="background-color: #ffffff"],
+[data-theme="dark"] [style*="background-color: white"],
+[data-theme="dark"] [style*="background-color: #fff"],
+[data-theme="dark"] [style*="background-color: #ffffff"] {
+  background-color: #0f0f0f !important;
+}
+
+/* Ensure proper contrast for links */
+.dark a,
+[data-theme="dark"] a {
+  color: #60a5fa !important;
+}
+
+.dark a:hover,
+[data-theme="dark"] a:hover {
+  color: #93c5fd !important;
+}
+
+/* Code blocks and pre elements */
+.dark pre,
+.dark code,
+[data-theme="dark"] pre,
+[data-theme="dark"] code {
+  background-color: #1a1a1a !important;
+  color: #e5e7eb !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+/* Tables */
+.dark table,
+.dark th,
+.dark td,
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+  background-color: #1a1a1a !important;
+  border-color: #2a2a2a !important;
+  color: #d4d4d8 !important;
+}
+
+/* Blockquotes */
+.dark blockquote,
+[data-theme="dark"] blockquote {
+  background-color: #1a1a1a !important;
+  border-left: 4px solid #3b82f6 !important;
+  color: #d4d4d8 !important;
+}
+
+/* Images - ensure they don't have white backgrounds */
+.dark img,
+[data-theme="dark"] img {
+  background-color: transparent !important;
+}
+
+/* Buttons */
+.dark button,
+[data-theme="dark"] button {
+  background-color: #1a1a1a !important;
+  color: #d4d4d8 !important;
+  border-color: #2a2a2a !important;
+}
+
+.dark button:hover,
+[data-theme="dark"] button:hover {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+/* Input elements */
+.dark input,
+.dark textarea,
+.dark select,
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: #1a1a1a !important;
+  color: #d4d4d8 !important;
+  border-color: #2a2a2a !important;
+}
+
+/* Ensure the root element is dark */
+:root[data-theme="dark"] {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any remaining elements with class-based backgrounds */
+.dark .bg-slate-50,
+.dark .bg-gray-50,
+.dark .bg-zinc-50,
+.dark .bg-neutral-50,
+.dark .bg-stone-50,
+[data-theme="dark"] .bg-slate-50,
+[data-theme="dark"] .bg-gray-50,
+[data-theme="dark"] .bg-zinc-50,
+[data-theme="dark"] .bg-neutral-50,
+[data-theme="dark"] .bg-stone-50 {
+  background-color: #0f0f0f !important;
+}
+
+/* ===== STARLIGHT TEMPLATE SPECIFIC FIXES ===== */
+/* Target splash template specifically */
+.dark .hero,
+.dark .splash,
+[data-theme="dark"] .hero,
+[data-theme="dark"] .splash {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target the main content area more specifically */
+.dark [data-pagefind-body],
+[data-theme="dark"] [data-pagefind-body] {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any Astro-specific containers */
+.dark .astro-container,
+[data-theme="dark"] .astro-container {
+  background-color: #0f0f0f !important;
+}
+
+/* Ensure the page content wrapper is dark */
+.dark .page-content,
+.dark .content-wrapper,
+[data-theme="dark"] .page-content,
+[data-theme="dark"] .content-wrapper {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any remaining white or light backgrounds */
+.dark .bg-white,
+.dark .bg-gray-100,
+.dark .bg-slate-100,
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-gray-100,
+[data-theme="dark"] .bg-slate-100 {
+  background-color: #0f0f0f !important;
+}
+
+/* Ensure proper styling for the main layout grid */
+.dark .layout-grid,
+.dark .main-grid,
+[data-theme="dark"] .layout-grid,
+[data-theme="dark"] .main-grid {
+  background-color: #0f0f0f !important;
+}
+
+/* Target any content sections */
+.dark .content-section,
+.dark .main-section,
+[data-theme="dark"] .content-section,
+[data-theme="dark"] .main-section {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Ensure all text elements have proper contrast */
+.dark .text-black,
+.dark .text-gray-900,
+.dark .text-slate-900,
+[data-theme="dark"] .text-black,
+[data-theme="dark"] .text-gray-900,
+[data-theme="dark"] .text-slate-900 {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-700,
+.dark .text-slate-700,
+[data-theme="dark"] .text-gray-700,
+[data-theme="dark"] .text-slate-700 {
+  color: #d4d4d8 !important;
+}
+
+.dark .text-gray-600,
+.dark .text-slate-600,
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-slate-600 {
+  color: #a1a1aa !important;
+}
+
+/* Force dark mode on the entire viewport */
+.dark,
+[data-theme="dark"] {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Ensure the HTML and body elements are properly styled */
+html.dark,
+html[data-theme="dark"],
+body.dark,
+body[data-theme="dark"] {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any remaining layout containers */
+.dark .container,
+.dark .max-w-screen-xl,
+.dark .mx-auto,
+[data-theme="dark"] .container,
+[data-theme="dark"] .max-w-screen-xl,
+[data-theme="dark"] .mx-auto {
+  background-color: inherit !important;
+}
+
+/* Ensure proper styling for changelog and other special pages */
+.dark .changelog,
+.dark .changelog-item,
+[data-theme="dark"] .changelog,
+[data-theme="dark"] .changelog-item {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
+}
+
+/* Target any cards or panels that might still be light */
+.dark .card,
+.dark .panel,
+.dark .box,
+[data-theme="dark"] .card,
+[data-theme="dark"] .panel,
+[data-theme="dark"] .box {
+  background-color: #1a1a1a !important;
+  border-color: #2a2a2a !important;
+  color: #d4d4d8 !important;
+}

@@ -1,99 +1,42 @@
-
-:root {
-  /* Custom backdrop background color in dark mode. */
-  --starlight-image-zoom-backdrop-bg: black;
-
+#starlight__sidebar {
+  overflow-y: hidden !important;
 }
 
-:root[data-theme='light'] {
-  /* Custom backdrop background color in light mode. */
-  --starlight-image-zoom-backdrop-bg: black;
-}
-.starlight-image-zoom-zoomable{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-/* Adjust content area to account for fixed header */
-:global(.sl-content) {
-  padding-top: 60px !important; /* Add padding equal to header height */
-  margin-top: 0 !important;
+/* ===== ADDITIONAL DARK MODE FIXES ===== */
+/* Ensure all main content areas are dark in dark mode */
+.dark #starlight__main,
+.dark .main-frame,
+.dark .content-frame,
+[data-theme="dark"] #starlight__main,
+[data-theme="dark"] .main-frame,
+[data-theme="dark"] .content-frame {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
 }
 
-/* Custom card grid for knowledge source training options */
-.custom-card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns as in the screenshot */
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  align-items: stretch;
+/* Target any remaining Starlight containers */
+.dark .sl-markdown-content,
+.dark .sl-content,
+[data-theme="dark"] .sl-markdown-content,
+[data-theme="dark"] .sl-content {
+  background-color: #0f0f0f !important;
+  color: #d4d4d8 !important;
 }
 
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-  .custom-card-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
-  }
+/* Ensure proper dark mode for all page layouts */
+.dark .page-layout,
+.dark .doc-layout,
+[data-theme="dark"] .page-layout,
+[data-theme="dark"] .doc-layout {
+  background-color: #0f0f0f !important;
 }
 
-/* Ensure proper spacing in the card content */
-.card .body {
-  margin-top: 0.75rem;
-  line-height: 1.6;
-}
-
-/* Make sure bold text stands out properly in both light and dark modes */
-:global([data-theme="light"]) .card .body strong {
-  color: #111827;
-  font-weight: 600;
-}
-
-:global([data-theme="dark"]) .card .body strong {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* Ensure proper card height and appearance */
-.card {
-  min-height: 180px;
-}
-
-/* Additional content spacing adjustments */
-:global(article) {
-  padding-top: 0 !important; /* Remove top padding from article */
-}
-
-:global(main) {
-  padding-top: 0 !important; /* Remove top padding from main */
-}
-
-:global(h1) {
-  margin-top: 0 !important; /* Remove top margin from h1 */
-  margin-bottom: 1.5rem !important; /* Add consistent bottom margin */
-}
-
-:global(h2) {
-  margin-top: 1.5rem !important; /* Reduce top margin for h2 */
-  margin-bottom: 1rem !important; /* Add consistent bottom margin */
-}
-
-:global(.content-container) {
-  padding-top: 0 !important; /* Remove top padding from content container */
-}
-
-/* Ensure content is properly centered */
-:global(.sl-content-wrapper) {
-  margin: 0 auto !important;
-  max-width: var(--sl-content-width, 50rem) !important;
-}
-
-/* Reduce spacing between elements */
-:global(p) {
-  margin-bottom: 1rem !important;
-}
-
-:global(.content > *:first-child) {
-  margin-top: 0 !important;
+/* Force dark background on any remaining white elements */
+.dark [style*="background: white"],
+.dark [style*="background: #fff"],
+.dark [style*="background: #ffffff"],
+[data-theme="dark"] [style*="background: white"],
+[data-theme="dark"] [style*="background: #fff"],
+[data-theme="dark"] [style*="background: #ffffff"] {
+  background: #0f0f0f !important;
 }
