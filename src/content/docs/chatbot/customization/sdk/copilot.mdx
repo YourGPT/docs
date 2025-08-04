@@ -1,0 +1,1042 @@
+---
+title: "Copilot SDK"
+description: "Build intelligent applications with YourGPT's modern JavaScript/TypeScript SDK"
+keywords: yourgpt copilot SDK, yourgpt copilot integration, AI copilot, typescript SDK, react hooks
+hero:
+  title: "Copilot SDK"
+  tagline: "Build intelligent applications with YourGPT's modern JavaScript/TypeScript SDK"
+---
+
+import { Image } from '~/components';
+import { Note } from '~/components'
+import { Aside } from '@astrojs/starlight/components';
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> YourGPT AI Copilot Builder SDK </div>
+
+The YourGPT Copilot SDK allows you to build and deploy an AI Copilot for your product that delivers more than basic chat functionality. YourGPT AI Copilot acts as an action-oriented smart AI agent, performing multiple dynamic tasks to meet customer needs and provide a superior experience through real AI actions.
+
+**What makes YourGPT AI Copilot different:**
+- **Context-Aware Intelligence**: Fully understands your users and the tools you've integrated
+- **Dynamic AI Actions**: Executes multiple actions across your website, apps, and backend systems
+- **Seamless Integration**: Performs both frontend and backend tasks in combination
+- **Goal-Oriented**: Continues working until the objective is achieved
+- **Business-Specific**: High level of customization as need to your Goals
+
+You can think of it as an intelligent copilot for your application that assists users or your team by handling complex workflows in a single interaction. It carries out real actions on behalf of users with permission, integrates smoothly with your existing systems and data, and offers contextual support tailored to each user’s needs and your business processes.
+
+<div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700 mb-4'>Key Benefits</div>
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300 rounded-xl shadow-sm overflow-hidden">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-3 !ps-6 border-b dark:border-gray-700 font-semibold text-base">Feature</th>
+      <th className="px-8 py-3 !pe-6 border-b dark:border-gray-700 font-semibold text-base">What It Enables</th>
+    </tr>
+  </thead>
+  <tbody className="text-gray-800 dark:text-gray-200">
+    <tr>
+      <td className="!ps-6 font-semibold border-b dark:border-gray-700 text-sm">Instant AI Actions</td>
+      <td className="!ps-6 border-b dark:border-gray-700 text-sm">Convert requests into instant actions—place orders, update dashboards, or send emails, all from chat.</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border-b dark:border-gray-700 text-sm">Contextual Intelligence</td>
+      <td className="!ps-6 border-b dark:border-gray-700 text-sm">Provide personalised help by using user data, business logic, and live context in every interaction.</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border-b dark:border-gray-700 text-sm">Custom Workflows</td>
+      <td className="!ps-6 border-b dark:border-gray-700 text-sm">Automate complex, multi-step tasks—your Copilot follows the rules and processes you define.</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border-b dark:border-gray-700 text-sm">Seamless Integrations</td>
+      <td className="!ps-6 border-b dark:border-gray-700 text-sm">Connect with SaaS, ecommerce, support, and productivity tools. Sync data and automate work across platforms.</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border-b dark:border-gray-700 text-sm">Live UI Actions</td>
+      <td className="!ps-6 border-b dark:border-gray-700 text-sm">Enable users to add tasks, change themes, or update dashboards instantly—right from the chat interface.</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border-b dark:border-gray-700 text-sm">Fast, Developer-Friendly Setup</td>
+      <td className="!ps-6 border-b dark:border-gray-700 text-sm">Get started in under 30 minutes with React, JavaScript, and upcoming mobile SDKs. Full type safety and examples included.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700 mb-4'>Real-World Examples</div>
+
+**E-commerce Integration Demo**
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="E-commerce AI Copilot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**SaaS Application Integration**
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="SaaS AI Copilot Integration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**Customer Support Automation**
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="AI Customer Support Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**Productivity App Enhancement**
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Productivity AI Copilot Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The scope of what your copilot can do is far broader, limited only by your business needs and integrations.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> How to Get Started </div>
+
+Getting started with the YourGPT Copilot SDK is straightforward. Follow these steps to integrate AI-powered assistance into your application.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Step 1: Install the SDK </div>
+
+Choose your preferred package manager:
+
+```bash title="npm"
+npm install @yourgpt/widget-web-sdk
+```
+
+
+```bash title="yarn"
+yarn add @yourgpt/widget-web-sdk
+```
+
+```bash title="pnpm"
+pnpm add @yourgpt/widget-web-sdk
+```
+
+<Aside>💡 **Pro Tip**: The SDK is tree-shakable, so you only bundle what you use. A typical integration adds less than 50KB to your bundle.</Aside>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Step 2: Get Your Widget ID </div>
+
+1. Visit your [YourGPT Dashboard](https://chatbot.yourgpt.ai/dashboard)
+2. Navigate to your chatbot settings
+3. Enable the Agent Mode from the yourgpt Dashboard
+4. Copy your Widget ID from the integration section
+
+<Aside>📝 **Need Help?** If you don't have a YourGPT account yet, [sign up here](https://chatbot.yourgpt.ai/signup) to get started.</Aside>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Step 3: Initialize the Copilot </div>
+
+Here's how to integrate the copilot into your application:
+
+```typescript title="copilot-integration.ts"
+import { YourGPT } from "@yourgpt/widget-web-sdk";
+
+// Initialize the copilot
+await YourGPT.init({
+  widgetId: "your-widget-id-here"
+});
+
+const copilot = YourGPT.getInstance();
+
+// Provide context to make AI responses more relevant
+copilot.sendMessage("User is viewing the pricing page", false);
+
+// Listen for AI responses to trigger app actions
+copilot.onMessageReceived((message) => {
+  // Handle AI suggestions in your app
+  console.log("AI suggests:", message);
+});
+```
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Core Concepts </div>
+
+Before integrating advanced features, let's understand the key concepts powering the YourGPT Copilot SDK:
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> 1. Integration Modes </div>
+
+YourGPT SDK offers two main integration methods to suit your application's requirements:
+
+**Simple Integration:** Ideal for quickly setting up the chatbot widget with minimal configuration.
+
+```
+import { YourGPT } from "@yourgpt/widget-web-sdk";
+
+// Initialize the widget quickly
+await YourGPT.init({ widgetId: "your-widget-id" });
+```
+
+**Advanced Integration:** Provides greater flexibility, allowing for detailed control and context-driven AI interactions.
+
+```
+import { YourGPT } from "@yourgpt/widget-web-sdk";
+
+// Initialize the widget
+await YourGPT.init({ widgetId: "your-widget-id" });
+const sdk = YourGPT.getInstance();
+
+// Send contextual information to enhance AI responses
+sdk.sendMessage("User is on checkout page with a cart value of $299", true);
+
+// Control widget visibility
+sdk.open();
+sdk.close();
+sdk.toggle();
+```
+
+### 2. AI Actions: Extend Your Chatbot's Capabilities
+
+AI Actions empower YourGPT Copilot to execute specific, meaningful actions within your application, transforming interactions from simple chat to active task execution. These are custom functions your AI agent intelligently invokes to fulfill user requests.
+
+```
+const sdk = YourGPT.getInstance();
+
+// Register a custom AI action
+sdk.registerAIAction("create_user_account", async (data, helpers) => {
+  // Prompt user confirmation before action execution
+  const confirmed = await helpers.confirm({
+    title: "Create Account",
+    description: "Would you like to create an account with the provided details?",
+  });
+
+  if (confirmed) {
+    // Execute account creation logic
+    const result = await createAccount(data.userDetails);
+    helpers.respond(`Account successfully created! Welcome, ${result.name}.`);
+  } else {
+    helpers.respond("Account creation cancelled.");
+  }
+});
+```
+
+### 3. Context Awareness: Personalize User Experience
+
+Enhancing your chatbot with session-specific context improves the accuracy and relevance of interactions, ensuring a personalized experience for users.
+
+```
+const sdk = YourGPT.getInstance();
+
+// Set context data for the current user session
+sdk.setSessionData({
+  currentPage: "pricing",
+  userPlan: "free",
+  cartValue: 299,
+  activeExperiments: ["new-checkout", "ai-recommendations"],
+});
+
+// The AI Copilot now tailors responses based on this contextual information
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> 3. Context Awareness </div>
+
+Providing context improves your copilot's intelligence, making interactions more relevant and helpful.
+
+```typescript title="context-awareness.ts"
+const sdk = YourGPT.getInstance();
+
+// Set session-specific context data
+sdk.setSessionData({
+  currentPage: "pricing",
+  userPlan: "free",
+  cartValue: 299,
+  activeExperiments: ["new-checkout", "ai-recommendations"],
+});
+
+// AI now provides responses tailored to this context
+```
+
+<Aside>💡 **Key Insight**: The Copilot SDK shines when you provide rich context and enable meaningful actions. Start simple, then gradually add more context and actions as you see value.</Aside>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> 4. Monitoring Your Copilot </div>
+
+**Conversation Tracking**: You can view all user chats and the actions performed by your Copilot in the Conversations tab of your YourGPT dashboard. This gives you complete visibility into:
+- User interactions and requests
+- AI Actions executed by your copilot
+- Success rates and user satisfaction
+- Common patterns and improvement opportunities
+
+**Analytics Integration**: The SDK provides events that integrate seamlessly with your existing analytics tools, allowing you to track copilot usage alongside your other metrics.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Configuration Options </div>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Basic Configuration </div>
+
+Most applications only need these essential settings:
+
+```typescript title="basic-config.ts"
+await YourGPT.init({
+  widgetId: "your-widget-id",        // Required: Get this from your dashboard
+  debug: true,                       // Optional: Enable during development
+});
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Advanced Configuration </div>
+
+For enterprise or custom deployments:
+
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold">Option</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold">Purpose</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold">When to Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`endpoint`</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Custom API endpoint</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Enterprise deployments</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`autoLoad`</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Control when widget loads</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Performance optimization</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`whitelabel`</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Remove YourGPT branding</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">White-label solutions</td>
+    </tr>
+  </tbody>
+</table>
+
+```typescript title="advanced-config.ts"
+await YourGPT.init({
+  widgetId: "your-widget-id",
+  endpoint: "https://your-custom-domain.com/api",  // Custom endpoint
+  autoLoad: false,                                 // Load manually
+  whitelabel: true,                               // Remove branding
+  debug: process.env.NODE_ENV === 'development'   // Debug in dev only
+});
+```
+
+<Aside>⚠️ **Important**: Most users should stick with the basic configuration. Advanced options are for specific use cases and may require additional setup.</Aside>
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Integration with Your Existing Workflow </div>
+
+YourGPT AI Copilot integrates seamlessly with your existing workflow using the YourGPT SDK - a powerful tool designed for simple yet comprehensive integrations.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Language & Framework Support </div>
+
+**Current Support:**
+- **JavaScript/TypeScript**: Full support with comprehensive type definitions
+- **React**: Dedicated hooks and components for seamless integration
+- **Upcoming**: React Native, Flutter, and more frameworks
+
+**Integration Benefits:**
+- **Simple Setup**: Highly customizable and built for easy integration
+- **Workflow Compatibility**: Works with your existing systems and processes
+- **Scalable Architecture**: Grows with your application's needs
+
+For specific integration requests or custom framework support, please contact our team.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Making Your Copilot Smarter with Context </div>
+
+The key to a powerful copilot is providing rich context about your users and their current situation. The SDK offers three types of context data:
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Session Context: What's Happening Right Now </div>
+
+Use session data to tell your copilot about the user's current activity:
+
+```typescript title="session-context.ts"
+const copilot = YourGPT.getInstance();
+
+// When user logs in
+copilot.setSessionData({
+  userId: "user_123",
+  accountType: "premium",
+  currentPage: "dashboard",
+  activeFeatures: ["analytics", "ai-assistant"],
+  sessionGoal: "reviewing_monthly_reports"
+});
+
+// When user navigates to pricing
+copilot.setSessionData({
+  currentPage: "pricing",
+  planInterest: "enterprise",
+  cartValue: 299,
+  comparisonViewed: ["basic", "pro", "enterprise"]
+});
+```
+
+**Perfect for**: Current user state, page context, active features, temporary preferences
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> User Identity: Who Is This Person </div>
+
+Contact data helps your copilot provide personalized assistance:
+
+```typescript title="user-identity.ts"
+// When user signs up or logs in
+copilot.setContactData({
+  email: "sarah@company.com",
+  name: "Sarah Johnson",
+  company: "TechCorp Inc",
+  role: "Marketing Manager",
+  phone: "+1-555-0123"
+});
+```
+
+**Perfect for**: User identification, personalization, support context
+
+<Aside>🔒 **Privacy Note**: Contact data requires either email or phone. Use `user_hash` for secure identification without exposing PII.</Aside>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Visitor Analytics: How Did They Get Here </div>
+
+Visitor data provides context about user acquisition and behavior:
+
+```typescript title="visitor-analytics.ts"
+// Track how users found your app
+copilot.setVisitorData({
+  source: "google_ads",
+  campaign: "q4_enterprise_push",
+  referrer: "https://google.com/search?q=ai+chatbot",
+  landingPage: "/solutions/enterprise",
+  deviceType: "desktop",
+  location: "San Francisco, CA"
+});
+```
+
+**Perfect for**: Marketing attribution, user journey tracking, behavioral insights
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Real-World Context Example </div>
+
+Here's how a SaaS application might use all three context types:
+
+```typescript title="saas-context-example.ts"
+// User visits pricing page from Google Ad
+copilot.setVisitorData({
+  source: "google_ads",
+  campaign: "enterprise_q4",
+  intent: "pricing_research"
+});
+
+// User signs up for trial
+copilot.setContactData({
+  email: "cto@startup.com",
+  name: "Alex Chen",
+  company: "InnovateTech",
+  role: "CTO"
+});
+
+// User explores dashboard
+copilot.setSessionData({
+  trialDay: 3,
+  featuresUsed: ["analytics", "integrations"],
+  currentGoal: "evaluating_enterprise_features",
+  teamSize: 25
+});
+
+// Now your copilot can say:
+// "Hi Alex! I see you're on day 3 of your trial and exploring enterprise features 
+// for your 25-person team. Would you like me to show you our team collaboration tools?"
+```
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Building AI Actions: Your Copilot's Superpowers </div>
+
+AI Actions are the heart of the Copilot SDK. They let your AI assistant actually *do things* in your application, not just talk about them.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> How AI Actions Work </div>
+
+Think of AI Actions as functions your copilot can call when it understands user intent:
+
+1. **User expresses intent**: "Can you delete my old project files?"
+2. **AI recognizes the intent** and calls your registered action
+3. **Your action asks for confirmation** (optional but recommended)
+4. **Your action performs the task** and reports back
+5. **AI responds to user** with the result
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Your First AI Action </div>
+
+Let's start with a simple example - getting the current time:
+
+```typescript title="first-ai-action.ts"
+const copilot = YourGPT.getInstance();
+
+copilot.registerAIAction("get_current_time", async (data, helpers) => {
+  const currentTime = new Date().toLocaleString();
+  helpers.respond(`The current time is ${currentTime}`);
+});
+```
+
+Now when users ask "What time is it?", your copilot can actually tell them!
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> AI Actions with User Confirmation </div>
+
+For actions that change data or cost money, always ask for confirmation:
+
+```typescript title="confirmed-action.ts"
+copilot.registerAIAction("upgrade_user_plan", async (data, helpers) => {
+  const { planName, price } = JSON.parse(data.action[0].function.arguments);
+  
+  // Ask user to confirm the action
+  const confirmed = await helpers.confirm({
+    title: `Upgrade to ${planName}?`,
+    description: `This will charge $${price}/month to your account. You can cancel anytime.`,
+    acceptLabel: "Upgrade Now",
+    rejectLabel: "Not Now"
+  });
+  
+  if (confirmed) {
+    try {
+      const result = await upgradePlan(planName);
+      helpers.respond(`🎉 Successfully upgraded to ${planName}! Your new features are now active.`);
+    } catch (error) {
+      helpers.respond(`❌ Upgrade failed: ${error.message}. Please try again or contact support.`);
+    }
+  } else {
+    helpers.respond("No problem! You can upgrade anytime from your account settings.");
+  }
+});
+```
+
+Events let you react to what's happening with your copilot in real-time. This is crucial for creating responsive, integrated experiences.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Essential Events You Should Handle </div>
+
+#### **Connection Status: Know When Your Copilot is Ready**
+```typescript title="connection-events.ts"
+const copilot = YourGPT.getInstance();
+
+copilot.onInit(() => {
+  console.log("🚀 Copilot is ready!");
+  // Now safe to send context or register actions
+  
+  // Set initial context
+  copilot.setSessionData({
+    currentPage: window.location.pathname,
+    userLoggedIn: !!getCurrentUser()
+  });
+});
+```
+
+#### **Message Events: React to AI Responses**
+```typescript title="message-events.ts"
+copilot.onMessageReceived((message) => {
+  // Log for analytics
+  analytics.track('copilot_message_received', {
+    messageType: message.type,
+    timestamp: new Date()
+  });
+  
+  // Show notification if widget is closed
+  if (!copilot.isOpen()) {
+    showNotification("Your AI assistant has a response!");
+  }
+  
+  // Update UI based on AI suggestions
+  if (message.suggestions) {
+    updateUIWithSuggestions(message.suggestions);
+  }
+});
+```
+
+#### **Human Escalation: Handle Support Handoffs**
+```typescript title="escalation-events.ts"
+copilot.onEscalatedToHuman((escalationData) => {
+  // Notify your support team
+  notifySupportTeam({
+    userId: escalationData.userId,
+    context: escalationData.conversationContext,
+    urgency: escalationData.urgency
+  });
+  
+  // Update user's support ticket status
+  updateSupportTicketStatus(escalationData.ticketId, 'escalated');
+  
+  // Show user what to expect
+  showUserMessage("A human agent will join the conversation shortly!");
+});
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Widget State Events: Sync with Your UI </div>
+
+```typescript title="widget-state-events.ts"
+copilot.onWidgetPopup((isOpen) => {
+  if (isOpen) {
+    // User opened the copilot
+    analytics.track('copilot_opened');
+    
+    // Pause any onboarding tours
+    pauseOnboardingTour();
+    
+    // Update context with current page
+    copilot.setSessionData({
+      currentPage: window.location.pathname,
+      timeOpened: new Date().toISOString()
+    });
+  } else {
+    // User closed the copilot
+    analytics.track('copilot_closed');
+    
+    // Resume onboarding if it was paused
+    resumeOnboardingTour();
+  }
+});
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Real-World Event Integration Example </div>
+
+Here's how a SaaS dashboard might use events to create a seamless experience:
+
+```typescript title="saas-event-integration.ts"
+const copilot = YourGPT.getInstance();
+
+// Initialize with current context
+copilot.onInit(() => {
+  const user = getCurrentUser();
+  const currentProject = getCurrentProject();
+  
+  copilot.setContactData({
+    email: user.email,
+    name: user.name,
+    plan: user.subscription.plan
+  });
+  
+  copilot.setSessionData({
+    currentProject: currentProject?.name,
+    projectCount: user.projects.length,
+    lastLogin: user.lastLoginAt,
+    featuresUsed: user.analytics.featuresUsed
+  });
+});
+
+// React to AI messages
+copilot.onMessageReceived((message) => {
+  // If AI suggests a feature, highlight it in the UI
+  if (message.suggestedFeature) {
+    highlightFeatureInUI(message.suggestedFeature);
+  }
+  
+  // If AI provides a tutorial link, track engagement
+  if (message.tutorialLink) {
+    analytics.track('tutorial_suggested', {
+      tutorial: message.tutorialLink,
+      context: message.context
+    });
+  }
+});
+
+// Handle support escalations
+copilot.onEscalatedToHuman((data) => {
+  // Create support ticket automatically
+  const ticket = await createSupportTicket({
+    userId: data.userId,
+    subject: data.issue,
+    context: data.conversationHistory,
+    priority: data.urgency
+  });
+  
+  // Show ticket number to user
+  copilot.sendMessage(`Support ticket #${ticket.id} created. Average response time: 2 hours.`, false);
+});
+```
+
+<Aside>🎯 **Best Practice**: Use events to bridge your copilot with your existing analytics, support systems, and user experience flows. This creates a truly integrated AI assistant.</Aside>
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> React Integration Made Simple </div>
+
+The SDK provides React-specific hooks and components that make integration effortless. Here's how to use them effectively:
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Quick Setup with YourGPTProvider </div>
+
+Wrap your app with the provider to make the SDK available everywhere:
+
+```tsx title="main.tsx"
+import { YourGPTProvider } from "@yourgpt/widget-web-sdk/react";
+
+function App() {
+  return (
+    <YourGPTProvider
+      config={{ widgetId: "your-widget-id" }}
+      onInitialized={(copilot) => {
+        // Set global context when ready
+        copilot.setSessionData({
+          appVersion: "2.1.0",
+          environment: "production"
+        });
+      }}
+    >
+      <YourMainApp />
+    </YourGPTProvider>
+  );
+}
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> useYourGPTChatbot: Control Your Copilot </div>
+
+This hook gives you complete control over the copilot widget:
+
+```tsx title="CopilotControls.tsx"
+import { useYourGPTChatbot } from "@yourgpt/widget-web-sdk/react";
+
+function CopilotControls() {
+  const copilot = useYourGPTChatbot();
+
+  // Update context when user changes pages
+  useEffect(() => {
+    copilot.setSessionData({
+      currentPage: window.location.pathname,
+      timestamp: new Date().toISOString()
+    });
+  }, [window.location.pathname]);
+
+  return (
+    <div className="copilot-controls">
+      <div className="status">
+        Status: {copilot.isConnected ? "🟢 Ready" : "🔴 Connecting..."}
+      </div>
+      
+      <button 
+        onClick={copilot.open}
+        className="btn-primary"
+      >
+        Get AI Help
+      </button>
+      
+      {/* Contextual help button */}
+      <button 
+        onClick={() => copilot.sendMessage("Help me with this page", true)}
+        className="btn-secondary"
+      >
+        Help with Current Page
+      </button>
+    </div>
+  );
+}
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> useAIActions: Register Smart Actions </div>
+
+This hook manages AI Actions with automatic cleanup:
+
+```tsx title="SmartActions.tsx"
+import { useAIActions } from "@yourgpt/widget-web-sdk/react";
+
+function SmartActions() {
+  const aiActions = useAIActions();
+  const [user] = useUser(); // Your user hook
+  const [projects] = useProjects(); // Your projects hook
+
+  useEffect(() => {
+    // Register actions that use current React state
+    aiActions.registerActions({
+      create_project: async (data, helpers) => {
+        const { projectName, template } = JSON.parse(data.action[0].function.arguments);
+        
+        const confirmed = await helpers.confirm({
+          title: "Create Project",
+          description: `Create "${projectName}" with ${template} template?`
+        });
+        
+        if (confirmed) {
+          // Use your existing React functions
+          const project = await createProject(projectName, template);
+          helpers.respond(`✅ Created "${projectName}"! Opening now...`);
+          
+          // Navigate using React Router
+          navigate(`/projects/${project.id}`);
+        }
+      },
+      
+      get_user_stats: async (data, helpers) => {
+        helpers.respond(`You have ${projects.length} projects and ${user.teamMembers} team members.`);
+      }
+    });
+
+    // Cleanup happens automatically
+  }, [projects.length, user.teamMembers]);
+
+  return (
+    <div className="ai-actions-status">
+      <p>🤖 {aiActions.registeredActions.length} AI actions available</p>
+    </div>
+  );
+}
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Real-World React Integration Example </div>
+
+Here's how a complete React dashboard might integrate the copilot:
+
+```tsx title="Dashboard.tsx"
+import { useYourGPTChatbot, useAIActions } from "@yourgpt/widget-web-sdk/react";
+
+function Dashboard() {
+  const copilot = useYourGPTChatbot();
+  const aiActions = useAIActions();
+  const { user, projects, analytics } = useDashboardData();
+
+  // Update context when data changes
+  useEffect(() => {
+    if (copilot.isConnected) {
+      copilot.setSessionData({
+        currentView: "dashboard",
+        projectCount: projects.length,
+        lastActiveProject: projects[0]?.name,
+        weeklyActiveTime: analytics.weeklyHours
+      });
+    }
+  }, [projects, analytics, copilot.isConnected]);
+
+  // Register dashboard-specific actions
+  useEffect(() => {
+    aiActions.registerActions({
+      open_project: async (data, helpers) => {
+        const { projectName } = JSON.parse(data.action[0].function.arguments);
+        const project = projects.find(p => p.name === projectName);
+        
+        if (project) {
+          navigate(`/projects/${project.id}`);
+          helpers.respond(`Opened ${projectName}!`);
+        } else {
+          helpers.respond(`Project "${projectName}" not found.`);
+        }
+      },
+      
+      show_analytics: async (data, helpers) => {
+        setActiveTab('analytics');
+        helpers.respond("Showing your analytics dashboard!");
+      }
+    });
+  }, [projects]);
+
+  return (
+    <div className="dashboard">
+      <header>
+        <h1>Dashboard</h1>
+        <button 
+          onClick={() => copilot.sendMessage("Help me understand my dashboard", true)}
+          className="help-button"
+        >
+          🤖 AI Help
+        </button>
+      </header>
+      
+      <div className="dashboard-content">
+        {/* Your dashboard content */}
+      </div>
+      
+      {/* Copilot status indicator */}
+      {copilot.isConnected && (
+        <div className="copilot-indicator">
+          AI Assistant Ready
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+<Aside>⚡ **Performance Tip**: The React hooks automatically handle cleanup and re-registration when dependencies change. This prevents memory leaks and ensures your actions always use fresh data.</Aside>
+
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Advanced Usage & Troubleshooting </div>
+
+
+Always handle errors gracefully to maintain a positive user experience:
+
+```typescript title="error-handling.ts"
+import { YourGPT, YourGPTError } from "@yourgpt/widget-web-sdk";
+
+// Initialization error handling
+try {
+  await YourGPT.init({
+    widgetId: "your-widget-id",
+  });
+} catch (error) {
+  if (error instanceof YourGPTError) {
+    console.error("YourGPT initialization error:", error.message, error.code);
+
+    // Display user-friendly message
+    showNotification("AI assistant temporarily unavailable. Please try again later.");
+
+    // Report to error tracking system
+    reportError("yourgpt_init_failed", { message: error.message, code: error.code });
+  } else {
+    console.error("Unexpected error during initialization:", error);
+  }
+}
+
+// AI Action error handling
+YourGPT.getInstance().registerAIAction("risky_action", async (data, helpers) => {
+  try {
+    const result = await performRiskyOperation(data);
+    helpers.respond(`✅ Success: ${result.message}`);
+  } catch (error) {
+    console.error("AI Action failed:", error);
+    helpers.respond("❌ Sorry, something went wrong. Our team has been notified.");
+
+    // Report error internally without exposing details to user
+    reportError("ai_action_failed", { action: "risky_action", error: error.message });
+  }
+});
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Server-Side Rendering (SSR) Support </div>
+
+The SDK works seamlessly with Next.js, Nuxt, and other SSR frameworks:
+
+```typescript title="ssr-safe-init.ts"
+import { isBrowser, YourGPT } from "@yourgpt/widget-web-sdk";
+
+// Safe initialization for SSR
+if (isBrowser()) {
+  await YourGPT.init({
+    widgetId: "your-widget-id",
+  });
+}
+
+// React SSR-safe component example
+import { useEffect, useState } from 'react';
+import { useYourGPTChatbot } from "@yourgpt/widget-web-sdk/react";
+
+function CopilotButton() {
+  const [isClient, setIsClient] = useState(false);
+  const copilot = useYourGPTChatbot();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handleOpen = () => {
+    if (isClient) {
+      copilot.open();
+    }
+  };
+
+  return (
+    <button onClick={handleOpen} disabled={!isClient}>
+      {isClient ? "Get AI Help" : "Loading AI..."}
+    </button>
+  );
+}
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> TypeScript Support </div>
+
+The SDK is built with TypeScript and provides comprehensive type definitions:
+
+```typescript title="typescript-usage.ts"
+import type {
+  YourGPTConfig,      // SDK configuration interface
+  AIActionData,       // AI action payload structure
+  AIActionHelpers,    // Helper functions for AI actions
+  MessageData,        // Structure for received messages
+  EscalationData,     // Data structure for human escalation events
+} from "@yourgpt/widget-web-sdk";
+
+// Strongly typed SDK configuration
+const config: YourGPTConfig = {
+  widgetId: "your-widget-id",
+  endpoint: "https://api.yourgpt.ai", // optional
+  autoLoad: true,                     // optional, defaults to true
+  debug: process.env.NODE_ENV === 'development',
+  whitelabel: false                   // optional
+};
+
+// Example of a strongly typed AI action handler
+const typedActionHandler = async (data: AIActionData, helpers: AIActionHelpers) => {
+  const args = JSON.parse(data.action[0].function.arguments);
+
+  const confirmed = await helpers.confirm({
+    title: "Confirm Action",
+    description: "Are you sure you want to perform this action?",
+    acceptLabel: "Yes",
+    rejectLabel: "No"
+  });
+
+  if (confirmed) {
+    // Execute your custom logic
+    helpers.respond("Action completed successfully!");
+  } else {
+    helpers.respond("Action was cancelled.");
+  }
+};
+
+
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Browser & Framework Support </div>
+
+The SDK works in all modern browsers:
+
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold">Browser</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold">Minimum Version</th>
+      <th className="px-8 py-2 !pe-6 border dark:border-gray-700 font-semibold">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Chrome</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">80+</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Full support</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Firefox</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">75+</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Full support</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Safari</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">13+</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Full support</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Edge</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">80+</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Full support</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Mobile Safari</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">13+</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">iOS support</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Chrome Mobile</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">80+</td>
+      <td className="!ps-6 border dark:border-gray-700 text-sm">Android support</td>
+    </tr>
+  </tbody>
+</table>
+```
+<Aside>⚠️ **Internet Explorer is not supported**. For legacy browser support, consider using the [Web SDK](/chatbot/customization/sdk/web) instead.</Aside>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Framework Integration </div>
+
+- ✅ **React 16.8+**: Full hooks support with dedicated React package
+- ✅ **Next.js 12+**: SSR/SSG support with automatic hydration
+- ✅ **Vite**: Optimized builds with tree-shaking
+- ✅ **Create React App**: Zero configuration required
+- ✅ **TypeScript**: First-class TypeScript support
+- ✅ **Vue.js 3+**: Use vanilla SDK with composition API
+- ✅ **Angular 12+**: Injectable service pattern
+- ✅ **Svelte/SvelteKit**: Reactive integration support
+
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Resources & Next Steps </div>
+
+- **[GitHub Repository](https://github.com/YourGPT/web-sdk)**: Complete source code, examples, and issue tracking
+- **[API Reference](https://github.com/YourGPT/web-sdk/blob/main/docs/api.md)**: Detailed API documentation
+- **[Example Applications](https://github.com/YourGPT/web-sdk/tree/main/examples)**: Real-world integration examples
+- **[TypeScript Definitions](https://github.com/YourGPT/web-sdk/blob/main/src/types/index.ts)**: Complete type definitions
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Community & Support </div>
+
+- **[Discord Community](https://discord.com/invite/57C9uTkD6g)**: Join other developers using YourGPT
+- **[GitHub Issues](https://github.com/YourGPT/web-sdk/issues)**: Report bugs or request features
+- **[Support Email](mailto:support@yourgpt.ai)**: Direct support for technical issues
+- **[YourGPT Dashboard](https://chatbot.yourgpt.ai/dashboard)**: Manage your widgets and settings
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> What's Next? </div>
+
+1. **Start Simple**: Begin with basic widget integration to get familiar
+2. **Add Context**: Enhance your copilot with session and user data
+3. **Build Actions**: Create AI Actions that solve real user problems
+4. **Monitor Usage**: Use events to track how users interact with your copilot
+5. **Iterate**: Continuously improve based on user feedback and analytics
+
+{/* <Aside>🚀 **Ready to Build?** Start with our [GitHub examples](https://github.com/YourGPT/web-sdk/tree/main/examples) and adapt them to your use case. The community is here to help!</Aside> */}
+
+---
+
+{/* <div className="text-center text-sm text-gray-600 dark:text-gray-400 mt-12">
+  Made with ❤️ by the [YourGPT Team](https://github.com/YourGPT) | 
+  [GitHub](https://github.com/YourGPT/web-sdk) | 
+  [NPM](https://www.npmjs.com/package/@yourgpt/widget-web-sdk) | 
+  [Discord](https://discord.com/invite/57C9uTkD6g)
+</div> */}
+
+You can set up YourGPT AI Copilot in just a few minutes by integrating the SDK and defining the AI Actions you want your Copilot to perform.
+
+**Free Trial**: We offer a free trial of the Professional plan with full access to YourGPT AI Copilot Builder. During the trial, you can:
+- Explore the complete platform without limitations
+- Build and deploy your AI Copilot
+- Experience all features with full functionality
+- Get support from our team to help you get started quickly
+
+**Getting Help**: Refer to our example setups and join our Discord community for assistance during your integration.

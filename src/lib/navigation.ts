@@ -24,6 +24,7 @@ export const sidebarNavigation = [
   // Customization SDK
   { href: "/chatbot/customization/sdk/styling", label: "Styling" },
   { href: "/chatbot/customization/sdk/web", label: "Web/SDK" },
+  { href: "/chatbot/customization/sdk/copilot", label: "Copilot" },
   { href: "/chatbot/customization/sdk/identity-verification", label: "Identity Verification" },
   { href: "/chatbot/customization/sdk/gamification", label: "Support Gamification" },
   { href: "/chatbot/customization/sdk/sales-gamification", label: "Sales Gamification" },
