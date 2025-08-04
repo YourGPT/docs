@@ -1,41 +1,12 @@
-import { defineConfig } from "astro/config";
-import starlight from "@astrojs/starlight";
-import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
-import starlightImageZoom from "starlight-image-zoom";
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+import react from '@astrojs/react';
+import tailwind from '@astrojs/tailwind';
+import starlightImageZoom from 'starlight-image-zoom';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [
-    starlight({
-      title: "",
-      description: "YourGPT Chatbot Documentation",
-      logo: {
-        src: "./src/assets/yourgpt.svg",
-      },
-      favicon: "/docs-yourgpt.ico",
-      social: {
-        youtube: "https://www.youtube.com/@YourGPTAI",
-        twitter: "https://x.com/YourGPTAI",
-      },
-      components: {
-        Hero: "./src/components/Landing/Hero.astro",
-        Sidebar: "./src/components/Sidebar.astro",
-        SiteTitle: "./src/components/starlight/SiteTitle.astro",
-        // Search: './src/components/starlight/Search.astro',
-        Pagination: './src/components/CustomPagination.astro',
-        // Header: './src/components/starlight/Header.astro',
-      },
-      plugins: [starlightImageZoom()],
-      customCss: [
-        // Path to your Tailwind base styles:
-        "./src/tailwind.css",
-      ],
-    }),
-    react(),
-    tailwind({
-      applyBaseStyles: true,
-    }),
-  ],
+  site: 'https://docs.yourgpt.ai',
   redirects: {
     "/chatbot": "/chatbot/introduction",
     "/chatbot/studio/elements/intent-and-events": "/chatbot/studio/elements/intents",
@@ -46,18 +17,116 @@ export default defineConfig({
     "/chatbot/changelog": "/changelogs",
     "/chatbot/changelogs": "/changelogs",
     "chatbot/other/other-information": "/chatbot/other/role-management",
-    // add redirect for the subprocessor to trust center
     "/chatbot/integrations/whatsapp": "/chatbot/integrations/social/whatsapp",
-
-    // LLM Spark redirects
-    // "llm-spark": "/",
-    // "llm-spark/introduction": "/",
-    // "llm-spark/prompt-testing": "/",
-    // "llm-spark/api-documentation": "/",
-    // "llm-spark/templates": "/",
   },
-  // customCss: [
-  //   // Relative path to your custom CSS file
-  //   './src/styles/custom.css',
-  // ],
+  integrations: [
+    starlight({
+      title: 'YourGPT',
+      description: 'YourGPT Chatbot Documentation',
+      logo: {
+        light: './src/assets/yourgpt-dark.svg',
+        dark: './src/assets/yourgpt-white.svg',
+      },
+      favicon: '/ygc-docs.ico',
+      social: [
+        {
+          label: 'YouTube',
+          icon: 'youtube',
+          href: 'https://www.youtube.com/@YourGPTAI',
+        },
+        {
+          label: 'Twitter',
+          icon: 'x.com',
+          href: 'https://x.com/YourGPTAI',
+        },
+      ],
+      components: {
+        Hero: './src/components/Landing/Hero.astro',
+        Sidebar: './src/components/Sidebar/index.astro',
+        SiteTitle: './src/components/starlight/SiteTitle.astro',
+        Pagination: './src/components/CustomPagination.astro',
+        Header: './src/components/starlight/Header.astro',
+        ThemeSelect: './src/components/starlight/ThemeSelect.astro',
+        Head: './src/components/starlight/Head.astro',
+        Footer: './src/components/starlight/Footer.astro',
+      },
+      plugins: [starlightImageZoom()],
+      customCss: [
+        "./src/tailwind.css",
+        "./src/styles/custom.css",
+        "./src/styles/sidebar.css",
+      ],
+      head: [
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'canonical',
+            href: 'https://docs.yourgpt.ai',
+          },
+        },
+        {
+          tag: 'style',
+          content: `
+            aside a, nav a, .accordion-trigger, [data-accordion-trigger], .sidebar a, 
+            .custom-sidebar a, .mobile-sidebar a {
+              text-decoration: none !important;
+              border-bottom: none !important;
+            }
+            .accordion-item, [data-accordion-item], .border-b {
+              border: none !important;
+              border-bottom: none !important;
+            }
+            
+            /* Smooth page transitions */
+            html {
+              scroll-behavior: smooth;
+            }
+            
+            /* Prevent content flash during navigation */
+            .sl-content {
+              opacity: 1 !important;
+              transition: opacity 0.1s ease-in-out;
+            }
+            
+            /* Ensure smooth transitions for all content */
+            .sl-content * {
+              transition: none !important;
+            }
+            
+            /* Optimize for instant page loads */
+            .sl-content {
+              will-change: auto;
+            }
+            
+            /* Prevent any loading indicators */
+            .loading-indicator,
+            .page-loading,
+            .transition-loading {
+              display: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+            }
+          `
+        },
+      ],
+    }),
+    react(),
+    tailwind({ applyBaseStyles: true }),
+    sitemap(),
+  ],
+  vite: {
+    ssr: {
+      noExternal: ['@radix-ui/react-accordion', '@radix-ui/react-collapsible', '@radix-ui/react-dialog'],
+    },
+    optimizeDeps: {
+      include: ['@radix-ui/react-accordion', '@radix-ui/react-collapsible', '@radix-ui/react-dialog'],
+    },
+  },
 });

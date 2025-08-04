@@ -11,17 +11,19 @@ hero:
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import {Note} from '~/components'
 import { Image } from "astro:assets";
-import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import CustomLinkCard from '~/components/starlight/CustomLinkCard.astro';
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> AI Task in YourGPT Chatbot Studio </div>
 
 
  <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
-      <Image src="/assets/flow/AI-task.jpg" alt="AI and Knowledgebase" 
+      <Image src="/assets/flow/AI-task.jpg" alt="AI and Knowledgebase"
             width="100%"
             height="100%"
-            style={{ width: "100%" }} 
-            className="rounded-md object-contain " 
+            style={{ width: "100%" }}
+            className="rounded-md object-contain "
         />
  </div>
 
@@ -29,15 +31,15 @@ import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
 ## Types of AI Tasks:
 
 AI Response is a powerful feature that allow you to create custom responses based on AI model knowledge or your knowledgebase you trained.
-<LinkCard 
-    title="AI Response " 
+<CustomLinkCard
+    title="AI Response "
     href="/chatbot/studio/elements/ai-response"
-  > 
-</LinkCard>
+  >
+</CustomLinkCard>
 
 AI Retrieval is a powerful feature that allow you to retrieve information from your knowledge base.
-<LinkCard 
-    title="AI Retrieval" 
-    href="/chatbot/studio/elements/ai-retrieval" 
-  > 
-</LinkCard>
+<CustomLinkCard
+    title="AI Retrieval"
+    href="/chatbot/studio/elements/ai-retrieval"
+  >
+</CustomLinkCard>

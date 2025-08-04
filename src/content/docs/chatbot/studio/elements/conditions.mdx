@@ -1,87 +1,130 @@
 ---
 title: Conditions in YourGPT Chatbot Studio
-description: Learn about conditions  in YourGPT Chatbot Studio.
+description: Learn how to use AI and Manual conditions to control chatbot flow in YourGPT Studio.
 keywords: conditions chatbot, conditional flow chatbot, flow conditions, chatbot logic
 hero:
   title: Conditions in YourGPT Chatbot Studio
-  tagline: Learn about conditions in YourGPT Chatbot Studio.
+  tagline: Learn how to use AI and Manual conditions to control chatbot flow in YourGPT Studio.
 ---
 
 <div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Conditions in YourGPT Chatbot Studio </div>
 
 import { Image } from "astro:assets";
 
+## What Are Conditions?
 
-##  What Are Conditions?
-A condition is a check that uses variables or predefined inputs to determine if the flow should continue in a certain direction.
+**Conditions** allow your chatbot to make decisions during a conversation.
 
-Direct the conversation to the right path when users provide specific inputs or when some conditions are met. If a condition matches the AI chatbot proceeds with the intended route. Otherwise, it follows the No Match path.
-
----
-
-## Step-by-Step Setup: Creating a Condition
-
-Follow these **6 clear steps** to create or update a condition in your flow.
+You can branch the AI agents flow based on user input, stored variables, or AI understanding. If a condition is met, the AI follows that specific path. If no condition matches, it takes the [No Match path](https://help.yourgpt.ai/article/no-match-chatbot-studio-544).
 
 ---
 
-### 1. Add a Condition Step
-Click **Add Step** → **Condition** to insert a new condition block.
+## Types of Conditions
+
+YourGPT AI Studio supports two types of conditions:
+
+1. **AI Condition**: for flexible matching using natural language   
+2. **Manual Condition**: for logical rules using variables or expressions  
+
+Let’s understand them in detail.
 
 ---
 
-### 2. Name the Condition
-Provide a **descriptive name** to identify the condition later like "**Check User Input**"
+## 1. AI Condition: Intent Matching
+AI Condition uses natural language understanding to define the possible paths (A, B, C, etc.) and the AI determines which path best matches the condition & provided context type. This is much more flexible than writing complex logical rules.
+
+### How to Use AI Condition
+
+To use AI Condition, follow these 5 steps:
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+      <Image src="/assets/flow/condition.png" alt="AI Condition" 
+      width="100%" height="100%" style={{ width: "100%" }} 
+      className="rounded-md object-contain" />
+</div>
+
+
+1. **Add a Condition Step**: Click on "Logic" - then drag the "Condition node" in your flow.
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image src="/assets/flow/condition-ai.png" alt="AI Condition" 
+  width="100%" height="100%" style={{ width: "100%" }} 
+  className="rounded-md object-contain" />
+</div>
+
+
+2. **Context**: You can choose between the AI condition context type - what the AI should analyze:
+   - **Input**: Use this when you want to use custom logic & want to use variables. (You can add your input in the field e.g. `{{FLOW.message}}`)
+   - **Previous Messages**: Use this when you want to consider the last few messages in the conversation (You can pick number to e.g. 5 messages)
+
+3. **Conditions**: Add natural language statements that represent possible user intents. The AI will match the input to the most relevant Context condition.
+
+4. **No Match**: Set a fallback message or path to follow if none of the conditions apply.
+
+Use AI Condition when you need to make decisions based on natural language understanding rather than exact matches. This is ideal for situations where users might express the same intent in different ways, making rigid pattern matching insufficient for capturing the full range of possible inputs.
 
 ---
 
-### 3. Select the Expression Type
-Click add Expression button to create your check. Choose the type of check you want to perform:
+## 2. Manual Condition: Rule-Based Matching
 
- <div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
-      <Image src="/assets/flow/condition-check.png" alt="Conditions-check" 
-            width="100%"
-            height="100%"
-            style={{ width: "100%" }} 
-            className="rounded-md object-contain " 
-        />
- </div>
+Use **Manual Condition** when you know what specific input to check, such as email, numbers, or dropdown values.
 
-1. **Variable Type**: Uses Variables in the condition to check.  
+### How to Use Manual Condition
 
-2. **Value Type**: Uses a specific text, numeric value or variables.  
+Follow these 6 steps to set it up:
 
-3. **Logic Group**: Combine multiple checks using AND/OR logic.  
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+      <Image src="/assets/flow/condition.png" alt="AI Condition" 
+      width="100%" height="100%" style={{ width: "100%" }} 
+      className="rounded-md object-contain" />
+</div>
+
+1. Add a Condition Step: Click **Add Step → Condition** in your flow.
+
+2. Name the Condition: Use clear names like `Check Support Type` or `Check Email`.
+
+3. Add Expression(s): Click **Add Expression** and choose the **expression type**:
+
+<div className="flex justify-center items-center bg-blue-500 rounded-md p-4">
+  <Image src="/assets/flow/condition-check.png" alt="Conditions-check" 
+        width="100%" height="100%" style={{ width: "100%" }} 
+        className="rounded-md object-contain" />
+</div>
+
+- **Variable Type**: Check against a stored variable (e.g. `{{USER.email}}`)
+- **Value Type**: Compare input with a fixed value
+- **Logic Group**: Combine expressions using `AND` / `OR`
+
+4. Choose the Operator
+
+Supported operators:
+- Equals to
+- Contains
+- Greater than / Less than
+
+Add the value or variable to check.  
+Use **Add Expression** for multiple checks.
+
+5. Add Fallback (No Match)
+
+Set up a **Reprompt Message** or a fallback **Path** when nothing matches.
+
+6. Remove Condition (Optional)
+
+Click **Remove Condition** to delete the condition block.
+
 ---
 
-### 4. Choose an Operator
-  - Equals to
-  - Contains
-  - Greater than / Less than  
+## Best Practices & Common Pitfalls
 
-- Enter the **Value** or **Variable** to compare.  
-- Add multiple expressions if needed using Add Expression button.
-- You can also create multiple condition by clicking on add conition.
----
+Avoid these common mistakes when setting up conditions:
 
-### 5. No Match
-- Use Re Prompt Message or path to handle cases where the input doesn’t match.
----
-
-### 6. Remove Condition (Optional)
-- If a condition is no longer necessary, simply click **Remove Condition** to delete it.
+- **Generic names**: Avoid names like `Check 1`. Use descriptive titles.
+- **Wrong operator**: Use “Contains” for partial matches. “Equals to” checks for exact values.
+- **No fallback**: Always define a No Match path.
+- **Case sensitivity** (for Manual Conditions): "yes" ≠ "Yes". Use lowercase consistently or add conditions for both.
+- **Overcomplicating logic**: Keep Manual Conditions simple and readable.
 
 ---
 
-
-
-
-## Common Pitfalls
-
-- **Vague Naming**: A condition named “Check 1” might be confusing later. Use descriptive names.
-- **Wrong Operator Choice**: “Equals to” only works for exact matches. Use “Contains” if partial matches matter.
-- **No Match Not Configured**:Always set a fallback so users don’t get stuck.
-- **Ignoring Case Sensitivity**: “Yes” vs. “yes” can be different if you use “Equals to.”
-- **Overusing Logic Groups**: Too many AND/OR combinations can make your logic difficult to manage.
-
-
+To know more about conditions in YourGPT Chatbot Studio, follow our [AI Helpdesk article.](https://help.yourgpt.ai/article/how-to-set-up-conditions-in-ai-studio-1584)

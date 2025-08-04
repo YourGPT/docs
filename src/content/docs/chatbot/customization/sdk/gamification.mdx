@@ -1,0 +1,107 @@
+---
+title: "Gamification | SDK"
+description: "Enhance user experience with interactive games during human escalation"
+keywords: yourgpt chatbot gamification, interactive experience, human escalation, emoji riddle, bouncy bird, chatbot games
+hero:
+  title: "Gamification"
+  tagline: "Enhance user experience with interactive games during human escalation"
+---
+
+import {Image} from '~/components';
+import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> Gamification </div>
+
+The Chatbot Web SDK now supports game integration to enhance user experience during human escalation scenarios. When a conversation is escalated to a human operator and the user enters a waiting state, interactive games can be automatically launched to keep users engaged while they await assistance.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Supported Games </div>
+
+### 1. Emoji Riddle Game
+
+An engaging puzzle game where users solve riddles using emoji clues. Perfect for quick mental exercises while waiting.
+
+<div className="flex flex-col md:flex-row gap-4 my-6">
+  <div className="flex-1 w-3/4 mx-auto">
+    <Image src="/assets/chatbot/sdk/gamification/riddle-game.png" alt="Emoji Riddle Game Solution" />
+  </div>
+</div>
+
+### 2. BouncyBird
+
+A classic arcade-style game that provides entertainment and helps pass time during operator assignment delays.
+
+<div className="my-6 w-full">
+  <Image src="/assets/chatbot/sdk/gamification/bouncybird.png" alt="BouncyBird Game" />
+</div>
+
+### 3. Custom Game
+
+Embed any iFrame game in your chatbot to provide a unique and engaging experience for your users.
+
+<div className="my-6 w-full">
+  <Image src="/assets/chatbot/sdk/gamification/custom-game.png" alt="Custom Game" />
+</div>
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Widget Settings Configuration </div>
+
+
+To enable gamification in your chatbot:
+
+1. Go to widget settings → branding section
+
+<div className="my-6">
+  <Image src="/assets/chatbot/sdk/gamification/gamification-1.png" alt="Widget Settings" />
+</div>
+
+2. Paste your desired game integration code in the branding section
+
+<div className="my-6">
+  <Image src="/assets/chatbot/sdk/gamification/gamification-2.png" alt="Branding Section" />
+</div>
+
+
+### Game Launch on Human Escalation
+
+Use the following event listeners to automatically trigger games when human escalation occurs:
+
+<Aside>💡 Add one game integration at a time</Aside>
+
+### Emoji Riddle Integration
+
+To add Emoji Riddle integration to your chatbot, use the following code:
+```js title="Emoji Riddle Integration"
+$yourgptChatbot.on("escalatedToHuman", function() {
+    $yourgptChatbot.execute("game:start", {id:"emojiRiddle"});
+});
+```
+
+### BouncyBird Integration
+
+To add BouncyBird integration to your chatbot, use the following code:
+```js title="BouncyBird Integration"
+$yourgptChatbot.on("escalatedToHuman", function() {
+    $yourgptChatbot.execute("game:start", {id:"bouncyBird"});
+});
+```
+
+### iFrame Integration
+
+```js title="iFrame Integration"
+$yourgptChatbot.on("escalatedToHuman", function() {
+  $yourgptChatbot.execute("bottomSheet:open", { 
+    url: "https://cloud.onlinegames.io/games/2024/construct/219/stickman-parkour/index-og.html" 
+  });
+});
+```
+
+
+import { VscSettingsGear } from "react-icons/vsc";
+
+<div className="p-8 border dark:border-gray-700 rounded-lg dark:shadow-md shadow-sm h-[220px] md:h-[180px] dark:hover:border-blue-400 hover:border-gray-400 transition-all duration-500  ">
+    <div className="flex items-center text-2xl text-white font-semibold tracking-tight !mt-0"><div className='p-2 pl-0'><VscSettingsGear className='text-xl text-gray-700 dark:text-[#338bb7]' /></div>
+   <p className='!mt-0 text-xl dark:text-inherit text-gray-700'>Gamification</p>
+    </div>
+    <p className='pl-[29px] !mt-1'>Enhance user engagement with interactive games during waiting periods</p>
+    <a href="https://help.yourgpt.ai/article/gamification-in-widget-to-enhance-engagement-during-human-escalation-2242/" className='no-underline font-semibold transition-all duration-300 text-lg mt-4 inline-block pl-[29px] '>Learn more</a>
+</div>

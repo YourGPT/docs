@@ -45,3 +45,26 @@
 .DocSearch-Logo svg * {
 	fill: var(--docsearch-muted-color);
 }
+
+/* Search button visibility improvements */
+.DocSearch-Button {
+	background-color: var(--sl-color-gray-5);
+	border: 1px solid var(--sl-color-gray-4);
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.DocSearch-Button:hover {
+	background-color: var(--sl-color-gray-4);
+	border-color: var(--sl-color-gray-3);
+}
+
+/* Dark mode adjustments */
+:root[data-theme='dark'] .DocSearch-Button {
+	background-color: transparent;
+	border: 1px solid var(--sl-color-gray-5);
+}
+
+:root[data-theme='dark'] .DocSearch-Button:hover {
+	background-color: var(--sl-color-gray-6);
+	border-color: var(--sl-color-gray-4);
+}

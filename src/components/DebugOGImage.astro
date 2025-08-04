@@ -1,0 +1,27 @@
+<!-- ---
+// A simple component to debug OG image paths
+const { frontmatter } = Astro.props;
+---
+
+<div class="debug-container">
+  <h3>OG Image Debug</h3>
+  <p>Frontmatter OG Image: {frontmatter?.ogImage || 'Not specified'}</p>
+  <p>Full URL: {frontmatter?.ogImage ? `https://docs.yourgpt.ai${frontmatter.ogImage}` : 'N/A'}</p>
+  
+  {frontmatter?.ogImage && (
+    <div>
+      <p>Preview:</p>
+      <img src={frontmatter.ogImage} alt="OG Image Preview" style="max-width: 300px; border: 1px solid #ccc;" />
+    </div>
+  )}
+</div>
+
+<style>
+  .debug-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+  }
+</style> -->

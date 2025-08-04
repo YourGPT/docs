@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 import { docsSchema } from '@astrojs/starlight/schema';
 
 
@@ -6,5 +6,12 @@ import { docsSchema } from '@astrojs/starlight/schema';
 
 
 export const collections = {
-	docs: defineCollection({ schema: docsSchema() })
+	docs: defineCollection({
+		schema: docsSchema({
+			extend: z.object({
+				ogImage: z.string().optional(),
+				canonical: z.string().optional(),
+			})
+		})
+	})
 };

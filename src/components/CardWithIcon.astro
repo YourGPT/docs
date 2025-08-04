@@ -1,0 +1,78 @@
+---
+import CustomCardIcon from './CustomCardIcon.jsx';
+
+interface Props {
+  title: string;
+  icon?: string;
+}
+
+const { title, icon } = Astro.props;
+---
+
+<div class="card">
+  <div class="title">
+    <div class="icon-wrapper">
+      {icon && <CustomCardIcon name={icon} client:load />}
+    </div>
+    <span set:html={title} />
+  </div>
+  <div class="body"><slot /></div>
+</div>
+
+<style>
+  .card {
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0.25rem;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  :global([data-theme="dark"]) .card {
+    background-color: #0f172a; /* Dark navy background matching screenshot */
+    border-color: #1e293b; /* Darker border for dark mode */
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    gap: 1rem;
+    margin-bottom: 0;
+    color: #1f2937; /* Dark text in light mode */
+  }
+  :global([data-theme="dark"]) .title {
+    color: #f9fafb; /* Light text in dark mode */
+  }
+
+  .icon-wrapper {
+    width: 36px;
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .body {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4b5563; /* Medium gray for light mode */
+  }
+  :global([data-theme="dark"]) .body {
+    color: #9ca3af; /* Lighter gray for dark mode */
+  }
+
+  /* Style for bold text in the card body */
+  .body :global(strong) {
+    color: #111827;
+    font-weight: 600;
+  }
+  :global([data-theme="dark"]) .body :global(strong) {
+    color: #ffffff;
+  }
+</style>

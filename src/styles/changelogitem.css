@@ -1,4 +1,4 @@
-/* Default (normal mode) */
+/* Default (light mode) */
 .changelog-item__content h2,
 .changelog-item__content h3 {
     font-size: 1.6rem; /* Adjust for h2 */
@@ -14,6 +14,55 @@
     font-weight: 600;
 }
 
+/* Dark mode styles for content links */
+:global([data-theme="dark"]) .changelog-item__content a {
+    color: rgb(96, 165, 250); /* Lighter blue for dark mode */
+}
+
+/* Accent for date headers */
+.changelog-date-accent {
+  /* color: #755fff; Use your brand primary or accent color */
+  /* background: linear-gradient(90deg, #eaf2fe 0%, #f8fbff 100%);
+  padding: 0.2em 0.8em; */
+  /* border-radius: 1.2em;
+  font-size: 1.25em; */
+  box-shadow: 0 1px 6px 0 rgba(60,135,248,0.07);
+}
+
+/* Dark mode styles for date accent */
+:global([data-theme="dark"]) .changelog-date-accent {
+  box-shadow: 0 1px 6px 0 rgba(96, 165, 250, 0.15);
+}
+
+/* Brand accent for timeline dot and line */
+.border-brand-accent {
+  border-color: #755fff !important;
+}
+.bg-brand-accent {
+  background-color: #755fff !important;
+}
+.from-brand-accent {
+  --tw-gradient-from: #755fff !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(60,135,248,0));
+}
+.to-brand-accent\/60 {
+  --tw-gradient-to: rgba(60,135,248,0.6) !important;
+}
+
+/* Card shadow for elevation */
+.shadow-changelog-card {
+  box-shadow: 0 6px 32px 0 rgba(60,135,248,0.07), 0 1.5px 3px 0 rgba(60,135,248,0.04);
+}
+
+/* Dark mode card shadow */
+:global([data-theme="dark"]) .shadow-changelog-card {
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.3), 0 1.5px 3px 0 rgba(0,0,0,0.2);
+}
+
+.changelog-item__content {
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px #755fff,
@@ -26,12 +75,199 @@
                 0 0 30px #755fff;
   }
   100% {
-    box-shadow: 0 0 5px #755fff,
-                0 0 10px #755fff,
-                0 0 15px #755fff;
+    box-shadow: 0 0 5px #3c87f8,
+                0 0 10px #3c87f8,
+                0 0 15px #3c87f8;
   }
 }
 
 .checkpoint-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* Responsive padding for card */
+@media (max-width: 900px) {
+  .changelog-item__content {
+    padding: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+}
+
+/* ===== DARK MODE STYLES ===== */
+
+/* Dark mode timeline dot background */
+:global([data-theme="dark"]) .changelog-timeline-dot {
+  background-color: rgb(17, 24, 39) !important; /* Darker background for dot */
+  border-color: rgba(96, 165, 250, 0.6) !important; /* Brighter border */
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.9), 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Dark mode timeline line background */
+:global([data-theme="dark"]) .changelog-timeline-line {
+  background-color: rgb(55, 65, 81) !important; /* Darker line background */
+}
+
+/* Dark mode content card styling - FIXED FOR BETTER CONTRAST */
+:global([data-theme="dark"]) .changelog-content-card {
+  background-color: rgb(17, 24, 39) !important; /* Solid dark background instead of transparent */
+  border-color: rgb(55, 65, 81) !important; /* Dark border */
+  color: rgb(243, 244, 246) !important; /* Bright white text for better contrast */
+}
+
+/* Dark mode content card hover effects */
+:global([data-theme="dark"]) .changelog-content-card:hover {
+  background-color: rgb(31, 41, 55) !important; /* Slightly lighter on hover */
+  border-color: rgb(75, 85, 99) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.5), 0 2px 6px 0 rgba(0,0,0,0.4) !important;
+}
+
+/* Hover effects for content cards */
+.changelog-item__content:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+:global([data-theme="dark"]) .changelog-item__content:hover {
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.5), 0 2px 6px 0 rgba(0,0,0,0.4) !important;
+}
+
+/* Dark mode date text */
+:global([data-theme="dark"]) .changelog-date-text {
+  color: rgb(229, 231, 235) !important; /* Brighter white for dates */
+}
+
+/* Dark mode glow animation for dark theme */
+:global([data-theme="dark"]) .checkpoint-glow {
+  animation: glow-dark 2s ease-in-out infinite;
+}
+
+@keyframes glow-dark {
+  0% {
+    box-shadow: 0 0 5px rgba(96, 165, 250, 0.8),
+                0 0 10px rgba(96, 165, 250, 0.6),
+                0 0 15px rgba(96, 165, 250, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(96, 165, 250, 1),
+                0 0 20px rgba(96, 165, 250, 0.8),
+                0 0 30px rgba(96, 165, 250, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(96, 165, 250, 0.8),
+                0 0 10px rgba(96, 165, 250, 0.6),
+                0 0 15px rgba(96, 165, 250, 0.4);
+  }
+}
+
+/* Dark mode improvements for better contrast and readability */
+:global([data-theme="dark"]) .changelog-item__content h2,
+:global([data-theme="dark"]) .changelog-item__content h3 {
+  color: rgb(255, 255, 255) !important; /* Pure white for headings */
+}
+
+:global([data-theme="dark"]) .changelog-item__content p {
+  color: rgb(229, 231, 235) !important; /* Bright white for body text */
+}
+
+:global([data-theme="dark"]) .changelog-item__content strong {
+  color: rgb(255, 255, 255) !important; /* Pure white for emphasis */
+}
+
+:global([data-theme="dark"]) .changelog-item__content code {
+  background-color: rgb(31, 41, 55) !important;
+  color: rgb(209, 213, 219) !important;
+  border: 1px solid rgb(55, 65, 81) !important;
+}
+
+/* Dark mode list items */
+:global([data-theme="dark"]) .changelog-item__content ul,
+:global([data-theme="dark"]) .changelog-item__content ol {
+  color: rgb(229, 231, 235) !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content li {
+  color: rgb(229, 231, 235) !important;
+}
+
+/* Dark mode links */
+:global([data-theme="dark"]) .changelog-item__content a {
+  color: rgb(96, 165, 250) !important; /* Bright blue for links */
+}
+
+:global([data-theme="dark"]) .changelog-item__content a:hover {
+  color: rgb(147, 197, 253) !important; /* Lighter blue on hover */
+}
+
+/* Override any Tailwind classes that might interfere */
+:global([data-theme="dark"]) .changelog-item__content.bg-white\/80,
+:global([data-theme="dark"]) .changelog-item__content.dark\:bg-gray-800\/80 {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content.text-gray-700,
+:global([data-theme="dark"]) .changelog-item__content.dark\:text-gray-200 {
+  color: rgb(243, 244, 246) !important;
+}
+
+/* Override any backdrop-blur effects that might interfere */
+:global([data-theme="dark"]) .changelog-item__content.backdrop-blur-sm {
+  backdrop-filter: none !important;
+  background-color: rgb(17, 24, 39) !important;
+}
+
+/* Additional specific overrides for better dark mode support */
+:global([data-theme="dark"]) .changelog-item {
+  background-color: transparent !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content {
+  background-color: rgb(17, 24, 39) !important;
+  color: rgb(243, 244, 246) !important;
+  border-color: rgb(55, 65, 81) !important;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.4), 0 1.5px 3px 0 rgba(0,0,0,0.3) !important;
+}
+
+/* Ensure proper contrast for all text elements */
+:global([data-theme="dark"]) .changelog-item__content *:not(a):not(code) {
+  color: rgb(229, 231, 235) !important;
+}
+
+/* Specific styling for different content types */
+:global([data-theme="dark"]) .changelog-item__content blockquote {
+  background-color: rgb(31, 41, 55) !important;
+  border-left-color: rgb(59, 130, 246) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content table {
+  background-color: rgb(31, 41, 55) !important;
+  border-color: rgb(55, 65, 81) !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content th,
+:global([data-theme="dark"]) .changelog-item__content td {
+  border-color: rgb(55, 65, 81) !important;
+  color: rgb(229, 231, 235) !important;
+}
+
+/* Ensure proper styling for any embedded content */
+:global([data-theme="dark"]) .changelog-item__content img {
+  background-color: transparent !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content video {
+  background-color: transparent !important;
+}
+
+/* Override any remaining light mode styles */
+:global([data-theme="dark"]) .changelog-item__content[class*="bg-white"],
+:global([data-theme="dark"]) .changelog-item__content[class*="bg-gray-100"],
+:global([data-theme="dark"]) .changelog-item__content[class*="bg-slate-100"] {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+:global([data-theme="dark"]) .changelog-item__content[class*="text-gray-700"],
+:global([data-theme="dark"]) .changelog-item__content[class*="text-slate-700"] {
+  color: rgb(229, 231, 235) !important;
 }

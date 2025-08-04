@@ -1,60 +1,144 @@
 ---
-title: GPT Chatbot for Framer | Installation Guide 
-description: Integrate no-code GPT Chatbot with Framer.
-keywords: gpt chatbot for framer website, yourgpt chatbot for framer, no-code gpt chatbot for framer
+title: GPT AI Agent for Framer | Integration Guide
+description: Add YourGPT AI Agent to your Framer website - enhance user engagement with intelligent chatbot assistance.
+keywords: ai agent for framer, yourgpt ai agent framer, framer chatbot integration, ai chatbot framer website, intelligent agent framer
 hero:
-  title: GPT Chatbot for Framer | Installation Guide
-  tagline: Integrate no-code GPT Chatbot with Framer.
+  title: AI Agent for Framer | Integration Guide
+  tagline: Add YourGPT AI Agent to your Framer website.
 ---
 import { Image } from "astro:assets";
 import { Note } from "~/components";
 import { Steps } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 
-<div className="text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]"> GPT Chatbot for Framer | Installation Guide </div>
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> AI Agent for Framer | Integration Guide </div>
 
-<Aside type="tip" title="Idea"> 💡 Connecting Your Chatbot with Framer </Aside>
+<Aside type="tip" title="Idea"> 💡 Transform Your Framer Website with AI Agent </Aside>
 
-## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Installation </div>
+Enhance your Framer website with smart AI Agent! This guide helps you add a GPT AI Agent to your Framer site that can answer visitor questions, provide 24/7 assistance, and dramatically improve user engagement across your entire website.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Adding an AI Agent to Framer </div>
+
+Framer's custom code feature makes it easy to add your YourGPT AI Agent to your website. This seamless integration works with just a few simple steps and doesn't require any coding knowledge.
+
+You can deploy the AI Agent globally across your entire Framer site or selectively on specific pages. For maximum impact and visitor assistance, we recommend the global installation method outlined below.
 
 <Steps>
-1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Get Widget Code:</div>
-    - Sign in to your <a href="https://chatbot.yourgpt.ai/" className="font-bold no-underline">YourGPT dashboard</a>
-    - Go to Integration section
-    - Copy the widget code provided for your chatbot
+ 1. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Sign in to Framer</div>
+    - Open your web browser and navigate to [Framer](framer.com)
+    - Enter your email address and password to access your Framer dashboard
+    - Once logged in, you'll see your Framer projects and workspace
 
-2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Access Framer Project:</div>
-    - Log in to your Framer account
-    - Navigate to your project dashboard
-    - Select your target website project
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 mt-4">
+        <Image
+          src="/assets/chatbot/framer/framer-login.png"
+          alt="Sign in to Framer Dashboard"
+          width="100%"
+          height="100%"
+          style={{ width: "100%" }}
+          className="rounded-md object-contain shadow-lg"
+        />
+      </div>
 
-3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Locate Page Settings:</div>
-    - Find your desired page in the left panel
-    - Click the three-dot icon next to the page name
-    - Select "Settings" from the menu
+ 2. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Access Your Framer Project</div>
+    - From your Framer dashboard, locate and select the project you want to add the AI Agent to
+    - Navigate to your project's workspace where you can edit your site
+    - Make sure you have editor or admin permissions for the project
 
-4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Access Custom Code Section:</div>
-    - Scroll down in Settings
-    - Locate the "Custom Code" section
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 mt-4">
+        <Image
+          src="/assets/chatbot/framer/workspace-framer.png"
+          alt="Navigate to Framer Project Workspace"
+          width="100%"
+          height="100%"
+          style={{ width: "100%" }}
+          className="rounded-md object-contain shadow-lg"
+        />
+      </div>
 
-5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Add Widget Code:</div>
-    - Paste your copied YourGPT widget code into the "Start of `<head>` tag" box
-    - Click "Save" in the top right corner
+ 3. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Get Your YourGPT AI Agent Script</div>
+    - Log in to your <a href="https://chatbot.yourgpt.ai/dashboard/" className="font-bold no-underline hover:text-blue-600" target='_blank'>YourGPT Dashboard</a>
+    - Navigate to the **"Integration"** section in your dashboard
+    - Find your AI Agent's widget script (it will look similar to the example below)
+    - Click the **"Copy"** button to copy the entire script to your clipboard
 
-6. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Verify Installation:</div>
-    - View your page
-    - Look for the YourGPT chatbot icon in the bottom left corner
-    - Test the chatbot functionality
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 mt-4">
+        <Image
+          src="/assets/chatbot/framer/ygc-script.png"
+          alt="YourGPT AI Agent Script"
+          width="100%"
+          height="100%"
+          style={{ width: "100%" }}
+          className="rounded-md object-contain shadow-lg"
+        />
+      </div>
+
+ 4. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Add Script to Framer</div>
+    - In your Framer project, click on the **"Settings"** icon (usually a gear icon) in the top right
+    - Select **"General"** from the settings menu
+    - Scroll down to find the **"Custom Code"** section
+    - Paste the copied YourGPT AI Agent script into the **"Head"** field
+    - Make sure the entire script is properly pasted without any modifications
+    - Click **"Save"** to apply your changes
+
+      <div className="flex justify-center items-center bg-blue-500 rounded-md p-4 mt-4">
+        <Image
+          src="/assets/chatbot/framer/framer-paste-code.png"
+          alt="Paste AI Agent Code in Framer"
+          width="100%"
+          height="100%"
+          style={{ width: "100%" }}
+          className="rounded-md object-contain shadow-lg"
+        />
+      </div>
+
+ 5. <div className="font-bold dark:text-gray-300 text-lg md:text-xl">Verify Installation</div>
+    - Click on the **"Preview"** button in Framer to view your site
+    - You should see the YourGPT AI Agent chat widget appear on your site (typically in the bottom-right corner)
+    - Click on the widget to test that it opens correctly and responds to queries
+    - If you're satisfied with the placement and functionality, publish your site with the updated changes
+
 </Steps>
+
+<Aside type="note">
+  <div className="font-bold">Pro Tip:</div> Test your AI Agent on multiple devices (desktop, tablet, mobile) to ensure responsive behavior across all screen sizes.
+</Aside>
 
 ## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Troubleshooting </div>
 
-If the chatbot isn't appearing:
-- Verify the code was pasted in the correct section (Start of `<head>` tag)
-- Ensure you clicked the Save button
-- Clear your browser cache and refresh the page
-- Check if your YourGPT account is active
+The AI Agent not appearing or performance issues? Try these troubleshooting steps:
 
-<div className="text-base text-gray-700 dark:text-white/80">
-Need help? Contact us via Website, write <a href="mailto:support@yourgpt.ai" className="font-bold no-underline">us on Mail</a> or join our <a href="https://discord.gg/z8PBs5ckcd" className="font-bold no-underline">Discord community</a>.
-</div>
+#### AI Agent Not Appearing
+
+* Clear your browser cache and reload the page
+* Verify the script was saved in the Custom Code section
+* Check for JavaScript errors in your browser console (right-click > Inspect > Console)
+* Ensure no ad-blockers are preventing the widget from loading
+* Confirm your Framer site has been published with the latest changes
+
+#### Script Conflicts
+
+* Check if your Framer site has other scripts that might conflict
+* Try moving the script to the Body section instead of Head
+* Disable other chat widgets or popups that might interfere
+* Ensure you're using the latest version of the YourGPT script
+
+#### Performance Issues
+
+* Optimize your AI Agent's knowledge base size
+* Check your Framer site's overall performance
+* Consider enabling lazy loading in your YourGPT dashboard settings
+
+<Aside type="tip">
+  <div className="font-bold">Need Help?</div>
+  <div className="mt-2">
+    <p>For technical support with your Framer integration:</p>
+    <ul className="mt-2 space-y-1">
+      <li>✉️ Email us at <a href="mailto:support@yourgpt.ai" className="font-bold no-underline hover:text-blue-600">support@yourgpt.ai</a></li>
+      <li>💬 Chat with us on <a href="https://discord.gg/z8PBs5ckcd" className="font-bold no-underline hover:text-blue-600">Discord Community</a></li>
+      <li>🌐 Visit our <a href="https://yourgpt.ai/support" className="font-bold no-underline hover:text-blue-600">our website</a></li>
+    </ul>
+  </div>
+</Aside>
+
+🎉 Congratulations! Your YourGPT AI Agent is now successfully integrated with your Framer website, providing intelligent assistance to your visitors 24/7 and enhancing their overall experience.

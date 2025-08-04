@@ -29,25 +29,27 @@ export default function ChangeLogs() {
 
   return (
     <div className="flex flex-col items-center max-w-screen-lg mx-auto">
-      <div 
-        id="changelogs" 
-        className="w-full space-y-6"
-        role="feed" 
+      <div
+        id="changelogs"
+        className="w-full space-y-6 pb-32"
+        role="feed"
         aria-label="Changelog entries"
       >
-        {getCurrentChangelogs.map((changelog: Changelog) => (
-          <ChangeLogItem 
-            key={`${changelog.version}-${changelog.date}`} 
-            {...changelog} 
+        {getCurrentChangelogs.map((changelog: Changelog, index: number) => (
+          <ChangeLogItem
+            key={`${changelog.version}-${changelog.date}`}
+            {...changelog}
+            isFirst={index === 0}
+            isLast={index === getCurrentChangelogs.length - 1}
           />
         ))}
       </div>
-      
+
       {hasMoreItems && (
         <button
           id="load-more"
           onClick={loadMore}
-          className="mt-8 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="mt-8 px-6 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 text-white rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-blue-400 dark:focus:ring-offset-gray-900"
           aria-label="Load more changelog entries"
         >
           Load More

@@ -3,7 +3,7 @@ export { default as Table } from "./Table";
 export { default as Image } from "./Image";
 export { default as CodeBox } from "./CodeBox.jsx";
 export { default as ResponseBox } from "./ResponseBox";
-export { default as sidebar } from "./Sidebar.astro";
+export { default as sidebar } from "./Sidebar/index.astro";
 export { default as Mermaid } from "./Mermaid.astro";
 export { default as Card } from "./Card.astro";
 export { default as Button } from "./Button.astro";

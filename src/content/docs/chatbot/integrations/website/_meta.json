@@ -1,6 +1,8 @@
 {
     "bubble": "bubble",
     "carrd": "carrd",
+    "ghost": "Ghost",
+    "prestashop": "PrestaShop",
     "shopify": "shopify",
     "wix": "wix",
     "webflow": "webflow",

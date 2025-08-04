@@ -1,0 +1,260 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import SEOHead from '../SEOHead.astro';
+
+const { entry } = Astro.props;
+const frontmatter = entry?.data || {};
+
+const { title, description } = frontmatter;
+const customFrontmatter = frontmatter as Record<string, any>;
+
+// Access custom properties by casting to any to bypass TypeScript restrictions
+const rawData = entry?.data as any;
+const ogImage = rawData?.ogImage;
+const canonical = rawData?.canonical;
+
+
+
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+
+<link rel="icon" href="/docs-yourgpt.ico" type="image/x-icon" />
+
+<SEOHead
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  canonical={canonical}
+/>
+
+<script is:inline>
+  // Instant page transition system
+  (function() {
+    'use strict';
+    
+    // Track the current page to prevent unnecessary navigation
+    let currentPage = window.location.pathname;
+    let isNavigating = false;
+    
+    // Prevent any loading effects
+    function preventLoadingEffects() {
+      // Remove loading classes
+      document.body.classList.remove('loading', 'page-loading', 'transitioning');
+      
+      // Ensure content is always visible
+      const contentSelectors = [
+        '.sl-content',
+        '.sl-main', 
+        'main',
+        'article',
+        '.sl-container',
+        '.sl-layout'
+      ];
+      
+      contentSelectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          if (el) {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+            el.style.display = 'block';
+            el.style.transform = 'none';
+            el.style.transition = 'none';
+            el.style.animation = 'none';
+          }
+        });
+      });
+      
+      // Ensure sidebar is always visible and stable
+      const sidebar = document.querySelector('.sidebar-nav');
+      if (sidebar) {
+        sidebar.style.opacity = '1';
+        sidebar.style.visibility = 'visible';
+        sidebar.style.transition = 'none';
+        sidebar.style.animation = 'none';
+        sidebar.style.willChange = 'auto';
+        sidebar.style.transform = 'translateZ(0)';
+        sidebar.style.backfaceVisibility = 'hidden';
+        sidebar.style.contain = 'layout style paint';
+      }
+      
+      // Prevent any React component re-renders during navigation
+      const reactRoots = document.querySelectorAll('[data-reactroot]');
+      reactRoots.forEach(root => {
+        if (root) {
+          root.style.willChange = 'auto';
+          root.style.transform = 'translateZ(0)';
+          root.style.backfaceVisibility = 'hidden';
+        }
+      });
+    }
+    
+    // Handle Astro page events
+    function handlePageLoad() {
+      preventLoadingEffects();
+      
+      // Force immediate visibility
+      requestAnimationFrame(() => {
+        preventLoadingEffects();
+      });
+    }
+    
+    function handleAfterSwap() {
+      preventLoadingEffects();
+      
+      // Double-check after a brief delay
+      setTimeout(() => {
+        preventLoadingEffects();
+      }, 10);
+    }
+    
+    // Prevent Astro from causing re-renders
+    function preventAstroRerenders() {
+      // Override any Astro navigation methods that might cause re-renders
+      if (window.navigate) {
+        const originalNavigate = window.navigate;
+        window.navigate = function(...args) {
+          // Prevent sidebar re-renders during navigation
+          const sidebar = document.querySelector('.sidebar-nav');
+          if (sidebar) {
+            sidebar.style.pointerEvents = 'none';
+            setTimeout(() => {
+              sidebar.style.pointerEvents = 'auto';
+            }, 100);
+          }
+          return originalNavigate.apply(this, args);
+        };
+      }
+    }
+    
+    // Intercept all link clicks to prevent same-page navigation
+    function interceptLinkClicks() {
+      document.addEventListener('click', function(e) {
+        const target = e.target;
+        const link = target.closest('a');
+        
+        if (link && link.href) {
+          const linkPath = new URL(link.href).pathname;
+          const currentPath = window.location.pathname;
+          
+          // Normalize paths for comparison
+          const normalizedLinkPath = linkPath.endsWith('/') ? linkPath.slice(0, -1) : linkPath;
+          const normalizedCurrentPath = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
+          
+          // If clicking on the same page, prevent navigation
+          if (normalizedLinkPath === normalizedCurrentPath) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }
+      }, true);
+    }
+    
+    // Override history methods to prevent unnecessary navigation
+    function overrideHistoryMethods() {
+      const originalPushState = history.pushState;
+      const originalReplaceState = history.replaceState;
+      
+      history.pushState = function(...args) {
+        const newPath = args[2];
+        if (newPath && newPath !== currentPage) {
+          currentPage = newPath;
+          return originalPushState.apply(history, args);
+        }
+        // Don't push state if it's the same page
+        return;
+      };
+      
+      history.replaceState = function(...args) {
+        const newPath = args[2];
+        if (newPath && newPath !== currentPage) {
+          currentPage = newPath;
+          return originalReplaceState.apply(history, args);
+        }
+        // Don't replace state if it's the same page
+        return;
+      };
+    }
+    
+    // Prevent Astro from triggering unnecessary events
+    function preventAstroEvents() {
+      // Override Astro's internal navigation
+      if (window.Astro) {
+        const originalNavigate = window.Astro.navigate;
+        if (originalNavigate) {
+          window.Astro.navigate = function(url) {
+            const currentPath = window.location.pathname;
+            const normalizedCurrentPath = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
+            const normalizedUrl = url.endsWith('/') ? url.slice(0, -1) : url;
+            
+            // Only navigate if it's a different page
+            if (normalizedCurrentPath !== normalizedUrl) {
+              return originalNavigate.call(this, url);
+            }
+            return Promise.resolve();
+          };
+        }
+      }
+    }
+    
+    // Initial setup
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        preventLoadingEffects();
+        preventAstroRerenders();
+        interceptLinkClicks();
+        overrideHistoryMethods();
+        preventAstroEvents();
+      });
+    } else {
+      preventLoadingEffects();
+      preventAstroRerenders();
+      interceptLinkClicks();
+      overrideHistoryMethods();
+      preventAstroEvents();
+    }
+    
+    // Listen for Astro events
+    document.addEventListener('astro:page-load', handlePageLoad);
+    document.addEventListener('astro:after-swap', handleAfterSwap);
+    
+    // Additional event listeners to prevent re-renders
+    document.addEventListener('astro:before-swap', () => {
+      // Prevent any visual changes during swap
+      const sidebar = document.querySelector('.sidebar-nav');
+      if (sidebar) {
+        sidebar.style.opacity = '1';
+        sidebar.style.visibility = 'visible';
+      }
+    });
+    
+    // Ensure sidebar stability during all navigation events
+    const navigationEvents = ['popstate', 'pushstate', 'replacestate'];
+    navigationEvents.forEach(event => {
+      window.addEventListener(event, () => {
+        setTimeout(() => {
+          preventLoadingEffects();
+        }, 0);
+      });
+    });
+    
+    // Monitor for any Astro navigation attempts and prevent same-page navigation
+    let lastNavigationTime = 0;
+    document.addEventListener('astro:before-preparation', () => {
+      const now = Date.now();
+      if (now - lastNavigationTime < 100) {
+        // Prevent rapid navigation attempts
+        return;
+      }
+      lastNavigationTime = now;
+    });
+  })();
+</script>
+
+<slot />
