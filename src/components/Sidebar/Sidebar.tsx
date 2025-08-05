@@ -1,21 +1,23 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import React, { useMemo, useEffect, useRef } from "react";
 import { cn } from "~/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Menu, X, Home, Book, Settings, Cpu, KeyRound, SquareFunction, BookOpenText, Link, Zap, LayoutGrid } from "lucide-react";
 import { FaDiscord, FaYoutube } from "react-icons/fa";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-import { useSidebar, SidebarProvider } from './SidebarContext';
-import type { SidebarProps, NavigationSections, NavLinkType } from './types';
+import { useSidebar, SidebarProvider } from "./SidebarContext";
+import type { SidebarProps, NavigationSections, NavLinkType } from "./types";
 import { sidebarNavigation } from "~/lib/navigation";
+import { FaCode } from "react-icons/fa6";
+
 
 // Sidebar constants
 const SIDEBAR_CONSTANTS = {
   ACCORDIONS: {
     TRAINING: 'training',
-    CUSTOMIZATION: 'customization', 
+    CUSTOMIZATION: 'customization',
     INTEGRATIONS: 'integrations',
     AI_STUDIO: 'ai-studio',
-    OTHER: 'other'
+    OTHER: 'other',
   },
   NESTED_ACCORDIONS: {
     CHATBOT_SDK: 'chatbot-sdk',
@@ -25,7 +27,7 @@ const SIDEBAR_CONSTANTS = {
     VOICE_INTEGRATIONS: 'voice-ai',
     CONNECTORS: 'connectors',
     ADVANCED_OPTIONS: 'advanced-options',
-    DEBUGGING: 'debugging'
+    DEBUGGING: 'debugging',
   },
   PATH_PATTERNS: {
     CUSTOMIZATION_SDK: '/customization/sdk/',
@@ -42,8 +44,8 @@ const SIDEBAR_CONSTANTS = {
     HOW_TO_CHANGE: '/how-to-change',
     INTEGRATIONS: '/integrations',
     STUDIO: '/studio',
-    OTHER: '/other'
-  }
+    OTHER: '/other',
+  },
 };
 
 // Cache for organized navigation sections
@@ -63,83 +65,79 @@ function organizeNavigationItems(): NavigationSections {
       social: [],
       connectors: [],
       voice: [],
-      other: []
+      other: [],
     },
     coreFeatures: [],
     aiStudio: [],
     aiStudioAdvanced: [],
     other: [],
-    debugging: []
+    debugging: [],
   };
 
   const categorizationRules = [
     {
-      condition: (href: string) => href.includes('/introduction') || href.includes('/what-is-yourgpt') || 
-                                   href.includes('/setup') || href.includes('/link-shareable-chatbot'),
-      section: 'gettingStarted'
+      condition: (href: string) => href.includes('/introduction') || href.includes('/what-is-yourgpt') || href.includes('/setup') || href.includes('/link-shareable-chatbot'),
+      section: 'gettingStarted',
     },
     {
       condition: (href: string) => href.includes('/other/debugging/'),
-      section: 'debugging'
+      section: 'debugging',
     },
     {
-      condition: (href: string) => (href.includes('/training') || href.includes('/knowledge-source-integration')) && 
-                                   !href.includes('/other/debugging/'),
-      section: 'training'
+      condition: (href: string) => (href.includes('/training') || href.includes('/knowledge-source-integration')) && !href.includes('/other/debugging/'),
+      section: 'training',
     },
     {
       condition: (href: string) => href.includes('/customization/sdk/'),
-      section: 'customizationSDK'
+      section: 'customizationSDK',
     },
     {
-      condition: (href: string) => href.includes('/customization') || href.includes('/how-to-change') || 
-                                   href.includes('/prompts/example') || href.includes('/how-to-add-custom-domain'),
-      section: 'customization'
+      condition: (href: string) => href.includes('/customization') || href.includes('/how-to-change') || href.includes('/prompts/example') || href.includes('/how-to-add-custom-domain'),
+      section: 'customization',
     },
     {
       condition: (href: string) => href.includes('/integrations/chatbots/'),
-      section: 'integrations.chatbots'
+      section: 'integrations.chatbots',
     },
     {
       condition: (href: string) => href.includes('/integrations/website/'),
-      section: 'integrations.website'
+      section: 'integrations.website',
     },
     {
       condition: (href: string) => href.includes('/integrations/social/'),
-      section: 'integrations.social'
+      section: 'integrations.social',
     },
     {
       condition: (href: string) => href.includes('/integrations/connectors/'),
-      section: 'integrations.connectors'
+      section: 'integrations.connectors',
     },
     {
       condition: (href: string) => href.includes('/integrations/voice/'),
-      section: 'integrations.voice'
+      section: 'integrations.voice',
     },
     {
-      condition: (href: string) => href.includes('/integrations/api-integration') || href.includes('/integrations/mcp') || 
-                                   href.includes('/integrations/webhooks'),
-      section: 'integrations.other'
+      condition: (href: string) => href.includes('/integrations/api-integration') || href.includes('/integrations/mcp') || href.includes('/integrations/webhooks'),
+      section: 'integrations.other',
     },
     {
       condition: (href: string) => href.includes('/functions') || href.includes('/custom-sso') || href.includes('/triggers'),
-      section: 'coreFeatures'
+      section: 'coreFeatures',
     },
     {
       condition: (href: string) => href.includes('/studio/elements/advanced/'),
-      section: 'aiStudioAdvanced'
+      section: 'aiStudioAdvanced',
     },
     {
       condition: (href: string) => href.includes('/studio/elements/'),
-      section: 'aiStudio'
+      section: 'aiStudio',
     },
     {
       condition: (href: string) => href.includes('/other/') || href.includes('/queue-replies'),
-      section: 'other'
-    }
+      section: 'other',
+    },
   ];
 
-  sidebarNavigation.forEach(item => {
+  sidebarNavigation.forEach((item) => {
     for (const rule of categorizationRules) {
       if (rule.condition(item.href)) {
         if (rule.section.includes('.')) {
@@ -163,7 +161,7 @@ let pathCheckTimestamp: number = 0;
 
 function getCurrentPath(): string {
   if (typeof window === 'undefined') return '';
-  
+
   const now = Date.now();
   // Only check path every 100ms to avoid excessive checks
   if (now - pathCheckTimestamp > 100) {
@@ -173,7 +171,7 @@ function getCurrentPath(): string {
     }
     pathCheckTimestamp = now;
   }
-  
+
   return cachedCurrentPath;
 }
 
@@ -183,30 +181,30 @@ let lastPathForCache = '';
 
 function isLinkActive(href: string): boolean {
   const currentPath = getCurrentPath();
-  
+
   // Only clear cache if we've moved to a completely different section
   if (currentPath !== lastPathForCache) {
     // Only clear cache if we're not just navigating within the same folder
     const currentFolder = currentPath.split('/').slice(0, -1).join('/');
     const lastFolder = lastPathForCache.split('/').slice(0, -1).join('/');
-    
+
     if (currentFolder !== lastFolder) {
       activeStateCache.clear();
     }
     lastPathForCache = currentPath;
   }
-  
+
   // Return cached result if available
   const cacheKey = `${href}-${currentPath}`;
   if (activeStateCache.has(cacheKey)) {
     return activeStateCache.get(cacheKey)!;
   }
-  
+
   // Calculate active state
-  const normalizePath = (path: string): string => path.endsWith('/') ? path.slice(0, -1) : path;
+  const normalizePath = (path: string): string => (path.endsWith('/') ? path.slice(0, -1) : path);
   const normalizedCurrentPath = normalizePath(currentPath);
   const normalizedHref = normalizePath(href);
-  
+
   let isActive = false;
   if (normalizedCurrentPath === normalizedHref) {
     isActive = true;
@@ -215,28 +213,23 @@ function isLinkActive(href: string): boolean {
   } else if (href === '/' && currentPath === '/') {
     isActive = true;
   }
-  
+
   // Cache the result
   activeStateCache.set(cacheKey, isActive);
   return isActive;
 }
 
 // Stable NavLink component that doesn't re-render unnecessarily
-const SmartNavLink = React.memo(({ href, children, icon, className }: {
-  href: string;
-  children: React.ReactNode;
-  icon?: React.ReactNode;
-  className?: string;
-}) => {
+const SmartNavLink = React.memo(({ href, children, icon, className }: { href: string; children: React.ReactNode; icon?: React.ReactNode; className?: string }) => {
   // Use a stable reference that only changes when the link becomes active/inactive
   const [isActive, setIsActive] = React.useState(() => isLinkActive(href));
   const lastCheckedPath = useRef('');
-  
+
   // Check active state only when path actually changes
   React.useEffect(() => {
     const checkActive = () => {
       const currentPath = getCurrentPath();
-      
+
       // Only check if path has actually changed
       if (currentPath !== lastCheckedPath.current) {
         lastCheckedPath.current = currentPath;
@@ -246,13 +239,13 @@ const SmartNavLink = React.memo(({ href, children, icon, className }: {
         }
       }
     };
-    
+
     // Check immediately
     checkActive();
-    
+
     // Set up less frequent check - only when needed
     const interval = setInterval(checkActive, 500);
-    
+
     return () => clearInterval(interval);
   }, [href, isActive]);
 
@@ -260,22 +253,14 @@ const SmartNavLink = React.memo(({ href, children, icon, className }: {
     <a
       href={href}
       className={`flex items-center gap-3 py-1.75 px-3 text-sm transition-all relative nav-link ${
-        isActive 
-          ? 'text-primary font-medium active-nav-link bg-accent/50' 
-          : 'text-foreground/80 hover:text-foreground hover:bg-accent/30'
-      } ${className || ''}`}
+        isActive ? "text-primary font-medium active-nav-link bg-accent/50" : "text-foreground/80 hover:text-foreground hover:bg-accent/30"
+      } ${className || ""}`}
       data-current-page={isActive}
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: "none" }}
     >
-      {icon && (
-        <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center icon-container">
-          {icon}
-        </span>
-      )}
+      {icon && <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center icon-container">{icon}</span>}
       <span className="link-text">{children}</span>
-      {isActive && (
-        <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary rounded-r"></span>
-      )}
+      {isActive && <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary rounded-r"></span>}
     </a>
   );
 });
@@ -288,17 +273,15 @@ let lastPathForAccordion = '';
 
 function getRequiredAccordionForCurrentPath(): { accordion: string | undefined; nested: string | undefined } {
   const currentPath = getCurrentPath();
-  
+
   // Return cached result if path hasn't changed
   if (currentPath === lastPathForAccordion && cachedRequiredAccordion) {
     return cachedRequiredAccordion;
   }
-  
+
   // Only update cache if we're actually changing to a different folder structure
-  const shouldUpdateCache = !lastPathForAccordion || 
-    !currentPath.startsWith(lastPathForAccordion.split('/').slice(0, -1).join('/')) ||
-    !lastPathForAccordion.startsWith(currentPath.split('/').slice(0, -1).join('/'));
-  
+  const shouldUpdateCache = !lastPathForAccordion || !currentPath.startsWith(lastPathForAccordion.split('/').slice(0, -1).join('/')) || !lastPathForAccordion.startsWith(currentPath.split('/').slice(0, -1).join('/'));
+
   if (shouldUpdateCache) {
     lastPathForAccordion = currentPath;
   } else {
@@ -308,20 +291,19 @@ function getRequiredAccordionForCurrentPath(): { accordion: string | undefined; 
     }
     lastPathForAccordion = currentPath;
   }
-  
+
   if (typeof window === 'undefined') {
     cachedRequiredAccordion = { accordion: undefined, nested: undefined };
     return cachedRequiredAccordion;
   }
-  
+
   const { ACCORDIONS, NESTED_ACCORDIONS, PATH_PATTERNS } = SIDEBAR_CONSTANTS;
-  
+
   let requiredAccordion: string | undefined = undefined;
   let requiredNested: string | undefined = undefined;
-  
+
   if (currentPath.includes(PATH_PATTERNS.CUSTOMIZATION_SDK)) {
     requiredAccordion = ACCORDIONS.CUSTOMIZATION;
-    requiredNested = NESTED_ACCORDIONS.CHATBOT_SDK;
   } else if (currentPath.includes(PATH_PATTERNS.INTEGRATIONS_CHATBOTS)) {
     requiredAccordion = ACCORDIONS.INTEGRATIONS;
     requiredNested = NESTED_ACCORDIONS.CHATBOT_INTEGRATIONS;
@@ -354,7 +336,7 @@ function getRequiredAccordionForCurrentPath(): { accordion: string | undefined; 
   } else if (currentPath.includes(PATH_PATTERNS.OTHER)) {
     requiredAccordion = ACCORDIONS.OTHER;
   }
-  
+
   cachedRequiredAccordion = { accordion: requiredAccordion, nested: requiredNested };
   return cachedRequiredAccordion;
 }
@@ -372,24 +354,24 @@ const SidebarContent = React.memo(() => {
   useEffect(() => {
     const currentPath = getCurrentPath();
     const { accordion, nested } = getRequiredAccordionForCurrentPath();
-    
+
     // Check if we're navigating within the same folder structure
     const accordionChanged = accordion !== lastRequiredAccordion.current;
     const nestedChanged = nested !== lastRequiredNested.current;
-    
+
     if (!initializedRef.current || (currentPath !== lastInitPath.current && (accordionChanged || nestedChanged))) {
       initializedRef.current = true;
       lastInitPath.current = currentPath;
       lastRequiredAccordion.current = accordion;
       lastRequiredNested.current = nested;
-      
+
       // Only auto-open if not manually closed AND if the requirement actually changed
       if (accordion && !state.manuallyClosedAccordions.includes(accordion) && accordionChanged) {
         if (!state.activeAccordions.includes(accordion)) {
           setActiveAccordion(accordion, false);
         }
       }
-      
+
       if (nested && !state.manuallyClosedNestedAccordions.includes(nested) && nestedChanged) {
         if (state.activeNestedAccordion !== nested) {
           setActiveNestedAccordion(nested, false);
@@ -398,27 +380,27 @@ const SidebarContent = React.memo(() => {
     }
   }, [state.manuallyClosedAccordions, state.manuallyClosedNestedAccordions, state.activeAccordions, state.activeNestedAccordion, setActiveAccordion, setActiveNestedAccordion]);
 
-  const handleAccordionChange = React.useCallback((value: string | undefined) => {
-    setActiveAccordion(value, true);
-  }, [setActiveAccordion]);
+  const handleAccordionChange = React.useCallback(
+    (value: string | undefined) => {
+      setActiveAccordion(value, true);
+    },
+    [setActiveAccordion]
+  );
 
-  const handleNestedAccordionChange = React.useCallback((value: string | undefined) => {
-    setActiveNestedAccordion(value, true);
-  }, [setActiveNestedAccordion]);
+  const handleNestedAccordionChange = React.useCallback(
+    (value: string | undefined) => {
+      setActiveNestedAccordion(value, true);
+    },
+    [setActiveNestedAccordion]
+  );
 
   return (
     <div className="space-y-4 px-4">
       {/* Getting Started */}
       <div className="space-y-1">
-        <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3 px-3">
-          Getting Started
-        </div>
+        <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3 px-3">Getting Started</div>
         {sections.gettingStarted.map((item, index) => (
-          <SmartNavLink 
-            key={item.href} 
-            href={item.href} 
-            icon={index === 0 ? <Home size={16} /> : index === 1 ? <BookOpenText size={16} /> : index === 2 ? <Settings size={16} /> : <Link size={16} />}
-          >
+          <SmartNavLink key={item.href} href={item.href} icon={index === 0 ? <Home size={16} /> : index === 1 ? <BookOpenText size={16} /> : index === 2 ? <Settings size={16} /> : <Link size={16} />}>
             {item.label}
           </SmartNavLink>
         ))}
@@ -426,21 +408,17 @@ const SidebarContent = React.memo(() => {
 
       {/* Core Features */}
       <div className="space-y-1">
-        <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3 px-3">
-          Core Features
-        </div>
-        
-        <Accordion 
-          type="multiple" 
-          value={state.activeAccordions} 
+        <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3 px-3">Core Features</div>
+
+        <Accordion
+          type="multiple"
+          value={state.activeAccordions}
           onValueChange={(values) => {
-            const lastChanged = values.length > state.activeAccordions.length ? 
-              values.find(v => !state.activeAccordions.includes(v)) :
-              state.activeAccordions.find(v => !values.includes(v));
+            const lastChanged = values.length > state.activeAccordions.length ? values.find((v) => !state.activeAccordions.includes(v)) : state.activeAccordions.find((v) => !values.includes(v));
             if (lastChanged) {
               handleAccordionChange(lastChanged);
             }
-          }} 
+          }}
           className="w-full space-y-1"
         >
           {/* Training Section */}
@@ -481,8 +459,8 @@ const SidebarContent = React.memo(() => {
                     {item.label}
                   </SmartNavLink>
                 ))}
-                
-                <Accordion type="single" collapsible value={state.activeNestedAccordion} onValueChange={handleNestedAccordionChange} className="w-full">
+
+                {/* <Accordion type="single" collapsible value={state.activeNestedAccordion} onValueChange={handleNestedAccordionChange} className="w-full">
                   <AccordionItem value="chatbot-sdk" className="border-none">
                     <AccordionTrigger className="py-1.5 px-3 text-sm nested-folder transition-colors hover:bg-accent/30 rounded-md">
                       <span>Chatbot SDK</span>
@@ -497,7 +475,28 @@ const SidebarContent = React.memo(() => {
                       </div>
                     </AccordionContent>
                   </AccordionItem>
-                </Accordion>
+                </Accordion> */}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          {/* Web SDK Section */}
+          <AccordionItem value="web-sdk" className="border-none">
+            <AccordionTrigger className="flex items-center py-2 px-3 text-sm main-folder transition-colors hover:bg-accent/50 rounded-md">
+              <span className="flex items-center gap-3">
+                <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                  <FaCode size={16} />
+                </span>
+                <span>Web SDK</span>
+              </span>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="ml-8 space-y-1 mt-1">
+                  {sections.customizationSDK.map((item) => (
+                  <SmartNavLink key={item.href} href={item.href}>
+                    {item.label}
+                  </SmartNavLink>
+                ))}
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -648,7 +647,7 @@ const SidebarContent = React.memo(() => {
                 <span>Other</span>
               </span>
             </AccordionTrigger>
-            
+
             <AccordionContent>
               <div className="ml-8 space-y-1 mt-1">
                 {sections.other.map((item) => (
@@ -680,13 +679,7 @@ const SidebarContent = React.memo(() => {
 
         {/* Core Features - Static */}
         {sections.coreFeatures.map((item) => (
-          <SmartNavLink 
-            key={item.href} 
-            href={item.href} 
-            icon={item.href.includes('/functions') ? <SquareFunction size={16} /> : 
-                  item.href.includes('/custom-sso') ? <KeyRound size={16} /> : 
-                  <Zap size={16} />}
-          >
+          <SmartNavLink key={item.href} href={item.href} icon={item.href.includes("/functions") ? <SquareFunction size={16} /> : item.href.includes("/custom-sso") ? <KeyRound size={16} /> : <Zap size={16} />}>
             {item.label}
           </SmartNavLink>
         ))}
@@ -695,13 +688,10 @@ const SidebarContent = React.memo(() => {
   );
 });
 
-SidebarContent.displayName = 'SidebarContent';
+SidebarContent.displayName = "SidebarContent";
 
 // Error boundary component
-class SidebarErrorBoundary extends React.Component<
-  { children: React.ReactNode },
-  { hasError: boolean }
-> {
+class SidebarErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
   constructor(props: { children: React.ReactNode }) {
     super(props);
     this.state = { hasError: false };
@@ -712,7 +702,7 @@ class SidebarErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Sidebar error:', error, errorInfo);
+    console.error("Sidebar error:", error, errorInfo);
   }
 
   render() {
@@ -720,10 +710,7 @@ class SidebarErrorBoundary extends React.Component<
       return (
         <div className="p-4 text-center text-muted-foreground">
           <p>Something went wrong with the sidebar.</p>
-          <button 
-            onClick={() => this.setState({ hasError: false })}
-            className="mt-2 px-3 py-1 text-sm bg-accent rounded hover:bg-accent/80"
-          >
+          <button onClick={() => this.setState({ hasError: false })} className="mt-2 px-3 py-1 text-sm bg-accent rounded hover:bg-accent/80">
             Try again
           </button>
         </div>
@@ -764,7 +751,7 @@ export function Sidebar({ className }: SidebarProps) {
                 </SidebarErrorBoundary>
               </SidebarProvider>
             </div>
-            
+
             {/* Mobile footer */}
             <div className="border-t border-border p-4 bg-background">
               <div className="flex flex-col space-y-2">
@@ -796,4 +783,4 @@ export function Sidebar({ className }: SidebarProps) {
       </div>
     </>
   );
-} 
+}

@@ -1,0 +1,232 @@
+---
+title: "React Native Chatbot SDK"
+description: "Integrate YourGPT Chatbot seamlessly into your react-native application."
+keywords: yourgpt chatbot, react native sdk, mobile chatbot, yourgpt react native integration
+hero:
+  title: "React Native Chatbot SDK"
+  tagline: "Integrate YourGPT Chatbot seamlessly into your react-native application"
+---
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'>React Native Chatbot SDK</div>
+
+import { Steps } from '@astrojs/starlight/components';
+
+The React Native Chatbot SDK allows you to seamlessly integrate YourGPT Chatbot into your React Native applications. This SDK provides a native experience with full access to all YourGPT features including AI conversations, custom styling, and advanced functionality.
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Installation</div>
+
+Follow these steps to install and configure the React Native Chatbot SDK in your project:
+
+<Steps>
+
+1. **Add SDK Package**: Install the `@yourgpt/chatbot-reactnative` package to your dependencies
+</Steps>
+
+```bash
+$ npm i @yourgpt/chatbot-reactnative
+```
+
+<Steps>
+2. **Install WebView Dependency**: Add `react-native-webview` to your project dependencies
+</Steps>
+
+Refer to the [react-native-webview documentation](https://github.com/react-native-webview/react-native-webview) for detailed installation instructions.
+
+<Steps>
+3. **Link Native Dependencies**: Configure platform-specific dependencies
+</Steps>
+
+**iOS & macOS:**
+If using CocoaPods, navigate to the `ios/` or `macos/` directory and run:
+
+```bash
+$ pod install
+```
+
+**Android:**
+No additional configuration required for Android platforms.
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Configuration</div>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Get Your Widget ID</div>
+
+Before implementing the SDK, you'll need to obtain your unique `widget_id`:
+
+- Visit [YourGPT Dashboard](https://chatbot.yourgpt.ai)
+- Create or select your chatbot
+- Copy the widget ID from Integrations section
+
+This widget ID is essential for connecting your React Native app to your specific YourGPT chatbot instance.
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Implementation</div>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Step 1: Wrap Your App with Provider</div>
+
+The first step is to wrap your main application component with the `YourGPTProvider`. This provides the chatbot context throughout your app:
+
+```tsx
+// In app.tsx
+import React from 'react';
+import {SafeAreaView, View} from 'react-native';
+import YourGPTProvider from '@yourgpt/chatbot-reactnative';
+
+function App(): JSX.Element {
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <YourGPTProvider widgetId="Your_Widget_Id">
+        // YOUR CODE HERE
+      </YourGPTProvider>
+    </SafeAreaView>
+  );
+}
+
+export default App;
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Step 2: Create Chatbot Trigger Component</div>
+
+Create a component that will trigger the chatbot to open. This can be a button, icon, or any interactive element:
+
+```tsx
+// In components/OpenBot.tsx
+import React from 'react';
+import {Button} from 'react-native';
+import {useYourGPT} from '@yourgpt/chatbot-reactnative';
+
+export default function OpenBot() {
+  const {open} = useYourGPT();
+  return <Button onPress={open} title="Open Bot" />;
+}
+```
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Advanced Usage</div>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Custom Styling</div>
+
+You can customize the appearance of your chatbot trigger button to match your app's design:
+
+```tsx
+// Custom styled chatbot button
+import React from 'react';
+import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {useYourGPT} from '@yourgpt/chatbot-reactnative';
+
+export default function CustomChatButton() {
+  const {open} = useYourGPT();
+  
+  return (
+    <TouchableOpacity style={styles.chatButton} onPress={open}>
+      <Text style={styles.buttonText}>💬 Chat with AI</Text>
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({
+  chatButton: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 25,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+});
+```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Integration with Navigation</div>
+
+Integrate the chatbot with your app's navigation system for seamless user experience:
+
+```tsx
+// Integration with React Navigation
+import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import YourGPTProvider from '@yourgpt/chatbot-reactnative';
+
+const Stack = createStackNavigator();
+
+function App(): JSX.Element {
+  return (
+    <YourGPTProvider widgetId="Your_Widget_Id">
+      <NavigationContainer>
+        <Stack.Navigator>
+          {/* Your app screens here */}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </YourGPTProvider>
+  );
+}
+```
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Best Practices</div>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Performance Optimization</div>
+
+- **Lazy Loading**: Consider lazy loading the chatbot component to improve initial app load time
+- **Memory Management**: Ensure proper cleanup when the chatbot is unmounted
+- **Network Handling**: Implement proper error handling for network connectivity issues
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>User Experience</div>
+
+- **Accessibility**: Ensure your chatbot trigger is accessible to users with disabilities
+- **Loading States**: Provide visual feedback while the chatbot is initializing
+- **Offline Handling**: Gracefully handle scenarios when the chatbot is unavailable
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Security Considerations</div>
+
+- **Widget ID Protection**: Never expose your widget ID in client-side code that could be reverse-engineered
+- **Data Privacy**: Ensure compliance with data protection regulations in your target markets
+- **User Consent**: Implement proper user consent mechanisms for data collection
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Troubleshooting</div>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>Common Issues</div>
+
+**Chatbot Not Opening:**
+- Verify your widget ID is correct
+- Check network connectivity
+- Ensure the provider is properly wrapped around your app
+
+**WebView Errors:**
+- Update to the latest version of `react-native-webview`
+- Clear app cache and restart
+- Check for platform-specific WebView configurations
+
+**Performance Issues:**
+- Monitor memory usage during chatbot sessions
+- Consider implementing session management
+- Optimize your app's overall performance
+
+---
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Platform Support</div>
+
+The React Native Chatbot SDK supports the following platforms:
+
+- **iOS**: iOS 11.0 and later
+- **Android**: Android API level 21 and later
+- **React Native**: Version 0.60 and later
+- **Expo**: Compatible with Expo managed workflow
+
+For the latest compatibility information and updates, refer to the official SDK documentation and release notes.
