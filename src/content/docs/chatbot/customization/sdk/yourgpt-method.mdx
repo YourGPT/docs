@@ -1,0 +1,393 @@
+---
+title: "$yourgpt Method"
+description: "Integrate the Chatbot Web SDK into your website"
+keywords: yourgpt chatbot Documentation, yourgpt chatbot guide, gpt chatbot, customgpt chatbot
+hero:
+  title: "$yourgpt Method"
+  tagline: "Integrate the Chatbot Web SDK into your website"
+---
+
+import {Image} from '~/components';
+import {Note} from '~/components'
+import { Aside } from '@astrojs/starlight/components';
+
+
+<div className='text-4xl font-extrabold border border-b-1 border-t-0 border-x-0 pb-6 dark:text-white mb-12 !leading-[50px]'> $yourgpt Method </div>
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Introduction </div>
+
+This documentation provides details on how to use the Chatbot Web SDK. The Chatbot Web SDK allows you to integrate a chatbot into your website.
+
+
+
+To integrate the Chatbot Web SDK into your website, you need to inject the following script:
+
+ ```js js title="example.js" file="CMS"
+ <script 
+    src="https://widget.yourgpt.ai/script.js" 
+    id="yourgpt-chatbot" 
+    data-widget="<YOUR_WIDGET_ID>">
+</script>
+ ```
+
+<div class="text-base text-gray-700 dark:text-white/80">
+  <p>
+    Replace <code class="font-bold">YOUR_WIDGET_ID</code> with your actual widget ID. You can find your widget ID in the 
+    <a href="https://chatbot.yourgpt.ai/dashboard" class="font-bold no-underline" target='_blank'>Chatbot Dashboard</a>.
+  </p>
+</div>
+
+
+
+{/* <Note type="note" color="blue">
+   Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.
+</Note> */}
+
+<Aside > 📝 Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.</Aside>
+
+
+
+
+## `$yourgptChatbot`
+
+After the Chatbot Web SDK script is loaded, the `$yourgptChatbot` variable becomes available. This variable  provides methods to interact with the chatbot.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Execution Commands </div>
+These are the commands that can be executed using the `$yourgptChatbot.execute()` function.
+
+{/* | Command        | Description |
+| -------------- | ----------- |
+| `widget:open`    | Opens the chatbot. |
+| `widget:close`   | Closes the chatbot. |
+| `message:send`   | Sends a message to the chatbot. | */}
+
+<table className="min-w-full table-auto border-collapse ">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Command</th>
+      <th className="px-8 py-2 !pe-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`widget:open`</td>
+      <td className="!pe-6 font-semibold border dark:border-gray-700 text-sm">Opens the chatbot.</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`widget:close`</td>
+      <td className="!pe-6 font-semibold border dark:border-gray-700 text-sm">Closes the chatbot.</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`message:send`</td>
+      <td className="!pe-6 font-semibold border dark:border-gray-700 text-sm">Sends a message to the chatbot.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  `message:send` payload </div>
+
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Property</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Description</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Type</th>
+      <th className="px-8 py-2 !pe-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">text</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">The message text.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`string`</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm"></td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">send</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Indicates whether the message should be sent to the chatbot or not.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`boolean`</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">`false`</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Opening the chatbot </div>
+ ```js title="example.js" file="CMS"
+$yourgptChatbot.execute("widget:open");
+ ```
+
+ {/* ```
+{`$yourgptChatbot.execute("widget:open");`}
+ ``` */}
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Sending a message to the chatbot </div>
+
+```js title="example.js" file="CMS"
+$yourgptChatbot.execute("message:send", { text: "Hello", send: true });
+```
+ {/* ```
+{`$yourgptChatbot.execute("message:send", { text: "Hello", send: true });`}
+ ``` */}
+
+Here the `text` is the message that you want to send to the chatbot. The `send` parameter is a boolean value that indicates whether the message should be sent to the chatbot or not. If the send parameter is set to false, the message will be displayed in the chatbot but will not be sent to the chatbot.
+
+<div style={{ height: '20px' }}></div>
+
+{/* <Note type="note" color="blue">
+ This command will open the chatbot if it is not already open.
+</Note> */}
+
+<Aside > 📝 This command will open the chatbot if it is not already open.</Aside>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Closing the chatbot </div>
+```js title="example.js" file="CMS"
+$yourgptChatbot.execute("widget:close");
+```
+ {/* ```
+{`$yourgptChatbot.execute("widget:close");`}
+ ``` */}
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Event Listeners </div>
+The Chatbot Web SDK provides event listeners that you can use to listen to events that occur in the chatbot. To add an event listener, you need to call the `$yourgptChatbot.on(event,callback)` function.
+
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold ">Event Name</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold ">Description</th>
+      <th className="px-8 py-2 !pe-6 border dark:border-gray-700 font-semibold ">Arguments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">init</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Triggered when the chatbot is initialized.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm"></td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">widget:popup</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">
+        Triggered when the chatbot popup opens or closes. It provides a boolean in the callback indicating the state (true for open, false for closed).
+      </td>
+      <td className="!pe-6 font-semibold border dark:border-gray-700 text-sm">`state:boolean`</td>
+    </tr>
+  </tbody>
+</table>
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Example: Listen to the init event </div>
+
+```js title="example.js" file="CMS"
+$yourgptChatbot.on("init", function() {
+    console.log("Chatbot initialized");
+});
+```
+
+
+ {/* ```
+{`$yourgptChatbot.on("init", function() {
+    console.log("Chatbot initialized");
+});`}
+ ``` */}
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Removing an event listener </div>
+To remove an event listener, you need to call the `$yourgptChatbot.off(event,callback)` function.
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Set Command </div>
+The Chatbot Web SDK provides a set command that you can use to set visitor, session and widget data. To set data, you need to call the `$yourgptChatbot.set(type,data)` function.
+
+<table className="min-w-full table-auto border-collapse  border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Type</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Description</th>
+      <th className=" !pe-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Payload</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">visitor:data</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Sets the visitor data.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">object</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">session:data</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Sets the session data.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">object</td>
+    </tr>
+  </tbody>
+</table>
+
+
+###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Example: Set visitor data </div>
+
+
+```js title="example.js" file="CMS"
+$yourgptChatbot.set("visitor:data", {
+    customKey: "value",
+});
+```
+
+
+ {/* ```
+$yourgptChatbot.set("visitor:data", {
+    customKey: "value",
+});
+ ``` */}
+
+###  <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Example: Set session data </div>
+```js title="example.js" file="CMS"
+$yourgptChatbot.set("session:data", {
+    customKey: "value",
+});
+ ```
+ {/* ```
+{`$yourgptChatbot.set("session:data", {
+    customKey: "value",
+});`}
+ ``` */}
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'> Set Contact Data </div>
+<table className=" min-w-full table-auto border-collapse  border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Type</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Description</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Payload</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">contact:data</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Sets the contact data.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm text-center">
+        <span className="block">object</span>
+        <span className="text-xs italic">Check supported fields 👇</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>  Supported Contact payload fields for update </div>
+
+
+<table className="min-w-full table-auto border-collapse border dark:border-gray-700 border-gray-300">
+  <thead>
+    <tr className="dark:bg-gray-800 bg-gray-100 text-left">
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Field</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Description</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Type</th>
+      <th className="px-8 py-2 !ps-6 border dark:border-gray-700 font-semibold whitespace-nowrap">Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">email</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">A valid email address.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">string</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Either email or phone is required</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">phone</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">A valid phone number <i>e.g. +1234567890</i>.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">string</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Either phone or email is required</td>
+    </tr>
+    <tr>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">name</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">Name of the contact.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">string</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">No</td>
+    </tr>
+    <tr className="bg-gray-100 dark:bg-gray-800">
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">ext_user_id</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">A unique identifier for the contact.</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">string</td>
+      <td className="!ps-6 font-semibold border dark:border-gray-700 text-sm">No</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<div style={{ height: '20px' }}></div>
+
+{/* <Note type="note" color="blue">
+ For contact update, either `email` or `phone` must be provided.
+</Note> */}
+
+<Aside > 📝 For contact update, either `email` or `phone` must be provided.</Aside>
+
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'>   Example: Set contact data </div>
+ ```js file="CMS" title="example.js"
+ $yourgptChatbot.set("contact:data", {
+    email: "andrew099@hi.com", 
+    phone: "+1234567890",
+    name: "Andrew",
+    ext_user_id: "123456",
+});
+ ```
+
+
+## <div className='text-3xl tracking-tight font-bold dark:text-inherit text-gray-700'>Configuring Data for Iframe Embeds </div>
+If you are using the Chatbot Web SDK with an iframe embed, you can set the visitor, session, and contact data by passing the data in the query parameters of the iframe URL.
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Visitor Data </div>
+To set visitor data, append the `VISITOR_DATA.keyName=value` query parameter to your iframe URL.
+
+ ``` js file="CMS" title="example.html" 
+ <iframe src="<widgetUrl>?VISITOR_DATA.customKey=value"></iframe>
+ ```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Session Data </div>
+To set session data, append the `SESSION_DATA.keyName=value` query parameter to your iframe URL.
+
+ ``` js file="CMS" title="example.html"
+ <iframe src="<widgetUrl>?SESSION_DATA.customKey=value"></iframe>
+ ```
+
+### <div className='text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700'> Contact Data </div>
+To set contact data, append the `CONTACT.keyName=value` query parameter to your iframe URL.
+
+ ```js file="CMS" title="example.html"
+ <iframe src="<widgetUrl>?CONTACT.email=andrew998@hi.com"></iframe>
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+{/* <Note type="note" color="emerald">
+ Here {`<widgetUrl>`} is the URL of your chatbot widget.
+</Note> */}
+
+<Aside > 📝  Here {`<widgetUrl>`} is the URL of your chatbot widget.</Aside>
+
+<div style={{ height: '20px' }}></div>
+
+{/* <Note type="note" color="blue">
+ You can pass multiple query parameters by separating them with an `&`.
+</Note> */}
+
+<Aside > 📝 You can pass multiple query parameters by separating them with an `&` .</Aside>
+
+<div style={{ height: '20px' }}></div>
+
+ ```js file="CMS" title="example.html"
+ <iframe src="<widgetUrl>?VISITOR_DATA.customKey=value&SESSION_DATA.customKey=value&CONTACT.email=johnydreq@hi.com"></iframe>
+ ```
+
+<div style={{ height: '20px' }}></div>
+
+ ```js file="CMS" title="example.curl"
+ curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--header 'api-key: pks-3e0a221e3d0d78cf0ecd73be363a728e1dfa2a0ee01cc4ff8b8c99c21a45cff9' \\
+--data-urlencode 'widget_uid=8449240d-8454-4173-af6e-569477ac9013'
+ ```
+
+
+
