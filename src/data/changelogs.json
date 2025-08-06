@@ -1,5 +1,12 @@
 [
   {
+    "version": "2.0.10",
+    "date": "July 2025",
+    "img": "/assets/changelog/may-updates.jpg",
+    "data": "**🤖 YourGPT Copilot Builder Is Now Live**\n- The new Copilot Builder lets you add a real AI Copilot to your product. Instantly turn user conversations into actions, automate workflows, and handle tasks across SaaS, ecommerce, support, travel, and more.\n\n**Key Features:**\n- Reasoning & Planning Before Answering\n- Multi-step task completion\n- Visual understanding (text and images)\n- Web navigation and instant answers\n https://www.youtube.com/watch?v=aHHeeJIVEl0"
+  },
+ 
+  {
     "version": "2.0.8",
     "date": "May 2025",
     "img": "/assets/changelog/may-updates.jpg",
@@ -11,7 +18,6 @@
     "img": "/assets/changelog/april-updates.jpg",
     "data": "**👥 Contact Module**\n- Manage customer contacts and track interactions effortlessly.\n\n**🔗 MCP Integration**\n- Connect AI agents with external tools via Model Context Protocol.\n\n**📞 Phone Voice Agents**\n- Enable intelligent voice interactions through phone agents.\n\n**🔒 Helpdesk Password Protection**\n- Protect helpdesk access with secure password protection."
   },
-
   {
     "version": "2.0.6",
     "date": "March 2025",
@@ -19,10 +25,10 @@
     "data": "**📨 Email Automation:**\n- Send emails automatically based on specific triggers.\n\n**🔁 Auto-Resolve Chats:**\n- Automatically close resolved conversations.\n\n**😊 CSAT Upgrades:**\n- Improved customer satisfaction tracking in Widget and Dashboard.\n- New CSAT statistics and Studio node.\n\n**🧠 AI Helpdesk Article Generation:**\n- Create articles using voice or image inputs.\n- Voice-to-text and image analysis for content generation.\n\n**💬 Canned Replies:**\n- Create and share canned replies with your team for quick responses.\n\n**🔍 Helpdesk Article Search:**\n- Search Helpdesk Articles directly from the conversation dashboard.\n\n**🔁 Monthly Reindex**\n- Monthly reindexing of notion, dropbox, google drive files for update to latest data."
   },
   {
-  "version": "2.0.5",
-  "date": "February 2025",
-  "img": "/assets/changelog/february-updates.jpg",
-  "data": "**🎤 Voice, Audio & File Nodes**\n- New nodes for voice, audio, and file capture are now available, offering enhanced media and engaging interactions.\n\n**📁 Capture Update**\n- Added support for file and separate entity capture type, giving you more flexibility in handling inputs.\n\n**🔍 AI Retrieval Node**\n- The AI Retrieval node helps your AI find and use the right information from stored data in real time.\n\n**📚 Confluence Training Source**\n- New confluence training source is now available for enhanced learning.\n\n**🏷️ Training Tags**\n- Segment your knowledgebase training with new training tags.\n\n**💬 AI Response Tags**\n- In Studio AI knowledgebase responses now support tags for improved accuracy.\n\n**🤖 New AI Model: Claude Sonnet 3.7**\n- Introducing Claude Sonnet 3.7 for advanced AI capabilities.\n\n**🛠️ Studio Improvements**\n- Enjoy a smoother workflow with the latest studio improvements.\n\n**📅 New Events**\n- Events now include marked resolve and a (Post knowledgebase).\n\n**🔗 Web-hook**\n- Integrate and automate with the new web-hook feature."
+    "version": "2.0.5",
+    "date": "February 2025",
+    "img": "/assets/changelog/february-updates.jpg",
+    "data": "**🎤 Voice, Audio & File Nodes**\n- New nodes for voice, audio, and file capture are now available, offering enhanced media and engaging interactions.\n\n**📁 Capture Update**\n- Added support for file and separate entity capture type, giving you more flexibility in handling inputs.\n\n**🔍 AI Retrieval Node**\n- The AI Retrieval node helps your AI find and use the right information from stored data in real time.\n\n**📚 Confluence Training Source**\n- New confluence training source is now available for enhanced learning.\n\n**🏷️ Training Tags**\n- Segment your knowledgebase training with new training tags.\n\n**💬 AI Response Tags**\n- In Studio AI knowledgebase responses now support tags for improved accuracy.\n\n**🤖 New AI Model: Claude Sonnet 3.7**\n- Introducing Claude Sonnet 3.7 for advanced AI capabilities.\n\n**🛠️ Studio Improvements**\n- Enjoy a smoother workflow with the latest studio improvements.\n\n**📅 New Events**\n- Events now include marked resolve and a (Post knowledgebase).\n\n**🔗 Web-hook**\n- Integrate and automate with the new web-hook feature."
   },
   {
     "version": "2.0.3",
