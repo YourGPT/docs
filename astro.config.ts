@@ -65,10 +65,24 @@ export default defineConfig({
           },
         },
         {
-          tag: 'link',
+          tag: 'meta',
           attrs: {
-            rel: 'canonical',
-            href: 'https://docs.yourgpt.ai',
+            name: 'twitter:site',
+            content: '@YourGPTAI',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:type',
+            content: 'website',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:site_name',
+            content: 'YourGPT Documentation',
           },
         },
         {

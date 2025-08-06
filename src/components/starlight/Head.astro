@@ -1,36 +1,89 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
-import SEOHead from '../SEOHead.astro';
+import Default from '@astrojs/starlight/components/Head.astro';
 
+// Get props from Starlight
 const { entry } = Astro.props;
+
+// Extract frontmatter data
 const frontmatter = entry?.data || {};
+const { title, description, ogImage, canonical } = frontmatter;
 
-const { title, description } = frontmatter;
-const customFrontmatter = frontmatter as Record<string, any>;
-
-// Access custom properties by casting to any to bypass TypeScript restrictions
-const rawData = entry?.data as any;
-const ogImage = rawData?.ogImage;
-const canonical = rawData?.canonical;
-
-
+// Get current URL for canonical and OG URL
+const currentUrl = canonical || Astro.url.pathname;
+const siteUrl = 'https://docs.yourgpt.ai';
+const fullCanonicalUrl = `${siteUrl}${currentUrl}`;
 
 ---
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content={Astro.generator} />
 
-<title>{title}</title>
+<Default {...Astro.props} />
 
-<link rel="icon" href="/docs-yourgpt.ico" type="image/x-icon" />
+<!-- Add custom SEO metadata if available -->
+{title && (
+  <>
+    <meta property="og:title" content={title} />
+    <meta name="twitter:title" content={title} />
+  </>
+)}
 
-<SEOHead
-  title={title}
-  description={description}
-  ogImage={ogImage}
-  canonical={canonical}
-/>
+{description && (
+  <>
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:description" content={description} />
+  </>
+)}
+
+{ogImage && (
+  <>
+    <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
+    <meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
+  </>
+)}
+
+<meta property="og:url" content={fullCanonicalUrl} />
+<link rel="canonical" href={fullCanonicalUrl} />
+
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YourGPT",
+  "url": "https://yourgpt.ai",
+  "logo": "https://docs.yourgpt.ai/assets/ygc-logo/yourgpt-logo-dark-symbol.svg",
+  "description": "AI-first no-code platform for building custom AI Agents and chatbots",
+  "sameAs": [
+    "https://x.com/YourGPTAI",
+    "https://www.youtube.com/@YourGPTAI"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "url": "https://help.yourgpt.ai"
+  }
+})} />
+
+{title && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem", 
+        "position": 2,
+        "name": title,
+        "item": fullCanonicalUrl
+      }
+    ]
+  })} />
+)}
 
 <script is:inline>
   // Instant page transition system
