@@ -65,7 +65,7 @@ const ThemeToggle = () => {
           <div className={`toggle-thumb ${isDark ? 'dark' : 'light'}`} />
         </div>
       </button>
-      <style jsx>{`
+      <style>{`
         .theme-toggle-wrapper {
           display: inline-flex;
           align-items: center;
@@ -104,8 +104,8 @@ const ThemeToggle = () => {
         }
 
         /* Dark mode focus */
-        :global([data-theme="dark"]) .theme-toggle:focus,
-        :global([data-theme="dark"]) .theme-toggle:focus-visible {
+        [data-theme="dark"] .theme-toggle:focus,
+        [data-theme="dark"] .theme-toggle:focus-visible {
           box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
         }
 
