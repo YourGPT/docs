@@ -192,7 +192,14 @@ const fullCanonicalUrl = `${siteUrl}${currentUrl}`;
         const link = target.closest('a');
         
         if (link && link.href) {
-          const linkPath = new URL(link.href).pathname;
+          const linkUrl = new URL(link.href);
+
+          // If the link is external, do not intercept it
+          if (linkUrl.hostname !== window.location.hostname) {
+            return;
+          }
+
+          const linkPath = linkUrl.pathname;
           const currentPath = window.location.pathname;
           
           // Normalize paths for comparison

@@ -57,7 +57,7 @@ renderer.link = function ({ href = "", title = "", text = "", ...rest }) {
       return `<div class="w-full h-72"><iframe src="https://player.vimeo.com/video/${id}" width="640" height="360" frameborder="0" allowfullscreen style="max-width:100%;height:100%;border-radius:10px;overflow:hidden;"></iframe></div>`;
     }
   }
-  return `<a href="${href}"${title ? ` title="${title}"` : ""} target="_blank" rel="noopener noreferrer">${text}</a>`;
+  return `<a href="${href}"${title ? ` title="${title}"` : ""} target="_blank" rel="noopener noreferrer" class="changelog-link">${text}</a>`;
 };
 
 renderer.image = function ({ href = "", title = "", text = "", ...rest }) {

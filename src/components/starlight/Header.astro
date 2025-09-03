@@ -145,15 +145,14 @@ const shouldRenderSearch =
     width: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
-    display: flex; /* Changed to flex for better control */
-    justify-content: space-between;
+    display: flex;
     align-items: center;
-    height: 60px; /* Slightly taller header for bigger logo */
+    height: 60px;
     position: relative;
   }
 
   :global(body) {
-    padding-top: 0; /* Remove padding-top to fix content spacing */
+    padding-top: 0;
   }
 
   /* Left section with logo */
@@ -219,10 +218,9 @@ const shouldRenderSearch =
   .center-section {
     display: flex;
     justify-content: center;
-    flex: 1; /* Take up available space */
+    flex-grow: 1;
+    min-width: 0; /* Allow it to shrink */
     padding: 0 1rem;
-    margin-left: 0; /* No need for extra margin */
-    margin-right: 300px; /* Make room for the absolutely positioned right section */
   }
 
   /* Make the search component wider and more visible */
@@ -354,12 +352,7 @@ const shouldRenderSearch =
     align-items: center;
     gap: 1.25rem;
     justify-content: flex-end;
-    min-width: 300px; /* Increased minimum width for better spacing */
     flex-shrink: 0; /* Prevent shrinking */
-    height: 100%; /* Ensure full height */
-    position: absolute; /* Position absolutely */
-    right: 1.5rem; /* Align to the right edge with padding */
-    top: 0; /* Align to the top */
   }
 
   /* Desktop-only elements container */
@@ -378,6 +371,8 @@ const shouldRenderSearch =
     gap: 1.5rem;
     margin-right: 0.5rem;
     order: 1; /* This puts the nav links on the left */
+    position: relative;
+    z-index: 15; /* Ensure nav links are clickable */
   }
 
   .nav-link {
@@ -424,7 +419,7 @@ const shouldRenderSearch =
     height: 32px; /* Fixed height to match the theme toggle */
     text-decoration: none; /* Remove underline */
     position: relative;
-    z-index: 5; /* Lower than theme toggle */
+    z-index: 15; /* Higher than theme toggle */
     margin-right: 0.5rem; /* Add some spacing from theme toggle */
   }
 

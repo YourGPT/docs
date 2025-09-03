@@ -49,6 +49,7 @@ export default defineConfig({
         ThemeSelect: './src/components/starlight/ThemeSelect.astro',
         Head: './src/components/starlight/Head.astro',
         Footer: './src/components/starlight/Footer.astro',
+        // Search: './src/components/search/Search.astro',
       },
       plugins: [starlightImageZoom()],
       customCss: [
