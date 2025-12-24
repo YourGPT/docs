@@ -1,0 +1,37 @@
+# Incomplete AI Responses
+
+When the AI provides incomplete answers, several factors could be contributing to the issue. This guide will help you identify and resolve these problems.
+
+## Knowledge Base Node Settings
+
+One common cause for incomplete answers is the configuration of knowledge base nodes. These settings can restrict the amount of data the AI uses to generate responses.
+
+<div className="text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700">
+  Recommendation:
+</div>
+
+- **Adjust Knowledge Base Node Settings:** Set these values to below 6 for optimal performance.
+
+![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/knowledge-base-nodes-setting.png)
+
+## Data Source Nodes and Long Documents
+
+Another potential cause is the handling of long documents or extensive website links. If information is spread across multiple sources, the AI's data source nodes may become fragmented, leading to incomplete responses.
+
+> **INFO:** Checkout how to use the Debug Lab here [Debug Lab Feature](/chatbot/other/debugging/ai-refuse-to-answer).
+
+![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/debug-lab.png)
+
+<div className="text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700 mt-6">
+  Steps to Resolve:
+</div>
+
+1. **Check Data Sources:** Review the sources contributing to the AI's response.  
+2. **Use Debug Lab:** Go to the Debug Lab to inspect and modify the list of resources.  
+3. **Combine or Edit Nodes:** You can combine data sources by editing or deleting nodes to enhance response completeness.
+
+## Training Material Guidelines
+
+To minimize the occurrence of incomplete responses, ensure that you follow best practices for preparing and structuring your training material.
+
+> **TIP:** Check out our [Training Guide](/chatbot/training) for more tips and best practices.
