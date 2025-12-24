@@ -18,21 +18,21 @@ Follow these steps to connect your chatbot to your Webflow project via the offic
   <Step title="Access Webflow Marketplace">
     Log in to your Webflow dashboard and visit the <a href="https://webflow.com/apps/detail/yourgpt-chatbot" target="_blank" className="no-underline font-bold">YourGPT Chatbot App</a> in the marketplace. Click **Install**.
 
-      ![Install YourGPT Chatbot](/assets/chatbot/webflow/image1.png)
+      ![Install YourGPT Chatbot](../../../../assets/chatbot/webflow/image1.png)
 
   </Step>
 
   <Step title="Select Your Project">
     Choose the specific Webflow project where you want to add the chatbot and proceed to the next step.
 
-      ![Select Webflow Project](/assets/chatbot/webflow/image2.png)
+      ![Select Webflow Project](../../../../assets/chatbot/webflow/image2.png)
 
   </Step>
 
   <Step title="Authorize Integration">
     Review the permissions and click **Authorize** to grant the app access to your selected project.
 
-      ![Authorize App](/assets/chatbot/webflow/image4.png)
+      ![Authorize App](../../../../assets/chatbot/webflow/image4.png)
   </Step>
 
   <Step title="Configure and Go Live">

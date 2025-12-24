@@ -20,7 +20,7 @@ At the top of the integration page you will see the toolbar with **Link**, **Scr
 
 Choose **Link** to reveal the public URL, then click the copy icon (or select the text manually) to place it on your clipboard.
 
-![Options to Shareable Chatbot](/assets/chatbot/link-share.png)
+![Options to Shareable Chatbot](../../../assets/chatbot/link-share.png)
 
 ## 3. Test the link
 

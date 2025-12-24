@@ -8,7 +8,7 @@ YourGPT agents do more than respond to queries. They are designed to follow logi
 
 The platform is fully customizable, supports over 100 languages, and works across industries. Teams can build, launch, and manage AI agents in minutes while staying in control of data, behavior, and outcomes.
 
-![Chatbot Image](/assets/chatbot/welcome.png)
+![Chatbot Image](../../assets/chatbot/welcome.png)
 
 ## How it works
 

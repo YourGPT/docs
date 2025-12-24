@@ -25,7 +25,7 @@ You can deploy the AI Agent globally across your entire Ghost site or selectivel
 
     <div className="flex justify-center items-center rounded-md p-4 mt-4">
       <img
-        src="/assets/chatbot/ghost/sign-in-1.png"
+        src="../../../../assets/chatbot/ghost/sign-in-1.png"
         alt="Sign in to Ghost Admin Dashboard"
         style={{ width: "100%" }}
         className="rounded-md object-contain shadow-lg"
@@ -46,7 +46,7 @@ You can deploy the AI Agent globally across your entire Ghost site or selectivel
 
     <div className="flex justify-center items-center  rounded-md p-4 mt-4">
       <img
-        src="/assets/chatbot/ghost/ghost-setting-2.png"
+        src="../../../../assets/chatbot/ghost/ghost-setting-2.png"
         alt="Navigate to Ghost Settings"
         style={{ width: "100%" }}
         className="rounded-md object-contain shadow-lg"
@@ -67,7 +67,7 @@ You can deploy the AI Agent globally across your entire Ghost site or selectivel
 
     <div className="flex justify-center items-center  rounded-md p-4 mt-4">
       <img
-        src="/assets/chatbot/ghost/ghost-code-3.png"
+        src="../../../../assets/chatbot/ghost/ghost-code-3.png"
         alt="Ghost Code Injection Area"
         style={{ width: "100%" }}
         className="rounded-md object-contain shadow-lg"
@@ -97,7 +97,7 @@ You can deploy the AI Agent globally across your entire Ghost site or selectivel
 
     <div className="flex justify-center items-center  rounded-md p-4 mt-4">
       <img
-        src="/assets/chatbot/ghost/ygc-script-4.png"
+        src="../../../../assets/chatbot/ghost/ygc-script-4.png"
         alt="YourGPT AI Agent Script"
         style={{ width: "100%" }}
         className="rounded-md object-contain shadow-lg"
@@ -118,7 +118,7 @@ You can deploy the AI Agent globally across your entire Ghost site or selectivel
 
     <div className="flex justify-center items-center rounded-md p-4 mt-4">
       <img
-        src="/assets/chatbot/ghost/code-inject-5.png"
+        src="../../../../assets/chatbot/ghost/code-inject-5.png"
         alt="Paste AI Agent Code in Ghost"
         style={{ width: "100%" }}
         className="rounded-md object-contain shadow-lg"

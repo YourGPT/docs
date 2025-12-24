@@ -28,7 +28,7 @@ Follow these steps to configure the MCP server inside YourGPT. After that, you c
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/MCP/integrate-mcp.png" 
+    src="../../../assets/chatbot/MCP/integrate-mcp.png" 
     alt="Integrations MCP" 
     width={1200}
     height={800}
@@ -47,7 +47,7 @@ Follow these steps to configure the MCP server inside YourGPT. After that, you c
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/MCP/create-mcp.png" 
+    src="../../../assets/chatbot/MCP/create-mcp.png" 
     alt="Create MCP Server" 
     width={1200}
     height={800}
@@ -67,7 +67,7 @@ This will generate a new MCP endpoint for your chatbot.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/MCP/mcp-tool.png" 
+    src="../../../assets/chatbot/MCP/mcp-tool.png" 
     alt="Choose MCP Tool" 
     width={1200}
     height={800}

@@ -3,7 +3,7 @@
 AI Retrieval is a feature that enhances your AI agent's capabilities by dynamically retrieving the most relevant information from your Knowledge Base in real-time. It allows precise filtering and response formatting for optimal retrieval. This intelligent retrieval system significantly improves response quality by ensuring your AI has access to exactly the right information when needed.
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-60">
-  ![AI Retrieval](/assets/flow/ai-task/ai-retrevial.png)
+  ![AI Retrieval](../../../../assets/flow/ai-task/ai-retrevial.png)
 </div>
 
 ### 1. Search Query:

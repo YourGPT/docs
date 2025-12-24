@@ -311,7 +311,7 @@ This documentation outlines the process of integrating YourGPT AI Bot with Crisp
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image
-    src="/assets/chatbot/crisp/crisp-flow-4.png"
+    src="../../../../assets/chatbot/crisp/crisp-flow-4.png"
     alt="Step 4"
     width={1200}
     height={800}
@@ -322,7 +322,7 @@ This documentation outlines the process of integrating YourGPT AI Bot with Crisp
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image
-    src="/assets/chatbot/crisp/Crisp-flow-5.png"
+    src="../../../../assets/chatbot/crisp/Crisp-flow-5.png"
     alt="Step 4.1"
     width={1200}
     height={800}

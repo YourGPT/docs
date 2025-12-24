@@ -10,7 +10,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-2">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger.png"
     alt="Messenger Integration in YourGPT dashboard"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -23,7 +23,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger-two.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger-two.png"
     alt="Login Facebook account"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -34,7 +34,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger-three.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger-three.png"
     alt="Select the Facebook Page or Create one"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -47,7 +47,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger-four.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger-four.png"
     alt="Creating a New Facebook Page"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -58,7 +58,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger-five.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger-five.png"
     alt="Confirm your selected page"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -69,7 +69,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger-six.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger-six.png"
     alt="provide the important required permissions"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -80,7 +80,7 @@
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <img
-    src="/assets/chatbot/Messenger/auto/messenger-seven.png"
+    src="../../../../assets/chatbot/Messenger/auto/messenger-seven.png"
     alt="confirm the page for the integration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -134,7 +134,7 @@
     </div>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-01.png"
+        src="../../../../assets/chatbot/Messenger/messenger-01.png"
         alt="Step 1: Create New App"
         style={{ width: "100%" }}
         className="rounded-md object-contain"
@@ -143,7 +143,7 @@
 
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-02.png"
+        src="../../../../assets/chatbot/Messenger/messenger-02.png"
         alt="Step 2: Developer Console"
         style={{ width: "100%" }}
         className="rounded-md object-contain"
@@ -167,7 +167,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-03.png"
+        src="../../../../assets/chatbot/Messenger/messenger-03.png"
         alt="Step 3: Messenger Setup"
         style={{ width: "100%" }}
         className="rounded-md"
@@ -187,7 +187,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-04.png"
+        src="../../../../assets/chatbot/Messenger/messenger-04.png"
         alt="Step 4: Add Meta Page"
         style={{ width: "100%" }}
         className="rounded-md"
@@ -212,7 +212,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-05.png"
+        src="../../../../assets/chatbot/Messenger/messenger-05.png"
         alt="Step 5: Page ID and Access Token"
         style={{ width: "100%" }}
         className="rounded-md"
@@ -237,7 +237,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-10.png"
+        src="../../../../assets/chatbot/Messenger/messenger-10.png"
         alt="Step 5: Client ID and Client Secret"
         style={{ width: "100%" }}
         className="rounded-md"
@@ -265,7 +265,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-06.png"
+        src="../../../../assets/chatbot/Messenger/messenger-06.png"
         alt="Step 6: Verify Token, Page ID, and Access Token"
         style={{ width: "100%" }}
         className="rounded-md object-contain"
@@ -273,7 +273,7 @@
     </div>
     <div className="flex justify-center items-center rounded-md p-4 md:px-20">
       <img
-        src="/assets/chatbot/Messenger/messenger-07.png"
+        src="../../../../assets/chatbot/Messenger/messenger-07.png"
         alt="Step 7: Paste Webhook Endpoint"
         style={{ width: "100%" }}
         className="rounded-md object-contain"
@@ -297,7 +297,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-08.png"
+        src="../../../../assets/chatbot/Messenger/messenger-08.png"
         alt="Step 8: Webhook Endpoint and Verify Token"
         style={{ width: "100%" }}
         className="rounded-md object-contain"
@@ -314,7 +314,7 @@
     </p>
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/Messenger/messenger-09.png"
+        src="../../../../assets/chatbot/Messenger/messenger-09.png"
         alt="Step 9: Webhook Subscriptions"
         style={{ width: "100%" }}
         className="rounded-md object-contain"

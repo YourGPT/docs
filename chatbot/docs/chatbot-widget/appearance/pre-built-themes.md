@@ -4,7 +4,7 @@
 
 You can customize how your chatbot widget looks using our pre-made styles or your own CSS.
 
-![Widget Style](/assets/chatbot/widget-style.png)
+![Widget Style](../../../../assets/chatbot/widget-style.png)
 
 ## Using Style Templates
 

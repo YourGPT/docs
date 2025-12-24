@@ -14,7 +14,7 @@ Integrating YourGPT Chatbot with your BigCommerce store is a straightforward pro
    - Log in to your BigCommerce admin panel.
    <div className="flex justify-center items-center  rounded-md p-4 md:p-6">
      <img
-       src="/assets/chatbot/bigcommerce/Commerece1.png"
+       src="../../../../assets/chatbot/bigcommerce/Commerece1.png"
        alt="Create a BigCommerce"
        style={{ width: "100%" }}
        className="rounded-md object-contain"
@@ -25,7 +25,7 @@ Integrating YourGPT Chatbot with your BigCommerce store is a straightforward pro
    - Go to **Storefront** > **Script Manager**.
    <div className="flex justify-center items-center  rounded-md p-4 md:p-6">
      <img
-       src="/assets/chatbot/bigcommerce/Commerce2.png"
+       src="../../../../assets/chatbot/bigcommerce/Commerce2.png"
        alt="Create a BigCommerce"
        style={{ width: "100%" }}
        className="rounded-md object-contain"
@@ -36,7 +36,7 @@ Integrating YourGPT Chatbot with your BigCommerce store is a straightforward pro
    - Click on **Create a script**.
    <div className="flex justify-center items-center  rounded-md p-4 md:p-6">
      <img
-       src="/assets/chatbot/bigcommerce/Commerce3.png"
+       src="../../../../assets/chatbot/bigcommerce/Commerce3.png"
        alt="Storefront"
        style={{ width: "100%" }}
        className="rounded-md"
@@ -59,7 +59,7 @@ Integrating YourGPT Chatbot with your BigCommerce store is a straightforward pro
    - Remove the first line and last two lines of the pasted code
    <div className="flex justify-center items-center  rounded-md p-4 md:p-6">
      <img
-       src="/assets/chatbot/bigcommerce/Commerce4.png"
+       src="../../../../assets/chatbot/bigcommerce/Commerce4.png"
        alt="Add The Script"
        style={{ width: "100%" }}
        className="rounded-md"

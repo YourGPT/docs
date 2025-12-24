@@ -13,11 +13,11 @@ First, get your widget secret key from your widget settings:
 1. Open your chatbot from the dashboard  
 2. Go to **Widget → Settings**
 
-<img src="/assets/chatbot/sdk/widget-settings.png" alt="Widget settings" className="rounded-md" />
+<img src="../../assets/chatbot/sdk/widget-settings.png" alt="Widget settings" className="rounded-md" />
 
 3. Copy your **Secret Key** — you'll need it for generating HMAC signatures
 
-<img src="/assets/chatbot/sdk/widget-secret.png" alt="Widget secret key" className="rounded-md" />
+<img src="../../assets/chatbot/sdk/widget-secret.png" alt="Widget secret key" className="rounded-md" />
 
 ---
 

@@ -13,7 +13,7 @@ To set up Twilio SMS integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-sms/twilio-sms-1.png"
+    src="../../../../assets/chatbot/Twilio-sms/twilio-sms-1.png"
     alt="Twilio Credentials"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -31,7 +31,7 @@ To set up Twilio SMS integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-sms/twilio-sms-2.png"
+    src="../../../../assets/chatbot/Twilio-sms/twilio-sms-2.png"
     alt="SMS Configuration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -46,7 +46,7 @@ To set up Twilio SMS integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-sms/twilio-sms-3.png"
+    src="../../../../assets/chatbot/Twilio-sms/twilio-sms-3.png"
     alt="Webhook Configuration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"

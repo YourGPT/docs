@@ -11,7 +11,7 @@ To use the Validate Node effectively in your Sequential Agent, follow these simp
 1. **Add the Node**: From the tool bar, drag the "Validate Node" to your Flow canvas where input validation is required.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Validate Node](/assets/flow/studio-validate.png)
+  ![Validate Node](../../../../assets/flow/studio-validate.png)
 </div>
 
 2. **Select Validation Type**: Choose from three validation options:

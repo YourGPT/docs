@@ -13,7 +13,7 @@ Actions are the operations that you can perform in chatbot studio. You can use a
 ## How to use Actions
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Actions](/assets/flow/actions-image.png)
+  ![Actions](../../../../../assets/flow/actions-image.png)
 </div>
 
 To use Actions, follow these steps:

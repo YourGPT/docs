@@ -16,13 +16,13 @@ YourGPT training converts your data into searchable knowledge nodes, which the A
   <Step>
     Open the **Training** section from the dashboard menu.
     <br />
-    <img src="/assets/chatbot/training/image-1.png" alt="Training section in dashboard" />
+    <img src="../../../assets/chatbot/training/image-1.png" alt="Training section in dashboard" />
   </Step>
 
   <Step>
     Select the type of data you want to use for training.
     <br />
-    <img src="/assets/chatbot/training/image-2.png" alt="Training source options" />
+    <img src="../../../assets/chatbot/training/image-2.png" alt="Training source options" />
 
     You can train your chatbot using multiple data sources depending on your needs.
 

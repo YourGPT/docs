@@ -12,7 +12,7 @@ One common cause for incomplete answers is the configuration of knowledge base n
 
 - **Adjust Knowledge Base Node Settings:** Set these values to below 6 for optimal performance.
 
-![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/knowledge-base-nodes-setting.png)
+![Base Prompt Configuration](../../../../assets/chatbot/Debug/how-to-debug/knowledge-base-nodes-setting.png)
 
 ## Data Source Nodes and Long Documents
 
@@ -22,7 +22,7 @@ Another potential cause is the handling of long documents or extensive website l
   Checkout how to use the Debug Lab here [Debug Lab Feature](/chatbot/other/debugging/ai-refuse-to-answer).
 </Callout>
 
-![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/debug-lab.png)
+![Base Prompt Configuration](../../../../assets/chatbot/Debug/how-to-debug/debug-lab.png)
 
 <div className="text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700 mt-6">
   Steps to Resolve:

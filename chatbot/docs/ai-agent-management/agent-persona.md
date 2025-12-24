@@ -20,13 +20,13 @@ Once you are in the General Settings, find and click on the **Agent Settings** s
 
 In the Agent Settings section, look for the **Agent Prompt** (Bot Persona) setting. This is a crucial configuration that determines your AI bot's personality, tone, and response style. Modifying this prompt will significantly impact how your chatbot interacts with users. our next section will cover [examples](/chatbot/prompts/example)
 
-![Changing Agent Prompt](/assets/chatbot/PromptControl.png)
+![Changing Agent Prompt](../../../assets/chatbot/PromptControl.png)
 
 ### Step 4: Changing the Model
 
 Selecting the right model is crucial for optimizing your chatbot's performance. Advanced models like GPT-4.5, Claude-3.7, and Deepseek R3 offer exceptional response quality for complex queries. To learn more about all available AI models and their specific capabilities, visit the [AI Models guide](/chatbot/other/ai-models).
 
-![Changing the Model](/assets/chatbot/pick-model.png)
+![Changing the Model](../../../assets/chatbot/pick-model.png)
 
 ### Step 5: Restrictions
 

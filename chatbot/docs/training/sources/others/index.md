@@ -12,7 +12,7 @@ The **Others** tab groups additional training sources beyond Links, Documents, a
   </Step>
   <Step>
     Click **Add New**, then open the **Others** tab.
-    ![Other Training Sources](/assets/chatbot/training/image-27.png)
+    ![Other Training Sources](../../../../../assets/chatbot/training/image-27.png)
   </Step>
 </Steps>
 

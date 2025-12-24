@@ -28,7 +28,7 @@ Integrating GPT Chatbot with your Shopify store is a seamless process that enhan
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/shopify/shopify-1.png" 
+    src="../../../../assets/chatbot/shopify/shopify-1.png" 
     alt="Shopify Admin API Configuration" 
     width={1200}
     height={800}
@@ -42,7 +42,7 @@ Integrating GPT Chatbot with your Shopify store is a seamless process that enhan
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/shopify/Shopify-2.png" 
+    src="../../../../assets/chatbot/shopify/Shopify-2.png" 
     alt="Shopify Admin API Configuration" 
     width={1200}
     height={800}
@@ -57,7 +57,7 @@ Integrating GPT Chatbot with your Shopify store is a seamless process that enhan
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/shopify/shopify-3.png" 
+    src="../../../../assets/chatbot/shopify/shopify-3.png" 
     alt="Shopify Admin API Configuration" 
     width={1200}
     height={800}
@@ -72,7 +72,7 @@ Integrating GPT Chatbot with your Shopify store is a seamless process that enhan
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/shopify/shopify-4.png" 
+    src="../../../../assets/chatbot/shopify/shopify-4.png" 
     alt="Shopify Admin API Configuration" 
     width={1200}
     height={800}
@@ -114,7 +114,7 @@ To generate a Shopify Auth Token, you need to follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4 md:pl-16">
   <Image 
-    src="/assets/chatbot/shopify/Shopify-flow-1.png" 
+    src="../../../../assets/chatbot/shopify/Shopify-flow-1.png" 
     alt="Shopify Admin API Configuration" 
     width={1200}
     height={800}
@@ -133,7 +133,7 @@ To generate a Shopify Auth Token, you need to follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-14">
   <Image 
-    src="/assets/chatbot/shopify/Shopify-flow-2.png" 
+    src="../../../../assets/chatbot/shopify/Shopify-flow-2.png" 
     alt="Shopify API Scopes Selection" 
     width={1200}
     height={800}
@@ -152,7 +152,7 @@ To generate a Shopify Auth Token, you need to follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-14">
   <Image 
-    src="/assets/chatbot/shopify/Shopify-flow-3.png" 
+    src="../../../../assets/chatbot/shopify/Shopify-flow-3.png" 
     alt="Shopify Auth Token Reveal" 
     width={1200}
     height={800}

@@ -3,7 +3,7 @@
 > Webhook are the building blocks of a chatbot conversation.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Create Webhook](/assets/flow/webhook-create.png)
+  ![Create Webhook](../../../../assets/flow/webhook-create.png)
 </div>
 
 ## What are Webhooks?

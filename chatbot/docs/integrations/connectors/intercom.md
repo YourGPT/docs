@@ -37,7 +37,7 @@ Intercom integration allows seamless communication between YourGPT AI Bot and In
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/Intercom/make-app.gif" 
+    src="../../../../assets/chatbot/Intercom/make-app.gif" 
     alt="Create Intercom Apps"
     width={1200}
     height={800}
@@ -58,7 +58,7 @@ Intercom integration allows seamless communication between YourGPT AI Bot and In
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/Intercom/intercom4-5.png" 
+    src="../../../../assets/chatbot/Intercom/intercom4-5.png" 
     alt="Copy App ID and Access Token"
     width={1200}
     height={800}
@@ -79,7 +79,7 @@ Intercom integration allows seamless communication between YourGPT AI Bot and In
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/Intercom/intercom1.png" 
+    src="../../../../assets/chatbot/Intercom/intercom1.png" 
     alt="YourGPT Dashboard"
     width={1200}
     height={800}
@@ -90,7 +90,7 @@ Intercom integration allows seamless communication between YourGPT AI Bot and In
 
 <div className="flex justify-center items-center rounded-md p-4 md:p-12">
   <Image 
-    src="/assets/chatbot/Intercom/intercom5.png" 
+    src="../../../../assets/chatbot/Intercom/intercom5.png" 
     alt="Paste Credentials in YourGPT Dashboard"
     width={1200}
     height={800}
@@ -111,7 +111,7 @@ Intercom integration allows seamless communication between YourGPT AI Bot and In
 
 <div className="flex justify-center items-center rounded-md p-10">
   <Image 
-    src="/assets/chatbot/Intercom/intercom6.png" 
+    src="../../../../assets/chatbot/Intercom/intercom6.png" 
     alt="Configure Webhook"
     width={1200}
     height={800}
@@ -132,7 +132,7 @@ Intercom integration allows seamless communication between YourGPT AI Bot and In
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/Intercom/intercom7.png" 
+    src="../../../../assets/chatbot/Intercom/intercom7.png" 
     alt="Chat Integration"
     width={1200}
     height={800}
@@ -162,7 +162,7 @@ https://api.yourgpt.ai/chatbot/v1/intercom/canvas/webhook/{your app_id}
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/Intercom/intercom8.png" 
+    src="../../../../assets/chatbot/Intercom/intercom8.png" 
     alt="Chat Integration"
     width={1200}
     height={800}
@@ -186,7 +186,7 @@ https://api.yourgpt.ai/chatbot/v1/intercom/canvas/webhook/{your app_id}
 <div className="ml-6">
   <div className="flex justify-center items-center rounded-md px-4 md:px-40 py-4">
     <Image
-      src="/assets/chatbot/Intercom/intercom9.png"
+      src="../../../../assets/chatbot/Intercom/intercom9.png"
       alt="Interaction Key"
       width={1200}
       height={800}
@@ -203,7 +203,7 @@ https://api.yourgpt.ai/chatbot/v1/intercom/canvas/webhook/{your app_id}
 <div className="ml-6">
   <div className="flex justify-center items-center rounded-md px-4 md:px-48 py-5">
     <Image
-      src="/assets/chatbot/Intercom/intercom10.png"
+      src="../../../../assets/chatbot/Intercom/intercom10.png"
       alt="Interaction Key"
       width={1200}
       height={800}

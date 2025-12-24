@@ -12,7 +12,7 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/API/Integration-API.png"
+    src="../../../assets/chatbot/API/Integration-API.png"
     alt="API Integration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -25,7 +25,7 @@ Welcome to the Documentation page for **YourGPT Chatbot APIs**
 
 <div className="flex justify-center items-center rounded-md p-4 md:pl-20">
   <img
-    src="/assets/chatbot/API/API-key.png"
+    src="../../../assets/chatbot/API/API-key.png"
     alt="Copy API Key"
     style={{ width: "88%" }}
     className="rounded-md object-contain"

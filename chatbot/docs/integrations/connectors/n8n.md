@@ -29,7 +29,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/n8n/install.png" 
+    src="../../../../assets/chatbot/n8n/install.png" 
     alt="Installing YourGPT community node" 
     width={1200}
     height={800}
@@ -70,7 +70,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/n8n/ygc-chatbot.png" 
+    src="../../../../assets/chatbot/n8n/ygc-chatbot.png" 
     alt="YourGPT node in n8n" 
     width={1200}
     height={800}
@@ -81,7 +81,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/n8n/create-new.png" 
+    src="../../../../assets/chatbot/n8n/create-new.png" 
     alt="Creating a new workflow" 
     width={1200}
     height={800}
@@ -104,7 +104,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/n8n/Create-credential.png" 
+    src="../../../../assets/chatbot/n8n/Create-credential.png" 
     alt="Creating new credentials" 
     width={1200}
     height={800}
@@ -128,7 +128,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/n8n/session-create.png" 
+    src="../../../../assets/chatbot/n8n/session-create.png" 
     alt="Creating a session" 
     width={1200}
     height={800}
@@ -159,7 +159,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/n8n/send-message.png" 
+    src="../../../../assets/chatbot/n8n/send-message.png" 
     alt="Sending a message" 
     width={1200}
     height={800}

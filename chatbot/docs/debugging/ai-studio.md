@@ -13,12 +13,12 @@ AI Studio is the best place to debug a run by:
   <Step>
     Open the emulator from the top-right **Emulator** button.
 
-    ![Open the Emulator](/assets/chatbot/studio-2/image-1.png)
+    ![Open the Emulator](../../../assets/chatbot/studio-2/image-1.png)
   </Step>
   <Step>
     From inside the emulator, open **Variable Logs** .
 
-    ![Emulator and Variable Logs](/assets/chatbot/studio-2/image-2.png)
+    ![Emulator and Variable Logs](../../../assets/chatbot/studio-2/image-2.png)
   </Step>
 </Steps>
 
@@ -58,7 +58,7 @@ Variable Logs are for **read-only inspection** during debugging. Use them to con
   </Card>
 </div>
 
-![Variable Logs JSON](/assets/chatbot/studio-2/image-3.png)
+![Variable Logs JSON](../../../assets/chatbot/studio-2/image-3.png)
 
 <Callout title="Tips" type="tip">
   - **Session details (FLOW object)**: in the emulator, you can open session details (Info / “i”) to view session metadata and the `FLOW` object (variables + current stored values). This view may not update live—close and reopen to refresh.
@@ -71,7 +71,7 @@ Variable Logs are for **read-only inspection** during debugging. Use them to con
   <Step>
     Open the Logs drawer using the bottom-right **Logs** toggle.
 
-    ![Open Logs drawer](/assets/chatbot/studio-2/image-4.png)
+    ![Open Logs drawer](../../../assets/chatbot/studio-2/image-4.png)
   </Step>
 </Steps>
 
@@ -90,7 +90,7 @@ In addition to message and block execution events, Execution Logs commonly help 
 
 Use **Raw/Pretty** to switch between the raw event JSON and a more readable view when inspecting payloads.
 
-![Logs details (Pretty view)](/assets/chatbot/studio-2/image-5.png)
+![Logs details (Pretty view)](../../../assets/chatbot/studio-2/image-5.png)
 
 **What to debug with Logs:**
 

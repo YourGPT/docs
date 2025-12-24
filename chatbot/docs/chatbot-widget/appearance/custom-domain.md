@@ -8,7 +8,7 @@ To add a custom domain for your widget, follow these steps:
 
 Log in to your account and go to the **Widget** section.
 
-![Branding Widget](/assets/chatbot/custom-domain/custom-domain.png)
+![Branding Widget](../../../../assets/chatbot/custom-domain/custom-domain.png)
 
 ### Step 2: Access Branding Settings
 
@@ -18,7 +18,7 @@ Click on the **Branding** option in the menu.
 
 Select **Manage Widget Domain** from the available options.
 
-![Add Custom Domain](/assets/chatbot/custom-domain/add-domain-name.png)
+![Add Custom Domain](../../../../assets/chatbot/custom-domain/add-domain-name.png)
 
 ### Step 4: Add Your Domain
 

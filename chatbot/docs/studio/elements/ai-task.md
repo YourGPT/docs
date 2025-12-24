@@ -1,6 +1,6 @@
 # AI Task 
 
-![AI and Knowledgebase](/assets/flow/AI-task.jpg)
+![AI and Knowledgebase](../../../../assets/flow/AI-task.jpg)
 
 ## Types of AI Tasks:
 

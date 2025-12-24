@@ -10,7 +10,7 @@ Whatsapp Integrations with auto setup:
 1. Log in to YourGPT's dashboard and go to Integrations section.
 <div className="flex justify-center items-center rounded-md p-2 md:px-2">
   <Image 
-    src="/assets/chatbot/whatsapp/auto/whatsapp-one.png" 
+    src="../../../../assets/chatbot/whatsapp/auto/whatsapp-one.png" 
     alt="whatsapp Integration in YourGPT dashboard" 
     width={1200}
     height={800}
@@ -23,7 +23,7 @@ Whatsapp Integrations with auto setup:
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-2">
   <Image 
-    src="/assets/chatbot/whatsapp/auto/whatsapp-two.png" 
+    src="../../../../assets/chatbot/whatsapp/auto/whatsapp-two.png" 
     alt="Whatsapp Auto Integration" 
     width={1200}
     height={800}
@@ -36,7 +36,7 @@ Whatsapp Integrations with auto setup:
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <Image 
-    src="/assets/chatbot/whatsapp/auto/whatsapp-three.png" 
+    src="../../../../assets/chatbot/whatsapp/auto/whatsapp-three.png" 
     alt="Facebook Business login To Continue" 
     width={1200}
     height={800}
@@ -49,7 +49,7 @@ Whatsapp Integrations with auto setup:
 
 <div className="flex justify-center items-center rounded-md p-10 md:px-44">
   <Image 
-    src="/assets/chatbot/whatsapp/auto/whatsapp-four.png" 
+    src="../../../../assets/chatbot/whatsapp/auto/whatsapp-four.png" 
     alt="Whatsapp Bussiness Profile Integration" 
     width={1200}
     height={800}
@@ -62,7 +62,7 @@ Whatsapp Integrations with auto setup:
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-44">
   <Image 
-    src="/assets/chatbot/whatsapp/auto/whatsapp-five.png" 
+    src="../../../../assets/chatbot/whatsapp/auto/whatsapp-five.png" 
     alt="Fill in your business information" 
     width={1200}
     height={800}
@@ -163,7 +163,7 @@ There are two types of Access Tokens:
     8. Copy and save your Permanent Access Token.
         <div className="flex justify-center items-center rounded-md p-4 md:px-12">
           <Image 
-            src="/assets/chatbot/whatsapp.png" 
+            src="../../../../assets/chatbot/whatsapp.png" 
             alt="WhatsApp Integration Settings" 
             width={1200}
             height={800}
@@ -185,7 +185,7 @@ To resolve the error ```This number is registered to an existing WhatsApp accoun
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-12">
   <Image 
-    src="/assets/chatbot/whatsapp/troubleshoot.png" 
+    src="../../../../assets/chatbot/whatsapp/troubleshoot.png" 
     alt="Troubleshooting" 
     width={1200}
     height={800}

@@ -67,7 +67,7 @@ From your YourGPT dashboard, navigate to **Automation** > **Functions** in the l
 - **API Functions** - External API integrations
 - **MCP Servers** - Model Context Protocol servers
 
-![Navigate to Functions](/assets/chatbot/functions-2/image-1.png)
+![Navigate to Functions](../../../assets/chatbot/functions-2/image-1.png)
 </Step>
 
 </Steps>
@@ -95,7 +95,7 @@ Code Functions allow you to create custom code execution functions using JavaScr
 
 Select **Code Functions** from the dropdown menu and click the **Add New Function** button.
 
-![Code Functions](/assets/chatbot/functions-2/image-2.png)
+![Code Functions](../../../assets/chatbot/functions-2/image-2.png)
 </Step>
 
 <Step>
@@ -108,7 +108,7 @@ Fill in the basic information for your code function:
 - **Language**: Select either JavaScript or Python
 - **Code**: Write your custom code in the syntax-highlighted editor
 
-![Configure Code Function](/assets/chatbot/functions-2/image-3.png)
+![Configure Code Function](../../../assets/chatbot/functions-2/image-3.png)
 </Step>
 
 <Step>
@@ -137,7 +137,7 @@ Click the **Import Sample** button to load pre-built examples:
 - **Create Blog Posts**: HTTP POST request to create blog posts with title and body parameters
 - **Update Todo Items**: PATCH request to update todo items with dynamic URLs and status management
 
-![Import Sample Code](/assets/chatbot/functions-2/image-4.png)
+![Import Sample Code](../../../assets/chatbot/functions-2/image-4.png)
 
 <Callout type="warn">
 Importing a sample will override your current configuration.
@@ -149,7 +149,7 @@ Importing a sample will override your current configuration.
 
 Review your function configuration, including all parameters and the generated schema. The code editor shows your complete function with line numbers and syntax highlighting.
 
-![Complete Code Function](/assets/chatbot/functions-2/image-5.png)
+![Complete Code Function](../../../assets/chatbot/functions-2/image-5.png)
 
 Click **Add Function** to save your code function.
 </Step>
@@ -167,7 +167,7 @@ API Functions allow you to connect your AI to external APIs and integrate their 
 
 Select **API Functions** from the dropdown menu and click the **Add API Function** button.
 
-![API Functions](/assets/chatbot/functions-2/image-6.png)
+![API Functions](../../../assets/chatbot/functions-2/image-6.png)
 </Step>
 
 <Step>
@@ -182,7 +182,7 @@ Fill in the basic information for your API function:
   - Enter the endpoint URL for the API you want to call
   - Click **Test API** to verify the endpoint works
 
-![Configure API Function](/assets/chatbot/functions-2/image-7.png)
+![Configure API Function](../../../assets/chatbot/functions-2/image-7.png)
 </Step>
 
 <Step>
@@ -218,7 +218,7 @@ Click the **Import Sample** button to load pre-configured API examples:
 
 Alternatively, use **Import from cURL** to convert cURL commands directly into function configuration.
 
-![Import Sample API](/assets/chatbot/functions-2/image-8.png)
+![Import Sample API](../../../assets/chatbot/functions-2/image-8.png)
 
 <Callout type="warn">
 Importing a sample will override your current configuration.
@@ -233,7 +233,7 @@ Review your complete API function configuration, including all parameters and th
 - The API endpoint is correct
 - Headers are properly configured
 
-![Complete API Function](/assets/chatbot/functions-2/image-9.png)
+![Complete API Function](../../../assets/chatbot/functions-2/image-9.png)
 
 Click **Add API Function** to save your configuration.
 </Step>

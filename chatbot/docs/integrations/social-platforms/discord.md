@@ -14,7 +14,7 @@ To install Your Bot using the automatic method:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/auto-discord.png"
+    src="../../../../assets/chatbot/Discord/auto-discord.png"
     alt="Create Application"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -25,7 +25,7 @@ To install Your Bot using the automatic method:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/adminstration-roler-server.png"
+    src="../../../../assets/chatbot/Discord/adminstration-roler-server.png"
     alt="Create Application"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -36,7 +36,7 @@ To install Your Bot using the automatic method:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/choose-server.png"
+    src="../../../../assets/chatbot/Discord/choose-server.png"
     alt="Create Application"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -49,7 +49,7 @@ Now you can see that ygc AI Chatbot is added to your server.
 
 <div className="flex justify-center items-center  rounded-md p-4 md:px-28">
   <img 
-    src="/assets/chatbot/Discord/discord-11.png"
+    src="../../../../assets/chatbot/Discord/discord-11.png"
     alt="Add Channel ID"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -60,7 +60,7 @@ Now you can see that ygc AI Chatbot is added to your server.
 
 <div className="flex justify-center items-center  rounded-md p-4 md:px-44">
   <img 
-    src="/assets/chatbot/Discord/discord-9.png"
+    src="../../../../assets/chatbot/Discord/discord-9.png"
     alt="Discord Channel ID"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -73,7 +73,7 @@ Now you can see that ygc AI Chatbot is added to your server.
 
 <div className="flex justify-center items-center  rounded-md p-4 md:px-28">
   <img 
-    src="/assets/chatbot/Discord/discord-10.png"
+    src="../../../../assets/chatbot/Discord/discord-10.png"
     alt="Auto Authentication"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -119,7 +119,7 @@ To install YGC Bot using the custom method:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/discord-1.png"
+    src="../../../../assets/chatbot/Discord/discord-1.png"
     alt="Create Application"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -137,7 +137,7 @@ To integrate Discord with your application, follow these steps:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/discord-2.png"
+    src="../../../../assets/chatbot/Discord/discord-2.png"
     alt="Application Credentials"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -151,7 +151,7 @@ To integrate Discord with your application, follow these steps:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/discord-3.png"
+    src="../../../../assets/chatbot/Discord/discord-3.png"
     alt="Create Bot and Token"
     style={{ width: "100%" }}
     className="rounded-md"
@@ -164,7 +164,7 @@ To integrate Discord with your application, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-16">
   <img 
-    src="/assets/chatbot/Discord/discord-4.png"
+    src="../../../../assets/chatbot/Discord/discord-4.png"
     alt="Enable Bot"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -177,7 +177,7 @@ To integrate Discord with your application, follow these steps:
 
 <div className="flex justify-center items-center  rounded-md p-4 md:px-16">
   <img 
-    src="/assets/chatbot/Discord/discord-5.png"
+    src="../../../../assets/chatbot/Discord/discord-5.png"
     alt="Obtain Webhook"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -191,7 +191,7 @@ To integrate Discord with your application, follow these steps:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/discord-6.png"
+    src="../../../../assets/chatbot/Discord/discord-6.png"
     alt="Integration Process"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -210,7 +210,7 @@ To initiate a conversation, you must use chat slash commands. For instance, you 
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img 
-    src="/assets/chatbot/Discord/discord-7.png"
+    src="../../../../assets/chatbot/Discord/discord-7.png"
     alt="Test the Integration"
     style={{ width: "100%" }}
     className="rounded-md"

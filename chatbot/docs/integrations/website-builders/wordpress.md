@@ -28,28 +28,28 @@ To install the plugin, follow these steps:
     Log in to your WordPress dashboard, navigate to **Plugins → Add New**, and search for **"YourGPT Chatbot"**.
 
   
-      ![Add New Plugin](/assets/chatbot/wordpress/wordpress-one.png)
+      ![Add New Plugin](../../../../assets/chatbot/wordpress/wordpress-one.png)
   
   </Step>
 
   <Step title="Activate Plugin">
     Click **Install Now**, then **Activate** the plugin to enable it on your site.
 
-      ![Install YourGPT Chatbot](/assets/chatbot/wordpress/wordpress-ygc-install.png)
+      ![Install YourGPT Chatbot](../../../../assets/chatbot/wordpress/wordpress-ygc-install.png)
 
   </Step>
 
   <Step title="Configure Widget ID">
     Go to **Settings → YourGPT Chatbot**, paste your **Widget ID**, and click **Save Changes**.
 
-    ![Plugin Settings](/assets/chatbot/wordpress/6.png)
+    ![Plugin Settings](../../../../assets/chatbot/wordpress/6.png)
 
   </Step>
 
   <Step title="Verify Live Chatbot">
     Visit your website. Your AI chatbot should now be active in the bottom-right corner.
 
-    ![Live Chatbot](/assets/chatbot/wordpress/7.png)
+    ![Live Chatbot](../../../../assets/chatbot/wordpress/7.png)
 
   </Step>
 </Steps>
@@ -68,14 +68,14 @@ Follow these steps to generate the required API credentials for your chatbot:
   <Step title="Access REST API Settings">
     In WordPress, go to **WooCommerce → Settings → Advanced → REST API** and click **Add Key**.
 
-      ![WooCommerce Settings](/assets/chatbot/wordpress/wordpress1.png)
+      ![WooCommerce Settings](../../../../assets/chatbot/wordpress/wordpress1.png)
   </Step>
 
   <Step title="Generate API Key">
     Provide a description (e.g., "YourGPT AI") and set Permissions to **Read/Write**.
 
-    ![Add API Key](/assets/chatbot/wordpress/wordpress2.png)
-    ![Set Permissions](/assets/chatbot/wordpress/wordpress3.png)
+    ![Add API Key](../../../../assets/chatbot/wordpress/wordpress2.png)
+    ![Set Permissions](../../../../assets/chatbot/wordpress/wordpress3.png)
   </Step>
 
   <Step title="Save Securely">

@@ -24,7 +24,7 @@ You can deploy the AI Agent globally across your entire Framer site or selective
 
   <div className="flex justify-center items-center rounded-md p-4 mt-4">
     <img
-      src="/assets/chatbot/framer/framer-login.png"
+      src="../../../../assets/chatbot/framer/framer-login.png"
       alt="Sign in to Framer Dashboard"
       className="rounded-md object-contain shadow-lg w-full"
     />
@@ -43,7 +43,7 @@ You can deploy the AI Agent globally across your entire Framer site or selective
 
   <div className="flex justify-center items-center rounded-md p-4 mt-4">
     <img
-      src="/assets/chatbot/framer/workspace-framer.png"
+      src="../../../../assets/chatbot/framer/workspace-framer.png"
       alt="Navigate to Framer Project Workspace"
       className="rounded-md object-contain shadow-lg w-full"
     />
@@ -65,7 +65,7 @@ You can deploy the AI Agent globally across your entire Framer site or selective
 
   <div className="flex justify-center items-center  rounded-md p-4 mt-4">
     <img
-      src="/assets/chatbot/framer/ygc-script.png"
+      src="../../../../assets/chatbot/framer/ygc-script.png"
       alt="YourGPT AI Agent Script"
       className="rounded-md object-contain shadow-lg w-full"
     />
@@ -87,7 +87,7 @@ You can deploy the AI Agent globally across your entire Framer site or selective
 
   <div className="flex justify-center items-center rounded-md p-4 mt-4">
     <img
-      src="/assets/chatbot/framer/framer-paste-code.png"
+      src="../../../../assets/chatbot/framer/framer-paste-code.png"
       alt="Paste AI Agent Code in Framer"
       className="rounded-md object-contain shadow-lg w-full"
     />

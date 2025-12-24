@@ -4,7 +4,7 @@
 
 # Messages
 
-![Messages](/assets/flow/Messages.jpg)
+![Messages](../../../../assets/flow/Messages.jpg)
 
 You can send all sorts of interactive messages, each with its own style and purpose.
 

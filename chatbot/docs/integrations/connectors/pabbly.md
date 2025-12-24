@@ -55,7 +55,7 @@ Before starting the integration process, make sure you have:
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
   <Image 
-    src="/assets/chatbot/pabbly/widgetid-pabbly-integration.png" 
+    src="../../../../assets/chatbot/pabbly/widgetid-pabbly-integration.png" 
     alt="Widget UID location in YourGPT" 
     width={1200}
     height={800}

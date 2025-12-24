@@ -38,7 +38,7 @@ To begin integrating Slack, you will need to register on the **`Slack API site`*
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-1.png" 
+    src="../../../../assets/chatbot/Slack/Slack-1.png" 
     alt="Create Slack App" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -54,7 +54,7 @@ After creating the app, copy the following details from the **`Basic Information
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-2.png" 
+    src="../../../../assets/chatbot/Slack/Slack-2.png" 
     alt="App ID and Access Token" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -70,7 +70,7 @@ Configure redirect URLs and choose the necessary bot scopes required to access w
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-3.png" 
+    src="../../../../assets/chatbot/Slack/Slack-3.png" 
     alt="Slack App Configuration" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -81,7 +81,7 @@ Configure redirect URLs and choose the necessary bot scopes required to access w
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Scope-bot.png" 
+    src="../../../../assets/chatbot/Slack/Scope-bot.png" 
     alt="Bot Scope" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -92,7 +92,7 @@ Configure redirect URLs and choose the necessary bot scopes required to access w
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-4.png" 
+    src="../../../../assets/chatbot/Slack/Slack-4.png" 
     alt="Install in Workspace" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -103,7 +103,7 @@ Configure redirect URLs and choose the necessary bot scopes required to access w
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-5.png" 
+    src="../../../../assets/chatbot/Slack/Slack-5.png" 
     alt="Auth Token" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -113,7 +113,7 @@ Configure redirect URLs and choose the necessary bot scopes required to access w
 - In the **`App Home`** section, enable the option "Allow users to send messages with slash commands".
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-6.png" 
+    src="../../../../assets/chatbot/Slack/Slack-6.png" 
     alt="Show Tab" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -130,7 +130,7 @@ To enable integration, follow these steps:
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-7.png" 
+    src="../../../../assets/chatbot/Slack/Slack-7.png" 
     alt="Enable Integration" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -142,7 +142,7 @@ Once integrated, copy the generated webhook for further use.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-8.png" 
+    src="../../../../assets/chatbot/Slack/Slack-8.png" 
     alt="Copy Webhook" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -154,7 +154,7 @@ Go to the **`Slash Commands`** section and create a new slash command.
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-9.png" 
+    src="../../../../assets/chatbot/Slack/Slack-9.png" 
     alt="Create Slash Command" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -169,7 +169,7 @@ Go to the **`Slash Commands`** section and create a new slash command.
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-10.png" 
+    src="../../../../assets/chatbot/Slack/Slack-10.png" 
     alt="Command" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -182,7 +182,7 @@ Go to the **`Slash Commands`** section and create a new slash command.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-more-config.png" 
+    src="../../../../assets/chatbot/Slack/Slack-more-config.png" 
     alt="Additional Configuration" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -199,7 +199,7 @@ Go to the **`Slash Commands`** section and create a new slash command.
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-more-config2.png" 
+    src="../../../../assets/chatbot/Slack/Slack-more-config2.png" 
     alt="Additional Configuration" 
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -211,7 +211,7 @@ Go to the **`Slash Commands`** section and create a new slash command.
 - Ensure webhook URL is added for flow messages to function properly.
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-Flow1.png" 
+    src="../../../../assets/chatbot/Slack/Slack-Flow1.png" 
     alt="Flow Messaging Setup" 
     style={{ width: "100%" }}
     className="rounded-md"
@@ -220,7 +220,7 @@ Go to the **`Slash Commands`** section and create a new slash command.
 
 <div className="flex justify-center items-center  rounded-md p-4">
   <img 
-    src="/assets/chatbot/Slack/Slack-Flow2.png" 
+    src="../../../../assets/chatbot/Slack/Slack-Flow2.png" 
     alt="Flow Interactivity" 
     style={{ width: "100%" }}
     className="rounded-md"

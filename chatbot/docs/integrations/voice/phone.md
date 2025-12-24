@@ -69,7 +69,7 @@ By creating a detailed and specific base prompt, you can ensure that your AI age
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/phone-ai/base-prompt.png" 
+    src="../../../../assets/chatbot/phone-ai/base-prompt.png" 
     alt="Phone AI Agent" 
     width={1200}
     height={800}
@@ -83,7 +83,7 @@ Select from the available models.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/phone-ai/phone-ai-models.png" 
+    src="../../../../assets/chatbot/phone-ai/phone-ai-models.png" 
     alt="Phone AI Agent" 
     width={1200}
     height={800}
@@ -97,7 +97,7 @@ Select from the available models.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/phone-ai/tts-model.png" 
+    src="../../../../assets/chatbot/phone-ai/tts-model.png" 
     alt="tts model settings" 
     width={1200}
     height={800}
@@ -110,7 +110,7 @@ Select from the available models.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/phone-ai/transcription-settings.png" 
+    src="../../../../assets/chatbot/phone-ai/transcription-settings.png" 
     alt="transcription model settings" 
     width={1200}
     height={800}
@@ -127,7 +127,7 @@ Go to the **Functions** tab to define what the voice agent can do.
 
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/phone-ai/phone-ai-functions.png" 
+    src="../../../../assets/chatbot/phone-ai/phone-ai-functions.png" 
     alt="Phone AI Agent" 
     width={1200}
     height={800}

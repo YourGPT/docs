@@ -10,7 +10,7 @@ In Studio, Response Source include two options one from **`AI`** and second from
 AI uses the pretrained (their built-in) knowledge or any additional context you provide to generate responses.
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-60">
-  ![AI response](/assets/flow/ai-task/AI-response.png)
+  ![AI response](../../../../assets/flow/ai-task/AI-response.png)
 </div>
 
 - Previous Chat Context: Specify how many previous messages the AI should consider for context.
@@ -31,7 +31,7 @@ You can now generate responses in different formats. Available response types in
 The Knowledgebase AI uses your training data to answer to the users question.
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-60">
-  ![KnowledgeBase AI](/assets/flow/ai-task/KB-response.png)
+  ![KnowledgeBase AI](../../../../assets/flow/ai-task/KB-response.png)
 </div>
 
 - **Previous Chat Context**: Specify how many previous messages the AI should consider for context.

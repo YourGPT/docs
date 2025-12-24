@@ -12,12 +12,12 @@ Each result includes a **Match Score** and a preview of the matched content—so
   <Step>
     From the left sidebar, open **Debug Lab**.
 
-    ![Open Debug Lab](/assets/chatbot/debugging-2/image-3.png)
+    ![Open Debug Lab](../../../../assets/chatbot/debugging-2/image-3.png)
   </Step>
   <Step>
     Click the **Training Audit** tab.
 
-    ![Training Audit tab](/assets/chatbot/debugging-2/image-4.png)
+    ![Training Audit tab](../../../../assets/chatbot/debugging-2/image-4.png)
   </Step>
 </Steps>
 
@@ -30,7 +30,7 @@ Each result includes a **Match Score** and a preview of the matched content—so
   <Step>
     Click **Find** to search.
 
-    ![Search query](/assets/chatbot/debugging-2/image-5.png)
+    ![Search query](../../../../assets/chatbot/debugging-2/image-5.png)
   </Step>
 </Steps>
 
@@ -48,7 +48,7 @@ Open a result to view the matched content in a larger preview and verify *why* t
   <Step>
     Click a result to open the preview/modal.
 
-    ![Match preview modal](/assets/chatbot/debugging-2/image-6.png)
+    ![Match preview modal](../../../../assets/chatbot/debugging-2/image-6.png)
   </Step>
 </Steps>
 
@@ -60,7 +60,7 @@ Once you've identified the right match, you can jump directly to the underlying 
   <Step>
     Click **Find Document** on the matched result. This opens the related entry in **Training Datasets** and applies a **Node ID** filter—so you can locate the exact source node that contains the matched content.
 
-    ![Locate node in training datasets](/assets/chatbot/debugging-2/image-7.png)
+    ![Locate node in training datasets](../../../../assets/chatbot/debugging-2/image-7.png)
   </Step>
   <Step>
     Use the filtered dataset list to find the source and then:
@@ -81,7 +81,7 @@ To view the source of training data, follow these steps:
 
 <div className="my-4 flex justify-center">
   <video
-    src="/assets/chatbot/Debug/training-view.mp4"
+    src="../../../../assets/chatbot/Debug/training-view.mp4"
     muted
     autoPlay
     controls

@@ -17,12 +17,12 @@ Audit Logs are a timeline of notable events in your organization and projects (f
   <Step>
     From the top-right, go to **Account** → **Settings**.
 
-    ![Open Settings](/assets/chatbot/debugging-2/image-1.png)
+    ![Open Settings](../../../assets/chatbot/debugging-2/image-1.png)
   </Step>
   <Step>
     In the Settings sidebar, click **Audit Logs**.
 
-    ![Audit Logs page](/assets/chatbot/debugging-2/image-2.png)
+    ![Audit Logs page](../../../assets/chatbot/debugging-2/image-2.png)
   </Step>
 </Steps>
 

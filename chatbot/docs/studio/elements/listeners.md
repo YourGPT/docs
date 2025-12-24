@@ -8,7 +8,7 @@ Listeners play a crucial role in capturing user responses and enabling interacti
 
 ## 1. Capture Listener
 
-![Capture Listeners in YourGPT Studio](/assets/flow/listener/capture.png)
+![Capture Listeners in YourGPT Studio](../../../../assets/flow/listener/capture.png)
 
 The Capture Listener is an essential component of the flow, capturing user replies and storing them in specified locations. It acts as an interface between user input and the chatbot's response mechanism.
 
@@ -55,7 +55,7 @@ The Capture Listener allows you to:
 
 ## 2. Button Listener
 
-![Button Listeners in YourGPT Studio](/assets/flow/listener/button.png)
+![Button Listeners in YourGPT Studio](../../../../assets/flow/listener/button.png)
 
 The Button Listener allows the chatbot to provide interactive features in the form of buttons, allowing users to choose from predefined options or actions during the conversation.
 
@@ -73,7 +73,7 @@ The Button Listener allows the chatbot to provide interactive features in the fo
 
 ## 3. Form Listener
 
-![Form Listeners in YourGPT Studio](/assets/flow/listener/form.png)
+![Form Listeners in YourGPT Studio](../../../../assets/flow/listener/form.png)
 
 The Form Listener is a versatile component that captures user inputs through form fields, enabling structured data collection and processing within the agents flow.
 
@@ -102,7 +102,7 @@ The Form Listener is a versatile component that captures user inputs through for
 
 ## 4. Feedback
 
-![Feedback Listeners in YourGPT Studio](/assets/flow/listener/feedback.png)
+![Feedback Listeners in YourGPT Studio](../../../../assets/flow/listener/feedback.png)
 
 The Feedback Listener is designed to capture user satisfaction scores, typically used for Customer Satisfaction (CSAT) surveys. It allows you to gather valuable feedback on user experience and service quality.
 

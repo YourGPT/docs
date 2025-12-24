@@ -21,7 +21,7 @@ To integrate with Line, follow these steps:
    - Create a provider  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-        src="/assets/chatbot/Line/Line-1.png"
+        src="../../../../assets/chatbot/Line/Line-1.png"
         alt="Create Provider"
         className="rounded-md object-contain"
         style={{ width: "100%" }}
@@ -32,7 +32,7 @@ To integrate with Line, follow these steps:
    - Create a Message API Channel  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-        src="/assets/chatbot/Line/Line-2.png"
+        src="../../../../assets/chatbot/Line/Line-2.png"
         alt="Create Message API Channel"
         className="rounded-md object-contain"
         style={{ width: "100%" }}
@@ -41,7 +41,7 @@ To integrate with Line, follow these steps:
 
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/Line-messaging-api.png" 
+       src="../../../../assets/chatbot/Line/Line-messaging-api.png" 
        alt="Messaging API"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -50,7 +50,7 @@ To integrate with Line, follow these steps:
 
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/Create-line-account.png" 
+       src="../../../../assets/chatbot/Line/Create-line-account.png" 
        alt="Messaging API"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -59,7 +59,7 @@ To integrate with Line, follow these steps:
 
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/line-settings.png" 
+       src="../../../../assets/chatbot/Line/line-settings.png" 
        alt="Line Settings"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -69,7 +69,7 @@ To integrate with Line, follow these steps:
    - Enable the message API  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/enable-messaging-api.png" 
+       src="../../../../assets/chatbot/Line/enable-messaging-api.png" 
        alt="Enable Messaging API"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -79,7 +79,7 @@ To integrate with Line, follow these steps:
    - Choose or create a provider.  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/select-provider.png"
+       src="../../../../assets/chatbot/Line/select-provider.png"
        alt="Choose or Create a Provider"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -90,7 +90,7 @@ To integrate with Line, follow these steps:
    - Copy Channel ID for later use.  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/Line-3.png"
+       src="../../../../assets/chatbot/Line/Line-3.png"
        alt="Copy Channel ID"
        className="rounded-md"
        style={{ width: "100%" }}
@@ -101,7 +101,7 @@ To integrate with Line, follow these steps:
    - Issue the Token required for integration.  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/Line-4.png"
+       src="../../../../assets/chatbot/Line/Line-4.png"
        alt="Issue Token"
        className="rounded-md"
        style={{ width: "100%" }}
@@ -114,7 +114,7 @@ To integrate with Line, follow these steps:
      - **Generated Access Token**  
    <div className="flex justify-center items-center  rounded-md p-4 md:px-12">
      <img 
-       src="/assets/chatbot/Line/Line-5.png"
+       src="../../../../assets/chatbot/Line/Line-5.png"
        alt="Add Channel ID and Access Token"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -125,7 +125,7 @@ To integrate with Line, follow these steps:
    - Add the Copied Webhook for callback functionality.  
    <div className="flex justify-center items-center  rounded-md p-4 md:px-12">
      <img 
-       src="/assets/chatbot/Line/Line-6.png"
+       src="../../../../assets/chatbot/Line/Line-6.png"
        alt="Add Webhook"
        className="rounded-md object-contain"
        style={{ width: "100%" }}
@@ -136,7 +136,7 @@ To integrate with Line, follow these steps:
    - Turn it ON to activate the integration.  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/Line-7.png"
+       src="../../../../assets/chatbot/Line/Line-7.png"
        alt="Turn ON Integration"
        className="rounded-md"
        style={{ width: "100%" }}
@@ -147,7 +147,7 @@ To integrate with Line, follow these steps:
    - Verify the Webhook functionality.  
    <div className="flex justify-center items-center  rounded-md p-4">
      <img 
-       src="/assets/chatbot/Line/Line-8.png"
+       src="../../../../assets/chatbot/Line/Line-8.png"
        alt="Verify Webhook"
        className="rounded-md"
        style={{ width: "100%" }}
@@ -160,7 +160,7 @@ To integrate with Line, follow these steps:
       - Use it to scan the provided QR code.  
     <div className="flex justify-center items-center  rounded-md p-4">
       <img 
-        src="/assets/chatbot/Line/Line-9.png"
+        src="../../../../assets/chatbot/Line/Line-9.png"
         alt="Download and Install the Line App"
         className="rounded-md object-contain"
         style={{ width: "100%" }}

@@ -19,7 +19,7 @@ Integrating YourGPT with your PrestaShop store is a seamless process that enhanc
    
    <div className="flex justify-center items-center rounded-md p-4 mt-4">
      <img
-       src="/assets/chatbot/prestashop/prestashop1.png"
+       src="../../../../assets/chatbot/prestashop/prestashop1.png"
        alt="PrestaShop Admin Panel"
        width="100%"
        height="100%"
@@ -36,7 +36,7 @@ Integrating YourGPT with your PrestaShop store is a seamless process that enhanc
    
    <div className="flex justify-center items-center  rounded-md p-4 mt-4">
      <img
-       src="/assets/chatbot/prestashop/prestashop2.png"
+       src="../../../../assets/chatbot/prestashop/prestashop2.png"
        alt="Upload YourGPT Module"
        width="100%"
        height="100%"
@@ -52,7 +52,7 @@ Integrating YourGPT with your PrestaShop store is a seamless process that enhanc
    
    <div className="flex justify-center items-center  rounded-md p-4 mt-4">
      <img
-       src="/assets/chatbot/prestashop/prestashop3.png"
+       src="../../../../assets/chatbot/prestashop/prestashop3.png"
        alt="Add Widget UID"
        width="100%"
        height="100%"
@@ -75,7 +75,7 @@ Integrating YourGPT with your PrestaShop store is a seamless process that enhanc
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
   <img
-    src="/assets/chatbot/prestashop/prestashop4.png"
+    src="../../../../assets/chatbot/prestashop/prestashop4.png"
     alt="Manage YourGPT Module"
     width="100%"
     height="100%"

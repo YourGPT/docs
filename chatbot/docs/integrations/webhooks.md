@@ -12,7 +12,7 @@
 - Select **`Webhook`** and click on **`Manage`**.
 <div className="flex justify-center items-center rounded-md p-4 ">
   <Image 
-    src="/assets/chatbot/webhook/webhook.png"
+    src="../../../assets/chatbot/webhook/webhook.png"
     alt=" Webhook Setup"
     width={1200}
     height={800}
@@ -24,7 +24,7 @@
 - Click on **`Add New Webhook`**.
 <div className="flex justify-center items-center rounded-md p-4 ">
   <Image 
-    src="/assets/chatbot/webhook/new-webhook.png"
+    src="../../../assets/chatbot/webhook/new-webhook.png"
     alt=" Add new Webhook"
     width={1200}
     height={800}
@@ -36,7 +36,7 @@
 - Click on **`Edit`** Add the webhook URL and then 'Select the events you want to subscribe to'.
 <div className="flex justify-center items-center rounded-md p-4">
   <Image 
-    src="/assets/chatbot/webhook/webhook event.png"
+    src="../../../assets/chatbot/webhook/webhook event.png"
     alt=" Add Webhook Events"
     width={1200}
     height={800}

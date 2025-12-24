@@ -13,15 +13,15 @@
   </Step>
   <Step>
     Click **Add New Link**
-    ![Add New Link](/assets/chatbot/training/image-3.png)
+    ![Add New Link](../../../../assets/chatbot/training/image-3.png)
   </Step>
   <Step>
     Paste the link and click **Add**
-    ![Add Link](/assets/chatbot/training/image-4.png)
+    ![Add Link](../../../../assets/chatbot/training/image-4.png)
   </Step>
   <Step>
     Wait a few minutes, then refresh the page to verify the status shows success
-    ![Success](/assets/chatbot/training/image-5.png)
+    ![Success](../../../../assets/chatbot/training/image-5.png)
   </Step>
 </Steps>
 
@@ -32,15 +32,15 @@ To add multiple training links at once:
 <Steps>
   <Step>
     Go to **Training** → **Crawl**
-    ![Crawl](/assets/chatbot/training/image-6.png)
+    ![Crawl](../../../../assets/chatbot/training/image-6.png)
   </Step>
   <Step>
     Paste your link in the designated field
-    ![Paste Link](/assets/chatbot/training/image-7.png)
+    ![Paste Link](../../../../assets/chatbot/training/image-7.png)
   </Step>
   <Step>
     Click **Extract** to initiate the process
-    ![Extract](/assets/chatbot/training/image-8.png)
+    ![Extract](../../../../assets/chatbot/training/image-8.png)
   </Step>
 </Steps>
 
@@ -64,7 +64,7 @@ Control how extracted content is processed:
 - **Skip Retraining**: Toggle to skip automatic retraining of the content
 - **Retraining Period**: Select how often the content should be retrained automatically
 - **Tags**: Add tags to categorize and organize your training data
-![Advanced Training](/assets/chatbot/training/image-9.png)
+![Advanced Training](../../../../assets/chatbot/training/image-9.png)
 
 <Callout title="Learn More" type="info">
   For detailed step-by-step instructions and advanced training options, visit our help article on [How to Train Bot with the links](https://help.yourgpt.ai/article/how-to-train-bot-with-the-links-48).

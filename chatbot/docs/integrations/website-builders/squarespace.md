@@ -26,7 +26,7 @@ Integrating YourGPT Chatbot with your Squarespace website. Follow these simple s
 
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/squarespace/squarespace1.png"
+        src="../../../../assets/chatbot/squarespace/squarespace1.png"
         alt="Install"
         className="rounded-md object-contain w-full"
       />
@@ -46,7 +46,7 @@ Integrating YourGPT Chatbot with your Squarespace website. Follow these simple s
 
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/squarespace/squarespace2.png"
+        src="../../../../assets/chatbot/squarespace/squarespace2.png"
         alt="Install"
         className="rounded-md object-contain w-full"
       />
@@ -63,7 +63,7 @@ Integrating YourGPT Chatbot with your Squarespace website. Follow these simple s
 
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/squarespace/squarespace3.png"
+        src="../../../../assets/chatbot/squarespace/squarespace3.png"
         alt="Install"
         className="rounded-md object-contain w-full"
       />
@@ -80,7 +80,7 @@ Integrating YourGPT Chatbot with your Squarespace website. Follow these simple s
 
     <div className="flex justify-center items-center rounded-md p-4">
       <img
-        src="/assets/chatbot/squarespace/squarespace4.png"
+        src="../../../../assets/chatbot/squarespace/squarespace4.png"
         alt="Install"
         className="rounded-md object-contain w-full"
       />

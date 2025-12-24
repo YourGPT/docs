@@ -10,7 +10,7 @@ Instagram Integrations with auto setup:
 1. Log in to YourGPT’s dashboard and go to Integrations section.
 <div className="flex justify-center items-center  rounded-md p-2 md:px-2">
   <img
-    src="/assets/chatbot/Instagram/instagram.png"
+    src="../../../../assets/chatbot/Instagram/instagram.png"
     alt="Instagram Integration in YourGPT dashboard"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -21,7 +21,7 @@ Instagram Integrations with auto setup:
 
 <div className="flex justify-center items-center rounded-md p-2 md:px-2">
   <img
-    src="/assets/chatbot/Instagram/instagram-1.png"
+    src="../../../../assets/chatbot/Instagram/instagram-1.png"
     alt="Instagram Auto Integration in YourGPT dashboard"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -32,7 +32,7 @@ Instagram Integrations with auto setup:
 
 <div className="flex justify-center items-center  rounded-md p-2 md:px-2">
   <img
-    src="/assets/chatbot/Instagram/instagram-2.png"
+    src="../../../../assets/chatbot/Instagram/instagram-2.png"
     alt="Login Instagram"
     style={{ width: "100%" }}
     className="rounded-md object-contain"

@@ -27,11 +27,11 @@ You can create a child chatbot that is connected to multiple parent chatbots. Yo
 
 To enable the Connected Chatbots feature, follow these steps:
 
-![General settings for Connected Chatbots](/assets/chatbot/connected-settings.jpg)
+![General settings for Connected Chatbots](../../../assets/chatbot/connected-settings.jpg)
 
 1. Go to the **General settings** of your chatbot.
 
-![Connect Chatbots option in settings](/assets/chatbot/connected-chatbot.jpg)
+![Connect Chatbots option in settings](../../../assets/chatbot/connected-chatbot.jpg)
 
 2. Click on the **Connect Chatbots** option.
 
