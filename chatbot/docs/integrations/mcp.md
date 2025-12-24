@@ -27,7 +27,14 @@ Follow these steps to configure the MCP server inside YourGPT. After that, you c
 ### Step 1: Go to Integrations
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Integrations MCP](/assets/chatbot/MCP/integrate-mcp.png)
+  <Image 
+    src="/assets/chatbot/MCP/integrate-mcp.png" 
+    alt="Integrations MCP" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }} 
+    className="rounded-md object-contain" 
+  />
 </div>
 
 - From your YourGPT dashboard, click **Integrations** in the left sidebar.
@@ -39,7 +46,14 @@ Follow these steps to configure the MCP server inside YourGPT. After that, you c
 ### Step 2: Create MCP Server
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Create MCP Server](/assets/chatbot/MCP/create-mcp.png)
+  <Image 
+    src="/assets/chatbot/MCP/create-mcp.png" 
+    alt="Create MCP Server" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }} 
+    className="rounded-md object-contain" 
+  />
 </div>
 
 - A popup will appear prompting you to create the MCP server.
@@ -52,7 +66,14 @@ This will generate a new MCP endpoint for your chatbot.
 ### Step 3: Choose Your Target Tool
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Choose MCP Tool](/assets/chatbot/MCP/mcp-tool.png)
+  <Image 
+    src="/assets/chatbot/MCP/mcp-tool.png" 
+    alt="Choose MCP Tool" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }} 
+    className="rounded-md object-contain" 
+  />
 </div>
 
 After MCP is created, you'll see usage tabs for:
@@ -97,8 +118,10 @@ Windsurf supports the MCP protocol and can use the same generated config.
 
 ---
 
-> **WARNING:** <ul>
->     <li>Do not share your `Bearer token` publicly. It gives access to your chatbot's knowledgebase.</li>
->     <li>You can remove and regenerate the MCP server anytime using the `Remove MCP` button.</li>
->     <li>Each chatbot can have its own MCP configuration, enabling different agents for different use cases.</li>
->   </ul>
+<Callout title="Important Notes" type="warning">
+  <ul>
+    <li>Do not share your `Bearer token` publicly. It gives access to your chatbot's knowledgebase.</li>
+    <li>You can remove and regenerate the MCP server anytime using the `Remove MCP` button.</li>
+    <li>Each chatbot can have its own MCP configuration, enabling different agents for different use cases.</li>
+  </ul>
+</Callout>

@@ -34,6 +34,8 @@ Project roles define what users can do inside a specific project.
 
 ---
 
-> **INFO:** Roles are assigned independently at the organization and project level.
+<Callout title="Note" type="info">
+  Roles are assigned independently at the organization and project level.
+</Callout>
 
 Billing access is always controlled at the organization level and cannot be granted through project roles.

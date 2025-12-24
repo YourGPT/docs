@@ -8,21 +8,31 @@ Each result includes a **Match Score** and a preview of the matched content—so
 
 ## How to open Training Audit
 
-  1. From the left sidebar, open **Debug Lab**.
+<Steps>
+  <Step>
+    From the left sidebar, open **Debug Lab**.
 
     ![Open Debug Lab](/assets/chatbot/debugging-2/image-3.png)
-
-  2. Click the **Training Audit** tab.
+  </Step>
+  <Step>
+    Click the **Training Audit** tab.
 
     ![Training Audit tab](/assets/chatbot/debugging-2/image-4.png)
+  </Step>
+</Steps>
 
 ## Search your training data
 
-  1. Enter a keyword or phrase related to the answer you're trying to debug.
-
-  2. Click **Find** to search.
+<Steps>
+  <Step>
+    Enter a keyword or phrase related to the answer you're trying to debug.
+  </Step>
+  <Step>
+    Click **Find** to search.
 
     ![Search query](/assets/chatbot/debugging-2/image-5.png)
+  </Step>
+</Steps>
 
 How to read the results:
 
@@ -34,22 +44,31 @@ How to read the results:
 
 Open a result to view the matched content in a larger preview and verify *why* the chatbot is producing a certain answer (it's likely pulling from this training content).
 
-  1. Click a result to open the preview/modal.
+<Steps>
+  <Step>
+    Click a result to open the preview/modal.
 
     ![Match preview modal](/assets/chatbot/debugging-2/image-6.png)
+  </Step>
+</Steps>
 
 ## Locate the source node
 
 Once you've identified the right match, you can jump directly to the underlying training source node and modify it.
 
-  1. Click **Find Document** on the matched result. This opens the related entry in **Training Datasets** and applies a **Node ID** filter—so you can locate the exact source node that contains the matched content.
+<Steps>
+  <Step>
+    Click **Find Document** on the matched result. This opens the related entry in **Training Datasets** and applies a **Node ID** filter—so you can locate the exact source node that contains the matched content.
 
     ![Locate node in training datasets](/assets/chatbot/debugging-2/image-7.png)
-
-  2. Use the filtered dataset list to find the source and then:
+  </Step>
+  <Step>
+    Use the filtered dataset list to find the source and then:
 
     - **Edit** the source (for example, correct outdated or misleading text)
     - **Delete** the source to remove it from training
+  </Step>
+</Steps>
 
 ## View training source
 
@@ -75,6 +94,8 @@ To view the source of training data, follow these steps:
 
 ## Tips & troubleshooting
 
-> **TIP:** - **Try multiple phrasings**: search for synonyms or a direct quote from the incorrect answer.
->   - **Low scores**: broaden the query (fewer words) or search for a distinctive phrase you expect to exist in training data.
->   - **After edits/deletes**: re-test after the changes are processed so you can confirm the updated training data is reflected in responses.
+<Callout title="Tips" type="tip">
+  - **Try multiple phrasings**: search for synonyms or a direct quote from the incorrect answer.
+  - **Low scores**: broaden the query (fewer words) or search for a distinctive phrase you expect to exist in training data.
+  - **After edits/deletes**: re-test after the changes are processed so you can confirm the updated training data is reflected in responses.
+</Callout>

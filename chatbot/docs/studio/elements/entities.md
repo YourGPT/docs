@@ -24,7 +24,9 @@ Entities are specific pieces of information extracted from user input that provi
 
 For example, in the sentence "**Book a flight to Paris on March 5th**," the entities would be *'**Paris**' (destination)* and *'**March 5th**' (date)*. These entities helps AI to process and respond to the request accurately by understanding the detailed requirements within the user's intent.
 
-> **INFO:** For detailed guidance on capturing and storing a user's response, refer to our help center guide on [How to capture and store a user's response](https://chatbot-help.aidesk.center/article/how-to-capture-and-store-a-users-response-32)
+<Callout title="Note" type="info">
+  For detailed guidance on capturing and storing a user's response, refer to our help center guide on [How to capture and store a user's response](https://chatbot-help.aidesk.center/article/how-to-capture-and-store-a-users-response-32)
+</Callout>
 
 ### How to use them in Chatbot Studio?
 
@@ -40,4 +42,6 @@ For example, in the sentence "**Book a flight to Paris on March 5th**," the enti
 
 - Add the entity to the intent by selecting it from the available options.
 
-> **INFO:** When creating the custom entities, make sure that the description are clear & concise as it acts like a prompt. You can add examples in the entity description for better understanding.
+<Callout title="Note" type="info">
+  When creating the custom entities, make sure that the description are clear & concise as it acts like a prompt. You can add examples in the entity description for better understanding.
+</Callout>

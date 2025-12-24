@@ -8,27 +8,37 @@ Training allows your agent to answer questions based on your own data instead of
 
 YourGPT training converts your data into searchable knowledge nodes, which the AI uses to find accurate answers and generate responses. Updating your training data ensures that your chatbot always has the latest information from your sources, improving the quality and reliability of its responses.
 
-  1. Sign in to the YourGPT Dashboard.
+<Steps>
+  <Step>
+    Sign in to the <Link href="https://chatbot.yourgpt.ai/" target="_blank">YourGPT Dashboard</Link>.
+  </Step>
 
-  2. Open the **Training** section from the dashboard menu.
+  <Step>
+    Open the **Training** section from the dashboard menu.
     <br />
     <img src="/assets/chatbot/training/image-1.png" alt="Training section in dashboard" />
+  </Step>
 
-  3. Select the type of data you want to use for training.
+  <Step>
+    Select the type of data you want to use for training.
     <br />
     <img src="/assets/chatbot/training/image-2.png" alt="Training source options" />
 
     You can train your chatbot using multiple data sources depending on your needs.
 
-    
-      
-      
-      
-      
-      
-    
+    <Cards>
+      <Card title="Website & Links" href="/chatbot/training/sources/website-links" />
+      <Card title="Documents" href="/chatbot/training/sources/documents" />
+      <Card title="FAQs & Text" href="/chatbot/training/sources/faqs-text" />
+      <Card title="AI Helpdesk" href="/chatbot/training/sources/ai-helpdesk" />
+      <Card title="Other Sources" href="/chatbot/training/sources/others" />
+    </Cards>
 
-    > **INFO:** Your chatbot is trained only on the data you provide. This keeps responses aligned with your business content.
+    <Callout type="info">
+      Your chatbot is trained only on the data you provide. This keeps responses aligned with your business content.
+    </Callout>
+  </Step>
+</Steps>
 
 ---
 
@@ -36,6 +46,8 @@ YourGPT training converts your data into searchable knowledge nodes, which the A
 
 When responses feel incorrect or incomplete, reviewing training sources helps identify the issue.
 
-> **INFO:** Use the Training View Source to inspect which knowledge nodes were used to generate a response and how closely they matched the user query.
+<Callout type="info" title="Training View Source">
+Use the <Link href="/chatbot/debugging/conversation-logs/training-audit#view-training-source">Training View Source</Link> to inspect which knowledge nodes were used to generate a response and how closely they matched the user query.
+</Callout>
 
 This view helps you understand whether the issue comes from missing data, low match scores, or outdated training content.

@@ -8,7 +8,9 @@ The Flutter SDK allows you to seamlessly integrate YourGPT Chatbot into your flu
 
 Follow these steps to install and configure the flutter Chatbot SDK in your project:
 
-> **NOTE:** View the full SDK source code and examples on GitHub: [yourgpt-widget-sdk-flutter](https://github.com/YourGPT/yourgpt-widget-sdk-flutter)
+<Callout type="note" title="SDK Repository">
+View the full SDK source code and examples on GitHub: [yourgpt-widget-sdk-flutter](https://github.com/YourGPT/yourgpt-widget-sdk-flutter)
+</Callout>
 
 1. Add this to your package's `pubspec.yaml` file:
 

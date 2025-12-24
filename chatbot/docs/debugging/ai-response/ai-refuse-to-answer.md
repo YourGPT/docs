@@ -58,4 +58,6 @@ You can edit these data sources, make adjustments, or remove certain data points
 
 To avoid losing your changes, it’s better to adjust the **training material** itself rather than only editing the extracted data points. This ensures your AI bot consistently has access to the correct information after every re-training.
 
-> **TIP:** Check out our [Training Guide](/chatbot/training) for more tips and best practices.
+<Callout title="Tip" type="tip">
+  Check out our [Training Guide](/chatbot/training) for more tips and best practices.
+</Callout>

@@ -43,9 +43,9 @@ Gives the flow builder an option in case the action fails or succeeds for:
 - Create Contact
 - Send Email
 
-### How To Use Actions
-
-Learn how to use actions in AI chatbot studio.
+<Card title="How To Use Actions" href="https://help.yourgpt.ai/article/how-to-use-actions-in-chatbot-studio-29">
+  Learn how to use actions in AI chatbot studio.
+</Card>
 
 ### 1. Escalate to Human
 

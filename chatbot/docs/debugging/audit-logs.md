@@ -4,19 +4,27 @@
 
 Audit Logs are a timeline of notable events in your organization and projects (for example: viewing a project, deleting a chatbot, or other admin actions). Each entry includes a timestamp and a severity level so you can quickly spot what matters.
 
-> **WARNING:** Audit Logs are available on the <b>Enterprise</b> plan only.
+<Callout title="Enterprise feature" type="warning">
+  Audit Logs are available on the <b>Enterprise</b> plan only.
+</Callout>
 
 ## How to open Audit Logs
 
-  1. Go to your dashboard.
-
-  2. From the top-right, go to **Account** → **Settings**.
+<Steps>
+  <Step>
+    Go to your <Link href="https://chatbot.yourgpt.ai/dashboard" target="_blank">dashboard</Link>.
+  </Step>
+  <Step>
+    From the top-right, go to **Account** → **Settings**.
 
     ![Open Settings](/assets/chatbot/debugging-2/image-1.png)
-
-  3. In the Settings sidebar, click **Audit Logs**.
+  </Step>
+  <Step>
+    In the Settings sidebar, click **Audit Logs**.
 
     ![Audit Logs page](/assets/chatbot/debugging-2/image-2.png)
+  </Step>
+</Steps>
 
 ## How to use the Audit Logs page
 

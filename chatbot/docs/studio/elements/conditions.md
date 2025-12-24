@@ -106,4 +106,6 @@ Avoid these common mistakes when setting up conditions:
 
 ---
 
-> **INFO:** To know more about conditions in YourGPT Chatbot Studio, follow our [AI Helpdesk article.](https://help.yourgpt.ai/article/how-to-set-up-conditions-in-ai-studio-1584)
+<Callout title="Note" type="info">
+  To know more about conditions in YourGPT Chatbot Studio, follow our [AI Helpdesk article.](https://help.yourgpt.ai/article/how-to-set-up-conditions-in-ai-studio-1584)
+</Callout>

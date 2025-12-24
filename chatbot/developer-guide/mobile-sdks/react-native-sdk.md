@@ -56,11 +56,11 @@ The first step is to wrap your main application component with the `YourGPTProvi
 
 function App(): JSX.Element {
   return (
-    
+    <SafeAreaView style={{flex: 1}}>
       <YourGPTProvider widgetId="Your_Widget_Id">
         // YOUR CODE HERE
       </YourGPTProvider>
-    
+    </SafeAreaView>
   );
 }
 
@@ -75,7 +75,7 @@ Create a component that will trigger the chatbot to open. This can be a button, 
 
 function OpenBot() {
   const {open} = useYourGPT();
-  return ;
+  return <Button onPress={open} title="Open Bot" />;
 }
 ```
 
@@ -93,9 +93,9 @@ function CustomChatButton() {
   const {open} = useYourGPT();
   
   return (
-    
+    <TouchableOpacity style={styles.chatButton} onPress={open}>
       <Text style={styles.buttonText}>💬 Chat with AI</Text>
-    
+    </TouchableOpacity>
   );
 }
 
@@ -129,13 +129,13 @@ const Stack = createStackNavigator();
 
 function App(): JSX.Element {
   return (
-    
+    <YourGPTProvider widgetId="Your_Widget_Id">
       <NavigationContainer>
         <Stack.Navigator>
           {/* Your app screens here */}
         </Stack.Navigator>
       </NavigationContainer>
-    
+    </YourGPTProvider>
   );
 }
 ```

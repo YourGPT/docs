@@ -18,8 +18,10 @@ By setting up predefined responses for specific keywords or patterns, you can en
 - **Integration with Chatbot Studio Flows:**  
   Automated responses can be integrated into the flow of the Chatbot Studio. This allows for a more dynamic and flexible conversation flow, where automated responses can lead into more complex interactions or escalate to human intervention based on the context.
 
-> **INFO:** One of the primary advantages of the Automated Responses feature is that it does not consume AI credits. 
->   This allows users to send unlimited automated responses without worrying about additional costs, making it a cost-effective solution for managing routine inquiries.
+<Callout title="Note" type="info">
+  One of the primary advantages of the Automated Responses feature is that it does not consume AI credits. 
+  This allows users to send unlimited automated responses without worrying about additional costs, making it a cost-effective solution for managing routine inquiries.
+</Callout>
 
 ###  Use Cases 
 
@@ -29,10 +31,12 @@ By setting up predefined responses for specific keywords or patterns, you can en
 - **Handling escalations:**  
   Automated Responses can be used to detect specific keywords or phrases that indicate a user's need to speak with a human agent. By setting up triggers for human escalation, you can ensure that users are connected to a live representative when necessary.
 
-{/* 
+{/* <Note type="" color="emerald">
  One of the primary advantages of the Automated Responses feature is that it does not consume AI credits. 
  
  This allows users to send unlimited automated responses without worrying about additional costs, making it a cost-effective solution for managing routine inquiries.
- */}
+</Note> */}
 
-> **TIP:** To know more about Automated responses, visit our help article on [Automated responses in YourGPT Chatbot](https://help.yourgpt.ai/article/how-to-use-automated-responses-in-yourgpt-chatbot-266)
+<Callout title="Note" type="tip">
+  To know more about Automated responses, visit our help article on [Automated responses in YourGPT Chatbot](https://help.yourgpt.ai/article/how-to-use-automated-responses-in-yourgpt-chatbot-266)
+</Callout>

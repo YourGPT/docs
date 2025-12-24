@@ -33,4 +33,6 @@ In the above video, we demonstrate how to build an AI chatbot for a Shopify stor
 
 - **Scalability**: AI chatbots can handle a large volume of inquiries simultaneously, allowing businesses to scale their customer support operations efficiently.
 
-> **TIP:** You can get started by using our [Pre-built Template](https://yourgpt.ai/chatbot/resources/connect-your-shopify-store-with-an-ai-chatbot-6653069d65fd1c5886e93f4e) for building an AI chatbot for your Shopify store.
+<Callout title="Note" type="tip">
+  You can get started by using our [Pre-built Template](https://yourgpt.ai/chatbot/resources/connect-your-shopify-store-with-an-ai-chatbot-6653069d65fd1c5886e93f4e) for building an AI chatbot for your Shopify store.
+</Callout>

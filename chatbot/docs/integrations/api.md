@@ -2,38 +2,41 @@
 
 > Learn how to integrate your chatbot using the YourGPT Chatbot API
 
-> **TIP:** Welcome to the Documentation page for **YourGPT Chatbot APIs**
-> 
-> ## Generating Keys
-> 
-> - Go to your **Integration** and click on **manage API integration**
-> 
-> <div className="flex justify-center items-center rounded-md p-4">
->   <img
->     src="/assets/chatbot/API/Integration-API.png"
->     alt="API Integration"
->     style={{ width: "100%" }}
->     className="rounded-md object-contain"
->   />
-> </div>
-> 
-> - Now create one key.
-> 
-> - Copy your **Generated API key**
-> 
-> <div className="flex justify-center items-center rounded-md p-4 md:pl-20">
->   <img
->     src="/assets/chatbot/API/API-key.png"
->     alt="Copy API Key"
->     style={{ width: "88%" }}
->     className="rounded-md object-contain"
->   />
-> </div>
-> 
-> <Callout title="Note" type="note">
-> The widget_uid is your chatbot's Widget ID.
-> 
-> **For Example**: `84292q0qw1eqw124-4173-af6e-569477ac9013`
+<Callout title="Connect Your Chatbot Anywhere with Chatbot API" type="tip" />
+
+Welcome to the Documentation page for **YourGPT Chatbot APIs**
+
+## Generating Keys
+
+- Go to your **Integration** and click on **manage API integration**
+
+<div className="flex justify-center items-center rounded-md p-4">
+  <img
+    src="/assets/chatbot/API/Integration-API.png"
+    alt="API Integration"
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
+- Now create one key.
+
+- Copy your **Generated API key**
+
+<div className="flex justify-center items-center rounded-md p-4 md:pl-20">
+  <img
+    src="/assets/chatbot/API/API-key.png"
+    alt="Copy API Key"
+    style={{ width: "88%" }}
+    className="rounded-md object-contain"
+  />
+</div>
+
+<Callout title="Note" type="note">
+The widget_uid is your chatbot's Widget ID.
+
+**For Example**: `84292q0qw1eqw124-4173-af6e-569477ac9013`
+</Callout>
 
 <div className="mt-12">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -93,7 +96,9 @@ curl --location 'https://api.yourgpt.ai/chatbot/v1/createSession' \
 }
 ```
 
-> **NOTE:** To use the send message API, you must first establish a session. Obtain a session UID by executing the Create Session API.
+<Callout title="Note" type="note">
+To use the send message API, you must first establish a session. Obtain a session UID by executing the Create Session API.
+</Callout>
 
 ### Send Message API
 

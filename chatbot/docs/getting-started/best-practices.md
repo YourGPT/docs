@@ -4,27 +4,30 @@
 
 Improve your AI Agent’s reliability and usefulness by following these best practices. Clear instructions and well-organized data sources help ensure a better experience for your users.
 
-> **IDEA:** Press <kbd>⌘</kbd>+<kbd>K</kbd> (Mac) or <kbd>Ctrl</kbd>+<kbd>K</kbd> (Windows) in YourGPT to quickly search any page or setting.
+<Callout type="idea" title="Quick Navigation">
+  Press <kbd>⌘</kbd>+<kbd>K</kbd> (Mac) or <kbd>Ctrl</kbd>+<kbd>K</kbd> (Windows) in YourGPT to quickly search any page or setting.
+</Callout>
 
 ## Refine AI Agent Instructions
 
 Instructions act as the "brain" of your AI agent, defining its persona, tone, and behavior. Precise instructions ensure your AI remains focused and helpful. These are configured in your [Agent Persona settings](/chatbot/ai-agent-management/agent-persona), where you can define the agent prompt and restrictions.
 
-> **TIP:** Your agent's persona is its personality—make it memorable! Instead of generic instructions, be specific:
->   
->   - ❌ "Be friendly" → ✅ "Use a warm, conversational tone like a helpful colleague"
->   - ❌ "Be professional" → ✅ "Maintain a formal tone suitable for B2B enterprise clients"
->   
->   **Quick win:** Browse our [Prompt Templates](/chatbot/ai-agent-management/prompt-templates) for industry-specific examples you can customize in minutes.
+<Callout type="tip" title="Pro Tip: Define Your Brand Voice">
+  Your agent's persona is its personality—make it memorable! Instead of generic instructions, be specific:
+  
+  - ❌ "Be friendly" → ✅ "Use a warm, conversational tone like a helpful colleague"
+  - ❌ "Be professional" → ✅ "Maintain a formal tone suitable for B2B enterprise clients"
+  
+  **Quick win:** Browse our [Prompt Templates](/chatbot/ai-agent-management/prompt-templates) for industry-specific examples you can customize in minutes.
+</Callout>
 
 ### Example: Support Agent Instructions
 
 You can copy and adapt this example for your own agent. Update the bracketed information to fit your business.
 
-  <details>
-<summary>View Sample Instructions</summary>
-
-```
+<AccordionGroup>
+  <Accordion title="View Sample Instructions">
+    ```
     You are AI Customer Support Assistant for Acme. Your role is to help users with Acme-related questions, troubleshoot issues, and guide them in a clear, friendly, and professional way — always aiming to feel like a top-tier human support agent.  
 
     **Guidelines**  
@@ -64,13 +67,10 @@ You can copy and adapt this example for your own agent. Update the bracketed inf
     **Goal**  
     Provide accurate, empathetic, and well-formatted support that makes every Acme user feel heard and helped like from a customer support agent.
     ```
-</details>
-
+  </Accordion>
   
-  <details>
-<summary>View Restrictions (Guardrails)</summary>
-
-```
+  <Accordion title="View Restrictions (Guardrails)">
+    ```
     - Communicate in a warm, empathetic, conversational tone  
     - Keep answers concise (under 30 words) by default; expand only if the user asks or when needed for clarity  
     - Never guess; if information is missing, politely ask for details (e.g., error message, steps taken, screenshot)  
@@ -80,7 +80,8 @@ You can copy and adapt this example for your own agent. Update the bracketed inf
     - Share relevant links in Markdown only when directly useful or requested  
     - Use clear Markdown formatting for lists and links
     ```
-</details>
+  </Accordion>
+</AccordionGroup>
 
 For more details, visit the [Agent Persona](/chatbot/ai-agent-management/agent-persona) guide. You can also explore [Prompt Templates](/chatbot/ai-agent-management/prompt-templates) for industry-specific examples and best practices.
 
@@ -88,14 +89,16 @@ For more details, visit the [Agent Persona](/chatbot/ai-agent-management/agent-p
 
 The quality of your AI agent's responses is directly tied to the clarity of your data sources. While YourGPT uses advanced scraping technology, well-structured content always yields better results. Learn more about all available [Training Sources](/chatbot/training/sources) and how to add them effectively.
 
-> **INFO:** **Problem:** Complex layouts, popups, or JavaScript-heavy sites can prevent proper content extraction.
->   
->   **Solution:** Upload your content directly as:
->   - **PDF files** - Preserves formatting and structure
->   - **Plain Text** - Best for simple, text-heavy content
->   - **Documents** - Supports DOC, DOCX, and more formats
->   
->   **Pro tip:** For dynamic content, consider using [Website Links](/chatbot/training/sources/website-links) with specific page URLs rather than broad site scraping. Learn more in our [Training Guide](/chatbot/training/guide).
+<Callout type="info" title="🔍 Website Scraping Challenges?">
+  **Problem:** Complex layouts, popups, or JavaScript-heavy sites can prevent proper content extraction.
+  
+  **Solution:** Upload your content directly as:
+  - **PDF files** - Preserves formatting and structure
+  - **Plain Text** - Best for simple, text-heavy content
+  - **Documents** - Supports DOC, DOCX, and more formats
+  
+  **Pro tip:** For dynamic content, consider using [Website Links](/chatbot/training/sources/website-links) with specific page URLs rather than broad site scraping. Learn more in our [Training Guide](/chatbot/training/guide).
+</Callout>
 
 ### Advanced Training for URLs
 
@@ -111,24 +114,23 @@ Choosing what information to extract is just as important as defining the action
 
 For sites that change over time, set a retraining period to keep your data current—this way, YourGPT will revisit and update the content automatically as the site evolves. If a website is fairly static, you can enable "Skip Retraining" so it won’t be revisited. Finally, for better organization and future analysis, add descriptive tags to your sources. Tags let you categorize and quickly filter URLs for analytics and management as your collection of training sources expands.
 
-> **TIP:** - Prefer stable selectors (`data-*` or semantic tags) over auto-generated class names.  
->   - Start with minimal steps; add extra clicks only when required to reveal content.  
->   - If a page still fails to load, upload a PDF or text export instead of over-complicating the crawl.
+<Callout type="tip" title="Selector & timing tips">
+  - Prefer stable selectors (`data-*` or semantic tags) over auto-generated class names.  
+  - Start with minimal steps; add extra clicks only when required to reveal content.  
+  - If a page still fails to load, upload a PDF or text export instead of over-complicating the crawl.
+</Callout>
 
 ### Readability Comparison
 
 Compare these examples to understand the difference between poorly and well-structured training data:
 
-  <details>
-<summary>❌ Poorly Structured Data</summary>
+<AccordionGroup>
+  <Accordion title="❌ Poorly Structured Data">
+    Our product pricing varies. Sometimes we have discounts but not always. Shipping takes a while, maybe a week or two. We accept returns but there are conditions. Contact us if you have questions about anything.
+  </Accordion>
 
-Our product pricing varies. Sometimes we have discounts but not always. Shipping takes a while, maybe a week or two. We accept returns but there are conditions. Contact us if you have questions about anything.
-</details>
-
-  <details>
-<summary>✅ Well-Structured Data</summary>
-
-**Product:** Premium Widget Pro  
+  <Accordion title="✅ Well-Structured Data">
+    **Product:** Premium Widget Pro  
     
     **Pricing:**
     - Standard Price: $99.99
@@ -150,27 +152,34 @@ Our product pricing varies. Sometimes we have discounts but not always. Shipping
     - Email: support@example.com
     - Phone: 1-800-EXAMPLE
     - Live Chat: Available Monday-Friday, 9 AM - 6 PM EST
-</details>
+  </Accordion>
+</AccordionGroup>
 
-> **NOTE:** YourGPT can process images *only* with OCR training, and image content inside PDFs is **not** supported. For tables, using Markdown table format is preferred for the best understanding.
-> 
->   - **Images:** If you want the AI to understand information from images, ensure they are used in OCR training sources—not embedded inside PDFs.
->   - **Tables:** Whenever possible, provide tables as Markdown tables instead of table as screenshots or images. Markdown tables are structured for the best AI comprehension.
->   - **Charts:** Summarize key information from charts or graphs as bullet points or text descriptions; chart images themselves can't be interpreted unless OCR is used.
->   
->   For more tips on preparing your training data, see the [Training Best Practices](/chatbot/training/best-practices) guide.
+<Callout type="note" title="📄 Text-Based Processing">
+  
+YourGPT can process images *only* with OCR training, and image content inside PDFs is **not** supported. For tables, using Markdown table format is preferred for the best understanding.
+
+  - **Images:** If you want the AI to understand information from images, ensure they are used in OCR training sources—not embedded inside PDFs.
+  - **Tables:** Whenever possible, provide tables as Markdown tables instead of table as screenshots or images. Markdown tables are structured for the best AI comprehension.
+  - **Charts:** Summarize key information from charts or graphs as bullet points or text descriptions; chart images themselves can't be interpreted unless OCR is used.
+  
+  For more tips on preparing your training data, see the [Training Best Practices](/chatbot/training/best-practices) guide.
+
+</Callout>
 
 ## Helping Your AI Agent Share Useful Links
 
 Enabling your AI agent to recommend and share relevant links (like pricing pages, support forms, or documentation) requires that you **explicitly include those URLs in your knowledge base or training data**. This is crucial, especially if you're using [Website Links](/chatbot/training/sources/website-links): the AI can read the text of a page but does **not** inherently know the URL.
 
-> **WARNING:** Your AI won't "see" page addresses on its own. To make sure it can offer users helpful links, add the actual URLs into your training data—just like this:
->   ```
->   Pricing: https://yoursite.com/pricing
->   Support: https://yoursite.com/contact
->   Docs: https://yoursite.com/docs
->   ```
->   This ensures your chatbot can confidently share direct links where needed.
+<Callout type="warning" title=" Always Provide URLs Directly">
+  Your AI won't "see" page addresses on its own. To make sure it can offer users helpful links, add the actual URLs into your training data—just like this:
+  ```
+  Pricing: https://yoursite.com/pricing
+  Support: https://yoursite.com/contact
+  Docs: https://yoursite.com/docs
+  ```
+  This ensures your chatbot can confidently share direct links where needed.
+</Callout>
 
 ### Steps to Enable Effective Link Sharing
 
@@ -190,13 +199,16 @@ Enabling your AI agent to recommend and share relevant links (like pricing pages
 
 You can enable your AI agent to send images by including specific instructions in your [Agent Persona](/chatbot/ai-agent-management/agent-persona) or providing image URLs in your training data using standard Markdown format: `![alt text](image-url)`. This works across all [Chatbot Widget](/chatbot/chatbot-widget) integrations.
 
-> **TIP:** **Supported formats:** `.png`, `.jpg`, `.jpeg` (case-insensitive)
->   
->   **Best practices:**
->   - Use direct image URLs (not shortened links)
->   - Ensure images are publicly accessible
->   - Optimize file sizes for faster loading
->   - Include descriptive alt text: `![Product Screenshot](https://example.com/image.jpg)`
+<Callout type="tip" title="🖼️ Image Best Practices">
+  **Supported formats:** `.png`, `.jpg`, `.jpeg` (case-insensitive)
+  
+  **Best practices:**
+  - Use direct image URLs (not shortened links)
+  - Ensure images are publicly accessible
+  - Optimize file sizes for faster loading
+  - Include descriptive alt text: `![Product Screenshot](https://example.com/image.jpg)`
+  
+</Callout>
 
 ```markdown
 "When a user asks about our team, show this image: ![Our Team](https://example.com/team-photo.jpg)"
@@ -220,7 +232,9 @@ See the [AI Models comparison](/chatbot/other/ai-and-usage/ai-models) page for d
 
 Don't forget to monitor your conversation logs in the **Activity** tab. If you see a response that could be improved, use the **Revise** button. This adds the correction directly to your Q&A training data, ensuring the AI learns from its mistakes.
 
-> **INFO:** Use [Session Logs](/chatbot/debugging/conversation-logs/session-logs) and [Training Audit](/chatbot/debugging/conversation-logs/training-audit) to track performance.
+<Callout type="info" title="Monitor & Optimize">
+  Use [Session Logs](/chatbot/debugging/conversation-logs/session-logs) and [Training Audit](/chatbot/debugging/conversation-logs/training-audit) to track performance.
+</Callout>
 
 ### Use Smart Learning
 
@@ -236,41 +250,49 @@ Enable this feature to let your AI agent improve automatically over time based o
 
 [Functions](/chatbot/ai-agent-management/functions) extend your AI agent's capabilities beyond knowledge base responses. They enable your agent to autonoumously perform dynamic, real-time operations.
 
-  ### Web Search
-
-Fetch the latest news, weather updates, stock prices, and current events from the web.
-
-  ### API Integration
-
-Call external APIs to fetch dynamic data from your CRM, databases, or third-party services.
-
-  ### Custom Code
-
-Execute custom JavaScript or Python code for complex calculations and data processing.
-
-  ### MCP Servers
-
-Integrate with Model Context Protocol servers for sophisticated automation workflows.
+<Cards>
+  <Card title="Web Search" description="Real-time information">
+    Fetch the latest news, weather updates, stock prices, and current events from the web.
+  </Card>
+  <Card title="API Integration" description="Connect external services">
+    Call external APIs to fetch dynamic data from your CRM, databases, or third-party services.
+  </Card>
+  <Card title="Custom Code" description="Business logic">
+    Execute custom JavaScript or Python code for complex calculations and data processing.
+  </Card>
+  <Card title="MCP Servers" description="Advanced workflows">
+    Integrate with Model Context Protocol servers for sophisticated automation workflows.
+  </Card>
+</Cards>
 
 ### Getting Started with Functions
 
-  1. **Navigate to Automation** > **Functions** in your YourGPT dashboard.
-
-  2. **Choose a function type**:
+<Steps>
+  <Step>
+    **Navigate to Automation** > **Functions** in your YourGPT dashboard.
+  </Step>
+  <Step>
+    **Choose a function type**:
     - **System Functions**: Pre-built functions like Web Search, Get Current Datetime
     - **Code Functions**: Custom JavaScript or Python code
     - **API Functions**: Connect to external REST APIs
     - **MCP Servers**: Model Context Protocol integrations
+  </Step>
+  <Step>
+    **Configure your function** with the necessary parameters and settings.
+  </Step>
+  <Step>
+    **Guide function usage** in your [Agent Persona](/chatbot/ai-agent-management/agent-persona) instructions to tell the AI when to use each function.
+  </Step>
+</Steps>
 
-  3. **Configure your function** with the necessary parameters and settings.
-
-  4. **Guide function usage** in your [Agent Persona](/chatbot/ai-agent-management/agent-persona) instructions to tell the AI when to use each function.
-
-> **INFO:** **Use functions for:** Real-time data (weather, stocks), external APIs (CRM, databases), custom calculations, dynamic content (inventory, availability).
->   
->   **Avoid for:** Static info in knowledge base, simple lookups, content that rarely changes.
->   
->   **Note:** Functions consume additional credits—use strategically for truly dynamic needs.
+<Callout type="info" title="⚙️ When Functions Make Sense">
+  **Use functions for:** Real-time data (weather, stocks), external APIs (CRM, databases), custom calculations, dynamic content (inventory, availability).
+  
+  **Avoid for:** Static info in knowledge base, simple lookups, content that rarely changes.
+  
+  **Note:** Functions consume additional credits—use strategically for truly dynamic needs.
+</Callout>
 
 ## Use Automated Responses for Common Queries
 
@@ -286,15 +308,19 @@ To set up Automated Responses:
 - **(Optional) Set escalation triggers** for phrases such as "talk to human" or "connect agent" to involve live support when needed.
 - **Test your automated responses** to confirm they're triggering as intended and delivering clear, instant answers.
 
-> **TIP:** **80/20 rule:** 80% of queries come from 20% of questions. Add your top 10-20 common queries to [Automated Responses](/chatbot/training/automated-responses) to reduce AI costs by 30-50%.
->   
->   **Quick win:** Review [Session Logs](/chatbot/debugging/conversation-logs/session-logs) weekly to identify new patterns and add them monthly.
+<Callout type="tip" title="💰 Cost Optimization Strategy">
+  **80/20 rule:** 80% of queries come from 20% of questions. Add your top 10-20 common queries to [Automated Responses](/chatbot/training/automated-responses) to reduce AI costs by 30-50%.
+  
+  **Quick win:** Review [Session Logs](/chatbot/debugging/conversation-logs/session-logs) weekly to identify new patterns and add them monthly.
+</Callout>
 
 ## Test and Iterate
 
 Before deploying your chatbot, thoroughly test it using the [Testing Guide](/chatbot/getting-started/test-ai-agent). Share test links with your team and gather feedback. Use the [Debug Lab](/chatbot/debugging/introduction) to troubleshoot any issues.
 
-> **TIP:** Test with Common questions, multi-turn conversations, edge cases, function calls or Studio workflows (if enabled), error handling, and mobile compatibility.
+<Callout type="tip" title="✅ Pre-Launch Testing Checklist">
+  Test with Common questions, multi-turn conversations, edge cases, function calls or Studio workflows (if enabled), error handling, and mobile compatibility.
+</Callout>
 
 ### Testing Workflow
 
@@ -307,28 +333,32 @@ Before deploying your chatbot, thoroughly test it using the [Testing Guide](/cha
 
 ---
 
-> **SUCCESS:** **Congratulations!** By following these best practices, you've:
->   
->   ✅ Configured a persona that aligns with your brand  
->   ✅ Optimized your training data for better responses  
->   ✅ Selected the right AI model for your use case  
->   ✅ Set up monitoring and improvement workflows  
->   ✅ Implemented cost-saving strategies
->   
->   **Next steps:**
->   - 📚 Deep dive: [Training Guide](/chatbot/training/guide) for advanced techniques
->   - 🐛 Troubleshoot: [Debugging Documentation](/chatbot/debugging/introduction) for common issues
->   - 🚀 Deploy: [Widget Installation](/chatbot/chatbot-widget/installation) to go live
->   
->   **Remember:** Your chatbot improves over time. Regular monitoring and iteration are key to long-term success!
+<Callout type="success" title="🎉 You're Ready to Launch!">
+  **Congratulations!** By following these best practices, you've:
+  
+  ✅ Configured a persona that aligns with your brand  
+  ✅ Optimized your training data for better responses  
+  ✅ Selected the right AI model for your use case  
+  ✅ Set up monitoring and improvement workflows  
+  ✅ Implemented cost-saving strategies
+  
+  **Next steps:**
+  - 📚 Deep dive: [Training Guide](/chatbot/training/guide) for advanced techniques
+  - 🐛 Troubleshoot: [Debugging Documentation](/chatbot/debugging/introduction) for common issues
+  - 🚀 Deploy: [Widget Installation](/chatbot/chatbot-widget/installation) to go live
+  
+  **Remember:** Your chatbot improves over time. Regular monitoring and iteration are key to long-term success!
+</Callout>
 
 ## Next Steps
 
 Now that you've optimized your AI agent, consider:
 
-  
-  
-  
-  
+<Cards>
+  <Card title="Deploy Your Chatbot" href="/chatbot/chatbot-widget/installation" description="Integrate your chatbot on your website or platform" />
+  <Card title="Customize Appearance" href="/chatbot/chatbot-widget/appearance/customization" description="Match your chatbot's look to your brand" />
+  <Card title="Set Up Integrations" href="/chatbot/integrations" description="Connect to social platforms, messaging apps, and more" />
+  <Card title="Explore AI Studio" href="/chatbot/studio/elements" description="Build advanced conversational flows" />
+</Cards>
 
 If you need a deeper dive, start with the [full Training Guide](/chatbot/training/guide) and the [Agent Management guide](/chatbot/ai-agent-management/agent-persona) to keep improving your agent after launch.

@@ -47,7 +47,9 @@ The Capture Listener allows you to:
 - **Time-sensitive interactions:** Schedule appointments, set reminders, or provide time-specific information.
 - **Store Responses:** Save captured responses in designated path for future reference or processing.
 
-> **NOTE:** Learn more in detailed about [Capture on our Help center article](https://help.yourgpt.ai/article/how-to-capture-and-store-a-users-response-32).
+<Callout title="Note" type="note">
+  Learn more in detailed about [Capture on our Help center article](https://help.yourgpt.ai/article/how-to-capture-and-store-a-users-response-32).
+</Callout>
 
 ---
 
@@ -63,7 +65,9 @@ The Button Listener allows the chatbot to provide interactive features in the fo
 - **Actionable Choices:** Allows users to trigger specific actions or responses by clicking on the provided buttons.
 - **Customization:** Offers flexibility in designing button layouts and defining corresponding actions or responses.
 
-> **NOTE:** Learn more in detailed about [Buttons on Help center article  ](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
+<Callout title="Note" type="note">
+  Learn more in detailed about [Buttons on Help center article  ](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
+</Callout>
 
 ---
 
@@ -92,7 +96,9 @@ The Form Listener is a versatile component that captures user inputs through for
 - **Data Collection:** Capture user inputs in a structured format for processing and analysis.
 - **Customized Forms:** Design custom forms with specific field types to collect relevant information.
 
-> **NOTE:** To learn more about Form Listeners, refer to the [Form Listeners Documentation](https://chatbot-help.aidesk.center/article/how-to-create-and-use-forms-in-ai-studio-1177).
+<Callout title="Note" type="note">
+  To learn more about Form Listeners, refer to the [Form Listeners Documentation](https://chatbot-help.aidesk.center/article/how-to-create-and-use-forms-in-ai-studio-1177).
+</Callout>
 
 ## 4. Feedback
 
@@ -107,4 +113,6 @@ The Feedback Listener is designed to capture user satisfaction scores, typically
 - **Trigger Points:** Can be set to appear after specific interactions or at the end of conversations.
 - **Data Analysis:** Collected feedback can be used for performance metrics and improvement strategies.
 
-> **NOTE:** For more information on implementing CSAT surveys, visit our [Feedback Listener Guide](https://help.yourgpt.ai/article/how-to-implement-csat-surveys-using-feedback-listeners-1568).
+<Callout title="Note" type="note">
+  For more information on implementing CSAT surveys, visit our [Feedback Listener Guide](https://help.yourgpt.ai/article/how-to-implement-csat-surveys-using-feedback-listeners-1568).
+</Callout>

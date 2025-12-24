@@ -2,6 +2,8 @@
 
 > Connect YourGPT Chatbot through viaSocket to automate across your apps.
 
+<Callout title="viaSocket is a powerful workflow automation platform that allows you to connect YourGPT with hundreds of other applications without coding." type="tip" />
+
 To integrate YourGPT with viaSocket, you need to generate an API key for YourGPT and establish a connection between YourGPT and viaSocket.
 
 Make sure you have:
@@ -64,3 +66,5 @@ Make sure you have:
 </li>
 
 </ol>
+
+<Callout title="Once your connection is established, you can immediately use the YourGPT app inside your viaSocket flows." type="tip"/>

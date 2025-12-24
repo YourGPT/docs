@@ -12,7 +12,9 @@ With AI Copilot, your chatbot can:
 - **Integrate with external services** — connect to APIs, payment processors, CRMs, and more
 - **Gather real-time information** — search the web, fetch live data, and verify sources
 
-> **WARNING:** AI Copilot features are only available when **Agent Mode** is enabled in your YourGPT Dashboard. Make sure to enable Agent Mode before using these capabilities.
+<Callout type="warning" title="Agent Mode Required">
+AI Copilot features are only available when **Agent Mode** is enabled in your YourGPT Dashboard. Make sure to enable Agent Mode before using these capabilities.
+</Callout>
 
 AI Copilot is powered by the [@yourgpt/widget-web-sdk](https://www.npmjs.com/package/@yourgpt/widget-web-sdk) package, which provides programmatic control over your chatbot's advanced capabilities.
 
@@ -123,17 +125,18 @@ See how developers are using AI Copilot to build intelligent, action-taking expe
 </div>
 
 <div className="my-6 grid gap-6 md:grid-cols-2">
-  ### Instant Product Discovery
+  <Card title="Instant Product Discovery">
+    Help customers find exactly what they're looking for through natural conversation. The AI understands product queries and guides users to the right items instantly.
+  </Card>
 
-Help customers find exactly what they're looking for through natural conversation. The AI understands product queries and guides users to the right items instantly.
-
-  ### Streamlined Checkout
-
-Reduce cart abandonment by enabling customers to complete purchases in one conversational flow—no more multi-step checkout forms.
-
+  <Card title="Streamlined Checkout">
+    Reduce cart abandonment by enabling customers to complete purchases in one conversational flow—no more multi-step checkout forms.
+  </Card>
 </div>
 
-> **INFO:** See the complete implementation in our [Shopify Copilot Example](https://github.com/YourGPT/web-sdk/tree/main/examples/shopify-copilot).
+<Callout type="info" title="View Example">
+  See the complete implementation in our [Shopify Copilot Example](https://github.com/YourGPT/web-sdk/tree/main/examples/shopify-copilot).
+</Callout>
 
 ### 2. Travel & Booking Copilot
 
@@ -149,17 +152,18 @@ Reduce cart abandonment by enabling customers to complete purchases in one conve
 </div>
 
 <div className="my-6 grid gap-6 md:grid-cols-2">
-  ### Conversational Search
+  <Card title="Conversational Search">
+    Let users search for accommodations using natural language like "find a budget hotel in Bali" and get personalized recommendations instantly.
+  </Card>
 
-Let users search for accommodations using natural language like "find a budget hotel in Bali" and get personalized recommendations instantly.
-
-  ### One-Step Booking
-
-Complete the entire booking process through conversation—from search to confirmation—without navigating complex booking forms.
-
+  <Card title="One-Step Booking">
+    Complete the entire booking process through conversation—from search to confirmation—without navigating complex booking forms.
+  </Card>
 </div>
 
-> **INFO:** See the complete implementation in our [Travel Copilot Example](https://github.com/YourGPT/web-sdk/tree/main/examples/travel-copilot).
+<Callout type="info" title="View Example">
+  See the complete implementation in our [Travel Copilot Example](https://github.com/YourGPT/web-sdk/tree/main/examples/travel-copilot).
+</Callout>
 
 ### 3. Productivity Copilot
 
@@ -173,17 +177,18 @@ Complete the entire booking process through conversation—from search to confir
 </div>
 
 <div className="my-6 grid gap-6 md:grid-cols-2">
-  ### AI-Powered Task Management
+  <Card title="AI-Powered Task Management">
+    Enable users to manage tasks through simple commands like "Add a task" or "Mark task as complete" with instant UI updates.
+  </Card>
 
-Enable users to manage tasks through simple commands like "Add a task" or "Mark task as complete" with instant UI updates.
-
-  ### Dynamic UI Customization
-
-Let users customize their experience through AI commands—change themes, adjust settings, or toggle features without clicking through menus.
-
+  <Card title="Dynamic UI Customization">
+    Let users customize their experience through AI commands—change themes, adjust settings, or toggle features without clicking through menus.
+  </Card>
 </div>
 
-> **INFO:** See the complete implementation in our [Todo List Copilot Example](https://github.com/YourGPT/web-sdk/tree/main/examples/copilot-todo-list-next-js).
+<Callout type="info" title="View Example">
+  See the complete implementation in our [Todo List Copilot Example](https://github.com/YourGPT/web-sdk/tree/main/examples/copilot-todo-list-next-js).
+</Callout>
 
 ### 4. Website Navigation Copilot
 
@@ -197,17 +202,18 @@ Let users customize their experience through AI commands—change themes, adjust
 </div>
 
 <div className="my-6 grid gap-6 md:grid-cols-2">
-  ### Instant Answers
+  <Card title="Instant Answers">
+    Provide immediate answers to common questions like "What are your pricing plans?" or "How does this feature work?" without users having to search.
+  </Card>
 
-Provide immediate answers to common questions like "What are your pricing plans?" or "How does this feature work?" without users having to search.
-
-  ### Smart Redirection
-
-Intelligently guide users to relevant sections—when they ask "Show me the documentation," the AI takes them directly to the right page.
-
+  <Card title="Smart Redirection">
+    Intelligently guide users to relevant sections—when they ask "Show me the documentation," the AI takes them directly to the right page.
+  </Card>
 </div>
 
-> **INFO:** Explore [more examples](https://github.com/YourGPT/web-sdk/tree/main/examples) in our GitHub repository.
+<Callout type="info" title="View Example">
+  Explore [more examples](https://github.com/YourGPT/web-sdk/tree/main/examples) in our GitHub repository.
+</Callout>
 
 ## Resources
 
@@ -218,4 +224,6 @@ To start building with AI Copilot, explore these resources:
 - **[Web SDK Documentation](/chatbot/developer-guide/web-sdks/npm-package)** — Complete guide to using the Web SDK
 - **[Discord Community](https://discord.com/invite/57C9uTkD6g)** — Get help, share examples, and connect with other developers
 
-> **NOTE:** For installation and setup instructions, see the [Web SDK Installation Guide](/chatbot/developer-guide/web-sdks/npm-package). This guide focuses on what you can build—check the installation docs when you're ready to implement.
+<Callout type="note" title="Ready to Get Started?">
+For installation and setup instructions, see the [Web SDK Installation Guide](/chatbot/developer-guide/web-sdks/npm-package). This guide focuses on what you can build—check the installation docs when you're ready to implement.
+</Callout>

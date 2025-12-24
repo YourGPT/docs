@@ -2,7 +2,9 @@
 
 > Everything you need to know to customise your AI Agent Behavior and responses
 
-> **TIP:** Customizing your AI agent's behavior is primarily achieved through two key settings: the **Agent Prompt** (Bot Persona) and the selection of the **AI Model**. These configurations directly influence your chatbot's personality, tone, response quality, and overall intelligence.
+<Callout type="tip" title="Mastering Your AI Agent's Behavior">
+Customizing your AI agent's behavior is primarily achieved through two key settings: the **Agent Prompt** (Bot Persona) and the selection of the **AI Model**. These configurations directly influence your chatbot's personality, tone, response quality, and overall intelligence.
+</Callout>
 
 To customise the behavior and responses of your AI, follow the steps below:
 

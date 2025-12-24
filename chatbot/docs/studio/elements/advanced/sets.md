@@ -14,30 +14,31 @@ To use Sets, follow these steps:
 
 3. Select the variable you want to set from the dropdown. You can choose from a variety of options, including:
 
-### Flow
+<Cards>
 
-- `FLOW.last_response`
+<Card title="Flow">
+    - `FLOW.last_response`
     - `FLOW.last_utterance`
     - `FLOW.variable_of_your_choice`
+</Card>
 
-### Session
-
-- `SESSION.status`
+<Card title="Session">
+    - `SESSION.status`
     - `SESSION.chat_mode`
     - `SESSION.state`
+</Card>
 
-### Visitor
-
-- `VISITOR.name`
+<Card title="Visitor">
+    - `VISITOR.name`
     - `VISITOR.region`
     - `VISITOR.language`
     - `VISITOR.browser`
     - `VISITOR.os`
     - `VISITOR.status`
+</Card>
 
-### Contact
-
-- `CONTACT.name`
+<Card title="Contact">
+  - `CONTACT.name`
   - `CONTACT.email`
   - `CONTACT.phone`
   - `CONTACT.company`
@@ -45,5 +46,8 @@ To use Sets, follow these steps:
   - `CONTACT.city`
   - `CONTACT.region`
   - `CONTACT.tags`
+</Card>
+
+</Cards>
 
 4. Enter the value you want to set for the selected variable.

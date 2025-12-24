@@ -6,46 +6,68 @@
 
 The **Others** tab groups additional training sources beyond Links, Documents, and FAQs—like OCR (images), self-learning from unresolved queries, website-to-FAQ generation, and imports from popular knowledge tools.
 
-  1. Go to the **Training** section in your YourGPT dashboard.
-
-  2. Click **Add New**, then open the **Others** tab.
+<Steps>
+  <Step>
+    Go to the **Training** section in your YourGPT dashboard.
+  </Step>
+  <Step>
+    Click **Add New**, then open the **Others** tab.
     ![Other Training Sources](/assets/chatbot/training/image-27.png)
+  </Step>
+</Steps>
 
 ## Available Sources
 
 <div className="my-6 grid gap-6 md:grid-cols-2">
-  ### Self-learning
+  <Card
+    title="Self-learning"
+    href="https://help.yourgpt.ai/article/how-to-train-chatbots-using-unresolved-queries-61"
+  >
+    Train using unresolved user queries (review queries before training).
+  </Card>
 
-Train using unresolved user queries (review queries before training).
+  <Card title="OCR Training">
+    Train your chatbot using <strong>images</strong> (extracts text via OCR).
+  </Card>
 
-  ### OCR Training
+  <Card title="Website to FAQs">
+    Generate FAQs from your website and use them for training.
+  </Card>
 
-Train your chatbot using <strong>images</strong> (extracts text via OCR).
+  <Card
+    title="Google Drive"
+    href="https://help.yourgpt.ai/article/how-to-training-chatbot-with-google-docs-63"
+  >
+    Import files directly from your cloud storage.
+  </Card>
 
-  ### Website to FAQs
+  <Card
+    title="OneDrive"
+    href="https://help.yourgpt.ai/article/how-to-train-ai-from-onedrive-files-2413"
+    >
+    Import files directly from your cloud storage.
+  </Card>
 
-Generate FAQs from your website and use them for training.
+  <Card
+    title="Dropbox"
+    href="https://help.yourgpt.ai/article/how-to-train-chatbot-with-dropbox-documents-64"
+  >
+    Import files directly from your cloud storage.
+  </Card>
 
-  ### Google Drive
+  <Card
+    title="Notion"
+    href="https://help.yourgpt.ai/article/how-train-chatbot-with-notion-documents-60"
+  >
+    Import docs from your Notion workspace.
+  </Card>
 
-Import files directly from your cloud storage.
-
-  ### OneDrive
-
-Import files directly from your cloud storage.
-
-  ### Dropbox
-
-Import files directly from your cloud storage.
-
-  ### Notion
-
-Import docs from your Notion workspace.
-
-  ### Confluence
-
-Import pages and spaces from your Confluence workspace.
-
+  <Card
+    title="Confluence"
+    href="https://help.yourgpt.ai/article/how-to-import-confluence-docs-into-yourgpt-1919"
+  >
+    Import pages and spaces from your Confluence workspace.
+  </Card>
 </div>
 
 ## Train on Previous Conversations
@@ -53,44 +75,55 @@ Import pages and spaces from your Confluence workspace.
 You can also train using historical conversations from connected channels:
 
 <div className="my-6 grid gap-6 md:grid-cols-2">
-  ### Chatbot
+  <Card title="Chatbot">
+    Train from prior chatbot conversations.
+  </Card>
 
-Train from prior chatbot conversations.
+  <Card title="Crisp">
+    Train your chatbot based on your prior Crisp conversation.
+  </Card>
 
-  ### Crisp
+  <Card title="Intercom">
+    Train your chatbot based on your prior Intercom conversation.
+  </Card>
 
-Train your chatbot based on your prior Crisp conversation.
+  <Card title="Discord">
+    Train your chatbot based on your prior Discord conversation.
+  </Card>
 
-  ### Intercom
+  <Card title="Slack">
+    Train your chatbot based on your prior Slack conversation (may require enabling the integration).
+  </Card>
 
-Train your chatbot based on your prior Intercom conversation.
+  <Card
+    title="Zendesk"
+    href="https://help.yourgpt.ai/article/import-and-train-ai-model-with-zendesk-data-3855"
+  >
+    Train your chatbot based on your prior Zendesk tickets.
+  </Card>
 
-  ### Discord
+  <Card
+    title="Freshdesk"
+    href="https://help.yourgpt.ai/article/train-ai-agent-with-freshdesk-support-data-3857"
+  >
+    Train your chatbot based on your prior Freshdesk tickets.
+  </Card>
 
-Train your chatbot based on your prior Discord conversation.
+  <Card
+    title="Zoho"
+    href="https://help.yourgpt.ai/article/train-your-ai-agent-with-zoho-desk-data-3856"
+  >
+    Train your chatbot based on your prior Zoho tickets.
+  </Card>
 
-  ### Slack
+  <Card
+    title="Gmail"
+    href="https://help.yourgpt.ai/article/train-your-ai-agent-with-gmail-data-3914"
+  >
+    Train your chatbot based on your Gmail emails.
+  </Card>
 
-Train your chatbot based on your prior Slack conversation (may require enabling the integration).
-
-  ### Zendesk
-
-Train your chatbot based on your prior Zendesk tickets.
-
-  ### Freshdesk
-
-Train your chatbot based on your prior Freshdesk tickets.
-
-  ### Zoho
-
-Train your chatbot based on your prior Zoho tickets.
-
-  ### Gmail
-
-Train your chatbot based on your Gmail emails.
-
-  ### Outlook
-
-Train your chatbot based on your Outlook emails.
-
+  <Card title="Outlook">
+    Train your chatbot based on your Outlook emails.
+  </Card>
 </div>

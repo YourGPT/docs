@@ -127,4 +127,6 @@ To get the most out of the Validate Node, consider these best practices when imp
 
 ---
 
-> **INFO:** The Validate Node is essential for maintaining data quality and providing a smooth user experience in your chatbot flows. Use it strategically to catch input errors early and guide users toward successful interactions.
+<Callout title="Note" type="info">
+The Validate Node is essential for maintaining data quality and providing a smooth user experience in your chatbot flows. Use it strategically to catch input errors early and guide users toward successful interactions.
+</Callout>

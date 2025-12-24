@@ -60,12 +60,18 @@ For example, if a user asks, "What's the weather like today?", the chatbot shoul
 
 ### Do's and Don'ts
 
-> **TIP:** - **```Do```** write clear and concise descriptions.
->   - **```Do```** properly describe the scope of the intent.
+<Callout title="Idea" type="tip">
+  - **```Do```** write clear and concise descriptions.
+  - **```Do```** properly describe the scope of the intent.
+</Callout>
 
-> **WARNING:** - **```Don't```** Write long and complex descriptions.
->   - **```Don't```** create intents that overlap or conflict with each other.
+<Callout title="Caution" type="warning">
+  - **```Don't```** Write long and complex descriptions.
+  - **```Don't```** create intents that overlap or conflict with each other.
+</Callout>
 
 ---
 
-> **INFO:** In the restrictions setting `only answer from knowledge base` will prevent function calls, which may result in the intent not being detected. Make sure to change the restrictions to `"... answer from knowledge base & function calling..."`.
+<Callout title="Note" type="info">
+  In the restrictions setting `only answer from knowledge base` will prevent function calls, which may result in the intent not being detected. Make sure to change the restrictions to `"... answer from knowledge base & function calling..."`.
+</Callout>

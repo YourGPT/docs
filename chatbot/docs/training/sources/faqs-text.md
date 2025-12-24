@@ -6,44 +6,70 @@
 
 To train chatbot with FAQ manually, follow these steps:
 
-  1. Go to **Training**, then click on **FAQ**
-
-  2. Add a Question and Answer to your FAQ or you can generate it using AI
+<Steps>
+  <Step>
+    Go to **Training**, then click on **FAQ**
+  </Step>
+  <Step>
+    Add a Question and Answer to your FAQ or you can generate it using AI
     ![Add FAQ](/assets/chatbot/training/image-17.png)
-
-  3. Click on **Add New**
+  </Step>
+  <Step>
+    Click on **Add New**
     ![Add New](/assets/chatbot/training/image-18.png)
+  </Step>
+</Steps>
 
 ## Bulk Import FAQs
 
 To train chatbot with multiple FAQs, follow these steps:
 
-  1. Go to the **FAQ** in the training section
-
-  2. Click on **Import**
-
-  3. Add your JSON file, which consists of all your FAQs
+<Steps>
+  <Step>
+    Go to the **FAQ** in the training section
+  </Step>
+  <Step>
+    Click on **Import**
+  </Step>
+  <Step>
+    Add your JSON file, which consists of all your FAQs
+  </Step>
+</Steps>
 
 ## Export FAQs
 
 To export your FAQs, follow these steps:
 
-  1. Go to **Training**, then click on **FAQs**
-
-  2. Click on **Export** button
+<Steps>
+  <Step>
+    Go to **Training**, then click on **FAQs**
+  </Step>
+  <Step>
+    Click on **Export** button
+  </Step>
+</Steps>
 
 ## Training on Text
 
 You can train your chatbot with raw text content. This allows you to add any text-based information directly to your training dataset.
 
-  1. Go to **Training**, then click on **Text** tab
-
-  2. Enter your text in the text input area (or paste content)
+<Steps>
+  <Step>
+    Go to **Training**, then click on **Text** tab
+  </Step>
+  <Step>
+    Enter your text in the text input area (or paste content)
     ![Text Input](/assets/chatbot/training/image-19.png)
-
-  3. (Optional) Configure **Extra Settings** if needed
-
-  4. Click **Start Training** button
+  </Step>
+  <Step>
+    (Optional) Configure **Extra Settings** if needed
+  </Step>
+  <Step>
+    Click **Start Training** button
     ![Start Training](/assets/chatbot/training/image-20.png)
+  </Step>
+</Steps>
 
-> **INFO:** For detailed step-by-step instructions, visit our help article on [How to Training Chatbot with FAQs](https://help.yourgpt.ai/article/how-to-training-chatbot-with-faqs-59).
+<Callout title="Learn More" type="info">
+  For detailed step-by-step instructions, visit our help article on [How to Training Chatbot with FAQs](https://help.yourgpt.ai/article/how-to-training-chatbot-with-faqs-59).
+</Callout>

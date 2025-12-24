@@ -55,7 +55,10 @@ Functions act as tools or micro-agents that perform specific tasks. They are aut
 
 ## Getting Started
 
-1. ### Navigate to Functions
+<Steps>
+
+<Step>
+### Navigate to Functions
 
 From your YourGPT dashboard, navigate to **Automation** > **Functions** in the left sidebar. You'll see four types of functions available:
 
@@ -65,6 +68,9 @@ From your YourGPT dashboard, navigate to **Automation** > **Functions** in the l
 - **MCP Servers** - Model Context Protocol servers
 
 ![Navigate to Functions](/assets/chatbot/functions-2/image-1.png)
+</Step>
+
+</Steps>
 
 ## System Functions
 
@@ -82,13 +88,18 @@ Select **System Functions** from the dropdown menu to access pre-built function 
 
 Code Functions allow you to create custom code execution functions using JavaScript or Python. These functions enable your AI to perform complex operations, data processing, or integrate with services through code.
 
-1. ### Navigate to Code Functions
+<Steps>
+
+<Step>
+### Navigate to Code Functions
 
 Select **Code Functions** from the dropdown menu and click the **Add New Function** button.
 
 ![Code Functions](/assets/chatbot/functions-2/image-2.png)
+</Step>
 
-2. ### Configure Function Details
+<Step>
+### Configure Function Details
 
 Fill in the basic information for your code function:
 
@@ -98,8 +109,10 @@ Fill in the basic information for your code function:
 - **Code**: Write your custom code in the syntax-highlighted editor
 
 ![Configure Code Function](/assets/chatbot/functions-2/image-3.png)
+</Step>
 
-3. ### Define Parameters
+<Step>
+### Define Parameters
 
 Add parameters that your function needs to execute:
 
@@ -111,9 +124,13 @@ Add parameters that your function needs to execute:
 
 The **Generated Schema** panel on the right automatically updates as you add parameters, showing the JSON schema in real-time.
 
-> **INFO:** **Tip:** You can edit the JSON schema directly and click "Apply Changes" to update the parameter builder. Parameters use JSON Schema format for validation and are always required in strict mode.
+<Callout type="info">
+**Tip:** You can edit the JSON schema directly and click "Apply Changes" to update the parameter builder. Parameters use JSON Schema format for validation and are always required in strict mode.
+</Callout>
+</Step>
 
-4. ### Import Sample Code (Optional)
+<Step>
+### Import Sample Code (Optional)
 
 Click the **Import Sample** button to load pre-built examples:
 
@@ -122,27 +139,39 @@ Click the **Import Sample** button to load pre-built examples:
 
 ![Import Sample Code](/assets/chatbot/functions-2/image-4.png)
 
-> **WARN:** Importing a sample will override your current configuration.
+<Callout type="warn">
+Importing a sample will override your current configuration.
+</Callout>
+</Step>
 
-5. ### Review and Save
+<Step>
+### Review and Save
 
 Review your function configuration, including all parameters and the generated schema. The code editor shows your complete function with line numbers and syntax highlighting.
 
 ![Complete Code Function](/assets/chatbot/functions-2/image-5.png)
 
 Click **Add Function** to save your code function.
+</Step>
+
+</Steps>
 
 ## API Functions
 
 API Functions allow you to connect your AI to external APIs and integrate their data or services into your chatbot responses. You can call any REST API and define how your AI should interact with it.
 
-1. ### Navigate to API Functions
+<Steps>
+
+<Step>
+### Navigate to API Functions
 
 Select **API Functions** from the dropdown menu and click the **Add API Function** button.
 
 ![API Functions](/assets/chatbot/functions-2/image-6.png)
+</Step>
 
-2. ### Configure API Details
+<Step>
+### Configure API Details
 
 Fill in the basic information for your API function:
 
@@ -154,8 +183,10 @@ Fill in the basic information for your API function:
   - Click **Test API** to verify the endpoint works
 
 ![Configure API Function](/assets/chatbot/functions-2/image-7.png)
+</Step>
 
-3. ### Add Headers and Request Parameters
+<Step>
+### Add Headers and Request Parameters
 
 Configure the API request details:
 
@@ -172,9 +203,13 @@ Configure the API request details:
 
 The **Generated Schema** panel shows the auto-generated JSON schema based on your parameters.
 
-> **INFO:** **Tip:** You can edit the JSON schema directly and click "Apply Changes" to update the parameter builder. Use the format field for strings to add semantic validation.
+<Callout type="info">
+**Tip:** You can edit the JSON schema directly and click "Apply Changes" to update the parameter builder. Use the format field for strings to add semantic validation.
+</Callout>
+</Step>
 
-4. ### Import Sample API (Optional)
+<Step>
+### Import Sample API (Optional)
 
 Click the **Import Sample** button to load pre-configured API examples:
 
@@ -185,9 +220,13 @@ Alternatively, use **Import from cURL** to convert cURL commands directly into f
 
 ![Import Sample API](/assets/chatbot/functions-2/image-8.png)
 
-> **WARN:** Importing a sample will override your current configuration.
+<Callout type="warn">
+Importing a sample will override your current configuration.
+</Callout>
+</Step>
 
-5. ### Review and Save
+<Step>
+### Review and Save
 
 Review your complete API function configuration, including all parameters and the generated schema. Verify that:
 - All required parameters are defined
@@ -197,10 +236,13 @@ Review your complete API function configuration, including all parameters and th
 ![Complete API Function](/assets/chatbot/functions-2/image-9.png)
 
 Click **Add API Function** to save your configuration.
+</Step>
+
+</Steps>
 
 ## Examples
 
-### Weather API
+<Card title="Weather API">
 
 If you want to add a function that retrieves weather information based on geographic coordinates, you might set it up as follows:
 
@@ -229,7 +271,9 @@ If you want to add a function that retrieves weather information based on geogra
 - Once the function is added, your chatbot can access the weather API and retrieve relevant weather information based on the user's query.
 - Users can trigger the function by using a specific keyword or phrase like "what's the weather like in [location]". The chatbot will then use the location to determine the latitude and longitude, which are passed as parameters to the function.
 
-### Find Flight API
+</Card>
+
+<Card title="Find Flight API">
 
 Let's say you want to create a function to find the cheapest flight for a given destination from a specific origin.
 
@@ -265,9 +309,13 @@ The function accepts two parameters, `origin` and `destination`, both of which a
 - Once the function is added, your chatbot can access the flight search API and retrieve relevant results based on the user's query.
 - The chatbot can execute the function when a user inputs a phrase like "find cheapest flights from [origin] to [destination]", The chatbot can then display the cheapest flight options to the user, including details such as flight numbers, departure and arrival times, and prices.
 
+</Card>
+
 ## Useful Links
 
-> **INFO:** For more detailed guides on setting up functions with tool parameters, check out these helpful articles:
-> 
-> - [Setting up API Functions with Tool Params in YourGPT](https://help.yourgpt.ai/article/setting-up-api-functions-with-tool-params-in-yourgpt-8235-3618)
-> - [Setting up Code Functions with Tool Params in YourGPT](https://help.yourgpt.ai/article/setting-up-code-functions-with-tool-params-in-yourgpt-3818)
+<Callout type="info" title="Additional Resources">
+For more detailed guides on setting up functions with tool parameters, check out these helpful articles:
+
+- [Setting up API Functions with Tool Params in YourGPT](https://help.yourgpt.ai/article/setting-up-api-functions-with-tool-params-in-yourgpt-8235-3618)
+- [Setting up Code Functions with Tool Params in YourGPT](https://help.yourgpt.ai/article/setting-up-code-functions-with-tool-params-in-yourgpt-3818)
+</Callout>

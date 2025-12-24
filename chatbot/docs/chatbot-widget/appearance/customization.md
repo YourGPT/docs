@@ -4,13 +4,18 @@
 
 Follow these steps to customize the appearance of your YourGPT chatbot widget to match your brand and preferences.
 
-1. ### Navigate to Widget Settings
+<Steps>
+
+<Step>
+### Navigate to Widget Settings
 
 From your YourGPT dashboard, locate the **Settings** section in the left sidebar. Click on the **Widget** menu item to access the widget customization interface.
 
 ![Navigate to Widget Settings](/assets/chatbot/chatbot-widget-2/image-1.png)
+</Step>
 
-2. ### Choose Theme and Layout
+<Step>
+### Choose Theme and Layout
 
 On the "Customise your widget" page, you'll see a live preview of your chatbot on the right side. Configure the basic appearance:
 
@@ -20,8 +25,10 @@ On the "Customise your widget" page, you'll see a live preview of your chatbot o
   - **Chat Layout:** Quick chat system with minimal elements
 
 ![Select Theme and Layout](/assets/chatbot/chatbot-widget-2/image-2.png)
+</Step>
 
-3. ### Configure General Settings
+<Step>
+### Configure General Settings
 
 Expand the **General Settings** section to customize your chatbot's core appearance:
 
@@ -32,8 +39,10 @@ Expand the **General Settings** section to customize your chatbot's core appeara
 - **Text on Primary Color:** Set the text color for optimal contrast
 
 ![Configure General Settings](/assets/chatbot/chatbot-widget-2/image-3.png)
+</Step>
 
-4. ### Explore All Customization Sections
+<Step>
+### Explore All Customization Sections
 
 Review all available customization sections to personalize your widget further:
 
@@ -50,17 +59,26 @@ Review all available customization sections to personalize your widget further:
 - **AI Copilot Actions** - Configure AI Copilot features (New)
 
 ![All Customization Options](/assets/chatbot/chatbot-widget-2/image-4.png)
+</Step>
 
-5. ### Preview Your Chatbot
+<Step>
+### Preview Your Chatbot
 
 View the live preview of your chatbot on the right side of the page to see how your customizations look in real-time. The preview updates as you make changes to the settings.
 
 ![Preview Your Chatbot](/assets/chatbot/chatbot-widget-2/image-5.png)
+</Step>
 
-6. ### Save Your Changes
+<Step>
+### Save Your Changes
 
 After making all your desired customizations, click the **Save Changes** button at the bottom of the page to apply your modifications. Your chatbot will now reflect the new appearance settings.
 
 ![Save Your Changes](/assets/chatbot/chatbot-widget-2/image-6.png)
+</Step>
 
-> **INFO:** For comprehensive customization instructions, refer to the [Chat Widget Customization](https://docs.yourgpt.ai/chatbot/how-to-change-the-apperance-of-your-chatbot) guide.
+</Steps>
+
+<Callout type="info" title="Tip">
+For comprehensive customization instructions, refer to the [Chat Widget Customization](https://docs.yourgpt.ai/chatbot/how-to-change-the-apperance-of-your-chatbot) guide.
+</Callout>

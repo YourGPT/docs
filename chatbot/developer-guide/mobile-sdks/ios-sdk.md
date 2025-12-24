@@ -8,7 +8,9 @@ The iOS SDK allows you to seamlessly integrate YourGPT Chatbot into your iOS app
 
 Follow these steps to install and configure the iOS Chatbot SDK in your project:
 
-> **NOTE:** View the full SDK source code and examples on GitHub: [yourgpt-widget-sdk-ios](https://github.com/YourGPT/yourgpt-widget-sdk-ios)
+<Callout type="note" title="SDK Repository">
+View the full SDK source code and examples on GitHub: [yourgpt-widget-sdk-ios](https://github.com/YourGPT/yourgpt-widget-sdk-ios)
+</Callout>
 
 1. Add this to your `Podfile`:
 
@@ -49,6 +51,9 @@ To use a Chatbot widget in your iOS application, follow the steps below or copy 
 For better organization and reusability, create a wrapper class to manage the SDK:
 
 ```swift
+import UIKit
+import YourGPTSDK
+import Combine
 
 @available(iOS 13.0, *)
 class YourGPTWrapper: NSObject {
@@ -136,6 +141,8 @@ class YourGPTWrapper: NSObject {
 ### Step 2: Initialize the SDK in Your View Controller
 
 ```swift
+import UIKit
+import YourGPTSDK
 
 @available(iOS 13.0, *)
 class ViewController: UIViewController {

@@ -59,7 +59,9 @@ To enable gamification in your chatbot:
 
 Use the following event listeners to automatically trigger games when human escalation occurs:
 
-> **INFO:** Add one game integration at a time.
+<Callout type="info" title="Note">
+  Add one game integration at a time.
+</Callout>
 
 #### Emoji Riddle Integration
 
@@ -217,6 +219,8 @@ Once leads are captured, you can manage them effectively:
 
 ## Learn More
 
-> **NOTE:** Enhance user engagement with interactive games during waiting periods.
-> 
->   [Learn more](https://help.yourgpt.ai/article/gamification-in-widget-to-enhance-engagement-during-human-escalation-2242)
+<Callout type="note" title="Gamification">
+  Enhance user engagement with interactive games during waiting periods.
+
+  [Learn more](https://help.yourgpt.ai/article/gamification-in-widget-to-enhance-engagement-during-human-escalation-2242)
+</Callout>

@@ -36,4 +36,4 @@ https://docs.yourgpt.ai/chatbot/chatbot-widget/appearance/css-styling
 ```
 
 ---
-Generated: 2025-12-24T10:56:43.759Z
+Generated: 2025-12-24T11:35:30.598Z

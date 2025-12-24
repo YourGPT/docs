@@ -36,4 +36,6 @@ For example, you can create an event that triggers the flow when a new session s
 
 4. Add the actions or responses in the **`Flow`** section that will be activated when a particular event takes place.
 
-> **INFO:** Learn more about Events in our helpdesk article: [How to use Events in Chatbot Studio](https://help.yourgpt.ai/article/how-to-use-events-in-ai-studio-1140)
+<Callout title="Note" type="info">
+  Learn more about Events in our helpdesk article: [How to use Events in Chatbot Studio](https://help.yourgpt.ai/article/how-to-use-events-in-ai-studio-1140)
+</Callout>

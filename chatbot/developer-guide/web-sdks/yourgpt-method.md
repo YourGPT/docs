@@ -20,7 +20,9 @@ To integrate the Chatbot Web SDK into your website, you need to inject the follo
   </p>
 </div>
 
-> **NOTE:** Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.
+<Callout type="note" title="Note">
+Make sure to load this script before accessing the `$yourgptChatbot` variable for calling functions. The `$yourgptChatbot` variable is only available after the script is loaded.
+</Callout>
 
 ## `$yourgptChatbot`
 
@@ -94,7 +96,9 @@ Here the `text` is the message that you want to send to the chatbot. The `send` 
 
 <div style={{ height: '20px' }}></div>
 
-> **NOTE:** This command will open the chatbot if it is not already open.
+<Callout type="note" title="Note">
+This command will open the chatbot if it is not already open.
+</Callout>
 
 ### Closing the chatbot
 ```js
@@ -243,7 +247,9 @@ $yourgptChatbot.set("session:data", {
 
 <div style={{ height: '20px' }}></div>
 
-> **NOTE:** For contact update, either `email` or `phone` must be provided.
+<Callout type="note" title="Note">
+For contact update, either `email` or `phone` must be provided.
+</Callout>
 
 ### Example: Set contact data
 ```js
@@ -282,11 +288,15 @@ To set contact data, append the `CONTACT.keyName=value` query parameter to your 
 
 <div style={{ height: '20px' }}></div>
 
-> **NOTE:** Here {`<widgetUrl>`} is the URL of your chatbot widget.
+<Callout type="note" title="Note">
+Here {`<widgetUrl>`} is the URL of your chatbot widget.
+</Callout>
 
 <div style={{ height: '20px' }}></div>
 
-> **NOTE:** You can pass multiple query parameters by separating them with an `&` .
+<Callout type="note" title="Note">
+You can pass multiple query parameters by separating them with an `&` .
+</Callout>
 
 <div style={{ height: '20px' }}></div>
 ```js

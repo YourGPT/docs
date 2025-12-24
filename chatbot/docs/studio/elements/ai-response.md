@@ -21,7 +21,9 @@ You can now generate responses in different formats. Available response types in
 - Text: Standard response format for displaying information in plain text.
 - JSON: Structured response format for easy integration with applications or APIs.
 
-> **INFO:** Learn how to setup AI Response from our Help Center article   [How to Set Up AI Responses in Studio](https://help.yourgpt.ai/article/how-to-set-up-ai-responses-in-studio-832)
+<Callout title="Note" type="info">
+  Learn how to setup AI Response from our Help Center article   [How to Set Up AI Responses in Studio](https://help.yourgpt.ai/article/how-to-set-up-ai-responses-in-studio-832)
+</Callout>
 
 ---
 
@@ -40,7 +42,9 @@ The Knowledgebase AI uses your training data to answer to the users question.
   - Use `include` to match documents with any one tag 
   - Use `exclude` to filter out documents matching a tag.
 
-> **INFO:** For most tasks, up to 5 previous chat messages is sufficient. Adding too many messages may affect response quality.
+<Callout title="Note" type="info">
+  For most tasks, up to 5 previous chat messages is sufficient. Adding too many messages may affect response quality.
+</Callout>
 
 ---
 
@@ -56,16 +60,17 @@ These settings are common for both AI and Knowledgebase data sources within Your
 
 The configuration settings for both AI and Knowledgebase data sources are standardized, offering flexibility and customization:
 
-### Provider
+<Cards>
 
-- OpenAI
+<Card title="Provider">
+    - OpenAI
     - Anthropic
     - Mistral
     - Gemini
+</Card>
 
-### Model
-
-- GPT-3.5-turbo
+<Card title="Model">
+  - GPT-3.5-turbo
   - GPT-3.5-turbo-1106
   - GPT-4
   - GPT-4o
@@ -73,13 +78,16 @@ The configuration settings for both AI and Knowledgebase data sources are standa
   - Claude-3-Opus
   - Gemini-1.5-Flash
   - Mistral-2-Large
+</Card>
 
-### Temperature
+<Card title="Temperature">
+  - `0-1` (adjustable)
+</Card>
 
-- `0-1` (adjustable)
+<Card title="Max Tokens">
+  - `1-2048` (adjustable)
+</Card>
 
-### Max Tokens
-
-- `1-2048` (adjustable)
+</Cards>
 
 Learn more about [Tokens, Max Tokens, Context Limits, Knowledge Nodes, and Temperature](https://help.yourgpt.ai/article/what-are-tokens-max-tokens-context-limits-knowledge-nodes-and-temperature-in-ai-543).

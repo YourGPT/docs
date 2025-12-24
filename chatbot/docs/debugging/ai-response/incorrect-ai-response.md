@@ -10,8 +10,10 @@ Your AI model's base prompt might not include clear instructions on when to refu
 
 Add an instruction to the base prompt, such as:
 
-> **CAUTION:** Refuse to answer any question beyond the given info and inform the user to tap on the
->   `Talk to a Human` button if you don't have enough information to answer.
+<Callout title="Caution" type="caution">
+  Refuse to answer any question beyond the given info and inform the user to tap on the
+  `Talk to a Human` button if you don't have enough information to answer.
+</Callout>
 
 ![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/refusal-in-base-prompt.png)
 

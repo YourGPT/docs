@@ -76,7 +76,9 @@ $yourgptChatbot.set("contact:data", {
 });
 ```
 
-> **NOTE:** When setting user data, include a valid HMAC hash that matches the highest-priority identifier in your data. Verification order: <strong>external_user_id → email → phone</strong>. If the hash doesn't match, you will receive an <strong>"invalid hmac hash"</strong> error.
+<Callout type="note" title="Note">
+When setting user data, include a valid HMAC hash that matches the highest-priority identifier in your data. Verification order: <strong>external_user_id → email → phone</strong>. If the hash doesn't match, you will receive an <strong>"invalid hmac hash"</strong> error.
+</Callout>
 
 ---
 

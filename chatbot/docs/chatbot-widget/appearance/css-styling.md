@@ -4,7 +4,9 @@
 
 You can customize the appearance of your chatbot by modifying the following CSS variables:
 
-> **INFO:** Use <code>.ygpt-chatbot</code> class to override the default styling of the chatbot. You can increase the specificity of the selector by adding more classes to it. For example, <code>.ygpt-chatbot.ygpt-chatbot</code> will override the default styling of the chatbot.
+<Callout type="info" title="Note">
+Use <code>.ygpt-chatbot</code> class to override the default styling of the chatbot. You can increase the specificity of the selector by adding more classes to it. For example, <code>.ygpt-chatbot.ygpt-chatbot</code> will override the default styling of the chatbot.
+</Callout>
 
 ---
 

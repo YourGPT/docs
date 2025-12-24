@@ -10,7 +10,9 @@ Install the YourGPT Web SDK using npm:
 npm install @yourgpt/widget-web-sdk
 ```
 
-> **NOTE:** It's a JavaScript library that provides programmatic control over your YourGPT chatbot widget. Instead of just embedding the widget with a script tag, the SDK gives you full control over when it opens, closes, sends messages, and handles AI actions.
+<Callout type="note" title="What is the YourGPT Web SDK?">
+  It's a JavaScript library that provides programmatic control over your YourGPT chatbot widget. Instead of just embedding the widget with a script tag, the SDK gives you full control over when it opens, closes, sends messages, and handles AI actions.
+</Callout>
 
 ## Quick Start
 
@@ -44,7 +46,9 @@ sdk.onMessageReceived((data) => {
 4. **Control Widget** - Opens the widget and sends messages programmatically  
 5. **Handle Events** - Listens for messages the chatbot sends back to you  
 
-> **NOTE:** This is a unique identifier for your chatbot. You can find it in your YourGPT dashboard in the Integrations section. It looks something like <code>abc123def456</code>. [YourGPT Dashboard](https://app.yourgpt.ai).
+<Callout type="note" title="Widget ID">
+  This is a unique identifier for your chatbot. You can find it in your YourGPT dashboard in the Integrations section. It looks something like <code>abc123def456</code>. [YourGPT Dashboard](https://app.yourgpt.ai).
+</Callout>
 
 ### React Set Up
 
@@ -92,7 +96,9 @@ function ChatButton() {
 3. **Initialize the SDK** - Call `YourGPT.init()` in your main app file with your widget ID  
 4. **Use the hooks** - `useYourGPTChatbot()` controls the widget, `useAIActions()` adds custom AI actions  
 
-> **NOTE:** These are custom functions that your chatbot can trigger. For example, when a user asks "What's my location?", the chatbot can call your custom <code>get_location</code> action to get the user's actual location and respond with it.
+<Callout type="note" title="AI Actions">
+  These are custom functions that your chatbot can trigger. For example, when a user asks "What's my location?", the chatbot can call your custom <code>get_location</code> action to get the user's actual location and respond with it.
+</Callout>
 
 ## Complete Documentation
 
@@ -151,7 +157,9 @@ sdk.unregisterAIAction("delete_file");
 3. **Your code runs** - Shows confirmation dialog, deletes file if confirmed  
 4. **You respond** - Tell the chatbot the result ("File deleted successfully")  
 
-> **NOTE:** This shows a user-friendly confirmation dialog. The user can click "Accept" or "Reject", and your code waits for their decision before continuing.
+<Callout type="note" title="helpers.confirm()">
+  This shows a user-friendly confirmation dialog. The user can click "Accept" or "Reject", and your code waits for their decision before continuing.
+</Callout>
 
 ## Hooks
 
@@ -270,7 +278,11 @@ This React component provides the SDK context to your entire app and handles ini
 
 function App() {
   return (
-     {
+    <YourGPTProvider
+      config={{
+        widgetId: "your-widget-id",
+      }}
+      onInitialized={({ sdk }) => {
         console.log("SDK initialized:", sdk);
         // Set initial data, register global AI actions, etc.
       }}
@@ -279,8 +291,8 @@ function App() {
         // Handle initialization errors
       }}
     >
-      
-    
+      <MyApp />
+    </YourGPTProvider>
   );
 }
 ```
@@ -429,30 +441,12 @@ dist/
 
 ```typescript
 
-  YourGPTConfig,      // configuration interface
-  WidgetState,        // widget state interface
-  MessageData,        // message data structure
-  EscalationData,     // human escalation data
-  AIActionData,       // AI action payload
-  AIActionHelpers,    // AI action helper functions
-  ChatbotAPI,         // complete chatbot API
-  AIActionAPI         // AI actions API
-} from "@yourgpt/widget-web-sdk";
 ```
 
 ### Utilities
 
 ```typescript
 
-  isBrowser,           // check if in browser environment
-  isDevelopment,       // check if in development mode
-  validateWidgetId,    // validate widget ID format
-  validateUrl,         // validate URL format
-  debounce,            // debounce function calls
-  throttle,            // throttle function calls
-  withRetry,           // retry failed operations
-  EventEmitter         // custom event emitter
-} from "@yourgpt/widget-web-sdk";
 ```
 
 ## Browser Support
@@ -555,4 +549,6 @@ For more examples and detailed documentation, check out our resources:
 - [YourGPT Web SDK Repository](https://github.com/YourGPT/web-sdk) - Official SDK repository with documentation and source code  
 - [Pre-built Examples](https://github.com/YourGPT/web-sdk/tree/main/examples) - Collection of ready-to-use example implementations  
 
-> **NOTE:** Join our [Discord Community](https://discord.com/invite/57C9uTkD6g) for support and discussions with other developers.
+<Callout type="note" title="Need Help?">
+  Join our [Discord Community](https://discord.com/invite/57C9uTkD6g) for support and discussions with other developers.
+</Callout>
