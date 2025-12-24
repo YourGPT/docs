@@ -4,8 +4,10 @@
 
 YourGPT provides access to multiple AI models across different capability tiers. Each tier is designed to balance reasoning strength, speed, and credit usage so you can choose the right model for each task.
 
-> **TIP:** Need help deciding which AI model fits your use case?  
-> 👉 [How to Choose the Right AI Model for Your Agent](https://help.yourgpt.ai/article/choosing-the-right-ai-model-for-your-ai-agent-1617)
+<Callout type="tip" title="Choosing the right model">
+Need help deciding which AI model fits your use case?  
+👉 [How to Choose the Right AI Model for Your Agent](https://help.yourgpt.ai/article/choosing-the-right-ai-model-for-your-ai-agent-1617)
+</Callout>
 
 ---
 
@@ -62,7 +64,9 @@ They work well for simple queries, automation, and high-volume interactions.
 
 ---
 
-> **TIP:** Consumption rates represent relative credit usage.  
-> Higher-tier models consume more credits due to increased reasoning depth and output quality.
+<Callout type="tip" title="Consumption rates">
+Consumption rates represent relative credit usage.  
+Higher-tier models consume more credits due to increased reasoning depth and output quality.
+</Callout>
 
 Credit usage depends on multiple factors, including agent persona length, knowledgebase nodes, response size, translation, and function execution. For cost-sensitive workloads, start with Tier 2 or Tier 3 models and move to Tier 1 only when higher reasoning accuracy is required.

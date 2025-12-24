@@ -4,7 +4,7 @@
 
 # Messages
 
-![Messages](/assets/flow/Messages.jpg)
+![Messages](../../../../assets/flow/Messages.jpg)
 
 You can send all sorts of interactive messages, each with its own style and purpose.
 
@@ -65,43 +65,57 @@ You can send all sorts of interactive messages, each with its own style and purp
 
 Text messages are the most common type of message used in chatbot conversations. They are simple text-based messages that convey information or responses to users. Text messages are ideal for providing textual information, answering user queries, or guiding users through the conversation.
 
-> **NOTE:** To know more about Text, visit our help article on [creating and configuring a Text component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-text-image-and-file-messages-in-studio-1139)
+<Callout title="Note" type="note">
+  To know more about Text, visit our help article on [creating and configuring a Text component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-text-image-and-file-messages-in-studio-1139)
+</Callout>
 
 ## Image
 
 Image messages contain visual content that can be displayed to users during a conversation. Images enhance user engagement by presenting visual information in addition to text. You can use image messages to showcase products, provide visual instructions, or add visual appeal to the conversation.
 
-> **NOTE:** To know more about Image, visit our help article on [creating and configuring an Image component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-text-image-and-file-messages-in-studio-1139)
+<Callout title="Note" type="note">
+  To know more about Image, visit our help article on [creating and configuring an Image component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-text-image-and-file-messages-in-studio-1139)
+</Callout>
 
 ## Video
 
 Video messages can be used to enhance user engagement and provide interactive experiences. Videos can be embedded in the message to provide a dynamic and engaging experience.
 
-> **NOTE:** To know more about Video, visit our help article on [creating and configuring a Video component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-video-messages-in-studio-1137)
+<Callout title="Note" type="note">
+  To know more about Video, visit our help article on [creating and configuring a Video component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-video-messages-in-studio-1137)
+</Callout>
 
 ## Audio
 
 Audio messages can be used to convey information in an engaging way. Audio can be embedded in the message to provide a dynamic and engaging experience.
 
-> **NOTE:** To know more about Audio, visit our help article on [creating and configuring an Audio component in Studio ](https://help.yourgpt.ai/article/how-to-create-configure-audio-messages-in-studio-1134)
+<Callout title="Note" type="note">
+  To know more about Audio, visit our help article on [creating and configuring an Audio component in Studio ](https://help.yourgpt.ai/article/how-to-create-configure-audio-messages-in-studio-1134)
+</Callout>
 
 ## File
 
 File messages can be used to share files or documents. These can be useful for sharing information in a structured way and providing users with access to files or documents.
 
-> **NOTE:** To know more about File, visit our help article on [creating and configuring a File component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-text-image-and-file-messages-in-studio-1139)
+<Callout title="Note" type="note">
+  To know more about File, visit our help article on [creating and configuring a File component in Studio ](https://help.yourgpt.ai/article/how-to-add-configure-text-image-and-file-messages-in-studio-1139)
+</Callout>
 
 ## Card
 
 Card messages are structured messages that combine text and multimedia elements. They typically consist of an image, title, description, and action buttons. Card messages are useful for presenting information in a visually appealing format and providing users with interactive options.
 
-> **NOTE:** To know more about Card, visit our help article on [creating and configuring a Card component in Studio ](https://help.yourgpt.ai/article/how-to-create-configure-card-component-in-studio-830)
+<Callout title="Note" type="note">
+  To know more about Card, visit our help article on [creating and configuring a Card component in Studio ](https://help.yourgpt.ai/article/how-to-create-configure-card-component-in-studio-830)
+</Callout>
 
 ## Carousel
 
 Carousels are collections of multiple cards or images displayed in a scrollable format. Users can view multiple items in sequence by swiping or clicking through the carousel. Carousels are ideal for showcasing multiple products, services, or options in a visually appealing and interactive way.
 
-> **NOTE:** To know more about Carousel, visit our help article on [creating and configuring a Carousel component in Studio ](https://help.yourgpt.ai/article/how-to-create-configure-carousels-component-in-studio-831)
+<Callout title="Note" type="note">
+  To know more about Carousel, visit our help article on [creating and configuring a Carousel component in Studio ](https://help.yourgpt.ai/article/how-to-create-configure-carousels-component-in-studio-831)
+</Callout>
 
 ## How to Use Messages in YourGPT Flow
 

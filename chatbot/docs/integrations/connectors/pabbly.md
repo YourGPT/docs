@@ -2,40 +2,43 @@
 
 > Automate YourGPT Chatbot actions with Pabbly Connect's no-code workflows.
 
-> **TIP:** ## Before You Begin
-> 
-> Before starting the integration process, make sure you have:
-> 
-> - A YourGPT account: [Sign up here](https://app.yourgpt.ai/login)
-> - A Pabbly Connect account (free or paid)
-> 
-> ## Integration Process
-> 
-> <ol className="space-y-8 my-8 list-decimal list-inside">
-> 
-> <li className="space-y-3">
-> <span className="font-bold dark:text-gray-300 text-lg md:text-xl">Connect to Pabbly</span>
-> 
-> <div className="ml-6 space-y-2">
-> 
-> - Log in to your [Pabbly Connect account](https://connect.pabbly.com/)
-> - Search for "**YourGPT Chatbot**" in the Pabbly Connect app directory
-> - Select and connect your "YourGPT Chatbot" to Pabbly Connect
-> 
-> </div>
-> </li>
-> 
-> <li className="space-y-3">
-> <span className="font-bold dark:text-gray-300 text-lg md:text-xl">Set Up API Authentication</span>
-> 
-> <div className="ml-6 space-y-2">
-> 
-> - Head over to [YourGPT Dashboard](https://app.yourgpt.ai/login)
-> - Navigate to **Integrations ⇒ API Integration ⇒ Generate API key**
-> - Copy your API key for use in Pabbly Connect
-> 
-> <Callout title="Note" type="tip">
->   For detailed instructions on generating API keys, visit the [API Integration Guide](/chatbot/integrations/api-integration#generating-keys)
+<Callout title="Pabbly Connect is a powerful workflow automation platform that allows you to connect YourGPT with hundreds of other applications without coding." type="tip" />
+
+## Before You Begin
+
+Before starting the integration process, make sure you have:
+
+- A YourGPT account: [Sign up here](https://app.yourgpt.ai/login)
+- A Pabbly Connect account (free or paid)
+
+## Integration Process
+
+<ol className="space-y-8 my-8 list-decimal list-inside">
+
+<li className="space-y-3">
+<span className="font-bold dark:text-gray-300 text-lg md:text-xl">Connect to Pabbly</span>
+
+<div className="ml-6 space-y-2">
+
+- Log in to your [Pabbly Connect account](https://connect.pabbly.com/)
+- Search for "**YourGPT Chatbot**" in the Pabbly Connect app directory
+- Select and connect your "YourGPT Chatbot" to Pabbly Connect
+
+</div>
+</li>
+
+<li className="space-y-3">
+<span className="font-bold dark:text-gray-300 text-lg md:text-xl">Set Up API Authentication</span>
+
+<div className="ml-6 space-y-2">
+
+- Head over to [YourGPT Dashboard](https://app.yourgpt.ai/login)
+- Navigate to **Integrations ⇒ API Integration ⇒ Generate API key**
+- Copy your API key for use in Pabbly Connect
+
+<Callout title="Note" type="tip">
+  For detailed instructions on generating API keys, visit the [API Integration Guide](/chatbot/integrations/api-integration#generating-keys)
+</Callout>
 
 </div>
 </li>
@@ -51,10 +54,19 @@
 - The `widget_uid` can be found in your **YourGPT Chatbot Integrations**
 
 <div className="flex justify-center items-center  rounded-md p-4 mt-4">
-  ![Widget UID location in YourGPT](/assets/chatbot/pabbly/widgetid-pabbly-integration.png)
+  <Image 
+    src="../../../../assets/chatbot/pabbly/widgetid-pabbly-integration.png" 
+    alt="Widget UID location in YourGPT" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }} 
+    className="rounded-md object-contain shadow-lg" 
+  />
 </div>
 
-> **TIP:** The Create Session action initializes a conversation with your YourGPT chatbot and returns a `session_uid` that you'll need for sending messages.
+<Callout title="Note" type="tip">
+  The Create Session action initializes a conversation with your YourGPT chatbot and returns a `session_uid` that you'll need for sending messages.
+</Callout>
 
 </div>
 </li>

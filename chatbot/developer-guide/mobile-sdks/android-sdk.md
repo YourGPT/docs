@@ -8,8 +8,10 @@ The Android SDK allows you to integrate YourGPT Chatbot into your Android applic
 
 ### SDK Repository
 
-> **NOTE:** View the full SDK source code and examples on GitHub:  
-> <a href="https://github.com/YourGPT/yourgpt-widget-sdk-android" target="_blank">yourgpt-widget-sdk-android</a>
+<Callout type="note" title="SDK Repository">
+View the full SDK source code and examples on GitHub:  
+<a href="https://github.com/YourGPT/yourgpt-widget-sdk-android" target="_blank">yourgpt-widget-sdk-android</a>
+</Callout>
 
 1. Add the dependency to your app's `build.gradle` file:
 
@@ -73,6 +75,16 @@ Implement `YourGPTEventListener`, observe SDK state, and initialize the chatbot:
 
 ```kotlin
 package com.yourapp
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.yourgpt.sdk.*
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), YourGPTEventListener {
 
@@ -200,11 +212,30 @@ Create a simple layout with a button to open the chatbot:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
 
-    
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SDK Status: Initializing..."
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp" />
 
-    
+    <Button
+        android:id="@+id/btn_open_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open YourGPT Chat"
+        android:textSize="16sp"
+        android:padding="16dp" />
 
+</LinearLayout>
 ```
 
 ---

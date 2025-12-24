@@ -2,33 +2,49 @@
 
 > Learn how to integrate YourGPT Chatbot with your Vercel website with our detailed, step-by-step guide
 
+<Callout title="Connecting Your AI Chatbot with Vercel" type="tip" />
+
 ## Installation
 
 Follow these steps to integrate your YourGPT chatbot with your Vercel website:
 
-  1. Navigate to **Integrations** in your YourGPT dashboard and click **Configure** on the Vercel integration card.
+<Steps>
+  <Step>
+    Navigate to **Integrations** in your YourGPT dashboard and click **Configure** on the Vercel integration card.
 
-    ![Navigate to Vercel Integration](/assets/chatbot/integrations-2/vercel/image-1.png)
+    ![Navigate to Vercel Integration](../../../../assets/chatbot/integrations-2/vercel/image-1.png)
+  </Step>
 
-  2. On the Vercel Marketplace page, review the integration permissions and click **Add Integration**.
+  <Step>
+    On the Vercel Marketplace page, review the integration permissions and click **Add Integration**.
 
-    ![Add Integration on Vercel](/assets/chatbot/integrations-2/vercel/image-2.png)
+    ![Add Integration on Vercel](../../../../assets/chatbot/integrations-2/vercel/image-2.png)
+  </Step>
 
-  3. Select your Vercel account to install the integration.
+  <Step>
+    Select your Vercel account to install the integration.
 
-    ![Select Vercel Account](/assets/chatbot/integrations-2/vercel/image-3.png)
+    ![Select Vercel Account](../../../../assets/chatbot/integrations-2/vercel/image-3.png)
+  </Step>
 
-  4. Choose which projects the integration will have access to (All Projects or Specific Projects), then click **Install**.
+  <Step>
+    Choose which projects the integration will have access to (All Projects or Specific Projects), then click **Install**.
 
-    ![Select Project Scope and Install](/assets/chatbot/integrations-2/vercel/image-4.png)
+    ![Select Project Scope and Install](../../../../assets/chatbot/integrations-2/vercel/image-4.png)
+  </Step>
 
-  5. You'll be redirected to the YourGPT configuration page. Select your chatbot from the dropdown menu.
+  <Step>
+    You'll be redirected to the YourGPT configuration page. Select your chatbot from the dropdown menu.
 
-    ![Select Your Chatbot](/assets/chatbot/integrations-2/vercel/image-5.png)
+    ![Select Your Chatbot](../../../../assets/chatbot/integrations-2/vercel/image-5.png)
+  </Step>
 
-  6. Select the Vercel project(s) you want to integrate with, then click **Install to 1 Project** (or more if you selected multiple). The integration will automatically add the chatbot environment variable to your selected Vercel projects.
+  <Step>
+    Select the Vercel project(s) you want to integrate with, then click **Install to 1 Project** (or more if you selected multiple). The integration will automatically add the chatbot environment variable to your selected Vercel projects.
 
-    ![Complete Automatic Setup](/assets/chatbot/integrations-2/vercel/image-6.png)
+    ![Complete Automatic Setup](../../../../assets/chatbot/integrations-2/vercel/image-6.png)
+  </Step>
+</Steps>
 
 ## Manual Setup
 
@@ -43,7 +59,7 @@ Once connected, the following environment variable is automatically added to you
 ### Step 2: Embed the Widget
 
 You can copy this script into your Vercel project to display your chatbot on your website.
-![Embed the Widget](/assets/chatbot/integrations-2/vercel/image-7.png)
+![Embed the Widget](../../../../assets/chatbot/integrations-2/vercel/image-7.png)
 
 ```javascript
 <script>

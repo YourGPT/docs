@@ -2,6 +2,8 @@
 
 > Learn how to integrate your AI Chatbot with Twilio Voice
 
+<Callout title="Connecting Your AI Chatbot with Twilio Voice" type="tip" />
+
 To set up Twilio Voice integration, follow these steps:
 
 ### Step 1: Obtain Twilio Credentials
@@ -11,7 +13,7 @@ To set up Twilio Voice integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-voice/Twilio-1.png"
+    src="../../../../assets/chatbot/Twilio-voice/Twilio-1.png"
     alt="Twilio Credentials"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -35,7 +37,7 @@ Add the following fields to configure the integration:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-voice/Twilio-2.png"
+    src="../../../../assets/chatbot/Twilio-voice/Twilio-2.png"
     alt="Integration Configuration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -50,9 +52,11 @@ Add the following fields to configure the integration:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-voice/Twilio-3.png"
+    src="../../../../assets/chatbot/Twilio-voice/Twilio-3.png"
     alt="Webhook Configuration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
   />
 </div>
+
+<Callout title="You have now successfully enabled Twilio Voice integration." type="success" />

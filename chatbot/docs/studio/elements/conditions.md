@@ -27,13 +27,13 @@ AI Condition uses natural language understanding to define the possible paths (A
 To use AI Condition, follow these 5 steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![AI Condition](/assets/flow/condition.png)
+  ![AI Condition](../../../../assets/flow/condition.png)
 </div>
 
 1. **Add a Condition Step**: Click on "Logic" - then drag the "Condition node" in your flow.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![AI Condition](/assets/flow/condition-ai.png)
+  ![AI Condition](../../../../assets/flow/condition-ai.png)
 </div>
 
 2. **Context**: You can choose between the AI condition context type - what the AI should analyze:
@@ -57,7 +57,7 @@ Use **Manual Condition** when you know what specific input to check, such as ema
 Follow these 6 steps to set it up:
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Manual Condition](/assets/flow/condition.png)
+  ![Manual Condition](../../../../assets/flow/condition.png)
 </div>
 
 1. Add a Condition Step: Click **Add Step → Condition** in your flow.
@@ -67,7 +67,7 @@ Follow these 6 steps to set it up:
 3. Add Expression(s): Click **Add Expression** and choose the **expression type**:
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Conditions-check](/assets/flow/condition-check.png)
+  ![Conditions-check](../../../../assets/flow/condition-check.png)
 </div>
 
 - **Variable Type**: Check against a stored variable (e.g. `{{USER.email}}`)
@@ -106,4 +106,6 @@ Avoid these common mistakes when setting up conditions:
 
 ---
 
-> **INFO:** To know more about conditions in YourGPT Chatbot Studio, follow our [AI Helpdesk article.](https://help.yourgpt.ai/article/how-to-set-up-conditions-in-ai-studio-1584)
+<Callout title="Note" type="info">
+  To know more about conditions in YourGPT Chatbot Studio, follow our [AI Helpdesk article.](https://help.yourgpt.ai/article/how-to-set-up-conditions-in-ai-studio-1584)
+</Callout>

@@ -90,7 +90,7 @@ Our chatbot enables the execution of Python code to accomplish complex tasks. It
 ### How To Execute Python Code
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Python Code Execution](/assets/flow/python-code-execution.png)
+  ![Python Code Execution](../../../../../assets/flow/python-code-execution.png)
 </div>
 
 1. **Set Up Python Component:** Go to the **`Flow`** section in the Chatbot Studio, hover on **Advance**, and then drag the Code component onto the canvas.

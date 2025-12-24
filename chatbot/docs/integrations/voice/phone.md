@@ -35,10 +35,13 @@ To start receiving calls, connect your Twilio account.
   - **Phone SID**
 - Click **Enable** once all fields are filled.
 
-> **SUCCESS:** <Callout title="Need Help Finding These?" type="tip">
->   You can find these values in your Twilio Console under the `Phone Numbers` and `Account Info` sections.
-> 
->   <a href="/chatbot/integrations/social/twilio-voice" className="underline">Follow this guide to get Twilio Credentials</a>
+<Callout title="Once connected, you'll see the phone number in green at the top of the Functions tab." type="success"/>
+
+<Callout title="Need Help Finding These?" type="tip">
+  You can find these values in your Twilio Console under the `Phone Numbers` and `Account Info` sections.
+
+  <a href="/chatbot/integrations/social/twilio-voice" className="underline">Follow this guide to get Twilio Credentials</a>
+</Callout>
 
 ---
 
@@ -65,27 +68,55 @@ This is a crucial component that defines the tone, personality, and behavior of 
 By creating a detailed and specific base prompt, you can ensure that your AI agent provides consistent, accurate, and helpful responses to callers.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Phone AI Agent](/assets/chatbot/phone-ai/base-prompt.png)
+  <Image 
+    src="../../../../assets/chatbot/phone-ai/base-prompt.png" 
+    alt="Phone AI Agent" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
 </div>
 
 ### AI Model
 Select from the available models.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Phone AI Agent](/assets/chatbot/phone-ai/phone-ai-models.png)
+  <Image 
+    src="../../../../assets/chatbot/phone-ai/phone-ai-models.png" 
+    alt="Phone AI Agent" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
 </div>
 
 ### Advanced Settings
 - **Speech Settings** – Choose Speech Model, Voice, Speech Instructions.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![tts model settings](/assets/chatbot/phone-ai/tts-model.png)
+  <Image 
+    src="../../../../assets/chatbot/phone-ai/tts-model.png" 
+    alt="tts model settings" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
 </div>
 
 - **Transcription Settings** – Choose Transcription Model and transcription Instructions.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![transcription model settings](/assets/chatbot/phone-ai/transcription-settings.png)
+  <Image 
+    src="../../../../assets/chatbot/phone-ai/transcription-settings.png" 
+    alt="transcription model settings" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
 </div>
 
 ---
@@ -95,9 +126,18 @@ Select from the available models.
 Go to the **Functions** tab to define what the voice agent can do.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Phone AI Agent](/assets/chatbot/phone-ai/phone-ai-functions.png)
+  <Image 
+    src="../../../../assets/chatbot/phone-ai/phone-ai-functions.png" 
+    alt="Phone AI Agent" 
+    width={1200}
+    height={800}
+    style={{ width: "100%" }}
+    className="rounded-md object-contain"
+  />
 </div>
 
 ## Try it out
 
-> **WARNING:** Join the [Beta Website](https://beta.yourgpt.ai) to try it out yourself and join our [Discord Community](https://discord.com/invite/z8PBs5ckcd) for feedback and support.
+<Callout type="warning" title="The phone AI agent is currently in beta.">
+Join the [Beta Website](https://beta.yourgpt.ai) to try it out yourself and join our [Discord Community](https://discord.com/invite/z8PBs5ckcd) for feedback and support.
+</Callout>

@@ -19,7 +19,7 @@ An engaging puzzle game where users solve riddles using emoji clues. Perfect for
 
 <div className="flex flex-col md:flex-row gap-4 my-6">
   <div className="flex-1 w-3/4 mx-auto">
-    ![Emoji Riddle Game Solution](/assets/chatbot/sdk/gamification/riddle-game.png)
+    ![Emoji Riddle Game Solution](../../../assets/chatbot/sdk/gamification/riddle-game.png)
   </div>
 </div>
 
@@ -28,7 +28,7 @@ An engaging puzzle game where users solve riddles using emoji clues. Perfect for
 A classic arcade-style game that provides entertainment and helps pass time during operator assignment delays.
 
 <div className="my-6 w-full">
-  ![BouncyBird Game](/assets/chatbot/sdk/gamification/bouncybird.png)
+  ![BouncyBird Game](../../../assets/chatbot/sdk/gamification/bouncybird.png)
 </div>
 
 #### 3. Custom Game
@@ -36,7 +36,7 @@ A classic arcade-style game that provides entertainment and helps pass time duri
 Embed any iFrame game in your chatbot to provide a unique and engaging experience for your users.
 
 <div className="my-6 w-full">
-  ![Custom Game](/assets/chatbot/sdk/gamification/custom-game.png)
+  ![Custom Game](../../../assets/chatbot/sdk/gamification/custom-game.png)
 </div>
 
 ### Widget Settings Configuration
@@ -46,20 +46,22 @@ To enable gamification in your chatbot:
 1. Go to widget settings → branding section
 
 <div className="my-6">
-  ![Widget Settings](/assets/chatbot/sdk/gamification/gamification-1.png)
+  ![Widget Settings](../../../assets/chatbot/sdk/gamification/gamification-1.png)
 </div>
 
 2. Paste your desired game integration code in the branding section
 
 <div className="my-6">
-  ![Branding Section](/assets/chatbot/sdk/gamification/gamification-2.png)
+  ![Branding Section](../../../assets/chatbot/sdk/gamification/gamification-2.png)
 </div>
 
 ### Game Launch on Human Escalation
 
 Use the following event listeners to automatically trigger games when human escalation occurs:
 
-> **INFO:** Add one game integration at a time.
+<Callout type="info" title="Note">
+  Add one game integration at a time.
+</Callout>
 
 #### Emoji Riddle Integration
 
@@ -97,19 +99,19 @@ To enable sales gamification in your chatbot, follow these steps:
 
 1. **Widget Settings**: Access the triggers from the widget settings.
 
-   ![Widget Settings](/assets/chatbot/sdk/gamification/sales/Widget.png)
+   ![Widget Settings](../../../assets/chatbot/sdk/gamification/sales/Widget.png)
 
 2. **Access Triggers Section**: Navigate to the **Triggers** section in your chatbot dashboard.
 
-   ![Triggers Section](/assets/chatbot/sdk/gamification/sales/Triggers.png)
+   ![Triggers Section](../../../assets/chatbot/sdk/gamification/sales/Triggers.png)
 
 3. **Create New Trigger**: Click on **Add Trigger** to create a new gamification trigger.
 
-   ![Add Trigger Button](/assets/chatbot/sdk/gamification/sales/add-triger.png)
+   ![Add Trigger Button](../../../assets/chatbot/sdk/gamification/sales/add-triger.png)
 
 4. **Enable Gamification**: In the Actions section, toggle **Enable Gamification** to **ON**.
 
-   ![Enable Gamification Toggle](/assets/chatbot/sdk/gamification/sales/enable-gamification.png)
+   ![Enable Gamification Toggle](../../../assets/chatbot/sdk/gamification/sales/enable-gamification.png)
 
 5. **Create Trigger**: Click **Create Trigger** to save your gamification settings.
 
@@ -119,7 +121,7 @@ To enable sales gamification in your chatbot, follow these steps:
 
 You can customize the messages that appear during gamification to match your brand voice and style:
 
-![Gamified Messages Configuration](/assets/chatbot/sdk/gamification/sales/customise-gamification.png)
+![Gamified Messages Configuration](../../../assets/chatbot/sdk/gamification/sales/customise-gamification.png)
 
 - **Gamified Button**: Customize the text that appears on the button (e.g., \"Play & Win\").
 - **Gamified Messages**: Add custom messages like \"🎉 Play the game to win a reward\".
@@ -145,7 +147,7 @@ Emoji-based guessing games for fun engagement. Great for entertainment and light
 2. **Import Preset Questions**: Select from available preset questions like **Guess Moji Preset (15 questions)**.
 3. **Add Riddles**: Click **Add Riddle** to add custom questions and configure different answer types.
 
-![Choose Game Dropdown](/assets/chatbot/sdk/gamification/sales/select-game.png)
+![Choose Game Dropdown](../../../assets/chatbot/sdk/gamification/sales/select-game.png)
 
 ### Reward System
 
@@ -157,7 +159,7 @@ Set up rewards for users who achieve high scores to incentivize engagement and d
 2. **Set Win Threshold**: Use the slider to set the minimum score threshold required to earn a reward.
 3. **Generate Coupon**: Click the **Generate** button to create reward coupons for qualifying users.
 
-![Reward Configuration](/assets/chatbot/sdk/gamification/sales/reward.png)
+![Reward Configuration](../../../assets/chatbot/sdk/gamification/sales/reward.png)
 
 #### Reward Configuration Options
 
@@ -180,13 +182,13 @@ The gamification system can capture leads from engaged users, turning game parti
    - **Capture Email**: Toggle to collect email addresses.
    - **Capture Phone**: Toggle to collect phone numbers.
 
-![Lead Capture Configuration](/assets/chatbot/sdk/gamification/sales/Leadcapture.png)
+![Lead Capture Configuration](../../../assets/chatbot/sdk/gamification/sales/Leadcapture.png)
 
 #### Lead Management
 
 Once leads are captured, you can manage them effectively:
 
-![Contacts Management View](/assets/chatbot/sdk/gamification/sales/Lead-captured.png)
+![Contacts Management View](../../../assets/chatbot/sdk/gamification/sales/Lead-captured.png)
 
 - **Automatic Storage**: All captured leads are automatically stored in your **Contacts** section.
 - **Dashboard Access**: Access all leads through the main **Contacts** interface.
@@ -217,6 +219,8 @@ Once leads are captured, you can manage them effectively:
 
 ## Learn More
 
-> **NOTE:** Enhance user engagement with interactive games during waiting periods.
-> 
->   [Learn more](https://help.yourgpt.ai/article/gamification-in-widget-to-enhance-engagement-during-human-escalation-2242)
+<Callout type="note" title="Gamification">
+  Enhance user engagement with interactive games during waiting periods.
+
+  [Learn more](https://help.yourgpt.ai/article/gamification-in-widget-to-enhance-engagement-during-human-escalation-2242)
+</Callout>

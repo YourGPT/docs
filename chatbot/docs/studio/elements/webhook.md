@@ -3,7 +3,7 @@
 > Webhook are the building blocks of a chatbot conversation.
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Create Webhook](/assets/flow/webhook-create.png)
+  ![Create Webhook](../../../../assets/flow/webhook-create.png)
 </div>
 
 ## What are Webhooks?
@@ -24,4 +24,6 @@ Webhooks are user-defined HTTP callbacks that allow applications to send real-ti
 
 6. **Map Response Data** – Configure how the chatbot handles the webhook response.
 
-> **INFO:** To Learn more about Webhooks, refer to the [Webhooks Documentation](https://help.yourgpt.ai/article/how-to-create-and-test-webhooks-in-studio-1176).
+<Callout title="Note" type="info">
+  To Learn more about Webhooks, refer to the [Webhooks Documentation](https://help.yourgpt.ai/article/how-to-create-and-test-webhooks-in-studio-1176).
+</Callout>

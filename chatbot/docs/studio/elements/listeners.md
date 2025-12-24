@@ -8,7 +8,7 @@ Listeners play a crucial role in capturing user responses and enabling interacti
 
 ## 1. Capture Listener
 
-![Capture Listeners in YourGPT Studio](/assets/flow/listener/capture.png)
+![Capture Listeners in YourGPT Studio](../../../../assets/flow/listener/capture.png)
 
 The Capture Listener is an essential component of the flow, capturing user replies and storing them in specified locations. It acts as an interface between user input and the chatbot's response mechanism.
 
@@ -47,13 +47,15 @@ The Capture Listener allows you to:
 - **Time-sensitive interactions:** Schedule appointments, set reminders, or provide time-specific information.
 - **Store Responses:** Save captured responses in designated path for future reference or processing.
 
-> **NOTE:** Learn more in detailed about [Capture on our Help center article](https://help.yourgpt.ai/article/how-to-capture-and-store-a-users-response-32).
+<Callout title="Note" type="note">
+  Learn more in detailed about [Capture on our Help center article](https://help.yourgpt.ai/article/how-to-capture-and-store-a-users-response-32).
+</Callout>
 
 ---
 
 ## 2. Button Listener
 
-![Button Listeners in YourGPT Studio](/assets/flow/listener/button.png)
+![Button Listeners in YourGPT Studio](../../../../assets/flow/listener/button.png)
 
 The Button Listener allows the chatbot to provide interactive features in the form of buttons, allowing users to choose from predefined options or actions during the conversation.
 
@@ -63,13 +65,15 @@ The Button Listener allows the chatbot to provide interactive features in the fo
 - **Actionable Choices:** Allows users to trigger specific actions or responses by clicking on the provided buttons.
 - **Customization:** Offers flexibility in designing button layouts and defining corresponding actions or responses.
 
-> **NOTE:** Learn more in detailed about [Buttons on Help center article  ](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
+<Callout title="Note" type="note">
+  Learn more in detailed about [Buttons on Help center article  ](https://help.yourgpt.ai/article/how-to-create-configure-buttons-in-studio-828).
+</Callout>
 
 ---
 
 ## 3. Form Listener
 
-![Form Listeners in YourGPT Studio](/assets/flow/listener/form.png)
+![Form Listeners in YourGPT Studio](../../../../assets/flow/listener/form.png)
 
 The Form Listener is a versatile component that captures user inputs through form fields, enabling structured data collection and processing within the agents flow.
 
@@ -92,11 +96,13 @@ The Form Listener is a versatile component that captures user inputs through for
 - **Data Collection:** Capture user inputs in a structured format for processing and analysis.
 - **Customized Forms:** Design custom forms with specific field types to collect relevant information.
 
-> **NOTE:** To learn more about Form Listeners, refer to the [Form Listeners Documentation](https://chatbot-help.aidesk.center/article/how-to-create-and-use-forms-in-ai-studio-1177).
+<Callout title="Note" type="note">
+  To learn more about Form Listeners, refer to the [Form Listeners Documentation](https://chatbot-help.aidesk.center/article/how-to-create-and-use-forms-in-ai-studio-1177).
+</Callout>
 
 ## 4. Feedback
 
-![Feedback Listeners in YourGPT Studio](/assets/flow/listener/feedback.png)
+![Feedback Listeners in YourGPT Studio](../../../../assets/flow/listener/feedback.png)
 
 The Feedback Listener is designed to capture user satisfaction scores, typically used for Customer Satisfaction (CSAT) surveys. It allows you to gather valuable feedback on user experience and service quality.
 
@@ -107,4 +113,6 @@ The Feedback Listener is designed to capture user satisfaction scores, typically
 - **Trigger Points:** Can be set to appear after specific interactions or at the end of conversations.
 - **Data Analysis:** Collected feedback can be used for performance metrics and improvement strategies.
 
-> **NOTE:** For more information on implementing CSAT surveys, visit our [Feedback Listener Guide](https://help.yourgpt.ai/article/how-to-implement-csat-surveys-using-feedback-listeners-1568).
+<Callout title="Note" type="note">
+  For more information on implementing CSAT surveys, visit our [Feedback Listener Guide](https://help.yourgpt.ai/article/how-to-implement-csat-surveys-using-feedback-listeners-1568).
+</Callout>

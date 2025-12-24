@@ -13,7 +13,7 @@ Actions are the operations that you can perform in chatbot studio. You can use a
 ## How to use Actions
 
 <div className="flex justify-center items-center rounded-md p-4">
-  ![Actions](/assets/flow/actions-image.png)
+  ![Actions](../../../../../assets/flow/actions-image.png)
 </div>
 
 To use Actions, follow these steps:
@@ -43,9 +43,9 @@ Gives the flow builder an option in case the action fails or succeeds for:
 - Create Contact
 - Send Email
 
-### How To Use Actions
-
-Learn how to use actions in AI chatbot studio.
+<Card title="How To Use Actions" href="https://help.yourgpt.ai/article/how-to-use-actions-in-chatbot-studio-29">
+  Learn how to use actions in AI chatbot studio.
+</Card>
 
 ### 1. Escalate to Human
 

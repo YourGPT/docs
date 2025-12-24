@@ -94,6 +94,8 @@ API Endpoint is : **`https://api.weatherapi.com/v1/current.json`**
     - **q** : The city name to search for. Here we are using **`{{FLOW.City}}`** to get the city name from the user. **``City``** is a Entity which is used to get the city name from the user.
     - **key** : Your API key. Add this as a header.
 
-> **INFO:** ```json
-> https://api.weatherapi.com/v1/current.json?q={{FLOW.City}}
-> ```
+<Callout title="API Endpoint" type="info">
+```json
+https://api.weatherapi.com/v1/current.json?q={{FLOW.City}}
+```
+</Callout>

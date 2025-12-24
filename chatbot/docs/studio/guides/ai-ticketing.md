@@ -30,4 +30,6 @@ In the above video, we have built AI agents capable of answering user questions 
 
 - **Cost-Effective**: AI agents can reduce the cost of customer support by automating common queries and reducing the need for human agents to handle routine tasks.
 
-> **TIP:** You can get started by using our [Pre-built Template](https://yourgpt.ai/chatbot/resources/ai-agent-with-ticketing-platforms-integrate-on-zendesk-freshdesk-zohodesk-or-other-6637a31d493f02962431b5c9) for popular ticketing platforms, such as Zendesk, Freshdesk, or Zoho Desk.
+<Callout title="Note" type="tip">
+  You can get started by using our [Pre-built Template](https://yourgpt.ai/chatbot/resources/ai-agent-with-ticketing-platforms-integrate-on-zendesk-freshdesk-zohodesk-or-other-6637a31d493f02962431b5c9) for popular ticketing platforms, such as Zendesk, Freshdesk, or Zoho Desk.
+</Callout>

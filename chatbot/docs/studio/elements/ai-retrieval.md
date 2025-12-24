@@ -3,7 +3,7 @@
 AI Retrieval is a feature that enhances your AI agent's capabilities by dynamically retrieving the most relevant information from your Knowledge Base in real-time. It allows precise filtering and response formatting for optimal retrieval. This intelligent retrieval system significantly improves response quality by ensuring your AI has access to exactly the right information when needed.
 
 <div className="flex justify-center items-center rounded-md p-4 md:px-60">
-  ![AI Retrieval](/assets/flow/ai-task/ai-retrevial.png)
+  ![AI Retrieval](../../../../assets/flow/ai-task/ai-retrevial.png)
 </div>
 
 ### 1. Search Query:
@@ -19,7 +19,9 @@ It will retrieve all your training data that matches the query. You can use one 
 - **Include:** Retrieves content that contains at least one of the selected tags.
 - **Exclude:** Filters out documents containing the specified tags.
 
-> **INFO:** You can only select either Include or Exclude, not both simultaneously.
+<Callout title="Note" type="info">
+  You can only select either Include or Exclude, not both simultaneously.
+</Callout>
 
 ### 3. Nodes Limit:
 
@@ -36,4 +38,6 @@ Select the type of response format you want to retrieve:
 
 Allows saving retrieved responses into a variable for further processing or automation.
 
-> **INFO:** For more details check out our Help Center article on [How to use Retrieval in Studio](https://help.yourgpt.ai/article/how-to-set-up-and-use-ai-retrieval-1141).
+<Callout title="Note" type="info">
+  For more details check out our Help Center article on [How to use Retrieval in Studio](https://help.yourgpt.ai/article/how-to-set-up-and-use-ai-retrieval-1141).
+</Callout>

@@ -4,8 +4,10 @@
 
 Sharing a link is the fastest way to let teammates, customers, or beta testers chat with your bot—no widget installation or code deployment required. Use it to collect feedback before going live on your website or to offer a lightweight support channel.
 
-> 🔗 **Share your custom chatbot using a link**  
->   Use this method when you want quick access without installing the widget.
+<Callout>
+  🔗 **Share your custom chatbot using a link**  
+  Use this method when you want quick access without installing the widget.
+</Callout>
 
 ## 1. Open the Integration tab
 
@@ -18,7 +20,7 @@ At the top of the integration page you will see the toolbar with **Link**, **Scr
 
 Choose **Link** to reveal the public URL, then click the copy icon (or select the text manually) to place it on your clipboard.
 
-![Options to Shareable Chatbot](/assets/chatbot/link-share.png)
+![Options to Shareable Chatbot](../../../assets/chatbot/link-share.png)
 
 ## 3. Test the link
 
@@ -38,4 +40,6 @@ Anyone with the link can start a conversation immediately.
 - Rotate or disable a link once testing ends to prevent unintended access.  
 - Prefer QR codes (also available in the same toolbar) when printing or presenting the chatbot link at events.
 
-> **WARNING:** The shared link exposes your chatbot publicly, so only distribute it to trusted audiences or bots configured with limited knowledge.
+<Callout type="warning" title="Important">
+The shared link exposes your chatbot publicly, so only distribute it to trusted audiences or bots configured with limited knowledge.
+</Callout>

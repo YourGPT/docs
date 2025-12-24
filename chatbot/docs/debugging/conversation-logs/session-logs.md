@@ -10,7 +10,7 @@ To access the logs for a specific chat session, follow the steps outlined below.
 
 ### How to Access
 
-![View Session Log for Specific Conversation](/assets/chatbot/Debug/chat-logs/view-chat-logs.png)
+![View Session Log for Specific Conversation](../../../../assets/chatbot/Debug/chat-logs/view-chat-logs.png)
 
 1. Open the chat conversation you want to check.  
 2. From the right-side dashboard panel, click **View Logs**.  
@@ -18,7 +18,7 @@ To access the logs for a specific chat session, follow the steps outlined below.
 
 ### Understanding the Log Display
 
-![Viewing Logs with specific Conversation ID](/assets/chatbot/Debug/chat-logs/chat-log.png)
+![Viewing Logs with specific Conversation ID](../../../../assets/chatbot/Debug/chat-logs/chat-log.png)
 
 Each log entry shows:
 
@@ -63,7 +63,7 @@ Each log entry shows:
 
 ## Part 2: Checking All Session Logs
 
-![Session Log](/assets/chatbot/Debug/chat-logs/session-Logs.png)
+![Session Log](../../../../assets/chatbot/Debug/chat-logs/session-Logs.png)
 
 1. Open the **Debug Lab**, then tap on the **Logger** option.  
 2. View all chat session logs in one place.  

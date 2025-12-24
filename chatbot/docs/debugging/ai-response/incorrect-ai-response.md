@@ -10,10 +10,12 @@ Your AI model's base prompt might not include clear instructions on when to refu
 
 Add an instruction to the base prompt, such as:
 
-> **CAUTION:** Refuse to answer any question beyond the given info and inform the user to tap on the
->   `Talk to a Human` button if you don't have enough information to answer.
+<Callout title="Caution" type="caution">
+  Refuse to answer any question beyond the given info and inform the user to tap on the
+  `Talk to a Human` button if you don't have enough information to answer.
+</Callout>
 
-![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/refusal-in-base-prompt.png)
+![Base Prompt Configuration](../../../../assets/chatbot/Debug/how-to-debug/refusal-in-base-prompt.png)
 
 This ensures the AI stays within the boundaries of its training data and only provides accurate, relevant responses.
 
@@ -25,7 +27,7 @@ A restriction prompt helps limit what the AI can respond to, keeping it focused 
 
 Use a restriction prompt to define limitations on the AI's responses. This will help maintain relevance and prevent the AI from going off-topic.
 
-![Base Prompt Restriction Configuration](/assets/chatbot/Debug/how-to-debug/refusal-in-restriction-prompt.png)
+![Base Prompt Restriction Configuration](../../../../assets/chatbot/Debug/how-to-debug/refusal-in-restriction-prompt.png)
 
 ## Tracing AI Response Sources 
 
@@ -35,40 +37,40 @@ To ensure your AI is providing accurate information, it's crucial to trace the d
 
 1. Go to the <strong>Conversation</strong> page.
 
-![Conversations Dashboard](/assets/chatbot/Debug/how-to-debug/conversations.png)
+![Conversations Dashboard](../../../../assets/chatbot/Debug/how-to-debug/conversations.png)
 
 2. Open the conversation you want to review.
 
-![Conversations Dashboard open](/assets/chatbot/Debug/how-to-debug/conversation-open.png)
+![Conversations Dashboard open](../../../../assets/chatbot/Debug/how-to-debug/conversation-open.png)
 
 3. Click on <strong>View Source</strong> to see the information sources used for each AI-generated response.
 
-![AI Response Options](/assets/chatbot/Debug/how-to-debug/ai-response-options.png)
+![AI Response Options](../../../../assets/chatbot/Debug/how-to-debug/ai-response-options.png)
 
 This feature displays a list of data sources the AI referenced. You can even navigate directly to the source document.
 
-![AI Response Sources](/assets/chatbot/Debug/how-to-debug/ai-response-sources.png)
+![AI Response Sources](../../../../assets/chatbot/Debug/how-to-debug/ai-response-sources.png)
 
 ###  Correcting training data or data sources 
 
 Knowing the source of the information allows you to update your training data if there are any errors.
 
-![Source Document](/assets/chatbot/Debug/how-to-debug/source-document.png)
+![Source Document](../../../../assets/chatbot/Debug/how-to-debug/source-document.png)
 
 If you want to make corrections to the data sources:
 
 1. Click the “source” button.
 
-![Document View Source](/assets/chatbot/Debug/how-to-debug/document-view-source.png)
+![Document View Source](../../../../assets/chatbot/Debug/how-to-debug/document-view-source.png)
 
 2. This takes you to the debug lab, where all the sources from that document are listed.
 
-![Document View Source in Debug Lab](/assets/chatbot/Debug/how-to-debug/document-view-source.png)
+![Document View Source in Debug Lab](../../../../assets/chatbot/Debug/how-to-debug/document-view-source.png)
 
 3. Here, you can search, remove, or edit these sources.
 
-![Document Data Sources](/assets/chatbot/Debug/how-to-debug/document-data-sources.png)
+![Document Data Sources](../../../../assets/chatbot/Debug/how-to-debug/document-data-sources.png)
 
-![Data Source Edit](/assets/chatbot/Debug/how-to-debug/data-source-edit.png)
+![Data Source Edit](../../../../assets/chatbot/Debug/how-to-debug/data-source-edit.png)
 
 Keeping your data sources accurate ensures that your AI continues to provide correct and contextually appropriate answers.

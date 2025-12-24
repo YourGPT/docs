@@ -43,25 +43,24 @@ For example, you can create a variable to store the user's name when they introd
 6. Variables can be used to capture user inputs, store information, or pass data between different components of the flow.
 
 <div className="space-y-6 my-6">
-### Flow
-
-<ul>
+<Card title="Flow">
+  <ul>
     <li><code>FLOW.last_response</code> - The last response in the flow</li>
     <li><code>FLOW.last_utterance</code> - The last message sent by the user</li>
     <li><code>FLOW.{`{variable_of_your_choice}`}</code> - Custom variable that you created for the flow</li>
   </ul>
+</Card>
 
-### Session
-
-<ul>
+<Card title="Session">
+  <ul>
     <li><code>SESSION.status</code> - Current session status (open/closed)</li>
     <li><code>SESSION.chat_mode</code> - Chat mode: 1 for bot mode, 2 for awaiting, 3 for operator mode</li>
     <li><code>SESSION.state</code> - Session state: resolved, pending, or unresolved</li>
   </ul>
+</Card>
 
-### Visitor
-
-<ul>
+<Card title="Visitor">
+  <ul>
     <li><code>VISITOR.name</code> - Name of the visitor</li>
     <li><code>VISITOR.region</code> - Region/location of the visitor</li>
     <li><code>VISITOR.language</code> - Visitor's preferred language</li>
@@ -69,10 +68,10 @@ For example, you can create a variable to store the user's name when they introd
     <li><code>VISITOR.os</code> - Visitor's operating system</li>
     <li><code>VISITOR.status</code> - Visitor's status (away/online/offline)</li>
   </ul>
+</Card>
 
-### Contact
-
-<ul>
+<Card title="Contact">
+  <ul>
     <li><code>CONTACT.name</code> - Name of the contact</li>
     <li><code>CONTACT.email</code> - Email address of the contact</li>
     <li><code>CONTACT.phone</code> - Phone number of the contact</li>
@@ -82,5 +81,5 @@ For example, you can create a variable to store the user's name when they introd
     <li><code>CONTACT.region</code> - Region inside a city</li>
     <li><code>CONTACT.tags</code> - Can be Custom String tags</li>
   </ul>
-
+</Card>
 </div>

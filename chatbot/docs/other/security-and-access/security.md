@@ -10,7 +10,7 @@ Throttling settings help you control the rate of user interactions with your cha
 
 ### Messages per Conversation
 
-![Messages per Conversation](/assets/chatbot/message-limit.png)
+![Messages per Conversation](../../../../assets/chatbot/message-limit.png)
 
 - **Limit**: Set a limit on the number of messages that can be sent in a single conversation.  
 - **Time (hrs)**: Define the time frame (in hours) for this limit.  
@@ -18,7 +18,7 @@ Throttling settings help you control the rate of user interactions with your cha
 
 ### Conversations Limit
 
-![Conversations Limit](/assets/chatbot/conversations-limit.png)
+![Conversations Limit](../../../../assets/chatbot/conversations-limit.png)
 
 - **Limit**: Set a limit on the number of conversations a user can initiate.  
 - **Time (hrs)**: Define the time frame (in hours) for this limit.  

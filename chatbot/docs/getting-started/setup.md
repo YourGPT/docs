@@ -35,7 +35,9 @@ Use the setup tour below for a quick walkthrough of the full process.
 
 Start by creating a YourGPT account. This gives you access to the dashboard where you manage agents, training data, and integrations.
 
-  
+<Cards>
+  <Card title="Create Account" href="https://chatbot.yourgpt.ai/" />
+</Cards>
 
 ---
 
@@ -49,10 +51,12 @@ At this stage, you will:
 - Adjust appearance and widget settings
 - Add Functions to your agents by allowing them to perform autonomous actions guided by Persona (optional)
 
-  
-  
-  
-  
+<Cards>
+  <Card title="Add Agent Persona" href="/chatbot/ai-agent-management/agent-persona" />
+  <Card title="Choose AI Model" href="https://help.yourgpt.ai/article/choosing-the-right-ai-model-for-your-ai-agent-1617" />
+  <Card title="Customize Appearance" href="/chatbot/chatbot-widget/appearance/customization" />
+  <Card title="Functions" href="/chatbot/ai-agent-management/functions" />
+</Cards>
 
 ---
 
@@ -66,8 +70,10 @@ You can train the agent using:
 - Knowledge base links
 - Other supported sources
 
-  
-  
+<Cards>
+  <Card title="Training Guide" href="/chatbot/training/guide" />
+  <Card title="Training Sources" href="/chatbot/training/sources" />
+</Cards>
 
 ---
 
@@ -75,7 +81,9 @@ You can train the agent using:
 
 Before going live, test your agent to verify responses, tone, and behavior. This step helps catch gaps in training or configuration.
 
-  
+<Cards>
+  <Card title="Testing Your AI" href="/chatbot/test-ai-agent" />
+</Cards>
 
 ---
 
@@ -83,7 +91,9 @@ Before going live, test your agent to verify responses, tone, and behavior. This
 
 For more control, use AI Studio to build structured flows, connect tools, and design complex agent behavior.
 
-  
+<Cards>
+  <Card title="AI Studio" href="/chatbot/studio/elements" />
+</Cards>
 
 ---
 
@@ -96,9 +106,11 @@ You can deploy on:
 - Messaging and social platforms
 - Custom applications using APIs
 
-  
-  
-  
+<Cards>
+  <Card title="Website Integration" href="/chatbot/integrations/website-builders" />
+  <Card title="Social Media Integration" href="/chatbot/integrations/social-platforms" />
+  <Card title="API Integration" href="/chatbot/developer-guide/getting-started/api-integration" />
+</Cards>
 
 ---
 

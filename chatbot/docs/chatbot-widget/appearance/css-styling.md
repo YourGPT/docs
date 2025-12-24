@@ -4,7 +4,9 @@
 
 You can customize the appearance of your chatbot by modifying the following CSS variables:
 
-> **INFO:** Use <code>.ygpt-chatbot</code> class to override the default styling of the chatbot. You can increase the specificity of the selector by adding more classes to it. For example, <code>.ygpt-chatbot.ygpt-chatbot</code> will override the default styling of the chatbot.
+<Callout type="info" title="Note">
+Use <code>.ygpt-chatbot</code> class to override the default styling of the chatbot. You can increase the specificity of the selector by adding more classes to it. For example, <code>.ygpt-chatbot.ygpt-chatbot</code> will override the default styling of the chatbot.
+</Callout>
 
 ---
 
@@ -58,7 +60,7 @@ You can inject custom animations to the widget button using the following CSS:
 
 <div className="flex justify-center max-w-[390px] md:max-w-[300px]">
   <img
-    src="/assets/chatbot/chatbot-widget-btn-animation-1.gif"
+    src="../../../../assets/chatbot/chatbot-widget-btn-animation-1.gif"
     alt="Multi-Gradient"
     className="w-full max-w-md rounded-md"
   />
@@ -118,7 +120,7 @@ You can inject custom animations to the widget button using the following CSS:
 
 <div className="flex justify-center max-w-[390px] md:max-w-[300px]">
   <img
-    src="/assets/chatbot/chatbot-widget-btn-animation-2.gif"
+    src="../../../../assets/chatbot/chatbot-widget-btn-animation-2.gif"
     alt="Glowing"
     className="w-full max-w-md rounded-md"
   />
@@ -162,7 +164,7 @@ You can inject custom animations to the widget button using the following CSS:
 
 <div className="flex justify-center max-w-[390px] md:max-w-[300px]">
   <img
-    src="/assets/chatbot/chatbot-widget-btn-animation-3.gif"
+    src="../../../../assets/chatbot/chatbot-widget-btn-animation-3.gif"
     alt="Ripple"
     className="w-full rounded-md"
   />

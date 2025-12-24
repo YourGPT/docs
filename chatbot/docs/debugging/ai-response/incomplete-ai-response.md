@@ -12,15 +12,17 @@ One common cause for incomplete answers is the configuration of knowledge base n
 
 - **Adjust Knowledge Base Node Settings:** Set these values to below 6 for optimal performance.
 
-![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/knowledge-base-nodes-setting.png)
+![Base Prompt Configuration](../../../../assets/chatbot/Debug/how-to-debug/knowledge-base-nodes-setting.png)
 
 ## Data Source Nodes and Long Documents
 
 Another potential cause is the handling of long documents or extensive website links. If information is spread across multiple sources, the AI's data source nodes may become fragmented, leading to incomplete responses.
 
-> **INFO:** Checkout how to use the Debug Lab here [Debug Lab Feature](/chatbot/other/debugging/ai-refuse-to-answer).
+<Callout title="Note" type="info">
+  Checkout how to use the Debug Lab here [Debug Lab Feature](/chatbot/other/debugging/ai-refuse-to-answer).
+</Callout>
 
-![Base Prompt Configuration](/assets/chatbot/Debug/how-to-debug/debug-lab.png)
+![Base Prompt Configuration](../../../../assets/chatbot/Debug/how-to-debug/debug-lab.png)
 
 <div className="text-2xl tracking-tight font-semibold dark:text-inherit text-gray-700 mt-6">
   Steps to Resolve:
@@ -34,4 +36,6 @@ Another potential cause is the handling of long documents or extensive website l
 
 To minimize the occurrence of incomplete responses, ensure that you follow best practices for preparing and structuring your training material.
 
-> **TIP:** Check out our [Training Guide](/chatbot/training) for more tips and best practices.
+<Callout title="Tip" type="tip">
+  Check out our [Training Guide](/chatbot/training) for more tips and best practices.
+</Callout>

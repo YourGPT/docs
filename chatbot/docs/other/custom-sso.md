@@ -10,21 +10,21 @@ This integration provides a way for site owners to authenticate their users and 
 
 - On the right side of the screen click on Account, then click on Settings.
 
-![Organisation Settings](/assets/chatbot/custom-sso/org-settings.png)
+![Organisation Settings](../../../assets/chatbot/custom-sso/org-settings.png)
 
 - From the left side, click on the SSO button
 
-![SSO](/assets/chatbot/custom-sso/sso1.png)
+![SSO](../../../assets/chatbot/custom-sso/sso1.png)
 
 ### 2. Generate SSO Data
 
 Generate an **`SSO Client ID`** and **`SSO Secret Key`** for your organization.
 
-![SSO Create](/assets/chatbot/custom-sso/sso2.png)
+![SSO Create](../../../assets/chatbot/custom-sso/sso2.png)
 
 - Copy the `Client ID` & `Secert key`
 
-![SSO Create](/assets/chatbot/custom-sso/sso3.png)
+![SSO Create](../../../assets/chatbot/custom-sso/sso3.png)
 
 ### 3. Generate JWT Token
 
@@ -103,7 +103,7 @@ curl --location 'http://api.yourgpt.ai/api/v1/sendConfirmLoginAccessEmail' \
 https://chatbot.yourgpt.ai/process-login?should-verify-email=true
 ```
 
-![Email Verification](/assets/chatbot/custom-sso/sso-email-verification.png)
+![Email Verification](../../../assets/chatbot/custom-sso/sso-email-verification.png)
 
 - Other possible responses :
 ```jsx
@@ -117,7 +117,7 @@ https://chatbot.yourgpt.ai/process-login?should-verify-email=true
 
 6. Once the user confirms their login access via email, they will be automatically logged into YourGPT. The SSO integration is now complete and ready for use.
 
-![confirm Login Access](/assets/chatbot/custom-sso/confirm-login-access.png)
+![confirm Login Access](../../../assets/chatbot/custom-sso/confirm-login-access.png)
 
 ## Security Considerations
 - Never expose your SSO Secret Key in client-side code

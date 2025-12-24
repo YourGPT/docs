@@ -2,6 +2,8 @@
 
 > Learn how to integrate your AI Chatbot with Twilio SMS
 
+<Callout title="Connecting Your AI Chatbot with Twilio SMS" type="tip" />
+
 To set up Twilio SMS integration, follow these steps:
 
 ### Step 1: Obtain Twilio Credentials
@@ -11,7 +13,7 @@ To set up Twilio SMS integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-sms/twilio-sms-1.png"
+    src="../../../../assets/chatbot/Twilio-sms/twilio-sms-1.png"
     alt="Twilio Credentials"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -29,7 +31,7 @@ To set up Twilio SMS integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-sms/twilio-sms-2.png"
+    src="../../../../assets/chatbot/Twilio-sms/twilio-sms-2.png"
     alt="SMS Configuration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
@@ -44,9 +46,11 @@ To set up Twilio SMS integration, follow these steps:
 
 <div className="flex justify-center items-center rounded-md p-4">
   <img
-    src="/assets/chatbot/Twilio-sms/twilio-sms-3.png"
+    src="../../../../assets/chatbot/Twilio-sms/twilio-sms-3.png"
     alt="Webhook Configuration"
     style={{ width: "100%" }}
     className="rounded-md object-contain"
   />
 </div>
+
+<Callout title="Only text message is supported" type="warning"/>

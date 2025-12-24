@@ -13,11 +13,11 @@ First, get your widget secret key from your widget settings:
 1. Open your chatbot from the dashboard  
 2. Go to **Widget → Settings**
 
-<img src="/assets/chatbot/sdk/widget-settings.png" alt="Widget settings" className="rounded-md" />
+<img src="../../assets/chatbot/sdk/widget-settings.png" alt="Widget settings" className="rounded-md" />
 
 3. Copy your **Secret Key** — you'll need it for generating HMAC signatures
 
-<img src="/assets/chatbot/sdk/widget-secret.png" alt="Widget secret key" className="rounded-md" />
+<img src="../../assets/chatbot/sdk/widget-secret.png" alt="Widget secret key" className="rounded-md" />
 
 ---
 
@@ -76,7 +76,9 @@ $yourgptChatbot.set("contact:data", {
 });
 ```
 
-> **NOTE:** When setting user data, include a valid HMAC hash that matches the highest-priority identifier in your data. Verification order: <strong>external_user_id → email → phone</strong>. If the hash doesn't match, you will receive an <strong>"invalid hmac hash"</strong> error.
+<Callout type="note" title="Note">
+When setting user data, include a valid HMAC hash that matches the highest-priority identifier in your data. Verification order: <strong>external_user_id → email → phone</strong>. If the hash doesn't match, you will receive an <strong>"invalid hmac hash"</strong> error.
+</Callout>
 
 ---
 
