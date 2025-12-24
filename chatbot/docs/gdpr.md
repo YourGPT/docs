@@ -1,0 +1,79 @@
+# GDPR Compliance Statement
+
+> YourGPT's commitment to General Data Protection Regulation (GDPR) compliance.
+
+## **Understanding GDPR**
+
+The **European Union General Data Protection Regulation (GDPR)** aims to unify data privacy regulations across all EU member states into a single, enforceable standard within the EU single market.
+
+### **Applicability of GDPR**
+
+If your business operates within the European Union (EU) or handles the personal data of individuals in the EU, GDPR compliance is mandatory.
+
+## **YourGPT GDPR Compliance**
+
+At YourGPT, we are committed to safeguarding and preserving the privacy of our customers and visitors.
+
+YourGPT is hosted in the European Union (EU) with servers located in a data center in **Stockholm**, ensuring alignment with GDPR requirements. For more detailed information, you can reach out to us at [contact us](mailto:support@yourgpt.ai).
+
+### **Measures Implemented**
+
+Our commitment involves stringent measures:
+
+- All data within YourGPT is stored securely within the EU, particularly in a data center in Stockholm.
+- Personal data is only processed by authorized personnel.
+- Personal data is only processed for the purpose of providing services to our customers.
+- All data is encrypted in transit using Transport Layer Security (TLS) and at rest using AES-256 encryption.
+- We have implemented a security incident response plan to detect and respond to security incidents.
+- We have implemented a data breach notification process to ensure compliance with GDPR notification requirements.
+- We have implemented a data retention policy to ensure compliance with GDPR data minimization and storage limitation principles.
+- We have implemented a process to ensure that our subprocessors are GDPR compliant.
+
+### **Data Processing Agreement**
+
+We have updated our [Terms of Service (opens in a new tab)](https://yourgpt.ai/terms) to include a Data Processing Agreement (DPA) to meet GDPR requirements. This DPA is incorporated by reference into our Terms of Service. By using our services, you agree to the terms of our DPA.
+
+### **Data Protection Officer**
+
+We have appointed a Data Protection Officer (DPO) to ensure GDPR compliance. You can contact our DPO at [support@yourgpt.ai](mailto:support@yourgpt.ai)
+
+- Data accessibility is in your control. You manage the information collected, stored, and managed through YourGPT.
+
+### **Subprocessors**
+
+To access the list of subprocessors, please contact our support team via our website or email us at [support@yourgpt.ai](mailto:support@yourgpt.ai).
+
+### **Access and Security**
+
+**Our team closely monitors any unauthorized system access**, and has put in place multiple preventive measures to reduce the attack surface on our systems and services. In 2 years, YourGPT has had 0 major security issues.
+
+## **Individual's Rights**
+
+Under the GDPR, individuals have several rights regarding their personal data. These include the right to:
+
+- Access their personal data.
+- Correct inaccurate or incomplete data.
+- Delete personal data (subject to legal obligations).
+- Object to their personal data's processing.
+- Limit processing under specific circumstances.
+- Transfer data.
+
+You can [contact us](mailto:support@yourgpt.ai) for queries or to exercise these rights.
+
+### **Cookies**
+
+Our website, like any other website, uses "cookies," which are used to store information such as visitors' preferences and the pages visited. This information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+
+### **Children**
+
+**YourGPT does not offer online services to children**, as our services are business-to-business in nature. Thus, we did not identify it as relevant to controlling the age of users signing up for services.
+
+### **Changes to this GDPR Compliance Statement**
+
+YourGPT reserves the right to update this GDPR compliance statement periodically. Any revisions will be effective upon posting on this page. We recommend reviewing this statement periodically for any changes.
+
+---
+
+## **Contact Information**
+
+If you have any questions regarding our GDPR compliance or wish to exercise your rights under the GDPR, please contact us at [support@yourgpt.ai](mailto:support@yourgpt.ai).

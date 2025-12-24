@@ -1,0 +1,124 @@
+# YourGPT Documentation
+
+> AI-powered chatbot platform documentation
+
+## Pages
+
+- [Create Session](https://docs.yourgpt.ai/chatbot/developer-guide/api-reference/chatbot/createSession): >-
+- [Send Message](https://docs.yourgpt.ai/chatbot/developer-guide/api-reference/chatbot/sendMessage): >-
+- [API Reference](https://docs.yourgpt.ai/chatbot/developer-guide/api-reference): API Reference for YourGPT chatbot integration.
+- [API Integration](https://docs.yourgpt.ai/chatbot/developer-guide/getting-started/api-integration): Learn how to integrate your chatbot using the YourGPT Chatbot API
+- [SDKs](https://docs.yourgpt.ai/chatbot/developer-guide/getting-started/sdks): Available SDKs for YourGPT chatbot integration.
+- [Identity Verification](https://docs.yourgpt.ai/chatbot/developer-guide/identity-verification)
+- [Introduction](https://docs.yourgpt.ai/chatbot/developer-guide): Integrate YourGPT chatbot using SDKs and APIs.
+- [Android Chatbot SDK](https://docs.yourgpt.ai/chatbot/developer-guide/mobile-sdks/android-sdk)
+- [Flutter Chatbot SDK](https://docs.yourgpt.ai/chatbot/developer-guide/mobile-sdks/flutter-sdk)
+- [Mobile SDKs](https://docs.yourgpt.ai/chatbot/developer-guide/mobile-sdks): Available Mobile SDKs for YourGPT chatbot integration.
+- [iOS Chatbot SDK](https://docs.yourgpt.ai/chatbot/developer-guide/mobile-sdks/ios-sdk)
+- [React Native Chatbot SDK](https://docs.yourgpt.ai/chatbot/developer-guide/mobile-sdks/react-native-sdk): Integrate YourGPT Chatbot seamlessly into your react-native application.
+- [Web SDKs](https://docs.yourgpt.ai/chatbot/developer-guide/web-sdks): Available Web SDKs for YourGPT chatbot integration.
+- [NPM Package ](https://docs.yourgpt.ai/chatbot/developer-guide/web-sdks/npm-package)
+- [$yourgpt Method](https://docs.yourgpt.ai/chatbot/developer-guide/web-sdks/yourgpt-method): Integrate the Chatbot Web SDK into your website
+- [AI Copilot](https://docs.yourgpt.ai/chatbot/developer-guide/widget/ai-copilot): Transform your chatbot into an intelligent AI agent capable of performing complex tasks, executing code, integrating with APIs, and gathering real-time information.
+- [Agent Persona](https://docs.yourgpt.ai/chatbot/ai-agent-management/agent-persona): Everything you need to know to customise your AI Agent Behavior and responses
+- [Functions](https://docs.yourgpt.ai/chatbot/ai-agent-management/functions): Functions are autonomous tools for specific tasks, guided by your base prompt.
+- [Prompt Templates](https://docs.yourgpt.ai/chatbot/ai-agent-management/prompt-templates): Examples of detailed bot persona prompts and their restrictions for AI chatbots.
+- [Styling](https://docs.yourgpt.ai/chatbot/chatbot-widget/appearance/css-styling): Customize the chatbot widget using CSS variables and button animations
+- [Custom Domain](https://docs.yourgpt.ai/chatbot/chatbot-widget/appearance/custom-domain): Everything you need to know to add your custom domain to your AI Chatbot
+- [Customization](https://docs.yourgpt.ai/chatbot/chatbot-widget/appearance/customization): Customize the appearance of your chatbot widget.
+- [Pre-Built Themes](https://docs.yourgpt.ai/chatbot/chatbot-widget/appearance/pre-built-themes): Learn how to change the theme of your chat widget.
+- [Gamification](https://docs.yourgpt.ai/chatbot/chatbot-widget/gamification): Add interactive games to increase engagement for support and sales
+- [Installation](https://docs.yourgpt.ai/chatbot/chatbot-widget/installation): Learn how to install the chatbot widget on your website
+- [Triggers](https://docs.yourgpt.ai/chatbot/chatbot-widget/triggers): Learn how to use triggers to customize your chatbot's behavior.
+- [AI refuse to answer](https://docs.yourgpt.ai/chatbot/debugging/ai-response/ai-refuse-to-answer)
+- [Incomplete AI Responses](https://docs.yourgpt.ai/chatbot/debugging/ai-response/incomplete-ai-response)
+- [Incorrect Answers](https://docs.yourgpt.ai/chatbot/debugging/ai-response/incorrect-ai-response)
+- [AI Studio](https://docs.yourgpt.ai/chatbot/debugging/ai-studio): Debug your chatbot flows by testing runs, inspecting variables, and reviewing runtime events.
+- [Audit Logs](https://docs.yourgpt.ai/chatbot/debugging/audit-logs): Audit Logs help you track important activity across your organization—so you can debug changes, investigate issues, and maintain accountability.
+- [Session Logger in YourGPT Chatbot Studio](https://docs.yourgpt.ai/chatbot/debugging/conversation-logs/session-logs): The Session Logger allows you to track and analyze conversations within the chatbot. Learn how to use the Session Logger in the Studio to gain insights into user interactions.
+- [Training Audit](https://docs.yourgpt.ai/chatbot/debugging/conversation-logs/training-audit): Search across training sources to find the best-matching content and quickly locate, edit, or delete the source node.
+- [Debugging](https://docs.yourgpt.ai/chatbot/debugging): Debugging your YourGPT chatbot.
+- [Introduction](https://docs.yourgpt.ai/chatbot/debugging/introduction): Debug and troubleshoot your YourGPT chatbot.
+- [GDPR Compliance Statement](https://docs.yourgpt.ai/chatbot/gdpr): YourGPT's commitment to General Data Protection Regulation (GDPR) compliance.
+- [Best Practices](https://docs.yourgpt.ai/chatbot/getting-started/best-practices): Optimize your YourGPT AI Agent performance and user experience with these proven configuration tips.
+- [Quick Start](https://docs.yourgpt.ai/chatbot/getting-started/setup): Set up and deploy your first YourGPT no-code AI agent.
+- [Testing Your AI Agent](https://docs.yourgpt.ai/chatbot/getting-started/test-ai-agent): Learn how to test and share your AI agent to ensure it's working correctly before deployment.
+- [Introduction](https://docs.yourgpt.ai/chatbot): Build powerful AI agents with our AI-first no-code platform in under two minutes.
+- [API Integration](https://docs.yourgpt.ai/chatbot/integrations/api): Learn how to integrate your chatbot using the YourGPT Chatbot API
+- [Crisp](https://docs.yourgpt.ai/chatbot/integrations/connectors/crisp): Integrate YourGPT Chatbot with Crisp to enhance your live chat experience.
+- [Connectors](https://docs.yourgpt.ai/chatbot/integrations/connectors): Connectors are the tools that allow you to connect your chatbot to other services and applications.
+- [Intercom](https://docs.yourgpt.ai/chatbot/integrations/connectors/intercom): Link YourGPT Chatbot with Intercom to sync conversations and contacts.
+- [Make](https://docs.yourgpt.ai/chatbot/integrations/connectors/make): Connect YourGPT to Make (Integromat) to build visual automations with thousands of apps.
+- [n8n](https://docs.yourgpt.ai/chatbot/integrations/connectors/n8n): Use n8n to trigger and connect YourGPT Chatbot with other services in your workflows.
+- [Pabbly](https://docs.yourgpt.ai/chatbot/integrations/connectors/pabbly): Automate YourGPT Chatbot actions with Pabbly Connect's no-code workflows.
+- [viaSocket](https://docs.yourgpt.ai/chatbot/integrations/connectors/viasocket): Connect YourGPT Chatbot through viaSocket to automate across your apps.
+- [Zapier](https://docs.yourgpt.ai/chatbot/integrations/connectors/zapier): Automate YourGPT Chatbot events with Zapier and thousands of apps.
+- [MCP](https://docs.yourgpt.ai/chatbot/integrations/mcp): Model Context Protocol (MCP) integration guide
+- [Discord](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/discord): Add YourGPT Chatbot to your Discord server using the guided authentication flow.
+- [Social Integrations](https://docs.yourgpt.ai/chatbot/integrations/social-platforms): Connect YourGPT chatbot to social messaging platforms.
+- [Instagram](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/instagram): Learn how to connect YourGPT AI to Instagram for automating messaging and engagement.
+- [Line](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/line): Learn how to connect YourGPT AI to your Line app with this integration guide.
+- [Messenger](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/messenger): Learn how to connect YourGPT Chatbot to Facebook Messenger with auto or custom setup.
+- [Slack](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/slack): Integrate YourGPT Chatbot with Slack to automate conversations in your workspace.
+- [Telegram](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/telegram): Connect YourGPT Chatbot to Telegram using BotFather and the YourGPT integration steps.
+- [Twilio SMS](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/twilio-sms): Learn how to integrate your AI Chatbot with Twilio SMS
+- [Whatsapp](https://docs.yourgpt.ai/chatbot/integrations/social-platforms/whatsapp): Connect YourGPT Chatbot to WhatsApp via the official integration with auto setup.
+- [Voice Integrations](https://docs.yourgpt.ai/chatbot/integrations/voice): Voice and phone integrations for YourGPT.
+- [Phone AI Integration ](https://docs.yourgpt.ai/chatbot/integrations/voice/phone): Learn how to integrate a no-code AI chatbot with your phone, step-by-step guide
+- [Twilio Voice](https://docs.yourgpt.ai/chatbot/integrations/voice/twilio-voice): Learn how to integrate your AI Chatbot with Twilio Voice
+- [Webhooks](https://docs.yourgpt.ai/chatbot/integrations/webhooks): Set up and manage webhooks in YourGPT
+- [BigCommerce](https://docs.yourgpt.ai/chatbot/integrations/website-builders/bigcommerce): Guide to installing the YourGPT Chatbot on your BigCommerce store
+- [Bubble](https://docs.yourgpt.ai/chatbot/integrations/website-builders/bubble): Add the GPT Chatbot to your Bubble app using an HTML element or a global header script.
+- [Carrd](https://docs.yourgpt.ai/chatbot/integrations/website-builders/carrd): Guide to integrating the YourGPT Chatbot with your Carrd website
+- [Framer](https://docs.yourgpt.ai/chatbot/integrations/website-builders/framer): Guide to integrating the YourGPT AI Agent with your Framer website
+- [Ghost](https://docs.yourgpt.ai/chatbot/integrations/website-builders/ghost): Step-by-step guide to installing the AI Agent on your Ghost website
+- [HTML Website](https://docs.yourgpt.ai/chatbot/integrations/website-builders/html-website): Embed YourGPT Chatbot on a plain HTML site with a simple script snippet.
+- [Website Integrations](https://docs.yourgpt.ai/chatbot/integrations/website-builders): Add YourGPT chatbot to your website platform.
+- [PrestaShop](https://docs.yourgpt.ai/chatbot/integrations/website-builders/prestashop): Learn more to install YourGPT in your PrestaShop store for enhanced customer support and engagement
+- [Shopify ](https://docs.yourgpt.ai/chatbot/integrations/website-builders/shopify): Learn how to integrate a GPT Chatbot with your Shopify store with our detailed, step-by-step guide
+- [Squarespace](https://docs.yourgpt.ai/chatbot/integrations/website-builders/squarespace): Learn more to add YourGPT in your Squarespace
+- [Vercel](https://docs.yourgpt.ai/chatbot/integrations/website-builders/vercel): Learn how to integrate YourGPT Chatbot with your Vercel website with our detailed, step-by-step guide
+- [Webflow](https://docs.yourgpt.ai/chatbot/integrations/website-builders/webflow): Learn how to integrate your GPT AI chatbot into your Webflow project using the official Webflow app.
+- [Wix](https://docs.yourgpt.ai/chatbot/integrations/website-builders/wix): Adding a GPT Chatbot in Wix Website
+- [WordPress](https://docs.yourgpt.ai/chatbot/integrations/website-builders/wordpress): Add your AI chatbot to WordPress in minutes using our official plugin
+- [AI Models & Usage](https://docs.yourgpt.ai/chatbot/other/ai-and-usage/ai-models): Available AI models, usage tiers, and credit consumption rates.
+- [Connected Chatbots](https://docs.yourgpt.ai/chatbot/other/connected-chatbots): Link multiple chatbots for shared knowledge while customizing settings and behavior.
+- [Custom SSO](https://docs.yourgpt.ai/chatbot/other/custom-sso): Everything you need to know to implement custom SSO for YourGPT
+- [Other Features](https://docs.yourgpt.ai/chatbot/other): Additional features and settings for YourGPT.
+- [Roles & Privileges](https://docs.yourgpt.ai/chatbot/other/security-and-access/role-management): Organization-level and project-level roles with billing, access, and permission details.
+- [Security Settings for YourGPT Chatbot](https://docs.yourgpt.ai/chatbot/other/security-and-access/security): Guide to YourGPT Chatbot security controls.
+- [Actions ](https://docs.yourgpt.ai/chatbot/studio/elements/advanced/actions)
+- [API Calling ](https://docs.yourgpt.ai/chatbot/studio/elements/advanced/api-calling): Learn how to use API Calls in your chatbot to interact with external services, fetch real-time data, or trigger actions during conversations.
+- [Code Execution ](https://docs.yourgpt.ai/chatbot/studio/elements/advanced/code-execution): Learn how to use JavaScript or Python functionality to extend the capabilities of your chatbot allowing to add custom scripting and dynamic execution of code within the chatbot environment.
+- [Component](https://docs.yourgpt.ai/chatbot/studio/elements/advanced/component): The Component is a fundamental element that enables you to integrate custom functionality into the chatbot's flow. Learn more about Component in YourGPT Chatbot Studio.
+- [Advanced Elements](https://docs.yourgpt.ai/chatbot/studio/elements/advanced): Advanced studio elements for complex workflows.
+- [Sets ](https://docs.yourgpt.ai/chatbot/studio/elements/advanced/sets)
+- [Wait ](https://docs.yourgpt.ai/chatbot/studio/elements/advanced/wait)
+- [AI Response](https://docs.yourgpt.ai/chatbot/studio/elements/ai-response)
+- [AI Retrieval ](https://docs.yourgpt.ai/chatbot/studio/elements/ai-retrieval)
+- [AI Task ](https://docs.yourgpt.ai/chatbot/studio/elements/ai-task)
+- [Conditions](https://docs.yourgpt.ai/chatbot/studio/elements/conditions)
+- [Entities](https://docs.yourgpt.ai/chatbot/studio/elements/entities): Learn about Entities  in YourGPT Chatbot Studio.
+- [Events](https://docs.yourgpt.ai/chatbot/studio/elements/events): Learn about Events in YourGPT Chatbot Studio.
+- [Studio Elements](https://docs.yourgpt.ai/chatbot/studio/elements): Core building blocks for chatbot flows.
+- [Intents ](https://docs.yourgpt.ai/chatbot/studio/elements/intents): Learn about Intents in YourGPT Chatbot Studio.
+- [Listeners ](https://docs.yourgpt.ai/chatbot/studio/elements/listeners): Learn about Listeners in YourGPT Chatbot Studio.
+- [Messages ](https://docs.yourgpt.ai/chatbot/studio/elements/messages): Messages are the building blocks of a chatbot conversation. They are used to convey information to users in various formats, such as text, images, cards, and carousels.
+- [Validate](https://docs.yourgpt.ai/chatbot/studio/elements/validate): Learn how to use the Validate Node to check user input for validity using Email, Phone, or custom Regex patterns in YourGPT Studio.
+- [Variables ](https://docs.yourgpt.ai/chatbot/studio/elements/variables): variable are the building blocks of a chatbot conversation.
+- [Webhook ](https://docs.yourgpt.ai/chatbot/studio/elements/webhook): Webhook are the building blocks of a chatbot conversation.
+- [AI Ticketing ](https://docs.yourgpt.ai/chatbot/studio/guides/ai-ticketing): Explore how to develop an AI agent integrated with popular ticketing platforms, such as Zendesk, Freshdesk, or Zoho Desk, to automate customer support and minimize response times.
+- [How to Call External APIs](https://docs.yourgpt.ai/chatbot/studio/guides/how-to-call-external-apis): Tutorial coming soon.
+- [How to Greet Users](https://docs.yourgpt.ai/chatbot/studio/guides/how-to-greet-users): Learn how to greet users with Chatbot Studio.
+- [Studio Tutorials](https://docs.yourgpt.ai/chatbot/studio/guides): Step-by-step tutorials for building chatbot flows.
+- [Shopify Chatbot  ](https://docs.yourgpt.ai/chatbot/studio/guides/shopify-chatbot): Learn how to build an AI chatbot for Shopify Store using YourGPT Chatbot Studio.
+- [Automated Responses](https://docs.yourgpt.ai/chatbot/training/automated-responses)
+- [Best Practices](https://docs.yourgpt.ai/chatbot/training/best-practices): Learn the best practices for training your chatbot
+- [Training Guide](https://docs.yourgpt.ai/chatbot/training/guide): Learn how to train your chatbot using your business data to deliver accurate and reliable responses.
+- [Smart Learning](https://docs.yourgpt.ai/chatbot/training/smart-learning): Learn how YourGPT Chatbot uses RLHF and Supervised Learning with Human Feedback to improve its performance.
+- [AI Helpdesk](https://docs.yourgpt.ai/chatbot/training/sources/ai-helpdesk): Create and manage Help Desk articles, including AI-generated drafts
+- [Documents](https://docs.yourgpt.ai/chatbot/training/sources/documents): Train your AI chatbot using document files like DOC, CSV, PDF, PPT and more
+- [FAQs & Text](https://docs.yourgpt.ai/chatbot/training/sources/faqs-text): Train your AI chatbot with FAQs - Add, Import, or Export FAQ files. FAQs help users quickly find solutions and understand key information.
+- [Knowledge Sources](https://docs.yourgpt.ai/chatbot/training/sources): Learn how to add knowledge sources to your chatbot.
+- [Others](https://docs.yourgpt.ai/chatbot/training/sources/others): Train your chatbot using OCR, self-learning, Drive imports, and more
+- [Website & Links](https://docs.yourgpt.ai/chatbot/training/sources/website-links): Train your AI chatbot using website links to improve its responses and knowledge about your product.
